@@ -43,7 +43,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer P3fkdb4avg5aZ6h8DEe61Vc'
+      - 'Bearer 86chkvbaEe53fZDPV46da1g'
     controller: null
     method: null
     route: null
@@ -72,14 +72,14 @@ endpoints:
         name: id
         description: 'The ID of the entity type.'
         required: true
-        example: eum
+        example: maxime
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: eum
+      id: maxime
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -99,7 +99,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer fDa46dvc5hagkZbE63VP18e'
+      - 'Bearer caDfh685v3gPZ16kEdeb4Va'
     controller: null
     method: null
     route: null
@@ -132,7 +132,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: dhqfkclmczmuxn
+        example: mmlyttjofmqxrkebm
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -142,22 +142,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Optio ipsa nemo quibusdam nostrum.'
+        example: 'Velit doloribus assumenda laboriosam modi.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: dhqfkclmczmuxn
-      description: 'Optio ipsa nemo quibusdam nostrum.'
+      label: mmlyttjofmqxrkebm
+      description: 'Velit doloribus assumenda laboriosam modi.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer dEvb6cg4hf38eaVZ16DPk5a'
+      - 'Bearer 18Z5bVDEP4g6eka3hcvad6f'
     controller: null
     method: null
     route: null
@@ -186,14 +186,14 @@ endpoints:
         name: id
         description: 'The ID of the entity type.'
         required: true
-        example: ipsa
+        example: ad
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: ipsa
+      id: ad
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -201,7 +201,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: avc
+        example: xydcjyssps
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -211,22 +211,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Omnis illum aperiam quaerat iusto cumque incidunt qui.'
+        example: 'Rerum aut ut sequi nihil quis sint provident.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: avc
-      description: 'Omnis illum aperiam quaerat iusto cumque incidunt qui.'
+      label: xydcjyssps
+      description: 'Rerum aut ut sequi nihil quis sint provident.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer hgd6akbEaVZev385D16cf4P'
+      - 'Bearer 136kvaVedh5gDZb4E8ac6fP'
     controller: null
     method: null
     route: null
@@ -273,7 +273,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer ED61g5b4h6Ve3vcZaPd8fka'
+      - 'Bearer vdE6VDg6bP5kaah1c4f8Ze3'
     controller: null
     method: null
     route: null
@@ -320,7 +320,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer favZ5e1hg8ED6b3ckVa64Pd'
+      - 'Bearer vPE8dbkVchaZf1354e6g6aD'
     controller: null
     method: null
     route: null

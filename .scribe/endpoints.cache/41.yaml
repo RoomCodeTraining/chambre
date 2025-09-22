@@ -45,7 +45,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer ZbE5heP6g3a8facDd1k6V4v'
+      - 'Bearer gv43dE5feZcV8ahPbk616Da'
     controller: null
     method: null
     route: null
@@ -78,7 +78,7 @@ endpoints:
         name: param_1
         description: ''
         required: true
-        example: 0.7
+        example: 62.04869938
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -88,7 +88,7 @@ endpoints:
         name: param_2
         description: ''
         required: true
-        example: 326.665351718
+        example: 149103.52
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -98,7 +98,7 @@ endpoints:
         name: param_3
         description: ''
         required: true
-        example: 89768.0
+        example: 667.522
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -108,24 +108,24 @@ endpoints:
         name: param_4
         description: ''
         required: true
-        example: 4.2
+        example: 11.3
         type: number
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      param_1: 0.7
-      param_2: 326.665351718
-      param_3: 89768.0
-      param_4: 4.2
+      param_1: 62.04869938
+      param_2: 149103.52
+      param_3: 667.522
+      param_4: 11.3
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer eV8Pf5Dv4dkhaZEgb6631ac'
+      - 'Bearer eDPv4fagha5kb6ZV6c3d8E1'
     controller: null
     method: null
     route: null
@@ -154,14 +154,14 @@ endpoints:
         name: workFee
         description: ''
         required: true
-        example: voluptatem
+        example: consequatur
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      workFee: voluptatem
+      workFee: consequatur
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -181,7 +181,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer v6kZ5gaPfDV83bec4aEh1d6'
+      - 'Bearer e4cPvEfaabZ865D16Vd3kgh'
     controller: null
     method: null
     route: null
@@ -210,14 +210,14 @@ endpoints:
         name: workFee
         description: ''
         required: true
-        example: sit
+        example: et
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      workFee: sit
+      workFee: et
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -225,7 +225,7 @@ endpoints:
         name: param_1
         description: ''
         required: true
-        example: 138774884.98083
+        example: 2.715396
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -235,7 +235,7 @@ endpoints:
         name: param_2
         description: ''
         required: true
-        example: 943.06833
+        example: 0.05723
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -245,7 +245,7 @@ endpoints:
         name: param_3
         description: ''
         required: true
-        example: 16935017.171124
+        example: 392225.5770442
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -255,24 +255,24 @@ endpoints:
         name: param_4
         description: ''
         required: true
-        example: 36.19
+        example: 317071618.76451
         type: number
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      param_1: 138774884.98083
-      param_2: 943.06833
-      param_3: 16935017.171124
-      param_4: 36.19
+      param_1: 2.715396
+      param_2: 0.05723
+      param_3: 392225.5770442
+      param_4: 317071618.76451
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer vV5fZ348a6DaPE6hkcebgd1'
+      - 'Bearer 4bh1EvPgc6Vda6kDaef538Z'
     controller: null
     method: null
     route: null
@@ -301,14 +301,14 @@ endpoints:
         name: workFee
         description: ''
         required: true
-        example: voluptatum
+        example: eligendi
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      workFee: voluptatum
+      workFee: eligendi
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -319,7 +319,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Vb6aEfdvh8ac4g6Z5eD1Pk3'
+      - 'Bearer d1haPa5Eb6D4gZkefc8Vv36'
     controller: null
     method: null
     route: null

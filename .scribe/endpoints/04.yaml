@@ -43,7 +43,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer eE4D3gZv615Vd68bahcafPk'
+      - 'Bearer cZg1686va3h4kb5faPEDdVe'
     controller: null
     method: null
     route: null
@@ -72,14 +72,14 @@ endpoints:
         name: id
         description: 'The ID of the entity.'
         required: true
-        example: architecto
+        example: totam
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: architecto
+      id: totam
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -99,7 +99,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer agcD1f8564he36vPkEZaVbd'
+      - 'Bearer aPv4e6Ec1V53ga86hZfDbdk'
     controller: null
     method: null
     route: null
@@ -128,14 +128,14 @@ endpoints:
         name: id
         description: 'The ID of the entity.'
         required: true
-        example: quia
+        example: voluptatem
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: quia
+      id: voluptatem
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -143,17 +143,37 @@ endpoints:
         name: name
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: wuuqnshzoucoytpwps
+        example: dyn
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
+      prefix:
+        name: prefix
+        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
+        required: false
+        example: wtgjqurymy
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      suffix:
+        name: suffix
+        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
+        required: false
+        example: wifaclhjqktwbjahpk
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
       address:
         name: address
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: false
-        example: aeyzzvvopkkqkgpgokkl
+        example: fwwglutzqmesyjaoodivk
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -163,7 +183,7 @@ endpoints:
         name: email
         description: 'Must match the regex /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/. Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: false
-        example: rrutherford@example.net
+        example: sydnie51@example.org
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -173,7 +193,7 @@ endpoints:
         name: telephone
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: false
-        example: annrr
+        example: gwqxmpteotoy
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -183,7 +203,7 @@ endpoints:
         name: service_description
         description: ''
         required: false
-        example: molestiae
+        example: dolor
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -193,26 +213,28 @@ endpoints:
         name: footer_description
         description: ''
         required: false
-        example: a
+        example: ipsam
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      name: wuuqnshzoucoytpwps
-      address: aeyzzvvopkkqkgpgokkl
-      email: rrutherford@example.net
-      telephone: annrr
-      service_description: molestiae
-      footer_description: a
+      name: dyn
+      prefix: wtgjqurymy
+      suffix: wifaclhjqktwbjahpk
+      address: fwwglutzqmesyjaoodivk
+      email: sydnie51@example.org
+      telephone: gwqxmpteotoy
+      service_description: dolor
+      footer_description: ipsam
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer vkD548hbEafgP3V1Ze6dc6a'
+      - 'Bearer Z6eE8k6fD4ah351dcaVvgbP'
     controller: null
     method: null
     route: null
@@ -259,7 +281,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer dgha6ZkeEV4c5vbD18afP63'
+      - 'Bearer Vc5EabdahDfv468ZP61keg3'
     controller: null
     method: null
     route: null
@@ -306,7 +328,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer ebh6vDP5aZV836E1adkgcf4'
+      - 'Bearer f3b4vk6he5aVDZ8Pd6cag1E'
     controller: null
     method: null
     route: null

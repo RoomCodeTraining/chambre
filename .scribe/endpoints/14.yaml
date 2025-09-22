@@ -43,7 +43,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer V3PDckhZgf81db6vE6a5ea4'
+      - 'Bearer EchDdak6Zv5aPfV1e36g4b8'
     controller: null
     method: null
     route: null
@@ -76,7 +76,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: zpbs
+        example: agcmoopruomedprrdttk
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -86,22 +86,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Ut aliquam molestias aperiam voluptatem quo.'
+        example: 'Rerum quasi tempora consequatur ea asperiores ea saepe.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: zpbs
-      description: 'Ut aliquam molestias aperiam voluptatem quo.'
+      label: agcmoopruomedprrdttk
+      description: 'Rerum quasi tempora consequatur ea asperiores ea saepe.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer a4hefPka65gvD8bdVcE361Z'
+      - 'Bearer D4g5Pab8kv1VheZ6df3ca6E'
     controller: null
     method: null
     route: null
@@ -130,14 +130,14 @@ endpoints:
         name: id
         description: 'The ID of the workforce type.'
         required: true
-        example: ut
+        example: et
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: ut
+      id: et
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -157,7 +157,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 5egvZ6bD1hka6af4VEdc83P'
+      - 'Bearer eakV64a685c13dDZgEPhfbv'
     controller: null
     method: null
     route: null
@@ -186,14 +186,14 @@ endpoints:
         name: id
         description: 'The ID of the workforce type.'
         required: true
-        example: sint
+        example: est
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: sint
+      id: est
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -201,7 +201,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: hstjvuucgjpwwtkr
+        example: hznixtmbvn
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -211,22 +211,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Rerum blanditiis sed dolores doloremque.'
+        example: 'Animi autem quia iusto aspernatur ut ad adipisci optio.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: hstjvuucgjpwwtkr
-      description: 'Rerum blanditiis sed dolores doloremque.'
+      label: hznixtmbvn
+      description: 'Animi autem quia iusto aspernatur ut ad adipisci optio.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer DEZa31chkg56vaPfd68b4Ve'
+      - 'Bearer c3hZDfavV6gPa1bkedE8645'
     controller: null
     method: null
     route: null
@@ -255,14 +255,14 @@ endpoints:
         name: id
         description: 'The ID of the workforce type.'
         required: true
-        example: suscipit
+        example: alias
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: suscipit
+      id: alias
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -273,7 +273,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer PedZ6EVD536gaab1ckh4f8v'
+      - 'Bearer k1VgZc38aev4a6fd5EbDh6P'
     controller: null
     method: null
     route: null

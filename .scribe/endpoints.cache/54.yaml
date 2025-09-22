@@ -45,7 +45,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer h6c6g8Za5bDPVkeE1v3fad4'
+      - 'Bearer P5egaV8cdf41ahb66ZkD3vE'
     controller: null
     method: null
     route: null
@@ -78,7 +78,7 @@ endpoints:
         name: code
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: 'n'
+        example: gzykhtvvg
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -88,7 +88,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: ctyxxodleoppynvvyrd
+        example: ciukexlccfgalvbetyhnpm
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -98,23 +98,23 @@ endpoints:
         name: description
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: false
-        example: 'Enim fuga architecto ea id minima.'
+        example: 'Sit excepturi hic sit sunt pariatur.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      code: 'n'
-      label: ctyxxodleoppynvvyrd
-      description: 'Enim fuga architecto ea id minima.'
+      code: gzykhtvvg
+      label: ciukexlccfgalvbetyhnpm
+      description: 'Sit excepturi hic sit sunt pariatur.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 6381agP6ZEkDebfc5v4dhVa'
+      - 'Bearer kfvg6aa8dc4hED51bVPZ63e'
     controller: null
     method: null
     route: null
@@ -143,14 +143,14 @@ endpoints:
         name: id
         description: 'The ID of the claim nature.'
         required: true
-        example: eveniet
+        example: blanditiis
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: eveniet
+      id: blanditiis
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -170,7 +170,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer af15beEcPadg6V36k4Z8vhD'
+      - 'Bearer ZVa4dgP1hbkvc8Da6e63fE5'
     controller: null
     method: null
     route: null
@@ -199,14 +199,14 @@ endpoints:
         name: id
         description: 'The ID of the claim nature.'
         required: true
-        example: quibusdam
+        example: adipisci
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: quibusdam
+      id: adipisci
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -214,7 +214,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: auejrqxogrmce
+        example: xlsvjazombsptqgdjkjjf
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -224,22 +224,22 @@ endpoints:
         name: description
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: false
-        example: 'Culpa veritatis aliquid velit voluptates nobis voluptatibus.'
+        example: 'Atque fugit in facere temporibus.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: auejrqxogrmce
-      description: 'Culpa veritatis aliquid velit voluptates nobis voluptatibus.'
+      label: xlsvjazombsptqgdjkjjf
+      description: 'Atque fugit in facere temporibus.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer vf84gV6beac5ED1hP6Zkad3'
+      - 'Bearer 135ZhVcdE6eaPka86fbvgD4'
     controller: null
     method: null
     route: null
@@ -268,14 +268,14 @@ endpoints:
         name: id
         description: 'The ID of the claim nature.'
         required: true
-        example: et
+        example: inventore
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: et
+      id: inventore
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -286,7 +286,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer aVP1avb86k3f5Zc6gD4deEh'
+      - 'Bearer 5V381akEfbPehD6c4gaZvd6'
     controller: null
     method: null
     route: null
