@@ -2392,7 +2392,7 @@ class AssignmentController extends Controller
                     if(AssignmentTypeEnum::PARTICULAR && $request->assignment_type_id == AssignmentType::where('code', AssignmentTypeEnum::PARTICULAR)->first()->id){
                         $reference = AssignmentReferencePrefixEnum::PARTICULAR->value.'00001'.'-'.$suffix;
                     }
-                                
+
                     if(AssignmentTypeEnum::TAXI->value && $request->assignment_type_id == AssignmentType::where('code', AssignmentTypeEnum::TAXI)->first()->id){
                         $reference = AssignmentReferencePrefixEnum::TAXI->value.'00001'.'-'.$suffix;
                     }
@@ -2422,7 +2422,7 @@ class AssignmentController extends Controller
             $assignment->update([
                 'reference' => $reference ?? $assignment->reference,
                 'insurer_id' => $insurer_id ?? $assignment->insurer_id,
-                'additional_insurer_id' => $additional_insurer_id ?? $assignment->additional_insurer_id,
+                'additional_insurer_id' => $assignment->additional_insurer_id,
                 'vehicle_id' => $vehicle_id ?? $assignment->vehicle_id,
                 'repairer_id' => $request->repairer_id ?? $assignment->repairer_id,
                 'client_id' => $request->client_id ?? $assignment->client_id,
