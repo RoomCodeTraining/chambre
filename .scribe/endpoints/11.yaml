@@ -1,0 +1,280 @@
+name: 'Gestion des états de véhicules'
+description: |-
+
+  APIs pour la gestion des états de véhicules
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/vehicle-states
+    metadata:
+      groupName: 'Gestion des états de véhicules'
+      groupDescription: |-
+
+        APIs pour la gestion des états de véhicules
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Lister tous les états de véhicules'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer Vk1e8Zdb34fgvD665caEhPa'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/vehicle-states
+    metadata:
+      groupName: 'Gestion des états de véhicules'
+      groupDescription: |-
+
+        APIs pour la gestion des états de véhicules
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Créer un état de véhicule'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      label:
+        name: label
+        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
+        required: true
+        example: vyrlhyfikllvabtqpt
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      description:
+        name: description
+        description: ''
+        required: false
+        example: 'Explicabo error sit quo sed.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+    cleanBodyParameters:
+      label: vyrlhyfikllvabtqpt
+      description: 'Explicabo error sit quo sed.'
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer ce6k4V1PbEd8h5Dgafav3Z6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/vehicle-states/{id}'
+    metadata:
+      groupName: 'Gestion des états de véhicules'
+      groupDescription: |-
+
+        APIs pour la gestion des états de véhicules
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Afficher un état de véhicule'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the vehicle state.'
+        required: true
+        example: suscipit
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      id: suscipit
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer ve36ca651hZkVdEP8agbD4f'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/vehicle-states/{id}'
+    metadata:
+      groupName: 'Gestion des états de véhicules'
+      groupDescription: |-
+
+        APIs pour la gestion des états de véhicules
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Mettre à jour un état de véhicule'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the vehicle state.'
+        required: true
+        example: quod
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      id: quod
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      label:
+        name: label
+        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
+        required: true
+        example: ojnseuyboeqs
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      description:
+        name: description
+        description: ''
+        required: false
+        example: 'Quos voluptatem sed eum quia perferendis laudantium ad.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+    cleanBodyParameters:
+      label: ojnseuyboeqs
+      description: 'Quos voluptatem sed eum quia perferendis laudantium ad.'
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer k6bg8ZhEv63VDf54c1Paaed'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/vehicle-states/{id}'
+    metadata:
+      groupName: 'Gestion des états de véhicules'
+      groupDescription: |-
+
+        APIs pour la gestion des états de véhicules
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Supprimer un état de véhicule'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the vehicle state.'
+        required: true
+        example: mollitia
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      id: mollitia
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer dv6b53V4DPZehac8ga61Ekf'
+    controller: null
+    method: null
+    route: null
+    custom: []

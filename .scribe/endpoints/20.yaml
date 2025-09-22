@@ -1,0 +1,3822 @@
+name: 'Gestion des dossiers'
+description: |-
+
+  APIs pour la gestion des dossiers
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/assignments
+    metadata:
+      groupName: 'Gestion des dossiers'
+      groupDescription: |-
+
+        APIs pour la gestion des dossiers
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Lister tous les dossiers'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer aVED4k5Zg6bPdc863fh1eva'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/assignments
+    metadata:
+      groupName: 'Gestion des dossiers'
+      groupDescription: |-
+
+        APIs pour la gestion des dossiers
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Ajouter un dossier'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      client_id:
+        name: client_id
+        description: 'The <code>id</code> of an existing record in the clients table.'
+        required: true
+        example: in
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      vehicle_id:
+        name: vehicle_id
+        description: 'The <code>id</code> of an existing record in the vehicles table.'
+        required: true
+        example: laboriosam
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      vehicle_mileage:
+        name: vehicle_mileage
+        description: ''
+        required: false
+        example: 2579145.7428088
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      insurer_id:
+        name: insurer_id
+        description: 'The <code>id</code> of an existing record in the entities table.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      broker_id:
+        name: broker_id
+        description: 'The <code>id</code> of an existing record in the entities table.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      repairer_id:
+        name: repairer_id
+        description: 'The <code>id</code> of an existing record in the entities table.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      assignment_type_id:
+        name: assignment_type_id
+        description: 'The <code>id</code> of an existing record in the assignment_types table.'
+        required: true
+        example: modi
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      expertise_type_id:
+        name: expertise_type_id
+        description: 'The <code>id</code> of an existing record in the expertise_types table.'
+        required: true
+        example: et
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      document_transmitted_id:
+        name: document_transmitted_id
+        description: 'The <code>id</code> of an existing record in the document_transmitteds table.'
+        required: true
+        example:
+          - a
+        type: 'string[]'
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      policy_number:
+        name: policy_number
+        description: ''
+        required: false
+        example: voluptatem
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      claim_number:
+        name: claim_number
+        description: ''
+        required: false
+        example: corrupti
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      claim_date:
+        name: claim_date
+        description: "Le champ value n'est pas une date valide."
+        required: false
+        example: '2025-08-04T00:17:24'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      claim_ends_at:
+        name: claim_ends_at
+        description: "Le champ value n'est pas une date valide."
+        required: false
+        example: '2025-08-04T00:17:24'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      expertise_date:
+        name: expertise_date
+        description: "Le champ value n'est pas une date valide."
+        required: false
+        example: '2025-08-04T00:17:24'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      expertise_place:
+        name: expertise_place
+        description: ''
+        required: false
+        example: nobis
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      received_at:
+        name: received_at
+        description: "Le champ value n'est pas une date valide."
+        required: false
+        example: '2025-08-04T00:17:24'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      administrator:
+        name: administrator
+        description: ''
+        required: false
+        example: cumque
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      circumstance:
+        name: circumstance
+        description: ''
+        required: false
+        example: sint
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      damage_declared:
+        name: damage_declared
+        description: ''
+        required: false
+        example: totam
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      observation:
+        name: observation
+        description: ''
+        required: false
+        example: ea
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      experts:
+        name: experts
+        description: ''
+        required: false
+        example: null
+        type: 'object[]'
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      'experts[].expert_id':
+        name: 'experts[].expert_id'
+        description: 'The <code>id</code> of an existing record in the users table.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      'experts[].date':
+        name: 'experts[].date'
+        description: "Le champ value n'est pas une date valide."
+        required: false
+        example: '2025-08-04T00:17:24'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      'experts[].observation':
+        name: 'experts[].observation'
+        description: ''
+        required: false
+        example: iste
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+    cleanBodyParameters:
+      client_id: in
+      vehicle_id: laboriosam
+      vehicle_mileage: 2579145.7428088
+      assignment_type_id: modi
+      expertise_type_id: et
+      document_transmitted_id:
+        - a
+      policy_number: voluptatem
+      claim_number: corrupti
+      claim_date: '2025-08-04T00:17:24'
+      claim_ends_at: '2025-08-04T00:17:24'
+      expertise_date: '2025-08-04T00:17:24'
+      expertise_place: nobis
+      received_at: '2025-08-04T00:17:24'
+      administrator: cumque
+      circumstance: sint
+      damage_declared: totam
+      observation: ea
+      experts:
+        -
+          date: '2025-08-04T00:17:24'
+          observation: iste
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 4vcEg5hZf6D31ae6badVP8k'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/v1/assignments/create-work-sheet/{assignment}'
+    metadata:
+      groupName: 'Gestion des dossiers'
+      groupDescription: |-
+
+        APIs pour la gestion des dossiers
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Créer une fiche de travaux'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      assignment:
+        name: assignment
+        description: ''
+        required: true
+        example: dolore
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      assignment: dolore
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer cVebPfZDgEv3h1d6ak4658a'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/v1/assignments/add-work-sheet-photo/{assignment}'
+    metadata:
+      groupName: 'Gestion des dossiers'
+      groupDescription: |-
+
+        APIs pour la gestion des dossiers
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Ajouter une photo à la fiche de travaux'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      assignment:
+        name: assignment
+        description: ''
+        required: true
+        example: odit
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      assignment: odit
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 1hdD38akfEcg4Zb5v6VePa6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/assignments/calculate
+    metadata:
+      groupName: 'Gestion des dossiers'
+      groupDescription: |-
+
+        APIs pour la gestion des dossiers
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Calculer un dossier'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      assignment_id:
+        name: assignment_id
+        description: 'The <code>id</code> of an existing record in the assignments table.'
+        required: true
+        example: sint
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      vehicle_id:
+        name: vehicle_id
+        description: 'The <code>id</code> of an existing record in the vehicles table.'
+        required: true
+        example: nihil
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      expertise_date:
+        name: expertise_date
+        description: "Le champ value n'est pas une date valide. Le champ value doit être une date antérieure au <code>tomorrow</code>."
+        required: true
+        example: '2004-10-22'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      instructions:
+        name: instructions
+        description: ''
+        required: false
+        example: velit
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      market_incidence_rate:
+        name: market_incidence_rate
+        description: ''
+        required: false
+        example: 8.46
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      repairer_id:
+        name: repairer_id
+        description: 'The <code>id</code> of an existing record in the entities table.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      general_state_id:
+        name: general_state_id
+        description: 'The <code>id</code> of an existing record in the general_states table.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      claim_nature_id:
+        name: claim_nature_id
+        description: 'The <code>id</code> of an existing record in the claim_natures table.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      technical_conclusion_id:
+        name: technical_conclusion_id
+        description: 'The <code>id</code> of an existing record in the technical_conclusions table.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      seen_before_work_date:
+        name: seen_before_work_date
+        description: "Le champ value n'est pas une date valide."
+        required: false
+        example: '2025-08-04T00:17:24'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      seen_during_work_date:
+        name: seen_during_work_date
+        description: "Le champ value n'est pas une date valide."
+        required: false
+        example: '2025-08-04T00:17:24'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      seen_after_work_date:
+        name: seen_after_work_date
+        description: "Le champ value n'est pas une date valide."
+        required: false
+        example: '2025-08-04T00:17:24'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      contact_date:
+        name: contact_date
+        description: "Le champ value n'est pas une date valide."
+        required: false
+        example: '2025-08-04T00:17:24'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      expertise_place:
+        name: expertise_place
+        description: ''
+        required: false
+        example: veniam
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      assured_value:
+        name: assured_value
+        description: ''
+        required: false
+        example: 29780281.866747
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      salvage_value:
+        name: salvage_value
+        description: ''
+        required: false
+        example: 12019.2747195
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      work_duration:
+        name: work_duration
+        description: ''
+        required: false
+        example: eveniet
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      expert_remark:
+        name: expert_remark
+        description: ''
+        required: false
+        example: dolorem
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      new_market_value:
+        name: new_market_value
+        description: ''
+        required: false
+        example: 0.0
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      vehicle_new_market_value:
+        name: vehicle_new_market_value
+        description: ''
+        required: false
+        example: 7596.093426855
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      vehicle_new_market_value_option:
+        name: vehicle_new_market_value_option
+        description: ''
+        required: false
+        example: quo
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      ascertainments:
+        name: ascertainments
+        description: ''
+        required: false
+        example: null
+        type: 'object[]'
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      shocks:
+        name: shocks
+        description: ''
+        required: false
+        example: null
+        type: 'object[]'
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      other_costs:
+        name: other_costs
+        description: ''
+        required: false
+        example: null
+        type: 'object[]'
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      'ascertainments[].ascertainment_type_id':
+        name: 'ascertainments[].ascertainment_type_id'
+        description: 'The <code>id</code> of an existing record in the ascertainment_types table.'
+        required: true
+        example: veniam
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'ascertainments[].very_good':
+        name: 'ascertainments[].very_good'
+        description: ''
+        required: true
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'ascertainments[].good':
+        name: 'ascertainments[].good'
+        description: ''
+        required: true
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'ascertainments[].acceptable':
+        name: 'ascertainments[].acceptable'
+        description: ''
+        required: true
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'ascertainments[].less_good':
+        name: 'ascertainments[].less_good'
+        description: ''
+        required: true
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'ascertainments[].bad':
+        name: 'ascertainments[].bad'
+        description: ''
+        required: true
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'ascertainments[].very_bad':
+        name: 'ascertainments[].very_bad'
+        description: ''
+        required: true
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'ascertainments[].comment':
+        name: 'ascertainments[].comment'
+        description: ''
+        required: false
+        example: praesentium
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      'shocks[].shock_point_id':
+        name: 'shocks[].shock_point_id'
+        description: 'The <code>id</code> of an existing record in the shock_points table.'
+        required: true
+        example: est
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].shock_works':
+        name: 'shocks[].shock_works'
+        description: ''
+        required: false
+        example: null
+        type: 'object[]'
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      'shocks[].shock_works[].supply_id':
+        name: 'shocks[].shock_works[].supply_id'
+        description: 'The <code>id</code> of an existing record in the supplies table.'
+        required: true
+        example: tenetur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].shock_works[].disassembly':
+        name: 'shocks[].shock_works[].disassembly'
+        description: ''
+        required: true
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].shock_works[].replacement':
+        name: 'shocks[].shock_works[].replacement'
+        description: ''
+        required: true
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].shock_works[].repair':
+        name: 'shocks[].shock_works[].repair'
+        description: ''
+        required: true
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].shock_works[].paint':
+        name: 'shocks[].shock_works[].paint'
+        description: ''
+        required: true
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].shock_works[].control':
+        name: 'shocks[].shock_works[].control'
+        description: ''
+        required: true
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].shock_works[].comment':
+        name: 'shocks[].shock_works[].comment'
+        description: ''
+        required: false
+        example: ea
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      'shocks[].shock_works[].obsolescence_rate':
+        name: 'shocks[].shock_works[].obsolescence_rate'
+        description: ''
+        required: true
+        example: 131698.34958
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].shock_works[].recovery_amount':
+        name: 'shocks[].shock_works[].recovery_amount'
+        description: ''
+        required: true
+        example: 33828.88788273
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].shock_works[].discount':
+        name: 'shocks[].shock_works[].discount'
+        description: ''
+        required: true
+        example: 384454854.7
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].shock_works[].amount':
+        name: 'shocks[].shock_works[].amount'
+        description: ''
+        required: true
+        example: 18593.783
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].paint_type_id':
+        name: 'shocks[].paint_type_id'
+        description: 'The <code>id</code> of an existing record in the paint_types table.'
+        required: true
+        example: iste
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].hourly_rate_id':
+        name: 'shocks[].hourly_rate_id'
+        description: 'The <code>id</code> of an existing record in the hourly_rates table.'
+        required: true
+        example: laboriosam
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].with_tax':
+        name: 'shocks[].with_tax'
+        description: ''
+        required: true
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].workforces':
+        name: 'shocks[].workforces'
+        description: ''
+        required: false
+        example: null
+        type: 'object[]'
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      'shocks[].workforces[].workforce_type_id':
+        name: 'shocks[].workforces[].workforce_type_id'
+        description: 'The <code>id</code> of an existing record in the workforce_types table.'
+        required: true
+        example: est
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].workforces[].nb_hours':
+        name: 'shocks[].workforces[].nb_hours'
+        description: ''
+        required: true
+        example: 11506138.0
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].workforces[].discount':
+        name: 'shocks[].workforces[].discount'
+        description: ''
+        required: true
+        example: 79.3
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].workforces[].all_paint':
+        name: 'shocks[].workforces[].all_paint'
+        description: ''
+        required: false
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      'other_costs[].other_cost_type_id':
+        name: 'other_costs[].other_cost_type_id'
+        description: 'The <code>id</code> of an existing record in the other_cost_types table.'
+        required: true
+        example: a
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'other_costs[].amount':
+        name: 'other_costs[].amount'
+        description: ''
+        required: true
+        example: 20.42075021
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      assignment_id: sint
+      vehicle_id: nihil
+      expertise_date: '2004-10-22'
+      instructions: velit
+      market_incidence_rate: 8.46
+      seen_before_work_date: '2025-08-04T00:17:24'
+      seen_during_work_date: '2025-08-04T00:17:24'
+      seen_after_work_date: '2025-08-04T00:17:24'
+      contact_date: '2025-08-04T00:17:24'
+      expertise_place: veniam
+      assured_value: 29780281.866747
+      salvage_value: 12019.2747195
+      work_duration: eveniet
+      expert_remark: dolorem
+      new_market_value: 0.0
+      vehicle_new_market_value: 7596.093426855
+      vehicle_new_market_value_option: quo
+      ascertainments:
+        -
+          ascertainment_type_id: veniam
+          very_good: true
+          good: true
+          acceptable: true
+          less_good: true
+          bad: true
+          very_bad: false
+          comment: praesentium
+      shocks:
+        -
+          shock_point_id: est
+          shock_works:
+            -
+              supply_id: tenetur
+              disassembly: true
+              replacement: true
+              repair: false
+              paint: true
+              control: true
+              comment: ea
+              obsolescence_rate: 131698.34958
+              recovery_amount: 33828.88788273
+              discount: 384454854.7
+              amount: 18593.783
+          paint_type_id: iste
+          hourly_rate_id: laboriosam
+          with_tax: true
+          workforces:
+            -
+              workforce_type_id: est
+              nb_hours: 11506138.0
+              discount: 79.3
+              all_paint: false
+      other_costs:
+        -
+          other_cost_type_id: a
+          amount: 20.42075021
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer E1fk346Dhc8aZb6vP5Vgead'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/assignments/calculate-evaluation
+    metadata:
+      groupName: 'Gestion des dossiers'
+      groupDescription: |-
+
+        APIs pour la gestion des dossiers
+      subgroup: ''
+      subgroupDescription: ''
+      title: "Calcul d'évaluation d'un dossier"
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      vehicle_id:
+        name: vehicle_id
+        description: 'The <code>id</code> of an existing record in the vehicles table.'
+        required: true
+        example: architecto
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      expertise_date:
+        name: expertise_date
+        description: "Le champ value n'est pas une date valide. Le champ value doit être une date antérieure au <code>tomorrow</code>."
+        required: true
+        example: '2008-10-28'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      market_incidence_rate:
+        name: market_incidence_rate
+        description: ''
+        required: true
+        example: 3373.6047322
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      ascertainments:
+        name: ascertainments
+        description: ''
+        required: false
+        example: null
+        type: 'object[]'
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      shocks:
+        name: shocks
+        description: ''
+        required: false
+        example: null
+        type: 'object[]'
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      other_costs:
+        name: other_costs
+        description: ''
+        required: false
+        example: null
+        type: 'object[]'
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      'ascertainments[].ascertainment_type_id':
+        name: 'ascertainments[].ascertainment_type_id'
+        description: 'The <code>id</code> of an existing record in the ascertainment_types table.'
+        required: true
+        example: vero
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'ascertainments[].very_good':
+        name: 'ascertainments[].very_good'
+        description: ''
+        required: true
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'ascertainments[].good':
+        name: 'ascertainments[].good'
+        description: ''
+        required: true
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'ascertainments[].acceptable':
+        name: 'ascertainments[].acceptable'
+        description: ''
+        required: true
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'ascertainments[].less_good':
+        name: 'ascertainments[].less_good'
+        description: ''
+        required: true
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'ascertainments[].bad':
+        name: 'ascertainments[].bad'
+        description: ''
+        required: true
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'ascertainments[].very_bad':
+        name: 'ascertainments[].very_bad'
+        description: ''
+        required: true
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'ascertainments[].comment':
+        name: 'ascertainments[].comment'
+        description: ''
+        required: false
+        example: nostrum
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      'shocks[].shock_works':
+        name: 'shocks[].shock_works'
+        description: ''
+        required: false
+        example: null
+        type: 'object[]'
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      'shocks[].shock_works[].supply_id':
+        name: 'shocks[].shock_works[].supply_id'
+        description: 'The <code>id</code> of an existing record in the supplies table.'
+        required: true
+        example: alias
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].shock_works[].replacement':
+        name: 'shocks[].shock_works[].replacement'
+        description: ''
+        required: true
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].shock_works[].repair':
+        name: 'shocks[].shock_works[].repair'
+        description: ''
+        required: true
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].shock_works[].paint':
+        name: 'shocks[].shock_works[].paint'
+        description: ''
+        required: true
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].shock_works[].control':
+        name: 'shocks[].shock_works[].control'
+        description: ''
+        required: true
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].shock_works[].comment':
+        name: 'shocks[].shock_works[].comment'
+        description: ''
+        required: false
+        example: temporibus
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      'shocks[].shock_works[].amount':
+        name: 'shocks[].shock_works[].amount'
+        description: ''
+        required: true
+        example: 130.252984
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].workforces':
+        name: 'shocks[].workforces'
+        description: ''
+        required: false
+        example: null
+        type: 'object[]'
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      'shocks[].workforces[].workforce_type_id':
+        name: 'shocks[].workforces[].workforce_type_id'
+        description: 'The <code>id</code> of an existing record in the workforce_types table.'
+        required: true
+        example: illo
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].workforces[].amount':
+        name: 'shocks[].workforces[].amount'
+        description: ''
+        required: true
+        example: 430744273.4567
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'other_costs[].other_cost_type_id':
+        name: 'other_costs[].other_cost_type_id'
+        description: 'The <code>id</code> of an existing record in the other_cost_types table.'
+        required: true
+        example: eum
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'other_costs[].amount':
+        name: 'other_costs[].amount'
+        description: ''
+        required: true
+        example: 6638526.179
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      vehicle_id: architecto
+      expertise_date: '2008-10-28'
+      market_incidence_rate: 3373.6047322
+      ascertainments:
+        -
+          ascertainment_type_id: vero
+          very_good: false
+          good: false
+          acceptable: true
+          less_good: false
+          bad: false
+          very_bad: false
+          comment: nostrum
+      shocks:
+        -
+          shock_works:
+            -
+              supply_id: alias
+              replacement: true
+              repair: true
+              paint: false
+              control: false
+              comment: temporibus
+              amount: 130.252984
+          workforces:
+            -
+              workforce_type_id: illo
+              amount: 430744273.4567
+      other_costs:
+        -
+          other_cost_type_id: eum
+          amount: 6638526.179
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer E31eDZbVd56Pf8g6ha4kvca'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/assignments/realize/{assignment}'
+    metadata:
+      groupName: 'Gestion des dossiers'
+      groupDescription: |-
+
+        APIs pour la gestion des dossiers
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Réaliser un dossier'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      assignment:
+        name: assignment
+        description: ''
+        required: true
+        example: adipisci
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      assignment: adipisci
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      expertise_date:
+        name: expertise_date
+        description: "Le champ value n'est pas une date valide."
+        required: false
+        example: '2025-08-04T00:17:24'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      expertise_place:
+        name: expertise_place
+        description: ''
+        required: false
+        example: quaerat
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      point_noted:
+        name: point_noted
+        description: ''
+        required: false
+        example: sunt
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      directed_by:
+        name: directed_by
+        description: 'The <code>id</code> of an existing record in the users table.'
+        required: true
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      repairer_id:
+        name: repairer_id
+        description: 'The <code>id</code> of an existing record in the entities table.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+    cleanBodyParameters:
+      expertise_date: '2025-08-04T00:17:24'
+      expertise_place: quaerat
+      point_noted: sunt
+      directed_by: consequatur
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 4ZbVc86edDEg3ava56fhkP1'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/assignments/edit/{assignment}'
+    metadata:
+      groupName: 'Gestion des dossiers'
+      groupDescription: |-
+
+        APIs pour la gestion des dossiers
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Rédiger un dossier'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      assignment:
+        name: assignment
+        description: ''
+        required: true
+        example: tenetur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      assignment: tenetur
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      repairer_id:
+        name: repairer_id
+        description: 'The <code>id</code> of an existing record in the entities table.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      general_state_id:
+        name: general_state_id
+        description: 'The <code>id</code> of an existing record in the general_states table.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      claim_nature_id:
+        name: claim_nature_id
+        description: 'The <code>id</code> of an existing record in the claim_natures table.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      technical_conclusion_id:
+        name: technical_conclusion_id
+        description: 'The <code>id</code> of an existing record in the technical_conclusions table.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      seen_before_work_date:
+        name: seen_before_work_date
+        description: "Le champ value n'est pas une date valide."
+        required: false
+        example: '2025-08-04T00:17:24'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      seen_during_work_date:
+        name: seen_during_work_date
+        description: "Le champ value n'est pas une date valide."
+        required: false
+        example: '2025-08-04T00:17:24'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      seen_after_work_date:
+        name: seen_after_work_date
+        description: "Le champ value n'est pas une date valide."
+        required: false
+        example: '2025-08-04T00:17:24'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      contact_date:
+        name: contact_date
+        description: "Le champ value n'est pas une date valide."
+        required: false
+        example: '2025-08-04T00:17:24'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      expertise_place:
+        name: expertise_place
+        description: ''
+        required: false
+        example: qui
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      assured_value:
+        name: assured_value
+        description: ''
+        required: false
+        example: 51747172.361
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      salvage_value:
+        name: salvage_value
+        description: ''
+        required: false
+        example: 133862510.50264
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      work_duration:
+        name: work_duration
+        description: ''
+        required: false
+        example: et
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      report_remark_id:
+        name: report_remark_id
+        description: 'The <code>id</code> of an existing record in the remarks table.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      expert_report_remark:
+        name: expert_report_remark
+        description: ''
+        required: false
+        example: saepe
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      vehicle_new_market_value_option:
+        name: vehicle_new_market_value_option
+        description: ''
+        required: false
+        example: sint
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      new_market_value:
+        name: new_market_value
+        description: ''
+        required: false
+        example: 19.507547064
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      depreciation_rate:
+        name: depreciation_rate
+        description: ''
+        required: false
+        example: 20799.3885611
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      market_value:
+        name: market_value
+        description: ''
+        required: false
+        example: 17945.4741
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      instructions:
+        name: instructions
+        description: ''
+        required: false
+        example: eos
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      market_incidence_rate:
+        name: market_incidence_rate
+        description: ''
+        required: false
+        example: 1812543.4807
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      ascertainments:
+        name: ascertainments
+        description: ''
+        required: false
+        example: null
+        type: 'object[]'
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      shocks:
+        name: shocks
+        description: ''
+        required: true
+        example:
+          - []
+        type: 'object[]'
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      other_costs:
+        name: other_costs
+        description: ''
+        required: false
+        example: null
+        type: 'object[]'
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      'ascertainments[].ascertainment_type_id':
+        name: 'ascertainments[].ascertainment_type_id'
+        description: 'The <code>id</code> of an existing record in the ascertainment_types table.'
+        required: true
+        example: quam
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'ascertainments[].very_good':
+        name: 'ascertainments[].very_good'
+        description: ''
+        required: true
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'ascertainments[].good':
+        name: 'ascertainments[].good'
+        description: ''
+        required: true
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'ascertainments[].acceptable':
+        name: 'ascertainments[].acceptable'
+        description: ''
+        required: true
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'ascertainments[].less_good':
+        name: 'ascertainments[].less_good'
+        description: ''
+        required: true
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'ascertainments[].bad':
+        name: 'ascertainments[].bad'
+        description: ''
+        required: true
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'ascertainments[].very_bad':
+        name: 'ascertainments[].very_bad'
+        description: ''
+        required: true
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'ascertainments[].comment':
+        name: 'ascertainments[].comment'
+        description: ''
+        required: false
+        example: ipsa
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      'shocks[].shock_point_id':
+        name: 'shocks[].shock_point_id'
+        description: 'The <code>id</code> of an existing record in the shock_points table.'
+        required: true
+        example: possimus
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].shock_works':
+        name: 'shocks[].shock_works'
+        description: ''
+        required: false
+        example: null
+        type: 'object[]'
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      'shocks[].shock_works[].supply_id':
+        name: 'shocks[].shock_works[].supply_id'
+        description: 'The <code>id</code> of an existing record in the supplies table.'
+        required: true
+        example: commodi
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].shock_works[].disassembly':
+        name: 'shocks[].shock_works[].disassembly'
+        description: ''
+        required: true
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].shock_works[].replacement':
+        name: 'shocks[].shock_works[].replacement'
+        description: ''
+        required: true
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].shock_works[].repair':
+        name: 'shocks[].shock_works[].repair'
+        description: ''
+        required: true
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].shock_works[].paint':
+        name: 'shocks[].shock_works[].paint'
+        description: ''
+        required: true
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].shock_works[].control':
+        name: 'shocks[].shock_works[].control'
+        description: ''
+        required: true
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].shock_works[].obsolescence':
+        name: 'shocks[].shock_works[].obsolescence'
+        description: ''
+        required: false
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      'shocks[].shock_works[].comment':
+        name: 'shocks[].shock_works[].comment'
+        description: ''
+        required: false
+        example: nostrum
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      'shocks[].shock_works[].obsolescence_rate':
+        name: 'shocks[].shock_works[].obsolescence_rate'
+        description: ''
+        required: true
+        example: 7455879.3024993
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].shock_works[].recovery_amount':
+        name: 'shocks[].shock_works[].recovery_amount'
+        description: ''
+        required: true
+        example: 27186.1
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].shock_works[].discount':
+        name: 'shocks[].shock_works[].discount'
+        description: ''
+        required: true
+        example: 127.64803
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].shock_works[].amount':
+        name: 'shocks[].shock_works[].amount'
+        description: ''
+        required: true
+        example: 1545494.5556
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].paint_type_id':
+        name: 'shocks[].paint_type_id'
+        description: 'The <code>id</code> of an existing record in the paint_types table.'
+        required: true
+        example: natus
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].hourly_rate_id':
+        name: 'shocks[].hourly_rate_id'
+        description: 'The <code>id</code> of an existing record in the hourly_rates table.'
+        required: true
+        example: distinctio
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].with_tax':
+        name: 'shocks[].with_tax'
+        description: ''
+        required: true
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].workforces':
+        name: 'shocks[].workforces'
+        description: ''
+        required: false
+        example: null
+        type: 'object[]'
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      'shocks[].workforces[].workforce_type_id':
+        name: 'shocks[].workforces[].workforce_type_id'
+        description: 'The <code>id</code> of an existing record in the workforce_types table.'
+        required: true
+        example: mollitia
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].workforces[].nb_hours':
+        name: 'shocks[].workforces[].nb_hours'
+        description: ''
+        required: true
+        example: 43531542.0
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].workforces[].discount':
+        name: 'shocks[].workforces[].discount'
+        description: ''
+        required: true
+        example: 305696.4888869
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].workforces[].all_paint':
+        name: 'shocks[].workforces[].all_paint'
+        description: ''
+        required: false
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      'other_costs[].other_cost_type_id':
+        name: 'other_costs[].other_cost_type_id'
+        description: 'The <code>id</code> of an existing record in the other_cost_types table.'
+        required: true
+        example: voluptas
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'other_costs[].amount':
+        name: 'other_costs[].amount'
+        description: ''
+        required: true
+        example: 774346919.44671
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      seen_before_work_date: '2025-08-04T00:17:24'
+      seen_during_work_date: '2025-08-04T00:17:24'
+      seen_after_work_date: '2025-08-04T00:17:24'
+      contact_date: '2025-08-04T00:17:24'
+      expertise_place: qui
+      assured_value: 51747172.361
+      salvage_value: 133862510.50264
+      work_duration: et
+      expert_report_remark: saepe
+      vehicle_new_market_value_option: sint
+      new_market_value: 19.507547064
+      depreciation_rate: 20799.3885611
+      market_value: 17945.4741
+      instructions: eos
+      market_incidence_rate: 1812543.4807
+      shocks:
+        -
+          shock_point_id: possimus
+          shock_works:
+            -
+              supply_id: commodi
+              disassembly: true
+              replacement: false
+              repair: false
+              paint: true
+              control: false
+              obsolescence: false
+              comment: nostrum
+              obsolescence_rate: 7455879.3024993
+              recovery_amount: 27186.1
+              discount: 127.64803
+              amount: 1545494.5556
+          paint_type_id: natus
+          hourly_rate_id: distinctio
+          with_tax: false
+          workforces:
+            -
+              workforce_type_id: mollitia
+              nb_hours: 43531542.0
+              discount: 305696.4888869
+              all_paint: false
+      ascertainments:
+        -
+          ascertainment_type_id: quam
+          very_good: true
+          good: false
+          acceptable: false
+          less_good: true
+          bad: false
+          very_bad: false
+          comment: ipsa
+      other_costs:
+        -
+          other_cost_type_id: voluptas
+          amount: 774346919.44671
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 1f4d38Dhke6gVZb6a5acEvP'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/assignments/evaluate/{assignment}'
+    metadata:
+      groupName: 'Gestion des dossiers'
+      groupDescription: |-
+
+        APIs pour la gestion des dossiers
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Évaluer un dossier'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      assignment:
+        name: assignment
+        description: ''
+        required: true
+        example: dolores
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      assignment: dolores
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      instructions:
+        name: instructions
+        description: ''
+        required: false
+        example: id
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      market_incidence_rate:
+        name: market_incidence_rate
+        description: ''
+        required: true
+        example: 26.6
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      ascertainments:
+        name: ascertainments
+        description: ''
+        required: false
+        example: null
+        type: 'object[]'
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      shocks:
+        name: shocks
+        description: ''
+        required: true
+        example:
+          - []
+        type: 'object[]'
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      other_costs:
+        name: other_costs
+        description: ''
+        required: false
+        example: null
+        type: 'object[]'
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      'ascertainments[].ascertainment_type_id':
+        name: 'ascertainments[].ascertainment_type_id'
+        description: 'The <code>id</code> of an existing record in the ascertainment_types table.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      'ascertainments[].very_good':
+        name: 'ascertainments[].very_good'
+        description: ''
+        required: false
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      'ascertainments[].good':
+        name: 'ascertainments[].good'
+        description: ''
+        required: false
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      'ascertainments[].acceptable':
+        name: 'ascertainments[].acceptable'
+        description: ''
+        required: false
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      'ascertainments[].less_good':
+        name: 'ascertainments[].less_good'
+        description: ''
+        required: false
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      'ascertainments[].bad':
+        name: 'ascertainments[].bad'
+        description: ''
+        required: false
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      'ascertainments[].very_bad':
+        name: 'ascertainments[].very_bad'
+        description: ''
+        required: false
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      'ascertainments[].comment':
+        name: 'ascertainments[].comment'
+        description: ''
+        required: false
+        example: sed
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      'shocks[].shock_point_id':
+        name: 'shocks[].shock_point_id'
+        description: 'The <code>id</code> of an existing record in the shock_points table.'
+        required: true
+        example: necessitatibus
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].shock_works':
+        name: 'shocks[].shock_works'
+        description: ''
+        required: false
+        example: null
+        type: 'object[]'
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      'shocks[].shock_works[].supply_id':
+        name: 'shocks[].shock_works[].supply_id'
+        description: 'The <code>id</code> of an existing record in the supplies table.'
+        required: true
+        example: qui
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].shock_works[].replacement':
+        name: 'shocks[].shock_works[].replacement'
+        description: ''
+        required: true
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].shock_works[].repair':
+        name: 'shocks[].shock_works[].repair'
+        description: ''
+        required: true
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].shock_works[].paint':
+        name: 'shocks[].shock_works[].paint'
+        description: ''
+        required: true
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].shock_works[].control':
+        name: 'shocks[].shock_works[].control'
+        description: ''
+        required: true
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].shock_works[].comment':
+        name: 'shocks[].shock_works[].comment'
+        description: ''
+        required: false
+        example: molestias
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      'shocks[].shock_works[].obsolescence_rate':
+        name: 'shocks[].shock_works[].obsolescence_rate'
+        description: ''
+        required: true
+        example: 1665.46178902
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].shock_works[].recovery_amount':
+        name: 'shocks[].shock_works[].recovery_amount'
+        description: ''
+        required: true
+        example: 93340073.11
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].shock_works[].amount':
+        name: 'shocks[].shock_works[].amount'
+        description: ''
+        required: true
+        example: 38898821.8
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].workforces':
+        name: 'shocks[].workforces'
+        description: ''
+        required: false
+        example: null
+        type: 'object[]'
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      'shocks[].workforces[].workforce_type_id':
+        name: 'shocks[].workforces[].workforce_type_id'
+        description: 'The <code>id</code> of an existing record in the workforce_types table.'
+        required: true
+        example: suscipit
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].workforces[].amount':
+        name: 'shocks[].workforces[].amount'
+        description: ''
+        required: true
+        example: 1525279.834995
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'other_costs[].other_cost_type_id':
+        name: 'other_costs[].other_cost_type_id'
+        description: 'The <code>id</code> of an existing record in the other_cost_types table.'
+        required: true
+        example: et
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'other_costs[].amount':
+        name: 'other_costs[].amount'
+        description: ''
+        required: true
+        example: 0.36
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      instructions: id
+      market_incidence_rate: 26.6
+      shocks:
+        -
+          shock_point_id: necessitatibus
+          shock_works:
+            -
+              supply_id: qui
+              replacement: false
+              repair: false
+              paint: false
+              control: false
+              comment: molestias
+              obsolescence_rate: 1665.46178902
+              recovery_amount: 93340073.11
+              amount: 38898821.8
+          workforces:
+            -
+              workforce_type_id: suscipit
+              amount: 1525279.834995
+      ascertainments:
+        -
+          very_good: false
+          good: false
+          acceptable: false
+          less_good: true
+          bad: true
+          very_bad: true
+          comment: sed
+      other_costs:
+        -
+          other_cost_type_id: et
+          amount: 0.36
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6E543bgcvaeDZPfh8kda16V'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/assignments/update/{assignment}'
+    metadata:
+      groupName: 'Gestion des dossiers'
+      groupDescription: |-
+
+        APIs pour la gestion des dossiers
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Mettre à jour un dossier ouvert'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      assignment:
+        name: assignment
+        description: ''
+        required: true
+        example: ex
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      assignment: ex
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      client_id:
+        name: client_id
+        description: 'The <code>id</code> of an existing record in the clients table.'
+        required: true
+        example: voluptate
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      vehicle_id:
+        name: vehicle_id
+        description: 'The <code>id</code> of an existing record in the vehicles table.'
+        required: true
+        example: omnis
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      vehicle_mileage:
+        name: vehicle_mileage
+        description: ''
+        required: false
+        example: 68744.320003557
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      insurer_id:
+        name: insurer_id
+        description: 'The <code>id</code> of an existing record in the entities table.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      broker_id:
+        name: broker_id
+        description: 'The <code>id</code> of an existing record in the entities table.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      repairer_id:
+        name: repairer_id
+        description: 'The <code>id</code> of an existing record in the entities table.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      assignment_type_id:
+        name: assignment_type_id
+        description: 'The <code>id</code> of an existing record in the assignment_types table.'
+        required: true
+        example: magni
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      expertise_type_id:
+        name: expertise_type_id
+        description: 'The <code>id</code> of an existing record in the expertise_types table.'
+        required: true
+        example: eum
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      document_transmitted_id:
+        name: document_transmitted_id
+        description: 'The <code>id</code> of an existing record in the document_transmitteds table.'
+        required: true
+        example:
+          - placeat
+        type: 'string[]'
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      policy_number:
+        name: policy_number
+        description: ''
+        required: false
+        example: eos
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      claim_number:
+        name: claim_number
+        description: ''
+        required: false
+        example: corrupti
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      claim_date:
+        name: claim_date
+        description: "Le champ value n'est pas une date valide."
+        required: false
+        example: '2025-08-04T00:17:24'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      claim_ends_at:
+        name: claim_ends_at
+        description: "Le champ value n'est pas une date valide."
+        required: false
+        example: '2025-08-04T00:17:24'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      expertise_date:
+        name: expertise_date
+        description: "Le champ value n'est pas une date valide."
+        required: false
+        example: '2025-08-04T00:17:24'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      expertise_place:
+        name: expertise_place
+        description: ''
+        required: false
+        example: corporis
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      received_at:
+        name: received_at
+        description: "Le champ value n'est pas une date valide."
+        required: false
+        example: '2025-08-04T00:17:24'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      administrator:
+        name: administrator
+        description: ''
+        required: false
+        example: aut
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      circumstance:
+        name: circumstance
+        description: ''
+        required: false
+        example: ut
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      damage_declared:
+        name: damage_declared
+        description: ''
+        required: false
+        example: illo
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      observation:
+        name: observation
+        description: ''
+        required: false
+        example: voluptas
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      experts:
+        name: experts
+        description: ''
+        required: false
+        example: null
+        type: 'object[]'
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      'experts[].expert_id':
+        name: 'experts[].expert_id'
+        description: 'The <code>id</code> of an existing record in the users table.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      'experts[].date':
+        name: 'experts[].date'
+        description: "Le champ value n'est pas une date valide."
+        required: false
+        example: '2025-08-04T00:17:24'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      'experts[].observation':
+        name: 'experts[].observation'
+        description: ''
+        required: false
+        example: atque
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+    cleanBodyParameters:
+      client_id: voluptate
+      vehicle_id: omnis
+      vehicle_mileage: 68744.320003557
+      assignment_type_id: magni
+      expertise_type_id: eum
+      document_transmitted_id:
+        - placeat
+      policy_number: eos
+      claim_number: corrupti
+      claim_date: '2025-08-04T00:17:24'
+      claim_ends_at: '2025-08-04T00:17:24'
+      expertise_date: '2025-08-04T00:17:24'
+      expertise_place: corporis
+      received_at: '2025-08-04T00:17:24'
+      administrator: aut
+      circumstance: ut
+      damage_declared: illo
+      observation: voluptas
+      experts:
+        -
+          date: '2025-08-04T00:17:24'
+          observation: atque
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 568Zkevd3hfPcEaV64gDba1'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/assignments/update-realize/{assignment}'
+    metadata:
+      groupName: 'Gestion des dossiers'
+      groupDescription: |-
+
+        APIs pour la gestion des dossiers
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Mettre à jour un dossier réalisé'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      assignment:
+        name: assignment
+        description: ''
+        required: true
+        example: voluptatem
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      assignment: voluptatem
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      repairer_id:
+        name: repairer_id
+        description: 'The <code>id</code> of an existing record in the entities table.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      directed_by:
+        name: directed_by
+        description: 'The <code>id</code> of an existing record in the users table.'
+        required: true
+        example: dolores
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      expertise_date:
+        name: expertise_date
+        description: "Le champ value n'est pas une date valide."
+        required: false
+        example: '2025-08-04T00:17:24'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      expertise_place:
+        name: expertise_place
+        description: ''
+        required: false
+        example: totam
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      point_noted:
+        name: point_noted
+        description: ''
+        required: false
+        example: quas
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+    cleanBodyParameters:
+      directed_by: dolores
+      expertise_date: '2025-08-04T00:17:24'
+      expertise_place: totam
+      point_noted: quas
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer gv6a13645bZEPdkhaVcfD8e'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/assignments/update-edit/{assignment}'
+    metadata:
+      groupName: 'Gestion des dossiers'
+      groupDescription: |-
+
+        APIs pour la gestion des dossiers
+      subgroup: ''
+      subgroupDescription: ''
+      title: "Mettre à jour un dossier les informations d'un dossier redirigé"
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      assignment:
+        name: assignment
+        description: ''
+        required: true
+        example: natus
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      assignment: natus
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      repairer_id:
+        name: repairer_id
+        description: 'The <code>id</code> of an existing record in the entities table.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      general_state_id:
+        name: general_state_id
+        description: 'The <code>id</code> of an existing record in the general_states table.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      claim_nature_id:
+        name: claim_nature_id
+        description: 'The <code>id</code> of an existing record in the claim_natures table.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      technical_conclusion_id:
+        name: technical_conclusion_id
+        description: 'The <code>id</code> of an existing record in the technical_conclusions table.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      seen_before_work_date:
+        name: seen_before_work_date
+        description: "Le champ value n'est pas une date valide."
+        required: false
+        example: '2025-08-04T00:17:24'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      seen_during_work_date:
+        name: seen_during_work_date
+        description: "Le champ value n'est pas une date valide."
+        required: false
+        example: '2025-08-04T00:17:24'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      seen_after_work_date:
+        name: seen_after_work_date
+        description: "Le champ value n'est pas une date valide."
+        required: false
+        example: '2025-08-04T00:17:24'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      contact_date:
+        name: contact_date
+        description: "Le champ value n'est pas une date valide."
+        required: false
+        example: '2025-08-04T00:17:24'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      expertise_place:
+        name: expertise_place
+        description: ''
+        required: false
+        example: aut
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      assured_value:
+        name: assured_value
+        description: ''
+        required: false
+        example: 1739228.0
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      salvage_value:
+        name: salvage_value
+        description: ''
+        required: false
+        example: 72000123.411
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      work_duration:
+        name: work_duration
+        description: ''
+        required: false
+        example: ipsa
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      report_remark_id:
+        name: report_remark_id
+        description: 'The <code>id</code> of an existing record in the remarks table.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      expert_report_remark:
+        name: expert_report_remark
+        description: ''
+        required: false
+        example: suscipit
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      vehicle_new_market_value_option:
+        name: vehicle_new_market_value_option
+        description: ''
+        required: false
+        example: omnis
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      new_market_value:
+        name: new_market_value
+        description: ''
+        required: false
+        example: 25721.31698
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      depreciation_rate:
+        name: depreciation_rate
+        description: ''
+        required: false
+        example: 3.47524042
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      market_value:
+        name: market_value
+        description: ''
+        required: false
+        example: 6146316.33
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      instructions:
+        name: instructions
+        description: ''
+        required: false
+        example: praesentium
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      market_incidence_rate:
+        name: market_incidence_rate
+        description: ''
+        required: false
+        example: 43812.48264186
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+    cleanBodyParameters:
+      seen_before_work_date: '2025-08-04T00:17:24'
+      seen_during_work_date: '2025-08-04T00:17:24'
+      seen_after_work_date: '2025-08-04T00:17:24'
+      contact_date: '2025-08-04T00:17:24'
+      expertise_place: aut
+      assured_value: 1739228.0
+      salvage_value: 72000123.411
+      work_duration: ipsa
+      expert_report_remark: suscipit
+      vehicle_new_market_value_option: omnis
+      new_market_value: 25721.31698
+      depreciation_rate: 3.47524042
+      market_value: 6146316.33
+      instructions: praesentium
+      market_incidence_rate: 43812.48264186
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer akv6ah85EZ1dDc6V4gePb3f'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/assignments/validate/{assignment}'
+    metadata:
+      groupName: 'Gestion des dossiers'
+      groupDescription: |-
+
+        APIs pour la gestion des dossiers
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Valider un dossier'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      assignment:
+        name: assignment
+        description: ''
+        required: true
+        example: totam
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      assignment: totam
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer ahv8baeV153gPfc6k64EZDd'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/assignments/{id}'
+    metadata:
+      groupName: 'Gestion des dossiers'
+      groupDescription: |-
+
+        APIs pour la gestion des dossiers
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Afficher un dossier'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the assignment.'
+        required: true
+        example: eligendi
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      id: eligendi
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer ZaPhg5E6ec8a613fVdvDk4b'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/assignments/{assignment}/close'
+    metadata:
+      groupName: 'Gestion des dossiers'
+      groupDescription: |-
+
+        APIs pour la gestion des dossiers
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Clôturer un dossier'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      assignment:
+        name: assignment
+        description: 'The assignment.'
+        required: true
+        example: odit
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      assignment: odit
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer c6ehaZf8kD3a5g41bPv6dEV'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/assignments/{assignment}/cancel'
+    metadata:
+      groupName: 'Gestion des dossiers'
+      groupDescription: |-
+
+        APIs pour la gestion des dossiers
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Annuler un dossier'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      assignment:
+        name: assignment
+        description: 'The assignment.'
+        required: true
+        example: placeat
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      assignment: placeat
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 4g3Z66fchPdvabe5aDV1E8k'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/assignments/{assignment}/generate'
+    metadata:
+      groupName: 'Gestion des dossiers'
+      groupDescription: |-
+
+        APIs pour la gestion des dossiers
+      subgroup: ''
+      subgroupDescription: ''
+      title: "Générer une un rapport d'expertise"
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      assignment:
+        name: assignment
+        description: 'The assignment.'
+        required: true
+        example: voluptatem
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      assignment: voluptatem
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g1bkDV6PaZcE584vdh3efa'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/assignments/get/assignment-edition-time-to-expired
+    metadata:
+      groupName: 'Gestion des dossiers'
+      groupDescription: |-
+
+        APIs pour la gestion des dossiers
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Récupérer les dossiers dont la date de redaction est expirée (24 heures)'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 8aD4aZe56hVkcdv1fP6gbE3'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/assignments/get/assignment-recovery-time-to-expired
+    metadata:
+      groupName: 'Gestion des dossiers'
+      groupDescription: |-
+
+        APIs pour la gestion des dossiers
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Récupérer les dossiers dont la date de recouvrement est expirée (48 heures)'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer EaPf41e86Dg5hZdv3b6acVk'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/assignments/list/{start_date}/{end_date}'
+    metadata:
+      groupName: 'Gestion des dossiers'
+      groupDescription: |-
+
+        APIs pour la gestion des dossiers
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Liste des dossiers par période'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      start_date:
+        name: start_date
+        description: ''
+        required: true
+        example: voluptas
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      end_date:
+        name: end_date
+        description: ''
+        required: true
+        example: soluta
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      start_date: voluptas
+      end_date: soluta
+    queryParameters:
+      start_date:
+        name: start_date
+        description: 'La date de début de la période.'
+        required: false
+        example: minima
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      end_date:
+        name: end_date
+        description: 'La date de fin de la période.'
+        required: false
+        example: molestias
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanQueryParameters:
+      start_date: minima
+      end_date: molestias
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer E1kac68dePf6bD3gVh5Zv4a'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/assignments/export/{start_date}/{end_date}'
+    metadata:
+      groupName: 'Gestion des dossiers'
+      groupDescription: |-
+
+        APIs pour la gestion des dossiers
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Exporter les dossiers par période'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      start_date:
+        name: start_date
+        description: ''
+        required: true
+        example: similique
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      end_date:
+        name: end_date
+        description: ''
+        required: true
+        example: commodi
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      start_date: similique
+      end_date: commodi
+    queryParameters:
+      start_date:
+        name: start_date
+        description: 'La date de début de la période.'
+        required: false
+        example: doloremque
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      end_date:
+        name: end_date
+        description: 'La date de fin de la période.'
+        required: false
+        example: ut
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanQueryParameters:
+      start_date: doloremque
+      end_date: ut
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer a6bc63v58DZk1EdVhfega4P'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/assignments/statistics/{start_date}/{end_date}'
+    metadata:
+      groupName: 'Gestion des dossiers'
+      groupDescription: |-
+
+        APIs pour la gestion des dossiers
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Statistiques des dossiers'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      start_date:
+        name: start_date
+        description: ''
+        required: true
+        example: commodi
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      end_date:
+        name: end_date
+        description: ''
+        required: true
+        example: dolore
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      start_date: commodi
+      end_date: dolore
+    queryParameters:
+      start_date:
+        name: start_date
+        description: 'La date de début de la période.'
+        required: false
+        example: tempore
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      end_date:
+        name: end_date
+        description: 'La date de fin de la période.'
+        required: false
+        example: inventore
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanQueryParameters:
+      start_date: tempore
+      end_date: inventore
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 8aEb1kadv36cg5D6VPZh4fe'
+    controller: null
+    method: null
+    route: null
+    custom: []

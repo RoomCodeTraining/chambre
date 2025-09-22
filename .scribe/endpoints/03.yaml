@@ -1,0 +1,327 @@
+name: "Gestion des types d'entité"
+description: |-
+
+  APIs pour la gestion des types d'entité
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/entity-types
+    metadata:
+      groupName: "Gestion des types d'entité"
+      groupDescription: |-
+
+        APIs pour la gestion des types d'entité
+      subgroup: ''
+      subgroupDescription: ''
+      title: "Lister les types d'entité"
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer eV6daak1P3D46bf8cEgh5Zv'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/entity-types/{id}'
+    metadata:
+      groupName: "Gestion des types d'entité"
+      groupDescription: |-
+
+        APIs pour la gestion des types d'entité
+      subgroup: ''
+      subgroupDescription: ''
+      title: "Afficher un type d'entité"
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the entity type.'
+        required: true
+        example: alias
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      id: alias
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer ve6Vg1d6bDaPk58h34fcZEa'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/entity-types
+    metadata:
+      groupName: "Gestion des types d'entité"
+      groupDescription: |-
+
+        APIs pour la gestion des types d'entité
+      subgroup: ''
+      subgroupDescription: ''
+      title: "Ajouter un type d'entité"
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      label:
+        name: label
+        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
+        required: true
+        example: ktz
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      description:
+        name: description
+        description: ''
+        required: false
+        example: 'Voluptatem dicta voluptates sed.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+    cleanBodyParameters:
+      label: ktz
+      description: 'Voluptatem dicta voluptates sed.'
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 8b16Z3h6VdfDPaEkcg5ea4v'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/entity-types/{id}'
+    metadata:
+      groupName: "Gestion des types d'entité"
+      groupDescription: |-
+
+        APIs pour la gestion des types d'entité
+      subgroup: ''
+      subgroupDescription: ''
+      title: "Mettre à jour un type d'entité"
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the entity type.'
+        required: true
+        example: eum
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      id: eum
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      label:
+        name: label
+        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
+        required: true
+        example: koccibapozadmwenysemfruci
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      description:
+        name: description
+        description: ''
+        required: false
+        example: 'Perferendis necessitatibus saepe vitae voluptas doloribus rerum dicta.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+    cleanBodyParameters:
+      label: koccibapozadmwenysemfruci
+      description: 'Perferendis necessitatibus saepe vitae voluptas doloribus rerum dicta.'
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer hZd5eD8P36ab1f46gaEVvck'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/entity-types/{id}/enable'
+    metadata:
+      groupName: "Gestion des types d'entité"
+      groupDescription: |-
+
+        APIs pour la gestion des types d'entité
+      subgroup: ''
+      subgroupDescription: ''
+      title: "Activer un type d'entité"
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the entity type.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 14DfV65Z3d8gvkEabP6hace'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/entity-types/{id}/disable'
+    metadata:
+      groupName: "Gestion des types d'entité"
+      groupDescription: |-
+
+        APIs pour la gestion des types d'entité
+      subgroup: ''
+      subgroupDescription: ''
+      title: "Désactiver un type d'entité"
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the entity type.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer aPeDv14habgZcE63V58kf6d'
+    controller: null
+    method: null
+    route: null
+    custom: []

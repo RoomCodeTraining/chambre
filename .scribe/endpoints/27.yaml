@@ -1,0 +1,258 @@
+name: 'Gestion des QR codes'
+description: |-
+
+  APIs pour la gestion des QR codes
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/qr-codes
+    metadata:
+      groupName: 'Gestion des QR codes'
+      groupDescription: |-
+
+        APIs pour la gestion des QR codes
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Lister tous les QR codes'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer be5v1PZfDahkV86cgEa346d'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/qr-codes
+    metadata:
+      groupName: 'Gestion des QR codes'
+      groupDescription: |-
+
+        APIs pour la gestion des QR codes
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Ajouter un QR code'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      code:
+        name: code
+        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
+        required: true
+        example: jkfpwyqqakqfwsxvautyhtx
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      code: jkfpwyqqakqfwsxvautyhtx
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 3bagEe1D6V8hPckd65avfZ4'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/qr-codes/{qrCode_id}'
+    metadata:
+      groupName: 'Gestion des QR codes'
+      groupDescription: |-
+
+        APIs pour la gestion des QR codes
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Afficher un QR code'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      qrCode_id:
+        name: qrCode_id
+        description: 'The ID of the qrCode.'
+        required: true
+        example: 8
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      qrCode_id: 8
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 4gkdb8ZeP1cv6D3Eaf6h5aV'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/qr-codes/{qrCode}'
+    metadata:
+      groupName: 'Gestion des QR codes'
+      groupDescription: |-
+
+        APIs pour la gestion des QR codes
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Mettre à jour un QR code'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      qrCode:
+        name: qrCode
+        description: ''
+        required: true
+        example: 9
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      qrCode: 9
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      code:
+        name: code
+        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
+        required: true
+        example: kfdsgbwdwcolretfjzlmlli
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      code: kfdsgbwdwcolretfjzlmlli
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer bhfPadDva4Vc866E3Zk51ge'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/qr-codes/{qrCode}'
+    metadata:
+      groupName: 'Gestion des QR codes'
+      groupDescription: |-
+
+        APIs pour la gestion des QR codes
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Supprimer un QR code'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      qrCode:
+        name: qrCode
+        description: ''
+        required: true
+        example: 20
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      qrCode: 20
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer af1P4DE56ka6VgZbc3hdve8'
+    controller: null
+    method: null
+    route: null
+    custom: []

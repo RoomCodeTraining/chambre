@@ -1,0 +1,77 @@
+#ddev-generated
+# If you remove the ddev-generated line above you
+# are responsible for maintaining this file. DDEV will not then
+# update it, for example if you add `additional_hostnames`, etc.
+
+http:
+  routers:
+    e-expert-web-80-http:
+      entrypoints:
+        - http-80
+      rule: HostRegexp(`^e-expert\.ddev\.site$`)
+      
+      service: "e-expert-web-80"
+      ruleSyntax: v3
+      tls: false
+      # middlewares:
+      #   - "e-expert-redirectHttps"
+    e-expert-web-8025-http:
+      entrypoints:
+        - http-8025
+      rule: HostRegexp(`^e-expert\.ddev\.site$`)
+      
+      service: "e-expert-web-8025"
+      ruleSyntax: v3
+      tls: false
+      # middlewares:
+      #   - "e-expert-redirectHttps"
+    
+    
+    
+    e-expert-web-80-https:
+      entrypoints:
+        - http-443
+      rule: HostRegexp(`^e-expert\.ddev\.site$`)
+      
+      service: "e-expert-web-80"
+      ruleSyntax: v3
+      
+      tls: true
+      
+    e-expert-web-8025-https:
+      entrypoints:
+        - http-8026
+      rule: HostRegexp(`^e-expert\.ddev\.site$`)
+      
+      service: "e-expert-web-8025"
+      ruleSyntax: v3
+      
+      tls: true
+      
+    
+
+  middlewares:
+    e-expert-redirectHttps:
+      redirectScheme:
+        scheme: https
+        permanent: true
+
+  services:
+    e-expert-web-80:
+      loadbalancer:
+        servers:
+          - url: http://ddev-e-expert-web:80
+        
+    e-expert-web-8025:
+      loadbalancer:
+        servers:
+          - url: http://ddev-e-expert-web:8025
+        
+    
+    
+    
+
+tls:
+  certificates:
+    - certFile: /mnt/ddev-global-cache/traefik/certs/e-expert.crt
+      keyFile: /mnt/ddev-global-cache/traefik/certs/e-expert.key

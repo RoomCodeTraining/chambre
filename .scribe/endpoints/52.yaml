@@ -1,0 +1,211 @@
+name: 'Gestion des types de photos'
+description: |-
+
+  APIs pour la gestion des types de photos
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/photo-types
+    metadata:
+      groupName: 'Gestion des types de photos'
+      groupDescription: |-
+
+        APIs pour la gestion des types de photos
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Lister tous les types de photos'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 56EkbcdaVf1evhg6D8Z3P4a'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/photo-types
+    metadata:
+      groupName: 'Gestion des types de photos'
+      groupDescription: |-
+
+        APIs pour la gestion des types de photos
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Créer un type de photo'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      label:
+        name: label
+        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
+        required: true
+        example: lyn
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      description:
+        name: description
+        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
+        required: false
+        example: 'Molestiae quae ea cum labore illum delectus inventore.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+    cleanBodyParameters:
+      label: lyn
+      description: 'Molestiae quae ea cum labore illum delectus inventore.'
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 63hD6ePZcf5adkbaV48v1Eg'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/photo-types/{photoType_id}'
+    metadata:
+      groupName: 'Gestion des types de photos'
+      groupDescription: |-
+
+        APIs pour la gestion des types de photos
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Afficher un type de photo'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      photoType_id:
+        name: photoType_id
+        description: 'The ID of the photoType.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      photoType_id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 8vgPE6D3akVeZb5a6h1f4cd'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/photo-types/{photoType_id}'
+    metadata:
+      groupName: 'Gestion des types de photos'
+      groupDescription: |-
+
+        APIs pour la gestion des types de photos
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Supprimer un type de photo'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      photoType_id:
+        name: photoType_id
+        description: 'The ID of the photoType.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      photoType_id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer av5kc34d8h1f6aEgDbPZ6eV'
+    controller: null
+    method: null
+    route: null
+    custom: []

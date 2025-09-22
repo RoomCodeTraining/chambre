@@ -1,0 +1,346 @@
+name: 'Gestion des clients'
+description: |-
+
+  APIs pour la gestion des clients
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/clients
+    metadata:
+      groupName: 'Gestion des clients'
+      groupDescription: |-
+
+        APIs pour la gestion des clients
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Lister tous les clients'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer vDkaP86hcbEg4ZVef135a6d'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/clients
+    metadata:
+      groupName: 'Gestion des clients'
+      groupDescription: |-
+
+        APIs pour la gestion des clients
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Ajouter un client'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
+        required: true
+        example: kdfautcpm
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      email:
+        name: email
+        description: 'Le champ value doit être une adresse e-mail valide.'
+        required: false
+        example: jerrold93@example.net
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      phone_1:
+        name: phone_1
+        description: 'Le texte de value ne peut pas contenir plus de 20 caractères.'
+        required: false
+        example: mqdovoirrqsa
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      phone_2:
+        name: phone_2
+        description: 'Le texte de value ne peut pas contenir plus de 20 caractères.'
+        required: false
+        example: wio
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      address:
+        name: address
+        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
+        required: false
+        example: hocdeaxwbxkycgsb
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+    cleanBodyParameters:
+      name: kdfautcpm
+      email: jerrold93@example.net
+      phone_1: mqdovoirrqsa
+      phone_2: wio
+      address: hocdeaxwbxkycgsb
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer bh5a6fa6kegd3EZvV18cDP4'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/clients/{id}'
+    metadata:
+      groupName: 'Gestion des clients'
+      groupDescription: |-
+
+        APIs pour la gestion des clients
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Afficher un client'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the client.'
+        required: true
+        example: qui
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      id: qui
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer hgPZfD5b61Ee46ck3aVa8dv'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/clients/{id}'
+    metadata:
+      groupName: 'Gestion des clients'
+      groupDescription: |-
+
+        APIs pour la gestion des clients
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Mettre à jour un client'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the client.'
+        required: true
+        example: dolorem
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      id: dolorem
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
+        required: true
+        example: qmkzwkznk
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      email:
+        name: email
+        description: 'Le champ value doit être une adresse e-mail valide. Le texte de value ne peut pas contenir plus de 255 caractères.'
+        required: false
+        example: spinka.pierce@example.org
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      phone_1:
+        name: phone_1
+        description: 'Le texte de value ne peut pas contenir plus de 20 caractères.'
+        required: false
+        example: qrdvrorizpcsh
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      phone_2:
+        name: phone_2
+        description: 'Le texte de value ne peut pas contenir plus de 20 caractères.'
+        required: false
+        example: azsvnpg
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      address:
+        name: address
+        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
+        required: false
+        example: zay
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+    cleanBodyParameters:
+      name: qmkzwkznk
+      email: spinka.pierce@example.org
+      phone_1: qrdvrorizpcsh
+      phone_2: azsvnpg
+      address: zay
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer DVfv6e1Z3Ehgck68Pa4bd5a'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/clients/{id}'
+    metadata:
+      groupName: 'Gestion des clients'
+      groupDescription: |-
+
+        APIs pour la gestion des clients
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Supprimer un client'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the client.'
+        required: true
+        example: deserunt
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      id: deserunt
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 5Dv68abf3PcaE1ZeV6d4gkh'
+    controller: null
+    method: null
+    route: null
+    custom: []

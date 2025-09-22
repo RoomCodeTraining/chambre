@@ -1,0 +1,522 @@
+name: 'Gestion des autres charges'
+description: |-
+
+  APIs pour la gestion des autres charges
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/other-costs
+    metadata:
+      groupName: 'Gestion des autres charges'
+      groupDescription: |-
+
+        APIs pour la gestion des autres charges
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Lister toutes les autres charges'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer kVPeha6vcE8D16d3b4agZ5f'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/other-costs
+    metadata:
+      groupName: 'Gestion des autres charges'
+      groupDescription: |-
+
+        APIs pour la gestion des autres charges
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Ajouter une autre charge'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      assignment_id:
+        name: assignment_id
+        description: 'The <code>id</code> of an existing record in the assignments table.'
+        required: true
+        example: id
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      other_costs:
+        name: other_costs
+        description: ''
+        required: true
+        example:
+          - []
+        type: 'object[]'
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'other_costs[].other_cost_type_id':
+        name: 'other_costs[].other_cost_type_id'
+        description: 'The <code>id</code> of an existing record in the other_cost_types table.'
+        required: true
+        example: cum
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'other_costs[].amount':
+        name: 'other_costs[].amount'
+        description: ''
+        required: true
+        example: 3.6
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      assignment_id: id
+      other_costs:
+        -
+          other_cost_type_id: cum
+          amount: 3.6
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer df6gv56k18EVcDb3aaP4eZh'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/other-costs/calculate
+    metadata:
+      groupName: 'Gestion des autres charges'
+      groupDescription: |-
+
+        APIs pour la gestion des autres charges
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Calculer les autres charges'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      assignment_id:
+        name: assignment_id
+        description: 'The <code>id</code> of an existing record in the assignments table.'
+        required: true
+        example: praesentium
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      hourly_rate_id:
+        name: hourly_rate_id
+        description: 'The <code>id</code> of an existing record in the hourly_rates table.'
+        required: true
+        example: ducimus
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      paint_type_id:
+        name: paint_type_id
+        description: 'The <code>id</code> of an existing record in the paint_types table.'
+        required: true
+        example: minus
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      shock_works:
+        name: shock_works
+        description: ''
+        required: true
+        example:
+          - []
+        type: 'object[]'
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      workforces:
+        name: workforces
+        description: ''
+        required: true
+        example:
+          - []
+        type: 'object[]'
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      other_costs:
+        name: other_costs
+        description: ''
+        required: true
+        example:
+          - []
+        type: 'object[]'
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shock_works[].obsolescence_rate':
+        name: 'shock_works[].obsolescence_rate'
+        description: ''
+        required: true
+        example: 15221.0
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shock_works[].recovery_amount':
+        name: 'shock_works[].recovery_amount'
+        description: ''
+        required: true
+        example: 508735.2932
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shock_works[].amount':
+        name: 'shock_works[].amount'
+        description: ''
+        required: true
+        example: 35.99523
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shock_works[].discount':
+        name: 'shock_works[].discount'
+        description: ''
+        required: true
+        example: 333.94951839
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'workforces[].workforce_type_id':
+        name: 'workforces[].workforce_type_id'
+        description: 'The <code>id</code> of an existing record in the workforce_types table.'
+        required: true
+        example: est
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'workforces[].nb_hours':
+        name: 'workforces[].nb_hours'
+        description: ''
+        required: true
+        example: 20.0
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'workforces[].discount':
+        name: 'workforces[].discount'
+        description: ''
+        required: true
+        example: 126016721.00701
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'other_costs[].other_cost_type_id':
+        name: 'other_costs[].other_cost_type_id'
+        description: 'The <code>id</code> of an existing record in the other_cost_types table.'
+        required: true
+        example: exercitationem
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'other_costs[].amount':
+        name: 'other_costs[].amount'
+        description: 'La valeur de value doit être supérieure ou égale à 0.'
+        required: true
+        example: 62
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      assignment_id: praesentium
+      hourly_rate_id: ducimus
+      paint_type_id: minus
+      shock_works:
+        -
+          obsolescence_rate: 15221.0
+          recovery_amount: 508735.2932
+          amount: 35.99523
+          discount: 333.94951839
+      workforces:
+        -
+          workforce_type_id: est
+          nb_hours: 20.0
+          discount: 126016721.00701
+      other_costs:
+        -
+          other_cost_type_id: exercitationem
+          amount: 62
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 38d1DV46fh6eaPa5vgbZkcE'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/other-costs/{otherCost}'
+    metadata:
+      groupName: 'Gestion des autres charges'
+      groupDescription: |-
+
+        APIs pour la gestion des autres charges
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Afficher une autre charge'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      otherCost:
+        name: otherCost
+        description: ''
+        required: true
+        example: et
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      otherCost: et
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 4h3f6ZD5PcEe6v1aVg8kbda'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/other-costs/{otherCost}'
+    metadata:
+      groupName: 'Gestion des autres charges'
+      groupDescription: |-
+
+        APIs pour la gestion des autres charges
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Mettre à jour une autre charge'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      otherCost:
+        name: otherCost
+        description: ''
+        required: true
+        example: eligendi
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      otherCost: eligendi
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      assignment_id:
+        name: assignment_id
+        description: 'The <code>id</code> of an existing record in the assignments table.'
+        required: true
+        example: quasi
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      other_cost_type_id:
+        name: other_cost_type_id
+        description: 'The <code>id</code> of an existing record in the other_cost_types table.'
+        required: true
+        example: iusto
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      amount:
+        name: amount
+        description: ''
+        required: true
+        example: 162340128.81637
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      assignment_id: quasi
+      other_cost_type_id: iusto
+      amount: 162340128.81637
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 31VvdfZg8Ecbk5haeDa46P6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/other-costs/{otherCost}'
+    metadata:
+      groupName: 'Gestion des autres charges'
+      groupDescription: |-
+
+        APIs pour la gestion des autres charges
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Supprimer une autre charge'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      otherCost:
+        name: otherCost
+        description: ''
+        required: true
+        example: ipsam
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      otherCost: ipsam
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6fb5hakgae3d4VcP18vZ6ED'
+    controller: null
+    method: null
+    route: null
+    custom: []

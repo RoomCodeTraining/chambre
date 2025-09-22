@@ -1,0 +1,313 @@
+name: 'Gestion des dossiers assignés à des experts'
+description: |-
+
+  APIs pour la gestion des dossiers assignés à des experts
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/assignment-experts
+    metadata:
+      groupName: 'Gestion des dossiers assignés à des experts'
+      groupDescription: |-
+
+        APIs pour la gestion des dossiers assignés à des experts
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Lister tous les experts assignés à un dossier'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6Dkhc16dgZVPv4Ee853bfaa'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/assignment-experts
+    metadata:
+      groupName: 'Gestion des dossiers assignés à des experts'
+      groupDescription: |-
+
+        APIs pour la gestion des dossiers assignés à des experts
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Ajouter un expert à un dossier'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      assignment_id:
+        name: assignment_id
+        description: 'The <code>id</code> of an existing record in the assignments table.'
+        required: true
+        example: tempora
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      expert_id:
+        name: expert_id
+        description: 'The <code>id</code> of an existing record in the users table.'
+        required: true
+        example: eveniet
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      date:
+        name: date
+        description: "Le champ value n'est pas une date valide."
+        required: true
+        example: '2025-08-04T00:17:25'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      observation:
+        name: observation
+        description: ''
+        required: false
+        example: eum
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+    cleanBodyParameters:
+      assignment_id: tempora
+      expert_id: eveniet
+      date: '2025-08-04T00:17:25'
+      observation: eum
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer aEZP8kVaD6d5b1vhf6g43ec'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/assignment-experts/{id}'
+    metadata:
+      groupName: 'Gestion des dossiers assignés à des experts'
+      groupDescription: |-
+
+        APIs pour la gestion des dossiers assignés à des experts
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Afficher un expert assigné à un dossier'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the assignment expert.'
+        required: true
+        example: vero
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      id: vero
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer e8vk6D4VZ63bfPga1Eh5dca'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/assignment-experts/{id}'
+    metadata:
+      groupName: 'Gestion des dossiers assignés à des experts'
+      groupDescription: |-
+
+        APIs pour la gestion des dossiers assignés à des experts
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Mettre à jour un expert assigné à un dossier'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the assignment expert.'
+        required: true
+        example: tempore
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      id: tempore
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      expert_id:
+        name: expert_id
+        description: 'The <code>id</code> of an existing record in the users table.'
+        required: true
+        example: ut
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      date:
+        name: date
+        description: "Le champ value n'est pas une date valide."
+        required: true
+        example: '2025-08-04T00:17:25'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      observation:
+        name: observation
+        description: ''
+        required: false
+        example: quos
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+    cleanBodyParameters:
+      expert_id: ut
+      date: '2025-08-04T00:17:25'
+      observation: quos
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer VfkcdEZ4aea58gb61P6vhD3'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/assignment-experts/{id}'
+    metadata:
+      groupName: 'Gestion des dossiers assignés à des experts'
+      groupDescription: |-
+
+        APIs pour la gestion des dossiers assignés à des experts
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Supprimer un expert assigné à un dossier'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the assignment expert.'
+        required: true
+        example: in
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      id: in
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer fcE4Da8Pbed16akh3Z65Vgv'
+    controller: null
+    method: null
+    route: null
+    custom: []

@@ -1,0 +1,280 @@
+name: "Gestion des types d'expertise"
+description: |-
+
+  APIs pour la gestion des types d'expertise
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/expertise-types
+    metadata:
+      groupName: "Gestion des types d'expertise"
+      groupDescription: |-
+
+        APIs pour la gestion des types d'expertise
+      subgroup: ''
+      subgroupDescription: ''
+      title: "Lister tous les types d'expertise"
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer kDc63V6Paa15Zf4ehvEdbg8'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/expertise-types
+    metadata:
+      groupName: "Gestion des types d'expertise"
+      groupDescription: |-
+
+        APIs pour la gestion des types d'expertise
+      subgroup: ''
+      subgroupDescription: ''
+      title: "Ajouter un type d'expertise"
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      label:
+        name: label
+        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
+        required: true
+        example: fghedmuzohwdg
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      description:
+        name: description
+        description: ''
+        required: false
+        example: 'Aut sit autem rerum ea earum aut modi ea.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+    cleanBodyParameters:
+      label: fghedmuzohwdg
+      description: 'Aut sit autem rerum ea earum aut modi ea.'
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer akhf6a4Ve68g1b3EcdDPZ5v'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/expertise-types/{expertise_type}'
+    metadata:
+      groupName: "Gestion des types d'expertise"
+      groupDescription: |-
+
+        APIs pour la gestion des types d'expertise
+      subgroup: ''
+      subgroupDescription: ''
+      title: "Afficher un type d'expertise"
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      expertise_type:
+        name: expertise_type
+        description: ''
+        required: true
+        example: ullam
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      expertise_type: ullam
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer dV6gbfak83cveahEPD514Z6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/expertise-types/{expertise_type}'
+    metadata:
+      groupName: "Gestion des types d'expertise"
+      groupDescription: |-
+
+        APIs pour la gestion des types d'expertise
+      subgroup: ''
+      subgroupDescription: ''
+      title: "Mettre à jour un type d'expertise"
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      expertise_type:
+        name: expertise_type
+        description: ''
+        required: true
+        example: sit
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      expertise_type: sit
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      label:
+        name: label
+        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
+        required: true
+        example: zyog
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      description:
+        name: description
+        description: ''
+        required: false
+        example: 'Eveniet consequatur natus consequuntur hic praesentium.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+    cleanBodyParameters:
+      label: zyog
+      description: 'Eveniet consequatur natus consequuntur hic praesentium.'
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer e46cfaE5a3g6PbdZ8DVhk1v'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/expertise-types/{expertise_type}'
+    metadata:
+      groupName: "Gestion des types d'expertise"
+      groupDescription: |-
+
+        APIs pour la gestion des types d'expertise
+      subgroup: ''
+      subgroupDescription: ''
+      title: "Supprimer un type d'expertise"
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      expertise_type:
+        name: expertise_type
+        description: ''
+        required: true
+        example: et
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      expertise_type: et
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer Evk385ebfDhdVaacg6P614Z'
+    controller: null
+    method: null
+    route: null
+    custom: []

@@ -1,0 +1,280 @@
+name: 'Gestion des conclusions techniques'
+description: |-
+
+  APIs pour la gestion des conclusions techniques
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/technical-conclusions
+    metadata:
+      groupName: 'Gestion des conclusions techniques'
+      groupDescription: |-
+
+        APIs pour la gestion des conclusions techniques
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Lister toutes les conclusions techniques'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer g58Z66a14VkPEbfchdD3eav'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/technical-conclusions
+    metadata:
+      groupName: 'Gestion des conclusions techniques'
+      groupDescription: |-
+
+        APIs pour la gestion des conclusions techniques
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Ajouter une conclusion technique'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      label:
+        name: label
+        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
+        required: true
+        example: geiqia
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      description:
+        name: description
+        description: ''
+        required: false
+        example: 'Quia et voluptas sint perspiciatis eum.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+    cleanBodyParameters:
+      label: geiqia
+      description: 'Quia et voluptas sint perspiciatis eum.'
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer caa8gvbPEef4D5ZV1663khd'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/technical-conclusions/{technicalConclusion}'
+    metadata:
+      groupName: 'Gestion des conclusions techniques'
+      groupDescription: |-
+
+        APIs pour la gestion des conclusions techniques
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Afficher une conclusion technique'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      technicalConclusion:
+        name: technicalConclusion
+        description: ''
+        required: true
+        example: est
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      technicalConclusion: est
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer ka3dbcPe8Evf66V15gZhaD4'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/technical-conclusions/{technicalConclusion}'
+    metadata:
+      groupName: 'Gestion des conclusions techniques'
+      groupDescription: |-
+
+        APIs pour la gestion des conclusions techniques
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Mettre à jour une conclusion technique'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      technicalConclusion:
+        name: technicalConclusion
+        description: ''
+        required: true
+        example: esse
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      technicalConclusion: esse
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      label:
+        name: label
+        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
+        required: true
+        example: kxbarjvrbqfennmgbk
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      description:
+        name: description
+        description: ''
+        required: false
+        example: 'Non at dignissimos libero non quia ea adipisci.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+    cleanBodyParameters:
+      label: kxbarjvrbqfennmgbk
+      description: 'Non at dignissimos libero non quia ea adipisci.'
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer E64k5a1dfaZ68hP3vcegDbV'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/technical-conclusions/{technicalConclusion}'
+    metadata:
+      groupName: 'Gestion des conclusions techniques'
+      groupDescription: |-
+
+        APIs pour la gestion des conclusions techniques
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Supprimer une conclusion technique'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      technicalConclusion:
+        name: technicalConclusion
+        description: ''
+        required: true
+        example: reiciendis
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      technicalConclusion: reiciendis
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 8vd6hD5cbZafEk1346ePgaV'
+    controller: null
+    method: null
+    route: null
+    custom: []
