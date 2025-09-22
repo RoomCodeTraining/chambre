@@ -1,20 +1,20 @@
-name: 'Gestion des types de photos'
+name: 'Gestion des types de constat'
 description: |-
 
-  APIs pour la gestion des types de photos
+  APIs pour la gestion des types de constat
 endpoints:
   -
     httpMethods:
       - GET
-    uri: api/v1/photo-types
+    uri: api/v1/ascertainment-types
     metadata:
-      groupName: 'Gestion des types de photos'
+      groupName: 'Gestion des types de constat'
       groupDescription: |-
 
-        APIs pour la gestion des types de photos
+        APIs pour la gestion des types de constat
       subgroup: ''
       subgroupDescription: ''
-      title: 'Lister tous les types de photos'
+      title: 'Lister les types de constat'
       description: ''
       authenticated: true
       custom: []
@@ -43,7 +43,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 56EkbcdaVf1evhg6D8Z3P4a'
+      - 'Bearer P634VgvfDaZedka18cb6E5h'
     controller: null
     method: null
     route: null
@@ -51,15 +51,15 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/v1/photo-types
+    uri: api/v1/ascertainment-types
     metadata:
-      groupName: 'Gestion des types de photos'
+      groupName: 'Gestion des types de constat'
       groupDescription: |-
 
-        APIs pour la gestion des types de photos
+        APIs pour la gestion des types de constat
       subgroup: ''
       subgroupDescription: ''
-      title: 'Créer un type de photo'
+      title: 'Créer un type de constat'
       description: ''
       authenticated: true
       custom: []
@@ -76,7 +76,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: lyn
+        example: rbtolbscm
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -84,24 +84,24 @@ endpoints:
         custom: []
       description:
         name: description
-        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
+        description: ''
         required: false
-        example: 'Molestiae quae ea cum labore illum delectus inventore.'
+        example: 'Dolores illum consectetur explicabo et ullam.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: lyn
-      description: 'Molestiae quae ea cum labore illum delectus inventore.'
+      label: rbtolbscm
+      description: 'Dolores illum consectetur explicabo et ullam.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 63hD6ePZcf5adkbaV48v1Eg'
+      - 'Bearer v3VaE68ga5Pc61DkdeZbhf4'
     controller: null
     method: null
     route: null
@@ -109,15 +109,15 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: 'api/v1/photo-types/{photoType_id}'
+    uri: 'api/v1/ascertainment-types/{id}'
     metadata:
-      groupName: 'Gestion des types de photos'
+      groupName: 'Gestion des types de constat'
       groupDescription: |-
 
-        APIs pour la gestion des types de photos
+        APIs pour la gestion des types de constat
       subgroup: ''
       subgroupDescription: ''
-      title: 'Afficher un type de photo'
+      title: 'Afficher un type de constat'
       description: ''
       authenticated: true
       custom: []
@@ -126,18 +126,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      photoType_id:
-        name: photoType_id
-        description: 'The ID of the photoType.'
+      id:
+        name: id
+        description: 'The ID of the ascertainment type.'
         required: true
-        example: 1
-        type: integer
+        example: repellendus
+        type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      photoType_id: 1
+      id: repellendus
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -157,23 +157,23 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 8vgPE6D3akVeZb5a6h1f4cd'
+      - 'Bearer 6Pa5vhaV8bDdeZ3kgE1c64f'
     controller: null
     method: null
     route: null
     custom: []
   -
     httpMethods:
-      - DELETE
-    uri: 'api/v1/photo-types/{photoType_id}'
+      - PUT
+    uri: 'api/v1/ascertainment-types/{id}'
     metadata:
-      groupName: 'Gestion des types de photos'
+      groupName: 'Gestion des types de constat'
       groupDescription: |-
 
-        APIs pour la gestion des types de photos
+        APIs pour la gestion des types de constat
       subgroup: ''
       subgroupDescription: ''
-      title: 'Supprimer un type de photo'
+      title: 'Mettre à jour un type de constat'
       description: ''
       authenticated: true
       custom: []
@@ -182,18 +182,87 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      photoType_id:
-        name: photoType_id
-        description: 'The ID of the photoType.'
+      id:
+        name: id
+        description: 'The ID of the ascertainment type.'
         required: true
-        example: 1
-        type: integer
+        example: qui
+        type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      photoType_id: 1
+      id: qui
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      label:
+        name: label
+        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
+        required: true
+        example: tvrebzefachbpgexxrgrpph
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      description:
+        name: description
+        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
+        required: false
+        example: 'Sequi qui totam omnis perferendis magni ipsum corporis.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+    cleanBodyParameters:
+      label: tvrebzefachbpgexxrgrpph
+      description: 'Sequi qui totam omnis perferendis magni ipsum corporis.'
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer bZdf54hEDg1Vka6cPv6a83e'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/ascertainment-types/{id}'
+    metadata:
+      groupName: 'Gestion des types de constat'
+      groupDescription: |-
+
+        APIs pour la gestion des types de constat
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Supprimer un type de constat'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the ascertainment type.'
+        required: true
+        example: vel
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      id: vel
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -204,7 +273,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer av5kc34d8h1f6aEgDbPZ6eV'
+      - 'Bearer aaeD8chgbPv6df3ZV61E5k4'
     controller: null
     method: null
     route: null

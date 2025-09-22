@@ -1,20 +1,20 @@
-name: 'Gestion des types de dossiers'
+name: 'Gestion des documents transmis'
 description: |-
 
-  APIs pour la gestion des types de dossiers
+  APIs pour la gestion des documents transmis
 endpoints:
   -
     httpMethods:
       - GET
-    uri: api/v1/assignment-types
+    uri: api/v1/document-transmitteds
     metadata:
-      groupName: 'Gestion des types de dossiers'
+      groupName: 'Gestion des documents transmis'
       groupDescription: |-
 
-        APIs pour la gestion des types de dossiers
+        APIs pour la gestion des documents transmis
       subgroup: ''
       subgroupDescription: ''
-      title: 'Lister tous les types de dossiers'
+      title: 'Lister tous les documents transmis'
       description: ''
       authenticated: true
       custom: []
@@ -43,7 +43,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 65aZ1fh3dEgk6eDPv8cVba4'
+      - 'Bearer dg6abZ45hak8VDE136Pcevf'
     controller: null
     method: null
     route: null
@@ -51,15 +51,15 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/v1/assignment-types
+    uri: api/v1/document-transmitteds
     metadata:
-      groupName: 'Gestion des types de dossiers'
+      groupName: 'Gestion des documents transmis'
       groupDescription: |-
 
-        APIs pour la gestion des types de dossiers
+        APIs pour la gestion des documents transmis
       subgroup: ''
       subgroupDescription: ''
-      title: 'Ajouter un type de dossier'
+      title: 'Ajouter un document transmis'
       description: ''
       authenticated: true
       custom: []
@@ -76,7 +76,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: fsoykxaozplmtkxxzqcpnes
+        example: oplmcookpbgoxgtpasf
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -86,22 +86,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Ipsam consequatur sunt quibusdam ipsam voluptatem.'
+        example: 'Qui asperiores consequatur sed nihil quia aliquid aut.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: fsoykxaozplmtkxxzqcpnes
-      description: 'Ipsam consequatur sunt quibusdam ipsam voluptatem.'
+      label: oplmcookpbgoxgtpasf
+      description: 'Qui asperiores consequatur sed nihil quia aliquid aut.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 5hdVgb8f636aavZEkPc14De'
+      - 'Bearer vc6kEaPdhagZ1V54e3fDb86'
     controller: null
     method: null
     route: null
@@ -109,15 +109,15 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: 'api/v1/assignment-types/{assignment_type}'
+    uri: 'api/v1/document-transmitteds/{document_transmitted}'
     metadata:
-      groupName: 'Gestion des types de dossiers'
+      groupName: 'Gestion des documents transmis'
       groupDescription: |-
 
-        APIs pour la gestion des types de dossiers
+        APIs pour la gestion des documents transmis
       subgroup: ''
       subgroupDescription: ''
-      title: 'Afficher un type de dossier'
+      title: 'Afficher un document transmis'
       description: ''
       authenticated: true
       custom: []
@@ -126,18 +126,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      assignment_type:
-        name: assignment_type
+      document_transmitted:
+        name: document_transmitted
         description: ''
         required: true
-        example: minima
+        example: velit
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      assignment_type: minima
+      document_transmitted: velit
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -157,7 +157,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Zg46hk5318PVbda6efacDvE'
+      - 'Bearer P6afeck4aZ5b86Dg1Ed3vVh'
     controller: null
     method: null
     route: null
@@ -165,15 +165,15 @@ endpoints:
   -
     httpMethods:
       - PUT
-    uri: 'api/v1/assignment-types/{assignment_type}'
+    uri: 'api/v1/document-transmitteds/{document_transmitted}'
     metadata:
-      groupName: 'Gestion des types de dossiers'
+      groupName: 'Gestion des documents transmis'
       groupDescription: |-
 
-        APIs pour la gestion des types de dossiers
+        APIs pour la gestion des documents transmis
       subgroup: ''
       subgroupDescription: ''
-      title: 'Mettre à jour un type de dossier'
+      title: 'Mettre à jour un document transmis'
       description: ''
       authenticated: true
       custom: []
@@ -182,18 +182,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      assignment_type:
-        name: assignment_type
+      document_transmitted:
+        name: document_transmitted
         description: ''
         required: true
-        example: quis
+        example: enim
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      assignment_type: quis
+      document_transmitted: enim
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -201,7 +201,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: xfdnpyakhznsgz
+        example: ihapvgtoiwoskvl
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -211,22 +211,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Laudantium sapiente itaque consequuntur recusandae quo accusamus.'
+        example: 'Vero aperiam eligendi aut fugiat omnis.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: xfdnpyakhznsgz
-      description: 'Laudantium sapiente itaque consequuntur recusandae quo accusamus.'
+      label: ihapvgtoiwoskvl
+      description: 'Vero aperiam eligendi aut fugiat omnis.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer Vvf6g8D4bkPZ1a6a5e3dcEh'
+      - 'Bearer aZcekh6P5gdv6841faDVEb3'
     controller: null
     method: null
     route: null
@@ -234,15 +234,15 @@ endpoints:
   -
     httpMethods:
       - DELETE
-    uri: 'api/v1/assignment-types/{assignment_type}'
+    uri: 'api/v1/document-transmitteds/{document_transmitted}'
     metadata:
-      groupName: 'Gestion des types de dossiers'
+      groupName: 'Gestion des documents transmis'
       groupDescription: |-
 
-        APIs pour la gestion des types de dossiers
+        APIs pour la gestion des documents transmis
       subgroup: ''
       subgroupDescription: ''
-      title: 'Supprimer un type de dossier'
+      title: 'Supprimer un document transmis'
       description: ''
       authenticated: true
       custom: []
@@ -251,18 +251,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      assignment_type:
-        name: assignment_type
+      document_transmitted:
+        name: document_transmitted
         description: ''
         required: true
-        example: deleniti
+        example: eum
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      assignment_type: deleniti
+      document_transmitted: eum
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -273,7 +273,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 51dbDVefgcZ6E46aaPhkv38'
+      - 'Bearer 3V8Ea6PbgcZDhvfd41e56ka'
     controller: null
     method: null
     route: null

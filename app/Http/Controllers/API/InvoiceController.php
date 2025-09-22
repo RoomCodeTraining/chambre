@@ -454,7 +454,7 @@ class InvoiceController extends Controller
      */
     public function show(Invoice $invoice): JsonResponse
     {
-        return $this->responseSuccess(null, new InvoiceResource($invoice->accessibleBy(auth()->user())->load('assignment:id,reference,receipt_amount_excluding_tax,receipt_amount_tax,receipt_amount', 'status:id,code,label', 'createdBy:id,name,email,created_at', 'updatedBy:id,name,email,created_at', 'deletedBy:id,name,email,created_at', 'cancelledBy:id,name,email,created_at'))));
+        return $this->responseSuccess(null, new InvoiceResource($invoice->accessibleBy(auth()->user())->load('assignment:id,reference,receipt_amount_excluding_tax,receipt_amount_tax,receipt_amount', 'status:id,code,label', 'createdBy:id,name,email,created_at', 'updatedBy:id,name,email,created_at', 'deletedBy:id,name,email,created_at', 'cancelledBy:id,name,email,created_at')));
     }
 
     /**

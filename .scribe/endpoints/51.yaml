@@ -1,20 +1,20 @@
-name: 'Gestion des banques'
+name: 'Gestion des remarques'
 description: |-
 
-  APIs pour la gestion des banques
+  APIs pour la gestion des remarques
 endpoints:
   -
     httpMethods:
       - GET
-    uri: api/v1/banks
+    uri: api/v1/remarks
     metadata:
-      groupName: 'Gestion des banques'
+      groupName: 'Gestion des remarques'
       groupDescription: |-
 
-        APIs pour la gestion des banques
+        APIs pour la gestion des remarques
       subgroup: ''
       subgroupDescription: ''
-      title: 'Lister tous les banques'
+      title: 'Lister tous les remarques'
       description: ''
       authenticated: true
       custom: []
@@ -43,7 +43,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer cedPh6k8E6a5Z13fgabVD4v'
+      - 'Bearer c85h3gP6eEfakadb6D4Vv1Z'
     controller: null
     method: null
     route: null
@@ -51,15 +51,15 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/v1/banks
+    uri: api/v1/remarks
     metadata:
-      groupName: 'Gestion des banques'
+      groupName: 'Gestion des remarques'
       groupDescription: |-
 
-        APIs pour la gestion des banques
+        APIs pour la gestion des remarques
       subgroup: ''
       subgroupDescription: ''
-      title: 'Créer une nouvelle banque'
+      title: 'Créer une remarque'
       description: ''
       authenticated: true
       custom: []
@@ -72,25 +72,36 @@ endpoints:
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      name:
-        name: name
+      label:
+        name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: bbfodlaiqaxi
+        example: mtmzjarktxse
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
+      description:
+        name: description
+        description: ''
+        required: false
+        example: 'Aut ut non earum ratione qui at.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
     cleanBodyParameters:
-      name: bbfodlaiqaxi
+      label: mtmzjarktxse
+      description: 'Aut ut non earum ratione qui at.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer Vgeba1fZvh46d85Dk3cP6aE'
+      - 'Bearer gvDaVkebEh64c56ZPd1f3a8'
     controller: null
     method: null
     route: null
@@ -98,15 +109,15 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: 'api/v1/banks/{id}'
+    uri: 'api/v1/remarks/{id}'
     metadata:
-      groupName: 'Gestion des banques'
+      groupName: 'Gestion des remarques'
       groupDescription: |-
 
-        APIs pour la gestion des banques
+        APIs pour la gestion des remarques
       subgroup: ''
       subgroupDescription: ''
-      title: 'Afficher une banque'
+      title: 'Afficher une remarque'
       description: ''
       authenticated: true
       custom: []
@@ -117,16 +128,16 @@ endpoints:
     urlParameters:
       id:
         name: id
-        description: 'The ID of the bank.'
+        description: 'The ID of the remark.'
         required: true
-        example: 11
+        example: 1
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 11
+      id: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -146,23 +157,23 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6Eb6Z1e3f4avD8ghVP5ackd'
+      - 'Bearer 315abhVcDde4g6kv6ZEa8fP'
     controller: null
     method: null
     route: null
     custom: []
   -
     httpMethods:
-      - DELETE
-    uri: 'api/v1/banks/{id}'
+      - PUT
+    uri: 'api/v1/remarks/{id}'
     metadata:
-      groupName: 'Gestion des banques'
+      groupName: 'Gestion des remarques'
       groupDescription: |-
 
-        APIs pour la gestion des banques
+        APIs pour la gestion des remarques
       subgroup: ''
       subgroupDescription: ''
-      title: 'Supprimer une banque'
+      title: 'Mettre à jour une remarque'
       description: ''
       authenticated: true
       custom: []
@@ -173,16 +184,85 @@ endpoints:
     urlParameters:
       id:
         name: id
-        description: 'The ID of the bank.'
+        description: 'The ID of the remark.'
         required: true
-        example: 6
+        example: 1
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 6
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      label:
+        name: label
+        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
+        required: true
+        example: nzkajepzsjdvqit
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      description:
+        name: description
+        description: ''
+        required: false
+        example: 'Totam cupiditate dolor et quae nulla in quia culpa.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+    cleanBodyParameters:
+      label: nzkajepzsjdvqit
+      description: 'Totam cupiditate dolor et quae nulla in quia culpa.'
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer Zkac3d1a5e6hg68DEPbV4fv'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/remarks/{id}'
+    metadata:
+      groupName: 'Gestion des remarques'
+      groupDescription: |-
+
+        APIs pour la gestion des remarques
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Supprimer une remarque'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the remark.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      id: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -193,7 +273,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer aeP6aZdbgV43c5k8E6vfhD1'
+      - 'Bearer gdZaE51h6Pv4aebfDkV8c63'
     controller: null
     method: null
     route: null

@@ -1,20 +1,20 @@
-name: 'Gestion des tarifs des produits de peinture'
+name: 'Gestion des honoraires'
 description: |-
 
-  APIs pour la gestion des tarifs des produits de peinture
+  APIs pour la gestion des honoraires
 endpoints:
   -
     httpMethods:
       - GET
-    uri: api/v1/paint-product-prices
+    uri: api/v1/work-fees
     metadata:
-      groupName: 'Gestion des tarifs des produits de peinture'
+      groupName: 'Gestion des honoraires'
       groupDescription: |-
 
-        APIs pour la gestion des tarifs des produits de peinture
+        APIs pour la gestion des honoraires
       subgroup: ''
       subgroupDescription: ''
-      title: 'Lister tous les tarifs de produits de peinture'
+      title: 'Lister tous les honoraires'
       description: ''
       authenticated: true
       custom: []
@@ -43,7 +43,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6df1hZEcb4ke8va5D3a6VgP'
+      - 'Bearer ZbE5heP6g3a8facDd1k6V4v'
     controller: null
     method: null
     route: null
@@ -51,15 +51,15 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/v1/paint-product-prices
+    uri: api/v1/work-fees
     metadata:
-      groupName: 'Gestion des tarifs des produits de peinture'
+      groupName: 'Gestion des honoraires'
       groupDescription: |-
 
-        APIs pour la gestion des tarifs des produits de peinture
+        APIs pour la gestion des honoraires
       subgroup: ''
       subgroupDescription: ''
-      title: 'Ajouter un tarif de produit de peinture'
+      title: 'Créer un honoraire'
       description: ''
       authenticated: true
       custom: []
@@ -72,47 +72,58 @@ endpoints:
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      value:
-        name: value
-        description: 'La valeur de value doit être supérieure ou égale à 0.'
+      param_1:
+        name: param_1
+        description: ''
         required: true
-        example: 14
+        example: 0.7
         type: number
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
-      paint_type_id:
-        name: paint_type_id
-        description: 'The <code>id</code> of an existing record in the paint_types table.'
+      param_2:
+        name: param_2
+        description: ''
         required: true
-        example: ducimus
-        type: string
+        example: 326.665351718
+        type: number
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
-      number_paint_element_id:
-        name: number_paint_element_id
-        description: 'The <code>id</code> of an existing record in the number_paint_elements table.'
+      param_3:
+        name: param_3
+        description: ''
         required: true
-        example: modi
-        type: string
+        example: 89768.0
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      param_4:
+        name: param_4
+        description: ''
+        required: true
+        example: 4.2
+        type: number
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      value: 14
-      paint_type_id: ducimus
-      number_paint_element_id: modi
+      param_1: 0.7
+      param_2: 326.665351718
+      param_3: 89768.0
+      param_4: 4.2
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer Pa65ck8hdb3ZDa41efgv6EV'
+      - 'Bearer eV8Pf5Dv4dkhaZEgb6631ac'
     controller: null
     method: null
     route: null
@@ -120,15 +131,15 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: 'api/v1/paint-product-prices/{paintProductPrice}'
+    uri: 'api/v1/work-fees/{workFee}'
     metadata:
-      groupName: 'Gestion des tarifs des produits de peinture'
+      groupName: 'Gestion des honoraires'
       groupDescription: |-
 
-        APIs pour la gestion des tarifs des produits de peinture
+        APIs pour la gestion des honoraires
       subgroup: ''
       subgroupDescription: ''
-      title: 'Afficher un tarif de produit de peinture'
+      title: 'Afficher un honoraire'
       description: ''
       authenticated: true
       custom: []
@@ -137,18 +148,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      paintProductPrice:
-        name: paintProductPrice
+      workFee:
+        name: workFee
         description: ''
         required: true
-        example: expedita
+        example: voluptatem
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      paintProductPrice: expedita
+      workFee: voluptatem
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -168,7 +179,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer gfvhPa1c485a6ZEDVde3b6k'
+      - 'Bearer v6kZ5gaPfDV83bec4aEh1d6'
     controller: null
     method: null
     route: null
@@ -176,15 +187,15 @@ endpoints:
   -
     httpMethods:
       - PUT
-    uri: 'api/v1/paint-product-prices/{paintProductPrice}'
+    uri: 'api/v1/work-fees/{workFee}'
     metadata:
-      groupName: 'Gestion des tarifs des produits de peinture'
+      groupName: 'Gestion des honoraires'
       groupDescription: |-
 
-        APIs pour la gestion des tarifs des produits de peinture
+        APIs pour la gestion des honoraires
       subgroup: ''
       subgroupDescription: ''
-      title: 'Mettre à jour un tarif de produit de peinture'
+      title: 'Mettre à jour un honoraire'
       description: ''
       authenticated: true
       custom: []
@@ -193,62 +204,73 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      paintProductPrice:
-        name: paintProductPrice
+      workFee:
+        name: workFee
         description: ''
         required: true
-        example: nam
+        example: sit
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      paintProductPrice: nam
+      workFee: sit
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      value:
-        name: value
+      param_1:
+        name: param_1
         description: ''
         required: true
-        example: 54979.374313698
+        example: 138774884.98083
         type: number
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
-      paint_type_id:
-        name: paint_type_id
-        description: 'The <code>id</code> of an existing record in the paint_types table.'
+      param_2:
+        name: param_2
+        description: ''
         required: true
-        example: quo
-        type: string
+        example: 943.06833
+        type: number
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
-      number_paint_element_id:
-        name: number_paint_element_id
-        description: 'The <code>id</code> of an existing record in the number_paint_elements table.'
+      param_3:
+        name: param_3
+        description: ''
         required: true
-        example: ratione
-        type: string
+        example: 16935017.171124
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      param_4:
+        name: param_4
+        description: ''
+        required: true
+        example: 36.19
+        type: number
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      value: 54979.374313698
-      paint_type_id: quo
-      number_paint_element_id: ratione
+      param_1: 138774884.98083
+      param_2: 943.06833
+      param_3: 16935017.171124
+      param_4: 36.19
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 6b1dfaE36ZcVeh5k48aDvgP'
+      - 'Bearer vV5fZ348a6DaPE6hkcebgd1'
     controller: null
     method: null
     route: null
@@ -256,15 +278,15 @@ endpoints:
   -
     httpMethods:
       - DELETE
-    uri: 'api/v1/paint-product-prices/{paintProductPrice}'
+    uri: 'api/v1/work-fees/{workFee}'
     metadata:
-      groupName: 'Gestion des tarifs des produits de peinture'
+      groupName: 'Gestion des honoraires'
       groupDescription: |-
 
-        APIs pour la gestion des tarifs des produits de peinture
+        APIs pour la gestion des honoraires
       subgroup: ''
       subgroupDescription: ''
-      title: 'Supprimer un tarif de produit de peinture'
+      title: 'Supprimer un honoraire'
       description: ''
       authenticated: true
       custom: []
@@ -273,18 +295,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      paintProductPrice:
-        name: paintProductPrice
+      workFee:
+        name: workFee
         description: ''
         required: true
-        example: sequi
+        example: voluptatum
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      paintProductPrice: sequi
+      workFee: voluptatum
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -295,7 +317,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer eDVbh6dcv3a6agZfk15E84P'
+      - 'Bearer Vb6aEfdvh8ac4g6Z5eD1Pk3'
     controller: null
     method: null
     route: null

@@ -1,20 +1,20 @@
-name: "Gestion des types d'expertise"
+name: 'Gestion des carrosseries'
 description: |-
 
-  APIs pour la gestion des types d'expertise
+  APIs pour la gestion des carrosseries
 endpoints:
   -
     httpMethods:
       - GET
-    uri: api/v1/expertise-types
+    uri: api/v1/bodyworks
     metadata:
-      groupName: "Gestion des types d'expertise"
+      groupName: 'Gestion des carrosseries'
       groupDescription: |-
 
-        APIs pour la gestion des types d'expertise
+        APIs pour la gestion des carrosseries
       subgroup: ''
       subgroupDescription: ''
-      title: "Lister tous les types d'expertise"
+      title: 'Lister toutes les carrosseries'
       description: ''
       authenticated: true
       custom: []
@@ -43,7 +43,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer kDc63V6Paa15Zf4ehvEdbg8'
+      - 'Bearer D3Zvh5aaP46bVek1cf6Edg8'
     controller: null
     method: null
     route: null
@@ -51,15 +51,15 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/v1/expertise-types
+    uri: api/v1/bodyworks
     metadata:
-      groupName: "Gestion des types d'expertise"
+      groupName: 'Gestion des carrosseries'
       groupDescription: |-
 
-        APIs pour la gestion des types d'expertise
+        APIs pour la gestion des carrosseries
       subgroup: ''
       subgroupDescription: ''
-      title: "Ajouter un type d'expertise"
+      title: 'Ajouter une carrosserie'
       description: ''
       authenticated: true
       custom: []
@@ -76,7 +76,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: fghedmuzohwdg
+        example: cwxdrbltbhpmcvgi
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -86,22 +86,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Aut sit autem rerum ea earum aut modi ea.'
+        example: 'Voluptatem mollitia sit nihil fugit nihil ea.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: fghedmuzohwdg
-      description: 'Aut sit autem rerum ea earum aut modi ea.'
+      label: cwxdrbltbhpmcvgi
+      description: 'Voluptatem mollitia sit nihil fugit nihil ea.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer akhf6a4Ve68g1b3EcdDPZ5v'
+      - 'Bearer 18vD64kabPZg3cf6adEh5Ve'
     controller: null
     method: null
     route: null
@@ -109,15 +109,15 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: 'api/v1/expertise-types/{expertise_type}'
+    uri: 'api/v1/bodyworks/{id}'
     metadata:
-      groupName: "Gestion des types d'expertise"
+      groupName: 'Gestion des carrosseries'
       groupDescription: |-
 
-        APIs pour la gestion des types d'expertise
+        APIs pour la gestion des carrosseries
       subgroup: ''
       subgroupDescription: ''
-      title: "Afficher un type d'expertise"
+      title: 'Afficher une carrosserie'
       description: ''
       authenticated: true
       custom: []
@@ -126,18 +126,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      expertise_type:
-        name: expertise_type
-        description: ''
+      id:
+        name: id
+        description: 'The ID of the bodywork.'
         required: true
-        example: ullam
+        example: minus
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      expertise_type: ullam
+      id: minus
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -157,7 +157,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer dV6gbfak83cveahEPD514Z6'
+      - 'Bearer Zvhb8DVke56ad1Pa6gfE43c'
     controller: null
     method: null
     route: null
@@ -165,15 +165,15 @@ endpoints:
   -
     httpMethods:
       - PUT
-    uri: 'api/v1/expertise-types/{expertise_type}'
+    uri: 'api/v1/bodyworks/{id}'
     metadata:
-      groupName: "Gestion des types d'expertise"
+      groupName: 'Gestion des carrosseries'
       groupDescription: |-
 
-        APIs pour la gestion des types d'expertise
+        APIs pour la gestion des carrosseries
       subgroup: ''
       subgroupDescription: ''
-      title: "Mettre à jour un type d'expertise"
+      title: 'Mettre à jour une carrosserie'
       description: ''
       authenticated: true
       custom: []
@@ -182,18 +182,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      expertise_type:
-        name: expertise_type
-        description: ''
+      id:
+        name: id
+        description: 'The ID of the bodywork.'
         required: true
-        example: sit
+        example: veniam
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      expertise_type: sit
+      id: veniam
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -201,7 +201,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: zyog
+        example: sinqhbwzi
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -211,22 +211,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Eveniet consequatur natus consequuntur hic praesentium.'
+        example: 'Sed voluptatum excepturi tempore assumenda et hic.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: zyog
-      description: 'Eveniet consequatur natus consequuntur hic praesentium.'
+      label: sinqhbwzi
+      description: 'Sed voluptatum excepturi tempore assumenda et hic.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer e46cfaE5a3g6PbdZ8DVhk1v'
+      - 'Bearer Ek58ef1ZVhd66PacgbaDv43'
     controller: null
     method: null
     route: null
@@ -234,15 +234,15 @@ endpoints:
   -
     httpMethods:
       - DELETE
-    uri: 'api/v1/expertise-types/{expertise_type}'
+    uri: 'api/v1/bodyworks/{id}'
     metadata:
-      groupName: "Gestion des types d'expertise"
+      groupName: 'Gestion des carrosseries'
       groupDescription: |-
 
-        APIs pour la gestion des types d'expertise
+        APIs pour la gestion des carrosseries
       subgroup: ''
       subgroupDescription: ''
-      title: "Supprimer un type d'expertise"
+      title: 'Supprimer une carrosserie'
       description: ''
       authenticated: true
       custom: []
@@ -251,18 +251,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      expertise_type:
-        name: expertise_type
-        description: ''
+      id:
+        name: id
+        description: 'The ID of the bodywork.'
         required: true
-        example: et
+        example: qui
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      expertise_type: et
+      id: qui
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -273,7 +273,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Evk385ebfDhdVaacg6P614Z'
+      - 'Bearer DfkbPZ4ea8Vav6g56Ecd3h1'
     controller: null
     method: null
     route: null

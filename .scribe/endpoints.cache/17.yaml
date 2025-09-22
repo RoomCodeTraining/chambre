@@ -45,7 +45,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer b13e6ag6d4ZVPkvE5ca8hDf'
+      - 'Bearer 6b6a3VZ1aDd45fkP8egEhcv'
     controller: null
     method: null
     route: null
@@ -78,7 +78,7 @@ endpoints:
         name: assignment_id
         description: 'The <code>id</code> of an existing record in the assignments table.'
         required: true
-        example: veniam
+        example: dicta
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -99,7 +99,7 @@ endpoints:
         name: 'shocks[].shock_point_id'
         description: 'The <code>id</code> of an existing record in the shock_points table.'
         required: true
-        example: sunt
+        example: maxime
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -119,7 +119,7 @@ endpoints:
         name: 'shocks[].shock_works[].supply_id'
         description: 'The <code>id</code> of an existing record in the supplies table.'
         required: true
-        example: in
+        example: dolor
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -149,7 +149,7 @@ endpoints:
         name: 'shocks[].shock_works[].repair'
         description: ''
         required: true
-        example: true
+        example: false
         type: boolean
         enumValues: []
         exampleWasSpecified: false
@@ -169,7 +169,7 @@ endpoints:
         name: 'shocks[].shock_works[].control'
         description: ''
         required: true
-        example: true
+        example: false
         type: boolean
         enumValues: []
         exampleWasSpecified: false
@@ -179,7 +179,7 @@ endpoints:
         name: 'shocks[].shock_works[].comment'
         description: ''
         required: false
-        example: rerum
+        example: consequatur
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -189,7 +189,7 @@ endpoints:
         name: 'shocks[].shock_works[].obsolescence_rate'
         description: ''
         required: true
-        example: 66442.48323207
+        example: 33004.57213018
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -199,7 +199,7 @@ endpoints:
         name: 'shocks[].shock_works[].recovery_amount'
         description: ''
         required: true
-        example: 9178.9
+        example: 163251773.011
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -209,7 +209,7 @@ endpoints:
         name: 'shocks[].shock_works[].amount'
         description: ''
         required: true
-        example: 0.0
+        example: 28098916.0
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -219,7 +219,7 @@ endpoints:
         name: 'shocks[].shock_works[].discount'
         description: ''
         required: true
-        example: 6352684.9803
+        example: 72372.0
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -249,7 +249,7 @@ endpoints:
         name: 'shocks[].with_tax'
         description: ''
         required: false
-        example: true
+        example: false
         type: boolean
         enumValues: []
         exampleWasSpecified: false
@@ -269,7 +269,7 @@ endpoints:
         name: 'shocks[].workforces[].workforce_type_id'
         description: 'The <code>id</code> of an existing record in the workforce_types table.'
         required: true
-        example: ea
+        example: aspernatur
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -279,7 +279,7 @@ endpoints:
         name: 'shocks[].workforces[].nb_hours'
         description: ''
         required: true
-        example: 54.637712321
+        example: 58332.17813582
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -289,7 +289,7 @@ endpoints:
         name: 'shocks[].workforces[].discount'
         description: ''
         required: true
-        example: 526821.33
+        example: 419898046.5
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -299,44 +299,335 @@ endpoints:
         name: 'shocks[].workforces[].all_paint'
         description: ''
         required: false
-        example: false
+        example: true
         type: boolean
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      assignment_id: veniam
+      assignment_id: dicta
       shocks:
         -
-          shock_point_id: sunt
+          shock_point_id: maxime
           shock_works:
             -
-              supply_id: in
+              supply_id: dolor
               disassembly: true
               replacement: true
-              repair: true
+              repair: false
               paint: false
-              control: true
-              comment: rerum
-              obsolescence_rate: 66442.48323207
-              recovery_amount: 9178.9
-              amount: 0.0
-              discount: 6352684.9803
-          with_tax: true
+              control: false
+              comment: consequatur
+              obsolescence_rate: 33004.57213018
+              recovery_amount: 163251773.011
+              amount: 28098916.0
+              discount: 72372.0
+          with_tax: false
           workforces:
             -
-              workforce_type_id: ea
-              nb_hours: 54.637712321
-              discount: 526821.33
-              all_paint: false
+              workforce_type_id: aspernatur
+              nb_hours: 58332.17813582
+              discount: 419898046.5
+              all_paint: true
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 46Pv183baZea6kgVch5dfDE'
+      - 'Bearer Z1aakhf5cE846PDdvV3g6be'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/shocks/store/point
+    metadata:
+      groupName: 'Gestion des chocs'
+      groupDescription: |-
+
+        APIs pour la gestion des chocs
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Ajouter un point à un choc'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      assignment_id:
+        name: assignment_id
+        description: 'The <code>id</code> of an existing record in the assignments table.'
+        required: true
+        example: non
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      shocks:
+        name: shocks
+        description: ''
+        required: true
+        example:
+          - []
+        type: 'object[]'
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].shock_point_id':
+        name: 'shocks[].shock_point_id'
+        description: 'The <code>id</code> of an existing record in the shock_points table.'
+        required: true
+        example: est
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].shock_works':
+        name: 'shocks[].shock_works'
+        description: ''
+        required: false
+        example: null
+        type: 'object[]'
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      'shocks[].shock_works[].supply_id':
+        name: 'shocks[].shock_works[].supply_id'
+        description: 'The <code>id</code> of an existing record in the supplies table.'
+        required: true
+        example: repudiandae
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].shock_works[].disassembly':
+        name: 'shocks[].shock_works[].disassembly'
+        description: ''
+        required: true
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].shock_works[].replacement':
+        name: 'shocks[].shock_works[].replacement'
+        description: ''
+        required: true
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].shock_works[].repair':
+        name: 'shocks[].shock_works[].repair'
+        description: ''
+        required: true
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].shock_works[].paint':
+        name: 'shocks[].shock_works[].paint'
+        description: ''
+        required: true
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].shock_works[].control':
+        name: 'shocks[].shock_works[].control'
+        description: ''
+        required: true
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].shock_works[].comment':
+        name: 'shocks[].shock_works[].comment'
+        description: ''
+        required: false
+        example: nemo
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      'shocks[].shock_works[].obsolescence_rate':
+        name: 'shocks[].shock_works[].obsolescence_rate'
+        description: ''
+        required: true
+        example: 5.70571
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].shock_works[].recovery_amount':
+        name: 'shocks[].shock_works[].recovery_amount'
+        description: ''
+        required: true
+        example: 0.1347824
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].shock_works[].amount':
+        name: 'shocks[].shock_works[].amount'
+        description: ''
+        required: true
+        example: 1.6659692
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].shock_works[].discount':
+        name: 'shocks[].shock_works[].discount'
+        description: ''
+        required: true
+        example: 20.24
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].paint_type_id':
+        name: 'shocks[].paint_type_id'
+        description: 'The <code>id</code> of an existing record in the paint_types table.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      'shocks[].hourly_rate_id':
+        name: 'shocks[].hourly_rate_id'
+        description: 'The <code>id</code> of an existing record in the hourly_rates table.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      'shocks[].with_tax':
+        name: 'shocks[].with_tax'
+        description: ''
+        required: false
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      'shocks[].workforces':
+        name: 'shocks[].workforces'
+        description: ''
+        required: false
+        example: null
+        type: 'object[]'
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      'shocks[].workforces[].workforce_type_id':
+        name: 'shocks[].workforces[].workforce_type_id'
+        description: 'The <code>id</code> of an existing record in the workforce_types table.'
+        required: true
+        example: expedita
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].workforces[].nb_hours':
+        name: 'shocks[].workforces[].nb_hours'
+        description: ''
+        required: true
+        example: 5379707.451
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].workforces[].discount':
+        name: 'shocks[].workforces[].discount'
+        description: ''
+        required: true
+        example: 52.34
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].workforces[].all_paint':
+        name: 'shocks[].workforces[].all_paint'
+        description: ''
+        required: false
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+    cleanBodyParameters:
+      assignment_id: non
+      shocks:
+        -
+          shock_point_id: est
+          shock_works:
+            -
+              supply_id: repudiandae
+              disassembly: true
+              replacement: true
+              repair: false
+              paint: false
+              control: true
+              comment: nemo
+              obsolescence_rate: 5.70571
+              recovery_amount: 0.1347824
+              amount: 1.6659692
+              discount: 20.24
+          with_tax: false
+          workforces:
+            -
+              workforce_type_id: expedita
+              nb_hours: 5379707.451
+              discount: 52.34
+              all_paint: true
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g5DcEh48ve6da1VkafZPb3'
     controller: null
     method: null
     route: null
@@ -365,14 +656,14 @@ endpoints:
         name: id
         description: 'The ID of the shock.'
         required: true
-        example: itaque
+        example: vero
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: itaque
+      id: vero
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -392,7 +683,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer egEV8Dfk4vZabdP1c6ah635'
+      - 'Bearer c6k8ZaVg1vfa5DdPe6E3hb4'
     controller: null
     method: null
     route: null
@@ -421,14 +712,14 @@ endpoints:
         name: id
         description: 'The ID of the shock.'
         required: true
-        example: in
+        example: sed
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: in
+      id: sed
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -436,21 +727,21 @@ endpoints:
         name: shock_point_id
         description: 'The <code>id</code> of an existing record in the shock_points table.'
         required: true
-        example: vel
+        example: at
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      shock_point_id: vel
+      shock_point_id: at
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 5kEe1D64c8Zbg3vP6aahfVd'
+      - 'Bearer fkbaV616PE5ZcvedDg84ah3'
     controller: null
     method: null
     route: null
@@ -479,14 +770,14 @@ endpoints:
         name: id
         description: 'The ID of the shock.'
         required: true
-        example: nobis
+        example: itaque
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: nobis
+      id: itaque
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -497,7 +788,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 3cPg51eDa6d864hbkVavEZf'
+      - 'Bearer fb3E15cDa66vghPdkeV84Za'
     controller: null
     method: null
     route: null
@@ -526,14 +817,14 @@ endpoints:
         name: shock
         description: 'The shock.'
         required: true
-        example: nam
+        example: doloremque
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      shock: nam
+      shock: doloremque
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -544,7 +835,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Pbc8akfD46d3VEgveZ6a1h5'
+      - 'Bearer e316d56gZvhD8bc4kEPaaVf'
     controller: null
     method: null
     route: null
@@ -573,14 +864,14 @@ endpoints:
         name: shock
         description: 'The shock.'
         required: true
-        example: assumenda
+        example: harum
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      shock: assumenda
+      shock: harum
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -591,7 +882,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer eb8v4616khZ5fPaa3EcVdgD'
+      - 'Bearer ahkPDd1Z8fega6cV3b4E65v'
     controller: null
     method: null
     route: null

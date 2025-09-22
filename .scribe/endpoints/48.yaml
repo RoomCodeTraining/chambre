@@ -1,20 +1,20 @@
-name: 'Gestion des types de paiement'
+name: 'Gestion des historiques de paiement'
 description: |-
 
-  APIs pour la gestion des types de paiement
+  APIs pour la gestion des historiques de paiement
 endpoints:
   -
     httpMethods:
       - GET
-    uri: api/v1/payment-types
+    uri: api/v1/payment-historics
     metadata:
-      groupName: 'Gestion des types de paiement'
+      groupName: 'Gestion des historiques de paiement'
       groupDescription: |-
 
-        APIs pour la gestion des types de paiement
+        APIs pour la gestion des historiques de paiement
       subgroup: ''
       subgroupDescription: ''
-      title: 'Lister tous les types de paiement'
+      title: 'Lister tous les historiques de paiement'
       description: ''
       authenticated: true
       custom: []
@@ -43,7 +43,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 8646abcafked5PvEVZhD13g'
+      - 'Bearer 4vVfdha1ga6kDPbe5638EZc'
     controller: null
     method: null
     route: null
@@ -51,15 +51,15 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/v1/payment-types
+    uri: api/v1/payment-historics
     metadata:
-      groupName: 'Gestion des types de paiement'
+      groupName: 'Gestion des historiques de paiement'
       groupDescription: |-
 
-        APIs pour la gestion des types de paiement
+        APIs pour la gestion des historiques de paiement
       subgroup: ''
       subgroupDescription: ''
-      title: 'Créer un type de paiement'
+      title: 'Créer un historique de paiement'
       description: ''
       authenticated: true
       custom: []
@@ -71,37 +71,15 @@ endpoints:
     cleanUrlParameters: []
     queryParameters: []
     cleanQueryParameters: []
-    bodyParameters:
-      label:
-        name: label
-        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
-        required: true
-        example: ukhdpvvlwjuqjciyvap
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      description:
-        name: description
-        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
-        required: false
-        example: 'Reiciendis repudiandae quaerat est quaerat doloribus non repellat cupiditate.'
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: true
-        custom: []
-    cleanBodyParameters:
-      label: ukhdpvvlwjuqjciyvap
-      description: 'Reiciendis repudiandae quaerat est quaerat doloribus non repellat cupiditate.'
+    bodyParameters: []
+    cleanBodyParameters: []
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer kZh8Evd4P36fa5c1beVagD6'
+      - 'Bearer 5E4hVd6e6v8ZcPD3f1kagab'
     controller: null
     method: null
     route: null
@@ -109,15 +87,15 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: 'api/v1/payment-types/{paymentType_id}'
+    uri: 'api/v1/payment-historics/{paymentHistoric_id}'
     metadata:
-      groupName: 'Gestion des types de paiement'
+      groupName: 'Gestion des historiques de paiement'
       groupDescription: |-
 
-        APIs pour la gestion des types de paiement
+        APIs pour la gestion des historiques de paiement
       subgroup: ''
       subgroupDescription: ''
-      title: 'Afficher un type de paiement'
+      title: 'Afficher un historique de paiement'
       description: ''
       authenticated: true
       custom: []
@@ -126,18 +104,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      paymentType_id:
-        name: paymentType_id
-        description: 'The ID of the paymentType.'
+      paymentHistoric_id:
+        name: paymentHistoric_id
+        description: 'The ID of the paymentHistoric.'
         required: true
-        example: 1
+        example: 19
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      paymentType_id: 1
+      paymentHistoric_id: 19
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -157,23 +135,23 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Daac15hvkVfPd6gE3e6bZ48'
+      - 'Bearer gdvE4be6ah1Z5c6kaD3P8fV'
     controller: null
     method: null
     route: null
     custom: []
   -
     httpMethods:
-      - DELETE
-    uri: 'api/v1/payment-types/{paymentType_id}'
+      - PUT
+    uri: 'api/v1/payment-historics/{paymentHistoric}'
     metadata:
-      groupName: 'Gestion des types de paiement'
+      groupName: 'Gestion des historiques de paiement'
       groupDescription: |-
 
-        APIs pour la gestion des types de paiement
+        APIs pour la gestion des historiques de paiement
       subgroup: ''
       subgroupDescription: ''
-      title: 'Supprimer un type de paiement'
+      title: ''
       description: ''
       authenticated: true
       custom: []
@@ -182,18 +160,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      paymentType_id:
-        name: paymentType_id
-        description: 'The ID of the paymentType.'
+      paymentHistoric:
+        name: paymentHistoric
+        description: ''
         required: true
-        example: 1
+        example: 7
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      paymentType_id: 1
+      paymentHistoric: 7
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -204,7 +182,54 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer d1a65P6Vvhfk3Za4ebDcg8E'
+      - 'Bearer bD5vh4Z3fd6ea1P6gE8kacV'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/payment-historics/{paymentHistoric_id}'
+    metadata:
+      groupName: 'Gestion des historiques de paiement'
+      groupDescription: |-
+
+        APIs pour la gestion des historiques de paiement
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Supprimer un historique de paiement'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      paymentHistoric_id:
+        name: paymentHistoric_id
+        description: 'The ID of the paymentHistoric.'
+        required: true
+        example: 3
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      paymentHistoric_id: 3
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 8fPbaVd5vED4Zeck3g16a6h'
     controller: null
     method: null
     route: null

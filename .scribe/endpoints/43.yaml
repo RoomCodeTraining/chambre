@@ -1,20 +1,20 @@
-name: 'Gestion des honoraires'
+name: 'Gestion des factures'
 description: |-
 
-  APIs pour la gestion des honoraires
+  APIs pour la gestion des factures
 endpoints:
   -
     httpMethods:
       - GET
-    uri: api/v1/work-fees
+    uri: api/v1/invoices
     metadata:
-      groupName: 'Gestion des honoraires'
+      groupName: 'Gestion des factures'
       groupDescription: |-
 
-        APIs pour la gestion des honoraires
+        APIs pour la gestion des factures
       subgroup: ''
       subgroupDescription: ''
-      title: 'Lister tous les honoraires'
+      title: 'Lister toutes les factures'
       description: ''
       authenticated: true
       custom: []
@@ -43,7 +43,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer c4fPah1Zbegd56k3DE6Va8v'
+      - 'Bearer haf8akZEvPe6DVc13g64d5b'
     controller: null
     method: null
     route: null
@@ -51,15 +51,15 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/v1/work-fees
+    uri: api/v1/invoices
     metadata:
-      groupName: 'Gestion des honoraires'
+      groupName: 'Gestion des factures'
       groupDescription: |-
 
-        APIs pour la gestion des honoraires
+        APIs pour la gestion des factures
       subgroup: ''
       subgroupDescription: ''
-      title: 'Créer un honoraire'
+      title: 'Créer une facture'
       description: ''
       authenticated: true
       custom: []
@@ -72,58 +72,47 @@ endpoints:
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      param_1:
-        name: param_1
-        description: ''
+      assignment_id:
+        name: assignment_id
+        description: 'The <code>id</code> of an existing record in the assignments table.'
         required: true
-        example: 4.07
-        type: number
+        example: sapiente
+        type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
-      param_2:
-        name: param_2
-        description: ''
+      date:
+        name: date
+        description: 'Must be a valid date in the format <code>Y-m-d</code>.'
         required: true
-        example: 457708.89758932
-        type: number
+        example: '2025-09-22'
+        type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
-      param_3:
-        name: param_3
+      object:
+        name: object
         description: ''
         required: true
-        example: 58664962.868872
-        type: number
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      param_4:
-        name: param_4
-        description: ''
-        required: true
-        example: 132314971.35385
-        type: number
+        example: et
+        type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      param_1: 4.07
-      param_2: 457708.89758932
-      param_3: 58664962.868872
-      param_4: 132314971.35385
+      assignment_id: sapiente
+      date: '2025-09-22'
+      object: et
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 1ec64daDhgkEbaVPf3Z658v'
+      - 'Bearer bVePEf65va1ghca8kZ4Dd36'
     controller: null
     method: null
     route: null
@@ -131,15 +120,15 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: 'api/v1/work-fees/{workFee}'
+    uri: 'api/v1/invoices/{id}'
     metadata:
-      groupName: 'Gestion des honoraires'
+      groupName: 'Gestion des factures'
       groupDescription: |-
 
-        APIs pour la gestion des honoraires
+        APIs pour la gestion des factures
       subgroup: ''
       subgroupDescription: ''
-      title: 'Afficher un honoraire'
+      title: 'Afficher une facture'
       description: ''
       authenticated: true
       custom: []
@@ -148,18 +137,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      workFee:
-        name: workFee
-        description: ''
+      id:
+        name: id
+        description: 'The ID of the invoice.'
         required: true
-        example: dolor
-        type: string
+        example: 19
+        type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      workFee: dolor
+      id: 19
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -179,7 +168,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer EDhv5a86cab64g1e3fVkPdZ'
+      - 'Bearer 8Dvhc31geVPZb6kf5a4da6E'
     controller: null
     method: null
     route: null
@@ -187,15 +176,15 @@ endpoints:
   -
     httpMethods:
       - PUT
-    uri: 'api/v1/work-fees/{workFee}'
+    uri: 'api/v1/invoices/{id}'
     metadata:
-      groupName: 'Gestion des honoraires'
+      groupName: 'Gestion des factures'
       groupDescription: |-
 
-        APIs pour la gestion des honoraires
+        APIs pour la gestion des factures
       subgroup: ''
       subgroupDescription: ''
-      title: 'Mettre à jour un honoraire'
+      title: 'Mettre à jour une facture'
       description: ''
       authenticated: true
       custom: []
@@ -204,73 +193,62 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      workFee:
-        name: workFee
-        description: ''
+      id:
+        name: id
+        description: 'The ID of the invoice.'
         required: true
-        example: magni
-        type: string
+        example: 7
+        type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      workFee: magni
+      id: 7
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      param_1:
-        name: param_1
-        description: ''
+      assignment_id:
+        name: assignment_id
+        description: 'The <code>id</code> of an existing record in the assignments table.'
         required: true
-        example: 43606.05
-        type: number
+        example: dolores
+        type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
-      param_2:
-        name: param_2
-        description: ''
+      date:
+        name: date
+        description: 'Must be a valid date in the format <code>Y-m-d</code>.'
         required: true
-        example: 59799427.3
-        type: number
+        example: '2025-09-22'
+        type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
-      param_3:
-        name: param_3
+      object:
+        name: object
         description: ''
         required: true
-        example: 306.011
-        type: number
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      param_4:
-        name: param_4
-        description: ''
-        required: true
-        example: 2433.03200514
-        type: number
+        example: temporibus
+        type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      param_1: 43606.05
-      param_2: 59799427.3
-      param_3: 306.011
-      param_4: 2433.03200514
+      assignment_id: dolores
+      date: '2025-09-22'
+      object: temporibus
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer e5bVPcEf6Zdk8haD1a634vg'
+      - 'Bearer Vbac5ahv4EZDk668dP1feg3'
     controller: null
     method: null
     route: null
@@ -278,15 +256,15 @@ endpoints:
   -
     httpMethods:
       - DELETE
-    uri: 'api/v1/work-fees/{workFee}'
+    uri: 'api/v1/invoices/{id}'
     metadata:
-      groupName: 'Gestion des honoraires'
+      groupName: 'Gestion des factures'
       groupDescription: |-
 
-        APIs pour la gestion des honoraires
+        APIs pour la gestion des factures
       subgroup: ''
       subgroupDescription: ''
-      title: 'Supprimer un honoraire'
+      title: 'Supprimer une facture'
       description: ''
       authenticated: true
       custom: []
@@ -295,18 +273,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      workFee:
-        name: workFee
-        description: ''
+      id:
+        name: id
+        description: 'The ID of the invoice.'
         required: true
-        example: fugiat
-        type: string
+        example: 8
+        type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      workFee: fugiat
+      id: 8
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -317,7 +295,146 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer cP6Vhdeb5vaDk3g4Za8fE61'
+      - 'Bearer a5dZgVv48ah36e1fPcbk6ED'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/invoices/{invoice}/cancel'
+    metadata:
+      groupName: 'Gestion des factures'
+      groupDescription: |-
+
+        APIs pour la gestion des factures
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Annuler une facture'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      invoice:
+        name: invoice
+        description: 'The invoice.'
+        required: true
+        example: 2
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      invoice: 2
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 5461ehkaEb6D8dPvVafgZc3'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/invoices/{invoice}/generate'
+    metadata:
+      groupName: 'Gestion des factures'
+      groupDescription: |-
+
+        APIs pour la gestion des factures
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Générer une facture'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      invoice:
+        name: invoice
+        description: 'The invoice.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      invoice: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer Dvcg6d5a4hPke13Z8aVf6bE'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/invoices/get/statistics
+    metadata:
+      groupName: 'Gestion des factures'
+      groupDescription: |-
+
+        APIs pour la gestion des factures
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Statistiques des factures'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer Egka65Zd8V1caDPf63vbe4h'
     controller: null
     method: null
     route: null

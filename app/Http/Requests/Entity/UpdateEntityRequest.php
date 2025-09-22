@@ -11,6 +11,8 @@ class UpdateEntityRequest extends FormRequest
     {
         return [
             'name' => ['required', 'string', 'max:255'],
+            'prefix' => ['nullable', 'string', 'max:255'],
+            'suffix' => ['nullable', 'string', 'max:255'],
             'address' => ['nullable', 'string', 'max:255'],
             'email' => ['nullable', 'regex:' . self::emailRegex(), 'string', 'max:255', 'unique:entities,email,' . $this->id],
             'telephone' => ['nullable', 'string', 'max:255'],

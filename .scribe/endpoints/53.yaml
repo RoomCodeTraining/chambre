@@ -1,20 +1,20 @@
-name: 'Gestion des remarques'
+name: 'Gestion des constats'
 description: |-
 
-  APIs pour la gestion des remarques
+  APIs pour la gestion des constats
 endpoints:
   -
     httpMethods:
       - GET
-    uri: api/v1/remarks
+    uri: api/v1/ascertainments
     metadata:
-      groupName: 'Gestion des remarques'
+      groupName: 'Gestion des constats'
       groupDescription: |-
 
-        APIs pour la gestion des remarques
+        APIs pour la gestion des constats
       subgroup: ''
       subgroupDescription: ''
-      title: 'Lister tous les remarques'
+      title: 'Lister les constats'
       description: ''
       authenticated: true
       custom: []
@@ -43,7 +43,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 164Eg8fZb3h5aecaVvDd6Pk'
+      - 'Bearer f85P31Dkvchbg6a6a4dZEVe'
     controller: null
     method: null
     route: null
@@ -51,15 +51,15 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/v1/remarks
+    uri: api/v1/ascertainments
     metadata:
-      groupName: 'Gestion des remarques'
+      groupName: 'Gestion des constats'
       groupDescription: |-
 
-        APIs pour la gestion des remarques
+        APIs pour la gestion des constats
       subgroup: ''
       subgroupDescription: ''
-      title: 'Créer une remarque'
+      title: 'Créer un constat'
       description: ''
       authenticated: true
       custom: []
@@ -72,36 +72,126 @@ endpoints:
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      label:
-        name: label
-        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
+      assignment_id:
+        name: assignment_id
+        description: 'The <code>id</code> of an existing record in the assignments table.'
         required: true
-        example: ro
+        example: repellat
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
-      description:
-        name: description
+      ascertainments:
+        name: ascertainments
         description: ''
-        required: false
-        example: 'Distinctio ex et dolor corrupti.'
+        required: true
+        example:
+          - []
+        type: 'object[]'
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'ascertainments[].ascertainment_type_id':
+        name: 'ascertainments[].ascertainment_type_id'
+        description: 'The <code>id</code> of an existing record in the ascertainment_types table.'
+        required: true
+        example: quae
         type: string
         enumValues: []
         exampleWasSpecified: false
-        nullable: true
+        nullable: false
+        custom: []
+      'ascertainments[].very_good':
+        name: 'ascertainments[].very_good'
+        description: ''
+        required: true
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'ascertainments[].good':
+        name: 'ascertainments[].good'
+        description: ''
+        required: true
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'ascertainments[].acceptable':
+        name: 'ascertainments[].acceptable'
+        description: ''
+        required: true
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'ascertainments[].less_good':
+        name: 'ascertainments[].less_good'
+        description: ''
+        required: true
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'ascertainments[].bad':
+        name: 'ascertainments[].bad'
+        description: ''
+        required: true
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'ascertainments[].very_bad':
+        name: 'ascertainments[].very_bad'
+        description: ''
+        required: true
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'ascertainments[].comment':
+        name: 'ascertainments[].comment'
+        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
+        required: true
+        example: kmhqwhkuuadagbk
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
         custom: []
     cleanBodyParameters:
-      label: ro
-      description: 'Distinctio ex et dolor corrupti.'
+      assignment_id: repellat
+      ascertainments:
+        -
+          ascertainment_type_id: quae
+          very_good: true
+          good: true
+          acceptable: true
+          less_good: false
+          bad: false
+          very_bad: false
+          comment: kmhqwhkuuadagbk
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer vE3Pga8Vh4b56Dfe6d1kZca'
+      - 'Bearer bgkh4V6f3D1aecP8EZvad56'
     controller: null
     method: null
     route: null
@@ -109,15 +199,15 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: 'api/v1/remarks/{id}'
+    uri: 'api/v1/ascertainments/{id}'
     metadata:
-      groupName: 'Gestion des remarques'
+      groupName: 'Gestion des constats'
       groupDescription: |-
 
-        APIs pour la gestion des remarques
+        APIs pour la gestion des constats
       subgroup: ''
       subgroupDescription: ''
-      title: 'Afficher une remarque'
+      title: 'Afficher un constat'
       description: ''
       authenticated: true
       custom: []
@@ -128,16 +218,16 @@ endpoints:
     urlParameters:
       id:
         name: id
-        description: 'The ID of the remark.'
+        description: 'The ID of the ascertainment.'
         required: true
-        example: 1
-        type: integer
+        example: tempore
+        type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 1
+      id: tempore
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -157,7 +247,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer bacv6PDZ6feV14Ea853hkdg'
+      - 'Bearer gfP38VebDavd4kcEh6Z1a65'
     controller: null
     method: null
     route: null
@@ -165,15 +255,15 @@ endpoints:
   -
     httpMethods:
       - PUT
-    uri: 'api/v1/remarks/{id}'
+    uri: 'api/v1/ascertainments/{id}'
     metadata:
-      groupName: 'Gestion des remarques'
+      groupName: 'Gestion des constats'
       groupDescription: |-
 
-        APIs pour la gestion des remarques
+        APIs pour la gestion des constats
       subgroup: ''
       subgroupDescription: ''
-      title: 'Mettre à jour une remarque'
+      title: 'Mettre à jour un constat'
       description: ''
       authenticated: true
       custom: []
@@ -184,49 +274,115 @@ endpoints:
     urlParameters:
       id:
         name: id
-        description: 'The ID of the remark.'
+        description: 'The ID of the ascertainment.'
         required: true
-        example: 1
-        type: integer
+        example: ratione
+        type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 1
+      id: ratione
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      label:
-        name: label
-        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
+      ascertainment_type_id:
+        name: ascertainment_type_id
+        description: 'The <code>id</code> of an existing record in the ascertainment_types table.'
         required: true
-        example: pcfxe
+        example: est
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
-      description:
-        name: description
+      very_good:
+        name: very_good
         description: ''
-        required: false
-        example: 'Labore commodi natus hic consequatur officia.'
+        required: true
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      good:
+        name: good
+        description: ''
+        required: true
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      acceptable:
+        name: acceptable
+        description: ''
+        required: true
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      less_good:
+        name: less_good
+        description: ''
+        required: true
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      bad:
+        name: bad
+        description: ''
+        required: true
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      very_bad:
+        name: very_bad
+        description: ''
+        required: true
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      comment:
+        name: comment
+        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
+        required: true
+        example: gbfsbvwhrjoyhvpqebycv
         type: string
         enumValues: []
         exampleWasSpecified: false
-        nullable: true
+        nullable: false
         custom: []
     cleanBodyParameters:
-      label: pcfxe
-      description: 'Labore commodi natus hic consequatur officia.'
+      ascertainment_type_id: est
+      very_good: true
+      good: false
+      acceptable: true
+      less_good: false
+      bad: false
+      very_bad: true
+      comment: gbfsbvwhrjoyhvpqebycv
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer cDbh64evaE6P5g3Z1fV8kad'
+      - 'Bearer gfdb4ca6V31EZ8ePv5hk6Da'
     controller: null
     method: null
     route: null
@@ -234,15 +390,15 @@ endpoints:
   -
     httpMethods:
       - DELETE
-    uri: 'api/v1/remarks/{id}'
+    uri: 'api/v1/ascertainments/{id}'
     metadata:
-      groupName: 'Gestion des remarques'
+      groupName: 'Gestion des constats'
       groupDescription: |-
 
-        APIs pour la gestion des remarques
+        APIs pour la gestion des constats
       subgroup: ''
       subgroupDescription: ''
-      title: 'Supprimer une remarque'
+      title: 'Supprimer un constat'
       description: ''
       authenticated: true
       custom: []
@@ -253,16 +409,16 @@ endpoints:
     urlParameters:
       id:
         name: id
-        description: 'The ID of the remark.'
+        description: 'The ID of the ascertainment.'
         required: true
-        example: 1
-        type: integer
+        example: reiciendis
+        type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 1
+      id: reiciendis
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -273,7 +429,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer EZe66adaPDV1kbgvc58f3h4'
+      - 'Bearer ZaEd6fcbD81ek5g6hPV3v4a'
     controller: null
     method: null
     route: null

@@ -1,20 +1,20 @@
-name: 'Gestion des tarifs de peinture'
+name: 'Gestion des taux horaires'
 description: |-
 
-  APIs pour la gestion des tarifs de peinture
+  APIs pour la gestion des taux horaires
 endpoints:
   -
     httpMethods:
       - GET
-    uri: api/v1/painting-prices
+    uri: api/v1/hourly-rates
     metadata:
-      groupName: 'Gestion des tarifs de peinture'
+      groupName: 'Gestion des taux horaires'
       groupDescription: |-
 
-        APIs pour la gestion des tarifs de peinture
+        APIs pour la gestion des taux horaires
       subgroup: ''
       subgroupDescription: ''
-      title: 'Lister tous les tarifs de peinture'
+      title: 'Lister tous les taux horaires'
       description: ''
       authenticated: true
       custom: []
@@ -43,7 +43,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 8h65gEaPDfeV34daZ1cvb6k'
+      - 'Bearer af4c856P1bh6akvDe3dgEZV'
     controller: null
     method: null
     route: null
@@ -51,15 +51,15 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/v1/painting-prices
+    uri: api/v1/hourly-rates
     metadata:
-      groupName: 'Gestion des tarifs de peinture'
+      groupName: 'Gestion des taux horaires'
       groupDescription: |-
 
-        APIs pour la gestion des tarifs de peinture
+        APIs pour la gestion des taux horaires
       subgroup: ''
       subgroupDescription: ''
-      title: 'Ajouter un tarif de peinture'
+      title: 'Ajouter un taux horaire'
       description: ''
       authenticated: true
       custom: []
@@ -72,69 +72,47 @@ endpoints:
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      param_1:
-        name: param_1
+      label:
+        name: label
+        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
+        required: true
+        example: xmkjantvuwc
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      description:
+        name: description
         description: ''
+        required: false
+        example: 'Asperiores voluptas omnis veritatis atque illo.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      value:
+        name: value
+        description: 'La valeur de value doit être supérieure ou égale à 0.'
         required: true
-        example: 8.7447818
+        example: 85
         type: number
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      param_2:
-        name: param_2
-        description: ''
-        required: true
-        example: 19901.4411
-        type: number
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      hourly_rate_id:
-        name: hourly_rate_id
-        description: 'The <code>id</code> of an existing record in the hourly_rates table.'
-        required: true
-        example: earum
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      paint_type_id:
-        name: paint_type_id
-        description: 'The <code>id</code> of an existing record in the paint_types table.'
-        required: true
-        example: aut
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      number_paint_element_id:
-        name: number_paint_element_id
-        description: 'The <code>id</code> of an existing record in the number_paint_elements table.'
-        required: true
-        example: quis
-        type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      param_1: 8.7447818
-      param_2: 19901.4411
-      hourly_rate_id: earum
-      paint_type_id: aut
-      number_paint_element_id: quis
+      label: xmkjantvuwc
+      description: 'Asperiores voluptas omnis veritatis atque illo.'
+      value: 85
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 6e56Eg1vDZhd4f3cVPab8ak'
+      - 'Bearer 3P4EhkDVa6dZ1vfg6e85acb'
     controller: null
     method: null
     route: null
@@ -142,15 +120,15 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: 'api/v1/painting-prices/{paintingPrice}'
+    uri: 'api/v1/hourly-rates/{hourlyRate}'
     metadata:
-      groupName: 'Gestion des tarifs de peinture'
+      groupName: 'Gestion des taux horaires'
       groupDescription: |-
 
-        APIs pour la gestion des tarifs de peinture
+        APIs pour la gestion des taux horaires
       subgroup: ''
       subgroupDescription: ''
-      title: 'Afficher un tarif de peinture'
+      title: 'Afficher un taux horaire'
       description: ''
       authenticated: true
       custom: []
@@ -159,18 +137,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      paintingPrice:
-        name: paintingPrice
+      hourlyRate:
+        name: hourlyRate
         description: ''
         required: true
-        example: perferendis
+        example: perspiciatis
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      paintingPrice: perferendis
+      hourlyRate: perspiciatis
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -190,7 +168,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer V3dPke6aavEhgf8b1645DcZ'
+      - 'Bearer 6d1hvVaPeb6E5D8kacgZf43'
     controller: null
     method: null
     route: null
@@ -198,15 +176,15 @@ endpoints:
   -
     httpMethods:
       - PUT
-    uri: 'api/v1/painting-prices/{paintingPrice}'
+    uri: 'api/v1/hourly-rates/{hourlyRate}'
     metadata:
-      groupName: 'Gestion des tarifs de peinture'
+      groupName: 'Gestion des taux horaires'
       groupDescription: |-
 
-        APIs pour la gestion des tarifs de peinture
+        APIs pour la gestion des taux horaires
       subgroup: ''
       subgroupDescription: ''
-      title: 'Mettre à jour un tarif de peinture'
+      title: 'Mettre à jour un taux horaire'
       description: ''
       authenticated: true
       custom: []
@@ -215,84 +193,62 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      paintingPrice:
-        name: paintingPrice
+      hourlyRate:
+        name: hourlyRate
         description: ''
         required: true
-        example: minus
+        example: dignissimos
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      paintingPrice: minus
+      hourlyRate: dignissimos
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      param_1:
-        name: param_1
+      label:
+        name: label
+        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
+        required: true
+        example: wjlnuufcyvbhlxyhpdxb
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      description:
+        name: description
+        description: ''
+        required: false
+        example: 'Delectus necessitatibus voluptate perferendis dolorum occaecati eaque.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      value:
+        name: value
         description: ''
         required: true
-        example: 137.7
+        example: 186298.33735664
         type: number
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      param_2:
-        name: param_2
-        description: ''
-        required: true
-        example: 378148.7
-        type: number
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      hourly_rate_id:
-        name: hourly_rate_id
-        description: 'The <code>id</code> of an existing record in the hourly_rates table.'
-        required: true
-        example: saepe
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      paint_type_id:
-        name: paint_type_id
-        description: 'The <code>id</code> of an existing record in the paint_types table.'
-        required: true
-        example: ex
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      number_paint_element_id:
-        name: number_paint_element_id
-        description: 'The <code>id</code> of an existing record in the number_paint_elements table.'
-        required: true
-        example: voluptas
-        type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      param_1: 137.7
-      param_2: 378148.7
-      hourly_rate_id: saepe
-      paint_type_id: ex
-      number_paint_element_id: voluptas
+      label: wjlnuufcyvbhlxyhpdxb
+      description: 'Delectus necessitatibus voluptate perferendis dolorum occaecati eaque.'
+      value: 186298.33735664
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer EvZ8eV6fcPdba3hk465gaD1'
+      - 'Bearer d4c85hg1aVvD6baZkPe63Ef'
     controller: null
     method: null
     route: null
@@ -300,15 +256,15 @@ endpoints:
   -
     httpMethods:
       - DELETE
-    uri: 'api/v1/painting-prices/{paintingPrice}'
+    uri: 'api/v1/hourly-rates/{hourlyRate}'
     metadata:
-      groupName: 'Gestion des tarifs de peinture'
+      groupName: 'Gestion des taux horaires'
       groupDescription: |-
 
-        APIs pour la gestion des tarifs de peinture
+        APIs pour la gestion des taux horaires
       subgroup: ''
       subgroupDescription: ''
-      title: 'Supprimer un tarif de peinture'
+      title: 'Supprimer un taux horaire'
       description: ''
       authenticated: true
       custom: []
@@ -317,18 +273,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      paintingPrice:
-        name: paintingPrice
+      hourlyRate:
+        name: hourlyRate
         description: ''
         required: true
-        example: consequuntur
+        example: quo
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      paintingPrice: consequuntur
+      hourlyRate: quo
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -339,7 +295,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 8cVaDEfva43ZP6dh5k61geb'
+      - 'Bearer bfP6Dgdaa53861heckEvZ4V'
     controller: null
     method: null
     route: null

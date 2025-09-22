@@ -45,7 +45,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Vk1e8Zdb34fgvD665caEhPa'
+      - 'Bearer 6vEfdc6heVa438bZDa51Pkg'
     controller: null
     method: null
     route: null
@@ -78,7 +78,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: vyrlhyfikllvabtqpt
+        example: mshgvhmtddrfg
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -88,22 +88,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Explicabo error sit quo sed.'
+        example: 'Quia ratione nihil suscipit.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: vyrlhyfikllvabtqpt
-      description: 'Explicabo error sit quo sed.'
+      label: mshgvhmtddrfg
+      description: 'Quia ratione nihil suscipit.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer ce6k4V1PbEd8h5Dgafav3Z6'
+      - 'Bearer VZa86bhaf64kPd3v1ceE5gD'
     controller: null
     method: null
     route: null
@@ -159,7 +159,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer ve36ca651hZkVdEP8agbD4f'
+      - 'Bearer aPDf4vg3d8eabc6Z1EV5hk6'
     controller: null
     method: null
     route: null
@@ -188,14 +188,14 @@ endpoints:
         name: id
         description: 'The ID of the vehicle state.'
         required: true
-        example: quod
+        example: dignissimos
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: quod
+      id: dignissimos
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -203,7 +203,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: ojnseuyboeqs
+        example: gqphcfkfnkeettnojezhctahr
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -213,22 +213,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Quos voluptatem sed eum quia perferendis laudantium ad.'
+        example: 'Et sit et beatae ea.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: ojnseuyboeqs
-      description: 'Quos voluptatem sed eum quia perferendis laudantium ad.'
+      label: gqphcfkfnkeettnojezhctahr
+      description: 'Et sit et beatae ea.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer k6bg8ZhEv63VDf54c1Paaed'
+      - 'Bearer 1hg5efdD4Pcv36b68EakZaV'
     controller: null
     method: null
     route: null
@@ -257,14 +257,14 @@ endpoints:
         name: id
         description: 'The ID of the vehicle state.'
         required: true
-        example: mollitia
+        example: magnam
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: mollitia
+      id: magnam
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -275,7 +275,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer dv6b53V4DPZehac8ga61Ekf'
+      - 'Bearer b1g3VPaedv86DhaZkE6f4c5'
     controller: null
     method: null
     route: null

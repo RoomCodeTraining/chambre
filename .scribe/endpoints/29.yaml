@@ -1,20 +1,20 @@
-name: 'Gestion des statuts'
+name: "Gestion des types d'expertise"
 description: |-
 
-  APIs pour la gestion des statuts
+  APIs pour la gestion des types d'expertise
 endpoints:
   -
     httpMethods:
       - GET
-    uri: api/v1/statuses
+    uri: api/v1/expertise-types
     metadata:
-      groupName: 'Gestion des statuts'
+      groupName: "Gestion des types d'expertise"
       groupDescription: |-
 
-        APIs pour la gestion des statuts
+        APIs pour la gestion des types d'expertise
       subgroup: ''
       subgroupDescription: ''
-      title: 'Lister tous les statuts'
+      title: "Lister tous les types d'expertise"
       description: ''
       authenticated: true
       custom: []
@@ -43,7 +43,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer dehgfv1c3EVa48D6abZk56P'
+      - 'Bearer 64cfD6eVv3hPEgbd518akaZ'
     controller: null
     method: null
     route: null
@@ -51,15 +51,15 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/v1/statuses
+    uri: api/v1/expertise-types
     metadata:
-      groupName: 'Gestion des statuts'
+      groupName: "Gestion des types d'expertise"
       groupDescription: |-
 
-        APIs pour la gestion des statuts
+        APIs pour la gestion des types d'expertise
       subgroup: ''
       subgroupDescription: ''
-      title: 'Ajouter un statut'
+      title: "Ajouter un type d'expertise"
       description: ''
       authenticated: true
       custom: []
@@ -72,147 +72,11 @@ endpoints:
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      code:
-        name: code
-        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
-        required: true
-        example: ffwlkcygiaryweaixmiugwicx
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
       label:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: tqzdzofeckgrzofuuupj
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      description:
-        name: description
-        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
-        required: false
-        example: 'Voluptas beatae aliquid neque eum.'
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-    cleanBodyParameters:
-      code: ffwlkcygiaryweaixmiugwicx
-      label: tqzdzofeckgrzofuuupj
-      description: 'Voluptas beatae aliquid neque eum.'
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer h84ZcVbDedaEkv5fg61a6P3'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - GET
-    uri: 'api/v1/statuses/{id}'
-    metadata:
-      groupName: 'Gestion des statuts'
-      groupDescription: |-
-
-        APIs pour la gestion des statuts
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Afficher un statut'
-      description: ''
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      id:
-        name: id
-        description: 'The ID of the status.'
-        required: true
-        example: commodi
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-    cleanUrlParameters:
-      id: commodi
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        status: 401
-        content: '{"message":"Unauthenticated."}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          access-control-allow-origin: '*'
-        description: null
-        custom: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer fDv1ZhgkdP56e3E46a8aVcb'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - PUT
-    uri: 'api/v1/statuses/{id}'
-    metadata:
-      groupName: 'Gestion des statuts'
-      groupDescription: |-
-
-        APIs pour la gestion des statuts
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Mettre à jour un statut'
-      description: ''
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      id:
-        name: id
-        description: 'The ID of the status.'
-        required: true
-        example: omnis
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-    cleanUrlParameters:
-      id: omnis
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      label:
-        name: label
-        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
-        required: true
-        example: kehvmiakdnzeltqcwlbvoh
+        example: ktqwtqvcdqhn
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -222,38 +86,38 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'A necessitatibus perferendis sint voluptatum enim consequatur fugiat et.'
+        example: 'Impedit excepturi saepe ad iure doloribus ea aut.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: kehvmiakdnzeltqcwlbvoh
-      description: 'A necessitatibus perferendis sint voluptatum enim consequatur fugiat et.'
+      label: ktqwtqvcdqhn
+      description: 'Impedit excepturi saepe ad iure doloribus ea aut.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 6Vevh56Dd4PEcbZ1g3fkaa8'
+      - 'Bearer haV66gvdb581ZEckDa43fPe'
     controller: null
     method: null
     route: null
     custom: []
   -
     httpMethods:
-      - DELETE
-    uri: 'api/v1/statuses/{id}'
+      - GET
+    uri: 'api/v1/expertise-types/{expertise_type}'
     metadata:
-      groupName: 'Gestion des statuts'
+      groupName: "Gestion des types d'expertise"
       groupDescription: |-
 
-        APIs pour la gestion des statuts
+        APIs pour la gestion des types d'expertise
       subgroup: ''
       subgroupDescription: ''
-      title: 'Supprimer un statut'
+      title: "Afficher un type d'expertise"
       description: ''
       authenticated: true
       custom: []
@@ -262,18 +126,143 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      id:
-        name: id
-        description: 'The ID of the status.'
+      expertise_type:
+        name: expertise_type
+        description: ''
         required: true
-        example: et
+        example: sed
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: et
+      expertise_type: sed
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer fgV3abEc84ekd5Z1vDP66ah'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/expertise-types/{expertise_type}'
+    metadata:
+      groupName: "Gestion des types d'expertise"
+      groupDescription: |-
+
+        APIs pour la gestion des types d'expertise
+      subgroup: ''
+      subgroupDescription: ''
+      title: "Mettre à jour un type d'expertise"
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      expertise_type:
+        name: expertise_type
+        description: ''
+        required: true
+        example: illum
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      expertise_type: illum
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      label:
+        name: label
+        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
+        required: true
+        example: mbjqae
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      description:
+        name: description
+        description: ''
+        required: false
+        example: 'Eum illo earum officiis ipsam deserunt ratione.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+    cleanBodyParameters:
+      label: mbjqae
+      description: 'Eum illo earum officiis ipsam deserunt ratione.'
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer f1vE3V4gaehdDZ66P5abkc8'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/expertise-types/{expertise_type}'
+    metadata:
+      groupName: "Gestion des types d'expertise"
+      groupDescription: |-
+
+        APIs pour la gestion des types d'expertise
+      subgroup: ''
+      subgroupDescription: ''
+      title: "Supprimer un type d'expertise"
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      expertise_type:
+        name: expertise_type
+        description: ''
+        required: true
+        example: fugit
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      expertise_type: fugit
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -284,7 +273,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer f66eDvVghEc53a1bkPa48Zd'
+      - 'Bearer DhVca638ZP54ag1dvEkbfe6'
     controller: null
     method: null
     route: null

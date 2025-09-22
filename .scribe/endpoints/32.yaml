@@ -1,20 +1,20 @@
-name: 'Gestion des documents transmis'
+name: "Gestion des types d'autres charges"
 description: |-
 
-  APIs pour la gestion des documents transmis
+  APIs pour la gestion des types d'autres charges
 endpoints:
   -
     httpMethods:
       - GET
-    uri: api/v1/document-transmitteds
+    uri: api/v1/other-cost-types
     metadata:
-      groupName: 'Gestion des documents transmis'
+      groupName: "Gestion des types d'autres charges"
       groupDescription: |-
 
-        APIs pour la gestion des documents transmis
+        APIs pour la gestion des types d'autres charges
       subgroup: ''
       subgroupDescription: ''
-      title: 'Lister tous les documents transmis'
+      title: "Lister tous les types d'autres charges"
       description: ''
       authenticated: true
       custom: []
@@ -43,7 +43,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer e616bDa5Vdk3gZh8Ea4Pcfv'
+      - 'Bearer a6dEe163aZVDPcvfb5kgh48'
     controller: null
     method: null
     route: null
@@ -51,15 +51,15 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/v1/document-transmitteds
+    uri: api/v1/other-cost-types
     metadata:
-      groupName: 'Gestion des documents transmis'
+      groupName: "Gestion des types d'autres charges"
       groupDescription: |-
 
-        APIs pour la gestion des documents transmis
+        APIs pour la gestion des types d'autres charges
       subgroup: ''
       subgroupDescription: ''
-      title: 'Ajouter un document transmis'
+      title: "Ajouter un type d'autre charge"
       description: ''
       authenticated: true
       custom: []
@@ -76,7 +76,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: mwwzpapitokeeonclrf
+        example: mgp
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -86,22 +86,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Est ab aut odit et.'
+        example: 'Sit unde laborum dolores magnam ut quia eum.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: mwwzpapitokeeonclrf
-      description: 'Est ab aut odit et.'
+      label: mgp
+      description: 'Sit unde laborum dolores magnam ut quia eum.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer hceVE8f5614v3gZbPkadD6a'
+      - 'Bearer 6f6PV3aE8v1dchD5gekb4Za'
     controller: null
     method: null
     route: null
@@ -109,15 +109,15 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: 'api/v1/document-transmitteds/{document_transmitted}'
+    uri: 'api/v1/other-cost-types/{otherCostType}'
     metadata:
-      groupName: 'Gestion des documents transmis'
+      groupName: "Gestion des types d'autres charges"
       groupDescription: |-
 
-        APIs pour la gestion des documents transmis
+        APIs pour la gestion des types d'autres charges
       subgroup: ''
       subgroupDescription: ''
-      title: 'Afficher un document transmis'
+      title: "Afficher un type d'autre charge"
       description: ''
       authenticated: true
       custom: []
@@ -126,18 +126,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      document_transmitted:
-        name: document_transmitted
+      otherCostType:
+        name: otherCostType
         description: ''
         required: true
-        example: provident
+        example: repellat
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      document_transmitted: provident
+      otherCostType: repellat
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -157,7 +157,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer EaDceg6VZf31vba54h6k8Pd'
+      - 'Bearer Dd6k4a1Z5E3V6gPhc8bfave'
     controller: null
     method: null
     route: null
@@ -165,15 +165,15 @@ endpoints:
   -
     httpMethods:
       - PUT
-    uri: 'api/v1/document-transmitteds/{document_transmitted}'
+    uri: 'api/v1/other-cost-types/{otherCostType}'
     metadata:
-      groupName: 'Gestion des documents transmis'
+      groupName: "Gestion des types d'autres charges"
       groupDescription: |-
 
-        APIs pour la gestion des documents transmis
+        APIs pour la gestion des types d'autres charges
       subgroup: ''
       subgroupDescription: ''
-      title: 'Mettre à jour un document transmis'
+      title: "Mettre à jour un type d'autre charge"
       description: ''
       authenticated: true
       custom: []
@@ -182,18 +182,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      document_transmitted:
-        name: document_transmitted
+      otherCostType:
+        name: otherCostType
         description: ''
         required: true
-        example: temporibus
+        example: libero
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      document_transmitted: temporibus
+      otherCostType: libero
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -201,7 +201,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: p
+        example: v
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -211,22 +211,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Sed nemo nihil labore necessitatibus.'
+        example: 'Officia sed et earum rerum.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: p
-      description: 'Sed nemo nihil labore necessitatibus.'
+      label: v
+      description: 'Officia sed et earum rerum.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer Pk4acgv36f16dV8bZhDEe5a'
+      - 'Bearer DeP6c8hVaa56f4Eg1dkZb3v'
     controller: null
     method: null
     route: null
@@ -234,15 +234,15 @@ endpoints:
   -
     httpMethods:
       - DELETE
-    uri: 'api/v1/document-transmitteds/{document_transmitted}'
+    uri: 'api/v1/other-cost-types/{otherCostType}'
     metadata:
-      groupName: 'Gestion des documents transmis'
+      groupName: "Gestion des types d'autres charges"
       groupDescription: |-
 
-        APIs pour la gestion des documents transmis
+        APIs pour la gestion des types d'autres charges
       subgroup: ''
       subgroupDescription: ''
-      title: 'Supprimer un document transmis'
+      title: "Supprimer un type d'autre charge"
       description: ''
       authenticated: true
       custom: []
@@ -251,18 +251,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      document_transmitted:
-        name: document_transmitted
+      otherCostType:
+        name: otherCostType
         description: ''
         required: true
-        example: dignissimos
+        example: iure
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      document_transmitted: dignissimos
+      otherCostType: iure
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -273,7 +273,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer hVP1b64cfae3k8gDZ6dE5av'
+      - 'Bearer kEchPgeD6b53VZ6d148aafv'
     controller: null
     method: null
     route: null

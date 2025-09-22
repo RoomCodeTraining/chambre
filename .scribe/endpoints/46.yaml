@@ -1,20 +1,20 @@
-name: 'Gestion des paiements'
+name: 'Gestion des types de paiement'
 description: |-
 
-  APIs pour la gestion des paiements
+  APIs pour la gestion des types de paiement
 endpoints:
   -
     httpMethods:
       - GET
-    uri: api/v1/payments
+    uri: api/v1/payment-types
     metadata:
-      groupName: 'Gestion des paiements'
+      groupName: 'Gestion des types de paiement'
       groupDescription: |-
 
-        APIs pour la gestion des paiements
+        APIs pour la gestion des types de paiement
       subgroup: ''
       subgroupDescription: ''
-      title: 'Lister tous les paiements'
+      title: 'Lister tous les types de paiement'
       description: ''
       authenticated: true
       custom: []
@@ -43,7 +43,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer k5D8afV6ahv6P1eEdcg43Zb'
+      - 'Bearer g68da635bP4vVZhe1kfaEDc'
     controller: null
     method: null
     route: null
@@ -51,15 +51,15 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/v1/payments
+    uri: api/v1/payment-types
     metadata:
-      groupName: 'Gestion des paiements'
+      groupName: 'Gestion des types de paiement'
       groupDescription: |-
 
-        APIs pour la gestion des paiements
+        APIs pour la gestion des types de paiement
       subgroup: ''
       subgroupDescription: ''
-      title: 'Créer un paiement'
+      title: 'Créer un type de paiement'
       description: ''
       authenticated: true
       custom: []
@@ -72,68 +72,36 @@ endpoints:
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      assignment_id:
-        name: assignment_id
-        description: 'The <code>id</code> of an existing record in the assignments table.'
+      label:
+        name: label
+        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: nihil
+        example: azcaibqauzpolupshxwukbatc
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
-      payment_type_id:
-        name: payment_type_id
-        description: 'The <code>id</code> of an existing record in the payment_types table.'
-        required: true
-        example: est
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      payment_method_id:
-        name: payment_method_id
-        description: 'The <code>id</code> of an existing record in the payment_methods table.'
+      description:
+        name: description
+        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: false
-        example: null
+        example: 'Iure suscipit quo id architecto alias excepturi libero.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
-      date:
-        name: date
-        description: "Le champ value n'est pas une date valide."
-        required: true
-        example: '2025-08-04T00:17:26'
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      amount:
-        name: amount
-        description: ''
-        required: true
-        example: 8.33824
-        type: number
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
     cleanBodyParameters:
-      assignment_id: nihil
-      payment_type_id: est
-      date: '2025-08-04T00:17:26'
-      amount: 8.33824
+      label: azcaibqauzpolupshxwukbatc
+      description: 'Iure suscipit quo id architecto alias excepturi libero.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 8a5gcvabP6D16eVZfk4d3hE'
+      - 'Bearer dfDave8bE54VhP3ag16ckZ6'
     controller: null
     method: null
     route: null
@@ -141,15 +109,15 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: 'api/v1/payments/{id}'
+    uri: 'api/v1/payment-types/{paymentType_id}'
     metadata:
-      groupName: 'Gestion des paiements'
+      groupName: 'Gestion des types de paiement'
       groupDescription: |-
 
-        APIs pour la gestion des paiements
+        APIs pour la gestion des types de paiement
       subgroup: ''
       subgroupDescription: ''
-      title: 'Afficher un paiement'
+      title: 'Afficher un type de paiement'
       description: ''
       authenticated: true
       custom: []
@@ -158,18 +126,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      id:
-        name: id
-        description: 'The ID of the payment.'
+      paymentType_id:
+        name: paymentType_id
+        description: 'The ID of the paymentType.'
         required: true
-        example: 5
+        example: 1
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 5
+      paymentType_id: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -189,7 +157,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6gcfZ6eVEPhaDb1v83k54ad'
+      - 'Bearer evZhVE6abg381a5cDPdkf64'
     controller: null
     method: null
     route: null
@@ -197,15 +165,15 @@ endpoints:
   -
     httpMethods:
       - PUT
-    uri: 'api/v1/payments/{id}'
+    uri: 'api/v1/payment-types/{paymentType}'
     metadata:
-      groupName: 'Gestion des paiements'
+      groupName: 'Gestion des types de paiement'
       groupDescription: |-
 
-        APIs pour la gestion des paiements
+        APIs pour la gestion des types de paiement
       subgroup: ''
       subgroupDescription: ''
-      title: 'Mettre à jour un paiement'
+      title: 'Mettre à jour un type de paiement'
       description: ''
       authenticated: true
       custom: []
@@ -214,84 +182,51 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      id:
-        name: id
-        description: 'The ID of the payment.'
+      paymentType:
+        name: paymentType
+        description: ''
         required: true
-        example: 17
+        example: 1
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 17
+      paymentType: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      assignment_id:
-        name: assignment_id
-        description: 'The <code>id</code> of an existing record in the assignments table.'
+      label:
+        name: label
+        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: maiores
+        example: qoauoqmjsdddnszcetvt
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
-      payment_type_id:
-        name: payment_type_id
-        description: 'The <code>id</code> of an existing record in the payment_types table.'
-        required: true
-        example: sunt
+      description:
+        name: description
+        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
+        required: false
+        example: 'Harum quia accusamus eos rerum aliquam.'
         type: string
         enumValues: []
         exampleWasSpecified: false
-        nullable: false
-        custom: []
-      payment_method_id:
-        name: payment_method_id
-        description: 'The <code>id</code> of an existing record in the payment_methods table.'
-        required: true
-        example: ducimus
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      date:
-        name: date
-        description: "Le champ value n'est pas une date valide."
-        required: true
-        example: '2025-08-04T00:17:26'
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      amount:
-        name: amount
-        description: ''
-        required: true
-        example: 10632707.4704
-        type: number
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
+        nullable: true
         custom: []
     cleanBodyParameters:
-      assignment_id: maiores
-      payment_type_id: sunt
-      payment_method_id: ducimus
-      date: '2025-08-04T00:17:26'
-      amount: 10632707.4704
+      label: qoauoqmjsdddnszcetvt
+      description: 'Harum quia accusamus eos rerum aliquam.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer ZgEfb15dkV4hDe6Pa3ca68v'
+      - 'Bearer Z6c5e8Dv4gP3VhaEadf16kb'
     controller: null
     method: null
     route: null
@@ -299,15 +234,15 @@ endpoints:
   -
     httpMethods:
       - DELETE
-    uri: 'api/v1/payments/{id}'
+    uri: 'api/v1/payment-types/{paymentType_id}'
     metadata:
-      groupName: 'Gestion des paiements'
+      groupName: 'Gestion des types de paiement'
       groupDescription: |-
 
-        APIs pour la gestion des paiements
+        APIs pour la gestion des types de paiement
       subgroup: ''
       subgroupDescription: ''
-      title: 'Supprimer un paiement'
+      title: 'Supprimer un type de paiement'
       description: ''
       authenticated: true
       custom: []
@@ -316,18 +251,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      id:
-        name: id
-        description: 'The ID of the payment.'
+      paymentType_id:
+        name: paymentType_id
+        description: 'The ID of the paymentType.'
         required: true
-        example: 16
+        example: 1
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 16
+      paymentType_id: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -338,188 +273,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 5431E6ceVa6PvdDZb8fhkga'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - PUT
-    uri: 'api/v1/payments/{payment}/cancel'
-    metadata:
-      groupName: 'Gestion des paiements'
-      groupDescription: |-
-
-        APIs pour la gestion des paiements
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Annuler un paiement'
-      description: ''
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      payment:
-        name: payment
-        description: 'The payment.'
-        required: true
-        example: 18
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-    cleanUrlParameters:
-      payment: 18
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer 61agPZVaEhdck4bevf6D853'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - GET
-    uri: 'api/v1/payments/list/{start_date}/{end_date}'
-    metadata:
-      groupName: 'Gestion des paiements'
-      groupDescription: |-
-
-        APIs pour la gestion des paiements
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Liste des paiements par période'
-      description: ''
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      start_date:
-        name: start_date
-        description: ''
-        required: true
-        example: ut
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      end_date:
-        name: end_date
-        description: ''
-        required: true
-        example: sapiente
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-    cleanUrlParameters:
-      start_date: ut
-      end_date: sapiente
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        status: 401
-        content: '{"message":"Unauthenticated."}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          access-control-allow-origin: '*'
-        description: null
-        custom: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer 6vDf1e4aP58chkb36adEVgZ'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - GET
-    uri: 'api/v1/payments/statistics/{start_date}/{end_date}'
-    metadata:
-      groupName: 'Gestion des paiements'
-      groupDescription: |-
-
-        APIs pour la gestion des paiements
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Statistiques des paiements'
-      description: ''
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      start_date:
-        name: start_date
-        description: ''
-        required: true
-        example: laborum
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      end_date:
-        name: end_date
-        description: ''
-        required: true
-        example: quas
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-    cleanUrlParameters:
-      start_date: laborum
-      end_date: quas
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        status: 401
-        content: '{"message":"Unauthenticated."}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          access-control-allow-origin: '*'
-        description: null
-        custom: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer avZ6bg6PfcV4a51e8dEkhD3'
+      - 'Bearer afvbh5g8E6c6kPea1VDdZ34'
     controller: null
     method: null
     route: null

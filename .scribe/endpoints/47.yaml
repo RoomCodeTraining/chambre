@@ -1,20 +1,20 @@
-name: 'Gestion des méthodes de paiement'
+name: 'Gestion des chèques'
 description: |-
 
-  APIs pour la gestion des méthodes de paiement
+  APIs pour la gestion des chèques
 endpoints:
   -
     httpMethods:
       - GET
-    uri: api/v1/payment-methods
+    uri: api/v1/checks
     metadata:
-      groupName: 'Gestion des méthodes de paiement'
+      groupName: 'Gestion des chèques'
       groupDescription: |-
 
-        APIs pour la gestion des méthodes de paiement
+        APIs pour la gestion des chèques
       subgroup: ''
       subgroupDescription: ''
-      title: 'Lister toutes les méthodes de paiement'
+      title: 'Lister tous les chèques'
       description: ''
       authenticated: true
       custom: []
@@ -43,7 +43,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer a4DVc3kZeh6vPE1d6f8bag5'
+      - 'Bearer a3gDdcPbVa18hvekZ6E546f'
     controller: null
     method: null
     route: null
@@ -51,57 +51,90 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/v1/payment-methods
+    uri: api/v1/checks
     metadata:
-      groupName: 'Gestion des méthodes de paiement'
+      groupName: 'Gestion des chèques'
       groupDescription: |-
 
-        APIs pour la gestion des méthodes de paiement
+        APIs pour la gestion des chèques
       subgroup: ''
       subgroupDescription: ''
-      title: 'Créer une méthode de paiement'
+      title: 'Créer un chèque'
       description: ''
       authenticated: true
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
+      Content-Type: multipart/form-data
       Accept: application/json
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      label:
-        name: label
-        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
+      payment_id:
+        name: payment_id
+        description: 'The <code>id</code> of an existing record in the payments table.'
         required: true
-        example: eirtojdzfeqzshpvlutdpoxf
+        example: et
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
-      description:
-        name: description
-        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
-        required: false
-        example: 'Tempora itaque doloribus quibusdam praesentium.'
+      bank_id:
+        name: bank_id
+        description: 'The <code>id</code> of an existing record in the banks table.'
+        required: true
+        example: similique
         type: string
         enumValues: []
         exampleWasSpecified: false
-        nullable: true
+        nullable: false
+        custom: []
+      date:
+        name: date
+        description: 'Must be a valid date in the format <code>Y-m-d</code>.'
+        required: true
+        example: '2025-09-22'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      amount:
+        name: amount
+        description: ''
+        required: true
+        example: 113.58
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      photo:
+        name: photo
+        description: 'Must be a file. La taille du fichier de value ne peut pas dépasser 2048 kilo-octets.'
+        required: true
+        example: null
+        type: file
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
         custom: []
     cleanBodyParameters:
-      label: eirtojdzfeqzshpvlutdpoxf
-      description: 'Tempora itaque doloribus quibusdam praesentium.'
-    fileParameters: []
+      payment_id: et
+      bank_id: similique
+      date: '2025-09-22'
+      amount: 113.58
+    fileParameters:
+      photo: null
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer bEP8DkZaeca63V154gvhf6d'
+      - 'Bearer 4PDe3Vh6f8Ev5kgdaZcab61'
     controller: null
     method: null
     route: null
@@ -109,15 +142,15 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: 'api/v1/payment-methods/{paymentMethod_id}'
+    uri: 'api/v1/checks/{id}'
     metadata:
-      groupName: 'Gestion des méthodes de paiement'
+      groupName: 'Gestion des chèques'
       groupDescription: |-
 
-        APIs pour la gestion des méthodes de paiement
+        APIs pour la gestion des chèques
       subgroup: ''
       subgroupDescription: ''
-      title: 'Afficher une méthode de paiement'
+      title: 'Afficher un chèque'
       description: ''
       authenticated: true
       custom: []
@@ -126,18 +159,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      paymentMethod_id:
-        name: paymentMethod_id
-        description: 'The ID of the paymentMethod.'
+      id:
+        name: id
+        description: 'The ID of the check.'
         required: true
-        example: 1
+        example: 4
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      paymentMethod_id: 1
+      id: 4
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -157,7 +190,109 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer av6P8bkVf5agheDc3d1E46Z'
+      - 'Bearer Z1f5a66gkve8ahbDcd4EV3P'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/checks/{id}'
+    metadata:
+      groupName: 'Gestion des chèques'
+      groupDescription: |-
+
+        APIs pour la gestion des chèques
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Mettre à jour un chèque'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: multipart/form-data
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the check.'
+        required: true
+        example: 10
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      id: 10
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      payment_id:
+        name: payment_id
+        description: 'The <code>id</code> of an existing record in the payments table.'
+        required: true
+        example: dolores
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      bank_id:
+        name: bank_id
+        description: 'The <code>id</code> of an existing record in the banks table.'
+        required: true
+        example: ad
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      date:
+        name: date
+        description: 'Must be a valid date in the format <code>Y-m-d</code>.'
+        required: true
+        example: '2025-09-22'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      amount:
+        name: amount
+        description: ''
+        required: true
+        example: 197.9424738
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      photo:
+        name: photo
+        description: 'Must be a file. La taille du fichier de value ne peut pas dépasser 2048 kilo-octets.'
+        required: true
+        example: null
+        type: file
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      payment_id: dolores
+      bank_id: ad
+      date: '2025-09-22'
+      amount: 197.9424738
+    fileParameters:
+      photo: null
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer Eak8gfc3vZdDehP615a6Vb4'
     controller: null
     method: null
     route: null
@@ -165,15 +300,15 @@ endpoints:
   -
     httpMethods:
       - DELETE
-    uri: 'api/v1/payment-methods/{paymentMethod_id}'
+    uri: 'api/v1/checks/{id}'
     metadata:
-      groupName: 'Gestion des méthodes de paiement'
+      groupName: 'Gestion des chèques'
       groupDescription: |-
 
-        APIs pour la gestion des méthodes de paiement
+        APIs pour la gestion des chèques
       subgroup: ''
       subgroupDescription: ''
-      title: 'Supprimer une méthode de paiement'
+      title: 'Supprimer un chèque'
       description: ''
       authenticated: true
       custom: []
@@ -182,18 +317,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      paymentMethod_id:
-        name: paymentMethod_id
-        description: 'The ID of the paymentMethod.'
+      id:
+        name: id
+        description: 'The ID of the check.'
         required: true
-        example: 1
+        example: 3
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      paymentMethod_id: 1
+      id: 3
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -204,7 +339,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 4d3ZPDg5V16Efk6bav8each'
+      - 'Bearer 4eDZdEPcav3g51ba68fV6hk'
     controller: null
     method: null
     route: null

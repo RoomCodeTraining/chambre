@@ -471,7 +471,7 @@ class PaymentController extends Controller
      */
     public function show(Payment $payment): JsonResponse
     {
-        return $this->responseSuccess(null, new PaymentResource($payment->accessibleBy(auth()->user())->load('assignment:id,reference', 'paymentType:id,code,label', 'paymentMethod:id,code,label', 'status:id,code,label', 'createdBy:id,name,email,created_at', 'updatedBy:id,name,email,created_at', 'deletedBy:id,name,email,created_at'))));
+        return $this->responseSuccess(null, new PaymentResource($payment->accessibleBy(auth()->user())->load('assignment:id,reference', 'paymentType:id,code,label', 'paymentMethod:id,code,label', 'status:id,code,label', 'createdBy:id,name,email,created_at', 'updatedBy:id,name,email,created_at', 'deletedBy:id,name,email,created_at')));
     }
 
     /**
@@ -489,7 +489,7 @@ class PaymentController extends Controller
             'updated_by' => auth()->user()->id,
         ]);
 
-        return $this->responseSuccess('Payment updated Successfully', new PaymentResource($payment->load('assignment:id,reference', 'paymentType:id,code,label', 'paymentMethod:id,code,label', 'status:id,code,label'))));
+        return $this->responseSuccess('Payment updated Successfully', new PaymentResource($payment->load('assignment:id,reference', 'paymentType:id,code,label', 'paymentMethod:id,code,label', 'status:id,code,label')));
     }
 
     /**
@@ -514,7 +514,7 @@ class PaymentController extends Controller
             ]);
         }
 
-        return $this->responseSuccess('Paiement annulé avec succès', new PaymentResource($payment->load('assignment:id,reference', 'paymentType:id,code,label', 'paymentMethod:id,code,label', 'status:id,code,label'))));
+        return $this->responseSuccess('Paiement annulé avec succès', new PaymentResource($payment->load('assignment:id,reference', 'paymentType:id,code,label', 'paymentMethod:id,code,label', 'status:id,code,label')));
     }
 
     /**

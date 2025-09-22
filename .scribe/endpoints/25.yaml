@@ -1,20 +1,20 @@
-name: 'Gestion des réparateurs'
+name: 'Gestion des QR codes'
 description: |-
 
-  API pour la gestion des réparateurs
+  APIs pour la gestion des QR codes
 endpoints:
   -
     httpMethods:
       - GET
-    uri: api/v1/repairers
+    uri: api/v1/qr-codes
     metadata:
-      groupName: 'Gestion des réparateurs'
+      groupName: 'Gestion des QR codes'
       groupDescription: |-
 
-        API pour la gestion des réparateurs
+        APIs pour la gestion des QR codes
       subgroup: ''
       subgroupDescription: ''
-      title: 'Lister tous les réparateurs'
+      title: 'Lister tous les QR codes'
       description: ''
       authenticated: true
       custom: []
@@ -43,7 +43,215 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer PZadVvEDkbe6183a56g4fch'
+      - 'Bearer efb1a8v4ED3hda6gcPV5kZ6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/qr-codes
+    metadata:
+      groupName: 'Gestion des QR codes'
+      groupDescription: |-
+
+        APIs pour la gestion des QR codes
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Ajouter un QR code'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      code:
+        name: code
+        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
+        required: true
+        example: pqfvmwgontkgbgxrooqmcou
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      code: pqfvmwgontkgbgxrooqmcou
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer e866ad51Vb3hPfaE4vcDgZk'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/qr-codes/{qrCode_id}'
+    metadata:
+      groupName: 'Gestion des QR codes'
+      groupDescription: |-
+
+        APIs pour la gestion des QR codes
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Afficher un QR code'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      qrCode_id:
+        name: qrCode_id
+        description: 'The ID of the qrCode.'
+        required: true
+        example: 8
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      qrCode_id: 8
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer V6a53fd1E8hbkaZevDc4gP6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/qr-codes/{qrCode}'
+    metadata:
+      groupName: 'Gestion des QR codes'
+      groupDescription: |-
+
+        APIs pour la gestion des QR codes
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Mettre à jour un QR code'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      qrCode:
+        name: qrCode
+        description: ''
+        required: true
+        example: 14
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      qrCode: 14
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      code:
+        name: code
+        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
+        required: true
+        example: mrnvhnzsbaikpuiajnie
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      code: mrnvhnzsbaikpuiajnie
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer V58gD6e1adb34fZvPEka6hc'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/qr-codes/{qrCode}'
+    metadata:
+      groupName: 'Gestion des QR codes'
+      groupDescription: |-
+
+        APIs pour la gestion des QR codes
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Supprimer un QR code'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      qrCode:
+        name: qrCode
+        description: ''
+        required: true
+        example: 9
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      qrCode: 9
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer b6khE4cv36gdfZaeP85D1Va'
     controller: null
     method: null
     route: null

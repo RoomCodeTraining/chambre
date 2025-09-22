@@ -1,20 +1,20 @@
-name: 'Gestion des carrosseries'
+name: 'Gestion des types de quittances'
 description: |-
 
-  APIs pour la gestion des carrosseries
+  APIs pour la gestion des types de quittances
 endpoints:
   -
     httpMethods:
       - GET
-    uri: api/v1/bodyworks
+    uri: api/v1/receipt-types
     metadata:
-      groupName: 'Gestion des carrosseries'
+      groupName: 'Gestion des types de quittances'
       groupDescription: |-
 
-        APIs pour la gestion des carrosseries
+        APIs pour la gestion des types de quittances
       subgroup: ''
       subgroupDescription: ''
-      title: 'Lister toutes les carrosseries'
+      title: 'Lister tous les types de quittances'
       description: ''
       authenticated: true
       custom: []
@@ -43,7 +43,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Pb83ckgahd46fevZ6D51EaV'
+      - 'Bearer v6g1ch8dabaD546eE3VfPZk'
     controller: null
     method: null
     route: null
@@ -51,15 +51,15 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/v1/bodyworks
+    uri: api/v1/receipt-types
     metadata:
-      groupName: 'Gestion des carrosseries'
+      groupName: 'Gestion des types de quittances'
       groupDescription: |-
 
-        APIs pour la gestion des carrosseries
+        APIs pour la gestion des types de quittances
       subgroup: ''
       subgroupDescription: ''
-      title: 'Ajouter une carrosserie'
+      title: 'Ajouter un type de quittance'
       description: ''
       authenticated: true
       custom: []
@@ -76,7 +76,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: zuxpjdfwars
+        example: ycrghctzunokjuleui
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -86,22 +86,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Esse quam necessitatibus harum.'
+        example: 'Aut eum sint sint quasi molestiae.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: zuxpjdfwars
-      description: 'Esse quam necessitatibus harum.'
+      label: ycrghctzunokjuleui
+      description: 'Aut eum sint sint quasi molestiae.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer Zf5cPdg4v8k6a1b6e3aDVhE'
+      - 'Bearer V4b6e1Pdag3Dh8a6vf5EZkc'
     controller: null
     method: null
     route: null
@@ -109,15 +109,15 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: 'api/v1/bodyworks/{id}'
+    uri: 'api/v1/receipt-types/{receiptType}'
     metadata:
-      groupName: 'Gestion des carrosseries'
+      groupName: 'Gestion des types de quittances'
       groupDescription: |-
 
-        APIs pour la gestion des carrosseries
+        APIs pour la gestion des types de quittances
       subgroup: ''
       subgroupDescription: ''
-      title: 'Afficher une carrosserie'
+      title: 'Afficher un type de quittance'
       description: ''
       authenticated: true
       custom: []
@@ -126,65 +126,9 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      id:
-        name: id
-        description: 'The ID of the bodywork.'
-        required: true
-        example: expedita
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-    cleanUrlParameters:
-      id: expedita
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        status: 401
-        content: '{"message":"Unauthenticated."}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          access-control-allow-origin: '*'
-        description: null
-        custom: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer agPZ8behVD65kav36dE4f1c'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - PUT
-    uri: 'api/v1/bodyworks/{id}'
-    metadata:
-      groupName: 'Gestion des carrosseries'
-      groupDescription: |-
-
-        APIs pour la gestion des carrosseries
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Mettre à jour une carrosserie'
-      description: ''
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      id:
-        name: id
-        description: 'The ID of the bodywork.'
+      receiptType:
+        name: receiptType
+        description: ''
         required: true
         example: quia
         type: string
@@ -193,7 +137,63 @@ endpoints:
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: quia
+      receiptType: quia
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer faa1dDb46E3856ckvgePVZh'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/receipt-types/{receiptType}'
+    metadata:
+      groupName: 'Gestion des types de quittances'
+      groupDescription: |-
+
+        APIs pour la gestion des types de quittances
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Mettre à jour un type de quittance'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      receiptType:
+        name: receiptType
+        description: ''
+        required: true
+        example: cumque
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      receiptType: cumque
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -201,7 +201,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: ysdtjziwtjqseej
+        example: ysq
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -211,22 +211,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Esse ut voluptates cupiditate et possimus quia velit.'
+        example: 'Sit veniam quisquam consequatur iusto molestias qui.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: ysdtjziwtjqseej
-      description: 'Esse ut voluptates cupiditate et possimus quia velit.'
+      label: ysq
+      description: 'Sit veniam quisquam consequatur iusto molestias qui.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer afha6bdeZ5D3P1v6c84EVgk'
+      - 'Bearer 1643h5ZDbga6VEcv8adPefk'
     controller: null
     method: null
     route: null
@@ -234,15 +234,15 @@ endpoints:
   -
     httpMethods:
       - DELETE
-    uri: 'api/v1/bodyworks/{id}'
+    uri: 'api/v1/receipt-types/{receiptType}'
     metadata:
-      groupName: 'Gestion des carrosseries'
+      groupName: 'Gestion des types de quittances'
       groupDescription: |-
 
-        APIs pour la gestion des carrosseries
+        APIs pour la gestion des types de quittances
       subgroup: ''
       subgroupDescription: ''
-      title: 'Supprimer une carrosserie'
+      title: 'Supprimer un type de quittance'
       description: ''
       authenticated: true
       custom: []
@@ -251,18 +251,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      id:
-        name: id
-        description: 'The ID of the bodywork.'
+      receiptType:
+        name: receiptType
+        description: ''
         required: true
-        example: qui
+        example: pariatur
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: qui
+      receiptType: pariatur
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -273,7 +273,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer feEDZ6v5cbdahgP6134ak8V'
+      - 'Bearer d61Vg6Ea3fZaPkbce54vDh8'
     controller: null
     method: null
     route: null

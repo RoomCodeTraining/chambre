@@ -1,20 +1,20 @@
-name: 'Gestion des rapports de dossiers'
+name: 'Gestion des conclusions techniques'
 description: |-
 
-  APIs pour la gestion des rapports de dossiers
+  APIs pour la gestion des conclusions techniques
 endpoints:
   -
     httpMethods:
       - GET
-    uri: api/v1/assignment-reports
+    uri: api/v1/technical-conclusions
     metadata:
-      groupName: 'Gestion des rapports de dossiers'
+      groupName: 'Gestion des conclusions techniques'
       groupDescription: |-
 
-        APIs pour la gestion des rapports de dossiers
+        APIs pour la gestion des conclusions techniques
       subgroup: ''
       subgroupDescription: ''
-      title: ''
+      title: 'Lister toutes les conclusions techniques'
       description: ''
       authenticated: true
       custom: []
@@ -43,7 +43,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer V416db8kagchP6fEeva3Z5D'
+      - 'Bearer aea815b6cdkZ3gDPEvV6hf4'
     controller: null
     method: null
     route: null
@@ -51,15 +51,15 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/v1/assignment-reports
+    uri: api/v1/technical-conclusions
     metadata:
-      groupName: 'Gestion des rapports de dossiers'
+      groupName: 'Gestion des conclusions techniques'
       groupDescription: |-
 
-        APIs pour la gestion des rapports de dossiers
+        APIs pour la gestion des conclusions techniques
       subgroup: ''
       subgroupDescription: ''
-      title: ''
+      title: 'Ajouter une conclusion technique'
       description: ''
       authenticated: true
       custom: []
@@ -72,36 +72,36 @@ endpoints:
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      assignment_id:
-        name: assignment_id
-        description: 'The <code>id</code> of an existing record in the assignments table.'
+      label:
+        name: label
+        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: quo
+        example: tm
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
-      technical_conclusion_id:
-        name: technical_conclusion_id
-        description: 'The <code>id</code> of an existing record in the technical_conclusions table.'
-        required: true
-        example: est
+      description:
+        name: description
+        description: ''
+        required: false
+        example: 'Atque debitis iure ut ut.'
         type: string
         enumValues: []
         exampleWasSpecified: false
-        nullable: false
+        nullable: true
         custom: []
     cleanBodyParameters:
-      assignment_id: quo
-      technical_conclusion_id: est
+      label: tm
+      description: 'Atque debitis iure ut ut.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 1ga3vadkPE6ch6f45Db8VZe'
+      - 'Bearer 8cgVfaka35hvP6E1ZbDe6d4'
     controller: null
     method: null
     route: null
@@ -109,15 +109,15 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: 'api/v1/assignment-reports/{id}'
+    uri: 'api/v1/technical-conclusions/{technicalConclusion}'
     metadata:
-      groupName: 'Gestion des rapports de dossiers'
+      groupName: 'Gestion des conclusions techniques'
       groupDescription: |-
 
-        APIs pour la gestion des rapports de dossiers
+        APIs pour la gestion des conclusions techniques
       subgroup: ''
       subgroupDescription: ''
-      title: ''
+      title: 'Afficher une conclusion technique'
       description: ''
       authenticated: true
       custom: []
@@ -126,18 +126,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      id:
-        name: id
-        description: 'The ID of the assignment report.'
+      technicalConclusion:
+        name: technicalConclusion
+        description: ''
         required: true
-        example: 14
-        type: integer
+        example: modi
+        type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 14
+      technicalConclusion: modi
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -157,7 +157,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Egh4365fdkPD1bZa8Vveca6'
+      - 'Bearer hZ8P6vcbaa31feV6D4kEgd5'
     controller: null
     method: null
     route: null
@@ -165,15 +165,15 @@ endpoints:
   -
     httpMethods:
       - PUT
-    uri: 'api/v1/assignment-reports/{id}'
+    uri: 'api/v1/technical-conclusions/{technicalConclusion}'
     metadata:
-      groupName: 'Gestion des rapports de dossiers'
+      groupName: 'Gestion des conclusions techniques'
       groupDescription: |-
 
-        APIs pour la gestion des rapports de dossiers
+        APIs pour la gestion des conclusions techniques
       subgroup: ''
       subgroupDescription: ''
-      title: ''
+      title: 'Mettre à jour une conclusion technique'
       description: ''
       authenticated: true
       custom: []
@@ -182,29 +182,51 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      id:
-        name: id
-        description: 'The ID of the assignment report.'
+      technicalConclusion:
+        name: technicalConclusion
+        description: ''
         required: true
-        example: 5
-        type: integer
+        example: eius
+        type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 5
+      technicalConclusion: eius
     queryParameters: []
     cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
+    bodyParameters:
+      label:
+        name: label
+        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
+        required: true
+        example: imczmpumzjcyu
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      description:
+        name: description
+        description: ''
+        required: false
+        example: 'Ullam nobis sequi sapiente quas omnis quia.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+    cleanBodyParameters:
+      label: imczmpumzjcyu
+      description: 'Ullam nobis sequi sapiente quas omnis quia.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer h4Dcbf68geVd1kPZ36E5ava'
+      - 'Bearer 1P6aEkagZhcbDfvd58e436V'
     controller: null
     method: null
     route: null
@@ -212,15 +234,15 @@ endpoints:
   -
     httpMethods:
       - DELETE
-    uri: 'api/v1/assignment-reports/{id}'
+    uri: 'api/v1/technical-conclusions/{technicalConclusion}'
     metadata:
-      groupName: 'Gestion des rapports de dossiers'
+      groupName: 'Gestion des conclusions techniques'
       groupDescription: |-
 
-        APIs pour la gestion des rapports de dossiers
+        APIs pour la gestion des conclusions techniques
       subgroup: ''
       subgroupDescription: ''
-      title: ''
+      title: 'Supprimer une conclusion technique'
       description: ''
       authenticated: true
       custom: []
@@ -229,18 +251,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      id:
-        name: id
-        description: 'The ID of the assignment report.'
+      technicalConclusion:
+        name: technicalConclusion
+        description: ''
         required: true
-        example: 13
-        type: integer
+        example: ab
+        type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 13
+      technicalConclusion: ab
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -251,7 +273,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer a4v5PE86D13hZ6gfdeVbcak'
+      - 'Bearer 8Vefg31aZahcDvkdE6b645P'
     controller: null
     method: null
     route: null
