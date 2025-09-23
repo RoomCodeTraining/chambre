@@ -40,6 +40,14 @@ class Photo extends Model
     }
 
     /**
+     * Get the assignment request this photo belongs to
+     */
+    public function assignmentRequest(): BelongsTo
+    {
+        return $this->belongsTo(AssignmentRequest::class);
+    }
+
+    /**
      * Get the photo type of this photo
      */
     public function photoType(): BelongsTo

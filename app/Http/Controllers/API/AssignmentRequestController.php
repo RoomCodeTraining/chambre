@@ -23,7 +23,10 @@ class AssignmentRequestController extends Controller
 
     public function index(): AnonymousResourceCollection
     {
-        $assignmentRequests = AssignmentRequest::useFilters()->dynamicPaginate();
+        $assignmentRequests = AssignmentRequest::with('expertFirm','assignmentType', 'expertiseType', 'status', 'deletedBy', 'client', 'vehicle', 'insurer', 'repairer', 'createdBy', 'updatedBy')
+                                    ->useFilters()
+                                    ->latest('created_at')
+                                    ->dynamicPaginate();
 
         return AssignmentRequestResource::collection($assignmentRequests);
     }
@@ -70,6 +73,34 @@ class AssignmentRequestController extends Controller
             'created_by' => auth()->user()->id,
             'updated_by' => auth()->user()->id,
         ]);
+
+        $now = Carbon::now();
+        $annee = date("Y");
+        $mois_jour_heure = date("mdH");
+        $time = date("is");
+        $today = $annee.'_'.$mois_jour_heure.'_'.$time;
+        
+        $files = [];
+        if($request->hasfile('photos'))
+        {
+            $count = 0;
+            if($request->file('photos') && $request->hasfile('photos')){
+                foreach($request->file('photos') as $file)
+                {
+                    $count = $count + 1;
+                    $name = 'IMG_BP'.$today.'_'.$count.'.png';
+                    $file->move(public_path("storage/photos/assignment-request/{$assignmentRequest->reference}"), $name);
+
+                    $photo = Photo::create([
+                        'name' => $name,
+                        'assignment_request_id' => $assignmentRequest->id,
+                        'status_id' => Status::where('code', StatusEnum::ACTIVE)->first()->id,
+                        'created_by' => auth()->user()->id,
+                        'updated_by' => auth()->user()->id,
+                    ]);
+                }
+            }
+        }
 
         // try {
         //     dispatch(new GenerateWorkSheetPdfJob($assignment, false));

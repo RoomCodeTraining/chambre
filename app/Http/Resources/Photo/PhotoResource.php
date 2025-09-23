@@ -6,6 +6,7 @@ use App\Http\Resources\User\UserResource;
 use App\Http\Resources\Status\StatusResource;
 use Illuminate\Http\Resources\Json\JsonResource;
 use App\Http\Resources\Assignment\AssignmentResource;
+use App\Http\Resources\AssignmentRequest\AssignmentRequestResource;
 use App\Http\Resources\PhotoType\PhotoTypeResource;
 
 class PhotoResource extends JsonResource
@@ -19,10 +20,15 @@ class PhotoResource extends JsonResource
             'is_cover' => (bool) $this->is_cover,
             // 'report_photos' => url('storage/photos/report/'.$this->assignment->reference.'/'.$this->name),
             'photo' => url('storage/photos/report/'.$this->assignment->reference.'/'.$this->name),
-            'work_sheet_photo' => url('storage/photos/work_sheet/'.$this->assignment->reference.'/'.$this->name),
+            'work_sheet_photo' => url('storage/photos/work-sheet/'.$this->assignment->reference.'/'.$this->name),
+            'assignment_request_photo' => url('storage/photos/assignment-request/'.$this->assignmentRequest->reference.'/'.$this->name),
             'assignment' => $this->assignment ? [
                 'id' => $this->assignment->id,
                 'reference' => $this->assignment->reference,
+            ] : null,
+            'assignment_request' => $this->assignmentRequest ? [
+                'id' => $this->assignmentRequest->id,
+                'reference' => $this->assignmentRequest->reference,
             ] : null,
             'photo_type' => new PhotoTypeResource($this->whenLoaded('photoType')),
             'status' => new StatusResource($this->whenLoaded('status')),

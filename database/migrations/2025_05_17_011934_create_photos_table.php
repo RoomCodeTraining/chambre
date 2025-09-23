@@ -19,6 +19,7 @@ return new class extends Migration
             $table->integer('position')->nullable();
             $table->boolean('is_cover')->default(false);
             $table->unsignedBigInteger('assignment_id')->index()->nullable();
+            $table->unsignedBigInteger('assignment_request_id')->index()->nullable();
             $table->unsignedBigInteger('photo_type_id')->index()->nullable();
             $table->unsignedBigInteger('status_id')->index()->nullable();
             $table->unsignedBigInteger('created_by')->index()->nullable();
@@ -31,6 +32,11 @@ return new class extends Migration
             $table->foreign('assignment_id')
                 ->references('id')
                 ->on('assignments')
+                ->onDelete('cascade');
+
+            $table->foreign('assignment_request_id')
+                ->references('id')
+                ->on('assignment_requests')
                 ->onDelete('cascade');
 
             $table->foreign('photo_type_id')

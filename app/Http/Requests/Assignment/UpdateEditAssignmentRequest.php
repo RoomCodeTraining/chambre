@@ -26,7 +26,7 @@ class UpdateEditAssignmentRequest extends FormRequest
             'expert_report_remark' => 'nullable|string', // Note de l'expert dans le rapport
             'vehicle_new_market_value_option' => 'nullable|string', // Option de la valeur neuve du véhicule
             'new_market_value' => 'nullable|numeric', // Valeur neuve du véhicule
-            'depreciation_rate' => 'nullable|numeric', // Taux de dépréciation
+            'depreciation_rate' => 'nullable|numeric|min:0|max:100', // Taux de dépréciation
             'market_value' => 'nullable|numeric', // Valeur de marché
 
             // Evaluation
@@ -46,6 +46,8 @@ class UpdateEditAssignmentRequest extends FormRequest
             'seen_after_work_date.date_format' => 'Le format de la date est invalide.',
             'contact_date.date' => 'La date est invalide.',
             'contact_date.date_format' => 'Le format de la date est invalide.',
+            'depreciation_rate.min' => 'Le taux de dépréciation doit être supérieur ou égal à 0.',
+            'depreciation_rate.max' => 'Le taux de dépréciation doit être inférieur ou égal à 100.',
         ];
     }
 }

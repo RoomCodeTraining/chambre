@@ -82,7 +82,7 @@ class DepreciationTableController extends Controller
         
         $vehicle_market_value = $result->theorical_vehicle_market_value + $market_incidence + $kilometric_incidence;
 
-        $depreciation_rate = 100 - ($vehicle_market_value * 100 / $result->vehicle_new_value);
+        $depreciation_rate = $result->vehicle_new_value > 0 ? 100 - ($vehicle_market_value * 100 / $result->vehicle_new_value) : 0;
 
         $result = [
             'expertise_date' => $result->expertise_date,

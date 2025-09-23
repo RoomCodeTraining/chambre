@@ -928,7 +928,7 @@ class AssignmentController extends Controller
                 $vehicle_market_value = $theorical_vehicle_market_value + $market_incidence + $kilometric_incidence;
             }
 
-            $depreciation_rate = 100 - ($vehicle_market_value * 100 / $result->vehicle_new_value);
+            $depreciation_rate = $result->vehicle_new_value > 0 ? 100 - ($vehicle_market_value * 100 / $result->vehicle_new_value) : 0;
             
             $evaluations[] = [
                 'vehicle' => $vehicle,
@@ -1385,7 +1385,7 @@ class AssignmentController extends Controller
             $vehicle_market_value = $theorical_vehicle_market_value + $market_incidence + $kilometric_incidence;
         }
 
-        $depreciation_rate = 100 - ($vehicle_market_value * 100 / $result->vehicle_new_value);
+        $depreciation_rate = $result->vehicle_new_value > 0 ? 100 - ($vehicle_market_value * 100 / $result->vehicle_new_value) : 0;
 
         $evaluations = [
             'vehicle_age' => $result->vehicle_age,
@@ -1564,8 +1564,6 @@ class AssignmentController extends Controller
             'expertise_place' => $request->expertise_place,
             'damage_declared' => $request->damage_declared,
             'point_noted' => $request->point_noted,
-            'depreciation_rate' => $vehicle->vehicleGenre && $vehicle->vehicleEnergy ? $result->theorical_depreciation_rate : null,
-            'market_value' => $vehicle->vehicleGenre && $vehicle->vehicleEnergy ? $result->theorical_vehicle_market_value : null,
             'received_at' => $request->received_at,
             'status_id' => Status::where('code', StatusEnum::OPENED)->first()->id,
             'created_by' => auth()->user()->id,
@@ -1962,7 +1960,7 @@ class AssignmentController extends Controller
                 $vehicle_market_value = $theorical_vehicle_market_value + $market_incidence + $kilometric_incidence;
             }
 
-            $depreciation_rate = 100 - ($vehicle_market_value * 100 / $result->vehicle_new_value);
+            $depreciation_rate = $result->vehicle_new_value > 0 ? 100 - ($vehicle_market_value * 100 / $result->vehicle_new_value) : 0;
 
             if($request->evaluations){
                 $evaluations = [
@@ -2549,9 +2547,7 @@ class AssignmentController extends Controller
                     } else {
                         $vehicle_market_value = $theorical_vehicle_market_value + $market_incidence + $kilometric_incidence;
                     }
-
-                    $depreciation_rate = 100 - ($vehicle_market_value * 100 / $result->vehicle_new_value);
-
+                    $depreciation_rate = $result->vehicle_new_value > 0 ? 100 - ($vehicle_market_value * 100 / $result->vehicle_new_value) : 0;
                 }
 
                 $evaluations = [

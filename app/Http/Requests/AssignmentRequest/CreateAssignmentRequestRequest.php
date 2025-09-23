@@ -29,6 +29,9 @@ class CreateAssignmentRequestRequest extends FormRequest
             'claim_number' => 'nullable|string|unique:assignment_requests,claim_number',
             'claim_date' => 'nullable|date_format:Y-m-d',
             'expertise_place' => 'nullable|string',
+
+            'photos' => 'nullable|array',
+            'photos.*' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg',
             
         ];
     }
@@ -44,7 +47,6 @@ class CreateAssignmentRequestRequest extends FormRequest
             'client_id.exists' => 'Le client est invalide.',
             'vehicle_id.required' => 'Le véhicule est requis.',
             'vehicle_id.exists' => 'Le véhicule est invalide.',
-            'vehicle_mileage.numeric' => 'La mileage est invalide.',
             'insurer_id.required_if' => 'L\'assureur est requis pour une mission de type compagnie.',
             'insurer_id.exists' => 'L\'assureur est invalide.',
             'repairer_id.exists' => 'Le repaireur est invalide.',
@@ -54,6 +56,9 @@ class CreateAssignmentRequestRequest extends FormRequest
             'claim_date.date_format' => 'Le format de la date est invalide.',
             'expertise_place.string' => 'Le lieu est invalide.',
             'new_market_value.numeric' => 'La valeur neuve est invalide.',
+            'photos.array' => 'Les photos sont invalides.',
+            'photos.*.image' => 'La photo doit être une image.',
+            'photos.*.mimes' => 'La photo doit être une image du format :values.',
         ];
     }
 }
