@@ -73,6 +73,7 @@ return new class extends Migration
             $table->unsignedBigInteger('general_state_id')->index()->nullable();
             $table->unsignedBigInteger('work_sheet_remark_id')->index()->nullable();
             $table->unsignedBigInteger('report_remark_id')->index()->nullable();
+            $table->unsignedBigInteger('assignment_request_id')->index()->nullable();
             $table->unsignedBigInteger('status_id')->index()->nullable();
             $table->unsignedBigInteger('directed_by')->index()->nullable();
             $table->unsignedBigInteger('work_sheet_established_by')->index()->nullable();
@@ -163,6 +164,11 @@ return new class extends Migration
                 ->on('remarks')
                 ->onDelete('cascade');
 
+            $table->foreign('assignment_request_id')
+                ->references('id')
+                ->on('assignment_requests')
+                ->onDelete('cascade');
+
             $table->foreign('status_id')
                 ->references('id')
                 ->on('statuses')
@@ -179,6 +185,16 @@ return new class extends Migration
                 ->onDelete('cascade');
 
             $table->foreign('realized_by')
+                ->references('id')
+                ->on('users')
+                ->onDelete('cascade');
+
+            $table->foreign('repairer_validation_by')
+                ->references('id')
+                ->on('users')
+                ->onDelete('cascade');
+
+            $table->foreign('expert_validation_by')
                 ->references('id')
                 ->on('users')
                 ->onDelete('cascade');

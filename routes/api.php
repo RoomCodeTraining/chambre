@@ -93,3 +93,11 @@ Route::apiResource('/repairInvoices', \App\Http\Controllers\API\RepairInvoiceCon
 Route::apiResource('/repairInvoiceTypes', \App\Http\Controllers\API\RepairInvoiceTypeController::class);
 
 /*=====  End of repairInvoiceTypes   ======*/
+
+/*===========================
+=           assignmentRequests           =
+=============================*/
+
+Route::apiResource('/assignmentRequests', \App\Http\Controllers\API\AssignmentRequestController::class);
+
+/*=====  End of assignmentRequests   ======*/

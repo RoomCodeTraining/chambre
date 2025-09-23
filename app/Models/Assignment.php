@@ -97,6 +97,14 @@ class Assignment extends Model
     }
 
     /**
+     * Get the assignment request for this assignment
+     */
+    public function assignmentRequest(): BelongsTo
+    {
+        return $this->belongsTo(AssignmentRequest::class);
+    }
+
+    /**
      * Get the document transmitted for this assignment
      */
     public function documentTransmitted(): BelongsTo
