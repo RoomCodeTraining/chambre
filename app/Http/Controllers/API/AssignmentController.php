@@ -1452,7 +1452,7 @@ class AssignmentController extends Controller
             return $this->responseUnprocessable('Le numéro de sinistre existe déjà');
         }
 
-        $expert_firm = Entity::find($request->expert_firm_id);
+        $expert_firm = Entity::find(auth()->user()->entity_id);
 
         $now = Carbon::now();
         $annee = date("Y");
@@ -1549,6 +1549,7 @@ class AssignmentController extends Controller
 
         $assignment = Assignment::create([
             'reference' => $reference,
+            'expert_firm_id' => auth()->user()->entity_id,
             'vehicle_id' => $request->vehicle_id ?? null,
             'insurer_id' => $request->insurer_id ?? null,
             'additional_insurer_id' => $request->additional_insurer_id ?? null,
@@ -2409,6 +2410,7 @@ class AssignmentController extends Controller
             $oldReference = $assignment->reference;
             $assignment->update([
                 'reference' => $reference ?? $assignment->reference,
+                'expert_firm_id' => $assignment->expert_firm_id,
                 'insurer_id' => $insurer_id ?? $assignment->insurer_id,
                 'additional_insurer_id' => $assignment->additional_insurer_id,
                 'vehicle_id' => $vehicle_id ?? $assignment->vehicle_id,
