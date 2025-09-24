@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('assignmentRequests', function (Blueprint $table) {
+        Schema::create('assignment_requests', function (Blueprint $table) {
             $table->bigIncrements('id')->unsigned();
             $table->string('reference')->unique();
             $table->string('policy_number')->nullable();
@@ -99,6 +99,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('assignmentRequests');
+        Schema::dropIfExists('assignment_requests');
     }
 };
