@@ -19,6 +19,16 @@ class PaymentBuilder extends Builder
         return $this->model->currentRole->name == RoleEnum::ADMIN->value;
     }
 
+    public function isInsurerAdmin(): bool
+    {
+        return $this->model->currentRole->name == RoleEnum::INSURER_ADMIN->value;
+    }
+
+    public function isRepairerAdmin(): bool
+    {
+        return $this->model->currentRole->name == RoleEnum::REPAIRER_ADMIN->value;
+    }
+
     public function accessibleBy(?User $user)
     {
         if (empty($user)) {
@@ -31,6 +41,14 @@ class PaymentBuilder extends Builder
 
         if ($user->isAdmin()) {
             return $this->where('assignments.expert_firm_id', $user->entity_id);
+        }
+
+        if ($user->isInsurerAdmin()) {
+            return $this->where('assignments.insurer_id', $user->entity_id);
+        }
+
+        if ($user->isRepairerAdmin()) {
+            return $this->where('assignments.repairer_id', $user->entity_id);
         }
 
         return $this->where('current_role_id', $user->current_role_id);
