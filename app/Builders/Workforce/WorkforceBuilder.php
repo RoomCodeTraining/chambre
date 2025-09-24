@@ -25,6 +25,9 @@ class WorkforceBuilder extends Builder
     }
 
     public function isRepairerAdmin(): bool
+    {
+        return $this->model->currentRole->name == RoleEnum::REPAIRER_ADMIN->value;
+    }
 
     public function accessibleBy(?User $user)
     {
