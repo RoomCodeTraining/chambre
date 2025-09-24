@@ -19,6 +19,7 @@ endpoints:
       title: ''
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -33,7 +34,7 @@ endpoints:
         name: email
         description: 'Le champ value doit être une adresse e-mail valide.'
         required: true
-        example: name47@example.org
+        example: vicente.heller@example.net
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -43,7 +44,7 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: deleniti
+        example: voluptas
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -53,7 +54,7 @@ endpoints:
         name: new_password
         description: 'Le texte de value ne peut pas contenir plus de 100 caractères.'
         required: true
-        example: ksdoewiuvs
+        example: sceejckdle
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -63,24 +64,24 @@ endpoints:
         name: new_password_confirmation
         description: 'Le texte de value ne peut pas contenir plus de 100 caractères.'
         required: true
-        example: qbg
+        example: ummwsvphdxxx
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      email: name47@example.org
-      password: deleniti
-      new_password: ksdoewiuvs
-      new_password_confirmation: qbg
+      email: vicente.heller@example.net
+      password: voluptas
+      new_password: sceejckdle
+      new_password_confirmation: ummwsvphdxxx
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer D3Eg5adZvc86Vahke4fPb61'
+      - 'Bearer ebEa3g6v86afVdPD5kZ4ch1'
     controller: null
     method: null
     route: null
@@ -99,6 +100,7 @@ endpoints:
       title: ''
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -113,7 +115,7 @@ endpoints:
         name: email
         description: 'Le champ value doit être une adresse e-mail valide.'
         required: true
-        example: vkirlin@example.org
+        example: janessa.adams@example.org
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -123,22 +125,22 @@ endpoints:
         name: pin_code
         description: 'Le champ value doit contenir 6 chiffres.'
         required: true
-        example: '029566'
+        example: '594825'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      email: vkirlin@example.org
-      pin_code: '029566'
+      email: janessa.adams@example.org
+      pin_code: '594825'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer a3Zh154v6DafebdPV6Ekg8c'
+      - 'Bearer EPbhk1VZav645cDe3gafd68'
     controller: null
     method: null
     route: null
@@ -157,6 +159,7 @@ endpoints:
       title: ''
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -171,21 +174,21 @@ endpoints:
         name: email
         description: 'Le champ value doit être une adresse e-mail valide.'
         required: true
-        example: barton.alf@example.com
+        example: iweber@example.net
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      email: barton.alf@example.com
+      email: iweber@example.net
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer dav8154hbePgkV3faDZE6c6'
+      - 'Bearer Da6ZEaPVv8c14g5eh3fb6dk'
     controller: null
     method: null
     route: null
@@ -204,6 +207,7 @@ endpoints:
       title: ''
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -221,7 +225,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer dDvcVk1bE66a3fZ8P4h5gea'
+      - 'Bearer 1VgaPe8DkaE4v65f6cd3Zhb'
     controller: null
     method: null
     route: null
@@ -240,6 +244,7 @@ endpoints:
       title: 'Current Auth User'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -266,7 +271,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 1eaZVk84P36gcaDbhdvE56f'
+      - 'Bearer 68EZeD3ga56chavbfd41VPk'
     controller: null
     method: null
     route: null

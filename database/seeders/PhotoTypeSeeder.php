@@ -43,5 +43,14 @@ class PhotoTypeSeeder extends Seeder
             'created_by' => 1,
             'updated_by' => 1,
         ]);
+
+        PhotoType::create([
+            'code' => PhotoTypeEnum::WORK_SHEET->value,
+            'label' => 'Fiche des travaux',
+            'description' => 'Fiche des travaux',
+            'status_id' => Status::firstWhere('code', StatusEnum::ACTIVE)->id,
+            'created_by' => 1,
+            'updated_by' => 1,
+        ]);
     }
 }

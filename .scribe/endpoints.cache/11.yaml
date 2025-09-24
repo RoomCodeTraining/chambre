@@ -19,6 +19,7 @@ endpoints:
       title: 'Lister tous les états de véhicules'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -45,7 +46,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer egvDcZ3Efabkh4651P6d8aV'
+      - 'Bearer 8a6ck1eZ53Vb6ad4PDghfvE'
     controller: null
     method: null
     route: null
@@ -64,6 +65,7 @@ endpoints:
       title: 'Créer un état de véhicule'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -78,7 +80,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: ecfh
+        example: zg
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -88,22 +90,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Veniam dolore enim sed commodi eos.'
+        example: 'Quia alias dolorem dicta rerum.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: ecfh
-      description: 'Veniam dolore enim sed commodi eos.'
+      label: zg
+      description: 'Quia alias dolorem dicta rerum.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer PafEbevhacD8k4V6d315g6Z'
+      - 'Bearer P6fa34ZEV15gvhD8kd6eabc'
     controller: null
     method: null
     route: null
@@ -122,6 +124,7 @@ endpoints:
       title: 'Afficher un état de véhicule'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -132,14 +135,14 @@ endpoints:
         name: id
         description: 'The ID of the vehicle state.'
         required: true
-        example: et
+        example: quaerat
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: et
+      id: quaerat
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -159,7 +162,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer vVkbEfga461P65ae8d3ZchD'
+      - 'Bearer DcbVa86a53ghZ4dP1evk6fE'
     controller: null
     method: null
     route: null
@@ -178,6 +181,7 @@ endpoints:
       title: 'Mettre à jour un état de véhicule'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -188,14 +192,14 @@ endpoints:
         name: id
         description: 'The ID of the vehicle state.'
         required: true
-        example: modi
+        example: dolorem
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: modi
+      id: dolorem
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -203,7 +207,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: jtwvbgfyxhm
+        example: zmkioyusetthkxkv
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -213,22 +217,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Maxime doloribus nam impedit qui nam.'
+        example: 'Et quam eveniet sunt fuga assumenda eos sit.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: jtwvbgfyxhm
-      description: 'Maxime doloribus nam impedit qui nam.'
+      label: zmkioyusetthkxkv
+      description: 'Et quam eveniet sunt fuga assumenda eos sit.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer eZha4vVcd6k1DPEb8356fga'
+      - 'Bearer 8e634aEDhbkPcg5vVZ1da6f'
     controller: null
     method: null
     route: null
@@ -247,6 +251,7 @@ endpoints:
       title: 'Supprimer un état de véhicule'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -257,14 +262,14 @@ endpoints:
         name: id
         description: 'The ID of the vehicle state.'
         required: true
-        example: non
+        example: consequuntur
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: non
+      id: consequuntur
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -275,7 +280,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Zkc86EP3d65eDfv4a1ahbVg'
+      - 'Bearer k6eVE156P4davDZ8a3hfcgb'
     controller: null
     method: null
     route: null

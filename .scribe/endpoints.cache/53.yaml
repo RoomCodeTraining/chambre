@@ -19,6 +19,7 @@ endpoints:
       title: 'Lister les constats'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -45,7 +46,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 3Pf6EVDghb4akcd8Z16v5ae'
+      - 'Bearer cbV3v5f1EPdgh8eka64D6aZ'
     controller: null
     method: null
     route: null
@@ -64,6 +65,7 @@ endpoints:
       title: 'Créer un constat'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -78,7 +80,7 @@ endpoints:
         name: assignment_id
         description: 'The <code>id</code> of an existing record in the assignments table.'
         required: true
-        example: recusandae
+        example: porro
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -99,7 +101,7 @@ endpoints:
         name: 'ascertainments[].ascertainment_type_id'
         description: 'The <code>id</code> of an existing record in the ascertainment_types table.'
         required: true
-        example: quam
+        example: inventore
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -109,7 +111,7 @@ endpoints:
         name: 'ascertainments[].very_good'
         description: ''
         required: true
-        example: false
+        example: true
         type: boolean
         enumValues: []
         exampleWasSpecified: false
@@ -149,7 +151,7 @@ endpoints:
         name: 'ascertainments[].bad'
         description: ''
         required: true
-        example: true
+        example: false
         type: boolean
         enumValues: []
         exampleWasSpecified: false
@@ -169,31 +171,31 @@ endpoints:
         name: 'ascertainments[].comment'
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: vdyxyjbxgyusw
+        example: nxljasvt
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      assignment_id: recusandae
+      assignment_id: porro
       ascertainments:
         -
-          ascertainment_type_id: quam
-          very_good: false
+          ascertainment_type_id: inventore
+          very_good: true
           good: true
           acceptable: true
           less_good: true
-          bad: true
+          bad: false
           very_bad: false
-          comment: vdyxyjbxgyusw
+          comment: nxljasvt
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer V8vfD6aagkE14e6Z35dPchb'
+      - 'Bearer 3geEfP4kZ66b8ad5acDh1vV'
     controller: null
     method: null
     route: null
@@ -212,6 +214,7 @@ endpoints:
       title: 'Afficher un constat'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -222,14 +225,14 @@ endpoints:
         name: id
         description: 'The ID of the ascertainment.'
         required: true
-        example: tempore
+        example: ea
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: tempore
+      id: ea
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -249,7 +252,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer hPaEv1eg6Vbk3a8fDc4d5Z6'
+      - 'Bearer E1f34VdeahZP856avcgbDk6'
     controller: null
     method: null
     route: null
@@ -268,6 +271,7 @@ endpoints:
       title: 'Mettre à jour un constat'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -278,14 +282,14 @@ endpoints:
         name: id
         description: 'The ID of the ascertainment.'
         required: true
-        example: qui
+        example: quia
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: qui
+      id: quia
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -293,7 +297,7 @@ endpoints:
         name: ascertainment_type_id
         description: 'The <code>id</code> of an existing record in the ascertainment_types table.'
         required: true
-        example: nostrum
+        example: voluptatem
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -303,7 +307,7 @@ endpoints:
         name: very_good
         description: ''
         required: true
-        example: false
+        example: true
         type: boolean
         enumValues: []
         exampleWasSpecified: false
@@ -323,7 +327,7 @@ endpoints:
         name: acceptable
         description: ''
         required: true
-        example: false
+        example: true
         type: boolean
         enumValues: []
         exampleWasSpecified: false
@@ -363,28 +367,28 @@ endpoints:
         name: comment
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: huot
+        example: fcwxkr
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      ascertainment_type_id: nostrum
-      very_good: false
+      ascertainment_type_id: voluptatem
+      very_good: true
       good: true
-      acceptable: false
+      acceptable: true
       less_good: true
       bad: false
       very_bad: false
-      comment: huot
+      comment: fcwxkr
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer gabDaf8hkPVE5c61v6deZ34'
+      - 'Bearer hE6ka53fgPv4Z6bcVde1aD8'
     controller: null
     method: null
     route: null
@@ -403,6 +407,7 @@ endpoints:
       title: 'Supprimer un constat'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -413,14 +418,14 @@ endpoints:
         name: id
         description: 'The ID of the ascertainment.'
         required: true
-        example: laborum
+        example: neque
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: laborum
+      id: neque
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -431,7 +436,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Z5af43veagd618k6hEbVDcP'
+      - 'Bearer Vk43cZ15habeg668dPfvDaE'
     controller: null
     method: null
     route: null

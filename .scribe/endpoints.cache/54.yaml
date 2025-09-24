@@ -19,6 +19,7 @@ endpoints:
       title: 'Lister toutes les natures de sinistre'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -45,7 +46,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer P5egaV8cdf41ahb66ZkD3vE'
+      - 'Bearer ebZ6dP45vkVgc8fah361aDE'
     controller: null
     method: null
     route: null
@@ -64,6 +65,7 @@ endpoints:
       title: 'Créer une nature de sinistre'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -78,7 +80,7 @@ endpoints:
         name: code
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: gzykhtvvg
+        example: vp
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -88,7 +90,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: ciukexlccfgalvbetyhnpm
+        example: b
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -98,23 +100,23 @@ endpoints:
         name: description
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: false
-        example: 'Sit excepturi hic sit sunt pariatur.'
+        example: 'Illum quo porro ipsum dolor fuga vero rerum.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      code: gzykhtvvg
-      label: ciukexlccfgalvbetyhnpm
-      description: 'Sit excepturi hic sit sunt pariatur.'
+      code: vp
+      label: b
+      description: 'Illum quo porro ipsum dolor fuga vero rerum.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer kfvg6aa8dc4hED51bVPZ63e'
+      - 'Bearer Pv58Deaha3dcb1kgfE46ZV6'
     controller: null
     method: null
     route: null
@@ -133,6 +135,7 @@ endpoints:
       title: 'Afficher une nature de sinistre'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -143,14 +146,14 @@ endpoints:
         name: id
         description: 'The ID of the claim nature.'
         required: true
-        example: blanditiis
+        example: explicabo
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: blanditiis
+      id: explicabo
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -170,7 +173,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer ZVa4dgP1hbkvc8Da6e63fE5'
+      - 'Bearer 1dcefPv4baEZgkD8V5ha366'
     controller: null
     method: null
     route: null
@@ -189,6 +192,7 @@ endpoints:
       title: 'Mettre à jour une nature de sinistre'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -199,14 +203,14 @@ endpoints:
         name: id
         description: 'The ID of the claim nature.'
         required: true
-        example: adipisci
+        example: illo
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: adipisci
+      id: illo
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -214,7 +218,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: xlsvjazombsptqgdjkjjf
+        example: gnmfejbayedxfwadqoym
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -224,22 +228,22 @@ endpoints:
         name: description
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: false
-        example: 'Atque fugit in facere temporibus.'
+        example: 'Quidem nemo maxime cupiditate id.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: xlsvjazombsptqgdjkjjf
-      description: 'Atque fugit in facere temporibus.'
+      label: gnmfejbayedxfwadqoym
+      description: 'Quidem nemo maxime cupiditate id.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 135ZhVcdE6eaPka86fbvgD4'
+      - 'Bearer V65d84bEPhe63gakv1afDZc'
     controller: null
     method: null
     route: null
@@ -258,6 +262,7 @@ endpoints:
       title: 'Supprimer une nature de sinistre'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -268,14 +273,14 @@ endpoints:
         name: id
         description: 'The ID of the claim nature.'
         required: true
-        example: inventore
+        example: et
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: inventore
+      id: et
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -286,7 +291,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 5V381akEfbPehD6c4gaZvd6'
+      - 'Bearer d8V316kacfEebP6v5hgaZD4'
     controller: null
     method: null
     route: null

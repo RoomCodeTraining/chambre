@@ -185,9 +185,9 @@ class UserController extends Controller
     /**
      * Réinitialiser le mot de passe d'un utilisateur par lui-même
      */
-    public function reset_password()
+    public function reset_password(ResetPasswordRequest $request)
     {
-        $user = auth()->user();
+        $user = User::where('email', $request->email)->first();
 
         if($user){
             $password = $this->randomPassword();
@@ -261,5 +261,16 @@ class UserController extends Controller
             return $this->responseNotFound('Utilisateur introuvable !');
         }
 
+    }
+
+    public function randomPassword() {
+        $alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%&^&*()-+={}[]:;<>?';
+        $pass = array(); //remember to declare $pass as an array
+        $alphaLength = strlen($alphabet) - 1; //put the length -1 in cache
+        for ($i = 0; $i < 12; $i++) {
+            $n = rand(0, $alphaLength);
+            $pass[] = $alphabet[$n];
+        }
+        return implode($pass); //turn the array into a string
     }
 }

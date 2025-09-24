@@ -19,6 +19,7 @@ endpoints:
       title: 'Lister tous les états généraux'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -45,7 +46,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer P6Vava3k8bdDEZh4c61fg5e'
+      - 'Bearer 8gv4b1D6a3Eh5ZeVka6Pdcf'
     controller: null
     method: null
     route: null
@@ -64,6 +65,7 @@ endpoints:
       title: 'Ajouter un état général'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -78,7 +80,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: qiegsuofwz
+        example: qrflxvmnpuaheqwyaqco
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -88,22 +90,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Quaerat tenetur quibusdam quisquam dolor molestiae.'
+        example: 'Corporis voluptas quibusdam iure eius.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: qiegsuofwz
-      description: 'Quaerat tenetur quibusdam quisquam dolor molestiae.'
+      label: qrflxvmnpuaheqwyaqco
+      description: 'Corporis voluptas quibusdam iure eius.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer bd86ah3Zf1Ve6ckg5a4PEvD'
+      - 'Bearer Ph81vE6gkV43b5DZfaea6dc'
     controller: null
     method: null
     route: null
@@ -122,6 +124,7 @@ endpoints:
       title: 'Afficher un état général'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -132,14 +135,14 @@ endpoints:
         name: id
         description: 'The ID of the general state.'
         required: true
-        example: dolorem
+        example: repellendus
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: dolorem
+      id: repellendus
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -159,7 +162,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer b5vadf6PcDak461g8hV3ZEe'
+      - 'Bearer e8PaEbv1kd546aDV3hgfZ6c'
     controller: null
     method: null
     route: null
@@ -178,6 +181,7 @@ endpoints:
       title: 'Mettre à jour un état général'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -188,14 +192,14 @@ endpoints:
         name: id
         description: 'The ID of the general state.'
         required: true
-        example: deserunt
+        example: esse
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: deserunt
+      id: esse
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -203,7 +207,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: znxilowtfaxmnzrilr
+        example: epasthiogwrxdvlfowfhtwyu
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -213,22 +217,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'A laborum quia omnis in ut rerum tempore.'
+        example: 'Ea quia architecto ipsum voluptatibus.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: znxilowtfaxmnzrilr
-      description: 'A laborum quia omnis in ut rerum tempore.'
+      label: epasthiogwrxdvlfowfhtwyu
+      description: 'Ea quia architecto ipsum voluptatibus.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer e34fa6vhb1aD8gVcZk5Pd6E'
+      - 'Bearer b3eDg4PEa6Va6k5vZfc81dh'
     controller: null
     method: null
     route: null
@@ -247,6 +251,7 @@ endpoints:
       title: 'Supprimer un état général'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -257,14 +262,14 @@ endpoints:
         name: id
         description: 'The ID of the general state.'
         required: true
-        example: est
+        example: occaecati
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: est
+      id: occaecati
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -275,7 +280,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer c6k4aZ3Phd8aevDVf1g6bE5'
+      - 'Bearer 68fc6Pe1ava3Zd5DE4bgkhV'
     controller: null
     method: null
     route: null

@@ -19,6 +19,7 @@ endpoints:
       title: 'Lister tous les types de dossiers'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -45,7 +46,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer dhEb8aefPvc1665VD4Zgak3'
+      - 'Bearer adVEPa4kfg58chb1Z36Dv6e'
     controller: null
     method: null
     route: null
@@ -64,6 +65,7 @@ endpoints:
       title: 'Ajouter un type de dossier'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -78,7 +80,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: dzpiikxpswfc
+        example: awzefiei
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -88,22 +90,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Quia et est earum officiis rerum accusamus asperiores.'
+        example: 'Et ipsa ipsam sit.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: dzpiikxpswfc
-      description: 'Quia et est earum officiis rerum accusamus asperiores.'
+      label: awzefiei
+      description: 'Et ipsa ipsam sit.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer DPahk66Eb3VfZ4ecag5dv81'
+      - 'Bearer b18PgcdZ65Dh6eEVa3vkf4a'
     controller: null
     method: null
     route: null
@@ -122,6 +124,7 @@ endpoints:
       title: 'Afficher un type de dossier'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -159,7 +162,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer vb461kEe6Z5V38chaDgafPd'
+      - 'Bearer d3EgahV4De65afZcbPkv861'
     controller: null
     method: null
     route: null
@@ -178,6 +181,7 @@ endpoints:
       title: 'Mettre à jour un type de dossier'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -203,7 +207,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: ixthxfn
+        example: wcrnggkxqs
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -213,22 +217,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Totam vel neque nesciunt odit.'
+        example: 'Quo repellat modi nihil omnis.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: ixthxfn
-      description: 'Totam vel neque nesciunt odit.'
+      label: wcrnggkxqs
+      description: 'Quo repellat modi nihil omnis.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer f3PkabZhEd56a81g6vecDV4'
+      - 'Bearer 3Dd6PakEvf4gcbe56VZ8h1a'
     controller: null
     method: null
     route: null
@@ -247,6 +251,7 @@ endpoints:
       title: 'Supprimer un type de dossier'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -275,7 +280,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer D81h6b6VevPZakcf4ag5d3E'
+      - 'Bearer kecZdVg65Dba86fPEva134h'
     controller: null
     method: null
     route: null

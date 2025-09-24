@@ -17,6 +17,7 @@ endpoints:
       title: 'Lister toutes les carrosseries'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -43,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 3dkacP5VbvgDah61Ee6f84Z'
+      - 'Bearer fcveaZa386bDh41g5V6PEkd'
     controller: null
     method: null
     route: null
@@ -62,6 +63,7 @@ endpoints:
       title: 'Ajouter une carrosserie'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -76,7 +78,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: yyywgkvdmevw
+        example: ublujqnpsypfzpocqxzkuhiy
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -86,22 +88,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Fugiat molestiae aliquam sequi ut facere.'
+        example: 'Provident vitae nesciunt explicabo hic nobis.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: yyywgkvdmevw
-      description: 'Fugiat molestiae aliquam sequi ut facere.'
+      label: ublujqnpsypfzpocqxzkuhiy
+      description: 'Provident vitae nesciunt explicabo hic nobis.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer fV5PZ36DegbaE1c6kavh48d'
+      - 'Bearer 63cZeb8VgD45P61Eadafvhk'
     controller: null
     method: null
     route: null
@@ -120,6 +122,7 @@ endpoints:
       title: 'Afficher une carrosserie'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -130,14 +133,14 @@ endpoints:
         name: id
         description: 'The ID of the bodywork.'
         required: true
-        example: aut
+        example: aliquid
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: aut
+      id: aliquid
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -157,7 +160,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6cP8dVEbhv6D15gfkZae43a'
+      - 'Bearer 6cZ5v61kVhPbE3a8gefdaD4'
     controller: null
     method: null
     route: null
@@ -176,6 +179,7 @@ endpoints:
       title: 'Mettre à jour une carrosserie'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -186,14 +190,14 @@ endpoints:
         name: id
         description: 'The ID of the bodywork.'
         required: true
-        example: corporis
+        example: suscipit
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: corporis
+      id: suscipit
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -201,7 +205,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: tuypkyowwipmsnk
+        example: whzbgcnufvqodaahlhbpyfeh
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -211,22 +215,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Accusantium autem doloribus quia.'
+        example: 'Tenetur ut dignissimos assumenda dolore cupiditate consectetur sint.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: tuypkyowwipmsnk
-      description: 'Accusantium autem doloribus quia.'
+      label: whzbgcnufvqodaahlhbpyfeh
+      description: 'Tenetur ut dignissimos assumenda dolore cupiditate consectetur sint.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer ag4a8D3kheZ16V5bPv6cfdE'
+      - 'Bearer ZD6v54hgf18ked3ab6cEPaV'
     controller: null
     method: null
     route: null
@@ -245,6 +249,7 @@ endpoints:
       title: 'Supprimer une carrosserie'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -255,14 +260,14 @@ endpoints:
         name: id
         description: 'The ID of the bodywork.'
         required: true
-        example: incidunt
+        example: unde
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: incidunt
+      id: unde
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -273,7 +278,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Pg68h4dv61cVf3kbZ5aEaDe'
+      - 'Bearer e8EgZ65VfDhadP13bk64vca'
     controller: null
     method: null
     route: null

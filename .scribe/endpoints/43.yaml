@@ -17,6 +17,7 @@ endpoints:
       title: 'Lister toutes les factures'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -43,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer ZdvEa3bfV6e8P64a5hDgk1c'
+      - 'Bearer Z1a68dVk5eEhbPf6cavDg34'
     controller: null
     method: null
     route: null
@@ -62,6 +63,7 @@ endpoints:
       title: 'Créer une facture'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -76,7 +78,7 @@ endpoints:
         name: assignment_id
         description: 'The <code>id</code> of an existing record in the assignments table.'
         required: true
-        example: voluptatem
+        example: et
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -86,7 +88,7 @@ endpoints:
         name: date
         description: 'Must be a valid date in the format <code>Y-m-d</code>.'
         required: true
-        example: '2025-09-22'
+        example: '2025-09-23'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -96,23 +98,23 @@ endpoints:
         name: object
         description: ''
         required: true
-        example: distinctio
+        example: ex
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      assignment_id: voluptatem
-      date: '2025-09-22'
-      object: distinctio
+      assignment_id: et
+      date: '2025-09-23'
+      object: ex
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer v5ZbkeaVg6481E3hP6cdDfa'
+      - 'Bearer Edgh1b6aD5cV4Z3Pek8fa6v'
     controller: null
     method: null
     route: null
@@ -131,6 +133,145 @@ endpoints:
       title: 'Afficher une facture'
       description: ''
       authenticated: true
+      deprecated: false
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the invoice.'
+        required: true
+        example: 13
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      id: 13
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 16ehkgDVZa6dfc34Eb8v5Pa'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/invoices/{id}'
+    metadata:
+      groupName: 'Gestion des factures'
+      groupDescription: |-
+
+        APIs pour la gestion des factures
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Mettre à jour une facture'
+      description: ''
+      authenticated: true
+      deprecated: false
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the invoice.'
+        required: true
+        example: 17
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      id: 17
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      assignment_id:
+        name: assignment_id
+        description: 'The <code>id</code> of an existing record in the assignments table.'
+        required: true
+        example: rerum
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      date:
+        name: date
+        description: 'Must be a valid date in the format <code>Y-m-d</code>.'
+        required: true
+        example: '2025-09-23'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      object:
+        name: object
+        description: ''
+        required: true
+        example: laborum
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      assignment_id: rerum
+      date: '2025-09-23'
+      object: laborum
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer e4hg861cEVakv653PaZbfDd'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/invoices/{id}'
+    metadata:
+      groupName: 'Gestion des factures'
+      groupDescription: |-
+
+        APIs pour la gestion des factures
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Supprimer une facture'
+      description: ''
+      authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -154,148 +295,12 @@ endpoints:
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
-    responses:
-      -
-        status: 401
-        content: '{"message":"Unauthenticated."}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          access-control-allow-origin: '*'
-        description: null
-        custom: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer c81Z6Ph564ava3EgfkbVedD'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - PUT
-    uri: 'api/v1/invoices/{id}'
-    metadata:
-      groupName: 'Gestion des factures'
-      groupDescription: |-
-
-        APIs pour la gestion des factures
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Mettre à jour une facture'
-      description: ''
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      id:
-        name: id
-        description: 'The ID of the invoice.'
-        required: true
-        example: 12
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-    cleanUrlParameters:
-      id: 12
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      assignment_id:
-        name: assignment_id
-        description: 'The <code>id</code> of an existing record in the assignments table.'
-        required: true
-        example: molestiae
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      date:
-        name: date
-        description: 'Must be a valid date in the format <code>Y-m-d</code>.'
-        required: true
-        example: '2025-09-22'
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      object:
-        name: object
-        description: ''
-        required: true
-        example: mollitia
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-    cleanBodyParameters:
-      assignment_id: molestiae
-      date: '2025-09-22'
-      object: mollitia
-    fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 564PdhkV18agfEZD6baec3v'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - DELETE
-    uri: 'api/v1/invoices/{id}'
-    metadata:
-      groupName: 'Gestion des factures'
-      groupDescription: |-
-
-        APIs pour la gestion des factures
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Supprimer une facture'
-      description: ''
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      id:
-        name: id
-        description: 'The ID of the invoice.'
-        required: true
-        example: 18
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-    cleanUrlParameters:
-      id: 18
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer ZeDbk6f6d18g35PVvEac4ha'
+      - 'Bearer 8f3V16gPaa5cZDbEe4dv6kh'
     controller: null
     method: null
     route: null
@@ -314,6 +319,7 @@ endpoints:
       title: 'Annuler une facture'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -342,7 +348,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer dV36fagZbD5cvk814aPh6eE'
+      - 'Bearer 6548eZv31gahkfaPDbE6dcV'
     controller: null
     method: null
     route: null
@@ -361,6 +367,7 @@ endpoints:
       title: 'Générer une facture'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -371,14 +378,14 @@ endpoints:
         name: invoice
         description: 'The invoice.'
         required: true
-        example: 13
+        example: 1
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      invoice: 13
+      invoice: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -389,7 +396,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer ZhegPa6c1D8f4V6adk5bvE3'
+      - 'Bearer a6ghDV1vfE8Zak3c65Pebd4'
     controller: null
     method: null
     route: null
@@ -408,6 +415,7 @@ endpoints:
       title: 'Statistiques des factures'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -434,7 +442,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 1Z3bEdV6vgDaP4kea6hfc85'
+      - 'Bearer Ehdeabv3kfVg146cDPZ68a5'
     controller: null
     method: null
     route: null

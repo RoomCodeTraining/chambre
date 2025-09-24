@@ -17,6 +17,7 @@ endpoints:
       title: 'Lister tous les âges des véhicules'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -43,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 4dcabED85aPv6163VZkhfeg'
+      - 'Bearer efdPD4v65kZgV1a6ba83hcE'
     controller: null
     method: null
     route: null
@@ -62,6 +63,7 @@ endpoints:
       title: 'Créer un nouvel âge de véhicule'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -76,7 +78,7 @@ endpoints:
         name: value
         description: ''
         required: true
-        example: 17
+        example: 19
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -86,7 +88,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: vtkltdqttdwnvih
+        example: uglcgbdtqbsw
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -96,23 +98,23 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Assumenda magnam necessitatibus distinctio neque.'
+        example: 'Repellat laboriosam architecto tenetur quo officia cupiditate.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      value: 17
-      label: vtkltdqttdwnvih
-      description: 'Assumenda magnam necessitatibus distinctio neque.'
+      value: 19
+      label: uglcgbdtqbsw
+      description: 'Repellat laboriosam architecto tenetur quo officia cupiditate.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer a5dZgch64E631kfvP8VbDae'
+      - 'Bearer 8aefvDP4abc3EgV65Z1khd6'
     controller: null
     method: null
     route: null
@@ -131,6 +133,7 @@ endpoints:
       title: 'Afficher un âge de véhicule'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -141,14 +144,14 @@ endpoints:
         name: id
         description: 'The ID of the vehicle age.'
         required: true
-        example: et
+        example: assumenda
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: et
+      id: assumenda
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -168,7 +171,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer c6vaeEkdfa1PD8435b6gZVh'
+      - 'Bearer DeZ1vVfkhg3Eda5a864P6cb'
     controller: null
     method: null
     route: null
@@ -187,6 +190,7 @@ endpoints:
       title: 'Mettre à jour un âge de véhicule'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -197,14 +201,14 @@ endpoints:
         name: id
         description: 'The ID of the vehicle age.'
         required: true
-        example: doloremque
+        example: numquam
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: doloremque
+      id: numquam
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -212,7 +216,7 @@ endpoints:
         name: value
         description: ''
         required: true
-        example: 9
+        example: 20
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -222,7 +226,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: nad
+        example: tgrjwdcjjzbqphsicwd
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -232,23 +236,23 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Eaque eos voluptatem illo vero pariatur officia.'
+        example: 'Velit est eaque omnis minima repudiandae consectetur perferendis et.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      value: 9
-      label: nad
-      description: 'Eaque eos voluptatem illo vero pariatur officia.'
+      value: 20
+      label: tgrjwdcjjzbqphsicwd
+      description: 'Velit est eaque omnis minima repudiandae consectetur perferendis et.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer D5kE3abfVah4Z8edvg66c1P'
+      - 'Bearer fV84ae6E6gZdh3k1a5cbPvD'
     controller: null
     method: null
     route: null
@@ -267,6 +271,7 @@ endpoints:
       title: 'Supprimer un âge de véhicule'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -277,14 +282,14 @@ endpoints:
         name: id
         description: 'The ID of the vehicle age.'
         required: true
-        example: minima
+        example: voluptatem
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: minima
+      id: voluptatem
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -295,7 +300,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer aabE4dPk56eVh6g3ZvD1fc8'
+      - 'Bearer vdhceD3kZaVPf6E8a516b4g'
     controller: null
     method: null
     route: null

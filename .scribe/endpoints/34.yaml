@@ -17,6 +17,7 @@ endpoints:
       title: 'Lister toutes les quittances'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -43,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Paf4Vv5E8d6eDZck1a6b3hg'
+      - 'Bearer f6D58cZae4kaghb3d61vVPE'
     controller: null
     method: null
     route: null
@@ -62,6 +63,7 @@ endpoints:
       title: 'Ajouter une quittance'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -76,7 +78,7 @@ endpoints:
         name: assignment_id
         description: 'The <code>id</code> of an existing record in the assignments table.'
         required: true
-        example: dolores
+        example: excepturi
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -97,7 +99,7 @@ endpoints:
         name: 'receipts[].receipt_type_id'
         description: ''
         required: true
-        example: dolore
+        example: consequuntur
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -107,25 +109,25 @@ endpoints:
         name: 'receipts[].amount'
         description: ''
         required: true
-        example: 313516475.86
+        example: 37.02611
         type: number
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      assignment_id: dolores
+      assignment_id: excepturi
       receipts:
         -
-          receipt_type_id: dolore
-          amount: 313516475.86
+          receipt_type_id: consequuntur
+          amount: 37.02611
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 3daDgk61aVc6fPZeh4E5v8b'
+      - 'Bearer hgkc6a5V3f6841PevadDZEb'
     controller: null
     method: null
     route: null
@@ -144,6 +146,7 @@ endpoints:
       title: 'Calculer une quittance'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -158,7 +161,7 @@ endpoints:
         name: assignment_id
         description: 'The <code>id</code> of an existing record in the assignments table.'
         required: true
-        example: architecto
+        example: sed
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -179,7 +182,7 @@ endpoints:
         name: 'receipts[].receipt_type_id'
         description: 'The <code>id</code> of an existing record in the receipt_types table.'
         required: true
-        example: eligendi
+        example: quod
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -189,25 +192,25 @@ endpoints:
         name: 'receipts[].amount'
         description: ''
         required: true
-        example: 0.22598
+        example: 62574970.84466
         type: number
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      assignment_id: architecto
+      assignment_id: sed
       receipts:
         -
-          receipt_type_id: eligendi
-          amount: 0.22598
+          receipt_type_id: quod
+          amount: 62574970.84466
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer D36ghdk4VEb85PfaZva61ce'
+      - 'Bearer kdh68gafb5av1cZEP46eV3D'
     controller: null
     method: null
     route: null
@@ -226,6 +229,7 @@ endpoints:
       title: 'Afficher une quittance'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -236,14 +240,14 @@ endpoints:
         name: id
         description: 'The ID of the receipt.'
         required: true
-        example: mollitia
+        example: consectetur
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: mollitia
+      id: consectetur
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -263,7 +267,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6fb61e5v8Z4akgDPVdE3ahc'
+      - 'Bearer cPV4aZgEkb68hd16f3ev5Da'
     controller: null
     method: null
     route: null
@@ -282,6 +286,7 @@ endpoints:
       title: 'Mettre à jour une quittance'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -292,14 +297,14 @@ endpoints:
         name: id
         description: 'The ID of the receipt.'
         required: true
-        example: quo
+        example: ipsum
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: quo
+      id: ipsum
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -307,7 +312,7 @@ endpoints:
         name: receipt_type_id
         description: 'The <code>id</code> of an existing record in the receipt_types table.'
         required: true
-        example: quia
+        example: ut
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -317,22 +322,22 @@ endpoints:
         name: amount
         description: ''
         required: true
-        example: 7223.82133686
+        example: 2.727561
         type: number
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      receipt_type_id: quia
-      amount: 7223.82133686
+      receipt_type_id: ut
+      amount: 2.727561
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer ea4fh1Zbc8Ed66V3D5kvPag'
+      - 'Bearer 5gZvDPehE6ckaV1486da3bf'
     controller: null
     method: null
     route: null
@@ -351,6 +356,7 @@ endpoints:
       title: 'Supprimer une quittance'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -361,14 +367,14 @@ endpoints:
         name: id
         description: 'The ID of the receipt.'
         required: true
-        example: aut
+        example: qui
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: aut
+      id: qui
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -379,7 +385,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer aDZbfk1dPhv6V4c65gea83E'
+      - 'Bearer dfha3D6baVPZg84Ekc5e1v6'
     controller: null
     method: null
     route: null

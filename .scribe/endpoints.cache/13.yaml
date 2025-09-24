@@ -19,6 +19,7 @@ endpoints:
       title: 'Lister toutes les couleurs'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -45,7 +46,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer EcZh4V6d156gf8baavePk3D'
+      - 'Bearer b4eah6k53gVEvc1a6PZfD8d'
     controller: null
     method: null
     route: null
@@ -64,6 +65,7 @@ endpoints:
       title: 'Ajouter une couleur'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -78,7 +80,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: cgfetyqraolreaodzt
+        example: brgdogkgraymngz
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -88,22 +90,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Ratione quod temporibus omnis id ut reprehenderit est exercitationem.'
+        example: 'In rerum quos fuga temporibus aut voluptatibus assumenda.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: cgfetyqraolreaodzt
-      description: 'Ratione quod temporibus omnis id ut reprehenderit est exercitationem.'
+      label: brgdogkgraymngz
+      description: 'In rerum quos fuga temporibus aut voluptatibus assumenda.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 8ZbDPk3v6EVadecf5a64hg1'
+      - 'Bearer 86cfagk3E15ZPahdvDV4eb6'
     controller: null
     method: null
     route: null
@@ -122,6 +124,7 @@ endpoints:
       title: 'Afficher une couleur'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -132,14 +135,14 @@ endpoints:
         name: id
         description: 'The ID of the color.'
         required: true
-        example: nemo
+        example: sunt
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: nemo
+      id: sunt
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -159,7 +162,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 5Z6hc6PgkED84a1vedfbV3a'
+      - 'Bearer a1P8Vhbe5vZ4c63kf6EgaDd'
     controller: null
     method: null
     route: null
@@ -178,6 +181,7 @@ endpoints:
       title: 'Mettre à jour une couleur'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -188,14 +192,14 @@ endpoints:
         name: id
         description: 'The ID of the color.'
         required: true
-        example: temporibus
+        example: error
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: temporibus
+      id: error
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -203,7 +207,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: pkvxiqfj
+        example: jkqhnzzfrxdxob
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -213,22 +217,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Reiciendis praesentium aut voluptas non est aut.'
+        example: 'Porro vero nobis qui inventore numquam ipsum.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: pkvxiqfj
-      description: 'Reiciendis praesentium aut voluptas non est aut.'
+      label: jkqhnzzfrxdxob
+      description: 'Porro vero nobis qui inventore numquam ipsum.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 6hdck56Vabgef43D1PavZE8'
+      - 'Bearer 4e6fV81Eav3PDka6bcZ5ghd'
     controller: null
     method: null
     route: null
@@ -247,6 +251,7 @@ endpoints:
       title: 'Supprimer une couleur'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -257,14 +262,14 @@ endpoints:
         name: id
         description: 'The ID of the color.'
         required: true
-        example: similique
+        example: dicta
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: similique
+      id: dicta
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -275,7 +280,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 66D35Pfba14dheVavZcgkE8'
+      - 'Bearer hcdabf63e4kP5ZE16VaDgv8'
     controller: null
     method: null
     route: null

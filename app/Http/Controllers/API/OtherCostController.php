@@ -384,6 +384,9 @@ class OtherCostController extends Controller
         $total_amount = $assignment->total_amount + $total_other_cost_amount;
 
         $assignment->update([
+            'other_cost_amount_excluding_tax' => $total_other_cost_amount_excluding_tax,
+            'other_cost_amount_tax' => $total_other_cost_amount_tax,
+            'other_cost_amount' => $total_other_cost_amount,
             'total_amount_excluding_tax' => $total_amount_excluding_tax,
             'total_amount_tax' => $total_amount_tax,
             'total_amount' => $total_amount,

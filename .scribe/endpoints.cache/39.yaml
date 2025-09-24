@@ -19,6 +19,7 @@ endpoints:
       title: 'Lister tous les tarifs de produits de peinture'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -45,7 +46,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer ZvD16Pd3c6kaeE4ahf8Vg5b'
+      - 'Bearer c6bgaaE4Zf3PV6dkh8D5e1v'
     controller: null
     method: null
     route: null
@@ -64,6 +65,7 @@ endpoints:
       title: 'Ajouter un tarif de produit de peinture'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -78,7 +80,7 @@ endpoints:
         name: value
         description: 'La valeur de value doit être supérieure ou égale à 0.'
         required: true
-        example: 33
+        example: 58
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -88,7 +90,7 @@ endpoints:
         name: paint_type_id
         description: 'The <code>id</code> of an existing record in the paint_types table.'
         required: true
-        example: et
+        example: tempore
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -98,23 +100,23 @@ endpoints:
         name: number_paint_element_id
         description: 'The <code>id</code> of an existing record in the number_paint_elements table.'
         required: true
-        example: fugit
+        example: alias
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      value: 33
-      paint_type_id: et
-      number_paint_element_id: fugit
+      value: 58
+      paint_type_id: tempore
+      number_paint_element_id: alias
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer Vgaf8v5bhkde16PcaZ63E4D'
+      - 'Bearer vEd1gZae486PVD6kfca53hb'
     controller: null
     method: null
     route: null
@@ -133,6 +135,7 @@ endpoints:
       title: 'Afficher un tarif de produit de peinture'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -143,14 +146,14 @@ endpoints:
         name: paintProductPrice
         description: ''
         required: true
-        example: quo
+        example: sapiente
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      paintProductPrice: quo
+      paintProductPrice: sapiente
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -170,7 +173,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer aZ6dkPegaf1VED5b8hv4c36'
+      - 'Bearer Dv536cgbf4eaEVkPdh16Za8'
     controller: null
     method: null
     route: null
@@ -189,6 +192,7 @@ endpoints:
       title: 'Mettre à jour un tarif de produit de peinture'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -199,14 +203,14 @@ endpoints:
         name: paintProductPrice
         description: ''
         required: true
-        example: error
+        example: debitis
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      paintProductPrice: error
+      paintProductPrice: debitis
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -214,7 +218,7 @@ endpoints:
         name: value
         description: ''
         required: true
-        example: 435.016
+        example: 195900359.3694
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -224,7 +228,7 @@ endpoints:
         name: paint_type_id
         description: 'The <code>id</code> of an existing record in the paint_types table.'
         required: true
-        example: adipisci
+        example: corporis
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -234,23 +238,23 @@ endpoints:
         name: number_paint_element_id
         description: 'The <code>id</code> of an existing record in the number_paint_elements table.'
         required: true
-        example: porro
+        example: cum
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      value: 435.016
-      paint_type_id: adipisci
-      number_paint_element_id: porro
+      value: 195900359.3694
+      paint_type_id: corporis
+      number_paint_element_id: cum
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 5agb6aPkdE6V31eZDhc8fv4'
+      - 'Bearer Pcaa354bk8Vv16ZEfegh6dD'
     controller: null
     method: null
     route: null
@@ -269,6 +273,7 @@ endpoints:
       title: 'Supprimer un tarif de produit de peinture'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -279,14 +284,14 @@ endpoints:
         name: paintProductPrice
         description: ''
         required: true
-        example: enim
+        example: eos
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      paintProductPrice: enim
+      paintProductPrice: eos
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -297,7 +302,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer d8Va641a5gD6kcvEPhefbZ3'
+      - 'Bearer baDP36k68dEv4hZ5Vacfg1e'
     controller: null
     method: null
     route: null

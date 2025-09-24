@@ -8,5 +8,5 @@ class PhotoFilters extends QueryFilters
 {
     protected array $allowedFilters = ['assignment_id', 'photo_type_id', 'status_id'];
 
-    protected array $columnSearch = [];
+    protected array $columnSearch = ['name'];
 }

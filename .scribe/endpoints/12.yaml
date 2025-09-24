@@ -17,6 +17,7 @@ endpoints:
       title: 'Lister toutes les marques'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -43,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer a43ZcDgVE661abPkdeh58vf'
+      - 'Bearer c6a1b8Z5dhefE64P3VgDkva'
     controller: null
     method: null
     route: null
@@ -62,6 +63,7 @@ endpoints:
       title: 'Ajouter une marque'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -76,7 +78,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: lplkqeawsrkkghkygjey
+        example: nflknpsisaolqfxbtz
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -86,22 +88,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Voluptatibus rerum voluptatem omnis culpa adipisci.'
+        example: 'Est non architecto nesciunt eos commodi assumenda consequatur voluptatibus.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: lplkqeawsrkkghkygjey
-      description: 'Voluptatibus rerum voluptatem omnis culpa adipisci.'
+      label: nflknpsisaolqfxbtz
+      description: 'Est non architecto nesciunt eos commodi assumenda consequatur voluptatibus.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer Z4deVbg15EhDaak3fcP8v66'
+      - 'Bearer heaag1bkEf45VdZ8D366Pvc'
     controller: null
     method: null
     route: null
@@ -120,6 +122,7 @@ endpoints:
       title: 'Afficher une marque'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -130,14 +133,14 @@ endpoints:
         name: id
         description: 'The ID of the brand.'
         required: true
-        example: repudiandae
+        example: tenetur
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: repudiandae
+      id: tenetur
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -157,7 +160,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer kDavZhgdE8656cbPVfe3a14'
+      - 'Bearer Z8D61a5dahEv6bV34cgPkef'
     controller: null
     method: null
     route: null
@@ -176,6 +179,7 @@ endpoints:
       title: 'Mettre à jour une marque'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -186,14 +190,14 @@ endpoints:
         name: id
         description: 'The ID of the brand.'
         required: true
-        example: itaque
+        example: aut
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: itaque
+      id: aut
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -201,7 +205,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: egqd
+        example: by
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -211,22 +215,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Nobis eum sit in modi quibusdam qui nisi.'
+        example: 'Aperiam iste repellat repellat neque fuga incidunt ipsam.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: egqd
-      description: 'Nobis eum sit in modi quibusdam qui nisi.'
+      label: by
+      description: 'Aperiam iste repellat repellat neque fuga incidunt ipsam.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer ac65gebZ4vha8E3PVkDd61f'
+      - 'Bearer a68k1Zbcd3vEheg5VDa46fP'
     controller: null
     method: null
     route: null
@@ -245,6 +249,7 @@ endpoints:
       title: 'Supprimer une marque'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -255,14 +260,14 @@ endpoints:
         name: id
         description: 'The ID of the brand.'
         required: true
-        example: eius
+        example: et
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: eius
+      id: et
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -273,7 +278,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer eDgE1fPc5d6vkaa684bhZ3V'
+      - 'Bearer 6k84e15bVaEvhfPaDZ63cdg'
     controller: null
     method: null
     route: null

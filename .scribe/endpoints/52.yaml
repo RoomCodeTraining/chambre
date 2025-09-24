@@ -17,6 +17,7 @@ endpoints:
       title: 'Lister les types de constat'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -43,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 3v5Zbfa6g461Pch8VadeEDk'
+      - 'Bearer 6Z3v8cb6aVe4gDh1kdafE5P'
     controller: null
     method: null
     route: null
@@ -62,6 +63,7 @@ endpoints:
       title: 'Créer un type de constat'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -76,7 +78,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: hfszufpbejxauwbqlc
+        example: xesmwypjjkzzsrghhtbxl
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -86,22 +88,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Et tempora nam ea consequuntur.'
+        example: 'Soluta optio doloribus consequatur reprehenderit omnis.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: hfszufpbejxauwbqlc
-      description: 'Et tempora nam ea consequuntur.'
+      label: xesmwypjjkzzsrghhtbxl
+      description: 'Soluta optio doloribus consequatur reprehenderit omnis.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 56EaeZhga4c1Vb68fvkDd3P'
+      - 'Bearer a6vVDe43hE8Zbg6k1a5cfdP'
     controller: null
     method: null
     route: null
@@ -120,6 +122,7 @@ endpoints:
       title: 'Afficher un type de constat'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -130,14 +133,14 @@ endpoints:
         name: id
         description: 'The ID of the ascertainment type.'
         required: true
-        example: et
+        example: ad
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: et
+      id: ad
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -157,7 +160,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6E4ahZdD5PvVe13ba68ckgf'
+      - 'Bearer fD6vaVdgEac5b8Zh614Pk3e'
     controller: null
     method: null
     route: null
@@ -176,6 +179,7 @@ endpoints:
       title: 'Mettre à jour un type de constat'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -186,14 +190,14 @@ endpoints:
         name: id
         description: 'The ID of the ascertainment type.'
         required: true
-        example: est
+        example: ut
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: est
+      id: ut
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -201,7 +205,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: covoppgubbbjziygpepdf
+        example: xqrch
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -211,22 +215,22 @@ endpoints:
         name: description
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: false
-        example: 'Reprehenderit sint doloribus ab.'
+        example: 'Nulla nostrum ut omnis inventore fugiat et.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: covoppgubbbjziygpepdf
-      description: 'Reprehenderit sint doloribus ab.'
+      label: xqrch
+      description: 'Nulla nostrum ut omnis inventore fugiat et.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer Pae8k5b1c4ZvdfDaghE63V6'
+      - 'Bearer 5adV8vDkhg4a6ef6E3c1bZP'
     controller: null
     method: null
     route: null
@@ -245,6 +249,7 @@ endpoints:
       title: 'Supprimer un type de constat'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -255,14 +260,14 @@ endpoints:
         name: id
         description: 'The ID of the ascertainment type.'
         required: true
-        example: maiores
+        example: ullam
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: maiores
+      id: ullam
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -273,7 +278,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 4kdVPve6c3afhaEgbZ658D1'
+      - 'Bearer Vb5a63deZvch4fDg8ka1PE6'
     controller: null
     method: null
     route: null

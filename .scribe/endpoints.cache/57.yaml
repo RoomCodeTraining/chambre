@@ -19,6 +19,7 @@ endpoints:
       title: 'Lister les profils utilisateur'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -45,7 +46,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer e3Vg6hD6k8Eda5vc4PfZ1ba'
+      - 'Bearer bP45ZEefdD6ag8k31havV6c'
     controller: null
     method: null
     route: null

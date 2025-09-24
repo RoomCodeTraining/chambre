@@ -17,6 +17,7 @@ endpoints:
       title: 'Lister tous les QR codes'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -43,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 3EacVkZbe6514dD6hfgvaP8'
+      - 'Bearer Pk6fEb5a6vcg8d13eVDZh4a'
     controller: null
     method: null
     route: null
@@ -62,6 +63,7 @@ endpoints:
       title: 'Ajouter un QR code'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -76,21 +78,21 @@ endpoints:
         name: code
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: eqaeixwfckbhmfjzxqayhi
+        example: fktlllzeqztckoco
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      code: eqaeixwfckbhmfjzxqayhi
+      code: fktlllzeqztckoco
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer d8EvghDZacPV64e6b1k5a3f'
+      - 'Bearer 31DgEZP5ec6vVkda8fh4a6b'
     controller: null
     method: null
     route: null
@@ -109,6 +111,7 @@ endpoints:
       title: 'Afficher un QR code'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -119,14 +122,14 @@ endpoints:
         name: qrCode_id
         description: 'The ID of the qrCode.'
         required: true
-        example: 9
+        example: 3
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      qrCode_id: 9
+      qrCode_id: 3
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -146,7 +149,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer aPZ6a53gb6D4EehcVdk81vf'
+      - 'Bearer 8dhv6agk6c4ZP1Eef3VaD5b'
     controller: null
     method: null
     route: null
@@ -165,6 +168,7 @@ endpoints:
       title: 'Mettre à jour un QR code'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -175,14 +179,14 @@ endpoints:
         name: qrCode
         description: ''
         required: true
-        example: 3
+        example: 4
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      qrCode: 3
+      qrCode: 4
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -190,21 +194,21 @@ endpoints:
         name: code
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: rqnjiqxmkvdmphmswrwkty
+        example: ogfxgsivcaqfbpndzmvf
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      code: rqnjiqxmkvdmphmswrwkty
+      code: ogfxgsivcaqfbpndzmvf
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer aaZV64831ckb5vedgD6fEPh'
+      - 'Bearer D4Pc8v3de1khgfZ6V5bE6aa'
     controller: null
     method: null
     route: null
@@ -223,6 +227,7 @@ endpoints:
       title: 'Supprimer un QR code'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -251,7 +256,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 5av6ke3PcdgDZ64ah8fbEV1'
+      - 'Bearer kDvg3h5Z1dafbeE46a68PVc'
     controller: null
     method: null
     route: null

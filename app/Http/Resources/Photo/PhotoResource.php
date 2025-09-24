@@ -2,12 +2,14 @@
 
 namespace App\Http\Resources\Photo;
 
+use App\Models\PhotoType;
+use App\Enums\PhotoTypeEnum;
 use App\Http\Resources\User\UserResource;
 use App\Http\Resources\Status\StatusResource;
 use Illuminate\Http\Resources\Json\JsonResource;
+use App\Http\Resources\PhotoType\PhotoTypeResource;
 use App\Http\Resources\Assignment\AssignmentResource;
 use App\Http\Resources\AssignmentRequest\AssignmentRequestResource;
-use App\Http\Resources\PhotoType\PhotoTypeResource;
 
 class PhotoResource extends JsonResource
 {
@@ -19,7 +21,7 @@ class PhotoResource extends JsonResource
             'position' => $this->position,
             'is_cover' => (bool) $this->is_cover,
             // 'report_photos' => url('storage/photos/report/'.$this->assignment->reference.'/'.$this->name),
-            'photo' => url('storage/photos/report/'.$this->assignment->reference.'/'.$this->name),
+            'photo' => $this->photo_type_id == PhotoType::where('code', PhotoTypeEnum::WORK_SHEET)->first()->id ? url('storage/photos/work-sheet/'.$this->assignment->reference.'/'.$this->name) : url('storage/photos/report/'.$this->assignment->reference.'/'.$this->name),
             'work_sheet_photo' => url('storage/photos/work-sheet/'.$this->assignment->reference.'/'.$this->name),
             'assignment_request_photo' => url('storage/photos/assignment-request/'.$this->assignmentRequest->reference.'/'.$this->name),
             'assignment' => $this->assignment ? [

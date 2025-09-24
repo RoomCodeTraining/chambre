@@ -19,6 +19,7 @@ endpoints:
       title: 'Lister tous les remarques'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -45,7 +46,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer hfEb3Va68cP6e4Zvkda5gD1'
+      - 'Bearer vdE18Db6g6aVcZh3fa4P5ek'
     controller: null
     method: null
     route: null
@@ -64,6 +65,7 @@ endpoints:
       title: 'Créer une remarque'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -78,7 +80,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: ahohx
+        example: bggyf
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -88,22 +90,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Ab laboriosam voluptas veritatis culpa a quia quo saepe.'
+        example: 'Consequuntur repudiandae est sit.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: ahohx
-      description: 'Ab laboriosam voluptas veritatis culpa a quia quo saepe.'
+      label: bggyf
+      description: 'Consequuntur repudiandae est sit.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer h3bd8f6Pka5ZVveg614DcEa'
+      - 'Bearer hdv5b46Ee6Z8fg3DVak1Pca'
     controller: null
     method: null
     route: null
@@ -122,6 +124,7 @@ endpoints:
       title: 'Afficher une remarque'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -159,7 +162,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 46k3hvd5aEbVP6e8cgfZ1Da'
+      - 'Bearer h4ZE1Pd6ak6gce83D5vfVab'
     controller: null
     method: null
     route: null
@@ -178,6 +181,7 @@ endpoints:
       title: 'Mettre à jour une remarque'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -203,7 +207,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: ft
+        example: qbplfduihuzhfuybtvkbk
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -213,22 +217,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Rem architecto non inventore tenetur odio doloribus.'
+        example: 'Eius aspernatur aspernatur vel dolores doloribus officiis eaque.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: ft
-      description: 'Rem architecto non inventore tenetur odio doloribus.'
+      label: qbplfduihuzhfuybtvkbk
+      description: 'Eius aspernatur aspernatur vel dolores doloribus officiis eaque.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 6f1hZvdbae84Eag3DVc5Pk6'
+      - 'Bearer b8hDgc64av1VfZ6dk5aE3Pe'
     controller: null
     method: null
     route: null
@@ -247,6 +251,7 @@ endpoints:
       title: 'Supprimer une remarque'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -275,7 +280,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer fhgd1Dvk48Z5E3aPeb66Vca'
+      - 'Bearer Vhe6Pkv6cfZgd3E84a1aDb5'
     controller: null
     method: null
     route: null

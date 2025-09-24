@@ -17,6 +17,7 @@ endpoints:
       title: 'Lister tous les types de photos'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -43,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer a4Pa5cEfe638hZV1bvdgD6k'
+      - 'Bearer 6k6eDhcZdP5f1gVab3v4aE8'
     controller: null
     method: null
     route: null
@@ -62,6 +63,7 @@ endpoints:
       title: 'Créer un type de photo'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -76,7 +78,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: eqshsfccizsuigkiqxuchjz
+        example: irozcecjcqhyu
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -86,22 +88,22 @@ endpoints:
         name: description
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: false
-        example: 'Quis officiis dolores commodi et minima saepe voluptatem.'
+        example: 'Veritatis sint assumenda sapiente iure.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: eqshsfccizsuigkiqxuchjz
-      description: 'Quis officiis dolores commodi et minima saepe voluptatem.'
+      label: irozcecjcqhyu
+      description: 'Veritatis sint assumenda sapiente iure.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 83kDvdEgb4VaPf6Z5hea16c'
+      - 'Bearer 3E81fea4d6a6bk5hDVcPgvZ'
     controller: null
     method: null
     route: null
@@ -120,6 +122,7 @@ endpoints:
       title: 'Afficher un type de photo'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -157,7 +160,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer kEdZev4ghDc36bV8Pf1aa65'
+      - 'Bearer 8cfd6PD3b6aZah5eE1vVg4k'
     controller: null
     method: null
     route: null
@@ -176,6 +179,7 @@ endpoints:
       title: 'Mettre à jour un type de photo'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -201,7 +205,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: zcpatgpqp
+        example: ttsnqboagrsgnyqunhaesiz
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -211,22 +215,22 @@ endpoints:
         name: description
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: false
-        example: 'Aut quod rerum deserunt aliquam consectetur sint deserunt quia.'
+        example: 'Laborum voluptatum dolor similique commodi.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: zcpatgpqp
-      description: 'Aut quod rerum deserunt aliquam consectetur sint deserunt quia.'
+      label: ttsnqboagrsgnyqunhaesiz
+      description: 'Laborum voluptatum dolor similique commodi.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer cbgad3Vhef6EZD46P1a85kv'
+      - 'Bearer 1aafVP6b8Z4E5e6dDv3hkgc'
     controller: null
     method: null
     route: null
@@ -245,6 +249,7 @@ endpoints:
       title: 'Supprimer un type de photo'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -273,7 +278,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer VPEbhZfa5g8d41eaD6k3c6v'
+      - 'Bearer 6cek4a183avD6EPhdZbg5Vf'
     controller: null
     method: null
     route: null

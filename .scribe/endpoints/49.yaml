@@ -17,6 +17,7 @@ endpoints:
       title: 'Lister tous les banques'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -43,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6681PhaD5Vfb4caEdgkv3eZ'
+      - 'Bearer aveZbgf46Ehc56a1dVP83Dk'
     controller: null
     method: null
     route: null
@@ -62,6 +63,7 @@ endpoints:
       title: 'Créer une nouvelle banque'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -76,21 +78,21 @@ endpoints:
         name: name
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: jivkurt
+        example: adqzuhnlzkvoyupsuzmda
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      name: jivkurt
+      name: adqzuhnlzkvoyupsuzmda
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 4hacv6PDfkeb3EV81gd56Za'
+      - 'Bearer Zvckdh8Peb6a5DEfgV1463a'
     controller: null
     method: null
     route: null
@@ -109,6 +111,7 @@ endpoints:
       title: 'Afficher une banque'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -119,14 +122,14 @@ endpoints:
         name: id
         description: 'The ID of the bank.'
         required: true
-        example: 1
+        example: 18
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 1
+      id: 18
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -146,7 +149,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer k6fhZ61vD3e8b5dEac4agPV'
+      - 'Bearer V4hcgaDkeZd1E5f86a6Pvb3'
     controller: null
     method: null
     route: null
@@ -165,6 +168,7 @@ endpoints:
       title: 'Mettre à jour une banque'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -175,14 +179,14 @@ endpoints:
         name: id
         description: 'The ID of the bank.'
         required: true
-        example: 19
+        example: 13
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 19
+      id: 13
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -190,21 +194,21 @@ endpoints:
         name: name
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: ctggfwjbq
+        example: ylta
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      name: ctggfwjbq
+      name: ylta
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer PhkcvVZ3gDb6d1e5Ef4a86a'
+      - 'Bearer fEe3bk85a6hga614ZDPcvVd'
     controller: null
     method: null
     route: null
@@ -223,6 +227,7 @@ endpoints:
       title: 'Supprimer une banque'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -233,14 +238,14 @@ endpoints:
         name: id
         description: 'The ID of the bank.'
         required: true
-        example: 1
+        example: 20
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 1
+      id: 20
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -251,7 +256,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer h3EvZbV6g6P8fa1ecak5D4d'
+      - 'Bearer 631fVDv5b6aEg4ZPc8haedk'
     controller: null
     method: null
     route: null

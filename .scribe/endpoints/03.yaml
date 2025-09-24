@@ -17,6 +17,7 @@ endpoints:
       title: "Lister les types d'entité"
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -43,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 86chkvbaEe53fZDPV46da1g'
+      - 'Bearer h6egav3fc15d6ZPEDVk48ba'
     controller: null
     method: null
     route: null
@@ -62,6 +63,7 @@ endpoints:
       title: "Afficher un type d'entité"
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -72,14 +74,14 @@ endpoints:
         name: id
         description: 'The ID of the entity type.'
         required: true
-        example: maxime
+        example: occaecati
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: maxime
+      id: occaecati
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -99,7 +101,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer caDfh685v3gPZ16kEdeb4Va'
+      - 'Bearer EvZc68k5PV43h16beaDafgd'
     controller: null
     method: null
     route: null
@@ -118,6 +120,7 @@ endpoints:
       title: "Ajouter un type d'entité"
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -132,7 +135,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: mmlyttjofmqxrkebm
+        example: ggvqnbbhadrbzqnfjsyu
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -142,22 +145,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Velit doloribus assumenda laboriosam modi.'
+        example: 'Repellat ut consequatur tempore omnis sit quod.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: mmlyttjofmqxrkebm
-      description: 'Velit doloribus assumenda laboriosam modi.'
+      label: ggvqnbbhadrbzqnfjsyu
+      description: 'Repellat ut consequatur tempore omnis sit quod.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 18Z5bVDEP4g6eka3hcvad6f'
+      - 'Bearer Z6vakE1ha58c6P4deb3DfgV'
     controller: null
     method: null
     route: null
@@ -176,6 +179,7 @@ endpoints:
       title: "Mettre à jour un type d'entité"
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -186,14 +190,14 @@ endpoints:
         name: id
         description: 'The ID of the entity type.'
         required: true
-        example: ad
+        example: cum
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: ad
+      id: cum
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -201,7 +205,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: xydcjyssps
+        example: afjuhjzayyk
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -211,22 +215,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Rerum aut ut sequi nihil quis sint provident.'
+        example: 'Dolores fuga aspernatur et.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: xydcjyssps
-      description: 'Rerum aut ut sequi nihil quis sint provident.'
+      label: afjuhjzayyk
+      description: 'Dolores fuga aspernatur et.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 136kvaVedh5gDZb4E8ac6fP'
+      - 'Bearer gE6V1acP3fD4bvedhZ856ak'
     controller: null
     method: null
     route: null
@@ -245,6 +249,7 @@ endpoints:
       title: "Activer un type d'entité"
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -273,7 +278,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer vdE6VDg6bP5kaah1c4f8Ze3'
+      - 'Bearer vPeE5Zb6d3184kac6fDVgha'
     controller: null
     method: null
     route: null
@@ -292,6 +297,7 @@ endpoints:
       title: "Désactiver un type d'entité"
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -320,7 +326,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer vPE8dbkVchaZf1354e6g6aD'
+      - 'Bearer 5d3aZEb46gcavVhek1f6P8D'
     controller: null
     method: null
     route: null

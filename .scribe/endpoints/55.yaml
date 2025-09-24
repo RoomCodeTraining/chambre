@@ -13,6 +13,7 @@ endpoints:
       title: ''
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -39,7 +40,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Vdbh34aP81Dkav5fc6eEgZ6'
+      - 'Bearer fedDZPc51E6V4kga6v83bha'
     controller: null
     method: null
     route: null
@@ -56,6 +57,7 @@ endpoints:
       title: ''
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -70,7 +72,7 @@ endpoints:
         name: code
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: vybtmxzhyuzoiyfu
+        example: iscls
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -80,7 +82,7 @@ endpoints:
         name: value
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: xiitovhcglknhorhn
+        example: edfcnknjwsjaoiygnfpymz
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -90,7 +92,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: gifluokuwafbp
+        example: cujwoyb
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -100,24 +102,24 @@ endpoints:
         name: description
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: false
-        example: 'Iure in vero beatae optio earum aliquid nesciunt.'
+        example: 'Perferendis in qui totam dignissimos et unde accusamus.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      code: vybtmxzhyuzoiyfu
-      value: xiitovhcglknhorhn
-      label: gifluokuwafbp
-      description: 'Iure in vero beatae optio earum aliquid nesciunt.'
+      code: iscls
+      value: edfcnknjwsjaoiygnfpymz
+      label: cujwoyb
+      description: 'Perferendis in qui totam dignissimos et unde accusamus.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer E5vVacdgab4Zf83hk16e6PD'
+      - 'Bearer dPe36fDh84gv5Ekc6bVaa1Z'
     controller: null
     method: null
     route: null
@@ -134,6 +136,7 @@ endpoints:
       title: ''
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -171,7 +174,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6gE6eafb3da5k41Vch8PDvZ'
+      - 'Bearer cvDgVd3Zk8b14Pef56a6Eah'
     controller: null
     method: null
     route: null
@@ -188,6 +191,7 @@ endpoints:
       title: ''
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -213,7 +217,7 @@ endpoints:
         name: code
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: jbnlkjufjbxcofakxcu
+        example: skogbzmmxprpquoatttjmqndn
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -223,7 +227,7 @@ endpoints:
         name: value
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: jnwyyomhtyqxsxjwvbbpydb
+        example: uyitkeuxsarkqaqdguxj
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -233,7 +237,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: bfomvmybwxjbgrsykyti
+        example: pekwtkeviqlbxnv
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -243,24 +247,24 @@ endpoints:
         name: description
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: false
-        example: 'Quia ullam magnam dolores ut qui voluptatem hic.'
+        example: 'Unde quia qui sit ut.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      code: jbnlkjufjbxcofakxcu
-      value: jnwyyomhtyqxsxjwvbbpydb
-      label: bfomvmybwxjbgrsykyti
-      description: 'Quia ullam magnam dolores ut qui voluptatem hic.'
+      code: skogbzmmxprpquoatttjmqndn
+      value: uyitkeuxsarkqaqdguxj
+      label: pekwtkeviqlbxnv
+      description: 'Unde quia qui sit ut.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer dZVDhv86c6kPe3g1a5bf4aE'
+      - 'Bearer h61v5Ec3afdgP4eVa86DZbk'
     controller: null
     method: null
     route: null
@@ -277,6 +281,7 @@ endpoints:
       title: ''
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -305,7 +310,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer dPa13bZ6e5k8cEvagV4Dfh6'
+      - 'Bearer 6hvaPeZ6kVdbDEca58g431f'
     controller: null
     method: null
     route: null
@@ -322,6 +327,7 @@ endpoints:
       title: ''
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -348,7 +354,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 8V564kE6Z3DbevcPghfa1da'
+      - 'Bearer bVegk4h1Pafc8ZE5D6a63dv'
     controller: null
     method: null
     route: null
@@ -365,6 +371,7 @@ endpoints:
       title: ''
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -379,7 +386,7 @@ endpoints:
         name: code
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: yzjrkjfurrirnazcmaf
+        example: ouzcndfllecmitneo
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -389,7 +396,7 @@ endpoints:
         name: value
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: zzyyehtegeslgflfazienxz
+        example: tjvqmfxpavdnbdlajgo
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -399,7 +406,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: imqsszsyvvoakteohskzqtmm
+        example: wo
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -409,24 +416,24 @@ endpoints:
         name: description
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: false
-        example: 'Voluptates magnam quibusdam ipsa et ut.'
+        example: 'Delectus modi inventore distinctio possimus perspiciatis et.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      code: yzjrkjfurrirnazcmaf
-      value: zzyyehtegeslgflfazienxz
-      label: imqsszsyvvoakteohskzqtmm
-      description: 'Voluptates magnam quibusdam ipsa et ut.'
+      code: ouzcndfllecmitneo
+      value: tjvqmfxpavdnbdlajgo
+      label: wo
+      description: 'Delectus modi inventore distinctio possimus perspiciatis et.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 4ah5cgf61EdkDvPe6Zba38V'
+      - 'Bearer eD4agVcf6bhvZ3k58a16EPd'
     controller: null
     method: null
     route: null
@@ -443,6 +450,7 @@ endpoints:
       title: ''
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -480,7 +488,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer ZE36PdVbka154Dghaecfv86'
+      - 'Bearer a68ZvVd3abPe1E5cghfkD64'
     controller: null
     method: null
     route: null
@@ -497,6 +505,7 @@ endpoints:
       title: ''
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -522,7 +531,7 @@ endpoints:
         name: code
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: mfodtncmwpdbcacrrehf
+        example: ltmktqezkfwosbudhc
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -532,7 +541,7 @@ endpoints:
         name: value
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: hv
+        example: qbqptydfkdkpiajmbx
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -542,7 +551,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: lavoavo
+        example: yycwx
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -552,24 +561,24 @@ endpoints:
         name: description
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: false
-        example: 'Corporis consequuntur impedit aperiam maiores iure rerum reiciendis.'
+        example: 'Vero dolor veritatis impedit quam enim velit cum et.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      code: mfodtncmwpdbcacrrehf
-      value: hv
-      label: lavoavo
-      description: 'Corporis consequuntur impedit aperiam maiores iure rerum reiciendis.'
+      code: ltmktqezkfwosbudhc
+      value: qbqptydfkdkpiajmbx
+      label: yycwx
+      description: 'Vero dolor veritatis impedit quam enim velit cum et.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer aPE3456evkhbcgZ18VDfa6d'
+      - 'Bearer P8V3kEv645ga1h6fDceZadb'
     controller: null
     method: null
     route: null
@@ -586,6 +595,7 @@ endpoints:
       title: ''
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -614,7 +624,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer vkc35Vf61g48Za6DdPhaebE'
+      - 'Bearer ZE8e6D4bfP63a1hvck5dVag'
     controller: null
     method: null
     route: null
@@ -631,6 +641,7 @@ endpoints:
       title: ''
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -718,7 +729,7 @@ endpoints:
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php",
-                      "line": 2197,
+                      "line": 2227,
                       "function": "Essa\\APIToolKit\\{closure}",
                       "class": "Illuminate\\Database\\Eloquent\\Builder",
                       "type": "->"
@@ -753,14 +764,14 @@ endpoints:
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
-                      "line": 808,
+                      "line": 822,
                       "function": "run",
                       "class": "Illuminate\\Routing\\Route",
                       "type": "->"
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 169,
+                      "line": 180,
                       "function": "Illuminate\\Routing\\{closure}",
                       "class": "Illuminate\\Routing\\Router",
                       "type": "->"
@@ -774,42 +785,42 @@ endpoints:
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 208,
+                      "line": 219,
                       "function": "handle",
                       "class": "Illuminate\\Routing\\Middleware\\SubstituteBindings",
                       "type": "->"
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 126,
+                      "line": 137,
                       "function": "Illuminate\\Pipeline\\{closure}",
                       "class": "Illuminate\\Pipeline\\Pipeline",
                       "type": "->"
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
-                      "line": 807,
+                      "line": 821,
                       "function": "then",
                       "class": "Illuminate\\Pipeline\\Pipeline",
                       "type": "->"
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
-                      "line": 786,
+                      "line": 800,
                       "function": "runRouteWithinStack",
                       "class": "Illuminate\\Routing\\Router",
                       "type": "->"
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
-                      "line": 750,
+                      "line": 764,
                       "function": "runRoute",
                       "class": "Illuminate\\Routing\\Router",
                       "type": "->"
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
-                      "line": 739,
+                      "line": 753,
                       "function": "dispatchToRoute",
                       "class": "Illuminate\\Routing\\Router",
                       "type": "->"
@@ -823,7 +834,7 @@ endpoints:
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 169,
+                      "line": 180,
                       "function": "Illuminate\\Foundation\\Http\\{closure}",
                       "class": "Illuminate\\Foundation\\Http\\Kernel",
                       "type": "->"
@@ -837,7 +848,7 @@ endpoints:
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 208,
+                      "line": 219,
                       "function": "handle",
                       "class": "Livewire\\Features\\SupportDisablingBackButtonCache\\DisableBackButtonCacheMiddleware",
                       "type": "->"
@@ -858,7 +869,7 @@ endpoints:
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 208,
+                      "line": 219,
                       "function": "handle",
                       "class": "Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull",
                       "type": "->"
@@ -879,7 +890,7 @@ endpoints:
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 208,
+                      "line": 219,
                       "function": "handle",
                       "class": "Illuminate\\Foundation\\Http\\Middleware\\TrimStrings",
                       "type": "->"
@@ -893,7 +904,7 @@ endpoints:
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 208,
+                      "line": 219,
                       "function": "handle",
                       "class": "Illuminate\\Http\\Middleware\\ValidatePostSize",
                       "type": "->"
@@ -907,7 +918,7 @@ endpoints:
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 208,
+                      "line": 219,
                       "function": "handle",
                       "class": "Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance",
                       "type": "->"
@@ -921,7 +932,7 @@ endpoints:
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 208,
+                      "line": 219,
                       "function": "handle",
                       "class": "Illuminate\\Http\\Middleware\\HandleCors",
                       "type": "->"
@@ -935,7 +946,7 @@ endpoints:
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 208,
+                      "line": 219,
                       "function": "handle",
                       "class": "Illuminate\\Http\\Middleware\\TrustProxies",
                       "type": "->"
@@ -949,7 +960,7 @@ endpoints:
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 208,
+                      "line": 219,
                       "function": "handle",
                       "class": "Illuminate\\Foundation\\Http\\Middleware\\InvokeDeferredCallbacks",
                       "type": "->"
@@ -963,14 +974,14 @@ endpoints:
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 208,
+                      "line": 219,
                       "function": "handle",
                       "class": "Illuminate\\Http\\Middleware\\ValidatePathEncoding",
                       "type": "->"
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 126,
+                      "line": 137,
                       "function": "Illuminate\\Pipeline\\{closure}",
                       "class": "Illuminate\\Pipeline\\Pipeline",
                       "type": "->"
@@ -1096,7 +1107,7 @@ endpoints:
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php",
-                      "line": 780,
+                      "line": 836,
                       "function": "call",
                       "class": "Illuminate\\Container\\BoundMethod",
                       "type": "::"
@@ -1124,21 +1135,21 @@ endpoints:
                   },
                   {
                       "file": "/var/www/html/vendor/symfony/console/Application.php",
-                      "line": 1092,
+                      "line": 1110,
                       "function": "run",
                       "class": "Illuminate\\Console\\Command",
                       "type": "->"
                   },
                   {
                       "file": "/var/www/html/vendor/symfony/console/Application.php",
-                      "line": 341,
+                      "line": 359,
                       "function": "doRunCommand",
                       "class": "Symfony\\Component\\Console\\Application",
                       "type": "->"
                   },
                   {
                       "file": "/var/www/html/vendor/symfony/console/Application.php",
-                      "line": 192,
+                      "line": 194,
                       "function": "doRun",
                       "class": "Symfony\\Component\\Console\\Application",
                       "type": "->"
@@ -1152,7 +1163,7 @@ endpoints:
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php",
-                      "line": 1234,
+                      "line": 1235,
                       "function": "handle",
                       "class": "Illuminate\\Foundation\\Console\\Kernel",
                       "type": "->"
@@ -1176,7 +1187,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6bh8afga6k4dvPeZVD1c3E5'
+      - 'Bearer 68hcafa36be5ZD1kVvEPgd4'
     controller: null
     method: null
     route: null
@@ -1193,6 +1204,7 @@ endpoints:
       title: ''
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -1210,7 +1222,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 46Dbaae8cvVdZk3Ehf6P51g'
+      - 'Bearer D5dZvchek36aEaPbf41g86V'
     controller: null
     method: null
     route: null
@@ -1227,6 +1239,7 @@ endpoints:
       title: ''
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -1237,14 +1250,14 @@ endpoints:
         name: id
         description: 'The ID of the repairInvoice.'
         required: true
-        example: 7
+        example: 5
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 7
+      id: 5
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -1255,7 +1268,7 @@ endpoints:
         status: 500
         content: |-
           {
-              "message": "SQLSTATE[42S02]: Base table or view not found: 1146 Table 'db.repair_invoices' doesn't exist (Connection: mariadb, SQL: select * from `repair_invoices` where `id` = 7 limit 1)",
+              "message": "SQLSTATE[42S02]: Base table or view not found: 1146 Table 'db.repair_invoices' doesn't exist (Connection: mariadb, SQL: select * from `repair_invoices` where `id` = 5 limit 1)",
               "exception": "Illuminate\\Database\\QueryException",
               "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php",
               "line": 824,
@@ -1304,14 +1317,14 @@ endpoints:
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php",
-                      "line": 872,
+                      "line": 902,
                       "function": "get",
                       "class": "Illuminate\\Database\\Query\\Builder",
                       "type": "->"
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php",
-                      "line": 854,
+                      "line": 884,
                       "function": "getModels",
                       "class": "Illuminate\\Database\\Eloquent\\Builder",
                       "type": "->"
@@ -1325,7 +1338,7 @@ endpoints:
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php",
-                      "line": 2187,
+                      "line": 2209,
                       "function": "first",
                       "class": "Illuminate\\Database\\Eloquent\\Builder",
                       "type": "->"
@@ -1339,7 +1352,7 @@ endpoints:
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
-                      "line": 966,
+                      "line": 980,
                       "function": "resolveForRoute",
                       "class": "Illuminate\\Routing\\ImplicitRouteBinding",
                       "type": "::"
@@ -1358,7 +1371,7 @@ endpoints:
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
-                      "line": 968,
+                      "line": 982,
                       "function": "call_user_func"
                   },
                   {
@@ -1370,42 +1383,42 @@ endpoints:
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 208,
+                      "line": 219,
                       "function": "handle",
                       "class": "Illuminate\\Routing\\Middleware\\SubstituteBindings",
                       "type": "->"
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 126,
+                      "line": 137,
                       "function": "Illuminate\\Pipeline\\{closure}",
                       "class": "Illuminate\\Pipeline\\Pipeline",
                       "type": "->"
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
-                      "line": 807,
+                      "line": 821,
                       "function": "then",
                       "class": "Illuminate\\Pipeline\\Pipeline",
                       "type": "->"
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
-                      "line": 786,
+                      "line": 800,
                       "function": "runRouteWithinStack",
                       "class": "Illuminate\\Routing\\Router",
                       "type": "->"
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
-                      "line": 750,
+                      "line": 764,
                       "function": "runRoute",
                       "class": "Illuminate\\Routing\\Router",
                       "type": "->"
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
-                      "line": 739,
+                      "line": 753,
                       "function": "dispatchToRoute",
                       "class": "Illuminate\\Routing\\Router",
                       "type": "->"
@@ -1419,7 +1432,7 @@ endpoints:
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 169,
+                      "line": 180,
                       "function": "Illuminate\\Foundation\\Http\\{closure}",
                       "class": "Illuminate\\Foundation\\Http\\Kernel",
                       "type": "->"
@@ -1433,7 +1446,7 @@ endpoints:
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 208,
+                      "line": 219,
                       "function": "handle",
                       "class": "Livewire\\Features\\SupportDisablingBackButtonCache\\DisableBackButtonCacheMiddleware",
                       "type": "->"
@@ -1454,7 +1467,7 @@ endpoints:
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 208,
+                      "line": 219,
                       "function": "handle",
                       "class": "Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull",
                       "type": "->"
@@ -1475,7 +1488,7 @@ endpoints:
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 208,
+                      "line": 219,
                       "function": "handle",
                       "class": "Illuminate\\Foundation\\Http\\Middleware\\TrimStrings",
                       "type": "->"
@@ -1489,7 +1502,7 @@ endpoints:
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 208,
+                      "line": 219,
                       "function": "handle",
                       "class": "Illuminate\\Http\\Middleware\\ValidatePostSize",
                       "type": "->"
@@ -1503,7 +1516,7 @@ endpoints:
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 208,
+                      "line": 219,
                       "function": "handle",
                       "class": "Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance",
                       "type": "->"
@@ -1517,7 +1530,7 @@ endpoints:
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 208,
+                      "line": 219,
                       "function": "handle",
                       "class": "Illuminate\\Http\\Middleware\\HandleCors",
                       "type": "->"
@@ -1531,7 +1544,7 @@ endpoints:
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 208,
+                      "line": 219,
                       "function": "handle",
                       "class": "Illuminate\\Http\\Middleware\\TrustProxies",
                       "type": "->"
@@ -1545,7 +1558,7 @@ endpoints:
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 208,
+                      "line": 219,
                       "function": "handle",
                       "class": "Illuminate\\Foundation\\Http\\Middleware\\InvokeDeferredCallbacks",
                       "type": "->"
@@ -1559,14 +1572,14 @@ endpoints:
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 208,
+                      "line": 219,
                       "function": "handle",
                       "class": "Illuminate\\Http\\Middleware\\ValidatePathEncoding",
                       "type": "->"
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 126,
+                      "line": 137,
                       "function": "Illuminate\\Pipeline\\{closure}",
                       "class": "Illuminate\\Pipeline\\Pipeline",
                       "type": "->"
@@ -1692,7 +1705,7 @@ endpoints:
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php",
-                      "line": 780,
+                      "line": 836,
                       "function": "call",
                       "class": "Illuminate\\Container\\BoundMethod",
                       "type": "::"
@@ -1720,21 +1733,21 @@ endpoints:
                   },
                   {
                       "file": "/var/www/html/vendor/symfony/console/Application.php",
-                      "line": 1092,
+                      "line": 1110,
                       "function": "run",
                       "class": "Illuminate\\Console\\Command",
                       "type": "->"
                   },
                   {
                       "file": "/var/www/html/vendor/symfony/console/Application.php",
-                      "line": 341,
+                      "line": 359,
                       "function": "doRunCommand",
                       "class": "Symfony\\Component\\Console\\Application",
                       "type": "->"
                   },
                   {
                       "file": "/var/www/html/vendor/symfony/console/Application.php",
-                      "line": 192,
+                      "line": 194,
                       "function": "doRun",
                       "class": "Symfony\\Component\\Console\\Application",
                       "type": "->"
@@ -1748,7 +1761,7 @@ endpoints:
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php",
-                      "line": 1234,
+                      "line": 1235,
                       "function": "handle",
                       "class": "Illuminate\\Foundation\\Console\\Kernel",
                       "type": "->"
@@ -1772,7 +1785,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer P1haE86ea6cgd5VbvD34Zfk'
+      - 'Bearer h6v5fE1acZaD4ed3k8gbV6P'
     controller: null
     method: null
     route: null
@@ -1790,6 +1803,7 @@ endpoints:
       title: ''
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -1800,14 +1814,14 @@ endpoints:
         name: id
         description: 'The ID of the repairInvoice.'
         required: true
-        example: 20
+        example: 7
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 20
+      id: 7
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -1818,7 +1832,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer g8akdbEDPchv16e3f4V65Za'
+      - 'Bearer Z5d61Pckavb48EeVa63Dfhg'
     controller: null
     method: null
     route: null
@@ -1835,6 +1849,7 @@ endpoints:
       title: ''
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -1845,14 +1860,14 @@ endpoints:
         name: id
         description: 'The ID of the repairInvoice.'
         required: true
-        example: 13
+        example: 6
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 13
+      id: 6
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -1863,7 +1878,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6af4da8cVPg36bEDkhv15Ze'
+      - 'Bearer 166ghvV3P4fakec8dEZD5ab'
     controller: null
     method: null
     route: null
@@ -1880,6 +1895,7 @@ endpoints:
       title: ''
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -1967,7 +1983,7 @@ endpoints:
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php",
-                      "line": 2197,
+                      "line": 2227,
                       "function": "Essa\\APIToolKit\\{closure}",
                       "class": "Illuminate\\Database\\Eloquent\\Builder",
                       "type": "->"
@@ -2002,14 +2018,14 @@ endpoints:
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
-                      "line": 808,
+                      "line": 822,
                       "function": "run",
                       "class": "Illuminate\\Routing\\Route",
                       "type": "->"
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 169,
+                      "line": 180,
                       "function": "Illuminate\\Routing\\{closure}",
                       "class": "Illuminate\\Routing\\Router",
                       "type": "->"
@@ -2023,42 +2039,42 @@ endpoints:
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 208,
+                      "line": 219,
                       "function": "handle",
                       "class": "Illuminate\\Routing\\Middleware\\SubstituteBindings",
                       "type": "->"
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 126,
+                      "line": 137,
                       "function": "Illuminate\\Pipeline\\{closure}",
                       "class": "Illuminate\\Pipeline\\Pipeline",
                       "type": "->"
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
-                      "line": 807,
+                      "line": 821,
                       "function": "then",
                       "class": "Illuminate\\Pipeline\\Pipeline",
                       "type": "->"
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
-                      "line": 786,
+                      "line": 800,
                       "function": "runRouteWithinStack",
                       "class": "Illuminate\\Routing\\Router",
                       "type": "->"
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
-                      "line": 750,
+                      "line": 764,
                       "function": "runRoute",
                       "class": "Illuminate\\Routing\\Router",
                       "type": "->"
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
-                      "line": 739,
+                      "line": 753,
                       "function": "dispatchToRoute",
                       "class": "Illuminate\\Routing\\Router",
                       "type": "->"
@@ -2072,7 +2088,7 @@ endpoints:
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 169,
+                      "line": 180,
                       "function": "Illuminate\\Foundation\\Http\\{closure}",
                       "class": "Illuminate\\Foundation\\Http\\Kernel",
                       "type": "->"
@@ -2086,7 +2102,7 @@ endpoints:
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 208,
+                      "line": 219,
                       "function": "handle",
                       "class": "Livewire\\Features\\SupportDisablingBackButtonCache\\DisableBackButtonCacheMiddleware",
                       "type": "->"
@@ -2107,7 +2123,7 @@ endpoints:
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 208,
+                      "line": 219,
                       "function": "handle",
                       "class": "Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull",
                       "type": "->"
@@ -2128,7 +2144,7 @@ endpoints:
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 208,
+                      "line": 219,
                       "function": "handle",
                       "class": "Illuminate\\Foundation\\Http\\Middleware\\TrimStrings",
                       "type": "->"
@@ -2142,7 +2158,7 @@ endpoints:
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 208,
+                      "line": 219,
                       "function": "handle",
                       "class": "Illuminate\\Http\\Middleware\\ValidatePostSize",
                       "type": "->"
@@ -2156,7 +2172,7 @@ endpoints:
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 208,
+                      "line": 219,
                       "function": "handle",
                       "class": "Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance",
                       "type": "->"
@@ -2170,7 +2186,7 @@ endpoints:
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 208,
+                      "line": 219,
                       "function": "handle",
                       "class": "Illuminate\\Http\\Middleware\\HandleCors",
                       "type": "->"
@@ -2184,7 +2200,7 @@ endpoints:
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 208,
+                      "line": 219,
                       "function": "handle",
                       "class": "Illuminate\\Http\\Middleware\\TrustProxies",
                       "type": "->"
@@ -2198,7 +2214,7 @@ endpoints:
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 208,
+                      "line": 219,
                       "function": "handle",
                       "class": "Illuminate\\Foundation\\Http\\Middleware\\InvokeDeferredCallbacks",
                       "type": "->"
@@ -2212,14 +2228,14 @@ endpoints:
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 208,
+                      "line": 219,
                       "function": "handle",
                       "class": "Illuminate\\Http\\Middleware\\ValidatePathEncoding",
                       "type": "->"
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 126,
+                      "line": 137,
                       "function": "Illuminate\\Pipeline\\{closure}",
                       "class": "Illuminate\\Pipeline\\Pipeline",
                       "type": "->"
@@ -2345,7 +2361,7 @@ endpoints:
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php",
-                      "line": 780,
+                      "line": 836,
                       "function": "call",
                       "class": "Illuminate\\Container\\BoundMethod",
                       "type": "::"
@@ -2373,21 +2389,21 @@ endpoints:
                   },
                   {
                       "file": "/var/www/html/vendor/symfony/console/Application.php",
-                      "line": 1092,
+                      "line": 1110,
                       "function": "run",
                       "class": "Illuminate\\Console\\Command",
                       "type": "->"
                   },
                   {
                       "file": "/var/www/html/vendor/symfony/console/Application.php",
-                      "line": 341,
+                      "line": 359,
                       "function": "doRunCommand",
                       "class": "Symfony\\Component\\Console\\Application",
                       "type": "->"
                   },
                   {
                       "file": "/var/www/html/vendor/symfony/console/Application.php",
-                      "line": 192,
+                      "line": 194,
                       "function": "doRun",
                       "class": "Symfony\\Component\\Console\\Application",
                       "type": "->"
@@ -2401,7 +2417,7 @@ endpoints:
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php",
-                      "line": 1234,
+                      "line": 1235,
                       "function": "handle",
                       "class": "Illuminate\\Foundation\\Console\\Kernel",
                       "type": "->"
@@ -2425,7 +2441,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer edaZ6V3D58cb1h4agf6EkPv'
+      - 'Bearer e5f4hPv6V368ZDa1gcadbEk'
     controller: null
     method: null
     route: null
@@ -2442,6 +2458,7 @@ endpoints:
       title: ''
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -2459,7 +2476,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer ge1DbZ5Pka3E8cdh6v4fa6V'
+      - 'Bearer bEfVche148gadD65aZ6vP3k'
     controller: null
     method: null
     route: null
@@ -2476,6 +2493,7 @@ endpoints:
       title: ''
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -2553,14 +2571,14 @@ endpoints:
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php",
-                      "line": 872,
+                      "line": 902,
                       "function": "get",
                       "class": "Illuminate\\Database\\Query\\Builder",
                       "type": "->"
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php",
-                      "line": 854,
+                      "line": 884,
                       "function": "getModels",
                       "class": "Illuminate\\Database\\Eloquent\\Builder",
                       "type": "->"
@@ -2574,7 +2592,7 @@ endpoints:
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php",
-                      "line": 2187,
+                      "line": 2209,
                       "function": "first",
                       "class": "Illuminate\\Database\\Eloquent\\Builder",
                       "type": "->"
@@ -2588,7 +2606,7 @@ endpoints:
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
-                      "line": 966,
+                      "line": 980,
                       "function": "resolveForRoute",
                       "class": "Illuminate\\Routing\\ImplicitRouteBinding",
                       "type": "::"
@@ -2607,7 +2625,7 @@ endpoints:
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
-                      "line": 968,
+                      "line": 982,
                       "function": "call_user_func"
                   },
                   {
@@ -2619,42 +2637,42 @@ endpoints:
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 208,
+                      "line": 219,
                       "function": "handle",
                       "class": "Illuminate\\Routing\\Middleware\\SubstituteBindings",
                       "type": "->"
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 126,
+                      "line": 137,
                       "function": "Illuminate\\Pipeline\\{closure}",
                       "class": "Illuminate\\Pipeline\\Pipeline",
                       "type": "->"
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
-                      "line": 807,
+                      "line": 821,
                       "function": "then",
                       "class": "Illuminate\\Pipeline\\Pipeline",
                       "type": "->"
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
-                      "line": 786,
+                      "line": 800,
                       "function": "runRouteWithinStack",
                       "class": "Illuminate\\Routing\\Router",
                       "type": "->"
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
-                      "line": 750,
+                      "line": 764,
                       "function": "runRoute",
                       "class": "Illuminate\\Routing\\Router",
                       "type": "->"
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
-                      "line": 739,
+                      "line": 753,
                       "function": "dispatchToRoute",
                       "class": "Illuminate\\Routing\\Router",
                       "type": "->"
@@ -2668,7 +2686,7 @@ endpoints:
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 169,
+                      "line": 180,
                       "function": "Illuminate\\Foundation\\Http\\{closure}",
                       "class": "Illuminate\\Foundation\\Http\\Kernel",
                       "type": "->"
@@ -2682,7 +2700,7 @@ endpoints:
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 208,
+                      "line": 219,
                       "function": "handle",
                       "class": "Livewire\\Features\\SupportDisablingBackButtonCache\\DisableBackButtonCacheMiddleware",
                       "type": "->"
@@ -2703,7 +2721,7 @@ endpoints:
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 208,
+                      "line": 219,
                       "function": "handle",
                       "class": "Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull",
                       "type": "->"
@@ -2724,7 +2742,7 @@ endpoints:
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 208,
+                      "line": 219,
                       "function": "handle",
                       "class": "Illuminate\\Foundation\\Http\\Middleware\\TrimStrings",
                       "type": "->"
@@ -2738,7 +2756,7 @@ endpoints:
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 208,
+                      "line": 219,
                       "function": "handle",
                       "class": "Illuminate\\Http\\Middleware\\ValidatePostSize",
                       "type": "->"
@@ -2752,7 +2770,7 @@ endpoints:
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 208,
+                      "line": 219,
                       "function": "handle",
                       "class": "Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance",
                       "type": "->"
@@ -2766,7 +2784,7 @@ endpoints:
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 208,
+                      "line": 219,
                       "function": "handle",
                       "class": "Illuminate\\Http\\Middleware\\HandleCors",
                       "type": "->"
@@ -2780,7 +2798,7 @@ endpoints:
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 208,
+                      "line": 219,
                       "function": "handle",
                       "class": "Illuminate\\Http\\Middleware\\TrustProxies",
                       "type": "->"
@@ -2794,7 +2812,7 @@ endpoints:
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 208,
+                      "line": 219,
                       "function": "handle",
                       "class": "Illuminate\\Foundation\\Http\\Middleware\\InvokeDeferredCallbacks",
                       "type": "->"
@@ -2808,14 +2826,14 @@ endpoints:
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 208,
+                      "line": 219,
                       "function": "handle",
                       "class": "Illuminate\\Http\\Middleware\\ValidatePathEncoding",
                       "type": "->"
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 126,
+                      "line": 137,
                       "function": "Illuminate\\Pipeline\\{closure}",
                       "class": "Illuminate\\Pipeline\\Pipeline",
                       "type": "->"
@@ -2941,7 +2959,7 @@ endpoints:
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php",
-                      "line": 780,
+                      "line": 836,
                       "function": "call",
                       "class": "Illuminate\\Container\\BoundMethod",
                       "type": "::"
@@ -2969,21 +2987,21 @@ endpoints:
                   },
                   {
                       "file": "/var/www/html/vendor/symfony/console/Application.php",
-                      "line": 1092,
+                      "line": 1110,
                       "function": "run",
                       "class": "Illuminate\\Console\\Command",
                       "type": "->"
                   },
                   {
                       "file": "/var/www/html/vendor/symfony/console/Application.php",
-                      "line": 341,
+                      "line": 359,
                       "function": "doRunCommand",
                       "class": "Symfony\\Component\\Console\\Application",
                       "type": "->"
                   },
                   {
                       "file": "/var/www/html/vendor/symfony/console/Application.php",
-                      "line": 192,
+                      "line": 194,
                       "function": "doRun",
                       "class": "Symfony\\Component\\Console\\Application",
                       "type": "->"
@@ -2997,7 +3015,7 @@ endpoints:
                   },
                   {
                       "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php",
-                      "line": 1234,
+                      "line": 1235,
                       "function": "handle",
                       "class": "Illuminate\\Foundation\\Console\\Kernel",
                       "type": "->"
@@ -3021,7 +3039,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Da56fVckga8e643Ebvh1ZdP'
+      - 'Bearer Za6kfcdb1e5a6gP38VDEhv4'
     controller: null
     method: null
     route: null
@@ -3039,51 +3057,7 @@ endpoints:
       title: ''
       description: ''
       authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      id:
-        name: id
-        description: 'The ID of the repairInvoiceType.'
-        required: true
-        example: 8
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-    cleanUrlParameters:
-      id: 8
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer v18aP4EcDba66k3dhVge5Zf'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - DELETE
-    uri: 'api/repairInvoiceTypes/{id}'
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -3112,7 +3086,1504 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6cf54Pvg3ek1hZVdDEbaa86'
+      - 'Bearer 6ePcdbahDgEv614a3Vk85Zf'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/repairInvoiceTypes/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      deprecated: false
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the repairInvoiceType.'
+        required: true
+        example: 5
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      id: 5
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer DbEcvh6ZdV1k36Pfaeg48a5'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/assignmentRequests
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      deprecated: false
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 500
+        content: |-
+          {
+              "message": "SQLSTATE[42S02]: Base table or view not found: 1146 Table 'db.assignment_requests' doesn't exist (Connection: mariadb, SQL: select count(*) as aggregate from `assignment_requests`)",
+              "exception": "Illuminate\\Database\\QueryException",
+              "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php",
+              "line": 824,
+              "trace": [
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php",
+                      "line": 778,
+                      "function": "runQueryCallback",
+                      "class": "Illuminate\\Database\\Connection",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php",
+                      "line": 397,
+                      "function": "run",
+                      "class": "Illuminate\\Database\\Connection",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php",
+                      "line": 3188,
+                      "function": "select",
+                      "class": "Illuminate\\Database\\Connection",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php",
+                      "line": 3173,
+                      "function": "runSelect",
+                      "class": "Illuminate\\Database\\Query\\Builder",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php",
+                      "line": 3763,
+                      "function": "Illuminate\\Database\\Query\\{closure}",
+                      "class": "Illuminate\\Database\\Query\\Builder",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php",
+                      "line": 3172,
+                      "function": "onceWithColumns",
+                      "class": "Illuminate\\Database\\Query\\Builder",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php",
+                      "line": 3367,
+                      "function": "get",
+                      "class": "Illuminate\\Database\\Query\\Builder",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php",
+                      "line": 3326,
+                      "function": "runPaginationCountQuery",
+                      "class": "Illuminate\\Database\\Query\\Builder",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/essa/api-tool-kit/src/MacroServiceProvider.php",
+                      "line": 28,
+                      "function": "getCountForPagination",
+                      "class": "Illuminate\\Database\\Query\\Builder",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php",
+                      "line": 2227,
+                      "function": "Essa\\APIToolKit\\{closure}",
+                      "class": "Illuminate\\Database\\Eloquent\\Builder",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/app/Http/Controllers/API/AssignmentRequestController.php",
+                      "line": 29,
+                      "function": "__call",
+                      "class": "Illuminate\\Database\\Eloquent\\Builder",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php",
+                      "line": 46,
+                      "function": "index",
+                      "class": "App\\Http\\Controllers\\API\\AssignmentRequestController",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Route.php",
+                      "line": 265,
+                      "function": "dispatch",
+                      "class": "Illuminate\\Routing\\ControllerDispatcher",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Route.php",
+                      "line": 211,
+                      "function": "runController",
+                      "class": "Illuminate\\Routing\\Route",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+                      "line": 822,
+                      "function": "run",
+                      "class": "Illuminate\\Routing\\Route",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 180,
+                      "function": "Illuminate\\Routing\\{closure}",
+                      "class": "Illuminate\\Routing\\Router",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php",
+                      "line": 50,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 219,
+                      "function": "handle",
+                      "class": "Illuminate\\Routing\\Middleware\\SubstituteBindings",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 137,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+                      "line": 821,
+                      "function": "then",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+                      "line": 800,
+                      "function": "runRouteWithinStack",
+                      "class": "Illuminate\\Routing\\Router",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+                      "line": 764,
+                      "function": "runRoute",
+                      "class": "Illuminate\\Routing\\Router",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+                      "line": 753,
+                      "function": "dispatchToRoute",
+                      "class": "Illuminate\\Routing\\Router",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
+                      "line": 200,
+                      "function": "dispatch",
+                      "class": "Illuminate\\Routing\\Router",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 180,
+                      "function": "Illuminate\\Foundation\\Http\\{closure}",
+                      "class": "Illuminate\\Foundation\\Http\\Kernel",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/livewire/livewire/src/Features/SupportDisablingBackButtonCache/DisableBackButtonCacheMiddleware.php",
+                      "line": 19,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 219,
+                      "function": "handle",
+                      "class": "Livewire\\Features\\SupportDisablingBackButtonCache\\DisableBackButtonCacheMiddleware",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php",
+                      "line": 21,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php",
+                      "line": 31,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 219,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php",
+                      "line": 21,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php",
+                      "line": 51,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 219,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Http\\Middleware\\TrimStrings",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePostSize.php",
+                      "line": 27,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 219,
+                      "function": "handle",
+                      "class": "Illuminate\\Http\\Middleware\\ValidatePostSize",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php",
+                      "line": 109,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 219,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php",
+                      "line": 61,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 219,
+                      "function": "handle",
+                      "class": "Illuminate\\Http\\Middleware\\HandleCors",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php",
+                      "line": 58,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 219,
+                      "function": "handle",
+                      "class": "Illuminate\\Http\\Middleware\\TrustProxies",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/InvokeDeferredCallbacks.php",
+                      "line": 22,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 219,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Http\\Middleware\\InvokeDeferredCallbacks",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePathEncoding.php",
+                      "line": 26,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 219,
+                      "function": "handle",
+                      "class": "Illuminate\\Http\\Middleware\\ValidatePathEncoding",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 137,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
+                      "line": 175,
+                      "function": "then",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
+                      "line": 144,
+                      "function": "sendRequestThroughRouter",
+                      "class": "Illuminate\\Foundation\\Http\\Kernel",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php",
+                      "line": 256,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Http\\Kernel",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php",
+                      "line": 249,
+                      "function": "callLaravelRoute",
+                      "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php",
+                      "line": 86,
+                      "function": "makeApiCall",
+                      "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php",
+                      "line": 39,
+                      "function": "makeResponseCall",
+                      "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php",
+                      "line": 240,
+                      "function": "__invoke",
+                      "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php",
+                      "line": 165,
+                      "function": "iterateThroughStrategies",
+                      "class": "Knuckles\\Scribe\\Extracting\\Extractor",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php",
+                      "line": 97,
+                      "function": "fetchResponses",
+                      "class": "Knuckles\\Scribe\\Extracting\\Extractor",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php",
+                      "line": 125,
+                      "function": "processRoute",
+                      "class": "Knuckles\\Scribe\\Extracting\\Extractor",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php",
+                      "line": 72,
+                      "function": "extractEndpointsInfoFromLaravelApp",
+                      "class": "Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php",
+                      "line": 50,
+                      "function": "extractEndpointsInfoAndWriteToDisk",
+                      "class": "Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/knuckleswtf/scribe/src/Commands/GenerateDocumentation.php",
+                      "line": 55,
+                      "function": "get",
+                      "class": "Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php",
+                      "line": 36,
+                      "function": "handle",
+                      "class": "Knuckles\\Scribe\\Commands\\GenerateDocumentation",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Container/Util.php",
+                      "line": 43,
+                      "function": "Illuminate\\Container\\{closure}",
+                      "class": "Illuminate\\Container\\BoundMethod",
+                      "type": "::"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php",
+                      "line": 96,
+                      "function": "unwrapIfClosure",
+                      "class": "Illuminate\\Container\\Util",
+                      "type": "::"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php",
+                      "line": 35,
+                      "function": "callBoundMethod",
+                      "class": "Illuminate\\Container\\BoundMethod",
+                      "type": "::"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php",
+                      "line": 836,
+                      "function": "call",
+                      "class": "Illuminate\\Container\\BoundMethod",
+                      "type": "::"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Console/Command.php",
+                      "line": 211,
+                      "function": "call",
+                      "class": "Illuminate\\Container\\Container",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/symfony/console/Command/Command.php",
+                      "line": 318,
+                      "function": "execute",
+                      "class": "Illuminate\\Console\\Command",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Console/Command.php",
+                      "line": 180,
+                      "function": "run",
+                      "class": "Symfony\\Component\\Console\\Command\\Command",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/symfony/console/Application.php",
+                      "line": 1110,
+                      "function": "run",
+                      "class": "Illuminate\\Console\\Command",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/symfony/console/Application.php",
+                      "line": 359,
+                      "function": "doRunCommand",
+                      "class": "Symfony\\Component\\Console\\Application",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/symfony/console/Application.php",
+                      "line": 194,
+                      "function": "doRun",
+                      "class": "Symfony\\Component\\Console\\Application",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php",
+                      "line": 197,
+                      "function": "run",
+                      "class": "Symfony\\Component\\Console\\Application",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php",
+                      "line": 1235,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Console\\Kernel",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/artisan",
+                      "line": 16,
+                      "function": "handleCommand",
+                      "class": "Illuminate\\Foundation\\Application",
+                      "type": "->"
+                  }
+              ]
+          }
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer ZDa6bV1f83dc4hPa6kgvE5e'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/assignmentRequests
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      deprecated: false
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: multipart/form-data
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      expert_firm_id:
+        name: expert_firm_id
+        description: 'The <code>id</code> of an existing record in the entities table.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      assignment_type_id:
+        name: assignment_type_id
+        description: 'The <code>id</code> of an existing record in the assignment_types table.'
+        required: true
+        example: omnis
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      expertise_type_id:
+        name: expertise_type_id
+        description: 'The <code>id</code> of an existing record in the expertise_types table.'
+        required: true
+        example: fugiat
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      client_name:
+        name: client_name
+        description: ''
+        required: false
+        example: temporibus
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      client_phone:
+        name: client_phone
+        description: ''
+        required: false
+        example: facere
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      client_email:
+        name: client_email
+        description: 'Le champ value doit être une adresse e-mail valide.'
+        required: false
+        example: schinner.mortimer@example.com
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      vehicle_license_plate:
+        name: vehicle_license_plate
+        description: ''
+        required: true
+        example: unde
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      vehicle_brand_id:
+        name: vehicle_brand_id
+        description: 'The <code>id</code> of an existing record in the brands table.'
+        required: true
+        example: pariatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      vehicle_model_id:
+        name: vehicle_model_id
+        description: 'The <code>id</code> of an existing record in the vehicle_models table.'
+        required: true
+        example: molestiae
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      vehicle_color_id:
+        name: vehicle_color_id
+        description: 'The <code>id</code> of an existing record in the colors table.'
+        required: true
+        example: voluptate
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      vehicle_new_market_value:
+        name: vehicle_new_market_value
+        description: ''
+        required: true
+        example: 37493.75542192
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      insurer_id:
+        name: insurer_id
+        description: 'This field is required when <code>assignment_type_id</code> is <code>1</code>. The <code>id</code> of an existing record in the entities table.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      repairer_id:
+        name: repairer_id
+        description: 'The <code>id</code> of an existing record in the entities table.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      policy_number:
+        name: policy_number
+        description: ''
+        required: false
+        example: aut
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      claim_number:
+        name: claim_number
+        description: ''
+        required: false
+        example: corrupti
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      claim_date:
+        name: claim_date
+        description: 'Must be a valid date in the format <code>Y-m-d</code>.'
+        required: false
+        example: '2025-09-23'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      expertise_place:
+        name: expertise_place
+        description: ''
+        required: false
+        example: voluptas
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      photos:
+        name: photos
+        description: 'Le champ value doit être une image.'
+        required: false
+        example:
+          - null
+        type: 'file[]'
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+    cleanBodyParameters:
+      assignment_type_id: omnis
+      expertise_type_id: fugiat
+      client_name: temporibus
+      client_phone: facere
+      client_email: schinner.mortimer@example.com
+      vehicle_license_plate: unde
+      vehicle_brand_id: pariatur
+      vehicle_model_id: molestiae
+      vehicle_color_id: voluptate
+      vehicle_new_market_value: 37493.75542192
+      policy_number: aut
+      claim_number: corrupti
+      claim_date: '2025-09-23'
+      expertise_place: voluptas
+    fileParameters:
+      photos:
+        - null
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer fDc48gVEd1aZ6vhP3b6ae5k'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/assignmentRequests/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      deprecated: false
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the assignmentRequest.'
+        required: true
+        example: 9
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      id: 9
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 500
+        content: |-
+          {
+              "message": "SQLSTATE[42S02]: Base table or view not found: 1146 Table 'db.assignment_requests' doesn't exist (Connection: mariadb, SQL: select * from `assignment_requests` where `id` = 9 limit 1)",
+              "exception": "Illuminate\\Database\\QueryException",
+              "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php",
+              "line": 824,
+              "trace": [
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php",
+                      "line": 778,
+                      "function": "runQueryCallback",
+                      "class": "Illuminate\\Database\\Connection",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php",
+                      "line": 397,
+                      "function": "run",
+                      "class": "Illuminate\\Database\\Connection",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php",
+                      "line": 3188,
+                      "function": "select",
+                      "class": "Illuminate\\Database\\Connection",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php",
+                      "line": 3173,
+                      "function": "runSelect",
+                      "class": "Illuminate\\Database\\Query\\Builder",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php",
+                      "line": 3763,
+                      "function": "Illuminate\\Database\\Query\\{closure}",
+                      "class": "Illuminate\\Database\\Query\\Builder",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php",
+                      "line": 3172,
+                      "function": "onceWithColumns",
+                      "class": "Illuminate\\Database\\Query\\Builder",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php",
+                      "line": 902,
+                      "function": "get",
+                      "class": "Illuminate\\Database\\Query\\Builder",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php",
+                      "line": 884,
+                      "function": "getModels",
+                      "class": "Illuminate\\Database\\Eloquent\\Builder",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Database/Concerns/BuildsQueries.php",
+                      "line": 366,
+                      "function": "get",
+                      "class": "Illuminate\\Database\\Eloquent\\Builder",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php",
+                      "line": 2209,
+                      "function": "first",
+                      "class": "Illuminate\\Database\\Eloquent\\Builder",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/ImplicitRouteBinding.php",
+                      "line": 60,
+                      "function": "resolveRouteBinding",
+                      "class": "Illuminate\\Database\\Eloquent\\Model",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+                      "line": 980,
+                      "function": "resolveForRoute",
+                      "class": "Illuminate\\Routing\\ImplicitRouteBinding",
+                      "type": "::"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/livewire/livewire/src/Features/SupportPageComponents/SupportPageComponents.php",
+                      "line": 214,
+                      "function": "Illuminate\\Routing\\{closure}",
+                      "class": "Illuminate\\Routing\\Router",
+                      "type": "->"
+                  },
+                  {
+                      "function": "Livewire\\Features\\SupportPageComponents\\{closure}",
+                      "class": "Livewire\\Features\\SupportPageComponents\\SupportPageComponents",
+                      "type": "::"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+                      "line": 982,
+                      "function": "call_user_func"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php",
+                      "line": 41,
+                      "function": "substituteImplicitBindings",
+                      "class": "Illuminate\\Routing\\Router",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 219,
+                      "function": "handle",
+                      "class": "Illuminate\\Routing\\Middleware\\SubstituteBindings",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 137,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+                      "line": 821,
+                      "function": "then",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+                      "line": 800,
+                      "function": "runRouteWithinStack",
+                      "class": "Illuminate\\Routing\\Router",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+                      "line": 764,
+                      "function": "runRoute",
+                      "class": "Illuminate\\Routing\\Router",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+                      "line": 753,
+                      "function": "dispatchToRoute",
+                      "class": "Illuminate\\Routing\\Router",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
+                      "line": 200,
+                      "function": "dispatch",
+                      "class": "Illuminate\\Routing\\Router",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 180,
+                      "function": "Illuminate\\Foundation\\Http\\{closure}",
+                      "class": "Illuminate\\Foundation\\Http\\Kernel",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/livewire/livewire/src/Features/SupportDisablingBackButtonCache/DisableBackButtonCacheMiddleware.php",
+                      "line": 19,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 219,
+                      "function": "handle",
+                      "class": "Livewire\\Features\\SupportDisablingBackButtonCache\\DisableBackButtonCacheMiddleware",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php",
+                      "line": 21,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php",
+                      "line": 31,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 219,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php",
+                      "line": 21,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php",
+                      "line": 51,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 219,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Http\\Middleware\\TrimStrings",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePostSize.php",
+                      "line": 27,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 219,
+                      "function": "handle",
+                      "class": "Illuminate\\Http\\Middleware\\ValidatePostSize",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php",
+                      "line": 109,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 219,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php",
+                      "line": 61,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 219,
+                      "function": "handle",
+                      "class": "Illuminate\\Http\\Middleware\\HandleCors",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php",
+                      "line": 58,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 219,
+                      "function": "handle",
+                      "class": "Illuminate\\Http\\Middleware\\TrustProxies",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/InvokeDeferredCallbacks.php",
+                      "line": 22,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 219,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Http\\Middleware\\InvokeDeferredCallbacks",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePathEncoding.php",
+                      "line": 26,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 219,
+                      "function": "handle",
+                      "class": "Illuminate\\Http\\Middleware\\ValidatePathEncoding",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 137,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
+                      "line": 175,
+                      "function": "then",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
+                      "line": 144,
+                      "function": "sendRequestThroughRouter",
+                      "class": "Illuminate\\Foundation\\Http\\Kernel",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php",
+                      "line": 256,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Http\\Kernel",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php",
+                      "line": 249,
+                      "function": "callLaravelRoute",
+                      "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php",
+                      "line": 86,
+                      "function": "makeApiCall",
+                      "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php",
+                      "line": 39,
+                      "function": "makeResponseCall",
+                      "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php",
+                      "line": 240,
+                      "function": "__invoke",
+                      "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php",
+                      "line": 165,
+                      "function": "iterateThroughStrategies",
+                      "class": "Knuckles\\Scribe\\Extracting\\Extractor",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php",
+                      "line": 97,
+                      "function": "fetchResponses",
+                      "class": "Knuckles\\Scribe\\Extracting\\Extractor",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php",
+                      "line": 125,
+                      "function": "processRoute",
+                      "class": "Knuckles\\Scribe\\Extracting\\Extractor",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php",
+                      "line": 72,
+                      "function": "extractEndpointsInfoFromLaravelApp",
+                      "class": "Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php",
+                      "line": 50,
+                      "function": "extractEndpointsInfoAndWriteToDisk",
+                      "class": "Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/knuckleswtf/scribe/src/Commands/GenerateDocumentation.php",
+                      "line": 55,
+                      "function": "get",
+                      "class": "Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php",
+                      "line": 36,
+                      "function": "handle",
+                      "class": "Knuckles\\Scribe\\Commands\\GenerateDocumentation",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Container/Util.php",
+                      "line": 43,
+                      "function": "Illuminate\\Container\\{closure}",
+                      "class": "Illuminate\\Container\\BoundMethod",
+                      "type": "::"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php",
+                      "line": 96,
+                      "function": "unwrapIfClosure",
+                      "class": "Illuminate\\Container\\Util",
+                      "type": "::"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php",
+                      "line": 35,
+                      "function": "callBoundMethod",
+                      "class": "Illuminate\\Container\\BoundMethod",
+                      "type": "::"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php",
+                      "line": 836,
+                      "function": "call",
+                      "class": "Illuminate\\Container\\BoundMethod",
+                      "type": "::"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Console/Command.php",
+                      "line": 211,
+                      "function": "call",
+                      "class": "Illuminate\\Container\\Container",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/symfony/console/Command/Command.php",
+                      "line": 318,
+                      "function": "execute",
+                      "class": "Illuminate\\Console\\Command",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Console/Command.php",
+                      "line": 180,
+                      "function": "run",
+                      "class": "Symfony\\Component\\Console\\Command\\Command",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/symfony/console/Application.php",
+                      "line": 1110,
+                      "function": "run",
+                      "class": "Illuminate\\Console\\Command",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/symfony/console/Application.php",
+                      "line": 359,
+                      "function": "doRunCommand",
+                      "class": "Symfony\\Component\\Console\\Application",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/symfony/console/Application.php",
+                      "line": 194,
+                      "function": "doRun",
+                      "class": "Symfony\\Component\\Console\\Application",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php",
+                      "line": 197,
+                      "function": "run",
+                      "class": "Symfony\\Component\\Console\\Application",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php",
+                      "line": 1235,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Console\\Kernel",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/artisan",
+                      "line": 16,
+                      "function": "handleCommand",
+                      "class": "Illuminate\\Foundation\\Application",
+                      "type": "->"
+                  }
+              ]
+          }
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6fVDPbk8acE5Zga3e4h6d1v'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+      - PATCH
+    uri: 'api/assignmentRequests/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      deprecated: false
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the assignmentRequest.'
+        required: true
+        example: 16
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      id: 16
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer c1Dghva6P5b8ae3Z6dfkV4E'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/assignmentRequests/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      deprecated: false
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the assignmentRequest.'
+        required: true
+        example: 7
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      id: 7
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 664gehaPD5fdaVk3vbZ81cE'
     controller: null
     method: null
     route: null

@@ -17,6 +17,7 @@ endpoints:
       title: 'Lister toutes les énergies des véhicules'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -43,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 1acZ48hDVb5e6kf6Pagv3dE'
+      - 'Bearer 435EfPc6aavdZgk8D16Vheb'
     controller: null
     method: null
     route: null
@@ -62,6 +63,7 @@ endpoints:
       title: 'Créer une nouvelle énergie de véhicule'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -76,7 +78,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: maoats
+        example: isltxgajnsjxyhu
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -86,22 +88,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Aperiam veniam molestiae et voluptates.'
+        example: 'Harum error quidem magni voluptas adipisci alias excepturi.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: maoats
-      description: 'Aperiam veniam molestiae et voluptates.'
+      label: isltxgajnsjxyhu
+      description: 'Harum error quidem magni voluptas adipisci alias excepturi.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 68cbPfdVD4eZv6agak35E1h'
+      - 'Bearer kh615VZDcvdf6E4ga3P8aeb'
     controller: null
     method: null
     route: null
@@ -120,6 +122,7 @@ endpoints:
       title: 'Afficher une énergie de véhicule'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -130,14 +133,14 @@ endpoints:
         name: id
         description: 'The ID of the vehicle energy.'
         required: true
-        example: temporibus
+        example: enim
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: temporibus
+      id: enim
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -157,7 +160,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer dcea4Zg31685vDEk6VabPfh'
+      - 'Bearer 4va3VaDh1d8g6ek6cZEbPf5'
     controller: null
     method: null
     route: null
@@ -176,6 +179,7 @@ endpoints:
       title: 'Mettre à jour une énergie de véhicule'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -186,14 +190,14 @@ endpoints:
         name: id
         description: 'The ID of the vehicle energy.'
         required: true
-        example: eos
+        example: natus
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: eos
+      id: natus
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -201,7 +205,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: qrdztiudim
+        example: dgefzmm
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -211,22 +215,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Earum velit et nobis provident sit.'
+        example: 'Ad sit saepe quos numquam qui et placeat.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: qrdztiudim
-      description: 'Earum velit et nobis provident sit.'
+      label: dgefzmm
+      description: 'Ad sit saepe quos numquam qui et placeat.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer hb8g63a51vEZVedDfka4Pc6'
+      - 'Bearer kd3EfeD8a41v56cPgbVZ6ha'
     controller: null
     method: null
     route: null
@@ -245,6 +249,7 @@ endpoints:
       title: 'Supprimer une énergie de véhicule'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -255,14 +260,14 @@ endpoints:
         name: id
         description: 'The ID of the vehicle energy.'
         required: true
-        example: iure
+        example: quo
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: iure
+      id: quo
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -273,7 +278,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer a6ad8ZDgf5bEvkc6V3eh4P1'
+      - 'Bearer v3dZaPD85hf64ab6c1eEVgk'
     controller: null
     method: null
     route: null

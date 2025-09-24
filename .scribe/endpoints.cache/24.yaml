@@ -19,6 +19,7 @@ endpoints:
       title: 'Lister tous les clients'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -45,7 +46,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer a6fEZD14ePc3dk8vgb56haV'
+      - 'Bearer dPvZ8afVh4g6kE36a5cb1De'
     controller: null
     method: null
     route: null
@@ -64,6 +65,7 @@ endpoints:
       title: 'Ajouter un client'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -78,7 +80,7 @@ endpoints:
         name: name
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: gdhtbzwgbfuqzy
+        example: hicepdac
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -88,7 +90,7 @@ endpoints:
         name: email
         description: 'Must match the regex /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/.'
         required: false
-        example: 'se@bplA.K{2,}'
+        example: 'Trpd@..E{2,}'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -98,7 +100,7 @@ endpoints:
         name: phone_1
         description: 'Le texte de value ne peut pas contenir plus de 20 caractères.'
         required: false
-        example: amw
+        example: cbpjtakgjooyan
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -108,7 +110,7 @@ endpoints:
         name: phone_2
         description: 'Le texte de value ne peut pas contenir plus de 20 caractères.'
         required: false
-        example: jetfddqerenagmm
+        example: lmxreazgs
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -118,25 +120,25 @@ endpoints:
         name: address
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: false
-        example: s
+        example: dmzmttwlfgmxadp
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      name: gdhtbzwgbfuqzy
-      email: 'se@bplA.K{2,}'
-      phone_1: amw
-      phone_2: jetfddqerenagmm
-      address: s
+      name: hicepdac
+      email: 'Trpd@..E{2,}'
+      phone_1: cbpjtakgjooyan
+      phone_2: lmxreazgs
+      address: dmzmttwlfgmxadp
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 18PfecghbDvVEd5a664ka3Z'
+      - 'Bearer a1dE4863PcgV5ahvbZeD6fk'
     controller: null
     method: null
     route: null
@@ -155,6 +157,7 @@ endpoints:
       title: 'Afficher un client'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -165,14 +168,14 @@ endpoints:
         name: id
         description: 'The ID of the client.'
         required: true
-        example: quibusdam
+        example: corporis
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: quibusdam
+      id: corporis
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -192,7 +195,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer V6EfPZ5cve84h61kbdaDga3'
+      - 'Bearer DE3PaZdfvha4cV86ebk165g'
     controller: null
     method: null
     route: null
@@ -211,6 +214,7 @@ endpoints:
       title: 'Mettre à jour un client'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -221,14 +225,14 @@ endpoints:
         name: id
         description: 'The ID of the client.'
         required: true
-        example: animi
+        example: illum
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: animi
+      id: illum
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -236,7 +240,7 @@ endpoints:
         name: name
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: cwjwlehsfplcreph
+        example: nauhwkwdsbyzniaaze
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -246,7 +250,7 @@ endpoints:
         name: email
         description: 'Must match the regex /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/. Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: false
-        example: kirlin.pauline@example.org
+        example: mosinski@example.org
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -256,7 +260,7 @@ endpoints:
         name: phone_1
         description: 'Le texte de value ne peut pas contenir plus de 20 caractères.'
         required: false
-        example: omtx
+        example: vabyrx
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -266,7 +270,7 @@ endpoints:
         name: phone_2
         description: 'Le texte de value ne peut pas contenir plus de 20 caractères.'
         required: false
-        example: nfyd
+        example: cmukox
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -276,25 +280,25 @@ endpoints:
         name: address
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: false
-        example: jfvwiuevkr
+        example: rktmlpa
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      name: cwjwlehsfplcreph
-      email: kirlin.pauline@example.org
-      phone_1: omtx
-      phone_2: nfyd
-      address: jfvwiuevkr
+      name: nauhwkwdsbyzniaaze
+      email: mosinski@example.org
+      phone_1: vabyrx
+      phone_2: cmukox
+      address: rktmlpa
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer EdZ6P6145cvDbeakVahf83g'
+      - 'Bearer 8da4h5vb1D6Zk3EfPageV6c'
     controller: null
     method: null
     route: null
@@ -313,6 +317,7 @@ endpoints:
       title: 'Supprimer un client'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -323,14 +328,14 @@ endpoints:
         name: id
         description: 'The ID of the client.'
         required: true
-        example: sit
+        example: doloribus
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: sit
+      id: doloribus
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -341,7 +346,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer d8fbcZkgDe6vaE6VPah1534'
+      - 'Bearer cZaVf13ad8ehE4kvgbDP665'
     controller: null
     method: null
     route: null

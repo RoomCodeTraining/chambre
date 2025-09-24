@@ -16,6 +16,7 @@ use App\Models\Receipt;
 use App\Models\Vehicle;
 use App\Enums\StatusEnum;
 use App\Models\OtherCost;
+use App\Models\PhotoType;
 use App\Models\ShockWork;
 use App\Models\Workforce;
 use App\Models\Assignment;
@@ -23,6 +24,7 @@ use App\Models\EntityType;
 use App\Models\HourlyRate;
 use App\Models\ShockPoint;
 use App\Models\VehicleAge;
+use App\Enums\PhotoTypeEnum;
 use App\Models\VehicleGenre;
 use Illuminate\Http\Request;
 use App\Enums\EntityCodeEnum;
@@ -2221,6 +2223,7 @@ class AssignmentController extends Controller
                         'name' => $name,
                         'is_cover' => false,
                         'assignment_id' => $assignment->id,
+                        'photo_type_id' => PhotoType::where('code', PhotoTypeEnum::WORK_SHEET)->first()->id,
                         'status_id' => Status::where('code', StatusEnum::ACTIVE)->first()->id,
                         'created_by' => auth()->user()->id,
                         'updated_by' => auth()->user()->id,

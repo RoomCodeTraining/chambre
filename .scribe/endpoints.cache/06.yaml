@@ -19,6 +19,7 @@ endpoints:
       title: 'Lister tous les modèles de véhicules'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -45,7 +46,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 8khafZv6gcDd4E5eP136abV'
+      - 'Bearer kV864PZ31DfcvbEaedg5h6a'
     controller: null
     method: null
     route: null
@@ -64,6 +65,7 @@ endpoints:
       title: 'Créer un modèle de véhicule'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -78,7 +80,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: dzbbtech
+        example: izkfhlcxqaeobejpetfmdf
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -88,7 +90,7 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Dolore deserunt facere nulla.'
+        example: 'Laboriosam aut neque atque nihil est.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -98,23 +100,23 @@ endpoints:
         name: brand_id
         description: 'The <code>id</code> of an existing record in the brands table.'
         required: true
-        example: voluptas
+        example: magni
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      label: dzbbtech
-      description: 'Dolore deserunt facere nulla.'
-      brand_id: voluptas
+      label: izkfhlcxqaeobejpetfmdf
+      description: 'Laboriosam aut neque atque nihil est.'
+      brand_id: magni
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 5P4ca3bDEZd686fkeaVvgh1'
+      - 'Bearer 68Zf13haPbEVeda56c4Dgkv'
     controller: null
     method: null
     route: null
@@ -133,6 +135,7 @@ endpoints:
       title: 'Afficher un modèle de véhicule'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -143,14 +146,14 @@ endpoints:
         name: id
         description: 'The ID of the vehicle model.'
         required: true
-        example: aliquam
+        example: odit
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: aliquam
+      id: odit
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -170,7 +173,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 4Ea8ePgv6VkDZdhbaf53c16'
+      - 'Bearer V4hkbdE1feP5a6D3vga86Zc'
     controller: null
     method: null
     route: null
@@ -189,6 +192,7 @@ endpoints:
       title: 'Mettre à jour un modèle de véhicule'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -199,14 +203,14 @@ endpoints:
         name: id
         description: 'The ID of the vehicle model.'
         required: true
-        example: aut
+        example: omnis
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: aut
+      id: omnis
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -214,7 +218,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: wgcwd
+        example: tymhznoxgax
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -224,7 +228,7 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Sit debitis quam blanditiis nam facilis reprehenderit corrupti.'
+        example: 'In pariatur quod in repudiandae suscipit et.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -234,23 +238,23 @@ endpoints:
         name: brand_id
         description: 'The <code>id</code> of an existing record in the brands table.'
         required: true
-        example: quaerat
+        example: ipsum
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      label: wgcwd
-      description: 'Sit debitis quam blanditiis nam facilis reprehenderit corrupti.'
-      brand_id: quaerat
+      label: tymhznoxgax
+      description: 'In pariatur quod in repudiandae suscipit et.'
+      brand_id: ipsum
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 361Vb8Pv4feZgak5dcDhE6a'
+      - 'Bearer aDcZPhe5vg36k8a1d6VfEb4'
     controller: null
     method: null
     route: null
@@ -269,6 +273,7 @@ endpoints:
       title: 'Supprimer un modèle de véhicule'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -279,14 +284,14 @@ endpoints:
         name: id
         description: 'The ID of the vehicle model.'
         required: true
-        example: dolores
+        example: iste
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: dolores
+      id: iste
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -297,7 +302,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer hV8PEbf6ZdkDa34gvea165c'
+      - 'Bearer aV68Zav5f1g6k3chbdDEe4P'
     controller: null
     method: null
     route: null

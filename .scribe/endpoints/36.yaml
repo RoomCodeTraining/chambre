@@ -17,6 +17,7 @@ endpoints:
       title: 'Lister tous les types de peinture'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -43,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 3hbaa16dvc65kDge84EVPfZ'
+      - 'Bearer kfgZb6PVd68c4Ev3ah5eD1a'
     controller: null
     method: null
     route: null
@@ -62,6 +63,7 @@ endpoints:
       title: 'Ajouter un type de peinture'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -76,7 +78,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: pawbsgz
+        example: dbuulmmyn
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -86,22 +88,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Nulla esse facilis non quia non eaque et.'
+        example: 'Architecto dignissimos laudantium ea qui aliquam reprehenderit.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: pawbsgz
-      description: 'Nulla esse facilis non quia non eaque et.'
+      label: dbuulmmyn
+      description: 'Architecto dignissimos laudantium ea qui aliquam reprehenderit.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 8kV16dbfvhPaa3Zc6ED4g5e'
+      - 'Bearer bagaeE3518kD64d6vfVhZPc'
     controller: null
     method: null
     route: null
@@ -120,6 +122,7 @@ endpoints:
       title: 'Afficher un type de peinture'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -130,14 +133,14 @@ endpoints:
         name: paintType
         description: ''
         required: true
-        example: nihil
+        example: perspiciatis
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      paintType: nihil
+      paintType: perspiciatis
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -157,7 +160,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer b4Zg8D5V6v1hcaf63ePkdaE'
+      - 'Bearer 1Ea6vaP8kd36cgh4ZefVb5D'
     controller: null
     method: null
     route: null
@@ -176,6 +179,7 @@ endpoints:
       title: 'Mettre à jour un type de peinture'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -186,14 +190,14 @@ endpoints:
         name: paintType
         description: ''
         required: true
-        example: ipsa
+        example: quisquam
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      paintType: ipsa
+      paintType: quisquam
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -201,7 +205,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: uzvfrggdekeap
+        example: cotfjz
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -211,22 +215,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Ab consectetur numquam deleniti excepturi architecto cupiditate quo.'
+        example: 'Blanditiis eos et sint autem officia quia dolores.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: uzvfrggdekeap
-      description: 'Ab consectetur numquam deleniti excepturi architecto cupiditate quo.'
+      label: cotfjz
+      description: 'Blanditiis eos et sint autem officia quia dolores.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 6cEkva3f46Vhgd8a51DbZeP'
+      - 'Bearer abcZvgPeV656dfk1DhaE348'
     controller: null
     method: null
     route: null
@@ -245,6 +249,7 @@ endpoints:
       title: 'Supprimer un type de peinture'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -255,14 +260,14 @@ endpoints:
         name: paintType
         description: ''
         required: true
-        example: rerum
+        example: facilis
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      paintType: rerum
+      paintType: facilis
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -273,7 +278,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 3g8h4a6cEPbfZ6V1e5dvakD'
+      - 'Bearer hZ3Dka84V6v6fae5Pbc1gdE'
     controller: null
     method: null
     route: null

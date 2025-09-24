@@ -17,6 +17,7 @@ endpoints:
       title: 'Lister tous les points de choc'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -43,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer cdhEDe8v5fa4a1gbPk36ZV6'
+      - 'Bearer 43a1be8kP566hDcgEafVZdv'
     controller: null
     method: null
     route: null
@@ -62,6 +63,7 @@ endpoints:
       title: 'Ajouter un point de choc'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -76,7 +78,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: xy
+        example: eyplhtmcaf
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -86,22 +88,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Rerum omnis aspernatur consectetur tempore corrupti officia nulla.'
+        example: 'Consequatur ad laudantium vitae porro et.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: xy
-      description: 'Rerum omnis aspernatur consectetur tempore corrupti officia nulla.'
+      label: eyplhtmcaf
+      description: 'Consequatur ad laudantium vitae porro et.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer aha63g4bZfDdVE1c5kv6eP8'
+      - 'Bearer 4k6PVdbaE8ea3Zvhc1g6D5f'
     controller: null
     method: null
     route: null
@@ -120,6 +122,7 @@ endpoints:
       title: 'Afficher un point de choc'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -130,14 +133,14 @@ endpoints:
         name: id
         description: 'The ID of the shock point.'
         required: true
-        example: voluptatem
+        example: dolor
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: voluptatem
+      id: dolor
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -157,7 +160,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 8cDe4df3Zh16Egva6VPabk5'
+      - 'Bearer EPd6e15DZ34f6hcb8gakvVa'
     controller: null
     method: null
     route: null
@@ -176,6 +179,7 @@ endpoints:
       title: 'Mettre à jour un point de choc'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -186,14 +190,14 @@ endpoints:
         name: id
         description: 'The ID of the shock point.'
         required: true
-        example: quia
+        example: atque
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: quia
+      id: atque
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -201,7 +205,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: tvtcg
+        example: eguw
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -211,22 +215,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Voluptates ad aut repellat est quia repudiandae consequuntur.'
+        example: 'Et in reprehenderit deleniti vel fugit asperiores placeat.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: tvtcg
-      description: 'Voluptates ad aut repellat est quia repudiandae consequuntur.'
+      label: eguw
+      description: 'Et in reprehenderit deleniti vel fugit asperiores placeat.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer P4kfZ3VebE6hdg58Dc6aa1v'
+      - 'Bearer 54cag6akbVd6E8efZP1h3Dv'
     controller: null
     method: null
     route: null
@@ -245,6 +249,7 @@ endpoints:
       title: 'Supprimer un point de choc'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -255,14 +260,14 @@ endpoints:
         name: id
         description: 'The ID of the shock point.'
         required: true
-        example: iste
+        example: nisi
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: iste
+      id: nisi
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -273,7 +278,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer ad568P41kfVgDea63cZEhvb'
+      - 'Bearer EZ1fa34avdcVDe8hb6g65kP'
     controller: null
     method: null
     route: null

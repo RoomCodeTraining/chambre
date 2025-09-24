@@ -19,6 +19,7 @@ endpoints:
       title: 'Lister tous les taux horaires'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -45,7 +46,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer E56D64acgd31ekhZfV8vaPb'
+      - 'Bearer b6VZvc84e1gDa6Pdah3f5Ek'
     controller: null
     method: null
     route: null
@@ -64,6 +65,7 @@ endpoints:
       title: 'Ajouter un taux horaire'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -78,7 +80,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: eptkoaw
+        example: vwniwhjmozhj
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -88,7 +90,7 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Exercitationem qui exercitationem ducimus.'
+        example: 'Nam accusantium aut voluptatem ullam sapiente.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -98,23 +100,23 @@ endpoints:
         name: value
         description: 'La valeur de value doit être supérieure ou égale à 0.'
         required: true
-        example: 27
+        example: 78
         type: number
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      label: eptkoaw
-      description: 'Exercitationem qui exercitationem ducimus.'
-      value: 27
+      label: vwniwhjmozhj
+      description: 'Nam accusantium aut voluptatem ullam sapiente.'
+      value: 78
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 1aD3bZa68gkhEd46ec5fvVP'
+      - 'Bearer 84Zd5k6gfDVEa6cPv3e1bha'
     controller: null
     method: null
     route: null
@@ -133,6 +135,7 @@ endpoints:
       title: 'Afficher un taux horaire'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -143,14 +146,14 @@ endpoints:
         name: hourlyRate
         description: ''
         required: true
-        example: maiores
+        example: dolorem
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      hourlyRate: maiores
+      hourlyRate: dolorem
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -170,7 +173,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer bc3hd81PaVD6a5gf6vEkZ4e'
+      - 'Bearer h1e6aVEdkPga4Dc8f6bv5Z3'
     controller: null
     method: null
     route: null
@@ -189,6 +192,7 @@ endpoints:
       title: 'Mettre à jour un taux horaire'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -199,14 +203,14 @@ endpoints:
         name: hourlyRate
         description: ''
         required: true
-        example: minima
+        example: rem
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      hourlyRate: minima
+      hourlyRate: rem
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -214,7 +218,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: xawosfemsukxjonxs
+        example: ztsvlgqvzwt
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -224,7 +228,7 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Nulla libero ipsam rem.'
+        example: 'Amet quod voluptates quo.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -234,23 +238,23 @@ endpoints:
         name: value
         description: ''
         required: true
-        example: 686366520.53114
+        example: 2131569.2
         type: number
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      label: xawosfemsukxjonxs
-      description: 'Nulla libero ipsam rem.'
-      value: 686366520.53114
+      label: ztsvlgqvzwt
+      description: 'Amet quod voluptates quo.'
+      value: 2131569.2
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 6c6kePaDv3bdEfV18aZ5gh4'
+      - 'Bearer 6435dfD8Vhvc1ba6aZkgPeE'
     controller: null
     method: null
     route: null
@@ -269,6 +273,7 @@ endpoints:
       title: 'Supprimer un taux horaire'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -279,14 +284,14 @@ endpoints:
         name: hourlyRate
         description: ''
         required: true
-        example: delectus
+        example: quasi
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      hourlyRate: delectus
+      hourlyRate: quasi
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -297,7 +302,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 4kbVvP6ah381DafgEZ6ec5d'
+      - 'Bearer h5vP6Efgba1V48DZce3k6ad'
     controller: null
     method: null
     route: null

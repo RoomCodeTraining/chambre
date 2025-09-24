@@ -19,6 +19,7 @@ endpoints:
       title: 'Lister tous les types de quittances'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -45,7 +46,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer vVP6kZg3D58aEhf4ae16cdb'
+      - 'Bearer 6DaV5ZkagdE318P4vb6echf'
     controller: null
     method: null
     route: null
@@ -64,6 +65,7 @@ endpoints:
       title: 'Ajouter un type de quittance'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -78,7 +80,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: aqlcayz
+        example: etismjy
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -88,22 +90,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'In qui et aut error.'
+        example: 'Nihil ipsum adipisci est voluptas.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: aqlcayz
-      description: 'In qui et aut error.'
+      label: etismjy
+      description: 'Nihil ipsum adipisci est voluptas.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer Za456bD6c1fgd8hEaeP3vkV'
+      - 'Bearer ce86a3gPEfkhbDv5V164Zda'
     controller: null
     method: null
     route: null
@@ -122,6 +124,7 @@ endpoints:
       title: 'Afficher un type de quittance'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -132,14 +135,14 @@ endpoints:
         name: receiptType
         description: ''
         required: true
-        example: officia
+        example: sint
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      receiptType: officia
+      receiptType: sint
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -159,7 +162,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer cPvZ6f8Dehd16V5agk34aEb'
+      - 'Bearer a1a4hbZPe5k6E6Dfv3gV8dc'
     controller: null
     method: null
     route: null
@@ -178,6 +181,7 @@ endpoints:
       title: 'Mettre à jour un type de quittance'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -188,14 +192,14 @@ endpoints:
         name: receiptType
         description: ''
         required: true
-        example: accusamus
+        example: quia
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      receiptType: accusamus
+      receiptType: quia
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -203,7 +207,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: acnqfbplqnbauld
+        example: wisnkulwegbolb
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -213,22 +217,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Esse atque possimus magnam velit dolor.'
+        example: 'Quia ut harum iste provident.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: acnqfbplqnbauld
-      description: 'Esse atque possimus magnam velit dolor.'
+      label: wisnkulwegbolb
+      description: 'Quia ut harum iste provident.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer fVkEc66hbZa1Dd8gv45ae3P'
+      - 'Bearer 3ca1fVZdEhPa6Dge5k86b4v'
     controller: null
     method: null
     route: null
@@ -247,6 +251,7 @@ endpoints:
       title: 'Supprimer un type de quittance'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -257,14 +262,14 @@ endpoints:
         name: receiptType
         description: ''
         required: true
-        example: quidem
+        example: neque
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      receiptType: quidem
+      receiptType: neque
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -275,7 +280,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 4Vfhvka5g68aePEdbc3Z61D'
+      - 'Bearer 6Z5ag1c4be3fadkVhE8Pv6D'
     controller: null
     method: null
     route: null

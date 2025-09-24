@@ -13,6 +13,7 @@ endpoints:
       title: "Générer un token d'accès pour un utilisateur"
       description: 'Le client_name est optionnel, mais il doit être présent si le client souhaite nommer la clé générée.'
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -27,7 +28,7 @@ endpoints:
         name: email
         description: 'Le champ value doit être une adresse e-mail valide.'
         required: true
-        example: dock38@example.com
+        example: hassie75@example.com
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -37,7 +38,7 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: 'C<#cs3_I7<DKvqZO'
+        example: "#h,dpzGw:k{HV'!v]"
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -47,7 +48,7 @@ endpoints:
         name: client_name
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: false
-        example: lmvyyjfepqx
+        example: cxayk
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -57,24 +58,24 @@ endpoints:
         name: expires_at
         description: ''
         required: false
-        example: 8
+        example: 20
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      email: dock38@example.com
-      password: 'C<#cs3_I7<DKvqZO'
-      client_name: lmvyyjfepqx
-      expires_at: 8
+      email: hassie75@example.com
+      password: "#h,dpzGw:k{HV'!v]"
+      client_name: cxayk
+      expires_at: 20
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 4vcbk8ehadDEa6ZV5g1f3P6'
+      - 'Bearer 56bVd4Ecga3Phkefa1Zv6D8'
     controller: null
     method: null
     route: null

@@ -17,6 +17,7 @@ endpoints:
       title: 'Lister les utilisateurs'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -43,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer vd4Zg5a6hfP3E8V6keabD1c'
+      - 'Bearer fbkhPac3d1aZgEv66eD584V'
     controller: null
     method: null
     route: null
@@ -62,6 +63,7 @@ endpoints:
       title: 'Afficher un utilisateur'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -99,7 +101,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer f56aZDdEhbv4k3ag16PcV8e'
+      - 'Bearer 58g14Pcfb6eZaD36kavVhdE'
     controller: null
     method: null
     route: null
@@ -118,6 +120,7 @@ endpoints:
       title: 'Créer un nouvel utilisateur'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -132,7 +135,7 @@ endpoints:
         name: code
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: cnrrojxrpooobzkqengxnjjeu
+        example: werhat
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -142,7 +145,7 @@ endpoints:
         name: email
         description: 'Must match the regex /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/. Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: myrtice.hyatt@example.org
+        example: lacey38@example.com
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -152,7 +155,7 @@ endpoints:
         name: first_name
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: ukygum
+        example: isthdcovs
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -162,7 +165,7 @@ endpoints:
         name: last_name
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: ehzyuutjxlegvvzro
+        example: ybt
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -172,7 +175,7 @@ endpoints:
         name: telephone
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: false
-        example: ytsaztvmykj
+        example: hgseutkdsyjxxwhhqx
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -182,7 +185,7 @@ endpoints:
         name: entity_id
         description: 'The <code>id</code> of an existing record in the entities table.'
         required: true
-        example: doloremque
+        example: pariatur
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -192,7 +195,7 @@ endpoints:
         name: role
         description: 'The <code>name</code> of an existing record in the roles table.'
         required: true
-        example: doloribus
+        example: quod
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -202,28 +205,28 @@ endpoints:
         name: password
         description: 'Le texte de value ne peut pas contenir plus de 100 caractères.'
         required: false
-        example: Gc01Yr+f8
+        example: 'W~",?Hu"m7;g''`'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      code: cnrrojxrpooobzkqengxnjjeu
-      email: myrtice.hyatt@example.org
-      first_name: ukygum
-      last_name: ehzyuutjxlegvvzro
-      telephone: ytsaztvmykj
-      entity_id: doloremque
-      role: doloribus
-      password: Gc01Yr+f8
+      code: werhat
+      email: lacey38@example.com
+      first_name: isthdcovs
+      last_name: ybt
+      telephone: hgseutkdsyjxxwhhqx
+      entity_id: pariatur
+      role: quod
+      password: 'W~",?Hu"m7;g''`'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 6dZ1gvVE4DfaPk3a86eb5ch'
+      - 'Bearer vkd68g5DhPEbe6Z1aa3fc4V'
     controller: null
     method: null
     route: null
@@ -242,6 +245,7 @@ endpoints:
       title: "Mettre à jour un utilisateur les informations de l'utilisateur"
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -267,7 +271,7 @@ endpoints:
         name: code
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: eqjcf
+        example: etrshbgwpgs
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -277,7 +281,7 @@ endpoints:
         name: first_name
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: esshalvvd
+        example: qgraha
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -287,7 +291,7 @@ endpoints:
         name: last_name
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: vvnvh
+        example: viwcajeeoklsyrrvm
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -297,7 +301,7 @@ endpoints:
         name: email
         description: 'Must match the regex /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/. Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: obrakus@example.org
+        example: pdaniel@example.com
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -307,7 +311,7 @@ endpoints:
         name: telephone
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: false
-        example: dfbtndbnu
+        example: haez
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -317,7 +321,7 @@ endpoints:
         name: role
         description: 'The <code>name</code> of an existing record in the roles table.'
         required: true
-        example: quo
+        example: eaque
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -334,12 +338,12 @@ endpoints:
         nullable: true
         custom: []
     cleanBodyParameters:
-      code: eqjcf
-      first_name: esshalvvd
-      last_name: vvnvh
-      email: obrakus@example.org
-      telephone: dfbtndbnu
-      role: quo
+      code: etrshbgwpgs
+      first_name: qgraha
+      last_name: viwcajeeoklsyrrvm
+      email: pdaniel@example.com
+      telephone: haez
+      role: eaque
     fileParameters:
       signature: null
     responses: []
@@ -347,7 +351,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer vV1665hefDagEbc8Za3dkP4'
+      - 'Bearer 6Eb68fakP35Dd1ahZcg4evV'
     controller: null
     method: null
     route: null
@@ -366,6 +370,7 @@ endpoints:
       title: 'Activer un utilisateur'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -394,7 +399,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer vbP85acf1ga46dZhDVEe3k6'
+      - 'Bearer 1Zv4fdkD85hEaPacg63bV6e'
     controller: null
     method: null
     route: null
@@ -413,6 +418,7 @@ endpoints:
       title: 'Désactiver un utilisateur'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -441,7 +447,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6Vd4k3vh81DZEPfg5abca6e'
+      - 'Bearer 5VPf6gEv1dcZ3ha48kDa6be'
     controller: null
     method: null
     route: null
@@ -460,6 +466,7 @@ endpoints:
       title: "Réinitialiser le mot de passe d'un utilisateur par un administrateur"
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -488,7 +495,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer D316fbc5vadh4ZPk8gVeaE6'
+      - 'Bearer 6Echb4Z6D5va183PefdVagk'
     controller: null
     method: null
     route: null
@@ -507,6 +514,7 @@ endpoints:
       title: "Mettre à jour les informations de l'utilisateur de profil de l'utilisateur connecté"
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -521,7 +529,7 @@ endpoints:
         name: code
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: wbwgzwywflnys
+        example: sthb
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -531,7 +539,7 @@ endpoints:
         name: first_name
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: qwvqmiemusvgddqw
+        example: ebgjsvysuuz
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -541,7 +549,7 @@ endpoints:
         name: last_name
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: kldfjghkiezgbgzqjcdba
+        example: d
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -551,7 +559,7 @@ endpoints:
         name: email
         description: 'Must match the regex /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/. Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: ignatius.rosenbaum@example.org
+        example: mozell63@example.org
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -561,7 +569,7 @@ endpoints:
         name: telephone
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: false
-        example: hufsvgzptydevylpnhmj
+        example: ywruuhamq
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -571,7 +579,7 @@ endpoints:
         name: role
         description: 'The <code>name</code> of an existing record in the roles table.'
         required: true
-        example: eos
+        example: recusandae
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -588,12 +596,12 @@ endpoints:
         nullable: true
         custom: []
     cleanBodyParameters:
-      code: wbwgzwywflnys
-      first_name: qwvqmiemusvgddqw
-      last_name: kldfjghkiezgbgzqjcdba
-      email: ignatius.rosenbaum@example.org
-      telephone: hufsvgzptydevylpnhmj
-      role: eos
+      code: sthb
+      first_name: ebgjsvysuuz
+      last_name: d
+      email: mozell63@example.org
+      telephone: ywruuhamq
+      role: recusandae
     fileParameters:
       signature: null
     responses: []
@@ -601,7 +609,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 645a6EZgD1bekhafVcd8v3P'
+      - 'Bearer V6fa6v41dkPDh8gec5bEa3Z'
     controller: null
     method: null
     route: null
@@ -620,6 +628,7 @@ endpoints:
       title: "Réinitialiser le mot de passe d'un utilisateur par lui-même"
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -637,7 +646,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer vbgahckPZ1d6D4aEe86V3f5'
+      - 'Bearer PDZ18f4aVvgbhEck36ea6d5'
     controller: null
     method: null
     route: null
@@ -656,6 +665,7 @@ endpoints:
       title: "Modifier les informations d'un utilisateur connecté par lui-même"
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -681,7 +691,7 @@ endpoints:
         name: email
         description: 'Le champ value doit être une adresse e-mail valide. Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: morissette.cletus@example.org
+        example: whirthe@example.org
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -691,7 +701,7 @@ endpoints:
         name: first_name
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: ifszjocliophceaaptd
+        example: ctkjkoknmugjhryzfiltdao
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -701,7 +711,7 @@ endpoints:
         name: last_name
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: k
+        example: jsvej
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -711,7 +721,7 @@ endpoints:
         name: telephone
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: false
-        example: wprakruciqkagfifpzcw
+        example: absfwfdycvrmmrbrncajlk
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -731,7 +741,7 @@ endpoints:
         name: current_password
         description: 'Le texte de value ne peut pas contenir plus de 100 caractères.'
         required: false
-        example: xhhlktwes
+        example: voxesvpjlp
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -741,7 +751,7 @@ endpoints:
         name: password
         description: 'Le texte de value ne peut pas contenir plus de 100 caractères.'
         required: false
-        example: '|54d=?e"Vh7'
+        example: 't-gma]v+q:q>'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -751,20 +761,20 @@ endpoints:
         name: password_confirmation
         description: 'Le texte de value ne peut pas contenir plus de 100 caractères.'
         required: false
-        example: jpcjtvukaggxxngsfawqrjtmt
+        example: kpvpfavxfjjifc
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      email: morissette.cletus@example.org
-      first_name: ifszjocliophceaaptd
-      last_name: k
-      telephone: wprakruciqkagfifpzcw
-      current_password: xhhlktwes
-      password: '|54d=?e"Vh7'
-      password_confirmation: jpcjtvukaggxxngsfawqrjtmt
+      email: whirthe@example.org
+      first_name: ctkjkoknmugjhryzfiltdao
+      last_name: jsvej
+      telephone: absfwfdycvrmmrbrncajlk
+      current_password: voxesvpjlp
+      password: 't-gma]v+q:q>'
+      password_confirmation: kpvpfavxfjjifc
     fileParameters:
       signature: null
     responses: []
@@ -772,7 +782,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 4aEvcbP6Zf1ahk5Vged36D8'
+      - 'Bearer aZfcbV3hvD86d1agk4P5Ee6'
     controller: null
     method: null
     route: null

@@ -19,6 +19,7 @@ endpoints:
       title: 'Lister tous les réparateurs'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -45,7 +46,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 68Ze5d4EPvV61akgbahfc3D'
+      - 'Bearer d6bPhvea1DEk5aZ34cgVf68'
     controller: null
     method: null
     route: null

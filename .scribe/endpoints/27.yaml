@@ -17,6 +17,7 @@ endpoints:
       title: 'Lister tous les statuts'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -43,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer bgD34E6v1Zekafda56cVh8P'
+      - 'Bearer feab1Pk3ca8VdD54vE6Zgh6'
     controller: null
     method: null
     route: null
@@ -62,6 +63,7 @@ endpoints:
       title: 'Ajouter un statut'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -76,7 +78,7 @@ endpoints:
         name: code
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: hrfskndwvgv
+        example: nosqsviguzabkibknbeny
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -86,7 +88,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: inoofjljllsdaidxbc
+        example: avsbrvnciiivvyw
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -96,23 +98,23 @@ endpoints:
         name: description
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: false
-        example: 'Autem accusamus dicta ut delectus aut reprehenderit culpa.'
+        example: 'Laborum iure vitae doloribus quis necessitatibus similique minus.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      code: hrfskndwvgv
-      label: inoofjljllsdaidxbc
-      description: 'Autem accusamus dicta ut delectus aut reprehenderit culpa.'
+      code: nosqsviguzabkibknbeny
+      label: avsbrvnciiivvyw
+      description: 'Laborum iure vitae doloribus quis necessitatibus similique minus.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer k1cPgf4dD3v8eaV6b5ahE6Z'
+      - 'Bearer 46ceEaZDf6ba3Pk1V5dh8gv'
     controller: null
     method: null
     route: null
@@ -131,6 +133,7 @@ endpoints:
       title: 'Afficher un statut'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -141,14 +144,14 @@ endpoints:
         name: id
         description: 'The ID of the status.'
         required: true
-        example: hic
+        example: aut
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: hic
+      id: aut
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -168,7 +171,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6e4hgf6Pvc3a58ZEdDb1Vka'
+      - 'Bearer VeDfbPh4g85d1Za6ck6a3Ev'
     controller: null
     method: null
     route: null
@@ -187,6 +190,7 @@ endpoints:
       title: 'Mettre à jour un statut'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -197,14 +201,14 @@ endpoints:
         name: id
         description: 'The ID of the status.'
         required: true
-        example: expedita
+        example: eaque
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: expedita
+      id: eaque
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -212,7 +216,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: wrwhgkfsbhio
+        example: uclbvfcjxwk
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -222,22 +226,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Autem hic mollitia quasi.'
+        example: 'Est aperiam velit tempore et non tempora facere.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: wrwhgkfsbhio
-      description: 'Autem hic mollitia quasi.'
+      label: uclbvfcjxwk
+      description: 'Est aperiam velit tempore et non tempora facere.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer e831Ea546vfhdDaVk6gbcZP'
+      - 'Bearer da1ea56k3fcEb68vVZ4hDgP'
     controller: null
     method: null
     route: null
@@ -256,6 +260,7 @@ endpoints:
       title: 'Supprimer un statut'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -266,14 +271,14 @@ endpoints:
         name: id
         description: 'The ID of the status.'
         required: true
-        example: fugit
+        example: nemo
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: fugit
+      id: nemo
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -284,7 +289,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Ze45P1DkVb6c6Efavah83dg'
+      - 'Bearer 6ak4Vgc835DhEve6a1fbdPZ'
     controller: null
     method: null
     route: null

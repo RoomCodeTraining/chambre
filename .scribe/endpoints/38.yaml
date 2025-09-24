@@ -17,6 +17,7 @@ endpoints:
       title: 'Lister tous les tarifs de peinture'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -43,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer DkPhE3egbVa16cvda5f684Z'
+      - 'Bearer dg3Z5EaVP1D86abkehf6c4v'
     controller: null
     method: null
     route: null
@@ -62,6 +63,7 @@ endpoints:
       title: 'Ajouter un tarif de peinture'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -76,7 +78,7 @@ endpoints:
         name: param_1
         description: ''
         required: true
-        example: 54889850.304382
+        example: 3607366.547851
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -86,7 +88,7 @@ endpoints:
         name: param_2
         description: ''
         required: true
-        example: 153.34517275
+        example: 79.779
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -96,7 +98,7 @@ endpoints:
         name: hourly_rate_id
         description: 'The <code>id</code> of an existing record in the hourly_rates table.'
         required: true
-        example: nisi
+        example: voluptas
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -106,7 +108,7 @@ endpoints:
         name: paint_type_id
         description: 'The <code>id</code> of an existing record in the paint_types table.'
         required: true
-        example: natus
+        example: tempore
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -116,25 +118,25 @@ endpoints:
         name: number_paint_element_id
         description: 'The <code>id</code> of an existing record in the number_paint_elements table.'
         required: true
-        example: at
+        example: vitae
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      param_1: 54889850.304382
-      param_2: 153.34517275
-      hourly_rate_id: nisi
-      paint_type_id: natus
-      number_paint_element_id: at
+      param_1: 3607366.547851
+      param_2: 79.779
+      hourly_rate_id: voluptas
+      paint_type_id: tempore
+      number_paint_element_id: vitae
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer hk46Ec3eagDvfZa61d8Vb5P'
+      - 'Bearer EPVd3D5khbecg41v6Za86af'
     controller: null
     method: null
     route: null
@@ -153,6 +155,7 @@ endpoints:
       title: 'Afficher un tarif de peinture'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -163,14 +166,14 @@ endpoints:
         name: paintingPrice
         description: ''
         required: true
-        example: porro
+        example: consectetur
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      paintingPrice: porro
+      paintingPrice: consectetur
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -190,7 +193,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer dcbV1e36hP8vagkZ5ED46fa'
+      - 'Bearer 5a4DdkvhEPef13Zcag6bV86'
     controller: null
     method: null
     route: null
@@ -209,6 +212,7 @@ endpoints:
       title: 'Mettre à jour un tarif de peinture'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -219,14 +223,14 @@ endpoints:
         name: paintingPrice
         description: ''
         required: true
-        example: est
+        example: minus
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      paintingPrice: est
+      paintingPrice: minus
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -234,7 +238,7 @@ endpoints:
         name: param_1
         description: ''
         required: true
-        example: 2121.888
+        example: 435.72682379
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -244,7 +248,7 @@ endpoints:
         name: param_2
         description: ''
         required: true
-        example: 743921.54
+        example: 2767.23
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -254,7 +258,7 @@ endpoints:
         name: hourly_rate_id
         description: 'The <code>id</code> of an existing record in the hourly_rates table.'
         required: true
-        example: qui
+        example: ducimus
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -264,7 +268,7 @@ endpoints:
         name: paint_type_id
         description: 'The <code>id</code> of an existing record in the paint_types table.'
         required: true
-        example: magnam
+        example: est
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -274,25 +278,25 @@ endpoints:
         name: number_paint_element_id
         description: 'The <code>id</code> of an existing record in the number_paint_elements table.'
         required: true
-        example: quis
+        example: explicabo
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      param_1: 2121.888
-      param_2: 743921.54
-      hourly_rate_id: qui
-      paint_type_id: magnam
-      number_paint_element_id: quis
+      param_1: 435.72682379
+      param_2: 2767.23
+      hourly_rate_id: ducimus
+      paint_type_id: est
+      number_paint_element_id: explicabo
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer dDbfgv65EkZ6ah8e1P3Va4c'
+      - 'Bearer g4b1VZveaa8d3ED5hk6Pc6f'
     controller: null
     method: null
     route: null
@@ -311,6 +315,7 @@ endpoints:
       title: 'Supprimer un tarif de peinture'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -321,14 +326,14 @@ endpoints:
         name: paintingPrice
         description: ''
         required: true
-        example: atque
+        example: sunt
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      paintingPrice: atque
+      paintingPrice: sunt
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -339,7 +344,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Zac6VdED65kegv34P1fahb8'
+      - 'Bearer aDvkEca516P83fge6ZbdV4h'
     controller: null
     method: null
     route: null

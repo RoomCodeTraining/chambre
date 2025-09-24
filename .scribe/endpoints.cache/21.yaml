@@ -19,6 +19,7 @@ endpoints:
       title: 'Lister toutes les conclusions techniques'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -45,7 +46,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer E5hZa14b6D6dcvkVf8Paeg3'
+      - 'Bearer kv51PdeVb4Eahcag8fD3Z66'
     controller: null
     method: null
     route: null
@@ -64,6 +65,7 @@ endpoints:
       title: 'Ajouter une conclusion technique'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -78,7 +80,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: yctysunloxdwejd
+        example: bsspjsbmwnkjpifhtqcoui
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -88,22 +90,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Consequatur nihil neque ea exercitationem soluta officiis.'
+        example: 'Non reiciendis doloribus quo deserunt.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: yctysunloxdwejd
-      description: 'Consequatur nihil neque ea exercitationem soluta officiis.'
+      label: bsspjsbmwnkjpifhtqcoui
+      description: 'Non reiciendis doloribus quo deserunt.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer e36P1bdkVZagvh5afDc864E'
+      - 'Bearer 1VafeaDEhdv4b3gPZ668k5c'
     controller: null
     method: null
     route: null
@@ -122,6 +124,7 @@ endpoints:
       title: 'Afficher une conclusion technique'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -132,14 +135,14 @@ endpoints:
         name: technicalConclusion
         description: ''
         required: true
-        example: voluptas
+        example: esse
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      technicalConclusion: voluptas
+      technicalConclusion: esse
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -159,7 +162,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer fEkZPav6Vh5c4dbD3eag816'
+      - 'Bearer b351De4Zk68vPfhdcagE6Va'
     controller: null
     method: null
     route: null
@@ -178,6 +181,7 @@ endpoints:
       title: 'Mettre à jour une conclusion technique'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -188,14 +192,14 @@ endpoints:
         name: technicalConclusion
         description: ''
         required: true
-        example: hic
+        example: repudiandae
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      technicalConclusion: hic
+      technicalConclusion: repudiandae
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -203,7 +207,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: lzg
+        example: uhsos
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -213,22 +217,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Aut corrupti repellendus voluptatem est.'
+        example: 'Et architecto qui magni.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: lzg
-      description: 'Aut corrupti repellendus voluptatem est.'
+      label: uhsos
+      description: 'Et architecto qui magni.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer b38kVDc6a4a51f6ZgPveEhd'
+      - 'Bearer gbk68vhDcdZa4Ef6ae3P15V'
     controller: null
     method: null
     route: null
@@ -247,6 +251,7 @@ endpoints:
       title: 'Supprimer une conclusion technique'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -257,14 +262,14 @@ endpoints:
         name: technicalConclusion
         description: ''
         required: true
-        example: ut
+        example: deserunt
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      technicalConclusion: ut
+      technicalConclusion: deserunt
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -275,7 +280,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 8b3Phcg6fdev4aE6akVDZ51'
+      - 'Bearer b3DZ56avfedgcV1a4h8E6Pk'
     controller: null
     method: null
     route: null

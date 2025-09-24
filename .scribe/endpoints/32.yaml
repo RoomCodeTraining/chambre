@@ -17,6 +17,7 @@ endpoints:
       title: "Lister tous les types d'autres charges"
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -43,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 5k4gc6dbv3Dfa1ZehEaV6P8'
+      - 'Bearer 1ePhcEvaf6dV3a64bkDZg85'
     controller: null
     method: null
     route: null
@@ -62,6 +63,7 @@ endpoints:
       title: "Ajouter un type d'autre charge"
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -76,7 +78,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: pqnyigvb
+        example: knttgxnmpyopmfrbntaisqjnx
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -86,22 +88,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Nihil quod iste magni necessitatibus ipsum quis similique doloribus.'
+        example: 'Ut iusto ratione optio modi.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: pqnyigvb
-      description: 'Nihil quod iste magni necessitatibus ipsum quis similique doloribus.'
+      label: knttgxnmpyopmfrbntaisqjnx
+      description: 'Ut iusto ratione optio modi.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer cd1P6vZf46aeVg8ah5bE3Dk'
+      - 'Bearer gvhVd6fkeZP56aaE8bc143D'
     controller: null
     method: null
     route: null
@@ -120,6 +122,7 @@ endpoints:
       title: "Afficher un type d'autre charge"
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -130,14 +133,14 @@ endpoints:
         name: otherCostType
         description: ''
         required: true
-        example: sit
+        example: ad
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      otherCostType: sit
+      otherCostType: ad
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -157,7 +160,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6deaV6vb8aZ51k4fD3EchPg'
+      - 'Bearer fV5vakDc1dPeZE6b4ah63g8'
     controller: null
     method: null
     route: null
@@ -176,6 +179,7 @@ endpoints:
       title: "Mettre à jour un type d'autre charge"
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -186,14 +190,14 @@ endpoints:
         name: otherCostType
         description: ''
         required: true
-        example: quo
+        example: quis
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      otherCostType: quo
+      otherCostType: quis
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -201,7 +205,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: kvdymftrwblviydovzdailgq
+        example: ulxkbzpirk
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -211,22 +215,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Quisquam libero velit nisi id et voluptas nulla.'
+        example: 'Quia eligendi atque sit consequatur quia ut.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: kvdymftrwblviydovzdailgq
-      description: 'Quisquam libero velit nisi id et voluptas nulla.'
+      label: ulxkbzpirk
+      description: 'Quia eligendi atque sit consequatur quia ut.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer Ehca6dbVv1kPfD3eg4aZ586'
+      - 'Bearer 5Z1dha6aEP3e8Dfgv6c4bkV'
     controller: null
     method: null
     route: null
@@ -245,6 +249,7 @@ endpoints:
       title: "Supprimer un type d'autre charge"
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -255,14 +260,14 @@ endpoints:
         name: otherCostType
         description: ''
         required: true
-        example: cupiditate
+        example: et
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      otherCostType: cupiditate
+      otherCostType: et
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -273,7 +278,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6kbcVgE3vfD1ah6aZeP84d5'
+      - 'Bearer D534cPV1a6aZdhf6kEgveb8'
     controller: null
     method: null
     route: null

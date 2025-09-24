@@ -19,6 +19,7 @@ endpoints:
       title: 'Lister toutes les fournitures'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -45,7 +46,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 3gdDhac1ebV66ZPa4v85fEk'
+      - 'Bearer h1d6aZkVEa4bfeDv536g8cP'
     controller: null
     method: null
     route: null
@@ -64,6 +65,7 @@ endpoints:
       title: 'Ajouter une fourniture'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -78,7 +80,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: ppcyxohlpxelo
+        example: rketyaikboqxizbdmrh
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -88,22 +90,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Non eum pariatur ad.'
+        example: 'Quia consectetur eum quis provident qui inventore est.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: ppcyxohlpxelo
-      description: 'Non eum pariatur ad.'
+      label: rketyaikboqxizbdmrh
+      description: 'Quia consectetur eum quis provident qui inventore est.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer eE5d61hPDafZabk6cvg38V4'
+      - 'Bearer ab4Peg6c5V6a1fkdh8DvE3Z'
     controller: null
     method: null
     route: null
@@ -122,6 +124,7 @@ endpoints:
       title: 'Afficher une fourniture'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -132,14 +135,14 @@ endpoints:
         name: id
         description: 'The ID of the supply.'
         required: true
-        example: deserunt
+        example: nihil
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: deserunt
+      id: nihil
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -159,7 +162,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 8D31cgef5ZPVEdak64vh6ab'
+      - 'Bearer hPVd5Z6k1g6Efbv3De48aac'
     controller: null
     method: null
     route: null
@@ -178,6 +181,7 @@ endpoints:
       title: 'Mettre à jour une fourniture'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -188,14 +192,14 @@ endpoints:
         name: id
         description: 'The ID of the supply.'
         required: true
-        example: iusto
+        example: et
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: iusto
+      id: et
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -203,7 +207,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: lwtfibjxdhujvisaexa
+        example: kvrhpraqrqeuwmueahufvkrv
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -213,22 +217,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Omnis quia repellat nihil aut.'
+        example: 'Est autem quidem atque eos qui.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: lwtfibjxdhujvisaexa
-      description: 'Omnis quia repellat nihil aut.'
+      label: kvrhpraqrqeuwmueahufvkrv
+      description: 'Est autem quidem atque eos qui.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer fea361hVkE8ga46PbvcZdD5'
+      - 'Bearer 46hD3dfk6Peg51a8cEbavVZ'
     controller: null
     method: null
     route: null
@@ -247,6 +251,7 @@ endpoints:
       title: 'Supprimer une fourniture'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -257,14 +262,14 @@ endpoints:
         name: id
         description: 'The ID of the supply.'
         required: true
-        example: inventore
+        example: animi
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: inventore
+      id: animi
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -275,7 +280,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6Zke4EVdPa8gavDb563h1fc'
+      - 'Bearer 68Ebd13aV5fDv6kZg4hePca'
     controller: null
     method: null
     route: null

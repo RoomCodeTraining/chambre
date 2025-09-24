@@ -17,6 +17,7 @@ endpoints:
       title: "Lister tous les types de main-d'œuvre"
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -43,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer EchDdak6Zv5aPfV1e36g4b8'
+      - 'Bearer vVcZadD56a3e6hPg4bkE1f8'
     controller: null
     method: null
     route: null
@@ -62,6 +63,7 @@ endpoints:
       title: "Créer un type de main-d'œuvre"
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -76,7 +78,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: agcmoopruomedprrdttk
+        example: vsui
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -86,22 +88,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Rerum quasi tempora consequatur ea asperiores ea saepe.'
+        example: 'Fuga enim dolorum et consequatur modi.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: agcmoopruomedprrdttk
-      description: 'Rerum quasi tempora consequatur ea asperiores ea saepe.'
+      label: vsui
+      description: 'Fuga enim dolorum et consequatur modi.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer D4g5Pab8kv1VheZ6df3ca6E'
+      - 'Bearer D6b1c3hae5vgZadV8k6Ef4P'
     controller: null
     method: null
     route: null
@@ -120,6 +122,7 @@ endpoints:
       title: "Afficher un type de main-d'œuvre"
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -130,14 +133,14 @@ endpoints:
         name: id
         description: 'The ID of the workforce type.'
         required: true
-        example: et
+        example: eos
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: et
+      id: eos
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -157,7 +160,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer eakV64a685c13dDZgEPhfbv'
+      - 'Bearer gk3bv6P16Zhfaac4VD8Ee5d'
     controller: null
     method: null
     route: null
@@ -176,6 +179,7 @@ endpoints:
       title: "Mettre à jour un type de main-d'œuvre"
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -186,14 +190,14 @@ endpoints:
         name: id
         description: 'The ID of the workforce type.'
         required: true
-        example: est
+        example: quod
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: est
+      id: quod
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -201,7 +205,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: hznixtmbvn
+        example: znhlg
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -211,22 +215,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Animi autem quia iusto aspernatur ut ad adipisci optio.'
+        example: 'Ad et neque quas cumque cum voluptates.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: hznixtmbvn
-      description: 'Animi autem quia iusto aspernatur ut ad adipisci optio.'
+      label: znhlg
+      description: 'Ad et neque quas cumque cum voluptates.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer c3hZDfavV6gPa1bkedE8645'
+      - 'Bearer 64dDfZe63Va1h85PvbkEagc'
     controller: null
     method: null
     route: null
@@ -245,6 +249,7 @@ endpoints:
       title: "Supprimer un type de main-d'œuvre"
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -255,14 +260,14 @@ endpoints:
         name: id
         description: 'The ID of the workforce type.'
         required: true
-        example: alias
+        example: aut
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: alias
+      id: aut
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -273,7 +278,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer k1VgZc38aev4a6fd5EbDh6P'
+      - 'Bearer 8hV4d16v6bfagEc35DeaZPk'
     controller: null
     method: null
     route: null

@@ -173,8 +173,8 @@
                         <div class="p-1 bd-highlight" style="text-align:left;">Date du sinistre : 
                             <b>
                                 <span class="text-danger">
-                                    @if($assignment?->claim_date)
-                                        {{ \Carbon\Carbon::parse($assignment?->claim_date)->format('d/m/Y') ?? ''}}
+                                    @if($assignment?->claim_starts_at)
+                                        {{ \Carbon\Carbon::parse($assignment?->claim_starts_at)->format('d/m/Y') ?? ''}}
                                     @endif
                                 </span>
                             </b>
@@ -338,31 +338,9 @@
                 <tr style="border: 1px solid; font-size: 10px; margin: 0; padding: 0; border-spacing: 0px;">
                     <td style="border: 1px solid; font-size: 10px; vertical-align: middle; vertical-align: top;" colspan="2">
                         @if($cover_photo)
-                            @if(file_exists(public_path('storage/photos/report/'.$assignment->reference.'/'.$cover_photo->name)))
-                                @php
-                                    $path = public_path('storage/photos/report/'.$assignment->reference.'/'.$cover_photo->name);
-                                    $type = pathinfo($path, PATHINFO_EXTENSION);
-                                    $data = file_get_contents($path);
-                                    $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
-                                @endphp
-                                <img src="{{ $base64 ?? '' }}" style="width: 100%; height: 30%; object-fit: cover; display: block;">
-                            @else
-                                @php
-                                    $path = public_path('images/wbg.png');
-                                    $type = pathinfo($path, PATHINFO_EXTENSION);
-                                    $data = file_get_contents($path);
-                                    $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
-                                @endphp
-                                <img src="{{ $base64 ?? ''}}" style="width: 100%; height: 30%; object-fit: cover; display: block;">
-                            @endif
+                            <img src="{{ $cover_photo }}" style="width: 100%; height: 30%; object-fit: cover; display: block;">
                         @else
-                            @php
-                                $path = public_path('images/wbg.png');
-                                $type = pathinfo($path, PATHINFO_EXTENSION);
-                                $data = file_get_contents($path);
-                                $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
-                            @endphp
-                            <img src="{{ $base64 ?? ''}}" style="width: 100%; height: 30%; object-fit: cover; display: block;">
+                            <img src="{{ $wbg }}" style="width: 100%; height: 30%; object-fit: cover; display: block;">
                         @endif
                     </td>
                     <td style="border: 1px solid; font-size: 10px; vertical-align: middle; text-align: center;">
@@ -855,17 +833,11 @@
         </table>
 
         <div style="padding-top: 20px; margin: 10px;">
-            @for($i = 0; $i < count($photos_before_works); $i++)
-                    @php
-                        $path = $photos_before_works[$i];
-                        $type = pathinfo($path, PATHINFO_EXTENSION);
-                        $data = file_get_contents($path);
-                        $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
-                    @endphp
-
-                    <img src="{{ $base64 }}" alt="Photo" style="width: 100%; height: 48%; object-fit: cover; display: block; padding-bottom: 5px;">
-                
-            @endfor
+        @foreach($photos_before_works as $photo)
+            @if($photo)
+                <img src="{{ $photo }}" style="width: 100%; height: 48%; object-fit: cover; display: block; padding-bottom: 5px;">
+            @endif
+        @endforeach
         </div>
         @endif
 
@@ -881,15 +853,11 @@
         </table>
 
         <div style="padding-top: 20px; margin: 10px;">
-            @for($i = 0; $i < count($photos_during_works); $i++)
-                    @php
-                        $path = $photos_during_works[$i];
-                        $type = pathinfo($path, PATHINFO_EXTENSION);
-                        $data = file_get_contents($path);
-                        $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
-                    @endphp
-                    <img src="{{ $base64 }}" alt="Photo" style="width: 100%; height: 48%; object-fit: cover; display: block; padding-bottom: 5px;">
-            @endfor
+        @foreach($photos_during_works as $photo)
+            @if($photo)
+                <img src="{{ $photo }}" style="width: 100%; height: 48%; object-fit: cover; display: block; padding-bottom: 5px;">
+            @endif
+        @endforeach
         </div>
         @endif
 
@@ -905,15 +873,11 @@
         </table>
 
         <div style="padding-top: 20px; margin: 10px;">
-            @for($i = 0; $i < count($photos_after_works); $i++)
-                    @php
-                        $path = $photos_after_works[$i];
-                        $type = pathinfo($path, PATHINFO_EXTENSION);
-                        $data = file_get_contents($path);
-                        $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
-                    @endphp
-                    <img src="{{ $base64 }}" alt="Photo" style="width: 100%; height: 48%; object-fit: cover; display: block; padding-bottom: 5px;">
-            @endfor
+        @foreach($photos_after_works as $photo)
+            @if($photo)
+                <img src="{{ $photo }}" style="width: 100%; height: 48%; object-fit: cover; display: block; padding-bottom: 5px;">
+            @endif
+        @endforeach
         </div>
         @endif
     </body>

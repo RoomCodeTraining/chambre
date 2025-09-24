@@ -17,6 +17,7 @@ endpoints:
       title: 'Lister tous les honoraires'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -43,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer gv43dE5feZcV8ahPbk616Da'
+      - 'Bearer cgav5hf6k1D4Zb8V6EeaPd3'
     controller: null
     method: null
     route: null
@@ -62,6 +63,7 @@ endpoints:
       title: 'Créer un honoraire'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -76,7 +78,7 @@ endpoints:
         name: param_1
         description: ''
         required: true
-        example: 62.04869938
+        example: 29590760.986012
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -86,7 +88,7 @@ endpoints:
         name: param_2
         description: ''
         required: true
-        example: 149103.52
+        example: 2089800.1
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -96,7 +98,7 @@ endpoints:
         name: param_3
         description: ''
         required: true
-        example: 667.522
+        example: 573.87
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -106,24 +108,24 @@ endpoints:
         name: param_4
         description: ''
         required: true
-        example: 11.3
+        example: 426892003.384
         type: number
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      param_1: 62.04869938
-      param_2: 149103.52
-      param_3: 667.522
-      param_4: 11.3
+      param_1: 29590760.986012
+      param_2: 2089800.1
+      param_3: 573.87
+      param_4: 426892003.384
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer eDPv4fagha5kb6ZV6c3d8E1'
+      - 'Bearer 16ck3vaVPeEdfgZDh6a45b8'
     controller: null
     method: null
     route: null
@@ -142,6 +144,7 @@ endpoints:
       title: 'Afficher un honoraire'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -152,14 +155,14 @@ endpoints:
         name: workFee
         description: ''
         required: true
-        example: consequatur
+        example: ea
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      workFee: consequatur
+      workFee: ea
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -179,7 +182,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer e4cPvEfaabZ865D16Vd3kgh'
+      - 'Bearer k835Z1v6EbD6heagdf4cPaV'
     controller: null
     method: null
     route: null
@@ -198,6 +201,7 @@ endpoints:
       title: 'Mettre à jour un honoraire'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -208,14 +212,14 @@ endpoints:
         name: workFee
         description: ''
         required: true
-        example: et
+        example: sunt
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      workFee: et
+      workFee: sunt
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -223,7 +227,7 @@ endpoints:
         name: param_1
         description: ''
         required: true
-        example: 2.715396
+        example: 7154.431546194
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -233,7 +237,7 @@ endpoints:
         name: param_2
         description: ''
         required: true
-        example: 0.05723
+        example: 34186.93204837
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -243,7 +247,7 @@ endpoints:
         name: param_3
         description: ''
         required: true
-        example: 392225.5770442
+        example: 4925.99
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -253,24 +257,24 @@ endpoints:
         name: param_4
         description: ''
         required: true
-        example: 317071618.76451
+        example: 16.5678
         type: number
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      param_1: 2.715396
-      param_2: 0.05723
-      param_3: 392225.5770442
-      param_4: 317071618.76451
+      param_1: 7154.431546194
+      param_2: 34186.93204837
+      param_3: 4925.99
+      param_4: 16.5678
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 4bh1EvPgc6Vda6kDaef538Z'
+      - 'Bearer kgPaEd6f84evV3DZa6b5c1h'
     controller: null
     method: null
     route: null
@@ -289,6 +293,7 @@ endpoints:
       title: 'Supprimer un honoraire'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -299,14 +304,14 @@ endpoints:
         name: workFee
         description: ''
         required: true
-        example: eligendi
+        example: incidunt
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      workFee: eligendi
+      workFee: incidunt
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -317,7 +322,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer d1haPa5Eb6D4gZkefc8Vv36'
+      - 'Bearer 631ZcvkbedE85a4gfP6VahD'
     controller: null
     method: null
     route: null

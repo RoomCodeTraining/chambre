@@ -19,6 +19,7 @@ endpoints:
       title: 'Lister tous les historiques de paiement'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -45,7 +46,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer gPevcfb3h1kZaV566daE4D8'
+      - 'Bearer V1vk4PgZE368hcb5eDaadf6'
     controller: null
     method: null
     route: null
@@ -64,6 +65,7 @@ endpoints:
       title: 'Créer un historique de paiement'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -81,7 +83,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6d63VZhe4cE8Pa1Dabv5gfk'
+      - 'Bearer f1chE4a6Zka38gPe5dVDbv6'
     controller: null
     method: null
     route: null
@@ -100,6 +102,7 @@ endpoints:
       title: 'Afficher un historique de paiement'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -110,14 +113,14 @@ endpoints:
         name: paymentHistoric_id
         description: 'The ID of the paymentHistoric.'
         required: true
-        example: 12
+        example: 1
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      paymentHistoric_id: 12
+      paymentHistoric_id: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -137,7 +140,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer c6f6P3v51DVZe84hEaagkdb'
+      - 'Bearer vaefEdhaV814c6gZk35b6DP'
     controller: null
     method: null
     route: null
@@ -156,6 +159,7 @@ endpoints:
       title: ''
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -166,14 +170,14 @@ endpoints:
         name: paymentHistoric
         description: ''
         required: true
-        example: 6
+        example: 18
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      paymentHistoric: 6
+      paymentHistoric: 18
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -184,7 +188,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer b6gkd3Z5hDPaVf14ea8E6cv'
+      - 'Bearer h1e4kgEb6a68VfZcD5Pvd3a'
     controller: null
     method: null
     route: null
@@ -203,6 +207,7 @@ endpoints:
       title: 'Supprimer un historique de paiement'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -213,14 +218,14 @@ endpoints:
         name: paymentHistoric_id
         description: 'The ID of the paymentHistoric.'
         required: true
-        example: 18
+        example: 20
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      paymentHistoric_id: 18
+      paymentHistoric_id: 20
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -231,7 +236,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 5Ec86hP416dvkVDgeaf3Zab'
+      - 'Bearer EVP1kg6eZav63dc4Df5ah8b'
     controller: null
     method: null
     route: null

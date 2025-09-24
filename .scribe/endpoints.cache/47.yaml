@@ -19,6 +19,7 @@ endpoints:
       title: 'Lister tous les chèques'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -45,7 +46,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 8EdbfPcaD3465kgvah1Ve6Z'
+      - 'Bearer 46a5DkhZEvfePdcVb8g6a13'
     controller: null
     method: null
     route: null
@@ -64,6 +65,7 @@ endpoints:
       title: 'Créer un chèque'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -78,7 +80,7 @@ endpoints:
         name: payment_id
         description: 'The <code>id</code> of an existing record in the payments table.'
         required: true
-        example: totam
+        example: molestiae
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -88,7 +90,7 @@ endpoints:
         name: bank_id
         description: 'The <code>id</code> of an existing record in the banks table.'
         required: true
-        example: reprehenderit
+        example: libero
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -98,7 +100,7 @@ endpoints:
         name: date
         description: 'Must be a valid date in the format <code>Y-m-d</code>.'
         required: true
-        example: '2025-09-22'
+        example: '2025-09-23'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -108,7 +110,7 @@ endpoints:
         name: amount
         description: ''
         required: true
-        example: 6210.174
+        example: 2962.0
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -125,10 +127,10 @@ endpoints:
         nullable: false
         custom: []
     cleanBodyParameters:
-      payment_id: totam
-      bank_id: reprehenderit
-      date: '2025-09-22'
-      amount: 6210.174
+      payment_id: molestiae
+      bank_id: libero
+      date: '2025-09-23'
+      amount: 2962.0
     fileParameters:
       photo: null
     responses: []
@@ -136,7 +138,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer vafVbk84eDh6Pd5EZ6a1gc3'
+      - 'Bearer 1Zd45bgefv3hDa6akV68PEc'
     controller: null
     method: null
     route: null
@@ -155,6 +157,7 @@ endpoints:
       title: 'Afficher un chèque'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -165,14 +168,14 @@ endpoints:
         name: id
         description: 'The ID of the check.'
         required: true
-        example: 20
+        example: 1
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 20
+      id: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -192,7 +195,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 8Egbk546DZd1vfVPha36eac'
+      - 'Bearer 636kaE8v1hg5ZDafcV4dbeP'
     controller: null
     method: null
     route: null
@@ -211,6 +214,7 @@ endpoints:
       title: 'Mettre à jour un chèque'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -221,14 +225,14 @@ endpoints:
         name: id
         description: 'The ID of the check.'
         required: true
-        example: 11
+        example: 14
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 11
+      id: 14
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -236,7 +240,7 @@ endpoints:
         name: payment_id
         description: 'The <code>id</code> of an existing record in the payments table.'
         required: true
-        example: reprehenderit
+        example: voluptate
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -246,7 +250,7 @@ endpoints:
         name: bank_id
         description: 'The <code>id</code> of an existing record in the banks table.'
         required: true
-        example: corporis
+        example: nesciunt
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -256,7 +260,7 @@ endpoints:
         name: date
         description: 'Must be a valid date in the format <code>Y-m-d</code>.'
         required: true
-        example: '2025-09-22'
+        example: '2025-09-23'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -266,7 +270,7 @@ endpoints:
         name: amount
         description: ''
         required: true
-        example: 8.311882
+        example: 44134561.3885
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -283,10 +287,10 @@ endpoints:
         nullable: false
         custom: []
     cleanBodyParameters:
-      payment_id: reprehenderit
-      bank_id: corporis
-      date: '2025-09-22'
-      amount: 8.311882
+      payment_id: voluptate
+      bank_id: nesciunt
+      date: '2025-09-23'
+      amount: 44134561.3885
     fileParameters:
       photo: null
     responses: []
@@ -294,7 +298,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Eg48fV6edkhv1Zb65Pca3Da'
+      - 'Bearer ZdEa5gvbDek6P483aVc61fh'
     controller: null
     method: null
     route: null
@@ -313,6 +317,7 @@ endpoints:
       title: 'Supprimer un chèque'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -323,14 +328,14 @@ endpoints:
         name: id
         description: 'The ID of the check.'
         required: true
-        example: 5
+        example: 11
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 5
+      id: 11
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -341,7 +346,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 3e8va5h4afg6PdZ1kE6bVcD'
+      - 'Bearer bfv65hceEg163Pa4aDdV8kZ'
     controller: null
     method: null
     route: null

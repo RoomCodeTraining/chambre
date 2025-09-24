@@ -12,5 +12,6 @@ enum PhotoTypeEnum: string
     case BEFORE = 'before';
     case DURING = 'during';
     case AFTER = 'after';
+    case WORK_SHEET = 'work_sheet';
 
 }

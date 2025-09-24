@@ -19,6 +19,7 @@ endpoints:
       title: 'Lister tous les paiements'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -45,7 +46,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Dgea6bc4dZfvkP61aV835Eh'
+      - 'Bearer hg43PvcD6ake156ZbdEf8Va'
     controller: null
     method: null
     route: null
@@ -64,6 +65,7 @@ endpoints:
       title: 'Créer un paiement'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -78,7 +80,7 @@ endpoints:
         name: assignment_id
         description: 'The <code>id</code> of an existing record in the assignments table.'
         required: true
-        example: et
+        example: dolor
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -88,7 +90,7 @@ endpoints:
         name: payment_type_id
         description: 'The <code>id</code> of an existing record in the payment_types table.'
         required: true
-        example: ratione
+        example: velit
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -108,7 +110,7 @@ endpoints:
         name: date
         description: 'Must be a valid date in the format <code>Y-m-d</code>.'
         required: true
-        example: '2025-09-22'
+        example: '2025-09-23'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -118,24 +120,24 @@ endpoints:
         name: amount
         description: 'La valeur de value doit être supérieure ou égale à 1.'
         required: true
-        example: 4
+        example: 5
         type: number
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      assignment_id: et
-      payment_type_id: ratione
-      date: '2025-09-22'
-      amount: 4
+      assignment_id: dolor
+      payment_type_id: velit
+      date: '2025-09-23'
+      amount: 5
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 68aak43ve5df1ZcEPVg6hbD'
+      - 'Bearer 1vP66hdekbfZDcE45g8a3aV'
     controller: null
     method: null
     route: null
@@ -154,6 +156,7 @@ endpoints:
       title: 'Afficher un paiement'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -164,14 +167,14 @@ endpoints:
         name: id
         description: 'The ID of the payment.'
         required: true
-        example: 14
+        example: 12
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 14
+      id: 12
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -191,7 +194,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer d4k5DVgaZhe68faEcPvb361'
+      - 'Bearer d8hEkPVD53beg4Zcav61a6f'
     controller: null
     method: null
     route: null
@@ -210,6 +213,7 @@ endpoints:
       title: 'Mettre à jour un paiement'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -235,7 +239,7 @@ endpoints:
         name: assignment_id
         description: 'The <code>id</code> of an existing record in the assignments table.'
         required: true
-        example: quae
+        example: incidunt
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -245,7 +249,7 @@ endpoints:
         name: payment_type_id
         description: 'The <code>id</code> of an existing record in the payment_types table.'
         required: true
-        example: velit
+        example: ipsa
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -255,7 +259,7 @@ endpoints:
         name: payment_method_id
         description: 'The <code>id</code> of an existing record in the payment_methods table.'
         required: true
-        example: pariatur
+        example: assumenda
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -265,7 +269,7 @@ endpoints:
         name: date
         description: 'Must be a valid date in the format <code>Y-m-d</code>.'
         required: true
-        example: '2025-09-22'
+        example: '2025-09-23'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -275,25 +279,25 @@ endpoints:
         name: amount
         description: ''
         required: true
-        example: 36125488.2084
+        example: 340771.320591
         type: number
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      assignment_id: quae
-      payment_type_id: velit
-      payment_method_id: pariatur
-      date: '2025-09-22'
-      amount: 36125488.2084
+      assignment_id: incidunt
+      payment_type_id: ipsa
+      payment_method_id: assumenda
+      date: '2025-09-23'
+      amount: 340771.320591
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer ecv66VkPb3d1845afZhgEaD'
+      - 'Bearer 34Ec18bVdv5agk6ZeD6hfPa'
     controller: null
     method: null
     route: null
@@ -312,6 +316,7 @@ endpoints:
       title: 'Supprimer un paiement'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -322,14 +327,14 @@ endpoints:
         name: id
         description: 'The ID of the payment.'
         required: true
-        example: 20
+        example: 1
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 20
+      id: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -340,7 +345,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer dVaD68Pcvka345bg6fEh1Ze'
+      - 'Bearer 8g64ZfhdaabV5EvP1c63ekD'
     controller: null
     method: null
     route: null
@@ -359,6 +364,7 @@ endpoints:
       title: 'Annuler un paiement'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -369,14 +375,14 @@ endpoints:
         name: payment
         description: 'The payment.'
         required: true
-        example: 6
+        example: 2
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      payment: 6
+      payment: 2
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -387,7 +393,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 18Vbahka3cedfE645PDvg6Z'
+      - 'Bearer c4daaVP8v3Z56Eeh6fbDg1k'
     controller: null
     method: null
     route: null
@@ -406,6 +412,7 @@ endpoints:
       title: 'Statistiques des paiements'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -432,7 +439,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer vd64aa5kZ3ghEbfceV86DP1'
+      - 'Bearer fdg5beP6cv43VkaEa8DZh16'
     controller: null
     method: null
     route: null

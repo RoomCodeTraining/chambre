@@ -196,7 +196,7 @@ class PhotoController extends Controller
         }
 
         $photo->update([
-            'name' => $name,
+            'name' => $name ?? $photo->name,
             'photo_type_id' => $request->photo_type_id,
             'updated_by' => auth()->user()->id,
         ]);

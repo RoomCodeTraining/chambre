@@ -60,40 +60,16 @@ class GenerateExpertiseReportPdfJob implements ShouldQueue
      */
     public function handle(): void
     {
+
         // ✅ Supprimer la limite de temps (par défaut 30s)
-        set_time_limit(120); // ou 0 pour illimité, mais déconseillé en prod
+        set_time_limit(300); // ou 0 pour illimité, mais déconseillé en prod
 
         // ✅ Augmenter la limite mémoire (optionnel si ton PDF est lourd)
-        ini_set('memory_limit', '512M');
-        
+        ini_set('memory_limit', '2048M');
+
         $assignment = Assignment::with('experts', 'generalState', 'claimNature', 'technicalConclusion', 'documentTransmitted', 'assignmentType', 'expertiseType', 'status', 'vehicle', 'insurer', 'additionalInsurer', 'repairer', 'client', 'directedBy')
                         ->where('assignments.id', $this->_assignment->id)
                         ->first();
-
-        // $total_shock_work_obsolescence_amount_excluding_tax = Shock::where('assignment_id', $assignment->id)->sum('shock_work_obsolescence_amount_excluding_tax');
-        // $total_shock_work_obsolescence_amount_tax = Shock::where('assignment_id', $assignment->id)->sum('shock_work_obsolescence_amount_tax');
-        // $total_shock_work_obsolescence_amount = Shock::where('assignment_id', $assignment->id)->sum('shock_work_obsolescence_amount');
-        // $total_shock_work_recovery_amount_excluding_tax = Shock::where('assignment_id', $assignment->id)->sum('shock_work_recovery_amount_excluding_tax');
-        // $total_shock_work_recovery_amount_tax = Shock::where('assignment_id', $assignment->id)->sum('shock_work_recovery_amount_tax');
-        // $total_shock_work_recovery_amount = Shock::where('assignment_id', $assignment->id)->sum('shock_work_recovery_amount');
-        // $total_shock_work_discount_amount_excluding_tax = Shock::where('assignment_id', $assignment->id)->sum('shock_work_discount_amount_excluding_tax');
-        // $total_shock_work_discount_amount_tax = Shock::where('assignment_id', $assignment->id)->sum('shock_work_discount_amount_tax');
-        // $total_shock_work_discount_amount = Shock::where('assignment_id', $assignment->id)->sum('shock_work_discount_amount');
-        // $total_shock_work_new_amount_excluding_tax = Shock::where('assignment_id', $assignment->id)->sum('shock_work_new_amount_excluding_tax');
-        // $total_shock_work_new_amount_tax = Shock::where('assignment_id', $assignment->id)->sum('shock_work_new_amount_tax');
-        // $total_shock_work_new_amount = Shock::where('assignment_id', $assignment->id)->sum('shock_work_new_amount');
-        // $total_workforce_amount_excluding_tax = Shock::where('assignment_id', $assignment->id)->sum('workforce_amount_excluding_tax');
-        // $total_workforce_amount_tax = Shock::where('assignment_id', $assignment->id)->sum('workforce_amount_tax');
-        // $total_workforce_amount = Shock::where('assignment_id', $assignment->id)->sum('workforce_amount');
-        // $total_paint_product_amount_excluding_tax = Shock::where('assignment_id', $assignment->id)->sum('paint_product_amount_excluding_tax');
-        // $total_paint_product_amount_tax = Shock::where('assignment_id', $assignment->id)->sum('paint_product_amount_tax');
-        // $total_paint_product_amount = Shock::where('assignment_id', $assignment->id)->sum('paint_product_amount');
-        // $total_small_supply_amount_excluding_tax = Shock::where('assignment_id', $assignment->id)->sum('small_supply_amount_excluding_tax');
-        // $total_small_supply_amount_tax = Shock::where('assignment_id', $assignment->id)->sum('small_supply_amount_tax');
-        // $total_small_supply_amount = Shock::where('assignment_id', $assignment->id)->sum('small_supply_amount');
-        // $total_amount_excluding_tax = Shock::where('assignment_id', $assignment->id)->sum('amount_excluding_tax');
-        // $total_amount_tax = Shock::where('assignment_id', $assignment->id)->sum('amount_tax');
-        // $total_amount = Shock::where('assignment_id', $assignment->id)->sum('amount');
 
         $shocks = Shock::with(['shockPoint', 
                                 'shockWorks' => function($query) {
@@ -146,29 +122,52 @@ class GenerateExpertiseReportPdfJob implements ShouldQueue
         //     }            
         // }
 
-        $cover_photo = Photo::where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->where('is_cover', 1)->where('assignment_id', $assignment->id)->first();
+        // $cover_photo = Photo::where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->where('is_cover', 1)->where('assignment_id', $assignment->id)->first();
 
-        $photos_before_works_path = Photo::where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->where('is_cover', '!=', 1)->where('assignment_id', $assignment->id)->where('photo_type_id', PhotoType::where('code', PhotoTypeEnum::BEFORE)->first()->id)->get();
+        // ✅ Photo de couverture
+        $cover_photo = Photo::where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)
+        ->where('is_cover', 1)
+        ->where('assignment_id', $assignment->id)
+        ->first();
+
+        $cover_photo = $cover_photo
+        ? image_to_base64(public_path("storage/photos/report/{$assignment->reference}/{$cover_photo->name}"))
+        : null;
+
+        // ✅ Photos avant travaux
         $photos_before_works = [];
-        foreach($photos_before_works_path as $photos_before_work){
-            if(file_exists(public_path("storage/photos/report/".$assignment->reference."/".$photos_before_work->name))){
-                $photos_before_works[] = public_path("storage/photos/report/".$assignment->reference."/".$photos_before_work->name);
-            }
+        $photos_before = Photo::where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)
+                            ->where('is_cover', '!=', 1)
+                            ->where('assignment_id', $assignment->id)
+                            ->where('photo_type_id', PhotoType::where('code', PhotoTypeEnum::BEFORE)->first()->id)
+                            ->get();
+
+        foreach ($photos_before as $photo) {
+            $photos_before_works[] = image_to_base64(public_path("storage/photos/report/{$assignment->reference}/{$photo->name}"));
         }
 
-        $photos_during_works_path = Photo::where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->where('is_cover', '!=', 1)->where('assignment_id', $assignment->id)->where('photo_type_id', PhotoType::where('code', PhotoTypeEnum::DURING)->first()->id)->get();
+        // ✅ Photos pendant travaux
         $photos_during_works = [];
-        foreach($photos_during_works_path as $photos_during_work){
-            if(file_exists(public_path("storage/photos/report/".$assignment->reference."/".$photos_during_work->name))){
-                $photos_during_works[] = public_path("storage/photos/report/".$assignment->reference."/".$photos_during_work->name);
-            }
+        $photos_during = Photo::where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)
+                            ->where('is_cover', '!=', 1)
+                            ->where('assignment_id', $assignment->id)
+                            ->where('photo_type_id', PhotoType::where('code', PhotoTypeEnum::DURING)->first()->id)
+                            ->get();
+
+        foreach ($photos_during as $photo) {
+            $photos_during_works[] = image_to_base64(public_path("storage/photos/report/{$assignment->reference}/{$photo->name}"));
         }
-        $photos_after_works_path = Photo::where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->where('is_cover', '!=', 1)->where('assignment_id', $assignment->id)->where('photo_type_id', PhotoType::where('code', PhotoTypeEnum::AFTER)->first()->id)->get();
+
+        // ✅ Photos après travaux
         $photos_after_works = [];
-        foreach($photos_after_works_path as $photos_after_work){
-            if(file_exists(public_path("storage/photos/report/".$assignment->reference."/".$photos_after_work->name))){
-                $photos_after_works[] = public_path("storage/photos/report/".$assignment->reference."/".$photos_after_work->name);
-            }
+        $photos_after = Photo::where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)
+                            ->where('is_cover', '!=', 1)
+                            ->where('assignment_id', $assignment->id)
+                            ->where('photo_type_id', PhotoType::where('code', PhotoTypeEnum::AFTER)->first()->id)
+                            ->get();
+
+        foreach ($photos_after as $photo) {
+            $photos_after_works[] = image_to_base64(public_path("storage/photos/report/{$assignment->reference}/{$photo->name}"));
         }
 
         // $cover_photo = null;
@@ -193,61 +192,23 @@ class GenerateExpertiseReportPdfJob implements ShouldQueue
         $data_check_icon = file_get_contents($path_check_icon);
         $check_icon = 'data:image/'.$type_check_icon.';base64,'.base64_encode($data_check_icon);
 
+        $path_wbg = base_path('public/images/wbg.png');
+        $type_wbg = pathinfo($path_wbg, PATHINFO_EXTENSION);
+        $data_wbg = file_get_contents($path_wbg);
+        $wbg = 'data:image/'.$type_wbg.';base64,'.base64_encode($data_wbg);
+
         $numberToWords = new NumberToWords();
         $numberTransformer = $numberToWords->getNumberTransformer('fr');
 
         if($assignment->expertise_type_id == ExpertiseType::where('code', ExpertiseTypeEnum::EVALUATION)->first()->id || $assignment->assignment_type_id == AssignmentType::where('code', AssignmentTypeEnum::EVALUATION)->first()->id){
-            $pdf = PDF::loadView('expertise_report/evaluation/index',compact('assignment','shocks','receipts','other_costs','logo','check_icon','qr_code','cover_photo','photos_before_works','photos_during_works','photos_after_works','numberTransformer','evaluations','ascertainments','total_payment'));
+            $pdf = PDF::loadView('expertise_report/evaluation/index',compact('assignment','shocks','receipts','other_costs','logo','check_icon','qr_code','wbg','cover_photo','photos_before_works','photos_during_works','photos_after_works','numberTransformer','evaluations','ascertainments','total_payment'));
         } else {
-            $pdf = PDF::loadView('expertise_report/standard/index',compact('assignment','shocks','receipts','other_costs','logo','check_icon','qr_code','cover_photo','photos_before_works','photos_during_works','photos_after_works','numberTransformer','evaluations','ascertainments','total_payment'));
+            $pdf = PDF::loadView('expertise_report/standard/index',compact('assignment','shocks','receipts','other_costs','logo','check_icon','wbg','qr_code','cover_photo','photos_before_works','photos_during_works','photos_after_works','numberTransformer','evaluations','ascertainments','total_payment'));
         }
         $pdf->set_option('isHtml5ParserEnabled', false);
         $pdf->set_option('isRemoteEnabled', true);
         $pdf->setOptions(['defaultFont' => 'sans-serif']);
         $pdf->save(public_path("storage/expertise_report/".$assignment->reference.".pdf"));
         $pdf->setBasePath($_SERVER['DOCUMENT_ROOT']);
-
-        // Recherche de la page de l'élément "note-expert" dans le document généré par Dompdf
-        // On suppose que $dompdf est déjà instancié et rendu
-        // $targetPage contient maintenant le numéro de page de l'élément "note-expert"
-
-
-        // $dompdf = $pdf->getDomPDF(); // on récupère l'instance Dompdf sans écraser $pdf
-        // $dompdf->render();
-
-        // // Canvas et hauteur
-        // $canvas = $dompdf->getCanvas();
-        // $pageHeight = $canvas->get_height();
-
-        // $targetPage = null;
-
-        // // Récupérer l'arbre des frames
-        // $tree = $dompdf->getTree();
-        // $root = $tree->get_root();
-
-        // // Parcours récursif des frames
-        // $iterator = new RecursiveIteratorIterator(
-        //     new RecursiveArrayIterator([$root]),
-        //     RecursiveIteratorIterator::SELF_FIRST
-        // );
-
-        // foreach ($iterator as $frame) {
-        //     if ($frame instanceof \Dompdf\Frame) {
-        //         $node = $frame->get_node();
-        //         if ($node->nodeType === XML_ELEMENT_NODE && $node->hasAttribute("id")) {
-        //             if ($node->getAttribute("id") === "note-expert") {
-        //                 $box = $frame->get_containing_block();
-        //                 $yPos = $box["y"];
-        //                 $targetPage = intval($yPos / $pageHeight) + 1;
-        //                 break;
-        //             }
-        //         }
-        //     }
-        // }
-
-        // dd("Page de #note-expert :", $targetPage);
-
-
-
     }
 }

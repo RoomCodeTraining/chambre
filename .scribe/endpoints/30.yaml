@@ -17,6 +17,7 @@ endpoints:
       title: 'Lister tous les documents transmis'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -43,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer kgvEfZc8h1aP3V64Dadb6e5'
+      - 'Bearer e1D6EaVbk68vadZ43cgf5hP'
     controller: null
     method: null
     route: null
@@ -62,6 +63,7 @@ endpoints:
       title: 'Ajouter un document transmis'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -76,7 +78,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: t
+        example: rykuvg
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -86,22 +88,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Impedit recusandae fuga enim quaerat fuga minus.'
+        example: 'Doloremque sint sit voluptatum eveniet culpa recusandae vel aliquam.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: t
-      description: 'Impedit recusandae fuga enim quaerat fuga minus.'
+      label: rykuvg
+      description: 'Doloremque sint sit voluptatum eveniet culpa recusandae vel aliquam.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer PZV36afbh1av6kD4g58dEec'
+      - 'Bearer ZVe1D66Pfgdkvaha54c38Eb'
     controller: null
     method: null
     route: null
@@ -120,6 +122,7 @@ endpoints:
       title: 'Afficher un document transmis'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -130,14 +133,14 @@ endpoints:
         name: document_transmitted
         description: ''
         required: true
-        example: dolore
+        example: quasi
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      document_transmitted: dolore
+      document_transmitted: quasi
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -157,7 +160,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 84h5bZa6cPea1Edf6g3VkDv'
+      - 'Bearer 6d5cae4a16kvEbV8gh3fZDP'
     controller: null
     method: null
     route: null
@@ -176,6 +179,7 @@ endpoints:
       title: 'Mettre à jour un document transmis'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -186,14 +190,14 @@ endpoints:
         name: document_transmitted
         description: ''
         required: true
-        example: sed
+        example: alias
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      document_transmitted: sed
+      document_transmitted: alias
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -201,7 +205,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: udgwravwqxyu
+        example: mlgxrfftwkd
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -211,22 +215,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Sit hic sunt neque.'
+        example: 'Amet itaque facere est temporibus dolores enim expedita.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: udgwravwqxyu
-      description: 'Sit hic sunt neque.'
+      label: mlgxrfftwkd
+      description: 'Amet itaque facere est temporibus dolores enim expedita.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer d6a5Df6gVev48hEba3ckP1Z'
+      - 'Bearer da3a1kPefVg5E684vcb6DZh'
     controller: null
     method: null
     route: null
@@ -245,6 +249,7 @@ endpoints:
       title: 'Supprimer un document transmis'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -255,14 +260,14 @@ endpoints:
         name: document_transmitted
         description: ''
         required: true
-        example: molestiae
+        example: accusamus
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      document_transmitted: molestiae
+      document_transmitted: accusamus
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -273,7 +278,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer cgVDae48Zf1d66PabE3kvh5'
+      - 'Bearer e5VcZ63D4vfabd8g1khP6Ea'
     controller: null
     method: null
     route: null

@@ -17,6 +17,7 @@ endpoints:
       title: 'Lister toutes les méthodes de paiement'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -43,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer h6bZ5DPkvge6Ec4Vadaf318'
+      - 'Bearer d6VkZv5b18346PcaEDhgaef'
     controller: null
     method: null
     route: null
@@ -62,6 +63,7 @@ endpoints:
       title: 'Créer une méthode de paiement'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -76,7 +78,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: olxmgwcleqlzmp
+        example: xh
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -86,22 +88,22 @@ endpoints:
         name: description
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: false
-        example: 'Maxime beatae distinctio officiis non quis.'
+        example: 'Nobis et corrupti ut quas sed veniam tempora.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: olxmgwcleqlzmp
-      description: 'Maxime beatae distinctio officiis non quis.'
+      label: xh
+      description: 'Nobis et corrupti ut quas sed veniam tempora.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer Dbk6favegP85cVad4EZ31h6'
+      - 'Bearer fEV6dakDb5va6e438c1ZgPh'
     controller: null
     method: null
     route: null
@@ -120,6 +122,7 @@ endpoints:
       title: 'Afficher une méthode de paiement'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -157,7 +160,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 35Vvb8cEkD4PZgadfaeh166'
+      - 'Bearer 6Pkfgea4cEZ6VvaDbh5183d'
     controller: null
     method: null
     route: null
@@ -176,6 +179,7 @@ endpoints:
       title: 'Mettre à jour une méthode de paiement'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -201,7 +205,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: dqsbmqc
+        example: s
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -211,22 +215,22 @@ endpoints:
         name: description
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: false
-        example: 'Aspernatur laudantium eos autem et eveniet magni quia minima.'
+        example: 'Sunt omnis voluptatem voluptatum ipsa pariatur ipsa necessitatibus qui.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: dqsbmqc
-      description: 'Aspernatur laudantium eos autem et eveniet magni quia minima.'
+      label: s
+      description: 'Sunt omnis voluptatem voluptatum ipsa pariatur ipsa necessitatibus qui.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer hafD8P1vakZVdb65e634cgE'
+      - 'Bearer 5ea18Ea46PDk6gVc3dbfhZv'
     controller: null
     method: null
     route: null
@@ -245,6 +249,7 @@ endpoints:
       title: 'Supprimer une méthode de paiement'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -273,7 +278,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer e6Pa5v8EbZDh4gd6V1ckfa3'
+      - 'Bearer fD6g3e5bPh61k4VZEvaca8d'
     controller: null
     method: null
     route: null

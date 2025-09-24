@@ -19,6 +19,7 @@ endpoints:
       title: 'Lister tous les tableaux de dépréciation'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -45,7 +46,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer cd41fDvb6PkEg3ah8aZ6Ve5'
+      - 'Bearer afDEga5Vbd6Zkh3v1e68Pc4'
     controller: null
     method: null
     route: null
@@ -64,6 +65,7 @@ endpoints:
       title: 'Créer un nouveau tableau de dépréciation'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -78,7 +80,7 @@ endpoints:
         name: vehicle_genre_id
         description: 'The <code>id</code> of an existing record in the vehicle_genres table.'
         required: true
-        example: rem
+        example: aspernatur
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -88,7 +90,7 @@ endpoints:
         name: vehicle_age_id
         description: 'The <code>id</code> of an existing record in the vehicle_ages table.'
         required: true
-        example: sit
+        example: atque
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -98,23 +100,23 @@ endpoints:
         name: value
         description: 'La valeur de value doit être supérieure ou égale à 0.'
         required: true
-        example: 30
+        example: 17
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      vehicle_genre_id: rem
-      vehicle_age_id: sit
-      value: 30
+      vehicle_genre_id: aspernatur
+      vehicle_age_id: atque
+      value: 17
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer bdfeV14vD665haga3E8ZcPk'
+      - 'Bearer 4g6bV36PafDavceh1Z8Ed5k'
     controller: null
     method: null
     route: null
@@ -133,6 +135,7 @@ endpoints:
       title: 'Afficher un tableau de dépréciation'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -143,14 +146,14 @@ endpoints:
         name: id
         description: 'The ID of the depreciation table.'
         required: true
-        example: hic
+        example: et
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: hic
+      id: et
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -170,7 +173,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer ba5PDe13fkdE46vhgZca68V'
+      - 'Bearer cED8kh6P164dgb5vaVfe3Za'
     controller: null
     method: null
     route: null
@@ -189,6 +192,7 @@ endpoints:
       title: 'Mettre à jour un tableau de dépréciation'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -199,14 +203,14 @@ endpoints:
         name: id
         description: 'The ID of the depreciation table.'
         required: true
-        example: necessitatibus
+        example: sunt
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: necessitatibus
+      id: sunt
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -214,7 +218,7 @@ endpoints:
         name: vehicle_genre_id
         description: 'The <code>id</code> of an existing record in the vehicle_genres table.'
         required: true
-        example: vel
+        example: totam
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -224,7 +228,7 @@ endpoints:
         name: vehicle_age_id
         description: 'The <code>id</code> of an existing record in the vehicle_ages table.'
         required: true
-        example: dolorum
+        example: dicta
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -234,23 +238,23 @@ endpoints:
         name: value
         description: 'La valeur de value doit être supérieure ou égale à 0.'
         required: true
-        example: 8
+        example: 77
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      vehicle_genre_id: vel
-      vehicle_age_id: dolorum
-      value: 8
+      vehicle_genre_id: totam
+      vehicle_age_id: dicta
+      value: 77
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer bfha86VaP1k6Zce5gEdD34v'
+      - 'Bearer 816hcfaPEgea6Zkbd5Dv4V3'
     controller: null
     method: null
     route: null
@@ -269,6 +273,7 @@ endpoints:
       title: 'Supprimer un tableau de dépréciation'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -279,14 +284,14 @@ endpoints:
         name: id
         description: 'The ID of the depreciation table.'
         required: true
-        example: voluptates
+        example: dolorum
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: voluptates
+      id: dolorum
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -297,7 +302,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 8ke16vd5a4h3fDZaPbE6Vgc'
+      - 'Bearer 8e3gdE4a1fbDZ5P6ackvVh6'
     controller: null
     method: null
     route: null
@@ -316,6 +321,7 @@ endpoints:
       title: "Calculer la valeur vénale théorique d'un véhicule"
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -330,7 +336,7 @@ endpoints:
         name: vehicle_genre_id
         description: 'The <code>id</code> of an existing record in the vehicle_genres table.'
         required: true
-        example: similique
+        example: ut
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -340,7 +346,7 @@ endpoints:
         name: vehicle_energy_id
         description: 'The <code>id</code> of an existing record in the vehicle_energies table.'
         required: true
-        example: ducimus
+        example: placeat
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -350,7 +356,7 @@ endpoints:
         name: vehicle_new_value
         description: 'La valeur de value doit être supérieure ou égale à 0.'
         required: true
-        example: 85
+        example: 27
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -360,7 +366,7 @@ endpoints:
         name: vehicle_mileage
         description: 'La valeur de value doit être supérieure ou égale à 0.'
         required: true
-        example: 34
+        example: 58
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -370,7 +376,7 @@ endpoints:
         name: first_entry_into_circulation_date
         description: 'Must be a valid date in the format <code>Y-m-d</code>. Le champ value doit être une date antérieure au <code>tomorrow</code>.'
         required: true
-        example: '2004-01-31'
+        example: '2014-10-02'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -380,26 +386,26 @@ endpoints:
         name: expertise_date
         description: 'Must be a valid date in the format <code>Y-m-d</code>. Le champ value doit être une date postérieure au <code>first_entry_into_circulation_date</code>. Le champ value doit être une date antérieure au <code>tomorrow</code>.'
         required: true
-        example: '2003-03-24'
+        example: '2020-07-19'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      vehicle_genre_id: similique
-      vehicle_energy_id: ducimus
-      vehicle_new_value: 85
-      vehicle_mileage: 34
-      first_entry_into_circulation_date: '2004-01-31'
-      expertise_date: '2003-03-24'
+      vehicle_genre_id: ut
+      vehicle_energy_id: placeat
+      vehicle_new_value: 27
+      vehicle_mileage: 58
+      first_entry_into_circulation_date: '2014-10-02'
+      expertise_date: '2020-07-19'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer a8V3e6dckPbEZ16gfDvh45a'
+      - 'Bearer 8be5af46gv1VEdP63DcakZh'
     controller: null
     method: null
     route: null

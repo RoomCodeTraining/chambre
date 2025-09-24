@@ -19,6 +19,7 @@ endpoints:
       title: 'Lister tous les genres de véhicules'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -45,7 +46,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer cedgP8aED6b43hZk5V6fa1v'
+      - 'Bearer PZ66g4Edfhaae5Vb8v3kc1D'
     controller: null
     method: null
     route: null
@@ -64,6 +65,7 @@ endpoints:
       title: 'Créer un nouveau genre de véhicule'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -78,7 +80,7 @@ endpoints:
         name: code
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: dv
+        example: sjfoujcmrtltc
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -88,7 +90,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: mbmqn
+        example: xwasxzxmpzki
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -98,7 +100,7 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Minus in autem consectetur ut perspiciatis.'
+        example: 'Distinctio iure dolores voluptatibus eum et ut.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -108,7 +110,7 @@ endpoints:
         name: max_mileage_essence_per_year
         description: ''
         required: true
-        example: 12371599.964048
+        example: 101240.11475
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -118,25 +120,25 @@ endpoints:
         name: max_mileage_diesel_per_year
         description: ''
         required: true
-        example: 52491957.332466
+        example: 0.6
         type: number
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      code: dv
-      label: mbmqn
-      description: 'Minus in autem consectetur ut perspiciatis.'
-      max_mileage_essence_per_year: 12371599.964048
-      max_mileage_diesel_per_year: 52491957.332466
+      code: sjfoujcmrtltc
+      label: xwasxzxmpzki
+      description: 'Distinctio iure dolores voluptatibus eum et ut.'
+      max_mileage_essence_per_year: 101240.11475
+      max_mileage_diesel_per_year: 0.6
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer eDZ6va8k1da63Vcg4fP5bEh'
+      - 'Bearer dca63v14bf8hekPgV5ZaD6E'
     controller: null
     method: null
     route: null
@@ -155,6 +157,7 @@ endpoints:
       title: 'Afficher un genre de véhicule'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -192,7 +195,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 5bd3aVcvD4gZhPka8Ee61f6'
+      - 'Bearer cE68DPvheaZaV6d4f1kb53g'
     controller: null
     method: null
     route: null
@@ -211,6 +214,7 @@ endpoints:
       title: 'Mettre à jour un genre de véhicule'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -221,14 +225,14 @@ endpoints:
         name: id
         description: 'The ID of the vehicle genre.'
         required: true
-        example: eligendi
+        example: quod
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: eligendi
+      id: quod
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -236,7 +240,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: palbkafpplehnwmpyzydirh
+        example: yympccrbg
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -246,7 +250,7 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Dolorum voluptas autem voluptatem et.'
+        example: 'Vero tenetur sed rerum provident eum nulla libero.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -256,7 +260,7 @@ endpoints:
         name: max_mileage_essence_per_year
         description: ''
         required: true
-        example: 474774.16861
+        example: 490690182.95942
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -266,24 +270,24 @@ endpoints:
         name: max_mileage_diesel_per_year
         description: ''
         required: true
-        example: 1923.5224173
+        example: 25032.0042
         type: number
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      label: palbkafpplehnwmpyzydirh
-      description: 'Dolorum voluptas autem voluptatem et.'
-      max_mileage_essence_per_year: 474774.16861
-      max_mileage_diesel_per_year: 1923.5224173
+      label: yympccrbg
+      description: 'Vero tenetur sed rerum provident eum nulla libero.'
+      max_mileage_essence_per_year: 490690182.95942
+      max_mileage_diesel_per_year: 25032.0042
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 16EZg6afd8P35kcDeVavbh4'
+      - 'Bearer 6afbh4DeP85k63a1VcgdvEZ'
     controller: null
     method: null
     route: null
@@ -302,6 +306,7 @@ endpoints:
       title: 'Supprimer un genre de véhicule'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -312,14 +317,14 @@ endpoints:
         name: id
         description: 'The ID of the vehicle genre.'
         required: true
-        example: doloremque
+        example: sequi
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: doloremque
+      id: sequi
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -330,7 +335,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer f3cv1dk6D5a8g4bP6VEeahZ'
+      - 'Bearer ZDhk5V1a4dPEvbf366gec8a'
     controller: null
     method: null
     route: null

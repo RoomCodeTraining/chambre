@@ -15,6 +15,7 @@ endpoints:
       title: 'Afficher les statistiques des utilisateurs'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -41,7 +42,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer ZEk8fd5bDg6P63Vha1aev4c'
+      - 'Bearer e5gv61V4DfkdZcEhPa8ab36'
     controller: null
     method: null
     route: null
@@ -58,6 +59,7 @@ endpoints:
       title: 'Afficher les statistiques des dossiers'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -84,7 +86,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 86gZ6vh4DPEadc5bkfa3V1e'
+      - 'Bearer D56vacEZhf8e3k1P4aVb6dg'
     controller: null
     method: null
     route: null
@@ -101,6 +103,7 @@ endpoints:
       title: "Afficher les statistiques des compagnies d'assurance"
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -127,7 +130,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 4bVE3Pc6afg81a56hvDdkeZ'
+      - 'Bearer eVkZ1a86bPc3dg6h45EfDva'
     controller: null
     method: null
     route: null
@@ -144,6 +147,7 @@ endpoints:
       title: 'Afficher les statistiques des réparateurs'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -170,7 +174,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Vv583hbe6DPfcaZ14gak6Ed'
+      - 'Bearer 5Eav8ZPDkc3hdV6gb1e4f6a'
     controller: null
     method: null
     route: null
@@ -187,6 +191,7 @@ endpoints:
       title: 'Afficher les statistiques des véhicules'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -213,7 +218,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer aDfebcZV64d8Pkg561Eavh3'
+      - 'Bearer 6aZE1VPdbgkfDav48635ceh'
     controller: null
     method: null
     route: null

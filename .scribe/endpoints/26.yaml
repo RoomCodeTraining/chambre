@@ -17,6 +17,7 @@ endpoints:
       title: 'Lister toutes les photos'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -43,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 5he6gZ1fk46avcdDVPb38aE'
+      - 'Bearer Z1Edafv8kg36DV4e5caP6bh'
     controller: null
     method: null
     route: null
@@ -62,6 +63,7 @@ endpoints:
       title: 'Ajouter plusieurs photos'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -76,7 +78,7 @@ endpoints:
         name: assignment_id
         description: 'The <code>id</code> of an existing record in the assignments table.'
         required: true
-        example: quisquam
+        example: optio
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -104,7 +106,7 @@ endpoints:
         nullable: false
         custom: []
     cleanBodyParameters:
-      assignment_id: quisquam
+      assignment_id: optio
     fileParameters:
       photos:
         - null
@@ -113,7 +115,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer a56hv83D6g1dkPZfVEe4bac'
+      - 'Bearer geVa6h6bdE35ZcvfPD4ka18'
     controller: null
     method: null
     route: null
@@ -132,6 +134,7 @@ endpoints:
       title: 'Afficher une photo'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -169,7 +172,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 4gEvfehP36685kdcb1ZDaaV'
+      - 'Bearer 5vd36Ph41DEbk6fZcaeaV8g'
     controller: null
     method: null
     route: null
@@ -188,6 +191,7 @@ endpoints:
       title: 'Mettre à jour une photo'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -198,14 +202,14 @@ endpoints:
         name: id
         description: 'The ID of the photo.'
         required: true
-        example: 6
+        example: 7
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 6
+      id: 7
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -237,7 +241,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 665dV8vc3EfbZhD4ekaP1ga'
+      - 'Bearer Z6EdcPhkfD6ea5vba143g8V'
     controller: null
     method: null
     route: null
@@ -256,6 +260,7 @@ endpoints:
       title: 'Rendre une photo comme photo de couverture'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -266,14 +271,14 @@ endpoints:
         name: photo
         description: 'The photo.'
         required: true
-        example: 11
+        example: 6
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      photo: 11
+      photo: 6
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -284,7 +289,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 465e31dVa6PcabgfhZvDkE8'
+      - 'Bearer v3c6e68P514fagEkabZdVDh'
     controller: null
     method: null
     route: null
@@ -303,6 +308,7 @@ endpoints:
       title: 'Supprimer une photo'
       description: ''
       authenticated: true
+      deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
@@ -313,14 +319,14 @@ endpoints:
         name: id
         description: 'The ID of the photo.'
         required: true
-        example: 13
+        example: 2
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 13
+      id: 2
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -331,7 +337,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer aahk86V1fvEbeZPDcg3d654'
+      - 'Bearer dPEfZaD4V6ka3c856ehvbg1'
     controller: null
     method: null
     route: null
