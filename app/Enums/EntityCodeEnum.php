@@ -9,7 +9,9 @@ enum EntityCodeEnum: string
 {
     use UsefulEnums;
 
+    case LCA = 'LCA';
     case BCA_CI = 'BCA_CI';
+    case SGA = 'SGA';
     case NSIA = 'NSIA';
     case AXA = 'AXA';
     case SANLAM_ALLIANZ = 'SANLAM_ALLIANZ';

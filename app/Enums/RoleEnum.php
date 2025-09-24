@@ -10,6 +10,7 @@ enum RoleEnum: string
 
     case SYSTEM_ADMIN = 'system_admin';
     case ADMIN = 'admin';
+    case EXPERT_ADMIN = 'expert_admin';
     case CEO = 'ceo';
     case EXPERT_MANAGER = 'expert_manager';
     case EXPERT = 'expert';

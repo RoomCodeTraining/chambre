@@ -107,6 +107,32 @@ class RolesAndPermissionsSeeder extends Seeder
         ]);
 
         Role::create([
+            'name' => \App\Enums\RoleEnum::EXPERT_ADMIN,
+            'label' => 'Administrateur de cabinet d\'expertise',
+            'description' => 'Chargé de la gestion de la plateforme d\'un cabinet d\'expertise.',
+            'guard_name' => 'sanctum',
+        ])->givePermissionTo([
+            $viewUser,
+            $createUser,
+            $updateUser,
+            $deleteUser,
+            $enableUser,
+            $disableUser,
+            $resetUser,
+            $viewAssignment,
+            $generateAssignment,
+            $assignmentStatistics,
+            $viewInvoice,
+            $generateInvoice,
+            $invoiceStatistics,
+            $viewPayment,
+            $deletePayment,
+            $cancelPayment,
+            $paymentStatistics,
+            $manageApp,
+        ]);
+
+        Role::create([
             'name' => \App\Enums\RoleEnum::CEO,
             'label' => 'Directeur général',
             'description' => "Chargé de la direction générale de l'entreprise.",

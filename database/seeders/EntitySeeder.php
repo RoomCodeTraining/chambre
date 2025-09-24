@@ -19,6 +19,20 @@ class EntitySeeder extends Seeder
     public function run(): void
     {
         app(CreateEntityAction::class)->execute([
+            'code' => EntityCodeEnum::LCA->value,
+            'name' => 'LCA',
+            'prefix' => null,
+            'suffix' => 'LCA',
+            'email' => 'support@lca.com',
+            'address' => null,
+            'telephone' => null,
+            'service_description' => null,
+            'footer_description' => null,
+            'entity_type_code' => EntityType::firstWhere('code', \App\Enums\EntityTypeEnum::MAIN_ORGANIZATION)->code,
+            'status_id' => Status::firstWhere('code', \App\Enums\StatusEnum::ACTIVE)->id,
+        ]);
+
+        app(CreateEntityAction::class)->execute([
             'code' => EntityCodeEnum::BCA_CI->value,
             'name' => 'BCA-CI',
             'prefix' => null,
@@ -28,6 +42,18 @@ class EntitySeeder extends Seeder
             'telephone' => null,
             'service_description' => null,
             'footer_description' => null,
+            'entity_type_code' => EntityType::firstWhere('code', \App\Enums\EntityTypeEnum::MAIN_ORGANIZATION)->code,
+            'status_id' => Status::firstWhere('code', \App\Enums\StatusEnum::ACTIVE)->id,
+        ]);
+
+        app(CreateEntityAction::class)->execute([
+            'code' => EntityCodeEnum::SGA->value,
+            'name' => 'SGA',
+            'prefix' => null,
+            'suffix' => 'SGA',
+            'email' => 'support@sga.com',
+            'address' => null,
+            'telephone' => null,
             'entity_type_code' => EntityType::firstWhere('code', \App\Enums\EntityTypeEnum::MAIN_ORGANIZATION)->code,
             'status_id' => Status::firstWhere('code', \App\Enums\StatusEnum::ACTIVE)->id,
         ]);

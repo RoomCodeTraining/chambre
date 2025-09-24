@@ -19,6 +19,11 @@ class AssignmentBuilder extends Builder
         return $this->model->currentRole->name == RoleEnum::ADMIN->value;
     }
 
+    public function isAdminExpert(): bool
+    {
+        return $this->model->currentRole->name == RoleEnum::EXPERT_ADMIN->value;
+    }
+
     public function isInsurerAdmin(): bool
     {
         return $this->model->currentRole->name == RoleEnum::INSURER_ADMIN->value;
@@ -40,6 +45,10 @@ class AssignmentBuilder extends Builder
         }
 
         if ($user->isAdmin()) {
+            return $this;
+        }
+
+        if ($user->isAdminExpert()) {
             return $this->where('expert_firm_id', $user->entity_id);
         }
 
