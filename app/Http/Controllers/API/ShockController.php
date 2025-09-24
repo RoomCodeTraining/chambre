@@ -62,6 +62,8 @@ class ShockController extends Controller
                 $query->orderBy('position', 'asc');
             },
         ])
+        ->join('assignments', 'shocks.assignment_id', '=', 'assignments.id')
+        ->accessibleBy(auth()->user())
         ->useFilters()
         ->orderBy('id', 'asc')
         ->dynamicPaginate();
@@ -76,7 +78,9 @@ class ShockController extends Controller
      */
     public function store(CreateShockRequest $request): JsonResponse
     {
-        $assignment = Assignment::findOrFail($request->assignment_id);
+        $assignment = Assignment::accessibleBy(auth()->user())
+            ->where('assignments.id', $request->assignment_id)
+            ->firstOrFail();
 
         if($assignment->status_id == Status::where('code', StatusEnum::VALIDATED)->first()->id || $assignment->status_id == Status::where('code', StatusEnum::PAID)->first()->id){
             return $this->responseUnprocessable("Impossible d'ajouter un choc", null);
@@ -291,7 +295,9 @@ class ShockController extends Controller
 
     public function recalculate($id)
     {
-        $assignment = Assignment::findOrFail($id);
+        $assignment = Assignment::accessibleBy(auth()->user())
+            ->where('assignments.id', $id)
+            ->firstOrFail();
         
         $total_shock_amount_excluding_tax = ceil(Shock::where('assignment_id', $assignment->id)->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->sum('amount_excluding_tax'));
         $total_shock_amount_tax = ceil(Shock::where('assignment_id', $assignment->id)->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->sum('amount_tax'));
@@ -330,7 +336,9 @@ class ShockController extends Controller
      */
     public function storePoint(CreateShockRequest $request): JsonResponse
     {
-        $assignment = Assignment::findOrFail($request->assignment_id);
+        $assignment = Assignment::accessibleBy(auth()->user())
+            ->where('assignments.id', $request->assignment_id)
+            ->firstOrFail();
 
         if($assignment->status_id == Status::where('code', StatusEnum::VALIDATED)->first()->id || $assignment->status_id == Status::where('code', StatusEnum::PAID)->first()->id){
             return $this->responseUnprocessable("Impossible d'ajouter un point à un choc", null);
@@ -368,7 +376,10 @@ class ShockController extends Controller
      */
     public function show($id): JsonResponse
     {
-        $shock = Shock::findOrFail($id);
+        $shock = Shock::accessibleBy(auth()->user())
+            ->join('assignments', 'shocks.assignment_id', '=', 'assignments.id')
+            ->where('shocks.id', $id)
+            ->firstOrFail();
 
         return $this->responseSuccess(null, new ShockResource($shock->load('shockPoint', 'shockWorks', 'workforces')));
     }
@@ -380,7 +391,10 @@ class ShockController extends Controller
      */
     public function update(UpdateShockRequest $request, $id): JsonResponse
     {
-        $shock = Shock::findOrFail($id);
+        $shock = Shock::accessibleBy(auth()->user())
+            ->join('assignments', 'shocks.assignment_id', '=', 'assignments.id')
+            ->where('shocks.id', $id)
+            ->firstOrFail();
 
         $assignment = Assignment::findOrFail($shock->assignment_id);
 
@@ -405,7 +419,10 @@ class ShockController extends Controller
      */
     public function orderShockWorks(Request $request, $id)
     {
-        $shock = Shock::findOrFail($id);
+        $shock = Shock::accessibleBy(auth()->user())
+            ->join('assignments', 'shocks.assignment_id', '=', 'assignments.id')
+            ->where('shocks.id', $id)
+            ->firstOrFail();
 
         $assignment = Assignment::findOrFail($shock->assignment_id);
 
@@ -436,7 +453,10 @@ class ShockController extends Controller
      */
     public function orderWorkforces(Request $request, $id)
     {
-        $shock = Shock::findOrFail($id);
+        $shock = Shock::accessibleBy(auth()->user())
+            ->join('assignments', 'shocks.assignment_id', '=', 'assignments.id')
+            ->where('shocks.id', $id)
+            ->firstOrFail();
 
         $assignment = Assignment::findOrFail($shock->assignment_id);
 
@@ -467,7 +487,10 @@ class ShockController extends Controller
      */
     public function destroy($id): JsonResponse
     {
-        $shock = Shock::findOrFail($id);
+        $shock = Shock::accessibleBy(auth()->user())
+            ->join('assignments', 'shocks.assignment_id', '=', 'assignments.id')
+            ->where('shocks.id', $id)
+            ->firstOrFail();
 
         $assignment = Assignment::findOrFail($shock->assignment_id);
 

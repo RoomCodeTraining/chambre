@@ -43,6 +43,8 @@ class ReceiptController extends Controller
     public function index(): AnonymousResourceCollection
     {
         $receipts = Receipt::with('receiptType', 'status')
+                    ->join('assignments', 'receipts.assignment_id', '=', 'assignments.id')
+                    ->accessibleBy(auth()->user())
                     ->useFilters()
                     ->orderBy('id', 'asc')
                     ->dynamicPaginate();
@@ -224,7 +226,10 @@ class ReceiptController extends Controller
      */
     public function show($id): JsonResponse
     {
-        $receipt = Receipt::findOrFail($id);
+        $receipt = Receipt::join('assignments', 'receipts.assignment_id', '=', 'assignments.id')
+            ->accessibleBy(auth()->user())
+            ->where('receipts.id', $id)
+            ->firstOrFail();
 
         return $this->responseSuccess(null, new ReceiptResource($receipt->load('receiptType', 'status')));
     }
@@ -236,7 +241,10 @@ class ReceiptController extends Controller
      */
     public function update(UpdateReceiptRequest $request, $id): JsonResponse
     {
-        $receipt = Receipt::findOrFail($id);
+        $receipt = Receipt::join('assignments', 'receipts.assignment_id', '=', 'assignments.id')
+            ->accessibleBy(auth()->user())
+            ->where('receipts.id', $id)
+            ->firstOrFail();
 
         $assignment = Assignment::with('technicalConclusion')->find($receipt->assignment_id);
 
@@ -318,7 +326,10 @@ class ReceiptController extends Controller
      */
     public function destroy($id): JsonResponse
     {
-        $receipt = Receipt::findOrFail($id);
+        $receipt = Receipt::join('assignments', 'receipts.assignment_id', '=', 'assignments.id')
+            ->accessibleBy(auth()->user())
+            ->where('receipts.id', $id)
+            ->firstOrFail();
 
         $receipt->update([
             'status_id' => Status::where('code', StatusEnum::DELETED)->first()->id,

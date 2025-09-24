@@ -54,6 +54,8 @@ class WorkforceController extends Controller
     public function index(): AnonymousResourceCollection
     {
         $workforces = Workforce::with('workforceType', 'status')
+                    ->join('assignments', 'workforces.assignment_id', '=', 'assignments.id')
+                    ->accessibleBy(auth()->user())
                     ->useFilters()
                     ->orderBy('position', 'asc')
                     ->dynamicPaginate();
@@ -69,7 +71,9 @@ class WorkforceController extends Controller
     public function calculate(CalculateWorkforceRequest $request): JsonResponse
     {
         $shock = Shock::findOrFail($request->shock_id);
-        $assignment = Assignment::findOrFail($shock->assignment_id);
+        $assignment = Assignment::accessibleBy(auth()->user())
+            ->where('assignments.id', $shock->assignment_id)
+            ->firstOrFail();
 
         $shock_works = [];
         $obsolescence_amount_excluding_tax = 0;
@@ -276,7 +280,12 @@ class WorkforceController extends Controller
      */
     public function store(CreateWorkforceRequest $request): JsonResponse
     {
-        $shock = Shock::with('assignment')->findOrFail($request->shock_id);
+        $shock = Shock::with('assignment')
+            ->join('shocks', 'workforces.shock_id', '=', 'shocks.id')
+            ->join('assignments', 'shocks.assignment_id', '=', 'assignments.id')
+            ->accessibleBy(auth()->user())
+            ->where('shocks.id', $request->shock_id)
+            ->firstOrFail();
 
         if($shock->assignment->status_id == Status::where('code', StatusEnum::VALIDATED)->first()->id || $shock->assignment->status_id == Status::where('code', StatusEnum::PAID)->first()->id){
             return $this->responseUnprocessable("Impossible d'ajouter une main-d'oeuvre", null);
@@ -350,7 +359,9 @@ class WorkforceController extends Controller
      */
     public function show($id): JsonResponse
     {
-        $workforce = Workforce::findOrFail($id);
+        $workforce = Workforce::accessibleBy(auth()->user())
+            ->where('workforces.id', $id)
+            ->firstOrFail();
 
         return $this->responseSuccess(null, new WorkforceResource($workforce->load('workforceType', 'status')));
     }
@@ -362,7 +373,12 @@ class WorkforceController extends Controller
      */
     public function update(UpdateWorkforceRequest $request, $id): JsonResponse
     {
-        $workforce = Workforce::with('shock')->findOrFail($id);
+        $workforce = Workforce::with('shock')
+            ->join('shocks', 'workforces.shock_id', '=', 'shocks.id')
+            ->join('assignments', 'shocks.assignment_id', '=', 'assignments.id')
+            ->accessibleBy(auth()->user())
+            ->where('workforces.id', $id)
+            ->firstOrFail();
 
         $assignment = Assignment::findOrFail($workforce->shock->assignment_id);
 
@@ -623,7 +639,12 @@ class WorkforceController extends Controller
      */
     public function destroy($id): JsonResponse
     {
-        $workforce = Workforce::with('shock')->findOrFail($id);
+        $workforce = Workforce::with('shock')
+            ->join('shocks', 'workforces.shock_id', '=', 'shocks.id')
+            ->join('assignments', 'shocks.assignment_id', '=', 'assignments.id')
+            ->accessibleBy(auth()->user())
+            ->where('workforces.id', $id)
+            ->firstOrFail();
 
         $assignment = Assignment::findOrFail($workforce->shock->assignment_id);
 

@@ -471,7 +471,12 @@ class PaymentController extends Controller
      */
     public function show(Payment $payment): JsonResponse
     {
-        return $this->responseSuccess(null, new PaymentResource($payment->accessibleBy(auth()->user())->load('assignment:id,reference', 'paymentType:id,code,label', 'paymentMethod:id,code,label', 'status:id,code,label', 'createdBy:id,name,email,created_at', 'updatedBy:id,name,email,created_at', 'deletedBy:id,name,email,created_at')));
+        $payment = Payment::join('assignments', 'payments.assignment_id', '=', 'assignments.id')
+            ->accessibleBy(auth()->user())
+            ->where('payments.id', $payment->id)
+            ->first();
+
+        return $this->responseSuccess(null, new PaymentResource($payment->load('assignment:id,reference', 'paymentType:id,code,label', 'paymentMethod:id,code,label', 'status:id,code,label', 'createdBy:id,name,email,created_at', 'updatedBy:id,name,email,created_at', 'deletedBy:id,name,email,created_at')));
     }
 
     /**
@@ -481,7 +486,11 @@ class PaymentController extends Controller
      */
     public function update(UpdatePaymentRequest $request, $id): JsonResponse
     {
-        $payment = Payment::accessibleBy(auth()->user())->findOrFail($id);
+        $payment = Payment::join('assignments', 'payments.assignment_id', '=', 'assignments.id')
+            ->accessibleBy(auth()->user())
+            ->where('payments.id', $id)
+            ->firstOrFail();
+
         $payment->update([
             'assignment_id' => $request->assignment_id,
             'payment_type_id' => $request->payment_type_id,
@@ -499,7 +508,11 @@ class PaymentController extends Controller
      */
     public function cancel($id): JsonResponse
     {
-        $payment = Payment::accessibleBy(auth()->user())->findOrFail($id);
+        $payment = Payment::join('assignments', 'payments.assignment_id', '=', 'assignments.id')
+            ->accessibleBy(auth()->user())
+            ->where('payments.id', $id)
+            ->firstOrFail();
+
         $payment->update([
             'status_id' => Status::where('code', StatusEnum::CANCELLED)->first()->id,
             'cancelled_by' => auth()->user()->id,

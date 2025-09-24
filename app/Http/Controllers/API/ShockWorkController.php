@@ -56,6 +56,9 @@ class ShockWorkController extends Controller
     public function index(): AnonymousResourceCollection
     {
         $shockWorks = ShockWork::with('supply', 'status')
+                    ->join('shocks', 'shock_works.shock_id', '=', 'shocks.id')
+                    ->join('assignments', 'shocks.assignment_id', '=', 'assignments.id')
+                    ->accessibleBy(auth()->user())
                     ->useFilters()
                     ->orderBy('position', 'asc')
                     ->dynamicPaginate();
@@ -70,7 +73,10 @@ class ShockWorkController extends Controller
      */
     public function calculate(CalculateShockWorkRequest $request): JsonResponse
     {
-        $shock = Shock::findOrFail($request->shock_id);
+        $shock = Shock::join('assignments', 'shocks.assignment_id', '=', 'assignments.id')
+            ->accessibleBy(auth()->user())
+            ->where('shocks.id', $request->shock_id)
+            ->firstOrFail();
         $assignment = Assignment::findOrFail($shock->assignment_id);
 
         $shock_works = [];
@@ -176,7 +182,10 @@ class ShockWorkController extends Controller
      */
     public function store(CreateShockWorkRequest $request): JsonResponse
     {
-        $shock = Shock::findOrFail($request->shock_id);
+        $shock = Shock::join('assignments', 'shocks.assignment_id', '=', 'assignments.id')
+            ->accessibleBy(auth()->user())
+            ->where('shocks.id', $request->shock_id)
+            ->firstOrFail();
 
         $assignment = Assignment::findOrFail($shock->assignment_id);
 
@@ -258,7 +267,11 @@ class ShockWorkController extends Controller
      */
     public function show($id): JsonResponse
     {
-        $shockWork = ShockWork::findOrFail($id);
+        $shockWork = ShockWork::join('shocks', 'shock_works.shock_id', '=', 'shocks.id')
+            ->join('assignments', 'shocks.assignment_id', '=', 'assignments.id')
+            ->accessibleBy(auth()->user())
+            ->where('shock_works.id', $id)
+            ->firstOrFail();
 
         return $this->responseSuccess(null, new ShockWorkResource($shockWork->load('supply', 'status')));
     }
@@ -270,7 +283,12 @@ class ShockWorkController extends Controller
      */
     public function update(UpdateShockWorkRequest $request, $id): JsonResponse
     {
-        $shockWork = ShockWork::with('shock')->findOrFail($id);
+        $shockWork = ShockWork::with('shock')
+            ->join('shocks', 'shock_works.shock_id', '=', 'shocks.id')
+            ->join('assignments', 'shocks.assignment_id', '=', 'assignments.id')
+            ->accessibleBy(auth()->user())
+            ->where('shock_works.id', $id)
+            ->firstOrFail();
 
         $assignment = Assignment::findOrFail($shockWork->shock->assignment_id);
 
@@ -449,7 +467,12 @@ class ShockWorkController extends Controller
      */
     public function destroy($id): JsonResponse
     {
-        $shockWork = ShockWork::with('shock')->findOrFail($id);
+        $shockWork = ShockWork::with('shock')
+            ->join('shocks', 'shock_works.shock_id', '=', 'shocks.id')
+            ->join('assignments', 'shocks.assignment_id', '=', 'assignments.id')
+            ->accessibleBy(auth()->user())
+            ->where('shock_works.id', $id)
+            ->firstOrFail();
 
         $assignment = Assignment::findOrFail($shockWork->shock->assignment_id);
 

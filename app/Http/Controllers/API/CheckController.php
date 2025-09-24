@@ -37,7 +37,11 @@ class CheckController extends Controller
     public function index(): AnonymousResourceCollection
     {
         $checks = Check::with('payment', 'bank', 'status:id,code,label', 'createdBy:id,name', 'updatedBy:id,name', 'deletedBy:id,name')
+            ->join('payments', 'checks.payment_id', '=', 'payments.id')
+            ->join('assignments', 'payments.assignment_id', '=', 'assignments.id')
+            ->accessibleBy(auth()->user())
             ->useFilters()
+            ->latest('created_at')
             ->dynamicPaginate();
 
         return CheckResource::collection($checks);
@@ -85,7 +89,14 @@ class CheckController extends Controller
      */
     public function show(Check $check): JsonResponse
     {
-        return $this->responseSuccess(null, new CheckResource($check->load('payment', 'bank', 'status:id,code,label', 'createdBy:id,name', 'updatedBy:id,name', 'deletedBy:id,name')));
+        $check = Check::with('payment', 'bank', 'status:id,code,label', 'createdBy:id,name', 'updatedBy:id,name', 'deletedBy:id,name')
+            ->join('payments', 'checks.payment_id', '=', 'payments.id')
+            ->join('assignments', 'payments.assignment_id', '=', 'assignments.id')
+            ->accessibleBy(auth()->user())
+            ->where('checks.id', $check->id)
+            ->first();
+
+        return $this->responseSuccess(null, new CheckResource($check));
     }
 
     /**
@@ -95,7 +106,13 @@ class CheckController extends Controller
      */
     public function update(UpdateCheckRequest $request, $id): JsonResponse
     {
-        $check = Check::findOrFail($id);
+        $check = Check::with('payment', 'bank', 'status:id,code,label', 'createdBy:id,name', 'updatedBy:id,name', 'deletedBy:id,name')
+            ->join('payments', 'checks.payment_id', '=', 'payments.id')
+            ->join('assignments', 'payments.assignment_id', '=', 'assignments.id')
+            ->accessibleBy(auth()->user())
+            ->where('checks.id', $id)
+            ->firstOrFail();
+
         $check->update([
             'payment_id' => $request->payment_id,
             'bank_id' => $request->bank_id,

@@ -42,6 +42,7 @@ class PhotoController extends Controller
     public function index(): AnonymousResourceCollection
     {
         $photos = Photo::with('assignment:id,reference', 'photoType:id,code,label', 'status:id,code,label')
+                        ->accessibleBy(auth()->user())
                         ->latest('created_at')
                         ->useFilters()
                         ->dynamicPaginate();
@@ -159,7 +160,13 @@ class PhotoController extends Controller
      */
     public function show(Photo $photo): JsonResponse
     {
-        return $this->responseSuccess(null, new PhotoResource($photo->load('assignment:id,reference', 'photoType:id,code,label', 'status:id,code,label')));
+        $photo = Photo::with('assignment:id,reference', 'photoType:id,code,label', 'status:id,code,label')
+            ->join('assignments', 'photos.assignment_id', '=', 'assignments.id')
+            ->accessibleBy(auth()->user())
+            ->where('photos.id', $photo->id)
+            ->first();
+
+        return $this->responseSuccess(null, new PhotoResource($photo));
     }
 
     /**
@@ -169,7 +176,11 @@ class PhotoController extends Controller
      */
     public function update(UpdatePhotoRequest $request, $id): JsonResponse
     {
-        $photo = Photo::with('assignment')->where('id', $id)->firstOrFail();
+        $photo = Photo::with('assignment')
+            ->join('assignments', 'photos.assignment_id', '=', 'assignments.id')
+            ->accessibleBy(auth()->user())
+            ->where('photos.id', $id)
+            ->firstOrFail();
 
         if($request->hasfile('photo'))
         {
@@ -216,7 +227,11 @@ class PhotoController extends Controller
      */
     public function makeCover($id): JsonResponse
     {
-        $photo = Photo::findOrFail($id);
+        $photo = Photo::with('assignment')
+            ->join('assignments', 'photos.assignment_id', '=', 'assignments.id')
+            ->accessibleBy(auth()->user())
+            ->where('photos.id', $id)
+            ->firstOrFail();
 
         Photo::query()->where('id', '!=', $photo->id)->update([
             'is_cover' => 0,
@@ -242,7 +257,11 @@ class PhotoController extends Controller
      */
     public function destroy($id): JsonResponse
     {
-        $photo = Photo::with('assignment')->findOrFail($id);
+        $photo = Photo::with('assignment')
+            ->join('assignments', 'photos.assignment_id', '=', 'assignments.id')
+            ->accessibleBy(auth()->user())
+            ->where('photos.id', $id)
+            ->firstOrFail();
 
         if(file_exists(public_path("storage/photos/report/{$photo->assignment->reference}/{$photo->name}"))){
             File::delete(public_path("storage/photos/report/{$photo->assignment->reference}/{$photo->name}"));

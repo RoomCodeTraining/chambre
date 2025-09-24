@@ -50,6 +50,8 @@ class OtherCostController extends Controller
     public function index(): AnonymousResourceCollection
     {
         $otherCosts = OtherCost::with('otherCostType')
+                        ->join('assignments', 'other_costs.assignment_id', '=', 'assignments.id')
+                        ->accessibleBy(auth()->user())
                         ->latest('created_at')
                         ->useFilters()
                         ->dynamicPaginate();
@@ -64,7 +66,9 @@ class OtherCostController extends Controller
      */
     public function calculate(CalculateOtherCostRequest $request): JsonResponse
     {
-        $assignment = Assignment::findOrFail($request->assignment_id);
+        $assignment = Assignment::accessibleBy(auth()->user())
+            ->where('assignments.id', $request->assignment_id)
+            ->firstOrFail();
 
         $shock_works = [];
         $obsolescence_amount_excluding_tax = 0;
@@ -304,7 +308,9 @@ class OtherCostController extends Controller
      */
     public function store(CreateOtherCostRequest $request): JsonResponse
     {
-        $assignment = Assignment::findOrFail($request->assignment_id);
+        $assignment = Assignment::accessibleBy(auth()->user())
+            ->where('assignments.id', $request->assignment_id)
+            ->firstOrFail();
 
         if($assignment->status_id == Status::where('code', StatusEnum::VALIDATED)->first()->id || $assignment->status_id == Status::where('code', StatusEnum::PAID)->first()->id){
             return $this->responseUnprocessable("Impossible d'ajouter une autre charge", null);
@@ -339,7 +345,10 @@ class OtherCostController extends Controller
      */
     public function show($id): JsonResponse
     {
-        $otherCost = OtherCost::findOrFail($id);
+        $otherCost = OtherCost::join('assignments', 'other_costs.assignment_id', '=', 'assignments.id')
+            ->accessibleBy(auth()->user())
+            ->where('other_costs.id', $id)
+            ->firstOrFail();
 
         return $this->responseSuccess(null, new OtherCostResource($otherCost));
     }
@@ -351,9 +360,14 @@ class OtherCostController extends Controller
      */
     public function update(UpdateOtherCostRequest $request, $id): JsonResponse
     {
-        $otherCost = OtherCost::findOrFail($id);
+        $otherCost = OtherCost::join('assignments', 'other_costs.assignment_id', '=', 'assignments.id')
+            ->accessibleBy(auth()->user())
+            ->where('other_costs.id', $id)
+            ->firstOrFail();
 
-        $assignment = Assignment::findOrFail($otherCost->assignment_id);
+        $assignment = Assignment::accessibleBy(auth()->user())
+            ->where('assignments.id', $otherCost->assignment_id)
+            ->firstOrFail();
 
         if($assignment->status_id == Status::where('code', StatusEnum::VALIDATED)->first()->id || $assignment->status_id == Status::where('code', StatusEnum::PAID)->first()->id){
             return $this->responseUnprocessable("Impossible de mettre à jour l'autre charge", null);
@@ -373,7 +387,9 @@ class OtherCostController extends Controller
 
     public function recalculate($id)
     {
-        $assignment = Assignment::findOrFail($id);
+        $assignment = Assignment::accessibleBy(auth()->user())
+            ->where('assignments.id', $id)
+            ->firstOrFail();
 
         $total_other_cost_amount_excluding_tax = OtherCost::where('assignment_id', $assignment->id)->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->sum('amount_excluding_tax');
         $total_other_cost_amount_tax = OtherCost::where('assignment_id', $assignment->id)->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->sum('amount_tax');
@@ -404,9 +420,14 @@ class OtherCostController extends Controller
      */
     public function destroy($id): JsonResponse
     {
-        $otherCost = OtherCost::findOrFail($id);
+        $otherCost = OtherCost::join('assignments', 'other_costs.assignment_id', '=', 'assignments.id')
+            ->accessibleBy(auth()->user())
+            ->where('other_costs.id', $id)
+            ->firstOrFail();
 
-        $assignment = Assignment::findOrFail($otherCost->assignment_id);
+        $assignment = Assignment::accessibleBy(auth()->user())
+            ->where('assignments.id', $otherCost->assignment_id)
+            ->firstOrFail();
 
         if($assignment->status_id == Status::where('code', StatusEnum::VALIDATED)->first()->id || $assignment->status_id == Status::where('code', StatusEnum::PAID)->first()->id){
             return $this->responseUnprocessable("Impossible de supprimer l'autre charge", null);
