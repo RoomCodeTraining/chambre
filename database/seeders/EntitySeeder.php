@@ -19,6 +19,20 @@ class EntitySeeder extends Seeder
     public function run(): void
     {
         app(CreateEntityAction::class)->execute([
+            'code' => EntityCodeEnum::CEACI->value,
+            'name' => 'CEACI',
+            'prefix' => null,
+            'suffix' => null,
+            'email' => 'support@ceaci.com',
+            'address' => null,
+            'telephone' => null,
+            'service_description' => null,
+            'footer_description' => null,
+            'entity_type_code' => EntityType::firstWhere('code', \App\Enums\EntityTypeEnum::MAIN_ORGANIZATION)->code,
+            'status_id' => Status::firstWhere('code', \App\Enums\StatusEnum::ACTIVE)->id,
+        ]);
+
+        app(CreateEntityAction::class)->execute([
             'code' => EntityCodeEnum::LCA->value,
             'name' => 'LCA',
             'prefix' => null,
@@ -28,7 +42,7 @@ class EntitySeeder extends Seeder
             'telephone' => null,
             'service_description' => null,
             'footer_description' => null,
-            'entity_type_code' => EntityType::firstWhere('code', \App\Enums\EntityTypeEnum::MAIN_ORGANIZATION)->code,
+            'entity_type_code' => EntityType::firstWhere('code', \App\Enums\EntityTypeEnum::ORGANIZATION)->code,
             'status_id' => Status::firstWhere('code', \App\Enums\StatusEnum::ACTIVE)->id,
         ]);
 
@@ -42,7 +56,7 @@ class EntitySeeder extends Seeder
             'telephone' => null,
             'service_description' => null,
             'footer_description' => null,
-            'entity_type_code' => EntityType::firstWhere('code', \App\Enums\EntityTypeEnum::MAIN_ORGANIZATION)->code,
+            'entity_type_code' => EntityType::firstWhere('code', \App\Enums\EntityTypeEnum::ORGANIZATION)->code,
             'status_id' => Status::firstWhere('code', \App\Enums\StatusEnum::ACTIVE)->id,
         ]);
 
@@ -54,7 +68,7 @@ class EntitySeeder extends Seeder
             'email' => 'support@sga.com',
             'address' => null,
             'telephone' => null,
-            'entity_type_code' => EntityType::firstWhere('code', \App\Enums\EntityTypeEnum::MAIN_ORGANIZATION)->code,
+            'entity_type_code' => EntityType::firstWhere('code', \App\Enums\EntityTypeEnum::ORGANIZATION)->code,
             'status_id' => Status::firstWhere('code', \App\Enums\StatusEnum::ACTIVE)->id,
         ]);
 

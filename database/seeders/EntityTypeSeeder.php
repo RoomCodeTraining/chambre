@@ -18,8 +18,15 @@ class EntityTypeSeeder extends Seeder
     {
         EntityType::create([
             'code' => \App\Enums\EntityTypeEnum::MAIN_ORGANIZATION,
-            'label' => "Entité principale",
-            'description' => "Entité principale",
+            'label' => "Chambre des experts automobiles de Côte d'Ivoire",
+            'description' => "Chambre des experts automobiles de Côte d'Ivoire",
+            'status_id' => Status::firstWhere('code', \App\Enums\StatusEnum::ACTIVE)->id,
+        ]);
+
+        EntityType::create([
+            'code' => \App\Enums\EntityTypeEnum::ORGANIZATION,
+            'label' => "Cabinet d'expertise",
+            'description' => "Cabinet d'expertise",
             'status_id' => Status::firstWhere('code', \App\Enums\StatusEnum::ACTIVE)->id,
         ]);
 
