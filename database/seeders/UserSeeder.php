@@ -33,7 +33,7 @@ class UserSeeder extends Seeder
             'email' => 'brahimafane06@gmail.com',
             'telephone' => '01050635899',
             'password' =>'12345678',
-            'entity_id' => null,
+            'entity_id' => Entity::firstWhere('code', 'CEACI')->id,
             'current_role_id' => Role::firstWhere('name', \App\Enums\RoleEnum::SYSTEM_ADMIN)->id,
             'status_id' => Status::firstWhere('code', \App\Enums\StatusEnum::ACTIVE)->id,
         ]);
@@ -46,7 +46,7 @@ class UserSeeder extends Seeder
             'email' => 'admin@gmail.com',
             'telephone' => '01050635899',
             'password' =>'12345678',
-            'entity_id' => null,
+            'entity_id' => Entity::firstWhere('code', 'CEACI')->id,
             'current_role_id' => Role::firstWhere('name', \App\Enums\RoleEnum::ADMIN)->id,
             'status_id' => Status::firstWhere('code', \App\Enums\StatusEnum::ACTIVE)->id,
         ]);
