@@ -65,6 +65,19 @@ class UserSeeder extends Seeder
         ]);
 
         User::create([
+            'username' => 'U00211',
+            'code' => 'U00211',
+            'last_name' => 'CEO',
+            'first_name' => 'LCA',
+            'email' => 'ceolca@gmail.com',
+            'telephone' => '01050635899',
+            'password' => '12345678',
+            'entity_id' => Entity::firstWhere('code', 'LCA')->id,
+            'current_role_id' => Role::firstWhere('name', \App\Enums\RoleEnum::CEO)->id,
+            'status_id' => Status::firstWhere('code', \App\Enums\StatusEnum::ACTIVE)->id,
+        ]);
+
+        User::create([
             'username' => 'U0021',
             'code' => 'U0021',
             'last_name' => 'ADMIN',
@@ -78,6 +91,19 @@ class UserSeeder extends Seeder
         ]);
 
         User::create([
+            'username' => 'U01021',
+            'code' => 'U01021',
+            'last_name' => 'CEO',
+            'first_name' => 'BCA-CI',
+            'email' => 'ceobca@gmail.com',
+            'telephone' => '01050635899',
+            'password' => '12345678',
+            'entity_id' => Entity::firstWhere('code', 'BCA_CI')->id,
+            'current_role_id' => Role::firstWhere('name', \App\Enums\RoleEnum::CEO)->id,
+            'status_id' => Status::firstWhere('code', \App\Enums\StatusEnum::ACTIVE)->id,
+        ]);
+
+        User::create([
             'username' => 'U0022',
             'code' => 'U0022',
             'last_name' => 'ADMIN',
@@ -87,6 +113,19 @@ class UserSeeder extends Seeder
             'password' => '12345678',
             'entity_id' => Entity::firstWhere('code', 'SGA')->id,
             'current_role_id' => Role::firstWhere('name', \App\Enums\RoleEnum::EXPERT_ADMIN)->id,
+            'status_id' => Status::firstWhere('code', \App\Enums\StatusEnum::ACTIVE)->id,
+        ]);
+
+        User::create([
+            'username' => 'U011210221',
+            'code' => 'U011210221',
+            'last_name' => 'CEO',
+            'first_name' => 'SGA',
+            'email' => 'ceosga@gmail.com',
+            'telephone' => '01050635899',
+            'password' => '12345678',
+            'entity_id' => Entity::firstWhere('code', 'SGA')->id,
+            'current_role_id' => Role::firstWhere('name', \App\Enums\RoleEnum::CEO)->id,
             'status_id' => Status::firstWhere('code', \App\Enums\StatusEnum::ACTIVE)->id,
         ]);
 
