@@ -24,6 +24,8 @@ class RoleController extends Controller
     {
         $currentUser = $request->user();
 
+        $role = Role::where('id', $currentUser->current_role_id)->first()->name;
+
         $users = Role::query()
             ->when($role == EnumsRole::SYSTEM_ADMIN->value, fn ($query) => $query->whereIn('name', [EnumsRole::SYSTEM_ADMIN, EnumsRole::ADMIN, EnumsRole::CEO, EnumsRole::EXPERT_MANAGER, EnumsRole::EXPERT, EnumsRole::OPENER, EnumsRole::EDITOR, EnumsRole::VALIDATOR, EnumsRole::ACCOUNTANT_MANAGER, EnumsRole::ACCOUNTANT, EnumsRole::BUSINESS_DEVELOPER, EnumsRole::INSURER_ADMIN, EnumsRole::INSURER_STANDARD_USER, EnumsRole::REPAIRER_ADMIN, EnumsRole::REPAIRER_STANDARD_USER, EnumsRole::UNASSIGNED]))
             ->when($role == EnumsRole::ADMIN->value, fn ($query) => $query->whereIn('name', [EnumsRole::CEO, EnumsRole::EXPERT_MANAGER, EnumsRole::EXPERT, EnumsRole::OPENER, EnumsRole::EDITOR, EnumsRole::VALIDATOR, EnumsRole::ACCOUNTANT_MANAGER, EnumsRole::ACCOUNTANT, EnumsRole::BUSINESS_DEVELOPER, EnumsRole::INSURER_ADMIN, EnumsRole::INSURER_STANDARD_USER, EnumsRole::REPAIRER_ADMIN, EnumsRole::REPAIRER_STANDARD_USER, EnumsRole::UNASSIGNED]))
