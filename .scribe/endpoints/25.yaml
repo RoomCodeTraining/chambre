@@ -1,20 +1,20 @@
-name: 'Gestion des QR codes'
+name: 'Gestion des clients'
 description: |-
 
-  APIs pour la gestion des QR codes
+  APIs pour la gestion des clients
 endpoints:
   -
     httpMethods:
       - GET
-    uri: api/v1/qr-codes
+    uri: api/v1/clients
     metadata:
-      groupName: 'Gestion des QR codes'
+      groupName: 'Gestion des clients'
       groupDescription: |-
 
-        APIs pour la gestion des QR codes
+        APIs pour la gestion des clients
       subgroup: ''
       subgroupDescription: ''
-      title: 'Lister tous les QR codes'
+      title: 'Lister tous les clients'
       description: ''
       authenticated: true
       deprecated: false
@@ -44,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Pk6fEb5a6vcg8d13eVDZh4a'
+      - 'Bearer eEacfD53Z4ahbVk6Pgv68d1'
     controller: null
     method: null
     route: null
@@ -52,15 +52,15 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/v1/qr-codes
+    uri: api/v1/clients
     metadata:
-      groupName: 'Gestion des QR codes'
+      groupName: 'Gestion des clients'
       groupDescription: |-
 
-        APIs pour la gestion des QR codes
+        APIs pour la gestion des clients
       subgroup: ''
       subgroupDescription: ''
-      title: 'Ajouter un QR code'
+      title: 'Ajouter un client'
       description: ''
       authenticated: true
       deprecated: false
@@ -74,25 +74,69 @@ endpoints:
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      code:
-        name: code
+      name:
+        name: name
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: fktlllzeqztckoco
+        example: ronjjsztcpxheuyuchhhcmzyq
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
+      email:
+        name: email
+        description: 'Must match the regex /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/.'
+        required: false
+        example: '7ksB@lATJ3sb.u{2,}'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      phone_1:
+        name: phone_1
+        description: 'Le texte de value ne peut pas contenir plus de 20 caractères.'
+        required: false
+        example: suyikcghsgxk
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      phone_2:
+        name: phone_2
+        description: 'Le texte de value ne peut pas contenir plus de 20 caractères.'
+        required: false
+        example: ptoch
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      address:
+        name: address
+        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
+        required: false
+        example: ugdgyzugrcifaudwvsx
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
     cleanBodyParameters:
-      code: fktlllzeqztckoco
+      name: ronjjsztcpxheuyuchhhcmzyq
+      email: '7ksB@lATJ3sb.u{2,}'
+      phone_1: suyikcghsgxk
+      phone_2: ptoch
+      address: ugdgyzugrcifaudwvsx
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 31DgEZP5ec6vVkda8fh4a6b'
+      - 'Bearer b5E6vag4hf6DVdeck13PZa8'
     controller: null
     method: null
     route: null
@@ -100,15 +144,15 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: 'api/v1/qr-codes/{qrCode_id}'
+    uri: 'api/v1/clients/{id}'
     metadata:
-      groupName: 'Gestion des QR codes'
+      groupName: 'Gestion des clients'
       groupDescription: |-
 
-        APIs pour la gestion des QR codes
+        APIs pour la gestion des clients
       subgroup: ''
       subgroupDescription: ''
-      title: 'Afficher un QR code'
+      title: 'Afficher un client'
       description: ''
       authenticated: true
       deprecated: false
@@ -118,18 +162,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      qrCode_id:
-        name: qrCode_id
-        description: 'The ID of the qrCode.'
+      id:
+        name: id
+        description: 'The ID of the client.'
         required: true
-        example: 3
-        type: integer
+        example: veritatis
+        type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      qrCode_id: 3
+      id: veritatis
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -149,7 +193,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 8dhv6agk6c4ZP1Eef3VaD5b'
+      - 'Bearer g5kVfh1dvaeD4bP3cZaE686'
     controller: null
     method: null
     route: null
@@ -157,15 +201,15 @@ endpoints:
   -
     httpMethods:
       - PUT
-    uri: 'api/v1/qr-codes/{qrCode}'
+    uri: 'api/v1/clients/{id}'
     metadata:
-      groupName: 'Gestion des QR codes'
+      groupName: 'Gestion des clients'
       groupDescription: |-
 
-        APIs pour la gestion des QR codes
+        APIs pour la gestion des clients
       subgroup: ''
       subgroupDescription: ''
-      title: 'Mettre à jour un QR code'
+      title: 'Mettre à jour un client'
       description: ''
       authenticated: true
       deprecated: false
@@ -175,40 +219,84 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      qrCode:
-        name: qrCode
-        description: ''
+      id:
+        name: id
+        description: 'The ID of the client.'
         required: true
-        example: 4
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-    cleanUrlParameters:
-      qrCode: 4
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      code:
-        name: code
-        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
-        required: true
-        example: ogfxgsivcaqfbpndzmvf
+        example: temporibus
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
+    cleanUrlParameters:
+      id: temporibus
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
+        required: true
+        example: fwoskqdhzibvashajbagkqy
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      email:
+        name: email
+        description: 'Must match the regex /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/. Le texte de value ne peut pas contenir plus de 255 caractères.'
+        required: false
+        example: ywalker@example.com
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      phone_1:
+        name: phone_1
+        description: 'Le texte de value ne peut pas contenir plus de 20 caractères.'
+        required: false
+        example: gqp
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      phone_2:
+        name: phone_2
+        description: 'Le texte de value ne peut pas contenir plus de 20 caractères.'
+        required: false
+        example: nqbknnofkmpypgisdi
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      address:
+        name: address
+        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
+        required: false
+        example: xybhajadkbysffzqm
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
     cleanBodyParameters:
-      code: ogfxgsivcaqfbpndzmvf
+      name: fwoskqdhzibvashajbagkqy
+      email: ywalker@example.com
+      phone_1: gqp
+      phone_2: nqbknnofkmpypgisdi
+      address: xybhajadkbysffzqm
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer D4Pc8v3de1khgfZ6V5bE6aa'
+      - 'Bearer Zdc1PVkaevb6fEa46h8D5g3'
     controller: null
     method: null
     route: null
@@ -216,15 +304,15 @@ endpoints:
   -
     httpMethods:
       - DELETE
-    uri: 'api/v1/qr-codes/{qrCode}'
+    uri: 'api/v1/clients/{id}'
     metadata:
-      groupName: 'Gestion des QR codes'
+      groupName: 'Gestion des clients'
       groupDescription: |-
 
-        APIs pour la gestion des QR codes
+        APIs pour la gestion des clients
       subgroup: ''
       subgroupDescription: ''
-      title: 'Supprimer un QR code'
+      title: 'Supprimer un client'
       description: ''
       authenticated: true
       deprecated: false
@@ -234,18 +322,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      qrCode:
-        name: qrCode
-        description: ''
+      id:
+        name: id
+        description: 'The ID of the client.'
         required: true
-        example: 5
-        type: integer
+        example: est
+        type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      qrCode: 5
+      id: est
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -256,7 +344,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer kDvg3h5Z1dafbeE46a68PVc'
+      - 'Bearer Paa46b56vd38kDE1gVfcZeh'
     controller: null
     method: null
     route: null

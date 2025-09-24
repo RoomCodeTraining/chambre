@@ -44,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer vVcZadD56a3e6hPg4bkE1f8'
+      - 'Bearer E68kvhfDP4beVga36Z51acd'
     controller: null
     method: null
     route: null
@@ -78,7 +78,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: vsui
+        example: riq
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -88,22 +88,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Fuga enim dolorum et consequatur modi.'
+        example: 'Expedita molestiae velit dicta vel quo numquam provident.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: vsui
-      description: 'Fuga enim dolorum et consequatur modi.'
+      label: riq
+      description: 'Expedita molestiae velit dicta vel quo numquam provident.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer D6b1c3hae5vgZadV8k6Ef4P'
+      - 'Bearer vg5Zaad1Ebc468hk6eVPf3D'
     controller: null
     method: null
     route: null
@@ -133,14 +133,14 @@ endpoints:
         name: id
         description: 'The ID of the workforce type.'
         required: true
-        example: eos
+        example: molestias
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: eos
+      id: molestias
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -160,7 +160,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer gk3bv6P16Zhfaac4VD8Ee5d'
+      - 'Bearer 1agPDZ6E4feckbadv83hV56'
     controller: null
     method: null
     route: null
@@ -190,14 +190,14 @@ endpoints:
         name: id
         description: 'The ID of the workforce type.'
         required: true
-        example: quod
+        example: voluptates
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: quod
+      id: voluptates
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -205,7 +205,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: znhlg
+        example: vvncbpaybpwoqhxln
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -215,22 +215,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Ad et neque quas cumque cum voluptates.'
+        example: 'Ut dolor molestiae iste tenetur sint sed.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: znhlg
-      description: 'Ad et neque quas cumque cum voluptates.'
+      label: vvncbpaybpwoqhxln
+      description: 'Ut dolor molestiae iste tenetur sint sed.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 64dDfZe63Va1h85PvbkEagc'
+      - 'Bearer ka6gaV1bhdD45cEfP3v8e6Z'
     controller: null
     method: null
     route: null
@@ -260,14 +260,14 @@ endpoints:
         name: id
         description: 'The ID of the workforce type.'
         required: true
-        example: aut
+        example: beatae
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: aut
+      id: beatae
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -278,7 +278,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 8hV4d16v6bfagEc35DeaZPk'
+      - 'Bearer akhEVve65aPdZbg8c6f413D'
     controller: null
     method: null
     route: null

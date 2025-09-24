@@ -1,20 +1,20 @@
-name: 'Gestion des types de dossiers'
+name: 'Gestion des statuts'
 description: |-
 
-  APIs pour la gestion des types de dossiers
+  APIs pour la gestion des statuts
 endpoints:
   -
     httpMethods:
       - GET
-    uri: api/v1/assignment-types
+    uri: api/v1/statuses
     metadata:
-      groupName: 'Gestion des types de dossiers'
+      groupName: 'Gestion des statuts'
       groupDescription: |-
 
-        APIs pour la gestion des types de dossiers
+        APIs pour la gestion des statuts
       subgroup: ''
       subgroupDescription: ''
-      title: 'Lister tous les types de dossiers'
+      title: 'Lister tous les statuts'
       description: ''
       authenticated: true
       deprecated: false
@@ -44,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer adVEPa4kfg58chb1Z36Dv6e'
+      - 'Bearer a6ZhdDv4e6E5kf8g3Vb1caP'
     controller: null
     method: null
     route: null
@@ -52,15 +52,15 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/v1/assignment-types
+    uri: api/v1/statuses
     metadata:
-      groupName: 'Gestion des types de dossiers'
+      groupName: 'Gestion des statuts'
       groupDescription: |-
 
-        APIs pour la gestion des types de dossiers
+        APIs pour la gestion des statuts
       subgroup: ''
       subgroupDescription: ''
-      title: 'Ajouter un type de dossier'
+      title: 'Ajouter un statut'
       description: ''
       authenticated: true
       deprecated: false
@@ -74,11 +74,21 @@ endpoints:
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
+      code:
+        name: code
+        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
+        required: true
+        example: pqbshpwghrvvkcz
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
       label:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: awzefiei
+        example: lme
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -86,24 +96,25 @@ endpoints:
         custom: []
       description:
         name: description
-        description: ''
+        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: false
-        example: 'Et ipsa ipsam sit.'
+        example: 'Eos minus odit fugiat unde id.'
         type: string
         enumValues: []
         exampleWasSpecified: false
-        nullable: true
+        nullable: false
         custom: []
     cleanBodyParameters:
-      label: awzefiei
-      description: 'Et ipsa ipsam sit.'
+      code: pqbshpwghrvvkcz
+      label: lme
+      description: 'Eos minus odit fugiat unde id.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer b18PgcdZ65Dh6eEVa3vkf4a'
+      - 'Bearer 61fE6Zdc54ebaVv3DkaP8hg'
     controller: null
     method: null
     route: null
@@ -111,15 +122,15 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: 'api/v1/assignment-types/{assignment_type}'
+    uri: 'api/v1/statuses/{id}'
     metadata:
-      groupName: 'Gestion des types de dossiers'
+      groupName: 'Gestion des statuts'
       groupDescription: |-
 
-        APIs pour la gestion des types de dossiers
+        APIs pour la gestion des statuts
       subgroup: ''
       subgroupDescription: ''
-      title: 'Afficher un type de dossier'
+      title: 'Afficher un statut'
       description: ''
       authenticated: true
       deprecated: false
@@ -129,18 +140,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      assignment_type:
-        name: assignment_type
-        description: ''
+      id:
+        name: id
+        description: 'The ID of the status.'
         required: true
-        example: 1
-        type: integer
+        example: harum
+        type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      assignment_type: 1
+      id: harum
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -160,7 +171,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer d3EgahV4De65afZcbPkv861'
+      - 'Bearer eE1VkD68daZ5g4b6ha3vPfc'
     controller: null
     method: null
     route: null
@@ -168,15 +179,15 @@ endpoints:
   -
     httpMethods:
       - PUT
-    uri: 'api/v1/assignment-types/{assignment_type}'
+    uri: 'api/v1/statuses/{id}'
     metadata:
-      groupName: 'Gestion des types de dossiers'
+      groupName: 'Gestion des statuts'
       groupDescription: |-
 
-        APIs pour la gestion des types de dossiers
+        APIs pour la gestion des statuts
       subgroup: ''
       subgroupDescription: ''
-      title: 'Mettre à jour un type de dossier'
+      title: 'Mettre à jour un statut'
       description: ''
       authenticated: true
       deprecated: false
@@ -186,18 +197,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      assignment_type:
-        name: assignment_type
-        description: ''
+      id:
+        name: id
+        description: 'The ID of the status.'
         required: true
-        example: 1
-        type: integer
+        example: id
+        type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      assignment_type: 1
+      id: id
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -205,7 +216,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: wcrnggkxqs
+        example: enyymihcvzomzrhkpqbptf
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -215,22 +226,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Quo repellat modi nihil omnis.'
+        example: 'Totam veniam aspernatur quae voluptates mollitia ab.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: wcrnggkxqs
-      description: 'Quo repellat modi nihil omnis.'
+      label: enyymihcvzomzrhkpqbptf
+      description: 'Totam veniam aspernatur quae voluptates mollitia ab.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 3Dd6PakEvf4gcbe56VZ8h1a'
+      - 'Bearer 6kedVPb1h4cZg6Dav3Ea5f8'
     controller: null
     method: null
     route: null
@@ -238,15 +249,15 @@ endpoints:
   -
     httpMethods:
       - DELETE
-    uri: 'api/v1/assignment-types/{assignment_type}'
+    uri: 'api/v1/statuses/{id}'
     metadata:
-      groupName: 'Gestion des types de dossiers'
+      groupName: 'Gestion des statuts'
       groupDescription: |-
 
-        APIs pour la gestion des types de dossiers
+        APIs pour la gestion des statuts
       subgroup: ''
       subgroupDescription: ''
-      title: 'Supprimer un type de dossier'
+      title: 'Supprimer un statut'
       description: ''
       authenticated: true
       deprecated: false
@@ -256,18 +267,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      assignment_type:
-        name: assignment_type
-        description: ''
+      id:
+        name: id
+        description: 'The ID of the status.'
         required: true
-        example: 1
-        type: integer
+        example: occaecati
+        type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      assignment_type: 1
+      id: occaecati
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -278,7 +289,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer kecZdVg65Dba86fPEva134h'
+      - 'Bearer Zf5D6bVk483vha1acedgPE6'
     controller: null
     method: null
     route: null

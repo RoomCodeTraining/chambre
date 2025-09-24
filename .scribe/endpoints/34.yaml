@@ -1,20 +1,20 @@
-name: 'Gestion des quittances'
+name: 'Gestion des types de quittances'
 description: |-
 
-  APIs pour la gestion des quittances
+  APIs pour la gestion des types de quittances
 endpoints:
   -
     httpMethods:
       - GET
-    uri: api/v1/receipts
+    uri: api/v1/receipt-types
     metadata:
-      groupName: 'Gestion des quittances'
+      groupName: 'Gestion des types de quittances'
       groupDescription: |-
 
-        APIs pour la gestion des quittances
+        APIs pour la gestion des types de quittances
       subgroup: ''
       subgroupDescription: ''
-      title: 'Lister toutes les quittances'
+      title: 'Lister tous les types de quittances'
       description: ''
       authenticated: true
       deprecated: false
@@ -44,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer f6D58cZae4kaghb3d61vVPE'
+      - 'Bearer 6gahae51vdcEZk3f64PbD8V'
     controller: null
     method: null
     route: null
@@ -52,15 +52,15 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/v1/receipts
+    uri: api/v1/receipt-types
     metadata:
-      groupName: 'Gestion des quittances'
+      groupName: 'Gestion des types de quittances'
       groupDescription: |-
 
-        APIs pour la gestion des quittances
+        APIs pour la gestion des types de quittances
       subgroup: ''
       subgroupDescription: ''
-      title: 'Ajouter une quittance'
+      title: 'Ajouter un type de quittance'
       description: ''
       authenticated: true
       deprecated: false
@@ -74,143 +74,36 @@ endpoints:
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      assignment_id:
-        name: assignment_id
-        description: 'The <code>id</code> of an existing record in the assignments table.'
+      label:
+        name: label
+        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: excepturi
+        example: a
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
-      receipts:
-        name: receipts
+      description:
+        name: description
         description: ''
-        required: true
-        example:
-          - []
-        type: 'object[]'
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      'receipts[].receipt_type_id':
-        name: 'receipts[].receipt_type_id'
-        description: ''
-        required: true
-        example: consequuntur
+        required: false
+        example: 'Sint aperiam iure libero quas voluptatem fugiat dolores est.'
         type: string
         enumValues: []
         exampleWasSpecified: false
-        nullable: false
-        custom: []
-      'receipts[].amount':
-        name: 'receipts[].amount'
-        description: ''
-        required: true
-        example: 37.02611
-        type: number
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
+        nullable: true
         custom: []
     cleanBodyParameters:
-      assignment_id: excepturi
-      receipts:
-        -
-          receipt_type_id: consequuntur
-          amount: 37.02611
+      label: a
+      description: 'Sint aperiam iure libero quas voluptatem fugiat dolores est.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer hgkc6a5V3f6841PevadDZEb'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: api/v1/receipts/calculate
-    metadata:
-      groupName: 'Gestion des quittances'
-      groupDescription: |-
-
-        APIs pour la gestion des quittances
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Calculer une quittance'
-      description: ''
-      authenticated: true
-      deprecated: false
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      assignment_id:
-        name: assignment_id
-        description: 'The <code>id</code> of an existing record in the assignments table.'
-        required: true
-        example: sed
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      receipts:
-        name: receipts
-        description: ''
-        required: true
-        example:
-          - []
-        type: 'object[]'
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      'receipts[].receipt_type_id':
-        name: 'receipts[].receipt_type_id'
-        description: 'The <code>id</code> of an existing record in the receipt_types table.'
-        required: true
-        example: quod
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      'receipts[].amount':
-        name: 'receipts[].amount'
-        description: ''
-        required: true
-        example: 62574970.84466
-        type: number
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-    cleanBodyParameters:
-      assignment_id: sed
-      receipts:
-        -
-          receipt_type_id: quod
-          amount: 62574970.84466
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer kdh68gafb5av1cZEP46eV3D'
+      - 'Bearer 4f1kVDevac6dZg5h8Pa3E6b'
     controller: null
     method: null
     route: null
@@ -218,15 +111,15 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: 'api/v1/receipts/{id}'
+    uri: 'api/v1/receipt-types/{receiptType}'
     metadata:
-      groupName: 'Gestion des quittances'
+      groupName: 'Gestion des types de quittances'
       groupDescription: |-
 
-        APIs pour la gestion des quittances
+        APIs pour la gestion des types de quittances
       subgroup: ''
       subgroupDescription: ''
-      title: 'Afficher une quittance'
+      title: 'Afficher un type de quittance'
       description: ''
       authenticated: true
       deprecated: false
@@ -236,18 +129,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      id:
-        name: id
-        description: 'The ID of the receipt.'
+      receiptType:
+        name: receiptType
+        description: ''
         required: true
-        example: consectetur
+        example: possimus
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: consectetur
+      receiptType: possimus
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -267,7 +160,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer cPV4aZgEkb68hd16f3ev5Da'
+      - 'Bearer V63Zcve6daf145DhbPa8Egk'
     controller: null
     method: null
     route: null
@@ -275,15 +168,15 @@ endpoints:
   -
     httpMethods:
       - PUT
-    uri: 'api/v1/receipts/{id}'
+    uri: 'api/v1/receipt-types/{receiptType}'
     metadata:
-      groupName: 'Gestion des quittances'
+      groupName: 'Gestion des types de quittances'
       groupDescription: |-
 
-        APIs pour la gestion des quittances
+        APIs pour la gestion des types de quittances
       subgroup: ''
       subgroupDescription: ''
-      title: 'Mettre à jour une quittance'
+      title: 'Mettre à jour un type de quittance'
       description: ''
       authenticated: true
       deprecated: false
@@ -293,51 +186,51 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      id:
-        name: id
-        description: 'The ID of the receipt.'
+      receiptType:
+        name: receiptType
+        description: ''
         required: true
-        example: ipsum
+        example: ipsa
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: ipsum
+      receiptType: ipsa
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      receipt_type_id:
-        name: receipt_type_id
-        description: 'The <code>id</code> of an existing record in the receipt_types table.'
+      label:
+        name: label
+        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: ut
+        example: swaiwkbcsdj
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
-      amount:
-        name: amount
+      description:
+        name: description
         description: ''
-        required: true
-        example: 2.727561
-        type: number
+        required: false
+        example: 'Quia nihil veritatis tenetur laborum eligendi possimus ipsa.'
+        type: string
         enumValues: []
         exampleWasSpecified: false
-        nullable: false
+        nullable: true
         custom: []
     cleanBodyParameters:
-      receipt_type_id: ut
-      amount: 2.727561
+      label: swaiwkbcsdj
+      description: 'Quia nihil veritatis tenetur laborum eligendi possimus ipsa.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 5gZvDPehE6ckaV1486da3bf'
+      - 'Bearer fE6368a4ZhDekvgPbcV15da'
     controller: null
     method: null
     route: null
@@ -345,15 +238,15 @@ endpoints:
   -
     httpMethods:
       - DELETE
-    uri: 'api/v1/receipts/{id}'
+    uri: 'api/v1/receipt-types/{receiptType}'
     metadata:
-      groupName: 'Gestion des quittances'
+      groupName: 'Gestion des types de quittances'
       groupDescription: |-
 
-        APIs pour la gestion des quittances
+        APIs pour la gestion des types de quittances
       subgroup: ''
       subgroupDescription: ''
-      title: 'Supprimer une quittance'
+      title: 'Supprimer un type de quittance'
       description: ''
       authenticated: true
       deprecated: false
@@ -363,18 +256,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      id:
-        name: id
-        description: 'The ID of the receipt.'
+      receiptType:
+        name: receiptType
+        description: ''
         required: true
-        example: qui
+        example: sint
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: qui
+      receiptType: sint
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -385,7 +278,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer dfha3D6baVPZg84Ekc5e1v6'
+      - 'Bearer 8k66P431EeVagbvD5hcZfda'
     controller: null
     method: null
     route: null

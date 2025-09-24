@@ -11,7 +11,7 @@ class UpdateClientRequest extends FormRequest
     {
         return [
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['nullable', 'regex:' . self::emailRegex(), 'max:255', 'unique:clients,email,' . $this->id],
+            'email' => ['nullable', 'regex:' . self::emailRegex(), 'max:255', Rule::unique('clients', 'email')->ignore($this->email, 'email')],
             'phone_1' => ['nullable', 'string', 'max:20'],
             'phone_2' => ['nullable', 'string', 'max:20'],
             'address' => ['nullable', 'string', 'max:255']

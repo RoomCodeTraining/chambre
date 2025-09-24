@@ -1,20 +1,20 @@
-name: 'Gestion des types de constat'
+name: 'Gestion des remarques'
 description: |-
 
-  APIs pour la gestion des types de constat
+  APIs pour la gestion des remarques
 endpoints:
   -
     httpMethods:
       - GET
-    uri: api/v1/ascertainment-types
+    uri: api/v1/remarks
     metadata:
-      groupName: 'Gestion des types de constat'
+      groupName: 'Gestion des remarques'
       groupDescription: |-
 
-        APIs pour la gestion des types de constat
+        APIs pour la gestion des remarques
       subgroup: ''
       subgroupDescription: ''
-      title: 'Lister les types de constat'
+      title: 'Lister tous les remarques'
       description: ''
       authenticated: true
       deprecated: false
@@ -44,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6Z3v8cb6aVe4gDh1kdafE5P'
+      - 'Bearer h5vD3ga6kEVPZbd1a6cef48'
     controller: null
     method: null
     route: null
@@ -52,15 +52,15 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/v1/ascertainment-types
+    uri: api/v1/remarks
     metadata:
-      groupName: 'Gestion des types de constat'
+      groupName: 'Gestion des remarques'
       groupDescription: |-
 
-        APIs pour la gestion des types de constat
+        APIs pour la gestion des remarques
       subgroup: ''
       subgroupDescription: ''
-      title: 'Créer un type de constat'
+      title: 'Créer une remarque'
       description: ''
       authenticated: true
       deprecated: false
@@ -78,7 +78,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: xesmwypjjkzzsrghhtbxl
+        example: xwfwkvusdqksbckb
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -88,22 +88,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Soluta optio doloribus consequatur reprehenderit omnis.'
+        example: 'Doloremque omnis laboriosam autem qui modi.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: xesmwypjjkzzsrghhtbxl
-      description: 'Soluta optio doloribus consequatur reprehenderit omnis.'
+      label: xwfwkvusdqksbckb
+      description: 'Doloremque omnis laboriosam autem qui modi.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer a6vVDe43hE8Zbg6k1a5cfdP'
+      - 'Bearer 6Pba8Ekdgv3D5hc1Zea46Vf'
     controller: null
     method: null
     route: null
@@ -111,15 +111,15 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: 'api/v1/ascertainment-types/{id}'
+    uri: 'api/v1/remarks/{id}'
     metadata:
-      groupName: 'Gestion des types de constat'
+      groupName: 'Gestion des remarques'
       groupDescription: |-
 
-        APIs pour la gestion des types de constat
+        APIs pour la gestion des remarques
       subgroup: ''
       subgroupDescription: ''
-      title: 'Afficher un type de constat'
+      title: 'Afficher une remarque'
       description: ''
       authenticated: true
       deprecated: false
@@ -131,16 +131,16 @@ endpoints:
     urlParameters:
       id:
         name: id
-        description: 'The ID of the ascertainment type.'
+        description: 'The ID of the remark.'
         required: true
-        example: ad
-        type: string
+        example: 1
+        type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: ad
+      id: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -160,7 +160,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer fD6vaVdgEac5b8Zh614Pk3e'
+      - 'Bearer Dc665aeE8Z3VPk1avdfg4bh'
     controller: null
     method: null
     route: null
@@ -168,15 +168,15 @@ endpoints:
   -
     httpMethods:
       - PUT
-    uri: 'api/v1/ascertainment-types/{id}'
+    uri: 'api/v1/remarks/{id}'
     metadata:
-      groupName: 'Gestion des types de constat'
+      groupName: 'Gestion des remarques'
       groupDescription: |-
 
-        APIs pour la gestion des types de constat
+        APIs pour la gestion des remarques
       subgroup: ''
       subgroupDescription: ''
-      title: 'Mettre à jour un type de constat'
+      title: 'Mettre à jour une remarque'
       description: ''
       authenticated: true
       deprecated: false
@@ -188,16 +188,16 @@ endpoints:
     urlParameters:
       id:
         name: id
-        description: 'The ID of the ascertainment type.'
+        description: 'The ID of the remark.'
         required: true
-        example: ut
-        type: string
+        example: 1
+        type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: ut
+      id: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -205,7 +205,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: xqrch
+        example: apevu
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -213,24 +213,24 @@ endpoints:
         custom: []
       description:
         name: description
-        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
+        description: ''
         required: false
-        example: 'Nulla nostrum ut omnis inventore fugiat et.'
+        example: 'Optio assumenda vitae corporis temporibus et.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: xqrch
-      description: 'Nulla nostrum ut omnis inventore fugiat et.'
+      label: apevu
+      description: 'Optio assumenda vitae corporis temporibus et.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 5adV8vDkhg4a6ef6E3c1bZP'
+      - 'Bearer 1dPZvea3D6a5VfEchg4k6b8'
     controller: null
     method: null
     route: null
@@ -238,15 +238,15 @@ endpoints:
   -
     httpMethods:
       - DELETE
-    uri: 'api/v1/ascertainment-types/{id}'
+    uri: 'api/v1/remarks/{id}'
     metadata:
-      groupName: 'Gestion des types de constat'
+      groupName: 'Gestion des remarques'
       groupDescription: |-
 
-        APIs pour la gestion des types de constat
+        APIs pour la gestion des remarques
       subgroup: ''
       subgroupDescription: ''
-      title: 'Supprimer un type de constat'
+      title: 'Supprimer une remarque'
       description: ''
       authenticated: true
       deprecated: false
@@ -258,16 +258,16 @@ endpoints:
     urlParameters:
       id:
         name: id
-        description: 'The ID of the ascertainment type.'
+        description: 'The ID of the remark.'
         required: true
-        example: ullam
-        type: string
+        example: 1
+        type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: ullam
+      id: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -278,7 +278,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Vb5a63deZvch4fDg8ka1PE6'
+      - 'Bearer 6PDd8vkeabag34VZ61cEfh5'
     controller: null
     method: null
     route: null

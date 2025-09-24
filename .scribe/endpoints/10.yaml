@@ -44,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer afDEga5Vbd6Zkh3v1e68Pc4'
+      - 'Bearer VPD1hkEf8cgb53vaZ46e6ad'
     controller: null
     method: null
     route: null
@@ -78,7 +78,7 @@ endpoints:
         name: vehicle_genre_id
         description: 'The <code>id</code> of an existing record in the vehicle_genres table.'
         required: true
-        example: aspernatur
+        example: enim
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -88,7 +88,7 @@ endpoints:
         name: vehicle_age_id
         description: 'The <code>id</code> of an existing record in the vehicle_ages table.'
         required: true
-        example: atque
+        example: magnam
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -98,23 +98,23 @@ endpoints:
         name: value
         description: 'La valeur de value doit être supérieure ou égale à 0.'
         required: true
-        example: 17
+        example: 28
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      vehicle_genre_id: aspernatur
-      vehicle_age_id: atque
-      value: 17
+      vehicle_genre_id: enim
+      vehicle_age_id: magnam
+      value: 28
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 4g6bV36PafDavceh1Z8Ed5k'
+      - 'Bearer EdcD8e5Zb16aaP6fvh4kV3g'
     controller: null
     method: null
     route: null
@@ -144,14 +144,14 @@ endpoints:
         name: id
         description: 'The ID of the depreciation table.'
         required: true
-        example: et
+        example: aut
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: et
+      id: aut
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -171,7 +171,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer cED8kh6P164dgb5vaVfe3Za'
+      - 'Bearer bVcPadkvZE4fg6e5Da16h83'
     controller: null
     method: null
     route: null
@@ -201,14 +201,14 @@ endpoints:
         name: id
         description: 'The ID of the depreciation table.'
         required: true
-        example: sunt
+        example: minus
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: sunt
+      id: minus
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -216,7 +216,7 @@ endpoints:
         name: vehicle_genre_id
         description: 'The <code>id</code> of an existing record in the vehicle_genres table.'
         required: true
-        example: totam
+        example: voluptatem
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -226,7 +226,7 @@ endpoints:
         name: vehicle_age_id
         description: 'The <code>id</code> of an existing record in the vehicle_ages table.'
         required: true
-        example: dicta
+        example: odit
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -236,23 +236,23 @@ endpoints:
         name: value
         description: 'La valeur de value doit être supérieure ou égale à 0.'
         required: true
-        example: 77
+        example: 74
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      vehicle_genre_id: totam
-      vehicle_age_id: dicta
-      value: 77
+      vehicle_genre_id: voluptatem
+      vehicle_age_id: odit
+      value: 74
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 816hcfaPEgea6Zkbd5Dv4V3'
+      - 'Bearer 58V1PabDkeh6v4Zag3dc6fE'
     controller: null
     method: null
     route: null
@@ -282,14 +282,14 @@ endpoints:
         name: id
         description: 'The ID of the depreciation table.'
         required: true
-        example: dolorum
+        example: repudiandae
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: dolorum
+      id: repudiandae
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -300,7 +300,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 8e3gdE4a1fbDZ5P6ackvVh6'
+      - 'Bearer 4fa6Eve8bPgad6kVh15c3ZD'
     controller: null
     method: null
     route: null
@@ -334,7 +334,7 @@ endpoints:
         name: vehicle_genre_id
         description: 'The <code>id</code> of an existing record in the vehicle_genres table.'
         required: true
-        example: ut
+        example: ipsa
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -344,7 +344,7 @@ endpoints:
         name: vehicle_energy_id
         description: 'The <code>id</code> of an existing record in the vehicle_energies table.'
         required: true
-        example: placeat
+        example: et
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -354,7 +354,7 @@ endpoints:
         name: vehicle_new_value
         description: 'La valeur de value doit être supérieure ou égale à 0.'
         required: true
-        example: 27
+        example: 83
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -364,7 +364,7 @@ endpoints:
         name: vehicle_mileage
         description: 'La valeur de value doit être supérieure ou égale à 0.'
         required: true
-        example: 58
+        example: 22
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -374,7 +374,7 @@ endpoints:
         name: first_entry_into_circulation_date
         description: 'Must be a valid date in the format <code>Y-m-d</code>. Le champ value doit être une date antérieure au <code>tomorrow</code>.'
         required: true
-        example: '2014-10-02'
+        example: '2020-09-12'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -384,26 +384,26 @@ endpoints:
         name: expertise_date
         description: 'Must be a valid date in the format <code>Y-m-d</code>. Le champ value doit être une date postérieure au <code>first_entry_into_circulation_date</code>. Le champ value doit être une date antérieure au <code>tomorrow</code>.'
         required: true
-        example: '2020-07-19'
+        example: '1996-11-16'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      vehicle_genre_id: ut
-      vehicle_energy_id: placeat
-      vehicle_new_value: 27
-      vehicle_mileage: 58
-      first_entry_into_circulation_date: '2014-10-02'
-      expertise_date: '2020-07-19'
+      vehicle_genre_id: ipsa
+      vehicle_energy_id: et
+      vehicle_new_value: 83
+      vehicle_mileage: 22
+      first_entry_into_circulation_date: '2020-09-12'
+      expertise_date: '1996-11-16'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 8be5af46gv1VEdP63DcakZh'
+      - 'Bearer a5Ed1ag4Vev6h36ZP8bDfkc'
     controller: null
     method: null
     route: null

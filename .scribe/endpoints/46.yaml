@@ -1,20 +1,20 @@
-name: 'Gestion des types de paiement'
+name: 'Gestion des méthodes de paiement'
 description: |-
 
-  APIs pour la gestion des types de paiement
+  APIs pour la gestion des méthodes de paiement
 endpoints:
   -
     httpMethods:
       - GET
-    uri: api/v1/payment-types
+    uri: api/v1/payment-methods
     metadata:
-      groupName: 'Gestion des types de paiement'
+      groupName: 'Gestion des méthodes de paiement'
       groupDescription: |-
 
-        APIs pour la gestion des types de paiement
+        APIs pour la gestion des méthodes de paiement
       subgroup: ''
       subgroupDescription: ''
-      title: 'Lister tous les types de paiement'
+      title: 'Lister toutes les méthodes de paiement'
       description: ''
       authenticated: true
       deprecated: false
@@ -44,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer c6v45ad8Z6V3f1PkhDaegbE'
+      - 'Bearer D5gvaPb81c4d6akf36ZEhVe'
     controller: null
     method: null
     route: null
@@ -52,15 +52,15 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/v1/payment-types
+    uri: api/v1/payment-methods
     metadata:
-      groupName: 'Gestion des types de paiement'
+      groupName: 'Gestion des méthodes de paiement'
       groupDescription: |-
 
-        APIs pour la gestion des types de paiement
+        APIs pour la gestion des méthodes de paiement
       subgroup: ''
       subgroupDescription: ''
-      title: 'Créer un type de paiement'
+      title: 'Créer une méthode de paiement'
       description: ''
       authenticated: true
       deprecated: false
@@ -78,7 +78,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: rrgkbqbcvn
+        example: zsviptkqalgsqqqhxaptes
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -88,22 +88,22 @@ endpoints:
         name: description
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: false
-        example: 'Sed voluptatibus maiores officiis ut itaque quibusdam.'
+        example: 'Exercitationem officia nihil quae aut magni pariatur fugit.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: rrgkbqbcvn
-      description: 'Sed voluptatibus maiores officiis ut itaque quibusdam.'
+      label: zsviptkqalgsqqqhxaptes
+      description: 'Exercitationem officia nihil quae aut magni pariatur fugit.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer a5DaEZev46Pg81hfb6k3dcV'
+      - 'Bearer 4ck6ghZ68aD1PvV5Eaefb3d'
     controller: null
     method: null
     route: null
@@ -111,15 +111,15 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: 'api/v1/payment-types/{paymentType_id}'
+    uri: 'api/v1/payment-methods/{paymentMethod_id}'
     metadata:
-      groupName: 'Gestion des types de paiement'
+      groupName: 'Gestion des méthodes de paiement'
       groupDescription: |-
 
-        APIs pour la gestion des types de paiement
+        APIs pour la gestion des méthodes de paiement
       subgroup: ''
       subgroupDescription: ''
-      title: 'Afficher un type de paiement'
+      title: 'Afficher une méthode de paiement'
       description: ''
       authenticated: true
       deprecated: false
@@ -129,9 +129,9 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      paymentType_id:
-        name: paymentType_id
-        description: 'The ID of the paymentType.'
+      paymentMethod_id:
+        name: paymentMethod_id
+        description: 'The ID of the paymentMethod.'
         required: true
         example: 1
         type: integer
@@ -140,7 +140,7 @@ endpoints:
         nullable: false
         custom: []
     cleanUrlParameters:
-      paymentType_id: 1
+      paymentMethod_id: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -160,7 +160,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer f64b3va1P5cDkE6adegh8ZV'
+      - 'Bearer 5a46bE13PdV6DaeckhZ8vfg'
     controller: null
     method: null
     route: null
@@ -168,15 +168,15 @@ endpoints:
   -
     httpMethods:
       - PUT
-    uri: 'api/v1/payment-types/{paymentType}'
+    uri: 'api/v1/payment-methods/{paymentMethod}'
     metadata:
-      groupName: 'Gestion des types de paiement'
+      groupName: 'Gestion des méthodes de paiement'
       groupDescription: |-
 
-        APIs pour la gestion des types de paiement
+        APIs pour la gestion des méthodes de paiement
       subgroup: ''
       subgroupDescription: ''
-      title: 'Mettre à jour un type de paiement'
+      title: 'Mettre à jour une méthode de paiement'
       description: ''
       authenticated: true
       deprecated: false
@@ -186,8 +186,8 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      paymentType:
-        name: paymentType
+      paymentMethod:
+        name: paymentMethod
         description: ''
         required: true
         example: 1
@@ -197,7 +197,7 @@ endpoints:
         nullable: false
         custom: []
     cleanUrlParameters:
-      paymentType: 1
+      paymentMethod: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -205,7 +205,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: izpb
+        example: tqeoqpknonguigbaolbujg
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -215,22 +215,22 @@ endpoints:
         name: description
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: false
-        example: 'Dolorem animi et dolor voluptatem voluptas.'
+        example: 'Molestiae sapiente animi non.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: izpb
-      description: 'Dolorem animi et dolor voluptatem voluptas.'
+      label: tqeoqpknonguigbaolbujg
+      description: 'Molestiae sapiente animi non.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 4fk5c3b6Z1aadPe6Dgv8EVh'
+      - 'Bearer a5hdfZckPV1ga4v3686DebE'
     controller: null
     method: null
     route: null
@@ -238,15 +238,15 @@ endpoints:
   -
     httpMethods:
       - DELETE
-    uri: 'api/v1/payment-types/{paymentType_id}'
+    uri: 'api/v1/payment-methods/{paymentMethod_id}'
     metadata:
-      groupName: 'Gestion des types de paiement'
+      groupName: 'Gestion des méthodes de paiement'
       groupDescription: |-
 
-        APIs pour la gestion des types de paiement
+        APIs pour la gestion des méthodes de paiement
       subgroup: ''
       subgroupDescription: ''
-      title: 'Supprimer un type de paiement'
+      title: 'Supprimer une méthode de paiement'
       description: ''
       authenticated: true
       deprecated: false
@@ -256,9 +256,9 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      paymentType_id:
-        name: paymentType_id
-        description: 'The ID of the paymentType.'
+      paymentMethod_id:
+        name: paymentMethod_id
+        description: 'The ID of the paymentMethod.'
         required: true
         example: 1
         type: integer
@@ -267,7 +267,7 @@ endpoints:
         nullable: false
         custom: []
     cleanUrlParameters:
-      paymentType_id: 1
+      paymentMethod_id: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -278,7 +278,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6bvZ6V1Phafe8Dc5dk3E4ag'
+      - 'Bearer 3Z8acVED5hvdP4g1a6f6ebk'
     controller: null
     method: null
     route: null

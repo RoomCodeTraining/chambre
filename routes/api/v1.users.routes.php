@@ -20,7 +20,7 @@ Route::middleware(['auth:sanctum'])->name('users.')->group(function () {
         Route::put('{id}/enable', 'enable')->name('enable');
         Route::put('{id}/disable', 'disable')->name('disable');
         Route::post('{id}/reset', 'reset')->name('reset');
-        Route::post('update-profile', 'update_profile')->name('update-profile');
+        Route::post('update/profile', 'update_profile')->name('update-profile');
         Route::post('{id}/reset-user-password', 'reset_user_password')->name('reset-user-password');
     });
 });

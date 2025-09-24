@@ -46,7 +46,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer kV864PZ31DfcvbEaedg5h6a'
+      - 'Bearer Zabhf5a8EP46dk6eg1Vc3Dv'
     controller: null
     method: null
     route: null
@@ -80,7 +80,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: izkfhlcxqaeobejpetfmdf
+        example: utjcqgkwauxkiogyl
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -90,7 +90,7 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Laboriosam aut neque atque nihil est.'
+        example: 'Beatae soluta neque quia iste doloremque culpa et dignissimos.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -100,23 +100,23 @@ endpoints:
         name: brand_id
         description: 'The <code>id</code> of an existing record in the brands table.'
         required: true
-        example: magni
+        example: nam
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      label: izkfhlcxqaeobejpetfmdf
-      description: 'Laboriosam aut neque atque nihil est.'
-      brand_id: magni
+      label: utjcqgkwauxkiogyl
+      description: 'Beatae soluta neque quia iste doloremque culpa et dignissimos.'
+      brand_id: nam
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 68Zf13haPbEVeda56c4Dgkv'
+      - 'Bearer Zv4813b6ePahfV5kac6gEDd'
     controller: null
     method: null
     route: null
@@ -146,14 +146,14 @@ endpoints:
         name: id
         description: 'The ID of the vehicle model.'
         required: true
-        example: odit
+        example: hic
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: odit
+      id: hic
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -173,7 +173,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer V4hkbdE1feP5a6D3vga86Zc'
+      - 'Bearer V86ZhPeE13kf46aga5vcDdb'
     controller: null
     method: null
     route: null
@@ -203,14 +203,14 @@ endpoints:
         name: id
         description: 'The ID of the vehicle model.'
         required: true
-        example: omnis
+        example: corrupti
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: omnis
+      id: corrupti
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -218,7 +218,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: tymhznoxgax
+        example: ehavpkmg
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -228,7 +228,7 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'In pariatur quod in repudiandae suscipit et.'
+        example: 'Aut labore dolor rem rerum quia distinctio iste.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -238,23 +238,23 @@ endpoints:
         name: brand_id
         description: 'The <code>id</code> of an existing record in the brands table.'
         required: true
-        example: ipsum
+        example: alias
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      label: tymhznoxgax
-      description: 'In pariatur quod in repudiandae suscipit et.'
-      brand_id: ipsum
+      label: ehavpkmg
+      description: 'Aut labore dolor rem rerum quia distinctio iste.'
+      brand_id: alias
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer aDcZPhe5vg36k8a1d6VfEb4'
+      - 'Bearer 6a1Vf4dZ3h86eEk5bvDPgac'
     controller: null
     method: null
     route: null
@@ -284,14 +284,14 @@ endpoints:
         name: id
         description: 'The ID of the vehicle model.'
         required: true
-        example: iste
+        example: et
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: iste
+      id: et
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -302,7 +302,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer aV68Zav5f1g6k3chbdDEe4P'
+      - 'Bearer vc6bka18eg3D5Zf6ahd4EPV'
     controller: null
     method: null
     route: null

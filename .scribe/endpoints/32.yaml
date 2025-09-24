@@ -1,20 +1,20 @@
-name: "Gestion des types d'autres charges"
+name: 'Gestion des carrosseries'
 description: |-
 
-  APIs pour la gestion des types d'autres charges
+  APIs pour la gestion des carrosseries
 endpoints:
   -
     httpMethods:
       - GET
-    uri: api/v1/other-cost-types
+    uri: api/v1/bodyworks
     metadata:
-      groupName: "Gestion des types d'autres charges"
+      groupName: 'Gestion des carrosseries'
       groupDescription: |-
 
-        APIs pour la gestion des types d'autres charges
+        APIs pour la gestion des carrosseries
       subgroup: ''
       subgroupDescription: ''
-      title: "Lister tous les types d'autres charges"
+      title: 'Lister toutes les carrosseries'
       description: ''
       authenticated: true
       deprecated: false
@@ -44,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 1ePhcEvaf6dV3a64bkDZg85'
+      - 'Bearer v8bhE6ekDf64VZga53ca1dP'
     controller: null
     method: null
     route: null
@@ -52,15 +52,15 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/v1/other-cost-types
+    uri: api/v1/bodyworks
     metadata:
-      groupName: "Gestion des types d'autres charges"
+      groupName: 'Gestion des carrosseries'
       groupDescription: |-
 
-        APIs pour la gestion des types d'autres charges
+        APIs pour la gestion des carrosseries
       subgroup: ''
       subgroupDescription: ''
-      title: "Ajouter un type d'autre charge"
+      title: 'Ajouter une carrosserie'
       description: ''
       authenticated: true
       deprecated: false
@@ -78,7 +78,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: knttgxnmpyopmfrbntaisqjnx
+        example: tqcqdstvxruqqvg
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -88,22 +88,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Ut iusto ratione optio modi.'
+        example: 'Ea iure ut nobis vel.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: knttgxnmpyopmfrbntaisqjnx
-      description: 'Ut iusto ratione optio modi.'
+      label: tqcqdstvxruqqvg
+      description: 'Ea iure ut nobis vel.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer gvhVd6fkeZP56aaE8bc143D'
+      - 'Bearer g1VavZ386hedkbf6DE54acP'
     controller: null
     method: null
     route: null
@@ -111,15 +111,15 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: 'api/v1/other-cost-types/{otherCostType}'
+    uri: 'api/v1/bodyworks/{id}'
     metadata:
-      groupName: "Gestion des types d'autres charges"
+      groupName: 'Gestion des carrosseries'
       groupDescription: |-
 
-        APIs pour la gestion des types d'autres charges
+        APIs pour la gestion des carrosseries
       subgroup: ''
       subgroupDescription: ''
-      title: "Afficher un type d'autre charge"
+      title: 'Afficher une carrosserie'
       description: ''
       authenticated: true
       deprecated: false
@@ -129,18 +129,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      otherCostType:
-        name: otherCostType
-        description: ''
+      id:
+        name: id
+        description: 'The ID of the bodywork.'
         required: true
-        example: ad
+        example: veritatis
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      otherCostType: ad
+      id: veritatis
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -160,7 +160,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer fV5vakDc1dPeZE6b4ah63g8'
+      - 'Bearer 3P58deg6cfDZb6aEhvV4a1k'
     controller: null
     method: null
     route: null
@@ -168,15 +168,15 @@ endpoints:
   -
     httpMethods:
       - PUT
-    uri: 'api/v1/other-cost-types/{otherCostType}'
+    uri: 'api/v1/bodyworks/{id}'
     metadata:
-      groupName: "Gestion des types d'autres charges"
+      groupName: 'Gestion des carrosseries'
       groupDescription: |-
 
-        APIs pour la gestion des types d'autres charges
+        APIs pour la gestion des carrosseries
       subgroup: ''
       subgroupDescription: ''
-      title: "Mettre à jour un type d'autre charge"
+      title: 'Mettre à jour une carrosserie'
       description: ''
       authenticated: true
       deprecated: false
@@ -186,18 +186,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      otherCostType:
-        name: otherCostType
-        description: ''
+      id:
+        name: id
+        description: 'The ID of the bodywork.'
         required: true
-        example: quis
+        example: porro
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      otherCostType: quis
+      id: porro
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -205,7 +205,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: ulxkbzpirk
+        example: housajzlobmxwuigbfspa
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -215,22 +215,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Quia eligendi atque sit consequatur quia ut.'
+        example: 'Qui et veniam eligendi.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: ulxkbzpirk
-      description: 'Quia eligendi atque sit consequatur quia ut.'
+      label: housajzlobmxwuigbfspa
+      description: 'Qui et veniam eligendi.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 5Z1dha6aEP3e8Dfgv6c4bkV'
+      - 'Bearer 6hD6Z3VakEfgecb4a85P1dv'
     controller: null
     method: null
     route: null
@@ -238,15 +238,15 @@ endpoints:
   -
     httpMethods:
       - DELETE
-    uri: 'api/v1/other-cost-types/{otherCostType}'
+    uri: 'api/v1/bodyworks/{id}'
     metadata:
-      groupName: "Gestion des types d'autres charges"
+      groupName: 'Gestion des carrosseries'
       groupDescription: |-
 
-        APIs pour la gestion des types d'autres charges
+        APIs pour la gestion des carrosseries
       subgroup: ''
       subgroupDescription: ''
-      title: "Supprimer un type d'autre charge"
+      title: 'Supprimer une carrosserie'
       description: ''
       authenticated: true
       deprecated: false
@@ -256,18 +256,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      otherCostType:
-        name: otherCostType
-        description: ''
+      id:
+        name: id
+        description: 'The ID of the bodywork.'
         required: true
-        example: et
+        example: perferendis
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      otherCostType: et
+      id: perferendis
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -278,7 +278,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer D534cPV1a6aZdhf6kEgveb8'
+      - 'Bearer vDdfa83Ea16Zb64P5egVhck'
     controller: null
     method: null
     route: null

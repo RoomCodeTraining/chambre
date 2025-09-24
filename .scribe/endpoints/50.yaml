@@ -1,20 +1,20 @@
-name: 'Gestion des types de photos'
+name: 'Gestion des banques'
 description: |-
 
-  APIs pour la gestion des types de photos
+  APIs pour la gestion des banques
 endpoints:
   -
     httpMethods:
       - GET
-    uri: api/v1/photo-types
+    uri: api/v1/banks
     metadata:
-      groupName: 'Gestion des types de photos'
+      groupName: 'Gestion des banques'
       groupDescription: |-
 
-        APIs pour la gestion des types de photos
+        APIs pour la gestion des banques
       subgroup: ''
       subgroupDescription: ''
-      title: 'Lister tous les types de photos'
+      title: 'Lister tous les banques'
       description: ''
       authenticated: true
       deprecated: false
@@ -44,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6k6eDhcZdP5f1gVab3v4aE8'
+      - 'Bearer c5vDd6kZE6ba8Pahg43efV1'
     controller: null
     method: null
     route: null
@@ -52,15 +52,15 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/v1/photo-types
+    uri: api/v1/banks
     metadata:
-      groupName: 'Gestion des types de photos'
+      groupName: 'Gestion des banques'
       groupDescription: |-
 
-        APIs pour la gestion des types de photos
+        APIs pour la gestion des banques
       subgroup: ''
       subgroupDescription: ''
-      title: 'Créer un type de photo'
+      title: 'Créer une nouvelle banque'
       description: ''
       authenticated: true
       deprecated: false
@@ -74,36 +74,25 @@ endpoints:
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      label:
-        name: label
+      name:
+        name: name
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: irozcecjcqhyu
+        example: mneqmzilotovxengij
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
-      description:
-        name: description
-        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
-        required: false
-        example: 'Veritatis sint assumenda sapiente iure.'
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: true
-        custom: []
     cleanBodyParameters:
-      label: irozcecjcqhyu
-      description: 'Veritatis sint assumenda sapiente iure.'
+      name: mneqmzilotovxengij
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 3E81fea4d6a6bk5hDVcPgvZ'
+      - 'Bearer 58evEahZc463Ddf6kgbaP1V'
     controller: null
     method: null
     route: null
@@ -111,15 +100,15 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: 'api/v1/photo-types/{photoType_id}'
+    uri: 'api/v1/banks/{id}'
     metadata:
-      groupName: 'Gestion des types de photos'
+      groupName: 'Gestion des banques'
       groupDescription: |-
 
-        APIs pour la gestion des types de photos
+        APIs pour la gestion des banques
       subgroup: ''
       subgroupDescription: ''
-      title: 'Afficher un type de photo'
+      title: 'Afficher une banque'
       description: ''
       authenticated: true
       deprecated: false
@@ -129,18 +118,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      photoType_id:
-        name: photoType_id
-        description: 'The ID of the photoType.'
+      id:
+        name: id
+        description: 'The ID of the bank.'
         required: true
-        example: 1
+        example: 17
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      photoType_id: 1
+      id: 17
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -160,7 +149,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 8cfd6PD3b6aZah5eE1vVg4k'
+      - 'Bearer Pefbkh65aEZg3d6DaV841vc'
     controller: null
     method: null
     route: null
@@ -168,15 +157,15 @@ endpoints:
   -
     httpMethods:
       - PUT
-    uri: 'api/v1/photo-types/{photoType}'
+    uri: 'api/v1/banks/{id}'
     metadata:
-      groupName: 'Gestion des types de photos'
+      groupName: 'Gestion des banques'
       groupDescription: |-
 
-        APIs pour la gestion des types de photos
+        APIs pour la gestion des banques
       subgroup: ''
       subgroupDescription: ''
-      title: 'Mettre à jour un type de photo'
+      title: 'Mettre à jour une banque'
       description: ''
       authenticated: true
       deprecated: false
@@ -186,9 +175,9 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      photoType:
-        name: photoType
-        description: ''
+      id:
+        name: id
+        description: 'The ID of the bank.'
         required: true
         example: 1
         type: integer
@@ -197,40 +186,29 @@ endpoints:
         nullable: false
         custom: []
     cleanUrlParameters:
-      photoType: 1
+      id: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      label:
-        name: label
+      name:
+        name: name
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: ttsnqboagrsgnyqunhaesiz
+        example: zvpgerueli
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
-      description:
-        name: description
-        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
-        required: false
-        example: 'Laborum voluptatum dolor similique commodi.'
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: true
-        custom: []
     cleanBodyParameters:
-      label: ttsnqboagrsgnyqunhaesiz
-      description: 'Laborum voluptatum dolor similique commodi.'
+      name: zvpgerueli
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 1aafVP6b8Z4E5e6dDv3hkgc'
+      - 'Bearer Eekaca31vV6f65D4ZgPbd8h'
     controller: null
     method: null
     route: null
@@ -238,15 +216,15 @@ endpoints:
   -
     httpMethods:
       - DELETE
-    uri: 'api/v1/photo-types/{photoType_id}'
+    uri: 'api/v1/banks/{id}'
     metadata:
-      groupName: 'Gestion des types de photos'
+      groupName: 'Gestion des banques'
       groupDescription: |-
 
-        APIs pour la gestion des types de photos
+        APIs pour la gestion des banques
       subgroup: ''
       subgroupDescription: ''
-      title: 'Supprimer un type de photo'
+      title: 'Supprimer une banque'
       description: ''
       authenticated: true
       deprecated: false
@@ -256,18 +234,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      photoType_id:
-        name: photoType_id
-        description: 'The ID of the photoType.'
+      id:
+        name: id
+        description: 'The ID of the bank.'
         required: true
-        example: 1
+        example: 8
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      photoType_id: 1
+      id: 8
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -278,7 +256,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6cek4a183avD6EPhdZbg5Vf'
+      - 'Bearer VEDPha56vcafZ4k1b83gd6e'
     controller: null
     method: null
     route: null

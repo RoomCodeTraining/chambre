@@ -1,20 +1,20 @@
-name: 'Gestion des réparateurs'
+name: 'Gestion des assureurs'
 description: |-
 
-  API pour la gestion des réparateurs
+  API pour la gestion des assureurs
 endpoints:
   -
     httpMethods:
       - GET
-    uri: api/v1/repairers
+    uri: api/v1/insurers
     metadata:
-      groupName: 'Gestion des réparateurs'
+      groupName: 'Gestion des assureurs'
       groupDescription: |-
 
-        API pour la gestion des réparateurs
+        API pour la gestion des assureurs
       subgroup: ''
       subgroupDescription: ''
-      title: 'Lister tous les réparateurs'
+      title: 'Lister tous les assureurs'
       description: ''
       authenticated: true
       deprecated: false
@@ -44,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer d6bPhvea1DEk5aZ34cgVf68'
+      - 'Bearer d5h6gk1PEb8e4ZafvaV3cD6'
     controller: null
     method: null
     route: null

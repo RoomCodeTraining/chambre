@@ -1,20 +1,20 @@
-name: 'Gestion des factures'
+name: 'Gestion des états généraux'
 description: |-
 
-  APIs pour la gestion des factures
+  APIs pour la gestion des états généraux
 endpoints:
   -
     httpMethods:
       - GET
-    uri: api/v1/invoices
+    uri: api/v1/general-states
     metadata:
-      groupName: 'Gestion des factures'
+      groupName: 'Gestion des états généraux'
       groupDescription: |-
 
-        APIs pour la gestion des factures
+        APIs pour la gestion des états généraux
       subgroup: ''
       subgroupDescription: ''
-      title: 'Lister toutes les factures'
+      title: 'Lister tous les états généraux'
       description: ''
       authenticated: true
       deprecated: false
@@ -44,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Z1a68dVk5eEhbPf6cavDg34'
+      - 'Bearer Vv6a8cfga5edE6Pk4h3bZ1D'
     controller: null
     method: null
     route: null
@@ -52,15 +52,15 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/v1/invoices
+    uri: api/v1/general-states
     metadata:
-      groupName: 'Gestion des factures'
+      groupName: 'Gestion des états généraux'
       groupDescription: |-
 
-        APIs pour la gestion des factures
+        APIs pour la gestion des états généraux
       subgroup: ''
       subgroupDescription: ''
-      title: 'Créer une facture'
+      title: 'Ajouter un état général'
       description: ''
       authenticated: true
       deprecated: false
@@ -74,47 +74,36 @@ endpoints:
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      assignment_id:
-        name: assignment_id
-        description: 'The <code>id</code> of an existing record in the assignments table.'
+      label:
+        name: label
+        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: et
+        example: osarnomqdzoxst
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
-      date:
-        name: date
-        description: 'Must be a valid date in the format <code>Y-m-d</code>.'
-        required: true
-        example: '2025-09-23'
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      object:
-        name: object
+      description:
+        name: description
         description: ''
-        required: true
-        example: ex
+        required: false
+        example: 'Eos voluptas consequatur quia quae debitis.'
         type: string
         enumValues: []
         exampleWasSpecified: false
-        nullable: false
+        nullable: true
         custom: []
     cleanBodyParameters:
-      assignment_id: et
-      date: '2025-09-23'
-      object: ex
+      label: osarnomqdzoxst
+      description: 'Eos voluptas consequatur quia quae debitis.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer Edgh1b6aD5cV4Z3Pek8fa6v'
+      - 'Bearer 18VDackfPehdE4653vZ6gba'
     controller: null
     method: null
     route: null
@@ -122,15 +111,15 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: 'api/v1/invoices/{id}'
+    uri: 'api/v1/general-states/{id}'
     metadata:
-      groupName: 'Gestion des factures'
+      groupName: 'Gestion des états généraux'
       groupDescription: |-
 
-        APIs pour la gestion des factures
+        APIs pour la gestion des états généraux
       subgroup: ''
       subgroupDescription: ''
-      title: 'Afficher une facture'
+      title: 'Afficher un état général'
       description: ''
       authenticated: true
       deprecated: false
@@ -142,16 +131,16 @@ endpoints:
     urlParameters:
       id:
         name: id
-        description: 'The ID of the invoice.'
+        description: 'The ID of the general state.'
         required: true
-        example: 13
-        type: integer
+        example: sit
+        type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 13
+      id: sit
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -171,7 +160,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 16ehkgDVZa6dfc34Eb8v5Pa'
+      - 'Bearer Zf6E46kP3v1cedaDa8gh5Vb'
     controller: null
     method: null
     route: null
@@ -179,15 +168,15 @@ endpoints:
   -
     httpMethods:
       - PUT
-    uri: 'api/v1/invoices/{id}'
+    uri: 'api/v1/general-states/{id}'
     metadata:
-      groupName: 'Gestion des factures'
+      groupName: 'Gestion des états généraux'
       groupDescription: |-
 
-        APIs pour la gestion des factures
+        APIs pour la gestion des états généraux
       subgroup: ''
       subgroupDescription: ''
-      title: 'Mettre à jour une facture'
+      title: 'Mettre à jour un état général'
       description: ''
       authenticated: true
       deprecated: false
@@ -199,60 +188,49 @@ endpoints:
     urlParameters:
       id:
         name: id
-        description: 'The ID of the invoice.'
+        description: 'The ID of the general state.'
         required: true
-        example: 17
-        type: integer
+        example: dolorem
+        type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 17
+      id: dolorem
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      assignment_id:
-        name: assignment_id
-        description: 'The <code>id</code> of an existing record in the assignments table.'
+      label:
+        name: label
+        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: rerum
+        example: cnhmefdnql
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
-      date:
-        name: date
-        description: 'Must be a valid date in the format <code>Y-m-d</code>.'
-        required: true
-        example: '2025-09-23'
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      object:
-        name: object
+      description:
+        name: description
         description: ''
-        required: true
-        example: laborum
+        required: false
+        example: 'Et est consequatur sunt quidem.'
         type: string
         enumValues: []
         exampleWasSpecified: false
-        nullable: false
+        nullable: true
         custom: []
     cleanBodyParameters:
-      assignment_id: rerum
-      date: '2025-09-23'
-      object: laborum
+      label: cnhmefdnql
+      description: 'Et est consequatur sunt quidem.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer e4hg861cEVakv653PaZbfDd'
+      - 'Bearer 6eka3Efgc4h8ZbP5a6DdVv1'
     controller: null
     method: null
     route: null
@@ -260,15 +238,15 @@ endpoints:
   -
     httpMethods:
       - DELETE
-    uri: 'api/v1/invoices/{id}'
+    uri: 'api/v1/general-states/{id}'
     metadata:
-      groupName: 'Gestion des factures'
+      groupName: 'Gestion des états généraux'
       groupDescription: |-
 
-        APIs pour la gestion des factures
+        APIs pour la gestion des états généraux
       subgroup: ''
       subgroupDescription: ''
-      title: 'Supprimer une facture'
+      title: 'Supprimer un état général'
       description: ''
       authenticated: true
       deprecated: false
@@ -280,16 +258,16 @@ endpoints:
     urlParameters:
       id:
         name: id
-        description: 'The ID of the invoice.'
+        description: 'The ID of the general state.'
         required: true
-        example: 14
-        type: integer
+        example: cumque
+        type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 14
+      id: cumque
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -300,149 +278,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 8f3V16gPaa5cZDbEe4dv6kh'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - PUT
-    uri: 'api/v1/invoices/{invoice}/cancel'
-    metadata:
-      groupName: 'Gestion des factures'
-      groupDescription: |-
-
-        APIs pour la gestion des factures
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Annuler une facture'
-      description: ''
-      authenticated: true
-      deprecated: false
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      invoice:
-        name: invoice
-        description: 'The invoice.'
-        required: true
-        example: 5
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-    cleanUrlParameters:
-      invoice: 5
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer 6548eZv31gahkfaPDbE6dcV'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - PUT
-    uri: 'api/v1/invoices/{invoice}/generate'
-    metadata:
-      groupName: 'Gestion des factures'
-      groupDescription: |-
-
-        APIs pour la gestion des factures
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Générer une facture'
-      description: ''
-      authenticated: true
-      deprecated: false
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      invoice:
-        name: invoice
-        description: 'The invoice.'
-        required: true
-        example: 1
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-    cleanUrlParameters:
-      invoice: 1
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer a6ghDV1vfE8Zak3c65Pebd4'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - GET
-    uri: api/v1/invoices/get/statistics
-    metadata:
-      groupName: 'Gestion des factures'
-      groupDescription: |-
-
-        APIs pour la gestion des factures
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Statistiques des factures'
-      description: ''
-      authenticated: true
-      deprecated: false
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        status: 401
-        content: '{"message":"Unauthenticated."}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          access-control-allow-origin: '*'
-        description: null
-        custom: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer Ehdeabv3kfVg146cDPZ68a5'
+      - 'Bearer 43a6P1Ed8vZa65geDbVkfhc'
     controller: null
     method: null
     route: null

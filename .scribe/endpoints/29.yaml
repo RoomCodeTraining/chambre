@@ -1,20 +1,20 @@
-name: "Gestion des types d'expertise"
+name: 'Gestion des types de dossiers'
 description: |-
 
-  APIs pour la gestion des types d'expertise
+  APIs pour la gestion des types de dossiers
 endpoints:
   -
     httpMethods:
       - GET
-    uri: api/v1/expertise-types
+    uri: api/v1/assignment-types
     metadata:
-      groupName: "Gestion des types d'expertise"
+      groupName: 'Gestion des types de dossiers'
       groupDescription: |-
 
-        APIs pour la gestion des types d'expertise
+        APIs pour la gestion des types de dossiers
       subgroup: ''
       subgroupDescription: ''
-      title: "Lister tous les types d'expertise"
+      title: 'Lister tous les types de dossiers'
       description: ''
       authenticated: true
       deprecated: false
@@ -44,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer D4eEabP68v6dVgZ3hf15kac'
+      - 'Bearer 6efd4aP8VahcEk3D6Z1vb5g'
     controller: null
     method: null
     route: null
@@ -52,15 +52,15 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/v1/expertise-types
+    uri: api/v1/assignment-types
     metadata:
-      groupName: "Gestion des types d'expertise"
+      groupName: 'Gestion des types de dossiers'
       groupDescription: |-
 
-        APIs pour la gestion des types d'expertise
+        APIs pour la gestion des types de dossiers
       subgroup: ''
       subgroupDescription: ''
-      title: "Ajouter un type d'expertise"
+      title: 'Ajouter un type de dossier'
       description: ''
       authenticated: true
       deprecated: false
@@ -78,7 +78,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: tzlearivwxqdqyq
+        example: qfsspvyycxpbuxcuok
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -88,22 +88,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Vel sed error et veniam ipsam error porro.'
+        example: 'Eos quaerat voluptates officia ut ducimus et.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: tzlearivwxqdqyq
-      description: 'Vel sed error et veniam ipsam error porro.'
+      label: qfsspvyycxpbuxcuok
+      description: 'Eos quaerat voluptates officia ut ducimus et.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer E1df35eDcabgkZ64h6VPva8'
+      - 'Bearer k4P3V5da6f6gE8hbZD1cvae'
     controller: null
     method: null
     route: null
@@ -111,15 +111,15 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: 'api/v1/expertise-types/{expertise_type}'
+    uri: 'api/v1/assignment-types/{assignment_type}'
     metadata:
-      groupName: "Gestion des types d'expertise"
+      groupName: 'Gestion des types de dossiers'
       groupDescription: |-
 
-        APIs pour la gestion des types d'expertise
+        APIs pour la gestion des types de dossiers
       subgroup: ''
       subgroupDescription: ''
-      title: "Afficher un type d'expertise"
+      title: 'Afficher un type de dossier'
       description: ''
       authenticated: true
       deprecated: false
@@ -129,18 +129,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      expertise_type:
-        name: expertise_type
+      assignment_type:
+        name: assignment_type
         description: ''
         required: true
-        example: tempore
-        type: string
+        example: 1
+        type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      expertise_type: tempore
+      assignment_type: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -160,7 +160,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer akVd5v6aZ1h6bc8g3PEeD4f'
+      - 'Bearer 645hdv1Pabak6EVecg83DfZ'
     controller: null
     method: null
     route: null
@@ -168,15 +168,15 @@ endpoints:
   -
     httpMethods:
       - PUT
-    uri: 'api/v1/expertise-types/{expertise_type}'
+    uri: 'api/v1/assignment-types/{assignment_type}'
     metadata:
-      groupName: "Gestion des types d'expertise"
+      groupName: 'Gestion des types de dossiers'
       groupDescription: |-
 
-        APIs pour la gestion des types d'expertise
+        APIs pour la gestion des types de dossiers
       subgroup: ''
       subgroupDescription: ''
-      title: "Mettre à jour un type d'expertise"
+      title: 'Mettre à jour un type de dossier'
       description: ''
       authenticated: true
       deprecated: false
@@ -186,18 +186,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      expertise_type:
-        name: expertise_type
+      assignment_type:
+        name: assignment_type
         description: ''
         required: true
-        example: qui
-        type: string
+        example: 1
+        type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      expertise_type: qui
+      assignment_type: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -205,7 +205,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: h
+        example: pbcqjipyccmvahtbjg
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -215,22 +215,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Natus odio eos quia in saepe voluptatem.'
+        example: 'Deserunt inventore impedit blanditiis culpa adipisci repellendus sunt.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: h
-      description: 'Natus odio eos quia in saepe voluptatem.'
+      label: pbcqjipyccmvahtbjg
+      description: 'Deserunt inventore impedit blanditiis culpa adipisci repellendus sunt.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer fVe546Ddk6Pbhg1a3EcZav8'
+      - 'Bearer fP51DEhVe6d4kc3b6g8vZaa'
     controller: null
     method: null
     route: null
@@ -238,15 +238,15 @@ endpoints:
   -
     httpMethods:
       - DELETE
-    uri: 'api/v1/expertise-types/{expertise_type}'
+    uri: 'api/v1/assignment-types/{assignment_type}'
     metadata:
-      groupName: "Gestion des types d'expertise"
+      groupName: 'Gestion des types de dossiers'
       groupDescription: |-
 
-        APIs pour la gestion des types d'expertise
+        APIs pour la gestion des types de dossiers
       subgroup: ''
       subgroupDescription: ''
-      title: "Supprimer un type d'expertise"
+      title: 'Supprimer un type de dossier'
       description: ''
       authenticated: true
       deprecated: false
@@ -256,18 +256,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      expertise_type:
-        name: expertise_type
+      assignment_type:
+        name: assignment_type
         description: ''
         required: true
-        example: dolores
-        type: string
+        example: 1
+        type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      expertise_type: dolores
+      assignment_type: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -278,7 +278,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer dh4gZeP6kv8cfaaDEb613V5'
+      - 'Bearer VEc1ePh48fgakd665bvD3Za'
     controller: null
     method: null
     route: null

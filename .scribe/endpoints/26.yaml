@@ -1,20 +1,20 @@
-name: 'Gestion des photos'
+name: 'Gestion des QR codes'
 description: |-
 
-  APIs pour la gestion des photos
+  APIs pour la gestion des QR codes
 endpoints:
   -
     httpMethods:
       - GET
-    uri: api/v1/photos
+    uri: api/v1/qr-codes
     metadata:
-      groupName: 'Gestion des photos'
+      groupName: 'Gestion des QR codes'
       groupDescription: |-
 
-        APIs pour la gestion des photos
+        APIs pour la gestion des QR codes
       subgroup: ''
       subgroupDescription: ''
-      title: 'Lister toutes les photos'
+      title: 'Lister tous les QR codes'
       description: ''
       authenticated: true
       deprecated: false
@@ -44,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Z1Edafv8kg36DV4e5caP6bh'
+      - 'Bearer 6dbk4DgZ13fPhEav8ae6V5c'
     controller: null
     method: null
     route: null
@@ -52,70 +52,47 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/v1/photos
+    uri: api/v1/qr-codes
     metadata:
-      groupName: 'Gestion des photos'
+      groupName: 'Gestion des QR codes'
       groupDescription: |-
 
-        APIs pour la gestion des photos
+        APIs pour la gestion des QR codes
       subgroup: ''
       subgroupDescription: ''
-      title: 'Ajouter plusieurs photos'
+      title: 'Ajouter un QR code'
       description: ''
       authenticated: true
       deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: multipart/form-data
+      Content-Type: application/json
       Accept: application/json
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      assignment_id:
-        name: assignment_id
-        description: 'The <code>id</code> of an existing record in the assignments table.'
+      code:
+        name: code
+        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: optio
+        example: raqavirvg
         type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      photo_type_id:
-        name: photo_type_id
-        description: 'The <code>id</code> of an existing record in the photo_types table.'
-        required: false
-        example: null
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: true
-        custom: []
-      photos:
-        name: photos
-        description: 'Le champ value doit être une image.'
-        required: true
-        example:
-          - null
-        type: 'file[]'
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      assignment_id: optio
-    fileParameters:
-      photos:
-        - null
+      code: raqavirvg
+    fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer geVa6h6bdE35ZcvfPD4ka18'
+      - 'Bearer 541DcE6Zk3gvaPe6haVdf8b'
     controller: null
     method: null
     route: null
@@ -123,15 +100,15 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: 'api/v1/photos/{id}'
+    uri: 'api/v1/qr-codes/{qrCode_id}'
     metadata:
-      groupName: 'Gestion des photos'
+      groupName: 'Gestion des QR codes'
       groupDescription: |-
 
-        APIs pour la gestion des photos
+        APIs pour la gestion des QR codes
       subgroup: ''
       subgroupDescription: ''
-      title: 'Afficher une photo'
+      title: 'Afficher un QR code'
       description: ''
       authenticated: true
       deprecated: false
@@ -141,18 +118,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      id:
-        name: id
-        description: 'The ID of the photo.'
+      qrCode_id:
+        name: qrCode_id
+        description: 'The ID of the qrCode.'
         required: true
-        example: 10
+        example: 14
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 10
+      qrCode_id: 14
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -172,76 +149,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 5vd36Ph41DEbk6fZcaeaV8g'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: 'api/v1/photos/{id}'
-    metadata:
-      groupName: 'Gestion des photos'
-      groupDescription: |-
-
-        APIs pour la gestion des photos
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Mettre à jour une photo'
-      description: ''
-      authenticated: true
-      deprecated: false
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: multipart/form-data
-      Accept: application/json
-    urlParameters:
-      id:
-        name: id
-        description: 'The ID of the photo.'
-        required: true
-        example: 7
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-    cleanUrlParameters:
-      id: 7
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      photo_type_id:
-        name: photo_type_id
-        description: 'The <code>id</code> of an existing record in the photo_types table.'
-        required: false
-        example: null
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: true
-        custom: []
-      photo:
-        name: photo
-        description: 'Le champ value doit être une image.'
-        required: false
-        example: null
-        type: file
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: true
-        custom: []
-    cleanBodyParameters: []
-    fileParameters:
-      photo: null
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer Z6EdcPhkfD6ea5vba143g8V'
+      - 'Bearer 5P613dacE6DhbfV4kZga8ev'
     controller: null
     method: null
     route: null
@@ -249,15 +157,15 @@ endpoints:
   -
     httpMethods:
       - PUT
-    uri: 'api/v1/photos/{photo}/cover'
+    uri: 'api/v1/qr-codes/{qrCode}'
     metadata:
-      groupName: 'Gestion des photos'
+      groupName: 'Gestion des QR codes'
       groupDescription: |-
 
-        APIs pour la gestion des photos
+        APIs pour la gestion des QR codes
       subgroup: ''
       subgroupDescription: ''
-      title: 'Rendre une photo comme photo de couverture'
+      title: 'Mettre à jour un QR code'
       description: ''
       authenticated: true
       deprecated: false
@@ -267,29 +175,40 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      photo:
-        name: photo
-        description: 'The photo.'
+      qrCode:
+        name: qrCode
+        description: ''
         required: true
-        example: 6
+        example: 15
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      photo: 6
+      qrCode: 15
     queryParameters: []
     cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
+    bodyParameters:
+      code:
+        name: code
+        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
+        required: true
+        example: zaobybubejgksdliltyr
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      code: zaobybubejgksdliltyr
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer v3c6e68P514fagEkabZdVDh'
+      - 'Bearer 8dPvgacfVEk15a6bZh3De64'
     controller: null
     method: null
     route: null
@@ -297,15 +216,15 @@ endpoints:
   -
     httpMethods:
       - DELETE
-    uri: 'api/v1/photos/{id}'
+    uri: 'api/v1/qr-codes/{qrCode}'
     metadata:
-      groupName: 'Gestion des photos'
+      groupName: 'Gestion des QR codes'
       groupDescription: |-
 
-        APIs pour la gestion des photos
+        APIs pour la gestion des QR codes
       subgroup: ''
       subgroupDescription: ''
-      title: 'Supprimer une photo'
+      title: 'Supprimer un QR code'
       description: ''
       authenticated: true
       deprecated: false
@@ -315,18 +234,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      id:
-        name: id
-        description: 'The ID of the photo.'
+      qrCode:
+        name: qrCode
+        description: ''
         required: true
-        example: 2
+        example: 20
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 2
+      qrCode: 20
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -337,7 +256,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer dPEfZaD4V6ka3c856ehvbg1'
+      - 'Bearer 8e1EdbPDaa36VZgv4ckf6h5'
     controller: null
     method: null
     route: null

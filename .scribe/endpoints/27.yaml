@@ -1,20 +1,20 @@
-name: 'Gestion des statuts'
+name: 'Gestion des photos'
 description: |-
 
-  APIs pour la gestion des statuts
+  APIs pour la gestion des photos
 endpoints:
   -
     httpMethods:
       - GET
-    uri: api/v1/statuses
+    uri: api/v1/photos
     metadata:
-      groupName: 'Gestion des statuts'
+      groupName: 'Gestion des photos'
       groupDescription: |-
 
-        APIs pour la gestion des statuts
+        APIs pour la gestion des photos
       subgroup: ''
       subgroupDescription: ''
-      title: 'Lister tous les statuts'
+      title: 'Lister toutes les photos'
       description: ''
       authenticated: true
       deprecated: false
@@ -44,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer feab1Pk3ca8VdD54vE6Zgh6'
+      - 'Bearer 4hE3PgZdv6a5Vk18Db6cafe'
     controller: null
     method: null
     route: null
@@ -52,69 +52,70 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/v1/statuses
+    uri: api/v1/photos
     metadata:
-      groupName: 'Gestion des statuts'
+      groupName: 'Gestion des photos'
       groupDescription: |-
 
-        APIs pour la gestion des statuts
+        APIs pour la gestion des photos
       subgroup: ''
       subgroupDescription: ''
-      title: 'Ajouter un statut'
+      title: 'Ajouter plusieurs photos'
       description: ''
       authenticated: true
       deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
+      Content-Type: multipart/form-data
       Accept: application/json
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      code:
-        name: code
-        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
+      assignment_id:
+        name: assignment_id
+        description: 'The <code>id</code> of an existing record in the assignments table.'
         required: true
-        example: nosqsviguzabkibknbeny
+        example: sint
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
-      label:
-        name: label
-        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
-        required: true
-        example: avsbrvnciiivvyw
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      description:
-        name: description
-        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
+      photo_type_id:
+        name: photo_type_id
+        description: 'The <code>id</code> of an existing record in the photo_types table.'
         required: false
-        example: 'Laborum iure vitae doloribus quis necessitatibus similique minus.'
+        example: null
         type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      photos:
+        name: photos
+        description: 'Le champ value doit être une image.'
+        required: true
+        example:
+          - null
+        type: 'file[]'
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      code: nosqsviguzabkibknbeny
-      label: avsbrvnciiivvyw
-      description: 'Laborum iure vitae doloribus quis necessitatibus similique minus.'
-    fileParameters: []
+      assignment_id: sint
+    fileParameters:
+      photos:
+        - null
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 46ceEaZDf6ba3Pk1V5dh8gv'
+      - 'Bearer 1DaacbZhgePk46Ed683vfV5'
     controller: null
     method: null
     route: null
@@ -122,15 +123,15 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: 'api/v1/statuses/{id}'
+    uri: 'api/v1/photos/{id}'
     metadata:
-      groupName: 'Gestion des statuts'
+      groupName: 'Gestion des photos'
       groupDescription: |-
 
-        APIs pour la gestion des statuts
+        APIs pour la gestion des photos
       subgroup: ''
       subgroupDescription: ''
-      title: 'Afficher un statut'
+      title: 'Afficher une photo'
       description: ''
       authenticated: true
       deprecated: false
@@ -142,16 +143,16 @@ endpoints:
     urlParameters:
       id:
         name: id
-        description: 'The ID of the status.'
+        description: 'The ID of the photo.'
         required: true
-        example: aut
-        type: string
+        example: 3
+        type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: aut
+      id: 3
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -171,7 +172,76 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer VeDfbPh4g85d1Za6ck6a3Ev'
+      - 'Bearer 4he3kaDV6cv58ZgEP6fd1ba'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/v1/photos/{id}'
+    metadata:
+      groupName: 'Gestion des photos'
+      groupDescription: |-
+
+        APIs pour la gestion des photos
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Mettre à jour une photo'
+      description: ''
+      authenticated: true
+      deprecated: false
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: multipart/form-data
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the photo.'
+        required: true
+        example: 17
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      id: 17
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      photo_type_id:
+        name: photo_type_id
+        description: 'The <code>id</code> of an existing record in the photo_types table.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      photo:
+        name: photo
+        description: 'Le champ value doit être une image.'
+        required: false
+        example: null
+        type: file
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+    cleanBodyParameters: []
+    fileParameters:
+      photo: null
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 4h6c3EVfdkZ58Pbvg1Da6ea'
     controller: null
     method: null
     route: null
@@ -179,15 +249,15 @@ endpoints:
   -
     httpMethods:
       - PUT
-    uri: 'api/v1/statuses/{id}'
+    uri: 'api/v1/photos/{photo}/cover'
     metadata:
-      groupName: 'Gestion des statuts'
+      groupName: 'Gestion des photos'
       groupDescription: |-
 
-        APIs pour la gestion des statuts
+        APIs pour la gestion des photos
       subgroup: ''
       subgroupDescription: ''
-      title: 'Mettre à jour un statut'
+      title: 'Rendre une photo comme photo de couverture'
       description: ''
       authenticated: true
       deprecated: false
@@ -197,88 +267,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      id:
-        name: id
-        description: 'The ID of the status.'
+      photo:
+        name: photo
+        description: 'The photo.'
         required: true
-        example: eaque
-        type: string
+        example: 9
+        type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: eaque
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      label:
-        name: label
-        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
-        required: true
-        example: uclbvfcjxwk
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      description:
-        name: description
-        description: ''
-        required: false
-        example: 'Est aperiam velit tempore et non tempora facere.'
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: true
-        custom: []
-    cleanBodyParameters:
-      label: uclbvfcjxwk
-      description: 'Est aperiam velit tempore et non tempora facere.'
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer da1ea56k3fcEb68vVZ4hDgP'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - DELETE
-    uri: 'api/v1/statuses/{id}'
-    metadata:
-      groupName: 'Gestion des statuts'
-      groupDescription: |-
-
-        APIs pour la gestion des statuts
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Supprimer un statut'
-      description: ''
-      authenticated: true
-      deprecated: false
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      id:
-        name: id
-        description: 'The ID of the status.'
-        required: true
-        example: nemo
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-    cleanUrlParameters:
-      id: nemo
+      photo: 9
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -289,7 +289,55 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6ak4Vgc835DhEve6a1fbdPZ'
+      - 'Bearer ZvdghDec36kV5EaPaf16b48'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/photos/{id}'
+    metadata:
+      groupName: 'Gestion des photos'
+      groupDescription: |-
+
+        APIs pour la gestion des photos
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Supprimer une photo'
+      description: ''
+      authenticated: true
+      deprecated: false
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the photo.'
+        required: true
+        example: 20
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      id: 20
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer d8hP563ka1bgDcVa4eEv6fZ'
     controller: null
     method: null
     route: null

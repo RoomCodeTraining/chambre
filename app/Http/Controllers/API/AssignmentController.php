@@ -2062,6 +2062,10 @@ class AssignmentController extends Controller
         //     return $this->responseUnprocessable("La fiche d'expertise est déjà établie.", null);
         // }
 
+        if($request->claim_number && Assignment::where('claim_number', $request->claim_number)->count() > 1){
+            return $this->responseUnprocessable('Le numéro de sinistre existe déjà');
+        }
+
         $exist_client = Client::where('name', 'like', '%'.$request->name.'%')->first();
         $exist_insurer = Entity::where('entity_type_id', EntityType::where('code', EntityTypeEnum::INSURER)->first()->id)->where('name', 'like', '%'.$request->name.'%')->first();
 

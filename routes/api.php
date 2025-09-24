@@ -38,6 +38,7 @@ Route::prefix('v1')->middleware(LogsOutDisabledUser::class)->group(function () {
     Route::prefix('shock-works')->group(base_path('routes/api/v1.shock.works.routes.php'));
     Route::prefix('supplies')->group(base_path('routes/api/v1.supplies.routes.php'));
     Route::prefix('assignments')->group(base_path('routes/api/v1.assignments.routes.php'));
+    Route::prefix('assignment-requests')->group(base_path('routes/api/v1.assignment.requests.routes.php'));
     Route::prefix('technical-conclusions')->group(base_path('routes/api/v1.technical.conclusions.routes.php'));
     Route::prefix('insurers')->group(base_path('routes/api/v1.insurers.routes.php'));
     Route::prefix('repairers')->group(base_path('routes/api/v1.repairers.routes.php'));
@@ -77,27 +78,3 @@ Route::prefix('v1')->middleware(LogsOutDisabledUser::class)->group(function () {
     Route::prefix('dashboard')->group(base_path('routes/api/v1.dashboard.routes.php'));
     Route::group([], base_path('routes/api/v1.common.routes.php'));
 });
-
-/*===========================
-=           repairInvoices           =
-=============================*/
-
-Route::apiResource('/repairInvoices', \App\Http\Controllers\API\RepairInvoiceController::class);
-
-/*=====  End of repairInvoices   ======*/
-
-/*===========================
-=           repairInvoiceTypes           =
-=============================*/
-
-Route::apiResource('/repairInvoiceTypes', \App\Http\Controllers\API\RepairInvoiceTypeController::class);
-
-/*=====  End of repairInvoiceTypes   ======*/
-
-/*===========================
-=           assignmentRequests           =
-=============================*/
-
-Route::apiResource('/assignmentRequests', \App\Http\Controllers\API\AssignmentRequestController::class);
-
-/*=====  End of assignmentRequests   ======*/
