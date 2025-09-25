@@ -20,7 +20,7 @@ class EntityResource extends JsonResource
             'telephone' => $this->telephone,
             'address' => $this->address,
             'description' => $this->description,
-            'logo' => $this->logo ? url('storage/logo/'.$this->logo.'.pdf?v='.time()) : null,
+            'logo' => $this->logo ? url('storage/logos/'.$this->logo.'?v='.time()) : null,
             'status' => new StatusResource($this->whenLoaded('status')),
             'entity_type' => new EntityTypeResource($this->whenLoaded('entityType')),
             'created_at' => dateTimeFormat($this->created_at),
