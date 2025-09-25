@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Filters\CheckFilters;
+use App\Builders\Check\CheckBuilder;
 use Essa\APIToolKit\Filters\Filterable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -68,6 +69,11 @@ class Check extends Model
     public function status(): BelongsTo
     {
         return $this->belongsTo(Status::class);
+    }
+
+    public function newEloquentBuilder($query): CheckBuilder
+    {
+        return new CheckBuilder($query);
     }
 
 }

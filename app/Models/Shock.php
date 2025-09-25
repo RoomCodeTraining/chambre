@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Filters\ShockFilters;
+use App\Builders\Shock\ShockBuilder;
 use Essa\APIToolKit\Filters\Filterable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -117,5 +118,10 @@ class Shock extends Model
     public function deletedBy(): BelongsTo
     {
         return $this->belongsTo(User::class, 'deleted_by');
+    }
+
+    public function newEloquentBuilder($query): ShockBuilder
+    {
+        return new ShockBuilder($query);
     }
 }

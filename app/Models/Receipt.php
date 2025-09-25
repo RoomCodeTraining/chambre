@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Filters\ReceiptFilters;
+use App\Builders\Receipt\ReceiptBuilder;
 use Essa\APIToolKit\Filters\Filterable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -51,5 +52,10 @@ class Receipt extends Model
     {
         return $this->belongsTo(User::class, 'deleted_by');
     }
+
+    public function newEloquentBuilder($query): ReceiptBuilder
+    {
+        return new ReceiptBuilder($query);
+    }   
 
 }

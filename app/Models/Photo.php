@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Filters\PhotoFilters;
+use App\Builders\Photo\PhotoBuilder;
 use Essa\APIToolKit\Filters\Filterable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -85,5 +86,10 @@ class Photo extends Model
     public function deletedBy(): BelongsTo
     {
         return $this->belongsTo(User::class, 'deleted_by');
+    }
+
+    public function newEloquentBuilder($query): PhotoBuilder
+    {
+        return new PhotoBuilder($query);
     }
 }

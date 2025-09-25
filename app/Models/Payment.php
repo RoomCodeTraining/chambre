@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Filters\PaymentFilters;
+use App\Builders\Payment\PaymentBuilder;
 use Essa\APIToolKit\Filters\Filterable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -93,5 +94,10 @@ class Payment extends Model
     public function status(): BelongsTo
     {
         return $this->belongsTo(Status::class);
+    }
+
+    public function newEloquentBuilder($query): PaymentBuilder
+    {
+        return new PaymentBuilder($query);
     }
 }

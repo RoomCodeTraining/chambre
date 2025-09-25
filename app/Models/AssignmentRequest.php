@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Filters\AssignmentRequestFilters;
+use App\Builders\AssignmentRequest\AssignmentRequestBuilder;
 use Essa\APIToolKit\Filters\Filterable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -117,6 +118,11 @@ class AssignmentRequest extends Model
     public function vehicle(): BelongsTo
     {
         return $this->belongsTo(Vehicle::class);
+    }
+
+    public function newEloquentBuilder($query): AssignmentRequestBuilder
+    {
+        return new AssignmentRequestBuilder($query);
     }
 
 }

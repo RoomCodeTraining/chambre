@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Filters\WorkforceFilters;
+use App\Builders\Workforce\WorkforceBuilder;
 use Essa\APIToolKit\Filters\Filterable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -77,5 +78,10 @@ class Workforce extends Model
     public function deletedBy(): BelongsTo
     {
         return $this->belongsTo(User::class, 'deleted_by');
+    }
+
+    public function newEloquentBuilder($query): WorkforceBuilder
+    {
+        return new WorkforceBuilder($query);
     }
 }

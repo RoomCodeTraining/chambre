@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Filters\OtherCostFilters;
+use App\Builders\OtherCost\OtherCostBuilder;
 use Essa\APIToolKit\Filters\Filterable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -49,6 +50,11 @@ class OtherCost extends Model
     public function deletedBy()
     {
         return $this->belongsTo(User::class, 'deleted_by');
+    }
+
+    public function newEloquentBuilder($query): OtherCostBuilder
+    {
+        return new OtherCostBuilder($query);
     }
 
 }
