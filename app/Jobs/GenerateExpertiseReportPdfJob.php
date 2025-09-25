@@ -67,7 +67,7 @@ class GenerateExpertiseReportPdfJob implements ShouldQueue
         // ✅ Augmenter la limite mémoire (optionnel si ton PDF est lourd)
         ini_set('memory_limit', '2048M');
 
-        $assignment = Assignment::with('experts', 'generalState', 'claimNature', 'technicalConclusion', 'documentTransmitted', 'assignmentType', 'expertiseType', 'status', 'vehicle', 'insurer', 'additionalInsurer', 'repairer', 'client', 'directedBy')
+        $assignment = Assignment::with('generalState', 'claimNature', 'technicalConclusion', 'documentTransmitted', 'assignmentType', 'expertiseType', 'status', 'vehicle', 'insurer', 'additionalInsurer', 'repairer', 'client', 'directedBy')
                         ->where('assignments.id', $this->_assignment->id)
                         ->first();
 

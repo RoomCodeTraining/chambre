@@ -41,9 +41,10 @@ class PhotoController extends Controller
      */
     public function index(): AnonymousResourceCollection
     {
-        $photos = Photo::with('assignment:id,reference', 'photoType:id,code,label', 'status:id,code,label')
+        $photos = Photo::with('assignment:id,reference', 'assignmentRequest:id,reference', 'photoType:id,code,label', 'status:id,code,label')
+                        ->join('assignments', 'photos.assignment_id', '=', 'assignments.id')
                         ->accessibleBy(auth()->user())
-                        ->latest('created_at')
+                        ->latest('photos.created_at')
                         ->useFilters()
                         ->dynamicPaginate();
 
@@ -160,7 +161,7 @@ class PhotoController extends Controller
      */
     public function show(Photo $photo): JsonResponse
     {
-        $photo = Photo::with('assignment:id,reference', 'photoType:id,code,label', 'status:id,code,label')
+        $photo = Photo::with('assignment:id,reference', 'assignmentRequest:id,reference', 'photoType:id,code,label', 'status:id,code,label')
             ->join('assignments', 'photos.assignment_id', '=', 'assignments.id')
             ->accessibleBy(auth()->user())
             ->where('photos.id', $photo->id)

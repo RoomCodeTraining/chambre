@@ -22,8 +22,8 @@ class PhotoResource extends JsonResource
             'is_cover' => (bool) $this->is_cover,
             // 'report_photos' => url('storage/photos/report/'.$this->assignment->reference.'/'.$this->name),
             'photo' => $this->photo_type_id == PhotoType::where('code', PhotoTypeEnum::WORK_SHEET)->first()->id ? url('storage/photos/work-sheet/'.$this->assignment->reference.'/'.$this->name) : url('storage/photos/report/'.$this->assignment->reference.'/'.$this->name),
-            'work_sheet_photo' => url('storage/photos/work-sheet/'.$this->assignment->reference.'/'.$this->name),
-            'assignment_request_photo' => url('storage/photos/assignment-request/'.$this->assignmentRequest->reference.'/'.$this->name),
+            'work_sheet_photo' => $this->assignment ? url('storage/photos/work-sheet/'.$this->assignment->reference.'/'.$this->name) : null,
+            'assignment_request_photo' => $this->assignmentRequest ? url('storage/photos/assignment-request/'.$this->assignmentRequest->reference.'/'.$this->name) : null,
             'assignment' => $this->assignment ? [
                 'id' => $this->assignment->id,
                 'reference' => $this->assignment->reference,

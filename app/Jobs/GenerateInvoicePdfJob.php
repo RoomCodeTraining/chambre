@@ -62,7 +62,7 @@ class GenerateInvoicePdfJob implements ShouldQueue
                         ->where('id', $this->invoice->id)
                         ->first();
 
-        $assignment = Assignment::with('experts', 'generalState', 'technicalConclusion', 'documentTransmitted', 'assignmentType', 'expertiseType', 'status', 'vehicle', 'insurer', 'additionalInsurer', 'broker', 'repairer', 'client', 'directedBy')
+        $assignment = Assignment::with('generalState', 'technicalConclusion', 'documentTransmitted', 'assignmentType', 'expertiseType', 'status', 'vehicle', 'insurer', 'additionalInsurer', 'broker', 'repairer', 'client', 'directedBy')
                         ->where('id', $this->invoice->assignment_id)
                         ->first();
 

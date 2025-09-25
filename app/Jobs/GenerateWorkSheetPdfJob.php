@@ -52,7 +52,7 @@ class GenerateWorkSheetPdfJob implements ShouldQueue
      */
     public function handle(): void
     {
-        $assignment = Assignment::with('experts', 'generalState', 'technicalConclusion', 'documentTransmitted', 'assignmentType', 'expertiseType', 'status', 'vehicle', 'insurer', 'additionalInsurer', 'repairer', 'client', 'directedBy', 'workSheetEstablishedBy', 'workSheetRemark', 'reportRemark')
+        $assignment = Assignment::with('generalState', 'technicalConclusion', 'documentTransmitted', 'assignmentType', 'expertiseType', 'status', 'vehicle', 'insurer', 'additionalInsurer', 'repairer', 'client', 'directedBy', 'workSheetEstablishedBy', 'workSheetRemark', 'reportRemark')
                         ->where('assignments.id', $this->_assignment->id)
                         ->first();
 

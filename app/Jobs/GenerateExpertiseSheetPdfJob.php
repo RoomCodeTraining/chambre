@@ -48,7 +48,7 @@ class GenerateExpertiseSheetPdfJob implements ShouldQueue
      */
     public function handle(): void
     {
-        $assignment = Assignment::with('experts', 'generalState', 'technicalConclusion', 'documentTransmitted', 'assignmentType', 'expertiseType', 'status', 'vehicle', 'insurer', 'additionalInsurer', 'repairer', 'client')
+        $assignment = Assignment::with('generalState', 'technicalConclusion', 'documentTransmitted', 'assignmentType', 'expertiseType', 'status', 'vehicle', 'insurer', 'additionalInsurer', 'repairer', 'client')
                         // ->join('entities as insurers', 'assignments.insurer_id', '=', 'insurers.id')
                         // ->join('entities as repairers', 'assignments.repairer_id', '=', 'repairers.id')
                         // ->join('clients', 'assignments.client_id', '=', 'clients.id')
