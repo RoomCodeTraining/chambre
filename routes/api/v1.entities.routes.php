@@ -15,7 +15,7 @@ Route::middleware(['auth:sanctum'])->name('entities.')->group(function () {
         Route::post('', 'store')->name('store');
 
         // TODO: Should have separate routes for updating entity & changing logo
-        Route::put('{id}', 'update')->name('update');
+        Route::post('{id}', 'update')->name('update');
         Route::put('{id}/enable', 'enable')->name('enable');
         Route::put('{id}/disable', 'disable')->name('disable');
     });
