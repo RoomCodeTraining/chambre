@@ -2570,7 +2570,7 @@ class AssignmentController extends Controller
                     'is_up' => $is_up,
                     'kilometric_incidence' => $kilometric_incidence,
                     'market_incidence' => $market_incidence ?? 0,
-                    'depreciation_rate' => $depreciation_rate,
+                    'depreciation_rate' => $depreciation_rate ?? 0,
                     'vehicle_market_value' => $vehicle_market_value ?? 0,
                 ];
 
@@ -2588,7 +2588,7 @@ class AssignmentController extends Controller
                     'is_up' => $request->evaluations['is_up'],
                     'kilometric_incidence' => $request->evaluations['kilometric_incidence'],
                     'market_incidence' => $request->evaluations['market_incidence'],
-                    'depreciation_rate' => $request->evaluations['depreciation_rate'],
+                    'depreciation_rate' => $request->evaluations['depreciation_rate'] ?? 0,
                     'vehicle_market_value' => $request->evaluations['vehicle_market_value'],
                 ];
             }
