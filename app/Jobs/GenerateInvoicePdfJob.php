@@ -72,10 +72,10 @@ class GenerateInvoicePdfJob implements ShouldQueue
                     ->orderBy('id', 'desc')
                     ->get();
         
-        $path = base_path('public/images/logo_eg.jpg');
-        $type = pathinfo($path, PATHINFO_EXTENSION);
-        $data = file_get_contents($path);
-        $logo = 'data:image/'.$type.';base64,'.base64_encode($data);
+        $logo = Entity::where('id', $assignment->expert_firm_id)->first();
+        $logo = $logo
+        ? image_to_base64(public_path("storage/logos/{$logo->logo}"))
+        : null;
 
         $numberToWords = new NumberToWords();
         $numberTransformer = $numberToWords->getNumberTransformer('fr');

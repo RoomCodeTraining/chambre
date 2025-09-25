@@ -97,10 +97,10 @@ class GenerateExpertiseSheetPdfJob implements ShouldQueue
 
         $payment = Payment::where('assignment_id', $assignment->id)->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->first();
 
-        $path = base_path('public/images/logo_eg.jpg');
-        $type = pathinfo($path, PATHINFO_EXTENSION);
-        $data = file_get_contents($path);
-        $logo = 'data:image/'.$type.';base64,'.base64_encode($data);
+        $logo = Entity::where('id', $assignment->expert_firm_id)->first();
+        $logo = $logo
+        ? image_to_base64(public_path("storage/logos/{$logo->logo}"))
+        : null;
 
         $path_check_icon = base_path('public/images/check-icon.png');
         $type_check_icon = pathinfo($path_check_icon, PATHINFO_EXTENSION);
