@@ -7,6 +7,7 @@ use Carbon\Carbon;
 use App\Models\User;
 use App\Models\Photo;
 use App\Models\Shock;
+use App\Models\Entity;
 use App\Models\QrCode;
 use App\Models\Status;
 use App\Models\Receipt;

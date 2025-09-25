@@ -7,6 +7,7 @@ use Carbon\Carbon;
 use App\Models\User;
 use App\Models\Photo;
 use App\Models\Shock;
+use App\Models\Entity;
 use App\Models\QrCode;
 use App\Models\Status;
 use App\Models\Payment;
@@ -16,12 +17,14 @@ use App\Models\OtherCost;
 use App\Models\PhotoType;
 use App\Enums\ProfileEnum;
 use App\Models\Assignment;
+use RecursiveArrayIterator;
 use App\Enums\PhotoTypeEnum;
 use App\Models\Ascertainment;
 use App\Models\ExpertiseType;
 use Illuminate\Bus\Queueable;
 use App\Models\ArticleRequest;
 use App\Models\AssignmentType;
+use RecursiveIteratorIterator;
 use App\Enums\ExpertiseTypeEnum;
 use NumberToWords\NumberToWords;
 use App\Enums\AssignmentTypeEnum;
@@ -30,8 +33,6 @@ use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
-use RecursiveArrayIterator;
-use RecursiveIteratorIterator;
 
 class GenerateExpertiseReportPdfJob implements ShouldQueue
 {
