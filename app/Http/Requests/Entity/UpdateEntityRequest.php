@@ -18,6 +18,7 @@ class UpdateEntityRequest extends FormRequest
             'telephone' => ['nullable', 'string', 'max:255'],
             'service_description' => ['nullable', 'string'],
             'footer_description' => ['nullable', 'string'],
+            'logo' => ['nullable', 'image', 'mimes:jpeg,png,jpg,gif,svg'],
         ];
     }
 
@@ -26,6 +27,8 @@ class UpdateEntityRequest extends FormRequest
     {
         return [
             'email.regex' => 'L\'adresse email doit être valide.',
+            'logo.image' => 'Le logo doit être une image.',
+            'logo.mimes' => 'Le logo doit être une image de type jpeg, png, jpg, gif ou svg.',
         ];
     }
 
