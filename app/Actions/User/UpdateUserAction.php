@@ -12,7 +12,7 @@ class UpdateUserAction
     public function execute(User $user, array $data): User
     {
         $role = Role::firstWhere('name', $data['role']);
-        $user->update([
+        $userUpdate = User::where('id', $user->id)->update([
             'code' => $data['code'],
             'telephone' => $data['telephone'] ?? null,
             'first_name' => $data['first_name'] ?? null,
@@ -22,7 +22,7 @@ class UpdateUserAction
         ]);
 
         app(PermissionRegistrar::class)->setPermissionsTeamId($user->current_role_id);
-        $user->assignRole($role->name);
+        $user->syncRoles($role->name);
 
         return $user->fresh();
     }

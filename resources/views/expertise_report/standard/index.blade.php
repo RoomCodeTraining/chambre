@@ -218,7 +218,7 @@
                                 <tr style="border: 1px solid; font-size: 10px;">
                                     <th style="border: 1px solid; font-size: 10px;">VALEUR NEUVE <br> 
                                         <span class="text-danger" style="font-size: 12px;">
-                                            @if($assignment?->vehicle_new_market_value_option == 'fa' || $assignment?->vehicle_new_market_value_option == 'nc')
+                                            @if($assignment?->vehicle_new_market_value_option == 'fa' || $assignment?->vehicle_new_market_value_option == 'nc' || $assignment?->vehicle_new_market_value_option == 'nci')
                                                 {{ mb_strtoupper($assignment?->vehicle_new_market_value_option)}}
                                             @else
                                                 {{number_format($assignment?->new_market_value ?? 0, 0, ',', ' ')}}
@@ -227,7 +227,7 @@
                                     </th>
                                     <th style="border: 1px solid; font-size: 10px;">DEPRECIATION <br> 
                                     <span style="font-size: 12px;">
-                                        @if($assignment?->vehicle_new_market_value_option == 'fa' || $assignment?->vehicle_new_market_value_option == 'nc')
+                                        @if($assignment?->vehicle_new_market_value_option == 'fa' || $assignment?->vehicle_new_market_value_option == 'nc' || $assignment?->vehicle_new_market_value_option == 'nci')
                                             
                                         @else
                                             @if($assignment?->depreciation_rate > 0)

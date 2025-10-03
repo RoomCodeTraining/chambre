@@ -183,8 +183,7 @@ class GenerateExpertiseReportPdfJob implements ShouldQueue
         //     }            
         // }
 
-        $logo = Entity::where('id', $assignment->expert_firm_id)->first();
-
+        $logo = Entity::where('id', $assignment->expert_firm_id)->first()->logo;
         $logo = $logo
         ? image_to_base64(public_path("storage/logos/{$logo->logo}"))
         : null;

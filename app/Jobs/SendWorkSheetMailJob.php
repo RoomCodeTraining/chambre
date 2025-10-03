@@ -70,11 +70,46 @@ class SendWorkSheetMailJob implements ShouldQueue
         }
 
         $user_emails = User::whereIn('current_role_id', Role::whereIn('name', [RoleEnum::ADMIN->value, RoleEnum::CEO->value, RoleEnum::EXPERT_MANAGER->value, RoleEnum::EXPERT->value])->get()->pluck('id'))->get()->pluck('email');
+        
+        // Normalise les emails en une liste de chaînes
+		$emails = [];
+		if (is_string($assignment->emails) && trim($assignment->emails) !== '') {
+			$decoded = json_decode($assignment->emails, true);
+			if (json_last_error() === JSON_ERROR_NONE) {
+				if (is_array($decoded)) {
+					foreach ($decoded as $item) {
+						if (is_string($item)) {
+							$emails[] = $item;
+						} elseif (is_array($item) && isset($item['email']) && is_string($item['email'])) {
+							$emails[] = $item['email'];
+						}
+					}
+				} elseif (is_string($decoded)) {
+					$emails[] = $decoded;
+				}
+			} else {
+				// fallback: liste séparée par des virgules
+				$emails = array_filter(array_map('trim', explode(',', $assignment->emails)));
+			}
+		}
 
-        $emails = json_decode($assignment->emails);
+		// Vérifier si le nom de domaine des emails existe
+		$valid_emails = [];
+		foreach ($emails as $email) {
+			if (!is_string($email) || $email === '') {
+				continue;
+			}
+			$parts = explode('@', $email);
+			if (count($parts) == 2) {
+				$domain = $parts[1];
+				// Vérifie l'existence du domaine via DNS (MX ou A)
+				if (checkdnsrr($domain, 'MX') || checkdnsrr($domain, 'A')) {
+					$valid_emails[] = $email;
+				}
+			}
+		}
+		$emails = $valid_emails;
         $nb_email = count($emails);
-
-
 
         if($file &&  $nb_email > 0){
             try {

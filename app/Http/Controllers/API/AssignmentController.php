@@ -1448,8 +1448,16 @@ class AssignmentController extends Controller
      */
     public function store(CreateAssignmentRequest $request): JsonResponse
     {
-        if($request->claim_number && Assignment::where('claim_number', $request->claim_number)->exists()){
-            return $this->responseUnprocessable('Le numéro de sinistre existe déjà');
+        if($request->claim_number && Assignment::where('claim_number', $request->claim_number)->where(function($query){
+            $query->where('status_id', Status::where('code', StatusEnum::OPENED)->first()->id)
+                ->orWhere('status_id', Status::where('code', StatusEnum::REALIZED)->first()->id)
+                ->orWhere('status_id', Status::where('code', StatusEnum::PENDING_FOR_REPAIRER_INVOICE)->first()->id)
+                ->orWhere('status_id', Status::where('code', StatusEnum::PENDING_FOR_REPAIRER_INVOICE_VALIDATED)->first()->id)
+                ->orWhere('status_id', Status::where('code', StatusEnum::IN_EDITING)->first()->id)
+                ->orWhere('status_id', Status::where('code', StatusEnum::EDITED)->first()->id)
+                ->orWhere('status_id', Status::where('code', StatusEnum::VALIDATED)->first()->id);
+        })->count() > 0){
+            return $this->responseUnprocessable('Le numéro de sinistre existe déjà pour un dossier ouvert, réalisé, rédigé ou validé');
         }
 
         $expert_firm = Entity::find(auth()->user()->entity_id);
@@ -2063,8 +2071,16 @@ class AssignmentController extends Controller
         //     return $this->responseUnprocessable("La fiche d'expertise est déjà établie.", null);
         // }
 
-        if($request->claim_number && Assignment::where('claim_number', $request->claim_number)->count() > 1){
-            return $this->responseUnprocessable('Le numéro de sinistre existe déjà');
+        if($request->claim_number && Assignment::where('claim_number', $request->claim_number)->where(function($query){
+            $query->where('status_id', Status::where('code', StatusEnum::OPENED)->first()->id)
+                ->orWhere('status_id', Status::where('code', StatusEnum::REALIZED)->first()->id)
+                ->orWhere('status_id', Status::where('code', StatusEnum::PENDING_FOR_REPAIRER_INVOICE)->first()->id)
+                ->orWhere('status_id', Status::where('code', StatusEnum::PENDING_FOR_REPAIRER_INVOICE_VALIDATED)->first()->id)
+                ->orWhere('status_id', Status::where('code', StatusEnum::IN_EDITING)->first()->id)
+                ->orWhere('status_id', Status::where('code', StatusEnum::EDITED)->first()->id)
+                ->orWhere('status_id', Status::where('code', StatusEnum::VALIDATED)->first()->id);
+        })->count() > 1){
+            return $this->responseUnprocessable('Le numéro de sinistre existe déjà pour un dossier ouvert, réalisé, rédigé ou validé');
         }
 
         $exist_client = Client::where('name', 'like', '%'.$request->name.'%')->first();
@@ -2288,8 +2304,13 @@ class AssignmentController extends Controller
     {
         $assignment = Assignment::findOrFail($id);
 
-        if($request->claim_number && Assignment::where('claim_number', $request->claim_number)->count() > 1){
-            return $this->responseUnprocessable('Le numéro de sinistre existe déjà');
+        if($request->claim_number && Assignment::where('claim_number', $request->claim_number)->where(function($query){
+            $query->where('status_id', Status::where('code', StatusEnum::OPENED)->first()->id)
+                ->orWhere('status_id', Status::where('code', StatusEnum::REALIZED)->first()->id)
+                ->orWhere('status_id', Status::where('code', StatusEnum::EDITED)->first()->id)
+                ->orWhere('status_id', Status::where('code', StatusEnum::VALIDATED)->first()->id);
+        })->count() > 1){
+            return $this->responseUnprocessable('Le numéro de sinistre existe déjà pour un dossier ouvert, réalisé, rédigé ou validé');
         }
 
         $auth_user = User::with('currentRole')->where('id', auth()->user()->id)->first();
@@ -2412,7 +2433,7 @@ class AssignmentController extends Controller
                 'reference' => $reference ?? $assignment->reference,
                 'expert_firm_id' => $assignment->expert_firm_id,
                 'insurer_id' => $insurer_id ?? $assignment->insurer_id,
-                'additional_insurer_id' => $assignment->additional_insurer_id,
+                'additional_insurer_id' => $additional_insurer_id ?? $assignment->additional_insurer_id,
                 'vehicle_id' => $vehicle_id ?? $assignment->vehicle_id,
                 'repairer_id' => $request->repairer_id ?? $assignment->repairer_id,
                 'client_id' => $request->client_id ?? $assignment->client_id,

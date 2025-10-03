@@ -15,6 +15,7 @@ class UpdateUserRequest extends FormRequest
             'last_name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'regex:' . self::emailRegex(), 'max:255', Rule::unique('users', 'email')->ignore($this->email, 'email')],
             'telephone' => ['nullable', 'string', 'max:255'],
+            'role' => ['required', 'exists:roles,name'],
             'signature' => ['nullable', 'image', 'mimes:jpeg,png,jpg,gif,svg', 'max:2048'],
             'current_password' => [
                 'sometimes',
