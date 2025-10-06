@@ -18,6 +18,7 @@ class AssignmentFilters extends QueryFilters
         'status_id',
         'vehicle_id',
         'insurer_id',
+        'broker_id',
         'repairer_id',
         'client_id',
         'claim_nature_id',
@@ -27,6 +28,7 @@ class AssignmentFilters extends QueryFilters
     protected array $allowedIncludes = [
         'insurer', 
         'broker', 
+        'additionalInsurer',
         'repairer', 
         'client', 
         'vehicle', 
@@ -51,6 +53,7 @@ class AssignmentFilters extends QueryFilters
         'vehicle' => ['license_plate'],
         'insurer' => ['name'],
         'broker' => ['name'],
+        'additionalInsurer' => ['name'],
         'repairer' => ['name'],
         'client' => ['name'],
     ];

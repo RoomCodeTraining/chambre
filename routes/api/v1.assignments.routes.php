@@ -19,18 +19,12 @@ Route::middleware('auth:sanctum')->name('assignments.')->group(function () {
 
     /** @uses AssignmentController::calculate */
     Route::post('/calculate', [AssignmentController::class, 'calculate'])->name('calculate');
-
-    /** @uses AssignmentController::calculate_evaluation */
-    Route::post('/calculate-evaluation', [AssignmentController::class, 'calculate_evaluation'])->name('calculate-evaluation');
-
+    
     /** @uses AssignmentController::realize */
     Route::put('/realize/{assignment}', [AssignmentController::class, 'realize'])->name('realize');
 
     /** @uses AssignmentController::edit */
     Route::put('/edit/{assignment}', [AssignmentController::class, 'edit'])->name('edit');
-
-    /** @uses AssignmentController::evaluate */
-    Route::put('/evaluate/{assignment}', [AssignmentController::class, 'evaluate'])->name('evaluate');
 
     /** @uses AssignmentController::update */
     Route::put('/update/{assignment}', [AssignmentController::class, 'update'])->name('update');

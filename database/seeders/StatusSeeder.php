@@ -46,7 +46,7 @@ class StatusSeeder extends Seeder
         ]);
 
         Status::create([
-            'code' => StatusEnum::PENDING_FOR_REPAIRER_INVOICE_VALIDATED,
+            'code' => StatusEnum::PENDING_FOR_REPAIRER_INVOICE_VALIDATION,
             'label' => "Facture du réparateur validée",
             'description' => "Facture du réparateur validée",
         ]);
@@ -86,12 +86,6 @@ class StatusSeeder extends Seeder
             'code' => StatusEnum::DELETED,
             'label' => "Supprimé",
             'description' => "Supprimé",
-        ]);
-        
-        Status::create([
-            'code' => StatusEnum::IN_PAYMENT,
-            'label' => "En cours de paiement",
-            'description' => "En cours de paiement",
         ]);
 
         Status::create([    

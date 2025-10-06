@@ -356,7 +356,7 @@
                         <b style="text-align: center;">
                             <div class="p-1 bd-highlight" style="font-size: 20px;">PRÉJUDICE <br> <span class="text-danger">
                                 @if($assignment?->technicalConclusion && $assignment?->technicalConclusion?->code != 'TC001')
-                                    {{number_format(($assignment?->market_value - $assignment?->salvage_value) ?? 0, 0, ',', ' ')}} FCFA
+                                    {{number_format(($assignment?->market_value - $assignment?->salvage_value + $assignment?->other_cost_amount) ?? 0, 0, ',', ' ')}} FCFA
                                 @else
                                     {{number_format($assignment?->total_amount ?? 0, 0, ',', ' ')}} FCFA
                                 @endif
