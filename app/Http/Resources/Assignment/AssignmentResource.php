@@ -80,6 +80,7 @@ class AssignmentResource extends JsonResource
             'contact_date' => $this->contact_date,
             'assured_value' => $this->assured_value,
             'salvage_value' => $this->salvage_value,
+            'vehicle_mileage' => $this->vehicle_mileage,
             'new_market_value' => $this->new_market_value,
             'depreciation_rate' => $this->depreciation_rate,
             'market_value' => $this->market_value,

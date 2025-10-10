@@ -13,6 +13,8 @@ class CreateInvoiceRequest extends FormRequest
             'assignment_id' => 'required|exists:assignments,id',
             'date' => 'required|date_format:Y-m-d',
             'object' => 'required|string',
+            'address' => 'nullable|string',
+            'taxpayer_account_number' => 'nullable|string',
         ];
     }
 
@@ -21,6 +23,8 @@ class CreateInvoiceRequest extends FormRequest
         return [
             'date.date' => 'La date est invalide.',
             'date.date_format' => 'Le format de la date est invalide.',
+            'address.string' => 'L\'adresse est invalide.',
+            'taxpayer_account_number.string' => 'Le numéro de compte contribuable est invalide.',
         ];
     }
 }

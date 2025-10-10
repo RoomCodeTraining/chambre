@@ -107,7 +107,8 @@
                                             {{ $assignment?->insurer?->name ?? '' }} / {{ $assignment?->client?->name ?? '' }}
                                         </span>
                                     </b><br>
-                                    <span style="font-style: italic; padding-left: 50px;">{{ $assignment?->insurer?->address ?? '' }}</span>
+                                    <b style="text-decoration: underline;">Adresse</b> <b> : <span style="padding-left: 10px;">{{ $assignment?->insurer?->address ?? '' }}</span></b><br>
+                                    <b style="text-decoration: underline;">Numéro de compte contribuable</b> <b> : <span style="padding-left: 10px;">{{ $assignment?->insurer?->taxpayer_account_number ?? '' }}</span></b><br>
                                 @else
                                     @if($assignment?->broker)
                                     <b> : 
@@ -115,14 +116,16 @@
                                             {{ $assignment?->broker?->name ?? '' }} / {{ $assignment?->client?->name ?? '' }}
                                         </span>
                                     </b><br>
-                                    <span style="font-style: italic; padding-left: 50px;">{{ $assignment?->broker?->address ?? '' }}</span>                            
+                                    <b style="text-decoration: underline;">Adresse</b> <b> : <span style="padding-left: 10px;">{{ $assignment?->broker?->address ?? '' }}</span></b><br>
+                                    <b style="text-decoration: underline;">Numéro de compte contribuable</b> <b> : <span style="padding-left: 10px;">{{ $assignment?->broker?->taxpayer_account_number ?? '' }}</span></b><br>
                                     @else
                                     <b> : 
                                         <span style="padding-left: 10px;">
                                             {{ $assignment?->insurer?->name ?? '' }} / {{ $assignment?->client?->name ?? '' }}
                                         </span>
                                     </b><br>
-                                    <span style="font-style: italic; padding-left: 50px;">{{ $assignment?->insurer?->address ?? '' }}</span>
+                                    <b style="text-decoration: underline;">Adresse</b> <b> : <span style="padding-left: 10px;">{{ $assignment?->insurer?->address ?? '' }}</span></b><br>
+                                    <b style="text-decoration: underline;">Numéro de compte contribuable</b> <b> : <span style="padding-left: 10px;">{{ $assignment?->insurer?->taxpayer_account_number ?? '' }}</span></b><br>
                                     @endif
                                 @endif
                             @else
@@ -132,7 +135,8 @@
                                     {{ $assignment?->client?->name ?? '' }}
                                 </span>
                             </b><br>
-                            <span style="font-style: italic; padding-left: 50px;">{{ $assignment?->client?->address ?? '' }}</span>
+                            <b style="text-decoration: underline;">Adresse</b> <b> : <span style="padding-left: 10px;">{{ $assignment?->client?->address ?? '' }}</span></b><br>
+                            <b style="text-decoration: underline;">Numéro de compte contribuable</b> <b> : <span style="padding-left: 10px;">{{ $assignment?->client?->taxpayer_account_number ?? '' }}</span></b><br>
                             @endif
                         </td>
                     </tr>
@@ -250,7 +254,7 @@
                     <tr>
                         <td>
                             Arrêté la présente facture à la somme de :<br>
-                            <b style="text-transform: uppercase;">{{ $numberTransformer->toWords($assignment?->receipt_amount) }} FRANCS CFA</b>
+                            <b style="text-transform: uppercase;">{{ $numberTransformer->toWords($assignment?->receipt_amount) }} FRANCS CFA.</b>
                         </td>
                     </tr>
                 </tbody>

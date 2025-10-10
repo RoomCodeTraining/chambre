@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('name')->nullable();
             $table->integer('position')->nullable();
             $table->boolean('is_cover')->default(false);
+            $table->boolean('is_checked')->default(false);
             $table->unsignedBigInteger('assignment_id')->index()->nullable();
             $table->unsignedBigInteger('assignment_request_id')->index()->nullable();
             $table->unsignedBigInteger('photo_type_id')->index()->nullable();

@@ -28,6 +28,7 @@ return new class extends Migration
             $table->date('seen_before_work_date')->nullable();
             $table->date('seen_during_work_date')->nullable();
             $table->date('seen_after_work_date')->nullable();
+            $table->decimal('vehicle_mileage', 18, 2)->nullable();
             $table->decimal('assured_value', 18, 2)->nullable();
             $table->decimal('salvage_value', 18, 2)->nullable();
             $table->decimal('new_market_value', 18, 2)->nullable();
@@ -101,7 +102,7 @@ return new class extends Migration
 
             $table->foreign('expert_firm_id')
                 ->references('id')
-                ->on('users')
+                ->on('entities')
                 ->onDelete('cascade');
 
             $table->foreign('insurer_id')

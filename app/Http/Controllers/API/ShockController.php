@@ -86,6 +86,11 @@ class ShockController extends Controller
             return $this->responseUnprocessable("Impossible d'ajouter un choc", null);
         }
 
+        $is_validated = false;
+        if($assignment->is_validated_by_expert == 1 && $assignment->is_validated_by_repairer == 1){
+            $is_validated = true;
+        }
+
         $shocks = $request->get('shocks');
 
         if(count($shocks) > 0){
@@ -98,6 +103,8 @@ class ShockController extends Controller
                     'hourly_rate_id' => $data['hourly_rate_id'] ?? null,
                     'with_tax' => $data['with_tax'],
                     'position' => $shock_position,
+                    'is_before_quote' => $is_validated ? 0 : 1,
+                    'is_validated' => 0,
                     'status_id' => Status::where('code', StatusEnum::ACTIVE)->first()->id,
                     'created_by' => auth()->user()->id,
                     'updated_by' => auth()->user()->id,
@@ -140,6 +147,8 @@ class ShockController extends Controller
                             'control' => $item['control'],
                             'comment' => $item['comment'],
                             'position' => $shock_work_position,
+                            'is_before_quote' => $is_validated ? 0 : 1,
+                            'is_validated' => $is_validated,
                             'obsolescence_rate' => $obsolescence_rate,
                             'obsolescence_amount_excluding_tax' => $obsolescence_amount_excluding_tax,
                             'obsolescence_amount_tax' => $obsolescence_amount_tax,
@@ -208,6 +217,8 @@ class ShockController extends Controller
                             'amount_tax' => $amount_tax,
                             'amount' => $amount,
                             'position' => $workforce_position,
+                            'is_before_quote' => $is_validated ? 0 : 1,
+                            'is_validated' => $is_validated,
                             'status_id' => Status::where('code', StatusEnum::ACTIVE)->first()->id,
                             'created_by' => auth()->user()->id,
                             'updated_by' => auth()->user()->id,
@@ -285,6 +296,20 @@ class ShockController extends Controller
                     'amount' => ceil($total_new_amount + $total_workforce_amount + $total_paint_product_amount + $total_small_supply_amount + $total_recovery_amount),
                 ]);
                 $shock_position++;
+            }
+
+            $user_entity = Entity::with('entityType:id,code')->findOrFail(auth()->user()->entity_id);
+            if($is_validated){
+                if($user_entity->entityType->code == EntityTypeEnum::ORGANIZATION){
+                    $assignment->update([
+                        'is_validated_by_expert' => 0,
+                    ]);
+                }
+                if($user_entity->entityType->code == EntityTypeEnum::REPAIRER){
+                    $assignment->update([
+                        'is_validated_by_repairer' => 0,
+                    ]);
+                }
             }
         }
 
@@ -398,14 +423,35 @@ class ShockController extends Controller
 
         $assignment = Assignment::findOrFail($shock->assignment_id);
 
+        $is_validated = false;
+        if($assignment->is_validated_by_expert == 1 && $assignment->is_validated_by_repairer == 1){
+            $is_validated = true;
+        }
+
         if($assignment->status_id == Status::where('code', StatusEnum::VALIDATED)->first()->id || $assignment->status_id == Status::where('code', StatusEnum::PAID)->first()->id){
             return $this->responseUnprocessable("Impossible de mettre à jour un choc", null);
         }
 
         $shock->update([
             'shock_point_id' => $request->shock_point_id,
+            'is_before_quote' => $is_validated ? 0 : 1,
+            'is_validated' => $is_validated,
             'updated_by' => auth()->user()->id,
         ]);
+
+        $user_entity = Entity::with('entityType:id,code')->findOrFail(auth()->user()->entity_id);
+        if($is_validated){
+            if($user_entity->entityType->code == EntityTypeEnum::ORGANIZATION){
+                $assignment->update([
+                    'is_validated_by_expert' => 0,
+                ]);
+            }
+            if($user_entity->entityType->code == EntityTypeEnum::REPAIRER){
+                $assignment->update([
+                    'is_validated_by_repairer' => 0,
+                ]);
+            }
+        }
 
         $this->recalculate($shock->assignment_id);
 
@@ -494,11 +540,18 @@ class ShockController extends Controller
 
         $assignment = Assignment::findOrFail($shock->assignment_id);
 
+        $is_validated = false;
+        if($assignment->is_validated_by_expert == 1 && $assignment->is_validated_by_repairer == 1){
+            $is_validated = true;
+        }
+
         if($assignment->status_id == Status::where('code', StatusEnum::VALIDATED)->first()->id || $assignment->status_id == Status::where('code', StatusEnum::PAID)->first()->id){
             return $this->responseUnprocessable("Impossible de supprimer un choc", null);
         }
 
         $shock->update([
+            'is_before_quote' => $is_validated ? 0 : 1,
+            'is_validated' => $is_validated,
             'status_id' => Status::where('code', StatusEnum::DELETED)->first()->id,
             'deleted_at' => now(),
             'deleted_by' => auth()->user()->id,
@@ -508,6 +561,8 @@ class ShockController extends Controller
         if(count($shockWorks) > 0){
             foreach($shockWorks as $shockWork){
                 $shockWork->update([
+                    'is_before_quote' => $is_validated ? 0 : 1,
+                    'is_validated' => $is_validated,
                     'status_id' => Status::where('code', StatusEnum::DELETED)->first()->id,
                     'deleted_at' => now(),
                     'deleted_by' => auth()->user()->id,
@@ -520,11 +575,27 @@ class ShockController extends Controller
         if(count($workforces) > 0){
             foreach($workforces as $workforce){
                 $workforce->update([
+                    'is_before_quote' => $is_validated ? 0 : 1,
+                    'is_validated' => $is_validated,
                     'status_id' => Status::where('code', StatusEnum::DELETED)->first()->id,
                     'deleted_at' => now(),
                     'deleted_by' => auth()->user()->id,
                 ]);
                 $workforce->delete();
+            }
+        }
+
+        $user_entity = Entity::with('entityType:id,code')->findOrFail(auth()->user()->entity_id);
+        if($is_validated){
+            if($user_entity->entityType->code == EntityTypeEnum::ORGANIZATION){
+                $assignment->update([
+                    'is_validated_by_expert' => 0,
+                ]);
+            }
+            if($user_entity->entityType->code == EntityTypeEnum::REPAIRER){
+                $assignment->update([
+                    'is_validated_by_repairer' => 0,
+                ]);
             }
         }
 

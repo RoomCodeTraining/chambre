@@ -16,6 +16,8 @@ return new class extends Migration
         Schema::create('shocks', function (Blueprint $table) {
             $table->bigIncrements('id')->unsigned();
             $table->boolean('with_tax')->default(false);
+            $table->boolean('is_before_quote')->default(false);
+            $table->boolean('is_validated')->default(false);
 
             $table->decimal('shock_work_obsolescence_amount_excluding_tax', 18, 2)->nullable();
             $table->decimal('shock_work_obsolescence_amount_tax', 18, 2)->nullable();

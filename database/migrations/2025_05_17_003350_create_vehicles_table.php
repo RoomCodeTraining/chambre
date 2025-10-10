@@ -32,6 +32,7 @@ return new class extends Migration
             $table->unsignedBigInteger('bodywork_id')->index()->nullable();
             $table->unsignedBigInteger('vehicle_genre_id')->index()->nullable();
             $table->unsignedBigInteger('vehicle_energy_id')->index()->nullable();
+            $table->string('relationships')->nullable();
             $table->unsignedBigInteger('status_id')->index()->nullable();
             $table->unsignedBigInteger('created_by')->index()->nullable();
             $table->timestamp('created_at')->nullable();

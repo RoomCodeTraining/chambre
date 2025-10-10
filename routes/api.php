@@ -78,3 +78,42 @@ Route::prefix('v1')->middleware(LogsOutDisabledUser::class)->group(function () {
     Route::prefix('dashboard')->group(base_path('routes/api/v1.dashboard.routes.php'));
     Route::group([], base_path('routes/api/v1.common.routes.php'));
 });
+/*===========================
+=           quotes           =
+=============================*/
+
+Route::apiResource('/quotes', \App\Http\Controllers\API\QuoteController::class);
+
+/*=====  End of quotes   ======*/
+
+/*===========================
+=           clientRelationships           =
+=============================*/
+
+Route::apiResource('/clientRelationships', \App\Http\Controllers\API\ClientRelationshipController::class);
+
+/*=====  End of clientRelationships   ======*/
+
+/*===========================
+=           vehicleRelationships           =
+=============================*/
+
+Route::apiResource('/vehicleRelationships', \App\Http\Controllers\API\VehicleRelationshipController::class);
+
+/*=====  End of vehicleRelationships   ======*/
+
+/*===========================
+=           insurerRelationships           =
+=============================*/
+
+Route::apiResource('/insurerRelationships', \App\Http\Controllers\API\InsurerRelationshipController::class);
+
+/*=====  End of insurerRelationships   ======*/
+
+/*===========================
+=           repairerRelationships           =
+=============================*/
+
+Route::apiResource('/repairerRelationships', \App\Http\Controllers\API\RepairerRelationshipController::class);
+
+/*=====  End of repairerRelationships   ======*/

@@ -18,6 +18,8 @@ class WorkforceResource extends JsonResource
             'nb_hours' => $this->nb_hours,
             'work_fee' => $this->work_fee,
             'with_tax' => $this->with_tax,
+            'is_before_quote' => (bool) $this->is_before_quote,
+            'is_validated' => (bool) $this->is_validated,
             'discount' => $this->discount,
             'all_paint' => $this->all_paint,
             'position' => $this->position,

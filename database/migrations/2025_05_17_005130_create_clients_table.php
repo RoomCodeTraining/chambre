@@ -20,6 +20,8 @@ return new class extends Migration
             $table->string('address')->nullable();
             $table->string('phone_1')->nullable();
             $table->string('phone_2')->nullable();
+            $table->string('taxpayer_account_number')->nullable();
+            $table->string('relationships')->nullable();
             $table->unsignedBigInteger('status_id')->index()->nullable();
             $table->unsignedBigInteger('created_by')->index()->nullable();
             $table->timestamp('created_at')->nullable();

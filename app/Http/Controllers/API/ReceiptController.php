@@ -256,7 +256,7 @@ class ReceiptController extends Controller
             $amount = $assignment->total_amount;
             if($amount){
                 if($assignment->technicalConclusion && $assignment->technicalConclusion->code != 'TC001'){
-                    $amount = $assignment->market_value - $assignment->salvage_value;
+                    $amount = $assignment->market_value - $assignment->salvage_value + $assignment->other_cost_amount;
                 }
                 $workFee = WorkFee::where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->where('param_1', '<', $amount)->where('param_2', '>=', $amount)->first();
                 if(!$workFee){

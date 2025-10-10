@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('email')->unique()->nullable();
             $table->string('telephone')->nullable();
             $table->string('address')->nullable();
+            $table->string('taxpayer_account_number')->nullable();
             $table->text('service_description')->nullable();
             $table->text('footer_description')->nullable();
             $table->text('logo')->nullable();

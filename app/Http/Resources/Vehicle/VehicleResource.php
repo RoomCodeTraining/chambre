@@ -14,6 +14,7 @@ use App\Http\Resources\VehicleModel\VehicleModelResource;
 use App\Http\Resources\VehicleState\VehicleStateResource;
 use App\Http\Resources\VehicleEnergy\VehicleEnergyResource;
 use App\Http\Resources\VehicleModel\VehicleModelResourceWhenLoaded;
+use App\Models\Entity;
 
 class VehicleResource extends JsonResource
 {
@@ -37,6 +38,13 @@ class VehicleResource extends JsonResource
             'vehicle_energy' => new VehicleEnergyResource($this->whenLoaded('vehicleEnergy')),
             'color' => new ColorResource($this->whenLoaded('color')),
             'bodywork' => new BodyworkResource($this->whenLoaded('bodywork')),
+            'relationships' => $this->relationships ? Entity::whereIn('id', json_decode($this->relationships))->get()->map(function($item){
+                return [
+                    'id' => $item->id,
+                    'code' => $item->code,
+                    'name' => $item->name,
+                ];
+            }) : null,
             'assignments' => AssignmentResource::collection($this->whenLoaded('assignments')),
             'status' => new StatusResource($this->whenLoaded('status')),
             'created_by' => new UserResource($this->whenLoaded('createdBy')),

@@ -1106,6 +1106,7 @@ class AssignmentController extends Controller
             'damage_declared' => $request->damage_declared,
             'point_noted' => $request->point_noted,
             'received_at' => $request->received_at,
+            'vehicle_mileage' => $request->vehicle_mileage,
             'status_id' => Status::where('code', StatusEnum::OPENED)->first()->id,
             'created_by' => auth()->user()->id,
             'updated_by' => auth()->user()->id,
@@ -1146,6 +1147,7 @@ class AssignmentController extends Controller
             'expertise_date' => $request->expertise_date,
             'expertise_place' => $request->expertise_place,
             'point_noted' => $request->point_noted,
+            'vehicle_mileage' => $request->mileage,
             'repairer_id' => $request->repairer_id ?? $assignment->repairer_id,
             'directed_by' => $request->directed_by,
             'status_id' => Status::where('code', StatusEnum::REALIZED)->first()->id,
@@ -1154,9 +1156,9 @@ class AssignmentController extends Controller
             'updated_by' => auth()->user()->id,
         ]);
 
-        if($request->vehicle_mileage){
+        if($request->mileage){
             $vehicle = Vehicle::where('id',$assignment->vehicle_id)->first();
-            $vehicle->mileage = $request->vehicle_mileage;
+            $vehicle->mileage = $request->mileage;
             $vehicle->save();
         }
 
@@ -1187,6 +1189,7 @@ class AssignmentController extends Controller
         if($request->new_market_value){
             $vehicle->update([
                 'new_market_value' => $request->new_market_value,
+                'mileage' => $request->mileage,
             ]);
         }
 
@@ -1287,6 +1290,33 @@ class AssignmentController extends Controller
                         $exist_shockWork = ShockWork::where('shock_id', $shock->id)->where('supply_id', $item['supply_id'])->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->first();
                         if($exist_shockWork){
                             $shockWork = $exist_shockWork;
+                            $shockWork->update([
+                                'supply_id' => $item['supply_id'] ?? null,
+                                'disassembly' => $item['disassembly'] ?? false,
+                                'replacement' => $item['replacement'] ?? false,
+                                'repair' => $item['repair'] ?? false,
+                                'paint' => $item['paint'] ?? false,
+                                'obsolescence' => $item['obsolescence'] ?? false,
+                                'control' => $item['control'] ?? false,
+                                'comment' => $item['comment'],
+                                'amount' =>  $item['amount'],
+                                'position' =>  $shock_work_position,
+                                'obsolescence_rate' => $obsolescence_rate,
+                                'obsolescence_amount_excluding_tax' => $obsolescence_amount_excluding_tax,
+                                'obsolescence_amount_tax' => $obsolescence_amount_tax,
+                                'obsolescence_amount' => $obsolescence_amount,
+                                'recovery_amount_excluding_tax' => $recovery_amount_excluding_tax,
+                                'recovery_amount_tax' => $recovery_amount_tax,
+                                'recovery_amount' => $recovery_amount,
+                                'discount' => $discount,
+                                'discount_amount_excluding_tax' => $discount_amount_excluding_tax,
+                                'discount_amount_tax' => $discount_amount_tax,
+                                'discount_amount' => $discount_amount,
+                                'new_amount_excluding_tax' => $new_amount_excluding_tax,
+                                'new_amount_tax' => $new_amount_tax,
+                                'new_amount' => $new_amount,
+                                'updated_by' => auth()->user()->id,
+                            ]);
                         } else {
                             $shockWork = ShockWork::create([
                                 'shock_id' => $shock->id,
@@ -1550,6 +1580,7 @@ class AssignmentController extends Controller
             'contact_date' => $request->contact_date,
             'expertise_place' => $request->expertise_place,
             'assured_value' => $request->assured_value,
+            'vehicle_mileage' => $request->mileage,
             'salvage_value' => $request->salvage_value,
             'vehicle_new_market_value_option' => strtolower($request->vehicle_new_market_value_option),
             'new_market_value' => $request->new_market_value,
@@ -1657,6 +1688,7 @@ class AssignmentController extends Controller
                     'paint_type_id' => 1,
                     'hourly_rate_id' => 1,
                     'with_tax' => 0,
+                    'is_before_quote' => 1,
                     'status_id' => Status::where('code', StatusEnum::ACTIVE)->first()->id,
                     'created_by' => auth()->user()->id,
                     'updated_by' => auth()->user()->id,
@@ -1671,6 +1703,7 @@ class AssignmentController extends Controller
                             'replacement' => $item['replacement'],
                             'repair' => $item['repair'],
                             'paint' => $item['paint'],
+                            'is_before_quote' => 1,
                             'obsolescence_rate' => 0,
                             'obsolescence_amount_excluding_tax' => 0,
                             'obsolescence_amount_tax' => 0,
@@ -1979,6 +2012,7 @@ class AssignmentController extends Controller
                 'point_noted' => $request->point_noted,
                 'received_at' => $request->received_at,
                 'assured_value' => $request->assured_value,
+                'vehicle_mileage' => $request->vehicle_mileage ?? $assignment->vehicle_mileage,
                 'updated_by' => auth()->user()->id,    
             ]);
     
@@ -2032,6 +2066,7 @@ class AssignmentController extends Controller
 
         if($assignment->status_id != Status::where('code', StatusEnum::VALIDATED)->first()->id && $assignment->status_id != Status::where('code', StatusEnum::PAID)->first()->id){
             $assignment->update([
+                'vehicle_mileage' => $request->mileage ?? $assignment->vehicle_mileage,
                 'expertise_date' => $request->expertise_date ?? $assignment->expertise_date,
                 'expertise_place' => $request->expertise_place ?? $assignment->expertise_place,
                 'point_noted' => $request->point_noted ?? $assignment->point_noted,
@@ -2039,6 +2074,12 @@ class AssignmentController extends Controller
                 'directed_by' => $request->directed_by ?? $assignment->directed_by,
                 'updated_by' => auth()->user()->id,
             ]);
+
+            if($request->mileage){
+                $vehicle = Vehicle::where('id',$assignment->vehicle_id)->first();
+                $vehicle->mileage = $request->mileage;
+                $vehicle->save();
+            }
     
             dispatch(new GenerateExpertiseSheetPdfJob($assignment));
     
@@ -2155,6 +2196,7 @@ class AssignmentController extends Controller
                 'expertise_place' => $request->expertise_place,
                 'assured_value' => $request->assured_value,
                 'salvage_value' => $request->salvage_value,
+                'vehicle_mileage' => $request->mileage ?? $assignment->vehicle_mileage,
                 'vehicle_new_market_value_option' => $request->vehicle_new_market_value_option ? strtolower($request->vehicle_new_market_value_option) : $assignment->vehicle_new_market_value_option,
                 'new_market_value' => $request->new_market_value,
                 'depreciation_rate' => $request->depreciation_rate,
@@ -2241,7 +2283,7 @@ class AssignmentController extends Controller
      */
     public function validateByRepairer($id): JsonResponse
     {
-        $assignment = Assignment::findOrFail($id);
+        $assignment = Assignment::with('shocks:id,is_validated', 'shocks.shockWorks:id,is_validated', 'shocks.workforces:id,is_validated')->findOrFail($id);
 
         $assignment->update([
             'is_validated_by_repairer' => 1,
@@ -2251,9 +2293,44 @@ class AssignmentController extends Controller
             'updated_by' => auth()->user()->id,
         ]);
 
-        dispatch(new GenerateWorkSheetPdfJob($assignment, true));
+        if($assignment->is_validated_by_expert == 1 && $assignment->is_validated_by_repairer == 1){
+            Shock::where('assignment_id', $assignment->id)->update([
+                'is_validated' => 1,
+            ]);
+
+
+            ShockWork::whereIn('shock_id', $assignment->shocks->pluck('id'))->update([
+                'is_validated' => 1,
+            ]);
+            
+            Workforce::whereIn('shock_id',$assignment->shocks->pluck('id'))->update([
+                'is_validated' => 1,
+            ]);
+        }
 
         return $this->responseSuccess('Dossier validé par le repairer avec succès', new AssignmentResource($assignment));
+    }
+
+    /**
+     * Dévalider un dossier par le repairer
+     *
+     * @authenticated
+     */
+    public function unvalidateByRepairer($id): JsonResponse
+    {
+        $assignment = Assignment::findOrFail($id);
+
+        if($assignment->status_id != Status::where('code', StatusEnum::PENDING_FOR_REPAIRER_INVOICE_VALIDATION)->first()->id && $assignment->status_id != Status::where('code', StatusEnum::IN_EDITING)->first()->id){
+            return $this->responseUnprocessable("Le dossier n'est pas en attente de validation de facture par l'expert.", null);
+        }
+
+        $assignment->update([
+            'is_validated_by_expert' => 0,
+            'status_id' => Status::where('code', StatusEnum::PENDING_FOR_REPAIRER_INVOICE)->first()->id,
+            'updated_by' => auth()->user()->id,
+        ]);
+
+        return $this->responseSuccess('Dossier dévalidé par l\'expert avec succès', new AssignmentResource($assignment));
     }
 
     /**
@@ -2263,7 +2340,7 @@ class AssignmentController extends Controller
      */
     public function validateByExpert($id): JsonResponse
     {
-        $assignment = Assignment::findOrFail($id);
+        $assignment = Assignment::with('shocks:id,is_validated', 'shocks.shockWorks:id,is_validated', 'shocks.workforces:id,is_validated')->findOrFail($id);
 
         $assignment->update([
             'is_validated_by_expert' => 1,
@@ -2273,7 +2350,20 @@ class AssignmentController extends Controller
             'updated_by' => auth()->user()->id,
         ]);
 
-        dispatch(new GenerateWorkSheetPdfJob($assignment, true));
+        if($assignment->is_validated_by_expert == 1 && $assignment->is_validated_by_repairer == 1){
+            Shock::where('assignment_id', $assignment->id)->update([
+                'is_validated' => 1,
+            ]);
+
+
+            ShockWork::whereIn('shock_id', $assignment->shocks->pluck('id'))->update([
+                'is_validated' => 1,
+            ]);
+            
+            Workforce::whereIn('shock_id',$assignment->shocks->pluck('id'))->update([
+                'is_validated' => 1,
+            ]);
+        }
 
         return $this->responseSuccess('Dossier validé par l\'expert avec succès', new AssignmentResource($assignment));
     }
@@ -2296,8 +2386,6 @@ class AssignmentController extends Controller
             'status_id' => Status::where('code', StatusEnum::PENDING_FOR_REPAIRER_INVOICE)->first()->id,
             'updated_by' => auth()->user()->id,
         ]);
-
-        dispatch(new GenerateWorkSheetPdfJob($assignment, true));
 
         return $this->responseSuccess('Dossier dévalidé par l\'expert avec succès', new AssignmentResource($assignment));
     }

@@ -22,6 +22,11 @@ class Remark extends Model
     protected $guarded = [];
 
 
+    public function expertFirm()
+    {
+        return $this->belongsTo(Entity::class, 'expert_firm_id');
+    }
+
     public function status()
     {
         return $this->belongsTo(Status::class);

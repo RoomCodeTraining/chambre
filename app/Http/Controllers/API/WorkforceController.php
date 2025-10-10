@@ -295,6 +295,11 @@ class WorkforceController extends Controller
 
         $workforces = $request->get('workforces');
 
+        $is_validated = false;
+        if($shock->assignment->is_validated_by_expert == 1 && $shock->assignment->is_validated_by_repairer == 1){
+            $is_validated = true;
+        }
+
         if(count($workforces) > 0){
             $workforce_position = Workforce::where('shock_id', $request->shock_id)->count() + 1;
             foreach ($workforces as $item) {
@@ -338,11 +343,27 @@ class WorkforceController extends Controller
                     'amount_tax' => $amount_tax,
                     'amount' => $amount,
                     'position' => $workforce_position,
+                    'is_before_quote' => $is_validated ? 0 : 1,
+                    'is_validated' => $is_validated,
                     'status_id' => Status::where('code', StatusEnum::ACTIVE)->first()->id,
                     'created_by' => auth()->user()->id,
                     'updated_by' => auth()->user()->id,
                 ]);
                 $workforce_position++;
+            }
+
+            $user_entity = Entity::with('entityType:id,code')->findOrFail(auth()->user()->entity_id);
+            if($is_validated){
+                if($user_entity->entityType->code == EntityTypeEnum::ORGANIZATION){
+                    $assignment->update([
+                        'is_validated_by_expert' => 0,
+                    ]);
+                }
+                if($user_entity->entityType->code == EntityTypeEnum::REPAIRER){
+                    $assignment->update([
+                        'is_validated_by_repairer' => 0,
+                    ]);
+                }
             }
 
             $this->updateWorkforces($shock->id, $request->paint_type_id, $request->hourly_rate_id, $request->with_tax);
@@ -382,6 +403,11 @@ class WorkforceController extends Controller
 
         $assignment = Assignment::findOrFail($workforce->shock->assignment_id);
 
+        $is_validated = false;
+        if($assignment->is_validated_by_expert == 1 && $assignment->is_validated_by_repairer == 1){
+            $is_validated = true;
+        }
+
         if($assignment->status_id == Status::where('code', StatusEnum::VALIDATED)->first()->id || $assignment->status_id == Status::where('code', StatusEnum::PAID)->first()->id){
             return $this->responseUnprocessable("Impossible de mettre à jour une main-d'oeuvre", null);
         }
@@ -416,29 +442,59 @@ class WorkforceController extends Controller
         }
         $amount = ceil($amount_excluding_tax + $amount_tax);
 
-        $workforce->update([
-            'workforce_type_id' => $request->workforce_type_id,
-            'nb_hours' => $request->nb_hours,
-            'work_fee' => ceil(HourlyRate::where(['id' => $request->hourly_rate_id, 'status_id' => Status::where('code', StatusEnum::ACTIVE)->first()->id])->first()->value),
-            'with_tax' => $request->with_tax,
-            'discount' => $request->discount,
-            'all_paint' => $request->all_paint ?? false,
-            'amount_excluding_tax' => $amount_excluding_tax,
-            'amount_tax' => $amount_tax,
-            'amount' => $amount,
-            'updated_by' => auth()->user()->id,
-        ]);
+        if (
+            $workforce->isDirty('workforce_type_id') 
+            || $workforce->isDirty('nb_hours') 
+            || $workforce->work_fee != ceil(HourlyRate::where(['id' => $request->hourly_rate_id, 'status_id' => Status::where('code', StatusEnum::ACTIVE)->first()->id])->first()->value)
+            || $workforce->isDirty('with_tax') 
+            || $workforce->isDirty('discount') 
+            || $workforce->isDirty('all_paint') 
+            || $workforce->amount_excluding_tax != $amount_excluding_tax
+            || $workforce->amount_tax != $amount_tax
+            || $workforce->amount != $amount) { 
 
-        $shock = Shock::find($workforce->shock_id);
-
-        if($shock){
-            $shock->update([
-                'paint_type_id' => $request->paint_type_id,
-                'hourly_rate_id' => $request->hourly_rate_id,
+            $workforce->update([
+                'workforce_type_id' => $request->workforce_type_id,
+                'nb_hours' => $request->nb_hours,
+                'work_fee' => ceil(HourlyRate::where(['id' => $request->hourly_rate_id, 'status_id' => Status::where('code', StatusEnum::ACTIVE)->first()->id])->first()->value),
+                'with_tax' => $request->with_tax,
+                'discount' => $request->discount,
+                'all_paint' => $request->all_paint ?? false,
+                'is_before_quote' => $is_validated ? 0 : 1,
+                'is_validated' => $is_validated,
+                'amount_excluding_tax' => $amount_excluding_tax,
+                'amount_tax' => $amount_tax,
+                'amount' => $amount,
+                'updated_by' => auth()->user()->id,
             ]);
-        }
+    
+            $shock = Shock::find($workforce->shock_id);
+    
+            if($shock){
+                $shock->update([
+                    'paint_type_id' => $request->paint_type_id,
+                    'hourly_rate_id' => $request->hourly_rate_id,
+                    'is_before_quote' => $is_validated ? 0 : 1,
+                    'is_validated' => $is_validated,
+                ]);
+            }
 
-        $this->updateWorkforces($workforce->shock_id, $request->paint_type_id, $request->hourly_rate_id, $request->with_tax);
+            $user_entity = Entity::with('entityType:id,code')->findOrFail(auth()->user()->entity_id);
+            if($is_validated){
+                if($user_entity->entityType->code == EntityTypeEnum::ORGANIZATION){
+                    $assignment->update([
+                        'is_validated_by_expert' => 0,
+                    ]);
+                }
+                if($user_entity->entityType->code == EntityTypeEnum::REPAIRER){
+                    $assignment->update([
+                        'is_validated_by_repairer' => 0,
+                    ]);
+                }
+            }
+
+            $this->updateWorkforces($workforce->shock_id, $request->paint_type_id, $request->hourly_rate_id, $request->with_tax);
+         }
 
         return $this->responseSuccess('Workforce updated Successfully', new WorkforceResource($workforce));
     }
@@ -648,11 +704,18 @@ class WorkforceController extends Controller
 
         $assignment = Assignment::findOrFail($workforce->shock->assignment_id);
 
+        $is_validated = false;
+        if($assignment->is_validated_by_expert == 1 && $assignment->is_validated_by_repairer == 1){
+            $is_validated = true;
+        }
+
         if($assignment->status_id == Status::where('code', StatusEnum::VALIDATED)->first()->id || $assignment->status_id == Status::where('code', StatusEnum::PAID)->first()->id){
             return $this->responseUnprocessable("Impossible de supprimer une main-d'oeuvre", null);
         }
 
         $workforce->update([
+            'is_before_quote' => $is_validated ? 0 : 1,
+            'is_validated' => $is_validated,
             'status_id' => Status::where('code', StatusEnum::DELETED)->first()->id,
             'deleted_at' => now(),
             'deleted_by' => auth()->user()->id,
@@ -660,7 +723,26 @@ class WorkforceController extends Controller
 
         $workforce->delete();
 
+        $user_entity = Entity::with('entityType:id,code')->findOrFail(auth()->user()->entity_id);
+        if($is_validated){
+            if($user_entity->entityType->code == EntityTypeEnum::ORGANIZATION){
+                $assignment->update([
+                    'is_validated_by_expert' => 0,
+                ]);
+            }
+            if($user_entity->entityType->code == EntityTypeEnum::REPAIRER){
+                $assignment->update([
+                    'is_validated_by_repairer' => 0,
+                ]);
+            }
+        }
+
         $shock = Shock::find($workforce->shock_id);
+
+        $shock->update([
+            'is_before_quote' => $is_validated ? 0 : 1,
+            'is_validated' => $is_validated,
+        ]);
 
         $this->recalculate($workforce->shock_id, $workforce->paint_type_id, $workforce->hourly_rate_id, $workforce->with_tax);
 

@@ -18,6 +18,8 @@ return new class extends Migration
             $table->decimal('nb_hours', 18, 2)->nullable();
             $table->decimal('work_fee', 18, 2)->nullable();
             $table->boolean('with_tax')->default(false);
+            $table->boolean('is_before_quote')->default(false);
+            $table->boolean('is_validated')->default(false);
             $table->decimal('discount', 18, 2)->nullable();
             $table->decimal('amount_excluding_tax', 18, 2)->nullable();
             $table->decimal('amount_tax', 18, 2)->nullable();

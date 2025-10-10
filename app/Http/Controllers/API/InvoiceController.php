@@ -3,12 +3,16 @@
 namespace App\Http\Controllers\API;
 
 use Carbon\Carbon;
+use App\Models\Entity;
 use App\Models\Status;
+use GuzzleHttp\Client;
 use App\Models\Invoice;
 use App\Models\Receipt;
 use App\Enums\StatusEnum;
 use App\Models\Assignment;
 use Illuminate\Http\Request;
+use App\Models\AssignmentType;
+use App\Enums\AssignmentTypeEnum;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\DB;
 use App\Jobs\GenerateInvoicePdfJob;
@@ -442,6 +446,22 @@ class InvoiceController extends Controller
             'updated_by' => auth()->user()->id,
         ]);
 
+        if($request->address || $request->taxpayer_account_number){
+            if($assignment->assignment_type_id == AssignmentType::where('code', AssignmentTypeEnum::INSURER)->first()->id){ // Si le client existe
+                $entity = Entity::findOrFail($assignment->insurer_id);
+                $entity->update([
+                    'address' => $request->address,
+                    'taxpayer_account_number' => $request->taxpayer_account_number,
+                ]);
+            }  else {
+                $client = Client::findOrFail($assignment->client_id);
+                $client->update([
+                    'address' => $request->address,
+                    'taxpayer_account_number' => $request->taxpayer_account_number,
+                ]);
+            }
+        }
+
         dispatch(new GenerateInvoicePdfJob($invoice));
 
         return $this->responseCreated('Invoice created successfully', new InvoiceResource($invoice));
@@ -477,6 +497,8 @@ class InvoiceController extends Controller
         $invoice->update([
             'date' => $request->date,
             'object' => $request->object,
+            'address' => $request->address,
+            'taxpayer_account_number' => $request->taxpayer_account_number,
             'updated_by' => auth()->user()->id,
         ]);
 

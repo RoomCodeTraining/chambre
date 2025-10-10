@@ -195,6 +195,11 @@ class ShockWorkController extends Controller
 
         $shockWorks = $request->get('shock_works');
 
+        $is_validated = false;
+        if($assignment->is_validated_by_expert == 1 && $assignment->is_validated_by_repairer == 1){
+            $is_validated = true;
+        }
+
         if(count($shockWorks) > 0){
             $shock_work_position = ShockWork::where('shock_id', $shock->id)->count() + 1;
             foreach ($shockWorks as $item) {
@@ -247,11 +252,27 @@ class ShockWorkController extends Controller
                     'new_amount_excluding_tax' => $new_amount_excluding_tax,
                     'new_amount_tax' => $new_amount_tax,
                     'new_amount' => $new_amount,
+                    'is_before_quote' => $is_validated ? 0 : 1,
+                    'is_validated' => $is_validated,
                     'status_id' => Status::where('code', StatusEnum::ACTIVE)->first()->id,
                     'created_by' => auth()->user()->id,
                     'updated_by' => auth()->user()->id,
                 ]);
                 $shock_work_position++;
+            }
+
+            $user_entity = Entity::with('entityType:id,code')->findOrFail(auth()->user()->entity_id);
+            if($is_validated){
+                if($user_entity->entityType->code == EntityTypeEnum::ORGANIZATION){
+                    $assignment->update([
+                        'is_validated_by_expert' => 0,
+                    ]);
+                }
+                if($user_entity->entityType->code == EntityTypeEnum::REPAIRER){
+                    $assignment->update([
+                        'is_validated_by_repairer' => 0,
+                    ]);
+                }
             }
 
             $this->recalculate($shockWork->shock_id);
@@ -292,6 +313,11 @@ class ShockWorkController extends Controller
 
         $assignment = Assignment::findOrFail($shockWork->shock->assignment_id);
 
+        $is_validated = false;
+        if($assignment->is_validated_by_expert == 1 && $assignment->is_validated_by_repairer == 1){
+            $is_validated = true;
+        }
+
         if($assignment->status_id == Status::where('code', StatusEnum::VALIDATED)->first()->id || $assignment->status_id == Status::where('code', StatusEnum::PAID)->first()->id){
             return $this->responseUnprocessable("Impossible de mettre à jour un travail de choc", null);
         }
@@ -318,35 +344,77 @@ class ShockWorkController extends Controller
             $new_amount_tax = ceil((config('services.settings.tax_rate') * $new_amount_excluding_tax) / 100);
         }
         $new_amount = ceil($new_amount_excluding_tax + $new_amount_tax);
-        
-        $shockWork->update([
-            'supply_id' => $request->supply_id,
-            'disassembly' => $request->disassembly,
-            'replacement' => $request->replacement,
-            'repair' => $request->repair,
-            'paint' => $request->paint,
-            'control' => $request->control,
-            'comment' => $request->comment,
-            'obsolescence' => $request->obsolescence,
-            'amount' => $request->amount,
-            'obsolescence_rate' => $obsolescence_rate,
-            'obsolescence_amount_excluding_tax' => $obsolescence_amount_excluding_tax,
-            'obsolescence_amount_tax' => $obsolescence_amount_tax,
-            'obsolescence_amount' => $obsolescence_amount,
-            'recovery_amount_excluding_tax' => $recovery_amount_excluding_tax,
-            'recovery_amount_tax' => $recovery_amount_tax,
-            'recovery_amount' => $recovery_amount,
-            'discount' => $discount,
-            'discount_amount_excluding_tax' => $discount_amount_excluding_tax,
-            'discount_amount_tax' => $discount_amount_tax,
-            'discount_amount' => $discount_amount,
-            'new_amount_excluding_tax' => $new_amount_excluding_tax,
-            'new_amount_tax' => $new_amount_tax,
-            'new_amount' => $new_amount,
-            'updated_by' => auth()->user()->id,
-        ]);
 
-        $this->recalculate($shockWork->shock_id);
+        if (
+            $shockWork->isDirty('supply_id') 
+            || $shockWork->isDirty('disassembly') 
+            || $shockWork->isDirty('replacement') 
+            || $shockWork->isDirty('repair') 
+            || $shockWork->isDirty('paint') 
+            || $shockWork->isDirty('obsolescence') 
+            || $shockWork->isDirty('control') 
+            || $shockWork->isDirty('comment') 
+            || $shockWork->isDirty('amount') 
+            || $shockWork->isDirty('obsolescence_rate') 
+            || $shockWork->isDirty('discount') 
+            || $shockWork->obsolescence_amount != $obsolescence_amount
+            || $shockWork->discount_amount != $discount_amount
+            || $shockWork->recovery_amount != $recovery_amount
+            || $shockWork->new_amount != $new_amount) {
+            $shockWork->update([
+                'supply_id' => $request->supply_id,
+                'disassembly' => $request->disassembly,
+                'replacement' => $request->replacement,
+                'repair' => $request->repair,
+                'paint' => $request->paint,
+                'control' => $request->control,
+                'comment' => $request->comment,
+                'obsolescence' => $request->obsolescence,
+                'amount' => $request->amount,
+                'obsolescence_rate' => $obsolescence_rate,
+                'obsolescence_amount_excluding_tax' => $obsolescence_amount_excluding_tax,
+                'obsolescence_amount_tax' => $obsolescence_amount_tax,
+                'obsolescence_amount' => $obsolescence_amount,
+                'recovery_amount_excluding_tax' => $recovery_amount_excluding_tax,
+                'recovery_amount_tax' => $recovery_amount_tax,
+                'recovery_amount' => $recovery_amount,
+                'discount' => $discount,
+                'discount_amount_excluding_tax' => $discount_amount_excluding_tax,
+                'discount_amount_tax' => $discount_amount_tax,
+                'discount_amount' => $discount_amount,
+                'new_amount_excluding_tax' => $new_amount_excluding_tax,
+                'new_amount_tax' => $new_amount_tax,
+                'new_amount' => $new_amount,
+                'is_before_quote' => $is_validated ? 0 : 1,
+                'is_validated' => $is_validated,
+                'updated_by' => auth()->user()->id,
+            ]);
+
+            $shock = Shock::find($shockWork->shock_id);
+    
+            if($shock){
+                $shock->update([
+                    'is_before_quote' => $is_validated ? 0 : 1,
+                    'is_validated' => $is_validated
+                ]);
+            }
+
+            $user_entity = Entity::with('entityType:id,code')->findOrFail(auth()->user()->entity_id);
+            if($is_validated){
+                if($user_entity->entityType->code == EntityTypeEnum::ORGANIZATION){
+                    $assignment->update([
+                        'is_validated_by_expert' => 0,
+                    ]);
+                }
+                if($user_entity->entityType->code == EntityTypeEnum::REPAIRER){
+                    $assignment->update([
+                        'is_validated_by_repairer' => 0,
+                    ]);
+                }
+            }
+    
+            $this->recalculate($shockWork->shock_id);
+        }
 
         return $this->responseSuccess('ShockWork updated Successfully', new ShockWorkResource($shockWork->load('supply', 'status')));
     }
@@ -476,17 +544,45 @@ class ShockWorkController extends Controller
 
         $assignment = Assignment::findOrFail($shockWork->shock->assignment_id);
 
+        $is_validated = false;
+        if($assignment->is_validated_by_expert == 1 && $assignment->is_validated_by_repairer == 1){
+            $is_validated = true;
+        }
+
         if($assignment->status_id == Status::where('code', StatusEnum::VALIDATED)->first()->id || $assignment->status_id == Status::where('code', StatusEnum::PAID)->first()->id){
             return $this->responseUnprocessable("Impossible de supprimer un travail de choc", null);
         }
 
         $shockWork->update([
+            'is_before_quote' => $is_validated ? 0 : 1,
+            'is_validated' => $is_validated,
             'status_id' => Status::where('code', StatusEnum::DELETED)->first()->id,
             'deleted_at' => now(),
             'deleted_by' => auth()->user()->id,
         ]);
 
         $shockWork->delete();
+
+        $user_entity = Entity::with('entityType:id,code')->findOrFail(auth()->user()->entity_id);
+        if($is_validated){
+            if($user_entity->entityType->code == EntityTypeEnum::ORGANIZATION){
+                $assignment->update([
+                    'is_validated_by_expert' => 0,
+                ]);
+            }
+            if($user_entity->entityType->code == EntityTypeEnum::REPAIRER){
+                $assignment->update([
+                    'is_validated_by_repairer' => 0,
+                ]);
+            }
+        }
+
+        $shock = Shock::find($shockWork->shock_id);
+
+        $shock->update([
+            'is_before_quote' => $is_validated ? 0 : 1,
+            'is_validated' => $is_validated,
+        ]);
 
         $this->recalculate($shockWork->shock_id);
 

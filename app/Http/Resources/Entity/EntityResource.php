@@ -19,6 +19,7 @@ class EntityResource extends JsonResource
             'email' => $this->email,
             'telephone' => $this->telephone,
             'address' => $this->address,
+            'taxpayer_account_number' => $this->taxpayer_account_number,
             'service_description' => $this->service_description,
             'footer_description' => $this->footer_description,
             'logo' => $this->logo ? url('storage/logos/'.$this->logo.'?v='.time()) : null,

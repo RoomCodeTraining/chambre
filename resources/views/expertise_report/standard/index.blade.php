@@ -816,7 +816,7 @@
         </div>
         @else
         <div class="text-center" style="padding-top: 15px;">
-            <h4 style="text-transform: uppercase;">{{$numberTransformer->toWords($assignment?->market_value - $assignment?->salvage_value)}} FRANCS CFA</h4>
+            <h4 style="text-transform: uppercase;">{{$numberTransformer->toWords($assignment?->market_value - $assignment?->salvage_value + $assignment?->other_cost_amount)}} FRANCS CFA</h4>
             <p>En foi de, nous delivrons le présent rapport d'expertise pour servir et valoir ce que de droit.</p>
         </div>
         @endif

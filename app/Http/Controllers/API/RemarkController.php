@@ -61,6 +61,7 @@ class RemarkController extends Controller
             $remark = Remark::create([
                 'label' => $request->label,
                 'description' => $request->description,
+                'expert_firm_id' => auth()->user()->entity_id,
                 'status_id' => Status::where('code', StatusEnum::ACTIVE)->first()->id,
                 'created_by' => auth()->user()->id,
                 'updated_by' => auth()->user()->id,

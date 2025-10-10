@@ -18,6 +18,7 @@ return new class extends Migration
             $table->text('label')->nullable();
             $table->text('description')->nullable();
             $table->string('type')->nullable();
+            $table->unsignedBigInteger('expert_firm_id')->index()->nullable();
             $table->unsignedBigInteger('status_id')->index()->nullable();
             $table->unsignedBigInteger('created_by')->index()->nullable();
             $table->timestamp('created_at')->nullable();
@@ -25,6 +26,11 @@ return new class extends Migration
             $table->timestamp('updated_at')->nullable();
             $table->unsignedBigInteger('deleted_by')->index()->nullable();
             $table->timestamp('deleted_at')->nullable();
+
+            $table->foreign('expert_firm_id')
+                ->references('id')
+                ->on('entities')
+                ->onDelete('cascade');
 
             $table->foreign('status_id')
                 ->references('id')

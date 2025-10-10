@@ -44,6 +44,9 @@ Route::middleware('auth:sanctum')->name('assignments.')->group(function () {
     /** @uses AssignmentController::validateByRepairer */
     Route::put('/validate-by-repairer/{assignment}', [AssignmentController::class, 'validateByRepairer'])->name('validateByRepairer');
 
+    /** @uses AssignmentController::unvalidateByRepairer */
+    Route::put('/unvalidate-by-repairer/{assignment}', [AssignmentController::class, 'unvalidateByRepairer'])->name('unvalidateByRepairer');
+
     /** @uses AssignmentController::validateByExpert */
     Route::put('/validate-by-expert/{assignment}', [AssignmentController::class, 'validateByExpert'])->name('validateByExpert');
 
