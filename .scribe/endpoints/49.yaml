@@ -44,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer a1eaPb6E5d6vVhDckfZ83g4'
+      - 'Bearer Vk6Z4gfa6de385h1PDEavbc'
     controller: null
     method: null
     route: null
@@ -81,7 +81,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 45P3Zca66kgv1aeDEhb8fdV'
+      - 'Bearer aVk3Pea8EZv4d51fcb6D6gh'
     controller: null
     method: null
     route: null
@@ -111,14 +111,14 @@ endpoints:
         name: paymentHistoric_id
         description: 'The ID of the paymentHistoric.'
         required: true
-        example: 11
+        example: 4
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      paymentHistoric_id: 11
+      paymentHistoric_id: 4
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -138,7 +138,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer ga3bZd1kV4hvPecD658E6af'
+      - 'Bearer Vg6bDaEaek843hfPZc5v1d6'
     controller: null
     method: null
     route: null
@@ -168,14 +168,14 @@ endpoints:
         name: paymentHistoric
         description: ''
         required: true
-        example: 6
+        example: 5
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      paymentHistoric: 6
+      paymentHistoric: 5
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -186,7 +186,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer abe36chEP6ZVg1dDkfv85a4'
+      - 'Bearer f18V6edhvPcak6Eb43ZD5ga'
     controller: null
     method: null
     route: null
@@ -216,14 +216,14 @@ endpoints:
         name: paymentHistoric_id
         description: 'The ID of the paymentHistoric.'
         required: true
-        example: 8
+        example: 1
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      paymentHistoric_id: 8
+      paymentHistoric_id: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -234,7 +234,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 4ebgaD86Vhc31aZP5vEkfd6'
+      - 'Bearer 63b6Pef5hcgVa1kaZED4dv8'
     controller: null
     method: null
     route: null

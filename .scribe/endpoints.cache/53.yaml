@@ -46,7 +46,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer kacPb4Dvh6ad5fEV1gZ3e68'
+      - 'Bearer 8Zk3aDVb5cEe6h1g4fdavP6'
     controller: null
     method: null
     route: null
@@ -80,7 +80,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: zkmytrzoqld
+        example: qtzuvgulowr
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -90,22 +90,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Porro consequatur est eos et voluptatum similique.'
+        example: 'Dolorem consequuntur recusandae praesentium veritatis consequatur veniam.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: zkmytrzoqld
-      description: 'Porro consequatur est eos et voluptatum similique.'
+      label: qtzuvgulowr
+      description: 'Dolorem consequuntur recusandae praesentium veritatis consequatur veniam.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 5EhgD3Veb16ad6ca4ZPkfv8'
+      - 'Bearer aVbek1g8vca345d6fDPEZ6h'
     controller: null
     method: null
     route: null
@@ -135,14 +135,14 @@ endpoints:
         name: id
         description: 'The ID of the ascertainment type.'
         required: true
-        example: rerum
+        example: a
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: rerum
+      id: a
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -162,7 +162,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer DZbah56av8fP3VE6gk1ed4c'
+      - 'Bearer f1Za64gDh3dVP8kacebvE56'
     controller: null
     method: null
     route: null
@@ -192,14 +192,14 @@ endpoints:
         name: id
         description: 'The ID of the ascertainment type.'
         required: true
-        example: tenetur
+        example: in
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: tenetur
+      id: in
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -207,7 +207,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: wngrfuotwertxjyv
+        example: ismdgdhducg
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -217,22 +217,22 @@ endpoints:
         name: description
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: false
-        example: 'Omnis quia quibusdam vel ut mollitia accusamus ipsam labore.'
+        example: 'Quam itaque quod quia debitis nihil.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: wngrfuotwertxjyv
-      description: 'Omnis quia quibusdam vel ut mollitia accusamus ipsam labore.'
+      label: ismdgdhducg
+      description: 'Quam itaque quod quia debitis nihil.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer fv4Peh3Z8Vck15d6Eaa6bDg'
+      - 'Bearer g83bavah1k6V5DEde4Z6fcP'
     controller: null
     method: null
     route: null
@@ -262,14 +262,14 @@ endpoints:
         name: id
         description: 'The ID of the ascertainment type.'
         required: true
-        example: magni
+        example: qui
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: magni
+      id: qui
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -280,7 +280,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Df465b1e8vagPVk3E6Zahdc'
+      - 'Bearer adgbE6a5f8khPc1Z3ve6VD4'
     controller: null
     method: null
     route: null

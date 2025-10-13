@@ -44,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer kgZ6PahfD8d631Vveb5ca4E'
+      - 'Bearer daPV1E4Z58ak6hegc3fvbD6'
     controller: null
     method: null
     route: null
@@ -78,21 +78,21 @@ endpoints:
         name: insurer_id
         description: 'The <code>id</code> of an existing record in the entities table.'
         required: true
-        example: incidunt
+        example: enim
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      insurer_id: incidunt
+      insurer_id: enim
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer c5a14kegd6fEDbhV8vP6aZ3'
+      - 'Bearer 4geZv5h6k31afda8D6cVEPb'
     controller: null
     method: null
     route: null
@@ -149,7 +149,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer D8fPe1ac4dvaE6b5g6khZ3V'
+      - 'Bearer vde83a6cDbE4kh6g5ZfV1aP'
     controller: null
     method: null
     route: null
@@ -179,14 +179,14 @@ endpoints:
         name: insurerRelationship_id
         description: 'The ID of the insurerRelationship.'
         required: true
-        example: 2
+        example: 1
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      insurerRelationship_id: 2
+      insurerRelationship_id: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -197,7 +197,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer f531VabZ6DaPgcekvEh64d8'
+      - 'Bearer 3c81vhbDPkgV465a6dEaeZf'
     controller: null
     method: null
     route: null
@@ -227,14 +227,14 @@ endpoints:
         name: insurerRelationship_id
         description: 'The ID of the insurerRelationship.'
         required: true
-        example: 6
+        example: 1
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      insurerRelationship_id: 6
+      insurerRelationship_id: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -245,7 +245,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer cv1EbhdZ5e364aDfVk86gaP'
+      - 'Bearer D8f64ckP5ZVaev6Ebg3ah1d'
     controller: null
     method: null
     route: null
@@ -275,14 +275,14 @@ endpoints:
         name: insurerRelationship_id
         description: 'The ID of the insurerRelationship.'
         required: true
-        example: 8
+        example: 1
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      insurerRelationship_id: 8
+      insurerRelationship_id: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -293,7 +293,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 3hvEVg6fDdk4bZc5ae6P8a1'
+      - 'Bearer Pvka5fe1DcdagE83V4Z6hb6'
     controller: null
     method: null
     route: null

@@ -46,7 +46,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer ck5P63vVf6Z8dh4E1bgDaea'
+      - 'Bearer E6cahP84gad531vek6VfDbZ'
     controller: null
     method: null
     route: null
@@ -80,7 +80,7 @@ endpoints:
         name: assignment_id
         description: 'The <code>id</code> of an existing record in the assignments table.'
         required: true
-        example: ad
+        example: occaecati
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -90,7 +90,7 @@ endpoints:
         name: payment_type_id
         description: 'The <code>id</code> of an existing record in the payment_types table.'
         required: true
-        example: aut
+        example: dolore
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -110,7 +110,7 @@ endpoints:
         name: date
         description: 'Must be a valid date in the format <code>Y-m-d</code>.'
         required: true
-        example: '2025-10-12'
+        example: '2025-10-13'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -120,24 +120,24 @@ endpoints:
         name: amount
         description: 'La valeur de value doit être supérieure ou égale à 1.'
         required: true
-        example: 57
+        example: 56
         type: number
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      assignment_id: ad
-      payment_type_id: aut
-      date: '2025-10-12'
-      amount: 57
+      assignment_id: occaecati
+      payment_type_id: dolore
+      date: '2025-10-13'
+      amount: 56
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer ahagvbE1f5e8D46kV6Z3dcP'
+      - 'Bearer PadeZ1E4bg3hv6c68fV5kaD'
     controller: null
     method: null
     route: null
@@ -167,14 +167,14 @@ endpoints:
         name: id
         description: 'The ID of the payment.'
         required: true
-        example: 6
+        example: 1
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 6
+      id: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -194,7 +194,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 66agDcE54k1dahfvP3ZbV8e'
+      - 'Bearer aeDgack34fVPd61Zv5b6E8h'
     controller: null
     method: null
     route: null
@@ -224,14 +224,14 @@ endpoints:
         name: id
         description: 'The ID of the payment.'
         required: true
-        example: 12
+        example: 18
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 12
+      id: 18
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -239,7 +239,7 @@ endpoints:
         name: assignment_id
         description: 'The <code>id</code> of an existing record in the assignments table.'
         required: true
-        example: molestias
+        example: architecto
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -249,7 +249,7 @@ endpoints:
         name: payment_type_id
         description: 'The <code>id</code> of an existing record in the payment_types table.'
         required: true
-        example: rerum
+        example: illo
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -259,7 +259,7 @@ endpoints:
         name: payment_method_id
         description: 'The <code>id</code> of an existing record in the payment_methods table.'
         required: true
-        example: et
+        example: qui
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -269,7 +269,7 @@ endpoints:
         name: date
         description: 'Must be a valid date in the format <code>Y-m-d</code>.'
         required: true
-        example: '2025-10-12'
+        example: '2025-10-13'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -279,25 +279,25 @@ endpoints:
         name: amount
         description: ''
         required: true
-        example: 12722436.9608
+        example: 251.4
         type: number
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      assignment_id: molestias
-      payment_type_id: rerum
-      payment_method_id: et
-      date: '2025-10-12'
-      amount: 12722436.9608
+      assignment_id: architecto
+      payment_type_id: illo
+      payment_method_id: qui
+      date: '2025-10-13'
+      amount: 251.4
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer Z34Pehc58ka6DvfEgdaVb16'
+      - 'Bearer c8hP1dEfvZeak6agD53V64b'
     controller: null
     method: null
     route: null
@@ -327,14 +327,14 @@ endpoints:
         name: id
         description: 'The ID of the payment.'
         required: true
-        example: 10
+        example: 5
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 10
+      id: 5
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -345,7 +345,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer D4bhafd5EV61PZ8ke3avc6g'
+      - 'Bearer aZD5ehvP6Vfcb6E8dg4a3k1'
     controller: null
     method: null
     route: null
@@ -375,14 +375,14 @@ endpoints:
         name: payment
         description: 'The payment.'
         required: true
-        example: 2
+        example: 5
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      payment: 2
+      payment: 5
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -393,7 +393,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer kVPhe5v6bd8ga6Zacf3E41D'
+      - 'Bearer kP6De6fbhvc51adE84g3aVZ'
     controller: null
     method: null
     route: null
@@ -439,7 +439,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer eD6bgaE8k5fP1Zdvhc46a3V'
+      - 'Bearer ch6eaZadV8gPEk35vbf14D6'
     controller: null
     method: null
     route: null

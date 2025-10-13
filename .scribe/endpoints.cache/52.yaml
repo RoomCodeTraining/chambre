@@ -46,7 +46,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 5a8PdgZ613evfh6kcV4abED'
+      - 'Bearer adv16Ee6b4ah35gPcV8ZfkD'
     controller: null
     method: null
     route: null
@@ -80,7 +80,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: pwev
+        example: js
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -90,22 +90,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Repudiandae quasi eaque voluptatem mollitia.'
+        example: 'Qui ut voluptatem iusto rerum officia et est.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: pwev
-      description: 'Repudiandae quasi eaque voluptatem mollitia.'
+      label: js
+      description: 'Qui ut voluptatem iusto rerum officia et est.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 8bVh6Dcaf64EPev5gda13kZ'
+      - 'Bearer ZkVD1eh5Ecv66Pfadb84a3g'
     controller: null
     method: null
     route: null
@@ -162,7 +162,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer VgDE3a65ecak6fvZ8Pdh4b1'
+      - 'Bearer DkVcbaa5gZd43P8fh6veE16'
     controller: null
     method: null
     route: null
@@ -207,7 +207,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: knrn
+        example: acuxdpxpk
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -217,22 +217,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Iure officia qui harum autem exercitationem tempore.'
+        example: 'Laboriosam magnam id reiciendis mollitia occaecati.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: knrn
-      description: 'Iure officia qui harum autem exercitationem tempore.'
+      label: acuxdpxpk
+      description: 'Laboriosam magnam id reiciendis mollitia occaecati.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer hfg584aeaPEVk6ZdD1c6bv3'
+      - 'Bearer gbhZV8aE6aP4D3k615fcved'
     controller: null
     method: null
     route: null
@@ -280,7 +280,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer De54EaP3hZ6c8fdbga16kVv'
+      - 'Bearer vVPcE5baehDkd8143Zagf66'
     controller: null
     method: null
     route: null

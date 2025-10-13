@@ -46,7 +46,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Pc6bd1eZ6ED34V5aafgv8hk'
+      - 'Bearer 4P56g1abacv3ZV8Ed6kfDeh'
     controller: null
     method: null
     route: null
@@ -80,7 +80,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: gieehamdcdwvicnbzsrkutrxf
+        example: pcdp
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -90,22 +90,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Voluptate perferendis autem sed tempore beatae fugiat.'
+        example: 'Earum possimus est commodi omnis facere dolorem deleniti.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: gieehamdcdwvicnbzsrkutrxf
-      description: 'Voluptate perferendis autem sed tempore beatae fugiat.'
+      label: pcdp
+      description: 'Earum possimus est commodi omnis facere dolorem deleniti.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer eEd66h43cvZgaVbkD1Pf8a5'
+      - 'Bearer ah58Z3V6fv1gP46bEaDdcke'
     controller: null
     method: null
     route: null
@@ -162,7 +162,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer deE6vaak38651DhPcfZV4gb'
+      - 'Bearer Ea6V38Zf1egb6hP4dvaDc5k'
     controller: null
     method: null
     route: null
@@ -192,14 +192,14 @@ endpoints:
         name: receiptType
         description: ''
         required: true
-        example: odit
+        example: facilis
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      receiptType: odit
+      receiptType: facilis
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -207,7 +207,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: xkqlcqdmd
+        example: uwjzahzuhhsrjxagsmx
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -217,22 +217,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Voluptatem recusandae deleniti repellendus maxime.'
+        example: 'Sint et ut ut recusandae.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: xkqlcqdmd
-      description: 'Voluptatem recusandae deleniti repellendus maxime.'
+      label: uwjzahzuhhsrjxagsmx
+      description: 'Sint et ut ut recusandae.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer Zh1g4bE36afDdkvV65ePa8c'
+      - 'Bearer f3k865cvah1eZaD6EbdPVg4'
     controller: null
     method: null
     route: null
@@ -262,14 +262,14 @@ endpoints:
         name: receiptType
         description: ''
         required: true
-        example: deserunt
+        example: sit
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      receiptType: deserunt
+      receiptType: sit
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -280,7 +280,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer gbadvcDhVe514aPk8f3E6Z6'
+      - 'Bearer EeZvVc1kadfbDg656h43Pa8'
     controller: null
     method: null
     route: null
