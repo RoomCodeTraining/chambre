@@ -2,10 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\RepairerRelationship;
+use App\Models\Entity;
 use App\Models\Status;
 use App\Enums\StatusEnum;
 use Illuminate\Database\Seeder;
+use App\Models\RepairerRelationship;
 
 class RepairerRelationshipSeeder extends Seeder
 {
