@@ -52,6 +52,8 @@ class DatabaseSeeder extends Seeder
             RemarkSeeder::class,
             UserActionTypeSeeder::class,
             AppSettingSeeder::class,
+            InsurerRelationshipSeeder::class,
+            RepairerRelationshipSeeder::class,
         ]);
     }
 }

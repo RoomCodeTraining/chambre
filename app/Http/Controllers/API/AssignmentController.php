@@ -1886,13 +1886,11 @@ class AssignmentController extends Controller
             $additional_insurer = Entity::find(InsurerRelationship::where('id', $request->additional_insurer_relationship_id)->first()->insurer_id);
             $repairer = Entity::find(RepairerRelationship::where('id', $request->repairer_relationship_id)->first()->repairer_id);
 
-            $insurer_id = $request->insurer_id;
-            $additional_insurer_id = $request->additional_insurer_id;
             $vehicle_id = $request->vehicle_id;
             $assignment_type_id = $request->assignment_type_id;
             $expertise_type_id = $request->expertise_type_id;
 
-            if($request->assignment_type_id != $assignment->assignment_type_id || $request->insurer_id != $assignment->insurer_id){
+            if($request->assignment_type_id != $assignment->assignment_type_id || $insurer->id != $assignment->insurer_id){
 
                 $now = Carbon::now();
                 $annee = date("Y");
@@ -1908,7 +1906,7 @@ class AssignmentController extends Controller
                 $last_assignment = Assignment::where('reference_updated_at', 'like', Carbon::now()->format('Y-m').'%')->where(['expert_firm_id' => $expert_firm->id, 'assignment_type_id' => $request->assignment_type_id]);
                 
                 if(AssignmentTypeEnum::INSURER->value && $request->assignment_type_id == AssignmentType::where('code', AssignmentTypeEnum::INSURER)->first()->id){
-                    $last_assignment = $last_assignment->where(['insurer_id' => $request->insurer_id])->latest('reference_updated_at')->first();
+                    $last_assignment = $last_assignment->where(['insurer_id' => $insurer->id])->latest('reference_updated_at')->first();
                 } else {
                     $last_assignment = $last_assignment->latest('reference_updated_at')->first();
                 }
@@ -1984,11 +1982,6 @@ class AssignmentController extends Controller
                     }
                 }
     
-                $insurer_id = $insurer->id;
-                $vehicle_id = $request->vehicle_id;
-                $assignment_type_id = $request->assignment_type_id;
-                $expertise_type_id = $request->expertise_type_id;
-
                 if($request->assignment_type_id == $assignment->assignment_type_id && $request->assignment_type_id != AssignmentType::where('code', AssignmentTypeEnum::INSURER)->first()->id){
                     $reference = $assignment->reference;
                 }
@@ -1999,11 +1992,11 @@ class AssignmentController extends Controller
             $oldReference = $assignment->reference;
             $assignment->update([
                 'reference' => $reference ?? $assignment->reference,
-                'expert_firm_id' => $assignment->expert_firm_id,
-                'insurer_id' => $insurer_id ?? $assignment->insurer_id,
-                'additional_insurer_id' => $additional_insurer_id ?? $assignment->additional_insurer_id,
+                'expert_firm_id' => $expert_firm->id ? $expert_firm->id : null,
+                'insurer_id' => $insurer->id ? $insurer->id : null,
+                'additional_insurer_id' => $additional_insurer->id ? $additional_insurer->id : null,
                 'vehicle_id' => $vehicle_id ?? $assignment->vehicle_id,
-                'repairer_id' => $request->repairer_id ?? $assignment->repairer_id,
+                'repairer_id' => $repairer->id ? $repairer->id : null,
                 'client_id' => $request->client_id ?? $assignment->client_id,
                 'assignment_type_id' => $assignment_type_id ?? $assignment->assignment_type_id,
                 // 'document_transmitted_id' => $request->document_transmitted_id ? json_encode($request->document_transmitted_id) : json_encode($assignment->document_transmitted_id),

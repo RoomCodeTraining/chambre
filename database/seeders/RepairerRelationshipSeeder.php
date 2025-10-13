@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 use App\Models\RepairerRelationship;
+use App\Models\Status;
+use App\Enums\StatusEnum;
 use Illuminate\Database\Seeder;
 
 class RepairerRelationshipSeeder extends Seeder
@@ -14,6 +16,10 @@ class RepairerRelationshipSeeder extends Seeder
      */
     public function run(): void
     {
-        RepairerRelationship::factory(10)->create();
+        RepairerRelationship::create([
+            'repairer_id' => Entity::where('code', 'CFAO')->first()->id,
+            'expert_firm_id' => Entity::where('code', 'LCA')->first()->id,
+            'status_id' => Status::where('code', StatusEnum::ACTIVE)->first()->id,
+        ]);
     }
 }
