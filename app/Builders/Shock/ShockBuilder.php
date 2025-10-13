@@ -29,9 +29,24 @@ class ShockBuilder extends Builder
         return $this->model->currentRole->name == RoleEnum::INSURER_ADMIN->value;
     }
 
+    public function isInsurerStandardUser(): bool
+    {
+        return $this->model->currentRole->name == RoleEnum::INSURER_STANDARD_USER->value;
+    }
+
     public function isRepairerAdmin(): bool
     {
         return $this->model->currentRole->name == RoleEnum::REPAIRER_ADMIN->value;
+    }
+
+    public function isRepairerStandardUser(): bool
+    {
+        return $this->model->currentRole->name == RoleEnum::REPAIRER_STANDARD_USER->value;
+    }
+
+    public function isClient(): bool
+    {
+        return $this->model->currentRole->name == RoleEnum::CLIENT->value;
     }
 
     public function accessibleBy(?User $user)
@@ -56,10 +71,22 @@ class ShockBuilder extends Builder
             return $this->where('assignments.insurer_id', $user->entity_id);
         }
 
+        if ($user->isInsurerStandardUser()) {
+            return $this->where('assignments.insurer_id', $user->entity_id);
+        }
+
         if ($user->isRepairerAdmin()) {
             return $this->where('assignments.repairer_id', $user->entity_id);
         }
 
-        return $this->where('current_role_id', $user->current_role_id);
+        if ($user->isRepairerStandardUser()) {
+            return $this->where('assignments.repairer_id', $user->entity_id);
+        }
+
+        if ($user->isClient()) {
+            return $this->where('assignments.client_id', $user->entity_id);
+        }
+
+        return $this->where('assignments.expert_firm_id', $user->entity_id);
     }
 }

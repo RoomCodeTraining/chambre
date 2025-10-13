@@ -46,7 +46,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer a46dc3ahPD1eEkg86vVZf5b'
+      - 'Bearer 66V1P5kEa3vZ8cdaebfgD4h'
     controller: null
     method: null
     route: null
@@ -80,7 +80,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: ithstqnlljyvtew
+        example: zdopjoxlxbdjchqskfnhu
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -90,7 +90,7 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Enim quibusdam ut qui consequatur cupiditate voluptatibus aut.'
+        example: 'Quia ullam assumenda modi excepturi magnam ut aliquid.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -100,23 +100,23 @@ endpoints:
         name: value
         description: 'La valeur de value doit être supérieure ou égale à 0.'
         required: true
-        example: 78
+        example: 58
         type: number
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      label: ithstqnlljyvtew
-      description: 'Enim quibusdam ut qui consequatur cupiditate voluptatibus aut.'
-      value: 78
+      label: zdopjoxlxbdjchqskfnhu
+      description: 'Quia ullam assumenda modi excepturi magnam ut aliquid.'
+      value: 58
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer DVf5Ee643acbZ168gakhPvd'
+      - 'Bearer ev6dbkaPDV4f6Z8hEcg531a'
     controller: null
     method: null
     route: null
@@ -146,14 +146,14 @@ endpoints:
         name: numberPaintElement
         description: ''
         required: true
-        example: corrupti
+        example: rerum
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      numberPaintElement: corrupti
+      numberPaintElement: rerum
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -173,7 +173,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Ph5bvdf1eD4aV3E6g6aZck8'
+      - 'Bearer V6Z6hak5PDbc3da8evE41gf'
     controller: null
     method: null
     route: null
@@ -203,14 +203,14 @@ endpoints:
         name: numberPaintElement
         description: ''
         required: true
-        example: rerum
+        example: quia
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      numberPaintElement: rerum
+      numberPaintElement: quia
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -218,7 +218,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: itcjtppueohxkcoubvbnz
+        example: usutnappclegik
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -228,7 +228,7 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Et molestiae corporis maxime fugit laboriosam tempora eius.'
+        example: 'Dolor eius eveniet perferendis amet dolorem delectus.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -238,23 +238,23 @@ endpoints:
         name: value
         description: ''
         required: true
-        example: 625.774030543
+        example: 459878821.0
         type: number
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      label: itcjtppueohxkcoubvbnz
-      description: 'Et molestiae corporis maxime fugit laboriosam tempora eius.'
-      value: 625.774030543
+      label: usutnappclegik
+      description: 'Dolor eius eveniet perferendis amet dolorem delectus.'
+      value: 459878821.0
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer Db6aPZcgeE5fv6V3hk14a8d'
+      - 'Bearer 1366h5aac8edg4vPVfEDkbZ'
     controller: null
     method: null
     route: null
@@ -284,14 +284,14 @@ endpoints:
         name: numberPaintElement
         description: ''
         required: true
-        example: deleniti
+        example: corrupti
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      numberPaintElement: deleniti
+      numberPaintElement: corrupti
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -302,7 +302,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer kfavV6E15b8cZeg4aDP63dh'
+      - 'Bearer 65eEaabVP1fkh6gdcD83v4Z'
     controller: null
     method: null
     route: null

@@ -990,7 +990,10 @@ class AssignmentController extends Controller
             return $this->responseUnprocessable('Le numéro de sinistre existe déjà pour un dossier ouvert, réalisé, rédigé ou validé');
         }
 
-        $expert_firm = Entity::find(auth()->user()->entity_id);
+        $expert_firm = Entity::find(InsurerRelationship::where('id', $request->insurer_relationship_id)->first()->expert_firm_id);
+        $insurer = Entity::find(InsurerRelationship::where('id', $request->insurer_relationship_id)->first()->insurer_id);
+        $additional_insurer = Entity::find(InsurerRelationship::where('id', $request->additional_insurer_relationship_id)->first()->insurer_id);
+        $repairer = Entity::find(RepairerRelationship::where('id', $request->repairer_relationship_id)->first()->repairer_id);
 
         $now = Carbon::now();
         $annee = date("Y");
@@ -1006,7 +1009,7 @@ class AssignmentController extends Controller
         $last_assignment = Assignment::where('reference_updated_at', 'like', Carbon::now()->format('Y-m').'%')->where(['expert_firm_id' => $expert_firm->id, 'assignment_type_id' => $request->assignment_type_id]);
         
         if(AssignmentTypeEnum::INSURER->value && $request->assignment_type_id == AssignmentType::where('code', AssignmentTypeEnum::INSURER)->first()->id){
-            $last_assignment = $last_assignment->where(['insurer_id' => $request->insurer_id])->latest('reference_updated_at')->first();
+            $last_assignment = $last_assignment->where(['insurer_id' => $insurer->id])->latest('reference_updated_at')->first();
         } else {
             $last_assignment = $last_assignment->latest('reference_updated_at')->first();
         }
@@ -1062,7 +1065,6 @@ class AssignmentController extends Controller
             }
         } else {
             if($request->assignment_type_id == AssignmentType::where('code', AssignmentTypeEnum::INSURER)->first()->id){
-                $insurer = Entity::find($request->insurer_id);
                 $reference = $insurer->prefix.'00001'.'-'.$suffix;
             }
 
@@ -1087,11 +1089,11 @@ class AssignmentController extends Controller
 
         $assignment = Assignment::create([
             'reference' => $reference,
-            'expert_firm_id' => auth()->user()->entity_id,
+            'expert_firm_id' => $expert_firm->id,
             'vehicle_id' => $request->vehicle_id ?? null,
-            'insurer_id' => $request->insurer_id ?? null,
-            'additional_insurer_id' => $request->additional_insurer_id ?? null,
-            'repairer_id' => $request->repairer_id ?? null,
+            'insurer_id' => $insurer->id ? $insurer->id : null,
+            'additional_insurer_id' => $additional_insurer->id ? $additional_insurer->id : null,
+            'repairer_id' => $repairer->id ? $repairer->id : null,
             'client_id' => $request->client_id ?? null,
             'assignment_type_id' => $request->assignment_type_id,
             'expertise_type_id' => $request->expertise_type_id,
@@ -1879,6 +1881,11 @@ class AssignmentController extends Controller
         $auth_user = User::with('currentRole')->where('id', auth()->user()->id)->first();
         
         if($auth_user->currentRole->name == RoleEnum::SYSTEM_ADMIN->value || $auth_user->currentRole->name == RoleEnum::ADMIN->value || $auth_user->currentRole->name == RoleEnum::EXPERT_MANAGER->value || $auth_user->currentRole->name == RoleEnum::VALIDATOR->value || $auth_user->currentRole->name == RoleEnum::CEO->value){
+            $expert_firm = Entity::find(InsurerRelationship::where('id', $request->insurer_relationship_id)->first()->expert_firm_id);
+            $insurer = Entity::find(InsurerRelationship::where('id', $request->insurer_relationship_id)->first()->insurer_id);
+            $additional_insurer = Entity::find(InsurerRelationship::where('id', $request->additional_insurer_relationship_id)->first()->insurer_id);
+            $repairer = Entity::find(RepairerRelationship::where('id', $request->repairer_relationship_id)->first()->repairer_id);
+
             $insurer_id = $request->insurer_id;
             $additional_insurer_id = $request->additional_insurer_id;
             $vehicle_id = $request->vehicle_id;
@@ -1886,7 +1893,6 @@ class AssignmentController extends Controller
             $expertise_type_id = $request->expertise_type_id;
 
             if($request->assignment_type_id != $assignment->assignment_type_id || $request->insurer_id != $assignment->insurer_id){
-                $expert_firm = Entity::find($request->expert_firm_id);
 
                 $now = Carbon::now();
                 $annee = date("Y");
@@ -1958,7 +1964,6 @@ class AssignmentController extends Controller
                     }
                 } else {
                     if($request->assignment_type_id == AssignmentType::where('code', AssignmentTypeEnum::INSURER)->first()->id){
-                        $insurer = Entity::find($request->insurer_id);
                         $reference = $insurer->prefix.'00001'.'-'.$suffix;
                     }
 
@@ -1979,7 +1984,7 @@ class AssignmentController extends Controller
                     }
                 }
     
-                $insurer_id = $request->insurer_id;
+                $insurer_id = $insurer->id;
                 $vehicle_id = $request->vehicle_id;
                 $assignment_type_id = $request->assignment_type_id;
                 $expertise_type_id = $request->expertise_type_id;

@@ -19,11 +19,11 @@ class EntitySeeder extends Seeder
     public function run(): void
     {
         app(CreateEntityAction::class)->execute([
-            'code' => EntityCodeEnum::CEACI->value,
-            'name' => 'CEACI',
+            'code' => EntityCodeEnum::CIEAMI->value,
+            'name' => 'CIEAMI',
             'prefix' => null,
             'suffix' => null,
-            'email' => 'support@ceaci.com',
+            'email' => 'support@cieami.com',
             'address' => null,
             'telephone' => null,
             'service_description' => null,

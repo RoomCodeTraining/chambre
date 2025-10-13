@@ -15,6 +15,7 @@ enum RoleEnum: string
     case EXPERT_MANAGER = 'expert_manager';
     case EXPERT = 'expert';
     case OPENER = 'opener';
+    case EDITOR_MANAGER = 'editor_manager';
     case EDITOR = 'editor';
     case VALIDATOR = 'validator';
     case ACCOUNTANT_MANAGER = 'accountant_manager';
@@ -24,21 +25,6 @@ enum RoleEnum: string
     case INSURER_STANDARD_USER = 'insurer_standard_user';
     case REPAIRER_ADMIN = 'repairer_admin';
     case REPAIRER_STANDARD_USER = 'repairer_standard_user';
+    case CLIENT = 'client';
     case UNASSIGNED = 'unassigned';
-
-    // public static function freeFromOrganizationRestriction(): array
-    // {
-    //     return array_map(
-    //         fn ($role) => $role->value,
-    //         [self::SYSTEM_ADMIN, self::SYSTEM_SUPPORT, self::ADMIN, self::OPERATING_ADMIN]
-    //     );
-    // }
-
-    // public static function mainOfficeRoles(): array
-    // {
-    //     return array_map(
-    //         fn ($role) => $role->value,
-    //         [self::OFFICE_ADMIN, self::OFFICE_ADMIN, self::STOCK_MANAGER, self::OFFICE_MANAGER, self::BROKER_MANAGER, self::FINANCE_MANAGER]
-    //     );
-    // }
 }

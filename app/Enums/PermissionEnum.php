@@ -16,6 +16,11 @@ enum PermissionEnum: string
     case DISABLE_USER = 'user.disable';
     case RESET_USER = 'user.reset';
 
+    case VIEW_ASSIGNMENT_REQUEST = 'assignment_request.view';
+    case CREATE_ASSIGNMENT_REQUEST = 'assignment_request.create';
+    case UPDATE_ASSIGNMENT_REQUEST = 'assignment_request.update';
+    case DELETE_ASSIGNMENT_REQUEST = 'assignment_request.delete';
+
     case VIEW_ASSIGNMENT = 'assignment.view';
     case CREATE_ASSIGNMENT = 'assignment.create';
     case UPDATE_ASSIGNMENT = 'assignment.update';

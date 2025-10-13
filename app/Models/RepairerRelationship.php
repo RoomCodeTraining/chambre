@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Filters\RepairerRelationshipFilters;
+use App\Builders\RepairerRelationship\RepairerRelationshipBuilder;
 use Essa\APIToolKit\Filters\Filterable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -84,6 +85,11 @@ class RepairerRelationship extends Model
     public function deletedBy(): BelongsTo
     {
         return $this->belongsTo(User::class, 'deleted_by');
+    }
+
+    public function newEloquentBuilder($query): RepairerRelationshipBuilder
+    {
+        return new RepairerRelationshipBuilder($query);
     }
 
 }

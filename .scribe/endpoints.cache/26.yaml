@@ -46,7 +46,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6dbk4DgZ13fPhEav8ae6V5c'
+      - 'Bearer d8EDPbak316h5Z6fcg4vaVe'
     controller: null
     method: null
     route: null
@@ -80,21 +80,21 @@ endpoints:
         name: code
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: raqavirvg
+        example: lqyoouqhylooehjsg
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      code: raqavirvg
+      code: lqyoouqhylooehjsg
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 541DcE6Zk3gvaPe6haVdf8b'
+      - 'Bearer 3vakPbZV5a6fEe41hg86cdD'
     controller: null
     method: null
     route: null
@@ -124,14 +124,14 @@ endpoints:
         name: qrCode_id
         description: 'The ID of the qrCode.'
         required: true
-        example: 14
+        example: 6
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      qrCode_id: 14
+      qrCode_id: 6
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -151,7 +151,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 5P613dacE6DhbfV4kZga8ev'
+      - 'Bearer acbEPv6dVk64fD5eg31a8hZ'
     controller: null
     method: null
     route: null
@@ -181,14 +181,14 @@ endpoints:
         name: qrCode
         description: ''
         required: true
-        example: 15
+        example: 5
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      qrCode: 15
+      qrCode: 5
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -196,21 +196,21 @@ endpoints:
         name: code
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: zaobybubejgksdliltyr
+        example: kccleipecytlgaisbkbnetrgg
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      code: zaobybubejgksdliltyr
+      code: kccleipecytlgaisbkbnetrgg
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 8dPvgacfVEk15a6bZh3De64'
+      - 'Bearer afPe8vV6D5dZb4ckEh6g31a'
     controller: null
     method: null
     route: null
@@ -240,14 +240,14 @@ endpoints:
         name: qrCode
         description: ''
         required: true
-        example: 20
+        example: 14
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      qrCode: 20
+      qrCode: 14
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -258,7 +258,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 8e1EdbPDaa36VZgv4ckf6h5'
+      - 'Bearer b4fvZ8gk3Pe6aa1EcV65hDd'
     controller: null
     method: null
     route: null

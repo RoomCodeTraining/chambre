@@ -25,6 +25,11 @@ class RolesAndPermissionsSeeder extends Seeder
         $disableUser = Permission::create(['name' => \App\Enums\PermissionEnum::DISABLE_USER, 'guard_name' => 'sanctum']);
         $resetUser = Permission::create(['name' => \App\Enums\PermissionEnum::RESET_USER, 'guard_name' => 'sanctum']);
 
+        $createAssignmentRequest = Permission::create(['name' => \App\Enums\PermissionEnum::CREATE_ASSIGNMENT_REQUEST, 'guard_name' => 'sanctum']);
+        $viewAssignmentRequest = Permission::create(['name' => \App\Enums\PermissionEnum::VIEW_ASSIGNMENT_REQUEST, 'guard_name' => 'sanctum']);
+        $updateAssignmentRequest = Permission::create(['name' => \App\Enums\PermissionEnum::UPDATE_ASSIGNMENT_REQUEST, 'guard_name' => 'sanctum']);
+        $deleteAssignmentRequest = Permission::create(['name' => \App\Enums\PermissionEnum::DELETE_ASSIGNMENT_REQUEST, 'guard_name' => 'sanctum']);
+
         $createAssignment = Permission::create(['name' => \App\Enums\PermissionEnum::CREATE_ASSIGNMENT, 'guard_name' => 'sanctum']);
         $viewAssignment = Permission::create(['name' => \App\Enums\PermissionEnum::VIEW_ASSIGNMENT, 'guard_name' => 'sanctum']);
         $updateAssignment = Permission::create(['name' => \App\Enums\PermissionEnum::UPDATE_ASSIGNMENT, 'guard_name' => 'sanctum']);
@@ -169,7 +174,6 @@ class RolesAndPermissionsSeeder extends Seeder
             $deletePayment,
             $cancelPayment,
             $paymentStatistics,
-            $manageApp,
         ]);
 
         Role::create([
@@ -195,7 +199,6 @@ class RolesAndPermissionsSeeder extends Seeder
             $closeAssignment,
             $generateAssignment,
             $assignmentStatistics,
-            $manageApp,
         ]);
 
         Role::create([
@@ -244,6 +247,28 @@ class RolesAndPermissionsSeeder extends Seeder
             $updateAssignment,
             $realizeAssignment,
             $closeAssignment,
+            $assignmentStatistics,
+        ]);
+
+        Role::create([
+            'name' => \App\Enums\RoleEnum::EDITOR_MANAGER,
+            'label' => 'Responsable rédaction',
+            'description' => "Responsable rédaction.",
+            'guard_name' => 'sanctum',
+        ])->givePermissionTo([
+            $viewUser,
+            $createUser,
+            $updateUser,
+            $enableUser,
+            $disableUser,
+            $resetUser,
+            $createAssignment,
+            $viewAssignment,
+            $updateAssignment,
+            $deleteAssignment,
+            $realizeAssignment,
+            $editAssignment,
+            $generateAssignment,
             $assignmentStatistics,
         ]);
 
@@ -407,6 +432,22 @@ class RolesAndPermissionsSeeder extends Seeder
             $enableUser,
             $disableUser,
             $resetUser,
+            $assignmentStatistics,
+        ]);
+        
+        Role::create([
+            'name' => \App\Enums\RoleEnum::CLIENT,
+            'label' => 'Client',
+            'description' => "Client.",
+            'guard_name' => 'sanctum',
+        ])->givePermissionTo([
+            $createAssignmentRequest,
+            $viewAssignmentRequest,
+            $updateAssignmentRequest,
+            $deleteAssignmentRequest,
+            $viewUser,
+            $createAssignment,
+            $viewAssignment,
             $assignmentStatistics,
         ]);
 

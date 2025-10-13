@@ -9,7 +9,7 @@ enum EntityCodeEnum: string
 {
     use UsefulEnums;
 
-    case CEACI = 'CEACI';
+    case CIEAMI = 'CIEAMI';
 
     case LCA = 'LCA';
     case BCA_CI = 'BCA_CI';

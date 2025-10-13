@@ -16,9 +16,9 @@ class CreateAssignmentRequest extends FormRequest
             'client_id' => 'nullable|exists:clients,id',
             'vehicle_id' => 'required|exists:vehicles,id',
             'vehicle_mileage' => 'nullable|numeric',
-            'insurer_id' => 'nullable|required_if:assignment_type_id,'.AssignmentType::where('code', AssignmentTypeEnum::INSURER)->first()->id.'|exists:entities,id',
-            'additional_insurer_id' => 'nullable|exists:entities,id',
-            'repairer_id' => 'nullable|exists:entities,id',
+            'insurer_relationship_id' => 'nullable|required_if:assignment_type_id,'.AssignmentType::where('code', AssignmentTypeEnum::INSURER)->first()->id.'|exists:insurer_relationships,id',
+            'additional_insurer_relationship_id' => 'nullable|exists:insurer_relationships,id',
+            'repairer_relationship_id' => 'nullable|exists:repairer_relationships,id',
             'document_transmitted_id' => 'nullable|array',
             'document_transmitted_id.*' => 'required|exists:document_transmitteds,id',
 
@@ -38,7 +38,9 @@ class CreateAssignmentRequest extends FormRequest
     public function messages(): array
     {
         return [
-            'insurer_id.required_if' => 'L\'assureur est requis pour une mission de type compagnie.',
+            'insurer_relationship_id.required_if' => 'L\'assureur est requis pour une mission de type compagnie.',
+            'repairer_relationship_id.required_if' => 'Le réparateur est requis pour une mission de type réparateur.',
+            'additional_insurer_relationship_id.exists' => 'L\'assureur additionnel est invalide.',
             'claim_date.date' => 'La date est invalide.',
             'claim_ends_at.date' => 'La date est invalide.',
             'expertise_date.date' => 'La date est invalide.',

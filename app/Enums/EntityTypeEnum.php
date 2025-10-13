@@ -12,7 +12,5 @@ enum EntityTypeEnum: string
     case MAIN_ORGANIZATION = 'main_organization';
     case ORGANIZATION = 'organization';
     case INSURER = 'insurer';
-    case BROKER = 'broker';
     case REPAIRER = 'repairer';
-
 }

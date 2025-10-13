@@ -42,7 +42,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 8Pf6ag3havEZ561kcDbeV4d'
+      - 'Bearer VbD1av6d835ke4ghcP6fZEa'
     controller: null
     method: null
     route: null
@@ -70,14 +70,14 @@ endpoints:
         name: assignment_request_id
         description: 'The ID of the assignment request.'
         required: true
-        example: 11
+        example: 17
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      assignment_request_id: 11
+      assignment_request_id: 17
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -97,7 +97,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer dk6483cfP6a1DVegZvab5Eh'
+      - 'Bearer 5k1436gZhDf68vcVabaePEd'
     controller: null
     method: null
     route: null
@@ -125,14 +125,14 @@ endpoints:
         name: assignment_request_id
         description: 'The ID of the assignment request.'
         required: true
-        example: 2
+        example: 17
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      assignment_request_id: 2
+      assignment_request_id: 17
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -143,7 +143,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer efEZ6ahcbkda1VP358gD64v'
+      - 'Bearer a4e8Za5b1PcVEk6D63dhfvg'
     controller: null
     method: null
     route: null
@@ -171,14 +171,14 @@ endpoints:
         name: assignment_request_id
         description: 'The ID of the assignment request.'
         required: true
-        example: 20
+        example: 15
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      assignment_request_id: 20
+      assignment_request_id: 15
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -189,7 +189,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer e41akVZb6gcfv65D3hEPda8'
+      - 'Bearer 58c4kEe3D6hZfdabV6gP1va'
     controller: null
     method: null
     route: null
@@ -231,7 +231,7 @@ endpoints:
         name: assignment_type_id
         description: 'The <code>id</code> of an existing record in the assignment_types table.'
         required: true
-        example: accusantium
+        example: adipisci
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -241,7 +241,7 @@ endpoints:
         name: expertise_type_id
         description: 'The <code>id</code> of an existing record in the expertise_types table.'
         required: true
-        example: veniam
+        example: amet
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -251,7 +251,7 @@ endpoints:
         name: client_name
         description: ''
         required: false
-        example: sit
+        example: dolor
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -261,7 +261,7 @@ endpoints:
         name: client_phone
         description: ''
         required: false
-        example: culpa
+        example: natus
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -271,7 +271,7 @@ endpoints:
         name: client_email
         description: 'Le champ value doit être une adresse e-mail valide.'
         required: false
-        example: hwintheiser@example.net
+        example: golden.torp@example.net
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -281,7 +281,7 @@ endpoints:
         name: vehicle_license_plate
         description: ''
         required: true
-        example: voluptates
+        example: vitae
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -291,7 +291,7 @@ endpoints:
         name: vehicle_brand_id
         description: 'The <code>id</code> of an existing record in the brands table.'
         required: true
-        example: architecto
+        example: fugiat
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -301,7 +301,7 @@ endpoints:
         name: vehicle_model_id
         description: 'The <code>id</code> of an existing record in the vehicle_models table.'
         required: true
-        example: perferendis
+        example: nostrum
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -311,7 +311,7 @@ endpoints:
         name: vehicle_color_id
         description: 'The <code>id</code> of an existing record in the colors table.'
         required: true
-        example: debitis
+        example: cumque
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -321,7 +321,7 @@ endpoints:
         name: vehicle_new_market_value
         description: ''
         required: true
-        example: 37446365.514171
+        example: 0.0
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -361,7 +361,7 @@ endpoints:
         name: claim_number
         description: ''
         required: false
-        example: voluptate
+        example: distinctio
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -371,7 +371,7 @@ endpoints:
         name: claim_date
         description: 'Must be a valid date in the format <code>Y-m-d</code>.'
         required: false
-        example: '2025-09-24'
+        example: '2025-10-12'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -381,7 +381,7 @@ endpoints:
         name: expertise_place
         description: ''
         required: false
-        example: officia
+        example: adipisci
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -399,20 +399,20 @@ endpoints:
         nullable: true
         custom: []
     cleanBodyParameters:
-      assignment_type_id: accusantium
-      expertise_type_id: veniam
-      client_name: sit
-      client_phone: culpa
-      client_email: hwintheiser@example.net
-      vehicle_license_plate: voluptates
-      vehicle_brand_id: architecto
-      vehicle_model_id: perferendis
-      vehicle_color_id: debitis
-      vehicle_new_market_value: 37446365.514171
+      assignment_type_id: adipisci
+      expertise_type_id: amet
+      client_name: dolor
+      client_phone: natus
+      client_email: golden.torp@example.net
+      vehicle_license_plate: vitae
+      vehicle_brand_id: fugiat
+      vehicle_model_id: nostrum
+      vehicle_color_id: cumque
+      vehicle_new_market_value: 0.0
       policy_number: quibusdam
-      claim_number: voluptate
-      claim_date: '2025-09-24'
-      expertise_place: officia
+      claim_number: distinctio
+      claim_date: '2025-10-12'
+      expertise_place: adipisci
     fileParameters:
       photos:
         - null
@@ -421,7 +421,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer bdZ68PEaDefvck653aVg1h4'
+      - 'Bearer dZa1DeP8E6a5kcfvhbV3g46'
     controller: null
     method: null
     route: null
@@ -465,7 +465,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 3DZ5f6hekb1PVag6avcd84E'
+      - 'Bearer g686EkhafVP5dDeZv1b34ac'
     controller: null
     method: null
     route: null
@@ -497,7 +497,7 @@ endpoints:
         name: code
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: ppziaxkcjii
+        example: hrrleerscuvgwzsxqhkmcscj
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -507,7 +507,7 @@ endpoints:
         name: value
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: itmhgbycnofnqirtkp
+        example: udvoqlgguolqkzccwnwnscltw
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -517,7 +517,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: jpxftz
+        example: ikh
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -527,24 +527,24 @@ endpoints:
         name: description
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: false
-        example: 'Id non perferendis sint qui facilis.'
+        example: 'Et facilis eum quisquam qui aspernatur ut in.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      code: ppziaxkcjii
-      value: itmhgbycnofnqirtkp
-      label: jpxftz
-      description: 'Id non perferendis sint qui facilis.'
+      code: hrrleerscuvgwzsxqhkmcscj
+      value: udvoqlgguolqkzccwnwnscltw
+      label: ikh
+      description: 'Et facilis eum quisquam qui aspernatur ut in.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 143dakD5V8gv6caZPebh6Ef'
+      - 'Bearer 8f43ahcdvb6aD6kgV1E5ZPe'
     controller: null
     method: null
     route: null
@@ -599,7 +599,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer db8afagDP5Ze13Evh64V6kc'
+      - 'Bearer ecEk8dZ6a41DbPh6V5gaf3v'
     controller: null
     method: null
     route: null
@@ -642,7 +642,7 @@ endpoints:
         name: code
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: hxqgoyifkn
+        example: ru
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -652,7 +652,7 @@ endpoints:
         name: value
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: hkfohknffdmvgaculyo
+        example: neiayckhr
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -662,7 +662,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: kxkzjtcztiwwjkt
+        example: nvbqwcvdbyc
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -672,24 +672,24 @@ endpoints:
         name: description
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: false
-        example: 'Dolor et itaque eligendi provident nihil eos laboriosam.'
+        example: 'Sit voluptatem ea voluptas.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      code: hxqgoyifkn
-      value: hkfohknffdmvgaculyo
-      label: kxkzjtcztiwwjkt
-      description: 'Dolor et itaque eligendi provident nihil eos laboriosam.'
+      code: ru
+      value: neiayckhr
+      label: nvbqwcvdbyc
+      description: 'Sit voluptatem ea voluptas.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer VEcefadhb8g6vP46kD1aZ53'
+      - 'Bearer Dgvck14E63PdbVZaf5ea68h'
     controller: null
     method: null
     route: null
@@ -735,7 +735,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer e56acP6dkabgVh81Z4fv3DE'
+      - 'Bearer 354bEd6gf81Vvae6kcPahDZ'
     controller: null
     method: null
     route: null
@@ -779,7 +779,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer fva6bedhaD68Eg45c1PZVk3'
+      - 'Bearer 16eDvgcZ3h4aP85bEkaVdf6'
     controller: null
     method: null
     route: null
@@ -811,7 +811,7 @@ endpoints:
         name: code
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: gfxpo
+        example: macnqyqewcrzthzkdhyt
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -821,7 +821,7 @@ endpoints:
         name: value
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: gelpdplrgbvkohjtfslgxpq
+        example: yohehtdnudgmbent
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -831,7 +831,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: vpsvrjrmirutyy
+        example: sgqgz
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -841,24 +841,24 @@ endpoints:
         name: description
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: false
-        example: 'Quos ipsam nostrum quo nihil quia quisquam accusantium.'
+        example: 'Saepe ea illo autem dolore.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      code: gfxpo
-      value: gelpdplrgbvkohjtfslgxpq
-      label: vpsvrjrmirutyy
-      description: 'Quos ipsam nostrum quo nihil quia quisquam accusantium.'
+      code: macnqyqewcrzthzkdhyt
+      value: yohehtdnudgmbent
+      label: sgqgz
+      description: 'Saepe ea illo autem dolore.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer kVadE83D6Zb1ghP45a6ecfv'
+      - 'Bearer 5fV8a6cgd3Zv4DkePa16bEh'
     controller: null
     method: null
     route: null
@@ -913,7 +913,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Dd8E46Zf6kbc51gaPevah3V'
+      - 'Bearer ga345ef6dP1EZbck6vVDah8'
     controller: null
     method: null
     route: null
@@ -956,7 +956,7 @@ endpoints:
         name: code
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: tkfdvybdidpbx
+        example: thizvytlu
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -966,7 +966,7 @@ endpoints:
         name: value
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: uwpiztvdkiqfwkl
+        example: gnqqpaortb
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -976,7 +976,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: mjnexdnfz
+        example: ee
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -986,24 +986,24 @@ endpoints:
         name: description
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: false
-        example: 'Minus atque sint sequi consequatur omnis.'
+        example: 'Aliquid similique alias laudantium et laudantium voluptas.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      code: tkfdvybdidpbx
-      value: uwpiztvdkiqfwkl
-      label: mjnexdnfz
-      description: 'Minus atque sint sequi consequatur omnis.'
+      code: thizvytlu
+      value: gnqqpaortb
+      label: ee
+      description: 'Aliquid similique alias laudantium et laudantium voluptas.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 85f64hvdZPaDe36ck1VagEb'
+      - 'Bearer b3gEcvh56f6kaVeP8ZD1d4a'
     controller: null
     method: null
     route: null
@@ -1049,7 +1049,459 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer bPZgEecV68dvkaf53h14aD6'
+      - 'Bearer Z84f56kaVDdba6v1EPgc3he'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/client-relationships
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      deprecated: false
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer fv1ge6ah48dbDZ3VkEPa5c6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/client-relationships
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      deprecated: false
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 1DZ6fv63Pd5ae8VE4cgkbah'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/client-relationships/{clientRelationship_id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      deprecated: false
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      clientRelationship_id:
+        name: clientRelationship_id
+        description: 'The ID of the clientRelationship.'
+        required: true
+        example: 9
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      clientRelationship_id: 9
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer b518f436aavD6hdcPVkEeZg'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/client-relationships/{clientRelationship_id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      deprecated: false
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      clientRelationship_id:
+        name: clientRelationship_id
+        description: 'The ID of the clientRelationship.'
+        required: true
+        example: 14
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      clientRelationship_id: 14
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer e5gdPckaa4fb681Z3DVEhv6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/client-relationships/{clientRelationship_id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      deprecated: false
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      clientRelationship_id:
+        name: clientRelationship_id
+        description: 'The ID of the clientRelationship.'
+        required: true
+        example: 13
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      clientRelationship_id: 13
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer ZePkf465aD1E3b6gacdhv8V'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/vehicle-relationships
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      deprecated: false
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 5vaDcV66eb34PgakhZ18Edf'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/vehicle-relationships
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      deprecated: false
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer ha6gE8dDeZa641VkP3fcb5v'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/vehicle-relationships/{vehicleRelationship_id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      deprecated: false
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      vehicleRelationship_id:
+        name: vehicleRelationship_id
+        description: 'The ID of the vehicleRelationship.'
+        required: true
+        example: 11
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      vehicleRelationship_id: 11
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer ZE5h4eg6b8caDkf36aPV1vd'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/vehicle-relationships/{vehicleRelationship_id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      deprecated: false
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      vehicleRelationship_id:
+        name: vehicleRelationship_id
+        description: 'The ID of the vehicleRelationship.'
+        required: true
+        example: 11
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      vehicleRelationship_id: 11
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer kc45Zag3DhebP6afvE681Vd'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/vehicle-relationships/{vehicleRelationship_id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      deprecated: false
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      vehicleRelationship_id:
+        name: vehicleRelationship_id
+        description: 'The ID of the vehicleRelationship.'
+        required: true
+        example: 16
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      vehicleRelationship_id: 16
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer dg4Pvh6eVckZ351aEbaf86D'
     controller: null
     method: null
     route: null

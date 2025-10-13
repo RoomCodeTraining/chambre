@@ -75,45 +75,10 @@ Route::prefix('v1')->middleware(LogsOutDisabledUser::class)->group(function () {
     Route::prefix('claim-natures')->group(base_path('routes/api/v1.claim.natures.routes.php'));
     Route::prefix('user-actions')->group(base_path('routes/api/v1.user.actions.routes.php'));
     Route::prefix('app-settings')->group(base_path('routes/api/v1.app.settings.routes.php'));
+    Route::prefix('client-relationships')->group(base_path('routes/api/v1.client.relationships.routes.php'));
+    Route::prefix('vehicle-relationships')->group(base_path('routes/api/v1.vehicle.relationships.routes.php'));
+    Route::prefix('insurer-relationships')->group(base_path('routes/api/v1.insurer.relationships.routes.php'));
+    Route::prefix('repairer-relationships')->group(base_path('routes/api/v1.repairer.relationships.routes.php'));
     Route::prefix('dashboard')->group(base_path('routes/api/v1.dashboard.routes.php'));
     Route::group([], base_path('routes/api/v1.common.routes.php'));
 });
-/*===========================
-=           quotes           =
-=============================*/
-
-Route::apiResource('/quotes', \App\Http\Controllers\API\QuoteController::class);
-
-/*=====  End of quotes   ======*/
-
-/*===========================
-=           clientRelationships           =
-=============================*/
-
-Route::apiResource('/clientRelationships', \App\Http\Controllers\API\ClientRelationshipController::class);
-
-/*=====  End of clientRelationships   ======*/
-
-/*===========================
-=           vehicleRelationships           =
-=============================*/
-
-Route::apiResource('/vehicleRelationships', \App\Http\Controllers\API\VehicleRelationshipController::class);
-
-/*=====  End of vehicleRelationships   ======*/
-
-/*===========================
-=           insurerRelationships           =
-=============================*/
-
-Route::apiResource('/insurerRelationships', \App\Http\Controllers\API\InsurerRelationshipController::class);
-
-/*=====  End of insurerRelationships   ======*/
-
-/*===========================
-=           repairerRelationships           =
-=============================*/
-
-Route::apiResource('/repairerRelationships', \App\Http\Controllers\API\RepairerRelationshipController::class);
-
-/*=====  End of repairerRelationships   ======*/

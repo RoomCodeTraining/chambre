@@ -46,7 +46,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer V1D4EkbaPeZvdahf6385cg6'
+      - 'Bearer h6cg51ZkDfVb3aEP86v4ade'
     controller: null
     method: null
     route: null
@@ -80,7 +80,7 @@ endpoints:
         name: assignment_id
         description: 'The <code>id</code> of an existing record in the assignments table.'
         required: true
-        example: iste
+        example: aut
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -101,7 +101,7 @@ endpoints:
         name: 'receipts[].receipt_type_id'
         description: ''
         required: true
-        example: fugit
+        example: rem
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -111,25 +111,25 @@ endpoints:
         name: 'receipts[].amount'
         description: ''
         required: true
-        example: 9.0
+        example: 25606.3
         type: number
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      assignment_id: iste
+      assignment_id: aut
       receipts:
         -
-          receipt_type_id: fugit
-          amount: 9.0
+          receipt_type_id: rem
+          amount: 25606.3
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer Vc8kgeZ36vdDa4aPbh6fE51'
+      - 'Bearer fd4Vb83ah5Da6Ze1EvPckg6'
     controller: null
     method: null
     route: null
@@ -163,7 +163,7 @@ endpoints:
         name: assignment_id
         description: 'The <code>id</code> of an existing record in the assignments table.'
         required: true
-        example: omnis
+        example: nostrum
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -184,7 +184,7 @@ endpoints:
         name: 'receipts[].receipt_type_id'
         description: 'The <code>id</code> of an existing record in the receipt_types table.'
         required: true
-        example: quidem
+        example: voluptas
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -194,25 +194,25 @@ endpoints:
         name: 'receipts[].amount'
         description: ''
         required: true
-        example: 1610.3
+        example: 42994246.88018
         type: number
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      assignment_id: omnis
+      assignment_id: nostrum
       receipts:
         -
-          receipt_type_id: quidem
-          amount: 1610.3
+          receipt_type_id: voluptas
+          amount: 42994246.88018
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 45VPfkah6abdev3cZD1E68g'
+      - 'Bearer v43g5ZbE6DafPea6cdVk1h8'
     controller: null
     method: null
     route: null
@@ -242,14 +242,14 @@ endpoints:
         name: id
         description: 'The ID of the receipt.'
         required: true
-        example: quidem
+        example: molestiae
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: quidem
+      id: molestiae
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -269,7 +269,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6bZgPk346hdE1fVe5ca8aDv'
+      - 'Bearer 36a5vd6caPVE1hgbe4fk8ZD'
     controller: null
     method: null
     route: null
@@ -299,14 +299,14 @@ endpoints:
         name: id
         description: 'The ID of the receipt.'
         required: true
-        example: sunt
+        example: quo
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: sunt
+      id: quo
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -314,7 +314,7 @@ endpoints:
         name: receipt_type_id
         description: 'The <code>id</code> of an existing record in the receipt_types table.'
         required: true
-        example: facere
+        example: necessitatibus
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -324,22 +324,22 @@ endpoints:
         name: amount
         description: ''
         required: true
-        example: 34818.5574
+        example: 3.259410187
         type: number
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      receipt_type_id: facere
-      amount: 34818.5574
+      receipt_type_id: necessitatibus
+      amount: 3.259410187
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer ev413DcahZkEP5fgdab668V'
+      - 'Bearer 6ZEchfV548Dek31Paavbg6d'
     controller: null
     method: null
     route: null
@@ -369,14 +369,14 @@ endpoints:
         name: id
         description: 'The ID of the receipt.'
         required: true
-        example: et
+        example: at
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: et
+      id: at
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -387,7 +387,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer dkf1aaDv4Eg6c85PV6Zhbe3'
+      - 'Bearer 5cd1k3eagf4ZvbDhEa86V6P'
     controller: null
     method: null
     route: null
