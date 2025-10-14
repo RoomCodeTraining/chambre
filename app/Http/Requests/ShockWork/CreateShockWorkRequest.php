@@ -2,10 +2,20 @@
 
 namespace App\Http\Requests\ShockWork;
 
+use App\Models\Shock;
+use App\Models\PaintType;
 use Illuminate\Foundation\Http\FormRequest;
 
 class CreateShockWorkRequest extends FormRequest
 {
+    public function prepareForValidation()
+    {
+        $this->merge([
+            'shock_id' => $this->shock_id ? Shock::keyFromHashId($this->shock_id) : null,
+            'paint_type_id' => $this->paint_type_id ? PaintType::keyFromHashId($this->paint_type_id) : null,
+        ]);
+    }
+
     public function rules(): array
     {
         return [

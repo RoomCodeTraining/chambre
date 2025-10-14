@@ -2,15 +2,30 @@
 
 namespace App\Http\Requests\Assignment;
 
+use App\Models\RepairerRelationship;
+use App\Models\GeneralState;
+use App\Models\ClaimNature;
+use App\Models\TechnicalConclusion;
+use App\Models\Remark;
 use Illuminate\Foundation\Http\FormRequest;
 
 class EditAssignmentRequest extends FormRequest
 {
+    public function prepareForValidation()
+    {
+        $this->merge([
+            'repairer_relationship_id' => $this->repairer_relationship_id ? RepairerRelationship::keyFromHashId($this->repairer_relationship_id) : null,
+            'general_state_id' => $this->general_state_id ? GeneralState::keyFromHashId($this->general_state_id) : null,
+            'claim_nature_id' => $this->claim_nature_id ? ClaimNature::keyFromHashId($this->claim_nature_id) : null,
+            'technical_conclusion_id' => $this->technical_conclusion_id ? TechnicalConclusion::keyFromHashId($this->technical_conclusion_id) : null,
+            'report_remark_id' => $this->report_remark_id ? Remark::keyFromHashId($this->report_remark_id) : null,
+        ]);
+    }
     public function rules(): array
     {
         return [
             // Autres type de dossier
-            'repairer_id' => 'nullable|exists:entities,id', // Reparateur
+            'repairer_relationship_id' => 'nullable|exists:repairer_relationships,id', // Reparateur
             'general_state_id' => 'nullable|exists:general_states,id', // État général
             'claim_nature_id' => 'nullable|exists:claim_natures,id', // Nature du sinistre
             'technical_conclusion_id' => 'nullable|exists:technical_conclusions,id', // Conclusion technique
@@ -94,6 +109,11 @@ class EditAssignmentRequest extends FormRequest
             'contact_date.date_format' => 'Le format de la date est invalide.',
             'depreciation_rate.min' => 'Le taux de dépréciation doit être supérieur ou égal à 0.',
             'depreciation_rate.max' => 'Le taux de dépréciation doit être inférieur ou égal à 100.',
+            'repairer_relationship_id.exists' => 'Le réparateur est invalide.',
+            'general_state_id.exists' => 'L\'état général est invalide.',
+            'claim_nature_id.exists' => 'La nature du sinistre est invalide.',
+            'technical_conclusion_id.exists' => 'La conclusion technique est invalide.',
+            'report_remark_id.exists' => 'La note de l\'expert dans le rapport est invalide.',
         ];
     }
 }

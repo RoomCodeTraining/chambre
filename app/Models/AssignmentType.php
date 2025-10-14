@@ -6,11 +6,13 @@ use App\Filters\AssignmentTypeFilters;
 use Essa\APIToolKit\Filters\Filterable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Deligoez\LaravelModelHashId\Traits\HasHashId;
+use Deligoez\LaravelModelHashId\Traits\HasHashIdRouting;
 
 
 class AssignmentType extends Model
 {
-    use HasFactory, Filterable;
+    use HasFactory, Filterable, HasHashId, HasHashIdRouting;
 
     protected string $default_filters = AssignmentTypeFilters::class;
 

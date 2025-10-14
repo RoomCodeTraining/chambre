@@ -9,7 +9,7 @@ class AppSettingResource extends JsonResource
     public function toArray($request): array
     {
         return [
-            'id' => $this->id,
+            'id' => $this->hashId,
             'code' => $this->code,
             'value' => $this->value,
             'label' => $this->label,

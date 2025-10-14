@@ -2,10 +2,18 @@
 
 namespace App\Http\Requests\ShockWork;
 
+use App\Models\Shock;
 use Illuminate\Foundation\Http\FormRequest;
 
 class CalculateShockWorkRequest extends FormRequest
 {
+    public function prepareForValidation()
+    {
+        $this->merge([
+            'shock_id' => $this->shock_id ? Shock::keyFromHashId($this->shock_id) : null,
+        ]);
+    }
+
     public function rules(): array
     {
         return [

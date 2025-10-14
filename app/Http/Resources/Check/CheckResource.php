@@ -13,7 +13,7 @@ class CheckResource extends JsonResource
     public function toArray($request): array
     {
         return [
-            'id' => $this->id,
+            'id' => $this->hashId,
             'reference' => $this->reference,
             'date' => $this->date,
             'amount' => $this->amount,

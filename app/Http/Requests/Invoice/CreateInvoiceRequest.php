@@ -2,10 +2,18 @@
 
 namespace App\Http\Requests\Invoice;
 
+use App\Models\Assignment;
 use Illuminate\Foundation\Http\FormRequest;
 
 class CreateInvoiceRequest extends FormRequest
 {
+    public function prepareForValidation()
+    {
+        $this->merge([
+            'assignment_id' => $this->assignment_id ? Assignment::keyFromHashId($this->assignment_id) : null,
+        ]);
+    }
+
     public function rules(): array
     {
         return [

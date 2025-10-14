@@ -6,11 +6,13 @@ use App\Filters\ExpertiseTypeFilters;
 use Essa\APIToolKit\Filters\Filterable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Deligoez\LaravelModelHashId\Traits\HasHashId;
+use Deligoez\LaravelModelHashId\Traits\HasHashIdRouting;
 
 
 class ExpertiseType extends Model
 {
-    use HasFactory, Filterable;
+    use HasFactory, Filterable, HasHashId, HasHashIdRouting;
 
     protected string $default_filters = ExpertiseTypeFilters::class;
 

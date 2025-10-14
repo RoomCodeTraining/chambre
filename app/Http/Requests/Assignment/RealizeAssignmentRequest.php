@@ -2,10 +2,17 @@
 
 namespace App\Http\Requests\Assignment;
 
+use App\Models\RepairerRelationship;
 use Illuminate\Foundation\Http\FormRequest;
 
 class RealizeAssignmentRequest extends FormRequest
 {
+    public function prepareForValidation()
+    {
+        $this->merge([
+            'repairer_relationship_id' => $this->repairer_relationship_id ? RepairerRelationship::keyFromHashId($this->repairer_relationship_id) : null,
+        ]);
+    }
     public function rules(): array
     {
         return [
@@ -13,7 +20,7 @@ class RealizeAssignmentRequest extends FormRequest
             'expertise_place' => 'nullable|string',
             'point_noted' => 'nullable|string',
             'directed_by' => 'required|exists:users,id',
-            'repairer_id' => 'nullable|exists:entities,id',
+            'repairer_relationship_id' => 'nullable|exists:repairer_relationships,id',
         ];
     }
 

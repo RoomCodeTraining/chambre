@@ -13,7 +13,7 @@ class ReceiptResource extends JsonResource
     public function toArray($request): array
     {
         return [
-            'id' => $this->id,
+            'id' => $this->hashId,
             'amount_excluding_tax' => $this->amount_excluding_tax,
             'amount_tax' => $this->amount_tax,
             'amount' => $this->amount,

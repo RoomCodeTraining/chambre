@@ -13,7 +13,7 @@ class ShockWorkResource extends JsonResource
     public function toArray($request): array
     {
         return [
-            'id' => $this->id,
+            'id' => $this->hashId,
             'disassembly' => (bool) $this->disassembly,
             'replacement' => (bool) $this->replacement,
             'repair' => (bool) $this->repair,

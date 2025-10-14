@@ -2,12 +2,19 @@
 
 namespace App\Http\Requests\User;
 
-use App\Models\Office;
+use App\Models\Entity;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rules\Password;
 
 class CreateUserRequest extends FormRequest
 {
+    public function prepareForValidation()
+    {
+        $this->merge([
+            'entity_id' => $this->entity_id ? Entity::keyFromHashId($this->entity_id) : null,
+        ]);
+    }
+
     public function rules(): array
     {
         return [

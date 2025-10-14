@@ -8,6 +8,23 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class CreateAssignmentRequestRequest extends FormRequest
 {
+    public function prepareForValidation()
+    {
+        $this->merge([
+            'expert_firm_id' => $this->expert_firm_id ? Entity::keyFromHashId($this->expert_firm_id) : null,
+            'assignment_type_id' => $this->assignment_type_id ? AssignmentType::keyFromHashId($this->assignment_type_id) : null,
+            'expertise_type_id' => $this->expertise_type_id ? ExpertiseType::keyFromHashId($this->expertise_type_id) : null,
+            'client_id' => $this->client_id ? Client::keyFromHashId($this->client_id) : null,
+            'vehicle_id' => $this->vehicle_id ? Vehicle::keyFromHashId($this->vehicle_id) : null,
+            'insurer_id' => $this->insurer_id ? Entity::keyFromHashId($this->insurer_id) : null,
+            'repairer_id' => $this->repairer_id ? Entity::keyFromHashId($this->repairer_id) : null,
+            'vehicle_brand_id' => $this->vehicle_brand_id ? Brand::keyFromHashId($this->vehicle_brand_id) : null,
+            'vehicle_model_id' => $this->vehicle_model_id ? VehicleModel::keyFromHashId($this->vehicle_model_id) : null,
+            'vehicle_color_id' => $this->vehicle_color_id ? Color::keyFromHashId($this->vehicle_color_id) : null,
+
+        ]);
+    }
+
     public function rules(): array
     {
         return [

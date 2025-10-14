@@ -2,10 +2,20 @@
 
 namespace App\Http\Requests\Assignment;
 
+use App\Models\Entity;
+use App\Models\User;
 use Illuminate\Foundation\Http\FormRequest;
 
 class UpdateRealizedAssignmentRequest extends FormRequest
 {
+    public function prepareForValidation()
+    {
+        $this->merge([
+            'repairer_id' => $this->repairer_id ? Entity::keyFromHashId($this->repairer_id) : null,
+            'directed_by' => $this->directed_by ? User::keyFromHashId($this->directed_by) : null,
+        ]);
+    }
+
     public function rules(): array
     {
         return [

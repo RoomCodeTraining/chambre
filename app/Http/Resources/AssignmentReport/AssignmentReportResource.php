@@ -15,7 +15,7 @@ class AssignmentReportResource extends JsonResource
     public function toArray($request): array
     {
         return [
-            'id' => $this->id,
+            'id' => $this->hashId,
             'reference' => $this->reference,
             'policy_number' => $this->policy_number,
             'claim_number' => $this->claim_number,

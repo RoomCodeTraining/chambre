@@ -2,10 +2,20 @@
 
 namespace App\Http\Requests\DepreciationTable;
 
+use App\Models\VehicleGenre;
+use App\Models\VehicleEnergy;
 use Illuminate\Foundation\Http\FormRequest;
 
 class CreateTheoricalMarketValueRequest extends FormRequest
 {
+    public function prepareForValidation()
+    {
+        $this->merge([
+            'vehicle_genre_id' => $this->vehicle_genre_id ? VehicleGenre::keyFromHashId($this->vehicle_genre_id) : null,
+            'vehicle_energy_id' => $this->vehicle_energy_id ? VehicleEnergy::keyFromHashId($this->vehicle_energy_id) : null,
+        ]);
+    }
+
     public function rules(): array
     {
         return [

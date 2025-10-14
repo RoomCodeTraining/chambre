@@ -12,7 +12,7 @@ class InsurerRelationshipResource extends JsonResource
     public function toArray($request): array
     {
         return [
-            'id' => $this->id,
+            'id' => $this->hashId,
             'insurer' => new EntityResource($this->whenLoaded('insurer')),
             'expert_firm' => new EntityResource($this->whenLoaded('expertFirm')),
             'status' => new StatusResource($this->whenLoaded('status')),

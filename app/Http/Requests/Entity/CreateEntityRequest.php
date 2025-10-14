@@ -25,9 +25,9 @@ class CreateEntityRequest extends FormRequest
             'entity_type_code' => ['required', 'exists:entity_types,code'],
             'service_description' => ['nullable', 'string'],
             'footer_description' => ['nullable', 'string'],
-            'prefix' => ['nullable', 'required_if:entity_type_code,'.EntityType::where('code', EntityTypeEnum::INSURER)->first()->id, 'string', 'max:255'],
-            'suffix' => ['nullable', 'required_if:entity_type_code,'.EntityType::where('code', EntityTypeEnum::ORGANIZATION)->first()->id, 'string', 'max:255'],
-            'logo' => ['nullable', 'required_if:entity_type_code,'.EntityType::where('code', EntityTypeEnum::ORGANIZATION)->first()->id, 'image', 'mimes:jpeg,png,jpg,gif,svg'],
+            'prefix' => ['nullable', 'required_if:entity_type_code,'.EntityType::where('code', EntityTypeEnum::INSURER)->first()->hashId, 'string', 'max:255'],
+            'suffix' => ['nullable', 'required_if:entity_type_code,'.EntityType::where('code', EntityTypeEnum::ORGANIZATION)->first()->hashId, 'string', 'max:255'],
+            'logo' => ['nullable', 'required_if:entity_type_code,'.EntityType::where('code', EntityTypeEnum::ORGANIZATION)->first()->hashId, 'image', 'mimes:jpeg,png,jpg,gif,svg'],
         ];
     }
 

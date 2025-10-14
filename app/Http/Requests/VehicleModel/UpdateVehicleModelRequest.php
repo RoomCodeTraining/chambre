@@ -2,11 +2,19 @@
 
 namespace App\Http\Requests\VehicleModel;
 
+use App\Models\Brand;
 use Illuminate\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class UpdateVehicleModelRequest extends FormRequest
 {
+    public function prepareForValidation()
+    {
+        $this->merge([
+            'brand_id' => $this->brand_id ? Brand::keyFromHashId($this->brand_id) : null,
+        ]);
+    }
+
     public function rules(): array
     {
         return [

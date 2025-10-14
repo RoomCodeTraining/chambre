@@ -11,7 +11,7 @@ class SupplyResource extends JsonResource
     public function toArray($request): array
     {
         return [
-            'id' => $this->id,
+            'id' => $this->hashId,
             'label' => $this->label,
             'description' => $this->description,
             'status' => new StatusResource($this->whenLoaded('status')),

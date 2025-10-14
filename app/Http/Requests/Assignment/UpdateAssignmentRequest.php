@@ -2,23 +2,44 @@
 
 namespace App\Http\Requests\Assignment;
 
+use App\Models\Client;
+use App\Models\Vehicle;
+use App\Models\InsurerRelationship;
+use App\Models\RepairerRelationship;
+use App\Models\AssignmentType;
+use App\Models\ExpertiseType;
+use App\Models\DocumentTransmitted;
 use Illuminate\Foundation\Http\FormRequest;
 
 class UpdateAssignmentRequest extends FormRequest
 {
+    public function prepareForValidation()
+    {
+        $this->merge([
+            'client_id' => $this->client_id ? Client::keyFromHashId($this->client_id) : null,
+            'vehicle_id' => $this->vehicle_id ? Vehicle::keyFromHashId($this->vehicle_id) : null,
+            'insurer_relationship_id' => $this->insurer_relationship_id ? InsurerRelationship::keyFromHashId($this->insurer_relationship_id) : null,
+            'additional_insurer_relationship_id' => $this->additional_insurer_relationship_id ? InsurerRelationship::keyFromHashId($this->additional_insurer_relationship_id) : null,
+            'repairer_relationship_id' => $this->repairer_relationship_id ? RepairerRelationship::keyFromHashId($this->repairer_relationship_id) : null,
+            'assignment_type_id' => $this->assignment_type_id ? AssignmentType::keyFromHashId($this->assignment_type_id) : null,
+            'expertise_type_id' => $this->expertise_type_id ? ExpertiseType::keyFromHashId($this->expertise_type_id) : null,
+            'document_transmitted_id' => $this->document_transmitted_id ? DocumentTransmitted::keyFromHashId($this->document_transmitted_id) : null,
+        ]);
+    }
+
     public function rules(): array
     {
         return [
-            'client_id' => 'required|exists:clients,id',
+            'client_id' => 'nullable|exists:clients,id',
             'vehicle_id' => 'required|exists:vehicles,id',
             'vehicle_mileage' => 'nullable|numeric',
-            'insurer_relationship_id' => 'required|exists:insurer_relationships,id',
+            'insurer_relationship_id' => 'nullable|exists:insurer_relationships,id',
             'additional_insurer_relationship_id' => 'nullable|exists:insurer_relationships,id',
             'repairer_relationship_id' => 'nullable|exists:repairer_relationships,id',
             'assignment_type_id' => 'required|exists:assignment_types,id',
             'expertise_type_id' => 'required|exists:expertise_types,id',
             'document_transmitted_id' => 'nullable|array',
-            'document_transmitted_id.*' => 'required|exists:document_transmitteds,id',
+            'document_transmitted_id.*' => 'nullable|exists:document_transmitteds,id',
 
             'policy_number' => 'nullable|string',
             'claim_number' => 'nullable|string',
@@ -36,10 +57,15 @@ class UpdateAssignmentRequest extends FormRequest
     public function messages(): array
     {
         return [
-            'insurer_relationship_id.required' => 'L\'assureur est requis',
+            'client_id.exists' => 'Le client est invalide.',
+            'vehicle_id.exists' => 'Le véhicule est invalide.',
+            'insurer_relationship_id.exists' => 'L\'assureur est invalide',
             'insurer_relationship_id.exists' => 'L\'assureur est invalide.',
             'additional_insurer_relationship_id.exists' => 'L\'assureur additionnel est invalide.',
             'repairer_relationship_id.exists' => 'Le réparateur est invalide.',
+            'assignment_type_id.exists' => 'Le type de mission est invalide.',
+            'expertise_type_id.exists' => 'Le type d\'expertise est invalide.',
+            'document_transmitted_id.*.exists' => 'Le document transmis est invalide.',
             'claim_date.date' => 'La date est invalide.',
             'claim_ends_at.date' => 'La date est invalide.',
             'expertise_date.date' => 'La date est invalide.',

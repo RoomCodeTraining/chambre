@@ -14,7 +14,7 @@ class WorkforceResource extends JsonResource
     public function toArray($request): array
     {
         return [
-            'id' => $this->id,
+            'id' => $this->hashId,
             'nb_hours' => $this->nb_hours,
             'work_fee' => $this->work_fee,
             'with_tax' => $this->with_tax,

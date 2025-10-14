@@ -13,7 +13,7 @@ class DepreciationTableResource extends JsonResource
     public function toArray($request): array
     {
         return [
-            'id' => $this->id,
+            'id' => $this->hashId,
             'value' => $this->value,
             'vehicle_genre' => new VehicleGenreResource($this->whenLoaded('vehicleGenre')),
             'vehicle_age' => new VehicleAgeResource($this->whenLoaded('vehicleAge')),

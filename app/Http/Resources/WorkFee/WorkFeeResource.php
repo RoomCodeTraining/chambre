@@ -11,7 +11,7 @@ class WorkFeeResource extends JsonResource
     public function toArray($request): array
     {
         return [
-            'id' => $this->id,
+            'id' => $this->hashId,
             'param_1' => $this->param_1,
             'param_2' => $this->param_2,
             'param_3' => $this->param_3,

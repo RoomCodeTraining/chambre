@@ -12,7 +12,7 @@ class UserActionResource extends JsonResource
     public function toArray($request): array
     {
         return [
-            'id' => $this->id,
+            'id' => $this->hashId,
             'description' => $this->description,
             'ip_address' => $this->ip_address,
             'user_agent' => $this->user_agent,

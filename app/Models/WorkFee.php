@@ -7,11 +7,13 @@ use Essa\APIToolKit\Filters\Filterable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Deligoez\LaravelModelHashId\Traits\HasHashId;
+use Deligoez\LaravelModelHashId\Traits\HasHashIdRouting;
 
 
 class WorkFee extends Model
 {
-    use HasFactory, Filterable;
+    use HasFactory, Filterable, HasHashId, HasHashIdRouting;
 
     protected string $default_filters = WorkFeeFilters::class;
 

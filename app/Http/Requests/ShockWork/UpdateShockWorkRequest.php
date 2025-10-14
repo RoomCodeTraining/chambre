@@ -2,11 +2,19 @@
 
 namespace App\Http\Requests\ShockWork;
 
+use App\Models\Supply;
 use Illuminate\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class UpdateShockWorkRequest extends FormRequest
 {
+    public function prepareForValidation()
+    {
+        $this->merge([
+            'supply_id' => $this->supply_id ? Supply::keyFromHashId($this->supply_id) : null,
+        ]);
+    }
+
     public function rules(): array
     {
         return [

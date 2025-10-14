@@ -17,7 +17,7 @@ class ShockResource extends JsonResource
     public function toArray($request): array
     {
         return [
-            'id' => $this->id,
+            'id' => $this->hashId,
             'position' => $this->position,
             'with_tax' => $this->with_tax,
             'is_before_quote' => (bool) $this->is_before_quote,

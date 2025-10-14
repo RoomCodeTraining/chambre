@@ -4,9 +4,27 @@ namespace App\Http\Requests\Vehicle;
 
 use Illuminate\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
+use App\Models\Bodywork;
+use App\Models\VehicleGenre;
+use App\Models\VehicleEnergy;
+use App\Models\Brand;
+use App\Models\VehicleModel;
+use App\Models\Color;
 
 class UpdateVehicleRequest extends FormRequest
 {
+    public function prepareForValidation()
+    {
+        $this->merge([
+            'bodywork_id' => $this->bodywork_id ? Bodywork::keyFromHashId($this->bodywork_id) : null,
+            'vehicle_genre_id' => $this->vehicle_genre_id ? VehicleGenre::keyFromHashId($this->vehicle_genre_id) : null,
+            'vehicle_energy_id' => $this->vehicle_energy_id ? VehicleEnergy::keyFromHashId($this->vehicle_energy_id) : null,
+            'brand_id' => $this->brand_id ? Brand::keyFromHashId($this->brand_id) : null,
+            'vehicle_model_id' => $this->vehicle_model_id ? VehicleModel::keyFromHashId($this->vehicle_model_id) : null,
+            'color_id' => $this->color_id ? Color::keyFromHashId($this->color_id) : null,
+        ]);
+    }
+
     public function rules(): array
     {
         return [

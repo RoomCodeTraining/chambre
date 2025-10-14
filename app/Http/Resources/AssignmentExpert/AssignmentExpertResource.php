@@ -12,7 +12,7 @@ class AssignmentExpertResource extends JsonResource
     public function toArray($request): array
     {
         return [
-            'id' => $this->id,
+            'id' => $this->hashId,
             'date' => $this->date,
             'observation' => $this->observation,
             'status' => new StatusResource($this->whenLoaded('status')),

@@ -11,7 +11,7 @@ class VehicleAgeResource extends JsonResource
     public function toArray($request): array
     {
         return [
-            'id' => $this->id,
+            'id' => $this->hashId,
             'value' => $this->value,
             'label' => $this->label,
             'description' => $this->description,

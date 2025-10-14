@@ -12,7 +12,7 @@ class QrCodeResource extends JsonResource
     public function toArray($request): array
     {
         return [
-            'id' => $this->id,
+            'id' => $this->hashId,
             'code' => $this->code,
             'qr_code' => $this->qr_code,
             'assignment' => new AssignmentResource($this->whenLoaded('assignment')),

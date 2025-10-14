@@ -13,7 +13,7 @@ class VehicleRelationshipResource extends JsonResource
     public function toArray($request): array
     {
         return [
-            'id' => $this->id,
+            'id' => $this->hashId,
             'vehicle' => new VehicleResource($this->vehicle),
             'expert_firm' => new EntityResource($this->expert_firm),
             'insurer' => new EntityResource($this->insurer),

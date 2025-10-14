@@ -63,7 +63,7 @@ class AssignmentResource extends JsonResource
         $expert_signature = $work_sheet_established_by ? $work_sheet_established_by->signature : null;
 
         return [
-            'id' => $this->id,
+            'id' => $this->hashId,
             'reference' => $this->reference,
             'policy_number' => $this->policy_number,
             'claim_number' => $this->claim_number,

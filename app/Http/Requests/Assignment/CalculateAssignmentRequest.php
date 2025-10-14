@@ -2,10 +2,28 @@
 
 namespace App\Http\Requests\Assignment;
 
+use App\Models\AssignmentType;
+use App\Models\ExpertiseType;
+use App\Models\Client;
+use App\Models\Vehicle;
+use App\Models\RepairerRelationship;
+use App\Models\DocumentTransmitted;
 use Illuminate\Foundation\Http\FormRequest;
 
 class CalculateAssignmentRequest extends FormRequest
 {
+    public function prepareForValidation()
+    {
+        $this->merge([
+            'assignment_type_id' => $this->assignment_type_id ? AssignmentType::keyFromHashId($this->assignment_type_id) : null,
+            'expertise_type_id' => $this->expertise_type_id ? ExpertiseType::keyFromHashId($this->expertise_type_id) : null,
+            'client_id' => $this->client_id ? Client::keyFromHashId($this->client_id) : null,
+            'vehicle_id' => $this->vehicle_id ? Vehicle::keyFromHashId($this->vehicle_id) : null,
+            'repairer_relationship_id' => $this->repairer_relationship_id ? RepairerRelationship::keyFromHashId($this->repairer_relationship_id) : null,
+            'document_transmitted_id' => $this->document_transmitted_id ? DocumentTransmitted::keyFromHashId($this->document_transmitted_id) : null,
+        ]);
+    }
+
     public function rules(): array
     {
         return [
@@ -15,7 +33,7 @@ class CalculateAssignmentRequest extends FormRequest
             'instructions' => 'nullable|string', // Instructions de l'expert
             'market_incidence_rate' => 'nullable|numeric', // Taux d'incidence marché
 
-            'repairer_id' => 'nullable|exists:entities,id', // Reparateur
+            'repairer_relationship_id' => 'nullable|exists:repairer_relationships,id', // Reparateur
             'general_state_id' => 'nullable|exists:general_states,id', // État général
             'claim_nature_id' => 'nullable|exists:claim_natures,id', // Nature du sinistre
             'technical_conclusion_id' => 'nullable|exists:technical_conclusions,id', // Conclusion technique
@@ -87,6 +105,11 @@ class CalculateAssignmentRequest extends FormRequest
             'seen_after_work_date.date_format' => 'Le format de la date est invalide.',
             'contact_date.date' => 'La date est invalide.',
             'contact_date.date_format' => 'Le format de la date est invalide.',
+            'repairer_relationship_id.exists' => 'Le réparateur est invalide.',
+            'general_state_id.exists' => 'L\'état général est invalide.',
+            'claim_nature_id.exists' => 'La nature du sinistre est invalide.',
+            'technical_conclusion_id.exists' => 'La conclusion technique est invalide.',
+            'report_remark_id.exists' => 'La note de l\'expert dans le rapport est invalide.',
         ];
     }
 }

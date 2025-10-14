@@ -6,12 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
+use Deligoez\LaravelModelHashId\Traits\HasHashId;
+use Deligoez\LaravelModelHashId\Traits\HasHashIdRouting;
 
 class BaseModel extends Model
 {
 
     use SoftDeletes;
-
+    use HasHashId;
+    use HasHashIdRouting;
     /**
      * Get the route key for the model.
      *

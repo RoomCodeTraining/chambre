@@ -2,10 +2,28 @@
 
 namespace App\Http\Requests\Shock;
 
+use App\Models\Assignment;
+use App\Models\ShockPoint;
+use App\Models\PaintType;
+use App\Models\HourlyRate;
+use App\Models\WorkforceType;
+use App\Models\Supply;
 use Illuminate\Foundation\Http\FormRequest;
 
 class CreateShockRequest extends FormRequest
 {
+    public function prepareForValidation()
+    {
+        $this->merge([
+            'assignment_id' => $this->assignment_id ? Assignment::keyFromHashId($this->assignment_id) : null,
+            'shocks.*.shock_point_id' => $this->shock_point_id ? ShockPoint::keyFromHashId($this->shock_point_id) : null,
+            'shocks.*.paint_type_id' => $this->paint_type_id ? PaintType::keyFromHashId($this->paint_type_id) : null,
+            'shocks.*.hourly_rate_id' => $this->hourly_rate_id ? HourlyRate::keyFromHashId($this->hourly_rate_id) : null,
+            'shocks.*.workforces.*.workforce_type_id' => $this->workforce_type_id ? WorkforceType::keyFromHashId($this->workforce_type_id) : null,
+            'shocks.*.shock_works.*.supply_id' => $this->supply_id ? Supply::keyFromHashId($this->supply_id) : null,
+        ]);
+    }
+
     public function rules(): array
     {
         return [

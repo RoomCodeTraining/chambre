@@ -8,11 +8,13 @@ use Essa\APIToolKit\Filters\Filterable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Deligoez\LaravelModelHashId\Traits\HasHashId;
+use Deligoez\LaravelModelHashId\Traits\HasHashIdRouting;
 
 
 class Receipt extends Model
 {
-    use HasFactory, Filterable, SoftDeletes;
+    use HasFactory, Filterable, SoftDeletes, HasHashId, HasHashIdRouting;
 
     protected string $default_filters = ReceiptFilters::class;
 

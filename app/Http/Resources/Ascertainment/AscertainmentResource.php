@@ -13,7 +13,7 @@ class AscertainmentResource extends JsonResource
     public function toArray($request): array
     {
         return [
-            'id' => $this->id,
+            'id' => $this->hashId,
             'ascertainment_type' => new AscertainmentTypeResource($this->whenLoaded('ascertainmentType')),
             'very_good' => $this->very_good ? true : false,
             'good' => $this->good ? true : false,

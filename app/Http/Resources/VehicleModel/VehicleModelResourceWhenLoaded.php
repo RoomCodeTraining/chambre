@@ -12,7 +12,7 @@ class VehicleModelResourceWhenLoaded extends JsonResource
     public function toArray($request): array
     {
         return [
-            'id' => $this->id,
+            'id' => $this->hashId,
             'code' => $this->code,
             'label' => $this->label,
             'description' => $this->description,

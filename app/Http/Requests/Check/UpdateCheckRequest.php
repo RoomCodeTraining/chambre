@@ -2,10 +2,20 @@
 
 namespace App\Http\Requests\Check;
 
+use App\Models\Payment;
+use App\Models\Bank;
 use Illuminate\Foundation\Http\FormRequest;
 
 class UpdateCheckRequest extends FormRequest
 {
+    public function prepareForValidation()
+    {
+        $this->merge([
+            'payment_id' => $this->payment_id ? Payment::keyFromHashId($this->payment_id) : null,
+            'bank_id' => $this->bank_id ? Bank::keyFromHashId($this->bank_id) : null,
+        ]);
+    }
+
     public function rules(): array
     {
         return [

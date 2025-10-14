@@ -2,10 +2,22 @@
 
 namespace App\Http\Requests\Payment;
 
+use App\Models\Assignment;
+use App\Models\PaymentType;
+use App\Models\PaymentMethod;
 use Illuminate\Foundation\Http\FormRequest;
 
 class CreatePaymentRequest extends FormRequest
 {
+    public function prepareForValidation()
+    {
+        $this->merge([
+            'assignment_id' => $this->assignment_id ? Assignment::keyFromHashId($this->assignment_id) : null,
+            'payment_type_id' => $this->payment_type_id ? PaymentType::keyFromHashId($this->payment_type_id) : null,
+            'payment_method_id' => $this->payment_method_id ? PaymentMethod::keyFromHashId($this->payment_method_id) : null,
+        ]);
+    }
+
     public function rules(): array
     {
         return [

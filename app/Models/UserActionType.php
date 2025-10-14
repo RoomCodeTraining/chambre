@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class UserActionType extends Model
 {
-    use HasFactory, Filterable, SoftDeletes;
+    use HasFactory, Filterable, SoftDeletes, HasHashId, HasHashIdRouting;
 
     protected string $default_filters = UserActionTypeFilters::class;
 
