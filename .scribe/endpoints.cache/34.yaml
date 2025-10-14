@@ -46,7 +46,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 4P56g1abacv3ZV8Ed6kfDeh'
+      - 'Bearer V6451va3k8bcEDePZ6afgdh'
     controller: null
     method: null
     route: null
@@ -80,7 +80,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: pcdp
+        example: zspjjihjvutpmpjhjodbq
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -90,22 +90,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Earum possimus est commodi omnis facere dolorem deleniti.'
+        example: 'Ea tempora illo doloremque eveniet.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: pcdp
-      description: 'Earum possimus est commodi omnis facere dolorem deleniti.'
+      label: zspjjihjvutpmpjhjodbq
+      description: 'Ea tempora illo doloremque eveniet.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer ah58Z3V6fv1gP46bEaDdcke'
+      - 'Bearer kfceZhd5Pa1gV3v6a68Db4E'
     controller: null
     method: null
     route: null
@@ -135,14 +135,14 @@ endpoints:
         name: receiptType
         description: ''
         required: true
-        example: ut
+        example: sed
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      receiptType: ut
+      receiptType: sed
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -162,7 +162,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Ea6V38Zf1egb6hP4dvaDc5k'
+      - 'Bearer k13fPvZ5eE4Dd86V6aachbg'
     controller: null
     method: null
     route: null
@@ -192,14 +192,14 @@ endpoints:
         name: receiptType
         description: ''
         required: true
-        example: facilis
+        example: quisquam
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      receiptType: facilis
+      receiptType: quisquam
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -207,7 +207,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: uwjzahzuhhsrjxagsmx
+        example: pppy
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -217,22 +217,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Sint et ut ut recusandae.'
+        example: 'Rem enim iusto eos consequatur.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: uwjzahzuhhsrjxagsmx
-      description: 'Sint et ut ut recusandae.'
+      label: pppy
+      description: 'Rem enim iusto eos consequatur.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer f3k865cvah1eZaD6EbdPVg4'
+      - 'Bearer acg8f6eE4avZh51dkP3VD6b'
     controller: null
     method: null
     route: null
@@ -262,14 +262,14 @@ endpoints:
         name: receiptType
         description: ''
         required: true
-        example: sit
+        example: quaerat
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      receiptType: sit
+      receiptType: quaerat
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -280,7 +280,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer EeZvVc1kadfbDg656h43Pa8'
+      - 'Bearer g3Dv4k5686fehVEaZ1cdbPa'
     controller: null
     method: null
     route: null

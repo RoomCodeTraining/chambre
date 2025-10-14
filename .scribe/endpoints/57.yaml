@@ -44,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer vE3DcZgPdhe54Vb6ak6fa18'
+      - 'Bearer 6vagcZ8fa5PbVkED14h6e3d'
     controller: null
     method: null
     route: null
@@ -78,21 +78,21 @@ endpoints:
         name: repairer_id
         description: 'The <code>id</code> of an existing record in the entities table.'
         required: true
-        example: soluta
+        example: et
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      repairer_id: soluta
+      repairer_id: et
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 8EPh3ckbvD45gZad6f61Vea'
+      - 'Bearer vEca1gDdh86kb6eZf453aVP'
     controller: null
     method: null
     route: null
@@ -149,7 +149,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer DbfP163hEve45gZkcVada68'
+      - 'Bearer c38gvDabedhk6Z16Va4EfP5'
     controller: null
     method: null
     route: null
@@ -197,7 +197,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Zdkv3hEf6VaePb48c6gD15a'
+      - 'Bearer dvecDaZ86Vab5k4f613gPhE'
     controller: null
     method: null
     route: null
@@ -245,7 +245,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer hgVkfPaa516E6e4bvdDcZ38'
+      - 'Bearer V36hfP8acg4evkZDE1d65ab'
     controller: null
     method: null
     route: null
@@ -293,7 +293,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer PvZVa1cd86Dbgk63feah5E4'
+      - 'Bearer g5PdZ46f8Ec6eabvah31VkD'
     controller: null
     method: null
     route: null

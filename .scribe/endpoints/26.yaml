@@ -44,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer EkD6541dVfca8Za6Phveb3g'
+      - 'Bearer dfE61gheDPavc6a5834kVZb'
     controller: null
     method: null
     route: null
@@ -78,21 +78,21 @@ endpoints:
         name: code
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: cytfmuzxlnwcxaecqzbmjykbx
+        example: qrjrvlmzd
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      code: cytfmuzxlnwcxaecqzbmjykbx
+      code: qrjrvlmzd
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 1D8VacfaEbkZh6d34vP6eg5'
+      - 'Bearer PEkef1ag3654bvdha8VZDc6'
     controller: null
     method: null
     route: null
@@ -149,7 +149,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer a4cZE3ah8gd66feVPkvb1D5'
+      - 'Bearer a8V6Dgc54dkPEv6hZ13beaf'
     controller: null
     method: null
     route: null
@@ -179,14 +179,14 @@ endpoints:
         name: qrCode
         description: ''
         required: true
-        example: 10
+        example: 17
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      qrCode: 10
+      qrCode: 17
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -194,21 +194,21 @@ endpoints:
         name: code
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: hdzhjrszlloxcgazpfjvfov
+        example: wymcpt
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      code: hdzhjrszlloxcgazpfjvfov
+      code: wymcpt
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer P13a46fEc6hveb5da8VZDkg'
+      - 'Bearer D4hf5keP6cbE6a1v8ZaVgd3'
     controller: null
     method: null
     route: null
@@ -238,14 +238,14 @@ endpoints:
         name: qrCode
         description: ''
         required: true
-        example: 15
+        example: 2
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      qrCode: 15
+      qrCode: 2
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -256,7 +256,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer vkVPEbg66f8Zehda54acD31'
+      - 'Bearer Vk5468va1PhZecfD3Ea6gbd'
     controller: null
     method: null
     route: null

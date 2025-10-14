@@ -46,7 +46,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 4dgD3eh6fEPac8bk6V5Z1av'
+      - 'Bearer aek15PfacEhD6d438Z6gvbV'
     controller: null
     method: null
     route: null
@@ -80,7 +80,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: cgsxvjeeqb
+        example: qwig
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -90,22 +90,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Ad pariatur aliquid officia.'
+        example: 'Nemo cumque qui quia unde quisquam rerum.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: cgsxvjeeqb
-      description: 'Ad pariatur aliquid officia.'
+      label: qwig
+      description: 'Nemo cumque qui quia unde quisquam rerum.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 1Dea6ac4d6EvVg3kZh85bPf'
+      - 'Bearer k6bvag83fdD1aeVZE56Phc4'
     controller: null
     method: null
     route: null
@@ -135,14 +135,14 @@ endpoints:
         name: id
         description: 'The ID of the color.'
         required: true
-        example: magni
+        example: cum
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: magni
+      id: cum
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -162,7 +162,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 16bcVPZ6DeEf3d5ak8hgav4'
+      - 'Bearer 1gbdcaeZPh368V54Df6kEva'
     controller: null
     method: null
     route: null
@@ -192,14 +192,14 @@ endpoints:
         name: id
         description: 'The ID of the color.'
         required: true
-        example: quis
+        example: deserunt
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: quis
+      id: deserunt
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -207,7 +207,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: nq
+        example: dnmevfcnyfmdkckejn
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -217,22 +217,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Aut dicta quos sit minima quis.'
+        example: 'Qui qui veniam tenetur velit laboriosam explicabo.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: nq
-      description: 'Aut dicta quos sit minima quis.'
+      label: dnmevfcnyfmdkckejn
+      description: 'Qui qui veniam tenetur velit laboriosam explicabo.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 4ad3b1VDeagEvZ8kf6hPc56'
+      - 'Bearer 4gVPD3fka8vhdZa6561ecEb'
     controller: null
     method: null
     route: null
@@ -262,14 +262,14 @@ endpoints:
         name: id
         description: 'The ID of the color.'
         required: true
-        example: facilis
+        example: omnis
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: facilis
+      id: omnis
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -280,7 +280,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer b3P4Eva6cefg6D8kVZh15da'
+      - 'Bearer h3V4E56ePZ618aDvdbafcgk'
     controller: null
     method: null
     route: null

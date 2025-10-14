@@ -36,7 +36,7 @@ class UserController extends Controller
         $users = User::useFilters()
             ->with(['currentRole','entity','status'])
             ->latest('created_at')
-            // ->accessibleBy(auth()->user())
+            ->accessibleBy(auth()->user())
             ->useFilters()
             ->dynamicPaginate();
 
@@ -60,8 +60,10 @@ class UserController extends Controller
     /**
      * Afficher un utilisateur
      */
-    public function show(User $user): JsonResponse
+    public function show($id): JsonResponse
     {
+        $user = User::accessibleBy(auth()->user())->findOrFail(User::keyFromHashId($id));
+
         $this->authorize('view', $user);
 
         return $this->responseSuccess(null, new UserResource($user->load('currentRole','entity','status')));
@@ -73,7 +75,7 @@ class UserController extends Controller
     public function update(UpdateUserRequest $request, $id, UpdateUserAction $updateUser): JsonResponse
     {
         // $this->authorize('update', $user);
-        $user = User::findOrFail($id);
+        $user = User::accessibleBy(auth()->user())->findOrFail(User::keyFromHashId($id));
 
         $updateUser->execute($user, $request->validated());
 
@@ -129,7 +131,7 @@ class UserController extends Controller
      */
     public function enable($id)
     {
-        $user = User::findOrFail($id);
+        $user = User::accessibleBy(auth()->user())->findOrFail(User::keyFromHashId($id));
         $user->update(
             [
                 'status_id' => 1,
@@ -145,7 +147,7 @@ class UserController extends Controller
      */
     public function disable($id)
     {
-        $user = User::findOrFail($id);
+        $user = User::accessibleBy(auth()->user())->findOrFail(User::keyFromHashId($id));
         $user->update(
             [
                 'status_id' => 2,
@@ -161,7 +163,7 @@ class UserController extends Controller
      */
     public function reset($id)
     {
-        $user = User::findOrFail($id);
+        $user = User::accessibleBy(auth()->user())->findOrFail(User::keyFromHashId($id));
 
         if($user){
             // $password = $this->randomPassword();
@@ -216,7 +218,7 @@ class UserController extends Controller
      */
     public function reset_user_password(ResetUserPasswordRequest $request, $id)
     {
-        $user = User::findOrFail($id);
+        $user = User::accessibleBy(auth()->user())->findOrFail(User::keyFromHashId($id));
 
         $annee = date("Y");
         $mois_jour_heure = date("mdH");

@@ -46,7 +46,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer PE34hfd68bg61DeZVc5akav'
+      - 'Bearer bv3d64aeVfg1a8Zc6hD5kEP'
     controller: null
     method: null
     route: null
@@ -80,7 +80,7 @@ endpoints:
         name: payment_id
         description: 'The <code>id</code> of an existing record in the payments table.'
         required: true
-        example: qui
+        example: eum
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -90,7 +90,7 @@ endpoints:
         name: bank_id
         description: 'The <code>id</code> of an existing record in the banks table.'
         required: true
-        example: asperiores
+        example: aut
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -100,7 +100,7 @@ endpoints:
         name: date
         description: 'Must be a valid date in the format <code>Y-m-d</code>.'
         required: true
-        example: '2025-10-13'
+        example: '2025-10-14'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -110,7 +110,7 @@ endpoints:
         name: amount
         description: ''
         required: true
-        example: 590.028
+        example: 304.1294
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -127,10 +127,10 @@ endpoints:
         nullable: false
         custom: []
     cleanBodyParameters:
-      payment_id: qui
-      bank_id: asperiores
-      date: '2025-10-13'
-      amount: 590.028
+      payment_id: eum
+      bank_id: aut
+      date: '2025-10-14'
+      amount: 304.1294
     fileParameters:
       photo: null
     responses: []
@@ -138,7 +138,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer PZahvVDag566ek18bfE43cd'
+      - 'Bearer d4vhV5ak361E6PcfeZg8baD'
     controller: null
     method: null
     route: null
@@ -168,14 +168,14 @@ endpoints:
         name: id
         description: 'The ID of the check.'
         required: true
-        example: 6
+        example: 20
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 6
+      id: 20
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -195,7 +195,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 3Dg681a5b6vPhV4faZdcekE'
+      - 'Bearer aakE416vfPgh3edZ6cD8b5V'
     controller: null
     method: null
     route: null
@@ -225,14 +225,14 @@ endpoints:
         name: id
         description: 'The ID of the check.'
         required: true
-        example: 15
+        example: 19
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 15
+      id: 19
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -240,7 +240,7 @@ endpoints:
         name: payment_id
         description: 'The <code>id</code> of an existing record in the payments table.'
         required: true
-        example: consequatur
+        example: est
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -250,7 +250,7 @@ endpoints:
         name: bank_id
         description: 'The <code>id</code> of an existing record in the banks table.'
         required: true
-        example: quam
+        example: commodi
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -260,7 +260,7 @@ endpoints:
         name: date
         description: 'Must be a valid date in the format <code>Y-m-d</code>.'
         required: true
-        example: '2025-10-13'
+        example: '2025-10-14'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -270,7 +270,7 @@ endpoints:
         name: amount
         description: ''
         required: true
-        example: 798637558.80033
+        example: 1584237.8
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -287,10 +287,10 @@ endpoints:
         nullable: false
         custom: []
     cleanBodyParameters:
-      payment_id: consequatur
-      bank_id: quam
-      date: '2025-10-13'
-      amount: 798637558.80033
+      payment_id: est
+      bank_id: commodi
+      date: '2025-10-14'
+      amount: 1584237.8
     fileParameters:
       photo: null
     responses: []
@@ -298,7 +298,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 5fav4hckEZdDPegba638V16'
+      - 'Bearer aZda8cPDVekbE46gf5hv136'
     controller: null
     method: null
     route: null
@@ -328,14 +328,14 @@ endpoints:
         name: id
         description: 'The ID of the check.'
         required: true
-        example: 16
+        example: 12
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 16
+      id: 12
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -346,7 +346,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer hV86v5daZ13gakP6cbeEfD4'
+      - 'Bearer Zg1bc8e6Vv6ka4f35hEaPDd'
     controller: null
     method: null
     route: null

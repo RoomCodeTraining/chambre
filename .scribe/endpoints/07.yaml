@@ -44,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 68a6DfEgbP5edc3akV4Zv1h'
+      - 'Bearer V3PDZhE4ebc6vdaf51gk8a6'
     controller: null
     method: null
     route: null
@@ -78,7 +78,7 @@ endpoints:
         name: code
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: or
+        example: bklguzpmjhtqesqjw
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -88,7 +88,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: veavrzrycpphtusnupdlmntih
+        example: uxpuavrjrzvqrmbxaidsel
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -98,7 +98,7 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Minima porro pariatur vero ipsa aut quia.'
+        example: 'Quibusdam voluptas voluptatum beatae laudantium explicabo est.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -108,7 +108,7 @@ endpoints:
         name: max_mileage_essence_per_year
         description: ''
         required: true
-        example: 158305.33
+        example: 121945.69
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -118,25 +118,25 @@ endpoints:
         name: max_mileage_diesel_per_year
         description: ''
         required: true
-        example: 39005911.0124
+        example: 1043.6
         type: number
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      code: or
-      label: veavrzrycpphtusnupdlmntih
-      description: 'Minima porro pariatur vero ipsa aut quia.'
-      max_mileage_essence_per_year: 158305.33
-      max_mileage_diesel_per_year: 39005911.0124
+      code: bklguzpmjhtqesqjw
+      label: uxpuavrjrzvqrmbxaidsel
+      description: 'Quibusdam voluptas voluptatum beatae laudantium explicabo est.'
+      max_mileage_essence_per_year: 121945.69
+      max_mileage_diesel_per_year: 1043.6
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer fePkEa38dDZhV56c6b1a4vg'
+      - 'Bearer Pkbadgf5V843DvhcE6ea16Z'
     controller: null
     method: null
     route: null
@@ -166,14 +166,14 @@ endpoints:
         name: id
         description: 'The ID of the vehicle genre.'
         required: true
-        example: deleniti
+        example: molestiae
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: deleniti
+      id: molestiae
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -193,7 +193,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer V56DecvaPEkd4386ah1bZfg'
+      - 'Bearer D6b4Zhc6k38vaEPge5dafV1'
     controller: null
     method: null
     route: null
@@ -223,14 +223,14 @@ endpoints:
         name: id
         description: 'The ID of the vehicle genre.'
         required: true
-        example: eius
+        example: ipsa
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: eius
+      id: ipsa
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -238,7 +238,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: gxtxedyc
+        example: bwmixgsehjersmwbfpj
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -248,7 +248,7 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Unde molestias ad nesciunt sed quam voluptatem non aperiam.'
+        example: 'Dolore et a aut totam.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -258,7 +258,7 @@ endpoints:
         name: max_mileage_essence_per_year
         description: ''
         required: true
-        example: 34260.6411413
+        example: 3087925.0
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -268,24 +268,24 @@ endpoints:
         name: max_mileage_diesel_per_year
         description: ''
         required: true
-        example: 905572.0
+        example: 9008719.959
         type: number
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      label: gxtxedyc
-      description: 'Unde molestias ad nesciunt sed quam voluptatem non aperiam.'
-      max_mileage_essence_per_year: 34260.6411413
-      max_mileage_diesel_per_year: 905572.0
+      label: bwmixgsehjersmwbfpj
+      description: 'Dolore et a aut totam.'
+      max_mileage_essence_per_year: 3087925.0
+      max_mileage_diesel_per_year: 9008719.959
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer dh1aeP64bcDZfEv8k6gV53a'
+      - 'Bearer b5Zfhgk4dEV8PDa3v16a6ec'
     controller: null
     method: null
     route: null
@@ -315,14 +315,14 @@ endpoints:
         name: id
         description: 'The ID of the vehicle genre.'
         required: true
-        example: tenetur
+        example: deserunt
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: tenetur
+      id: deserunt
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -333,7 +333,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer d6aD8kP3vgEbeZVaf5416ch'
+      - 'Bearer gva54ebfk38DcZdPEaVh166'
     controller: null
     method: null
     route: null

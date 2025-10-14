@@ -1887,7 +1887,7 @@ class AssignmentController extends Controller
             $repairer = Entity::find(RepairerRelationship::where('id', $request->repairer_relationship_id)->first()->repairer_id);
 
             $vehicle_id = $request->vehicle_id;
-            $assignment_type_id = $request->assignment_type_id; 
+            $assignment_type_id = $request->assignment_type_id;
             $expertise_type_id = $request->expertise_type_id;
 
             if($request->assignment_type_id != $assignment->assignment_type_id || $insurer->id != $assignment->insurer_id){

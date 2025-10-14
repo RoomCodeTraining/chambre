@@ -46,7 +46,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer adv16Ee6b4ah35gPcV8ZfkD'
+      - 'Bearer V1g6hkfa83D5d4PvZc6bEae'
     controller: null
     method: null
     route: null
@@ -80,7 +80,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: js
+        example: dmr
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -90,22 +90,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Qui ut voluptatem iusto rerum officia et est.'
+        example: 'Tempore occaecati voluptatem numquam id accusantium nihil.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: js
-      description: 'Qui ut voluptatem iusto rerum officia et est.'
+      label: dmr
+      description: 'Tempore occaecati voluptatem numquam id accusantium nihil.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer ZkVD1eh5Ecv66Pfadb84a3g'
+      - 'Bearer 1E6k6abDcdgeZVP4afh3v85'
     controller: null
     method: null
     route: null
@@ -162,7 +162,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer DkVcbaa5gZd43P8fh6veE16'
+      - 'Bearer 65Vvdka1c4Pghba8E6f3eDZ'
     controller: null
     method: null
     route: null
@@ -207,7 +207,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: acuxdpxpk
+        example: ac
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -217,22 +217,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Laboriosam magnam id reiciendis mollitia occaecati.'
+        example: 'Sed voluptatum aliquid at.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: acuxdpxpk
-      description: 'Laboriosam magnam id reiciendis mollitia occaecati.'
+      label: ac
+      description: 'Sed voluptatum aliquid at.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer gbhZV8aE6aP4D3k615fcved'
+      - 'Bearer ED1aeZkh5g6vPa48Vd3fb6c'
     controller: null
     method: null
     route: null
@@ -280,7 +280,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer vVPcE5baehDkd8143Zagf66'
+      - 'Bearer bVDaE6h56f3g4a8vd1PekcZ'
     controller: null
     method: null
     route: null

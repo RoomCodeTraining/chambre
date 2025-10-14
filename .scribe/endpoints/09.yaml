@@ -44,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer ac4kghad5b3Z6EfD1vV8e6P'
+      - 'Bearer 3a5bhVg4PZk8Df6caEve1d6'
     controller: null
     method: null
     route: null
@@ -88,7 +88,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: yzjw
+        example: rbwwdvkvrtmyhryuuymnooyhz
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -98,7 +98,7 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Quasi a velit officia amet.'
+        example: 'Ut et dignissimos deleniti facere.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -106,15 +106,15 @@ endpoints:
         custom: []
     cleanBodyParameters:
       value: 7
-      label: yzjw
-      description: 'Quasi a velit officia amet.'
+      label: rbwwdvkvrtmyhryuuymnooyhz
+      description: 'Ut et dignissimos deleniti facere.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 4cdVh3PEaevDf8a561bkZg6'
+      - 'Bearer 1Pe3V8ahgZ46EbkcD56davf'
     controller: null
     method: null
     route: null
@@ -144,14 +144,14 @@ endpoints:
         name: id
         description: 'The ID of the vehicle age.'
         required: true
-        example: aperiam
+        example: omnis
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: aperiam
+      id: omnis
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -171,7 +171,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer c8g1a46ekP56dD3fbvEVahZ'
+      - 'Bearer gPaDb6Ev6ef5ad14VZk8hc3'
     controller: null
     method: null
     route: null
@@ -201,14 +201,14 @@ endpoints:
         name: id
         description: 'The ID of the vehicle age.'
         required: true
-        example: assumenda
+        example: repellendus
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: assumenda
+      id: repellendus
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -216,7 +216,7 @@ endpoints:
         name: value
         description: ''
         required: true
-        example: 14
+        example: 3
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -226,7 +226,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: gwlioqrixkcahbujlxd
+        example: bnztvtcmertbgixf
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -236,23 +236,23 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Temporibus repellendus expedita maiores tempore hic.'
+        example: 'Rerum delectus iste deleniti sunt autem voluptas.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      value: 14
-      label: gwlioqrixkcahbujlxd
-      description: 'Temporibus repellendus expedita maiores tempore hic.'
+      value: 3
+      label: bnztvtcmertbgixf
+      description: 'Rerum delectus iste deleniti sunt autem voluptas.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer Vcvgfk6adEPD6bh8Za53e14'
+      - 'Bearer fcb5Pd1aDZ4Ea6hkvVge638'
     controller: null
     method: null
     route: null
@@ -282,14 +282,14 @@ endpoints:
         name: id
         description: 'The ID of the vehicle age.'
         required: true
-        example: et
+        example: sint
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: et
+      id: sint
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -300,7 +300,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer gVhbkP1DZc5ef6aE46va83d'
+      - 'Bearer ga8hkEa4P6c36eVZd51bvDf'
     controller: null
     method: null
     route: null
