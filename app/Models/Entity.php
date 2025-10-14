@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Builders\Entity\EntityBuilder;
 use App\Models\Status;
 use App\Filters\EntityFilters;
 use Essa\APIToolKit\Filters\Filterable;
@@ -97,5 +98,10 @@ class Entity extends Model
     public function deletedBy(): BelongsTo
     {
         return $this->belongsTo(User::class, 'deleted_by');
+    }
+
+    public function newEloquentBuilder($query): EntityBuilder
+    {
+        return new EntityBuilder($query);
     }
 }

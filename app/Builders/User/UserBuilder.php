@@ -51,19 +51,23 @@ class UserBuilder extends Builder
 
         if ($user->isAdminExpert()) {
             $roles = Role::whereIn('name', [RoleEnum::EXPERT_ADMIN->value, RoleEnum::CEO->value,RoleEnum::EXPERT_MANAGER->value,RoleEnum::EXPERT->value,RoleEnum::OPENER->value,RoleEnum::EDITOR->value,RoleEnum::VALIDATOR->value,RoleEnum::ACCOUNTANT->value,RoleEnum::INSURER_ADMIN->value,RoleEnum::REPAIRER_ADMIN->value,RoleEnum::UNASSIGNED->value])->pluck('id');
-            return $this->whereIn('current_role_id', $roles);
+            return $this->whereIn('current_role_id', $roles)
+                    ->where('entity_id', $user->entity_id);
         }
 
         if ($user->isInsurerAdmin()) {
             $roles = Role::whereIn('name', [RoleEnum::INSURER_ADMIN->value,RoleEnum::INSURER_STANDARD_USER->value])->pluck('id');
-            return $this->whereIn('current_role_id', $roles);
+            return $this->whereIn('current_role_id', $roles)
+                    ->where('entity_id', $user->entity_id);
         }
 
         if ($user->isRepairerAdmin()) {
             $roles = Role::whereIn('name', [RoleEnum::REPAIRER_ADMIN->value,RoleEnum::REPAIRER_STANDARD_USER->value])->pluck('id');
-            return $this->whereIn('current_role_id', $roles);
+            return $this->whereIn('current_role_id', $roles)
+                    ->where('entity_id', $user->entity_id);
         }
 
-        return $this->where('current_role_id', $user->current_role_id);
+        return $this->where('current_role_id', $user->current_role_id)
+                    ->where('entity_id', $user->entity_id);
     }
 }

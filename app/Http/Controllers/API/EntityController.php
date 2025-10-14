@@ -45,6 +45,7 @@ class EntityController extends Controller
     public function index(): AnonymousResourceCollection
     {
         $entities = Entity::with(['entityType','status'])
+                    ->accessibleBy(auth()->user())
                     ->useFilters()
                     ->latest('created_at')
                     ->dynamicPaginate();
@@ -106,7 +107,7 @@ class EntityController extends Controller
      */
     public function show($id): JsonResponse
     {
-        $entity = Entity::findOrFail($id);
+        $entity = Entity::accessibleBy(auth()->user())->findOrFail(Entity::keyFromHashId($id));
 
         return $this->responseSuccess(null, new EntityResource($entity));
     }
@@ -118,7 +119,7 @@ class EntityController extends Controller
      */
     public function update(UpdateEntityRequest $request, $id): JsonResponse
     {
-        $entity = Entity::findOrFail($id);
+        $entity = Entity::accessibleBy(auth()->user())->findOrFail(Entity::keyFromHashId($id));
 
         $entity->update([
             'name' => $request->name ?? $entity->name,
@@ -144,10 +145,11 @@ class EntityController extends Controller
      *
      * @authenticated
      */
-    public function enable(Entity $entity, $id): JsonResponse
+    public function enable($id): JsonResponse
     {
-        if(Entity::where('id',$id)->first()){
-            $entity_u = Entity::where('id',$entity->id)->update([
+        $entity = Entity::accessibleBy(auth()->user())->findOrFail(Entity::keyFromHashId($id));
+        if($entity){
+            $entity_u = Entity::accessibleBy(auth()->user())->where('id',$entity->id)->update([
                 'status_id' => Status::firstWhere('code', StatusEnum::ACTIVE)->id,
                 'updated_by' => auth()->user()->id,
             ]);
@@ -163,10 +165,11 @@ class EntityController extends Controller
      *
      * @authenticated
      */
-    public function disable(Entity $entity, $id): JsonResponse
+    public function disable($id): JsonResponse
     {
-        if(Entity::where('id',$id)->first()){
-            $entity_u = Entity::where('id',$entity->id)->update([
+        $entity = Entity::accessibleBy(auth()->user())->findOrFail(Entity::keyFromHashId($id));
+        if($entity){
+            $entity_u = Entity::accessibleBy(auth()->user())->where('id',$entity->id)->update([
                 'status_id' => Status::firstWhere('code', StatusEnum::INACTIVE)->id,
                 'updated_by' => auth()->user()->id,
             ]);
@@ -182,10 +185,11 @@ class EntityController extends Controller
      *
      * @authenticated
      */
-    public function destroy(Entity $entity): JsonResponse
+    public function destroy($id): JsonResponse
     {
+        $entity = Entity::accessibleBy(auth()->user())->findOrFail(Entity::keyFromHashId($id));
         if($entity){
-            $entity_u = Entity::where('id',$entity->id)->update([
+            $entity_u = Entity::accessibleBy(auth()->user())->where('id',$entity->id)->update([
                 'name' => $entity->name."_old",
                 'state' => 0,
                 'deleted_by' => auth()->user()->id,
