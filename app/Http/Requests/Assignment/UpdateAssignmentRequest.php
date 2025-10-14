@@ -12,9 +12,9 @@ class UpdateAssignmentRequest extends FormRequest
             'client_id' => 'required|exists:clients,id',
             'vehicle_id' => 'required|exists:vehicles,id',
             'vehicle_mileage' => 'nullable|numeric',
-            'insurer_id' => 'required|exists:entities,id',
-            'additional_insurer_id' => 'nullable|exists:entities,id',
-            'repairer_id' => 'nullable|exists:entities,id',
+            'insurer_relationship_id' => 'required|exists:insurer_relationships,id',
+            'additional_insurer_relationship_id' => 'nullable|exists:insurer_relationships,id',
+            'repairer_relationship_id' => 'nullable|exists:repairer_relationships,id',
             'assignment_type_id' => 'required|exists:assignment_types,id',
             'expertise_type_id' => 'required|exists:expertise_types,id',
             'document_transmitted_id' => 'nullable|array',
@@ -36,7 +36,10 @@ class UpdateAssignmentRequest extends FormRequest
     public function messages(): array
     {
         return [
-            'insurer_id.required' => 'L\'assureur est requis',
+            'insurer_relationship_id.required' => 'L\'assureur est requis',
+            'insurer_relationship_id.exists' => 'L\'assureur est invalide.',
+            'additional_insurer_relationship_id.exists' => 'L\'assureur additionnel est invalide.',
+            'repairer_relationship_id.exists' => 'Le réparateur est invalide.',
             'claim_date.date' => 'La date est invalide.',
             'claim_ends_at.date' => 'La date est invalide.',
             'expertise_date.date' => 'La date est invalide.',
