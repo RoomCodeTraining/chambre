@@ -107,7 +107,7 @@ class VehicleController extends Controller
      */
     public function show($id): JsonResponse
     {
-        $vehicle = Vehicle::findOrFail($id);
+        $vehicle = Vehicle::findOrFail(Vehicle::keyFromHashId($id));
 
         return $this->responseSuccess(null, new VehicleResource($vehicle->load('brand', 'vehicleModel', 'vehicleGenre', 'vehicleEnergy', 'color', 'bodywork')));
     }
@@ -119,7 +119,7 @@ class VehicleController extends Controller
      */
     public function update(UpdateVehicleRequest $request, $id): JsonResponse
     {
-        $vehicle = Vehicle::findOrFail($id);
+        $vehicle = Vehicle::findOrFail(Vehicle::keyFromHashId($id));
         $vehicleModel = VehicleModel::where('id', $request->vehicle_model_id)->first();
         $vehicle->update([
             'brand_id' => $vehicleModel->brand_id ?? null,
@@ -152,7 +152,7 @@ class VehicleController extends Controller
      */
     public function destroy($id): JsonResponse
     {
-        $vehicle = Vehicle::findOrFail($id);
+        $vehicle = Vehicle::findOrFail(Vehicle::keyFromHashId($id));
 
         // $vehicle->delete();
 

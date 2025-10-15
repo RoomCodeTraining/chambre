@@ -67,7 +67,7 @@ class PaintTypeController extends Controller
      */
     public function show($id): JsonResponse
     {
-        $paintType = PaintType::findOrFail($id);
+        $paintType = PaintType::findOrFail(PaintType::keyFromHashId($id));
 
         return $this->responseSuccess(null, new PaintTypeResource($paintType));
     }
@@ -79,7 +79,7 @@ class PaintTypeController extends Controller
      */
     public function update(UpdatePaintTypeRequest $request, $id): JsonResponse
     {
-        $paintType = PaintType::findOrFail($id);
+        $paintType = PaintType::findOrFail(PaintType::keyFromHashId($id));
 
         $paintType->update([
             'label' => $request->label,
@@ -97,7 +97,7 @@ class PaintTypeController extends Controller
      */
     public function destroy($id): JsonResponse
     {
-        $paintType = PaintType::findOrFail($id);
+        $paintType = PaintType::findOrFail(PaintType::keyFromHashId($id));
 
         // $paintType->delete();
 

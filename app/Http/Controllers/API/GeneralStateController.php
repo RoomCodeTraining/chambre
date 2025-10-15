@@ -67,7 +67,7 @@ class GeneralStateController extends Controller
      */
     public function show($id): JsonResponse
     {
-        $generalState = GeneralState::findOrFail($id);
+        $generalState = GeneralState::findOrFail(GeneralState::keyFromHashId($id));
 
         return $this->responseSuccess(null, new GeneralStateResource($generalState));
     }
@@ -79,7 +79,7 @@ class GeneralStateController extends Controller
      */
     public function update(UpdateGeneralStateRequest $request, $id): JsonResponse
     {
-        $generalState = GeneralState::findOrFail($id);
+        $generalState = GeneralState::findOrFail(GeneralState::keyFromHashId($id));
 
         $generalState->update([
             'label' => $request->label,
@@ -97,7 +97,7 @@ class GeneralStateController extends Controller
      */
     public function destroy($id): JsonResponse
     {
-        $generalState = GeneralState::findOrFail($id);
+        $generalState = GeneralState::findOrFail(GeneralState::keyFromHashId($id));
 
         // $generalState->delete();
 

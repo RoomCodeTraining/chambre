@@ -472,11 +472,11 @@ class InvoiceController extends Controller
      *
      * @authenticated
      */
-    public function show(Invoice $invoice): JsonResponse
+    public function show($id): JsonResponse
     {
         $invoice = Invoice::join('assignments', 'invoices.assignment_id', '=', 'assignments.id')
             ->accessibleBy(auth()->user())
-            ->where('invoices.id', $invoice->id)
+            ->where('invoices.id', Invoice::keyFromHashId($id))
             ->first();
 
         return $this->responseSuccess(null, new InvoiceResource($invoice->load('assignment:id,reference,receipt_amount_excluding_tax,receipt_amount_tax,receipt_amount', 'status:id,code,label', 'createdBy:id,name,email,created_at', 'updatedBy:id,name,email,created_at', 'deletedBy:id,name,email,created_at', 'cancelledBy:id,name,email,created_at')));
@@ -491,7 +491,7 @@ class InvoiceController extends Controller
     {
         $invoice = Invoice::join('assignments', 'invoices.assignment_id', '=', 'assignments.id')
             ->accessibleBy(auth()->user())
-            ->where('invoices.id', $id)
+            ->where('invoices.id', Invoice::keyFromHashId($id))
             ->firstOrFail();
 
         $invoice->update([
@@ -516,7 +516,7 @@ class InvoiceController extends Controller
     {
         $invoice = Invoice::join('assignments', 'invoices.assignment_id', '=', 'assignments.id')
             ->accessibleBy(auth()->user())
-            ->where('invoices.id', $id)
+            ->where('invoices.id', Invoice::keyFromHashId($id))
             ->firstOrFail();
         
         dispatch(new GenerateInvoicePdfJob($invoice));
@@ -533,7 +533,7 @@ class InvoiceController extends Controller
     {
         $invoice = Invoice::join('assignments', 'invoices.assignment_id', '=', 'assignments.id')
             ->accessibleBy(auth()->user())
-            ->where('invoices.id', $id)
+            ->where('invoices.id', Invoice::keyFromHashId($id))
             ->firstOrFail();
 
         $invoice->update([
@@ -557,8 +557,10 @@ class InvoiceController extends Controller
      *
      * @authenticated
      */
-    public function destroy(Invoice $invoice): JsonResponse
+    public function destroy($id): JsonResponse
     {
+        $invoice = Invoice::findOrFail(Invoice::keyFromHashId($id));
+
         // $invoice->delete();
 
         return $this->responseDeleted();

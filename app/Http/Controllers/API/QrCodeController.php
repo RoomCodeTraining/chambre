@@ -81,8 +81,9 @@ class QrCodeController extends Controller
      *
      * @authenticated
      */
-    public function show(QrCode $qrCode): JsonResponse
+    public function show($id): JsonResponse
     {
+        $qrCode = QrCode::findOrFail(QrCode::keyFromHashId($id));
         return $this->responseSuccess(null, new QrCodeResource($qrCode));
     }
 
@@ -93,7 +94,7 @@ class QrCodeController extends Controller
      */
     public function update(UpdateQrCodeRequest $request, $id): JsonResponse
     {
-        $qrCode = QrCode::findOrFail($id);
+        $qrCode = QrCode::findOrFail(QrCode::keyFromHashId($id));
 
         $now = Carbon::now();
         $annee = date("Y");
@@ -126,7 +127,7 @@ class QrCodeController extends Controller
      */
     public function enable($id): JsonResponse
     {
-        $qrCode = QrCode::findOrFail($id);
+        $qrCode = QrCode::findOrFail(QrCode::keyFromHashId($id));
 
         QrCode::query()->update([
             'status_id' => Status::where('code', StatusEnum::INACTIVE)->first()->id,
@@ -146,7 +147,7 @@ class QrCodeController extends Controller
      */
     public function disable($id): JsonResponse
     {
-        $qrCode = QrCode::findOrFail($id);
+        $qrCode = QrCode::findOrFail(QrCode::keyFromHashId($id));
 
         $qrCode->update([
             'status_id' => Status::where('code', StatusEnum::INACTIVE)->first()->id,
@@ -162,7 +163,7 @@ class QrCodeController extends Controller
      */
     public function destroy($id): JsonResponse
     {
-        $qrCode = QrCode::findOrFail($id);
+        $qrCode = QrCode::findOrFail(QrCode::keyFromHashId($id));
 
         File::delete(public_path('storage/qr_codes/'.$qrCode->qr_code));
 

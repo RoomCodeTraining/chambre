@@ -71,7 +71,7 @@ class AscertainmentTypeController extends Controller
      */
     public function show($id): JsonResponse
     {
-        $ascertainmentType = AscertainmentType::findOrFail($id);
+        $ascertainmentType = AscertainmentType::findOrFail(AscertainmentType::keyFromHashId($id));
 
         return $this->responseSuccess(null, new AscertainmentTypeResource($ascertainmentType));
     }
@@ -85,7 +85,7 @@ class AscertainmentTypeController extends Controller
      */
     public function update(UpdateAscertainmentTypeRequest $request, $id): JsonResponse
     {
-        $ascertainmentType = AscertainmentType::findOrFail($id);
+        $ascertainmentType = AscertainmentType::findOrFail(AscertainmentType::keyFromHashId($id));
 
         $ascertainmentType->update([
             'label' => $request->label,
@@ -104,7 +104,7 @@ class AscertainmentTypeController extends Controller
      */
     public function destroy($id): JsonResponse
     {
-        $ascertainmentType = AscertainmentType::findOrFail($id);
+        $ascertainmentType = AscertainmentType::findOrFail(AscertainmentType::keyFromHashId($id));
         // $ascertainmentType->delete();
 
         return $this->responseDeleted();

@@ -59,7 +59,7 @@ class EntityTypeController extends Controller
      */
     public function show($id): JsonResponse
     {   
-        $entityType = EntityType::findOrFail($id);
+        $entityType = EntityType::findOrFail(EntityType::keyFromHashId($id));
 
         return $this->responseSuccess(null, new EntityTypeResource($entityType));
     }
@@ -71,7 +71,7 @@ class EntityTypeController extends Controller
      */
     public function update(UpdateEntityTypeRequest $request, $id): JsonResponse
     {
-        $entityType = EntityType::findOrFail($id);
+        $entityType = EntityType::findOrFail(EntityType::keyFromHashId($id));
 
         $entityType->update([
             'label' => $request->label,
@@ -89,7 +89,7 @@ class EntityTypeController extends Controller
      */
     public function enable(EntityType $entityType, $id): JsonResponse
     {   
-        $entityType = EntityType::findOrFail($id);
+        $entityType = EntityType::findOrFail(EntityType::keyFromHashId($id));
 
         if(EntityType::where('id',$id)->first()){
             $entityType_u = EntityType::where('id',$entityType->id)->update([
@@ -110,7 +110,7 @@ class EntityTypeController extends Controller
      */
     public function disable(EntityType $entityType, $id): JsonResponse
     {   
-        $entityType = EntityType::findOrFail($id);
+        $entityType = EntityType::findOrFail(EntityType::keyFromHashId($id));
 
         if(EntityType::where('id',$id)->first()){
             $entityType_u = EntityType::where('id',$entityType->id)->update([
@@ -131,7 +131,7 @@ class EntityTypeController extends Controller
      */
     public function destroy($id): JsonResponse
     {
-        $entityType = EntityType::findOrFail($id);
+        $entityType = EntityType::findOrFail(EntityType::keyFromHashId($id));
 
         // $entityType->delete();
 

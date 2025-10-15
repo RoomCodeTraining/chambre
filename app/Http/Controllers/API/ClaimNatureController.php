@@ -69,7 +69,7 @@ class ClaimNatureController extends Controller
     public function show($id): JsonResponse
     {
         $ClaimNature = ClaimNature::with('status:id,code,label')
-            ->findOrFail($id);
+            ->findOrFail(ClaimNature::keyFromHashId($id));
 
         return $this->responseSuccess(null, new ClaimNatureResource($ClaimNature));
     }
@@ -81,7 +81,7 @@ class ClaimNatureController extends Controller
      */
     public function update(UpdateClaimNatureRequest $request, $id): JsonResponse
     {
-        $ClaimNature = ClaimNature::findOrFail($id);
+        $ClaimNature = ClaimNature::findOrFail(ClaimNature::keyFromHashId($id));
         $ClaimNature->update([
             'label' => $request->label,
             'description' => $request->description,
@@ -98,7 +98,7 @@ class ClaimNatureController extends Controller
      */
     public function destroy($id): JsonResponse
     {
-        $ClaimNature = ClaimNature::findOrFail($id);
+        $ClaimNature = ClaimNature::findOrFail(ClaimNature::keyFromHashId($id));
         // $ClaimNature->update([
         //     'deleted_by' => auth()->user()->id,
         // ]);

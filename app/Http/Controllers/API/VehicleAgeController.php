@@ -65,7 +65,8 @@ class VehicleAgeController extends Controller
      */
     public function show($id): JsonResponse
     {
-        $vehicleAge = VehicleAge::findOrFail($id);
+        $vehicleAge = VehicleAge::findOrFail(VehicleAge::keyFromHashId($id));
+
         return $this->responseSuccess(null, new VehicleAgeResource($vehicleAge));
     }
 
@@ -76,7 +77,8 @@ class VehicleAgeController extends Controller
      */
     public function update(UpdateVehicleAgeRequest $request, $id): JsonResponse
     {
-        $vehicleAge = VehicleAge::findOrFail($id);
+        $vehicleAge = VehicleAge::findOrFail(VehicleAge::keyFromHashId($id));
+
         $vehicleAge->update([
             'value' => $request->value,
             'label' => $request->label,
@@ -94,7 +96,8 @@ class VehicleAgeController extends Controller
      */
     public function destroy($id): JsonResponse
     {
-        $vehicleAge = VehicleAge::findOrFail($id);
+        $vehicleAge = VehicleAge::findOrFail(VehicleAge::keyFromHashId($id));
+
         // $vehicleAge->delete();
 
         return $this->responseDeleted();

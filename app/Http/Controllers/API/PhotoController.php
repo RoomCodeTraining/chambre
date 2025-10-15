@@ -159,12 +159,12 @@ class PhotoController extends Controller
      *
      * @authenticated
      */
-    public function show(Photo $photo): JsonResponse
+    public function show($id): JsonResponse
     {
         $photo = Photo::with('assignment:id,reference', 'assignmentRequest:id,reference', 'photoType:id,code,label', 'status:id,code,label')
             ->join('assignments', 'photos.assignment_id', '=', 'assignments.id')
             ->accessibleBy(auth()->user())
-            ->where('photos.id', $photo->id)
+            ->where('photos.id', Photo::keyFromHashId($id))
             ->first();
 
         return $this->responseSuccess(null, new PhotoResource($photo));
@@ -180,7 +180,7 @@ class PhotoController extends Controller
         $photo = Photo::with('assignment')
             ->join('assignments', 'photos.assignment_id', '=', 'assignments.id')
             ->accessibleBy(auth()->user())
-            ->where('photos.id', $id)
+            ->where('photos.id', Photo::keyFromHashId($id))
             ->firstOrFail();
 
         if($request->hasfile('photo'))
@@ -231,7 +231,7 @@ class PhotoController extends Controller
         $photo = Photo::with('assignment')
             ->join('assignments', 'photos.assignment_id', '=', 'assignments.id')
             ->accessibleBy(auth()->user())
-            ->where('photos.id', $id)
+            ->where('photos.id', Photo::keyFromHashId($id))
             ->firstOrFail();
 
         Photo::query()->where('id', '!=', $photo->id)->update([
@@ -261,7 +261,7 @@ class PhotoController extends Controller
         $photo = Photo::with('assignment')
             ->join('assignments', 'photos.assignment_id', '=', 'assignments.id')
             ->accessibleBy(auth()->user())
-            ->where('photos.id', $id)
+            ->where('photos.id', Photo::keyFromHashId($id))
             ->firstOrFail();
 
         if(file_exists(public_path("storage/photos/report/{$photo->assignment->reference}/{$photo->name}"))){

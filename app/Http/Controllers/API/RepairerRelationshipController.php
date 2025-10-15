@@ -67,12 +67,12 @@ class RepairerRelationshipController extends Controller
      *
      * @authenticated
      */
-    public function show(RepairerRelationship $repairerRelationship): JsonResponse
+    public function show($id): JsonResponse
     {
         $repairerRelationship = RepairerRelationship::
                                 with('repairer:id,code,label', 'expertFirm:id,code,label', 'status:id,code,label', 'createdBy:id,name')
                                 ->accessibleBy(auth()->user())
-                                ->where('repairer_relationships.id', $repairerRelationship->id)
+                                ->where('repairer_relationships.id', RepairerRelationship::keyFromHashId($id))
                                 ->firstOrFail();
 
         return $this->responseSuccess(null, new RepairerRelationshipResource($repairerRelationship));
@@ -83,12 +83,12 @@ class RepairerRelationshipController extends Controller
      *
      * @authenticated
      */
-    public function update(UpdateRepairerRelationshipRequest $request, RepairerRelationship $repairerRelationship): JsonResponse
+    public function update(UpdateRepairerRelationshipRequest $request, $id): JsonResponse
     {
         $repairerRelationship = RepairerRelationship::
                                 with('repairer:id,code,label', 'expertFirm:id,code,label', 'status:id,code,label', 'createdBy:id,name')
                                 ->accessibleBy(auth()->user())
-                                ->where('repairer_relationships.id', $repairerRelationship->id)
+                                ->where('repairer_relationships.id', RepairerRelationship::keyFromHashId($id))
                                 ->firstOrFail();
 
         $repairerRelationship->update($request->validated());
@@ -101,10 +101,10 @@ class RepairerRelationshipController extends Controller
      *
      * @authenticated
      */
-    public function enable(RepairerRelationship $repairerRelationship): JsonResponse
+    public function enable($id): JsonResponse
     {
         $repairerRelationship = RepairerRelationship::accessibleBy(auth()->user())
-                                ->where('repairer_relationships.id', $repairerRelationship->id)
+                                ->where('repairer_relationships.id', RepairerRelationship::keyFromHashId($id))
                                 ->firstOrFail();
 
         $repairerRelationship->update(['status_id' => Status::firstWhere('code', StatusEnum::ACTIVE)->id]);
@@ -117,10 +117,10 @@ class RepairerRelationshipController extends Controller
      *
      * @authenticated
      */
-    public function disable(RepairerRelationship $repairerRelationship): JsonResponse
+    public function disable($id): JsonResponse
     {
         $repairerRelationship = RepairerRelationship::accessibleBy(auth()->user())
-                                ->where('repairer_relationships.id', $repairerRelationship->id)
+                                ->where('repairer_relationships.id', RepairerRelationship::keyFromHashId($id))
                                 ->firstOrFail();
 
         $repairerRelationship->update(['status_id' => Status::firstWhere('code', StatusEnum::INACTIVE)->id]);

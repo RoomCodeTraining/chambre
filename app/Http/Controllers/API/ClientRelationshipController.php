@@ -31,20 +31,26 @@ class ClientRelationshipController extends Controller
         return $this->responseCreated('ClientRelationship created successfully', new ClientRelationshipResource($clientRelationship));
     }
 
-    public function show(ClientRelationship $clientRelationship): JsonResponse
+    public function show($id): JsonResponse
     {
+        $clientRelationship = ClientRelationship::findOrFail(ClientRelationship::keyFromHashId($id));
+
         return $this->responseSuccess(null, new ClientRelationshipResource($clientRelationship));
     }
 
-    public function update(UpdateClientRelationshipRequest $request, ClientRelationship $clientRelationship): JsonResponse
+    public function update(UpdateClientRelationshipRequest $request, $id): JsonResponse
     {
+        $clientRelationship = ClientRelationship::findOrFail(ClientRelationship::keyFromHashId($id));
+
         $clientRelationship->update($request->validated());
 
         return $this->responseSuccess('ClientRelationship updated Successfully', new ClientRelationshipResource($clientRelationship));
     }
 
-    public function destroy(ClientRelationship $clientRelationship): JsonResponse
+    public function destroy($id): JsonResponse
     {
+        $clientRelationship = ClientRelationship::findOrFail(ClientRelationship::keyFromHashId($id));
+
         $clientRelationship->delete();
 
         return $this->responseDeleted();

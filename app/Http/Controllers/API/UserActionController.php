@@ -31,20 +31,26 @@ class UserActionController extends Controller
         return $this->responseCreated('UserAction created successfully', new UserActionResource($userAction));
     }
 
-    public function show(UserAction $userAction): JsonResponse
+    public function show($id): JsonResponse
     {
+        $userAction = UserAction::findOrFail(UserAction::keyFromHashId($id));
+
         return $this->responseSuccess(null, new UserActionResource($userAction));
     }
 
-    public function update(UpdateUserActionRequest $request, UserAction $userAction): JsonResponse
+    public function update(UpdateUserActionRequest $request, $id): JsonResponse
     {
+        $userAction = UserAction::findOrFail(UserAction::keyFromHashId($id));
+
         $userAction->update($request->validated());
 
         return $this->responseSuccess('UserAction updated Successfully', new UserActionResource($userAction));
     }
 
-    public function destroy(UserAction $userAction): JsonResponse
+    public function destroy($id): JsonResponse
     {
+        $userAction = UserAction::findOrFail(UserAction::keyFromHashId($id));
+
         // $userAction->delete();
 
         return $this->responseDeleted();

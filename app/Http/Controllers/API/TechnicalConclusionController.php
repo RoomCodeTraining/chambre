@@ -67,7 +67,7 @@ class TechnicalConclusionController extends Controller
      */
     public function show($id): JsonResponse
     {
-        $technicalConclusion = TechnicalConclusion::findOrFail($id);
+        $technicalConclusion = TechnicalConclusion::findOrFail(TechnicalConclusion::keyFromHashId($id));
 
         return $this->responseSuccess(null, new TechnicalConclusionResource($technicalConclusion));
     }
@@ -79,7 +79,7 @@ class TechnicalConclusionController extends Controller
      */
     public function update(UpdateTechnicalConclusionRequest $request, $id): JsonResponse
     {
-        $technicalConclusion = TechnicalConclusion::findOrFail($id);
+        $technicalConclusion = TechnicalConclusion::findOrFail(TechnicalConclusion::keyFromHashId($id));
         $technicalConclusion->update([
             'label' => $request->label,
             'description' => $request->description,
@@ -96,7 +96,7 @@ class TechnicalConclusionController extends Controller
      */
     public function destroy($id): JsonResponse
     {
-        $technicalConclusion = TechnicalConclusion::findOrFail($id);
+        $technicalConclusion = TechnicalConclusion::findOrFail(TechnicalConclusion::keyFromHashId($id));
 
         // $technicalConclusion->delete();
 

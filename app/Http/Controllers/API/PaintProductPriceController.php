@@ -67,7 +67,7 @@ class PaintProductPriceController extends Controller
      */
     public function show($id): JsonResponse
     {
-        $paintProductPrice = PaintProductPrice::findOrFail($id);
+        $paintProductPrice = PaintProductPrice::findOrFail(PaintProductPrice::keyFromHashId($id));
 
         return $this->responseSuccess(null, new PaintProductPriceResource($paintProductPrice->load('paintType', 'numberPaintElement', 'status')));
     }
@@ -79,7 +79,7 @@ class PaintProductPriceController extends Controller
      */
     public function update(UpdatePaintProductPriceRequest $request, $id): JsonResponse
     {
-        $paintProductPrice = PaintProductPrice::findOrFail($id);
+        $paintProductPrice = PaintProductPrice::findOrFail(PaintProductPrice::keyFromHashId($id));
 
         $paintProductPrice->update([
             'value' => $request->value,
@@ -98,7 +98,7 @@ class PaintProductPriceController extends Controller
      */
     public function destroy($id): JsonResponse
     {
-        $paintProductPrice = PaintProductPrice::findOrFail($id);
+        $paintProductPrice = PaintProductPrice::findOrFail(PaintProductPrice::keyFromHashId($id));
 
         // $paintProductPrice->delete();
 

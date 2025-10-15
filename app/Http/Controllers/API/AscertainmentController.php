@@ -77,7 +77,7 @@ class AscertainmentController extends Controller
      */
     public function show($id): JsonResponse
     {
-        $ascertainment = Ascertainment::findOrFail($id);
+        $ascertainment = Ascertainment::findOrFail(Ascertainment::keyFromHashId($id));
 
         return $this->responseSuccess(null, new AscertainmentResource($ascertainment->load('assignment','ascertainmentType:id,code,label','status:id,code,label')));
     }
@@ -89,7 +89,7 @@ class AscertainmentController extends Controller
      */
     public function update(UpdateAscertainmentRequest $request, $id): JsonResponse
     {
-        $ascertainment = Ascertainment::findOrFail($id);
+        $ascertainment = Ascertainment::findOrFail(Ascertainment::keyFromHashId($id));
         $ascertainment->update([
             'ascertainment_type_id' => $request->ascertainment_type_id,
             'very_good' => $request->very_good,
@@ -112,7 +112,7 @@ class AscertainmentController extends Controller
      */
     public function destroy($id): JsonResponse
     {
-        $ascertainment = Ascertainment::findOrFail($id);
+        $ascertainment = Ascertainment::findOrFail(Ascertainment::keyFromHashId($id));
 
         $ascertainment->update([
             'status_id' => Status::where('code', StatusEnum::DELETED)->first()->id,

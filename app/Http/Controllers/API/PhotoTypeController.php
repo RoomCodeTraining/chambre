@@ -68,8 +68,10 @@ class PhotoTypeController extends Controller
      *
      * @authenticated
      */
-    public function show(PhotoType $photoType): JsonResponse
+    public function show($id): JsonResponse
     {
+        $photoType = PhotoType::findOrFail(PhotoType::keyFromHashId($id));
+
         return $this->responseSuccess(null, new PhotoTypeResource($photoType->load('status:id,code,label')));
     }
 
@@ -80,7 +82,7 @@ class PhotoTypeController extends Controller
      */
     public function update(UpdatePhotoTypeRequest $request, $id): JsonResponse
     {
-        $photoType = PhotoType::findOrFail($id);
+        $photoType = PhotoType::findOrFail(PhotoType::keyFromHashId($id));
         $photoType->update([
             'code' => $request->code,
             'label' => $request->label,
@@ -97,12 +99,13 @@ class PhotoTypeController extends Controller
      *
      * @authenticated
      */
-    public function destroy(PhotoType $photoType): JsonResponse
+    public function destroy($id): JsonResponse
     {
+        $photoType = PhotoType::findOrFail(PhotoType::keyFromHashId($id));
+        
         // $photoType->delete();
 
         return $this->responseDeleted();
     }
-
-   
 }
+

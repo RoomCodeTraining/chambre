@@ -65,7 +65,7 @@ class HourlyRateController extends Controller
      */
     public function show($id): JsonResponse
     {
-        $hourlyRate = HourlyRate::findOrFail($id);
+        $hourlyRate = HourlyRate::findOrFail(HourlyRate::keyFromHashId($id));
 
         return $this->responseSuccess(null, new HourlyRateResource($hourlyRate));
     }
@@ -77,7 +77,7 @@ class HourlyRateController extends Controller
      */
     public function update(UpdateHourlyRateRequest $request, $id): JsonResponse
     {
-        $hourlyRate = HourlyRate::findOrFail($id);
+        $hourlyRate = HourlyRate::findOrFail(HourlyRate::keyFromHashId($id));
 
         $hourlyRate->update([
             'label' => $request->label,
@@ -96,7 +96,7 @@ class HourlyRateController extends Controller
      */
     public function destroy($id): JsonResponse
     {
-        $hourlyRate = HourlyRate::findOrFail($id);
+        $hourlyRate = HourlyRate::findOrFail(HourlyRate::keyFromHashId($id));
 
         // $hourlyRate->delete();
 

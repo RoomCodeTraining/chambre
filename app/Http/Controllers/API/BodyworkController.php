@@ -86,7 +86,7 @@ class BodyworkController extends Controller
      */
     public function show($id): JsonResponse
     {
-        $bodywork = Bodywork::findOrFail($id);
+        $bodywork = Bodywork::findOrFail(Bodywork::keyFromHashId($id));
 
         return $this->responseSuccess(null, new BodyworkResource($bodywork));
     }
@@ -98,7 +98,7 @@ class BodyworkController extends Controller
      */
     public function update(UpdateBodyworkRequest $request, $id): JsonResponse
     {
-        $bodywork = Bodywork::findOrFail($id);
+        $bodywork = Bodywork::findOrFail(Bodywork::keyFromHashId($id));
 
         $bodywork->update([
             'label' => $request->label,
@@ -116,7 +116,7 @@ class BodyworkController extends Controller
      */
     public function destroy($id): JsonResponse
     {
-        $bodywork = Bodywork::findOrFail($id);
+        $bodywork = Bodywork::findOrFail(Bodywork::keyFromHashId($id));
 
         // $bodywork->delete();
 

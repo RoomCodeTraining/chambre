@@ -69,7 +69,7 @@ class WorkFeeController extends Controller
      */
     public function show($id): JsonResponse
     {
-        $workFee = WorkFee::findOrFail($id);
+        $workFee = WorkFee::findOrFail(WorkFee::keyFromHashId($id));
 
         return $this->responseSuccess(null, new WorkFeeResource($workFee->load('status')));
     }
@@ -81,7 +81,7 @@ class WorkFeeController extends Controller
      */
     public function update(UpdateWorkFeeRequest $request, $id): JsonResponse
     {
-        $workFee = WorkFee::findOrFail($id);
+        $workFee = WorkFee::findOrFail(WorkFee::keyFromHashId($id));
         
         $workFee->update([
             'param_1' => $request->param_1,
@@ -102,7 +102,7 @@ class WorkFeeController extends Controller
      */
     public function destroy($id): JsonResponse
     {
-        $workFee = WorkFee::findOrFail($id);
+        $workFee = WorkFee::findOrFail(WorkFee::keyFromHashId($id));
 
         // $workFee->delete();
 

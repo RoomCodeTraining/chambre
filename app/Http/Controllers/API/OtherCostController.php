@@ -347,7 +347,7 @@ class OtherCostController extends Controller
     {
         $otherCost = OtherCost::join('assignments', 'other_costs.assignment_id', '=', 'assignments.id')
             ->accessibleBy(auth()->user())
-            ->where('other_costs.id', $id)
+            ->where('other_costs.id', OtherCost::keyFromHashId($id))
             ->firstOrFail();
 
         return $this->responseSuccess(null, new OtherCostResource($otherCost));
@@ -362,7 +362,7 @@ class OtherCostController extends Controller
     {
         $otherCost = OtherCost::join('assignments', 'other_costs.assignment_id', '=', 'assignments.id')
             ->accessibleBy(auth()->user())
-            ->where('other_costs.id', $id)
+            ->where('other_costs.id', OtherCost::keyFromHashId($id))
             ->firstOrFail();
 
         $assignment = Assignment::accessibleBy(auth()->user())
@@ -422,7 +422,7 @@ class OtherCostController extends Controller
     {
         $otherCost = OtherCost::join('assignments', 'other_costs.assignment_id', '=', 'assignments.id')
             ->accessibleBy(auth()->user())
-            ->where('other_costs.id', $id)
+            ->where('other_costs.id', OtherCost::keyFromHashId($id))
             ->firstOrFail();
 
         $assignment = Assignment::accessibleBy(auth()->user())

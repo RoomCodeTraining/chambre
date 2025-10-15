@@ -83,7 +83,7 @@ class OtherCostTypeController extends Controller
      */
     public function show($id): JsonResponse
     {
-        $otherCostType = OtherCostType::findOrFail($id);
+        $otherCostType = OtherCostType::findOrFail(OtherCostType::keyFromHashId($id));
 
         return $this->responseSuccess(null, new OtherCostTypeResource($otherCostType));
     }
@@ -95,7 +95,7 @@ class OtherCostTypeController extends Controller
      */
     public function update(UpdateOtherCostTypeRequest $request, $id): JsonResponse
     {
-        $otherCostType = OtherCostType::findOrFail($id);
+        $otherCostType = OtherCostType::findOrFail(OtherCostType::keyFromHashId($id));
         $otherCostType->update([
             'label' => $request->label,
             'description' => $request->description,
@@ -112,7 +112,7 @@ class OtherCostTypeController extends Controller
      */
     public function destroy($id): JsonResponse
     {
-        $otherCostType = OtherCostType::findOrFail($id);
+        $otherCostType = OtherCostType::findOrFail(OtherCostType::keyFromHashId($id));
 
         $otherCostType->update([
             'status_id' => Status::where('code', StatusEnum::DELETED)->first()->id,

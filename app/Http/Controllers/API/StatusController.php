@@ -59,7 +59,7 @@ class StatusController extends Controller
      */
     public function show($id): JsonResponse
     {
-        $status = Status::findOrFail($id);
+        $status = Status::findOrFail(Status::keyFromHashId($id));
 
         return $this->responseSuccess(null, new StatusResource($status));
     }
@@ -71,7 +71,7 @@ class StatusController extends Controller
      */
     public function update(UpdateStatusRequest $request, $id): JsonResponse
     {
-        $status = Status::findOrFail($id);
+        $status = Status::findOrFail(Status::keyFromHashId($id));
         $status->update([
             'label' => $request->label,
             'description' => $request->description,
@@ -88,7 +88,7 @@ class StatusController extends Controller
      */
     public function destroy($id): JsonResponse
     {
-        $status = Status::findOrFail($id);
+        $status = Status::findOrFail(Status::keyFromHashId($id));
 
         // $status->delete();
 

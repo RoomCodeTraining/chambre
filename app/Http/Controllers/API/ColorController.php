@@ -77,7 +77,7 @@ class ColorController extends Controller
      */
     public function show($id): JsonResponse
     {
-        $color = Color::findOrFail($id);
+        $color = Color::findOrFail(Color::keyFromHashId($id));
 
         return $this->responseSuccess(null, new ColorResource($color));
     }
@@ -89,7 +89,7 @@ class ColorController extends Controller
      */
     public function update(UpdateColorRequest $request, $id): JsonResponse
     {
-        $color = Color::findOrFail($id);
+        $color = Color::findOrFail(Color::keyFromHashId($id));
 
         $color->update([
             'label' => $request->label,
@@ -107,7 +107,7 @@ class ColorController extends Controller
      */
     public function destroy($id): JsonResponse
     {
-        $color = Color::findOrFail($id);
+        $color = Color::findOrFail(Color::keyFromHashId($id));
 
         // $color->delete();
 

@@ -108,7 +108,7 @@ class ClientController extends Controller
      */
     public function show($id): JsonResponse
     {
-        $client = Client::findOrFail($id);
+        $client = Client::findOrFail(Client::keyFromHashId($id));
 
         return $this->responseSuccess(null, new ClientResource($client));
     }
@@ -120,7 +120,7 @@ class ClientController extends Controller
      */
     public function update(UpdateClientRequest $request, $id): JsonResponse
     {
-        $client = Client::findOrFail($id);
+        $client = Client::findOrFail(Client::keyFromHashId($id));
 
         $client->update([
             'name' => $request->name,
@@ -141,7 +141,7 @@ class ClientController extends Controller
      */
     public function destroy($id): JsonResponse
     {
-        $client = Client::findOrFail($id);
+        $client = Client::findOrFail(Client::keyFromHashId($id));
 
         // $client->delete();
 

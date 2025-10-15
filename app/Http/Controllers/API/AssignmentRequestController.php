@@ -112,21 +112,31 @@ class AssignmentRequestController extends Controller
         return $this->responseCreated('AssignmentRequest created successfully', new AssignmentRequestResource($assignmentRequest));
     }
 
-    public function show(AssignmentRequest $assignmentRequest): JsonResponse
+    public function show($id): JsonResponse
     {
-        return $this->responseSuccess(null, new AssignmentRequestResource($assignmentRequest->accessibleBy(auth()->user())->load('expertFirm','assignmentType', 'expertiseType', 'status', 'deletedBy', 'client', 'vehicle', 'insurer', 'repairer', 'createdBy', 'updatedBy')));
+        $assignmentRequest = AssignmentRequest::findOrFail(AssignmentRequest::keyFromHashId($id));
+
+        return $this->responseSuccess(null, new AssignmentRequestResource($assignmentRequest->load('expertFirm','assignmentType', 'expertiseType', 'status', 'deletedBy', 'client', 'vehicle', 'insurer', 'repairer', 'createdBy', 'updatedBy')));
     }
 
-    public function update(UpdateAssignmentRequestRequest $request, AssignmentRequest $assignmentRequest): JsonResponse
+    public function update(UpdateAssignmentRequestRequest $request, $id): JsonResponse
     {
+        $assignmentRequest = AssignmentRequest::findOrFail(AssignmentRequest::keyFromHashId($id));
+
         $assignmentRequest->update($request->validated());
 
         return $this->responseSuccess('AssignmentRequest updated Successfully', new AssignmentRequestResource($assignmentRequest));
     }
 
-    public function destroy(AssignmentRequest $assignmentRequest): JsonResponse
+    public function destroy($id): JsonResponse
     {
-        $assignmentRequest->delete();
+        $assignmentRequest = AssignmentRequest::findOrFail(AssignmentRequest::keyFromHashId($id));
+
+        $assignmentRequest->update([
+            'status_id' => Status::where('code', StatusEnum::DELETED)->first()->id,
+            'deleted_at' => now(),
+            'deleted_by' => auth()->user()->id,
+        ]);
 
         return $this->responseDeleted();
     }

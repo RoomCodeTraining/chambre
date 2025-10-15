@@ -67,7 +67,7 @@ class ReceiptTypeController extends Controller
      */
     public function show($id): JsonResponse
     {
-        $receiptType = ReceiptType::findOrFail($id);
+        $receiptType = ReceiptType::findOrFail(ReceiptType::keyFromHashId($id));
 
         return $this->responseSuccess(null, new ReceiptTypeResource($receiptType));
     }
@@ -79,7 +79,7 @@ class ReceiptTypeController extends Controller
      */
     public function update(UpdateReceiptTypeRequest $request, $id): JsonResponse
     {
-        $receiptType = ReceiptType::findOrFail($id);
+        $receiptType = ReceiptType::findOrFail(ReceiptType::keyFromHashId($id));
         $receiptType->update([
             'label' => $request->label,
             'description' => $request->description,
@@ -96,7 +96,7 @@ class ReceiptTypeController extends Controller
      */
     public function destroy($id): JsonResponse
     {
-        $receiptType = ReceiptType::findOrFail($id);
+        $receiptType = ReceiptType::findOrFail(ReceiptType::keyFromHashId($id));
 
         // $receiptType->delete();
 

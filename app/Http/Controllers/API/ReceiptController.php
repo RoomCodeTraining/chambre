@@ -228,7 +228,7 @@ class ReceiptController extends Controller
     {
         $receipt = Receipt::join('assignments', 'receipts.assignment_id', '=', 'assignments.id')
             ->accessibleBy(auth()->user())
-            ->where('receipts.id', $id)
+            ->where('receipts.id', Receipt::keyFromHashId($id))
             ->firstOrFail();
 
         return $this->responseSuccess(null, new ReceiptResource($receipt->load('receiptType', 'status')));
@@ -243,7 +243,7 @@ class ReceiptController extends Controller
     {
         $receipt = Receipt::join('assignments', 'receipts.assignment_id', '=', 'assignments.id')
             ->accessibleBy(auth()->user())
-            ->where('receipts.id', $id)
+            ->where('receipts.id', Receipt::keyFromHashId($id))
             ->firstOrFail();
 
         $assignment = Assignment::with('technicalConclusion')->find($receipt->assignment_id);
@@ -328,7 +328,7 @@ class ReceiptController extends Controller
     {
         $receipt = Receipt::join('assignments', 'receipts.assignment_id', '=', 'assignments.id')
             ->accessibleBy(auth()->user())
-            ->where('receipts.id', $id)
+            ->where('receipts.id', Receipt::keyFromHashId($id))
             ->firstOrFail();
 
         $receipt->update([
@@ -337,7 +337,7 @@ class ReceiptController extends Controller
             'deleted_by' => auth()->user()->id,
         ]);
 
-        $receipt->delete();
+        // $receipt->delete();
 
         $this->recalculate($receipt->assignment_id);
 

@@ -9,6 +9,8 @@ enum GeneralStateEnum: string
 {
     use UsefulEnums;
 
-    case NEW = 'new';
-    case USED = 'used';
+    case VERY_GOOD = 'very_good';
+    case GOOD = 'good';
+    case NORMAL = 'normal';
+    case BAD = 'bad';
 }

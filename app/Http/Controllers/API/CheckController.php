@@ -87,13 +87,13 @@ class CheckController extends Controller
      *
      * @authenticated
      */
-    public function show(Check $check): JsonResponse
+    public function show($id): JsonResponse
     {
         $check = Check::with('payment', 'bank', 'status:id,code,label', 'createdBy:id,name', 'updatedBy:id,name', 'deletedBy:id,name')
             ->join('payments', 'checks.payment_id', '=', 'payments.id')
             ->join('assignments', 'payments.assignment_id', '=', 'assignments.id')
             ->accessibleBy(auth()->user())
-            ->where('checks.id', $check->id)
+            ->where('checks.id', Check::keyFromHashId($id))
             ->first();
 
         return $this->responseSuccess(null, new CheckResource($check));
@@ -110,7 +110,7 @@ class CheckController extends Controller
             ->join('payments', 'checks.payment_id', '=', 'payments.id')
             ->join('assignments', 'payments.assignment_id', '=', 'assignments.id')
             ->accessibleBy(auth()->user())
-            ->where('checks.id', $id)
+            ->where('checks.id', Check::keyFromHashId($id))
             ->firstOrFail();
 
         $check->update([
@@ -135,9 +135,11 @@ class CheckController extends Controller
      *
      * @authenticated
      */
-    public function destroy(Check $check): JsonResponse
+    public function destroy($id): JsonResponse
     {
-        // $check->delete();
+        $check = Check::findOrFail(Check::keyFromHashId($id));
+
+         // $check->delete();
 
         return $this->responseDeleted();
     }

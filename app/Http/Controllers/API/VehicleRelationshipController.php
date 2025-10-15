@@ -31,21 +31,27 @@ class VehicleRelationshipController extends Controller
         return $this->responseCreated('VehicleRelationship created successfully', new VehicleRelationshipResource($vehicleRelationship));
     }
 
-    public function show(VehicleRelationship $vehicleRelationship): JsonResponse
+    public function show($id): JsonResponse
     {
+        $vehicleRelationship = VehicleRelationship::findOrFail(VehicleRelationship::keyFromHashId($id));
+
         return $this->responseSuccess(null, new VehicleRelationshipResource($vehicleRelationship));
     }
 
-    public function update(UpdateVehicleRelationshipRequest $request, VehicleRelationship $vehicleRelationship): JsonResponse
+    public function update(UpdateVehicleRelationshipRequest $request, $id): JsonResponse
     {
+        $vehicleRelationship = VehicleRelationship::findOrFail(VehicleRelationship::keyFromHashId($id));
+
         $vehicleRelationship->update($request->validated());
 
-        return $this->responseSuccess('VehicleRelationship updated Successfully', new VehicleRelationshipResource($vehicleRelationship));
+        return $this->responseSuccess(null, new VehicleRelationshipResource($vehicleRelationship));
     }
 
-    public function destroy(VehicleRelationship $vehicleRelationship): JsonResponse
+    public function destroy($id): JsonResponse
     {
-        $vehicleRelationship->delete();
+        $vehicleRelationship = VehicleRelationship::findOrFail(VehicleRelationship::keyFromHashId($id));
+
+        // $vehicleRelationship->delete();
 
         return $this->responseDeleted();
     }

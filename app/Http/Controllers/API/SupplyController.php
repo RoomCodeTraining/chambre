@@ -92,7 +92,7 @@ class SupplyController extends Controller
      */
     public function show($id): JsonResponse
     {
-        $supply = Supply::findOrFail($id);
+        $supply = Supply::findOrFail(Supply::keyFromHashId($id));
 
         return $this->responseSuccess(null, new SupplyResource($supply));
     }
@@ -104,7 +104,7 @@ class SupplyController extends Controller
      */
     public function update(UpdateSupplyRequest $request, $id): JsonResponse
     {
-        $supply = Supply::findOrFail($id);
+        $supply = Supply::findOrFail(Supply::keyFromHashId($id));
         $supply->update([
             'label' => $request->label,
             'description' => $request->description,
@@ -121,7 +121,7 @@ class SupplyController extends Controller
      */
     public function destroy($id): JsonResponse
     {
-        $supply = Supply::findOrFail($id);
+        $supply = Supply::findOrFail(Supply::keyFromHashId($id));
 
         // $supply->delete();
 

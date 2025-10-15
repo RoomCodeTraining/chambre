@@ -31,20 +31,26 @@ class PasswordHistoryController extends Controller
         return $this->responseCreated('PasswordHistory created successfully', new PasswordHistoryResource($passwordHistory));
     }
 
-    public function show(PasswordHistory $passwordHistory): JsonResponse
+    public function show($id): JsonResponse
     {
+        $passwordHistory = PasswordHistory::findOrFail(PasswordHistory::keyFromHashId($id));
+
         return $this->responseSuccess(null, new PasswordHistoryResource($passwordHistory));
     }
 
-    public function update(UpdatePasswordHistoryRequest $request, PasswordHistory $passwordHistory): JsonResponse
+    public function update(UpdatePasswordHistoryRequest $request, $id): JsonResponse
     {
+        $passwordHistory = PasswordHistory::findOrFail(PasswordHistory::keyFromHashId($id));
+
         $passwordHistory->update($request->validated());
 
         return $this->responseSuccess('PasswordHistory updated Successfully', new PasswordHistoryResource($passwordHistory));
     }
 
-    public function destroy(PasswordHistory $passwordHistory): JsonResponse
+    public function destroy($id): JsonResponse
     {
+        $passwordHistory = PasswordHistory::findOrFail(PasswordHistory::keyFromHashId($id));
+
         // $passwordHistory->delete();
 
         return $this->responseDeleted();

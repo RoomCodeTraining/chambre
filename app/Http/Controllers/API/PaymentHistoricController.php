@@ -64,14 +64,16 @@ class PaymentHistoricController extends Controller
      *
      * @authenticated
      */
-    public function show(PaymentHistoric $paymentHistoric): JsonResponse
+    public function show($id): JsonResponse
     {
+        $paymentHistoric = PaymentHistoric::findOrFail(PaymentHistoric::keyFromHashId($id));
+
         return $this->responseSuccess(null, new PaymentHistoricResource($paymentHistoric->load('payment:id,reference', 'status:id,code,label')));
     }
 
     public function update(UpdatePaymentHistoricRequest $request, $id): JsonResponse
     {
-        $paymentHistoric = PaymentHistoric::findOrFail($id);
+        $paymentHistoric = PaymentHistoric::findOrFail(PaymentHistoric::keyFromHashId($id));
         $paymentHistoric->update([
             'payment_id' => $request->payment_id,
             'status_id' => Status::where('code', StatusEnum::ACTIVE)->first()->id,
@@ -86,8 +88,10 @@ class PaymentHistoricController extends Controller
      *
      * @authenticated
      */
-    public function destroy(PaymentHistoric $paymentHistoric): JsonResponse
+    public function destroy($id): JsonResponse
     {
+        $paymentHistoric = PaymentHistoric::findOrFail(PaymentHistoric::keyFromHashId($id));
+
         // $paymentHistoric->delete();
 
         return $this->responseDeleted();

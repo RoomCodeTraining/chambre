@@ -67,7 +67,7 @@ class AssignmentTypeController extends Controller
      */
     public function show($id): JsonResponse
     {
-        $assignmentType = AssignmentType::findOrFail($id);
+        $assignmentType = AssignmentType::findOrFail(AssignmentType::keyFromHashId($id));
 
         return $this->responseSuccess(null, new AssignmentTypeResource($assignmentType));
     }
@@ -79,7 +79,7 @@ class AssignmentTypeController extends Controller
      */
     public function update(UpdateAssignmentTypeRequest $request, $id): JsonResponse
     {
-        $assignmentType = AssignmentType::findOrFail($id);
+        $assignmentType = AssignmentType::findOrFail(AssignmentType::keyFromHashId($id));
 
         $assignmentType->update([
             'label' => $request->label,
@@ -97,9 +97,13 @@ class AssignmentTypeController extends Controller
      */
     public function destroy($id): JsonResponse
     {
-        $assignmentType = AssignmentType::findOrFail($id);
+        $assignmentType = AssignmentType::findOrFail(AssignmentType::keyFromHashId($id));
 
-        // $assignmentType->delete();
+        $assignmentType->update([
+            'status_id' => Status::where('code', StatusEnum::DELETED)->first()->id,
+            'deleted_at' => now(),
+            'deleted_by' => auth()->user()->id,
+        ]);
 
         return $this->responseDeleted();
     }

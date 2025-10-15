@@ -66,8 +66,10 @@ class BankController extends Controller
      *
      * @authenticated
      */
-    public function show(Bank $bank): JsonResponse
+    public function show($id): JsonResponse
     {
+        $bank = Bank::findOrFail(Bank::keyFromHashId($id));
+
         return $this->responseSuccess(null, new BankResource($bank->load('status:id,code,label', 'createdBy:id,name', 'updatedBy:id,name', 'deletedBy:id,name')));
     }
 
@@ -78,7 +80,7 @@ class BankController extends Controller
      */
     public function update(UpdateBankRequest $request, $id): JsonResponse
     {
-        $bank = Bank::findOrFail($id);
+        $bank = Bank::findOrFail(Bank::keyFromHashId($id));
         $bank->update([
             'name' => $request->name,
             'updated_by' => auth()->user()->id,

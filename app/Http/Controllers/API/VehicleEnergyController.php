@@ -66,7 +66,7 @@ class VehicleEnergyController extends Controller
      */
     public function show($id): JsonResponse
     {
-        $vehicleEnergy = VehicleEnergy::findOrFail($id);
+        $vehicleEnergy = VehicleEnergy::findOrFail(VehicleEnergy::keyFromHashId($id));
 
         return $this->responseSuccess(null, new VehicleEnergyResource($vehicleEnergy));
     }
@@ -78,7 +78,7 @@ class VehicleEnergyController extends Controller
      */
     public function update(UpdateVehicleEnergyRequest $request, $id): JsonResponse
     {
-        $vehicleEnergy = VehicleEnergy::findOrFail($id);
+        $vehicleEnergy = VehicleEnergy::findOrFail(VehicleEnergy::keyFromHashId($id));
         $vehicleEnergy->update([
             'label' => $request->label,
             'description' => $request->description,
@@ -95,7 +95,7 @@ class VehicleEnergyController extends Controller
      */
     public function destroy($id): JsonResponse
     {
-        $vehicleEnergy = VehicleEnergy::findOrFail($id);
+        $vehicleEnergy = VehicleEnergy::findOrFail(VehicleEnergy::keyFromHashId($id));
 
         // $vehicleEnergy->delete();
 

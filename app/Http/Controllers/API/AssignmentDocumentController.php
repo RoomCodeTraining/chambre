@@ -42,10 +42,11 @@ class AssignmentDocumentController extends Controller
      *
      * @authenticated
      */
-    public function show(AssignmentDocument $assignmentDocument): JsonResponse
+    public function show($id): JsonResponse
     {
+        $assignmentDocument = AssignmentDocument::findOrFail(AssignmentDocument::keyFromHashId($id));
+
         return $this->responseSuccess(null, new AssignmentDocumentResource($assignmentDocument->load('assignment', 'document_transmitted')));
     }
-
    
 }

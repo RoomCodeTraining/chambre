@@ -381,7 +381,7 @@ class WorkforceController extends Controller
     public function show($id): JsonResponse
     {
         $workforce = Workforce::accessibleBy(auth()->user())
-            ->where('workforces.id', $id)
+            ->where('workforces.id', Workforce::keyFromHashId($id))
             ->firstOrFail();
 
         return $this->responseSuccess(null, new WorkforceResource($workforce->load('workforceType', 'status')));
@@ -398,7 +398,7 @@ class WorkforceController extends Controller
             ->join('shocks', 'workforces.shock_id', '=', 'shocks.id')
             ->join('assignments', 'shocks.assignment_id', '=', 'assignments.id')
             ->accessibleBy(auth()->user())
-            ->where('workforces.id', $id)
+            ->where('workforces.id', Workforce::keyFromHashId($id))
             ->firstOrFail();
 
         $assignment = Assignment::findOrFail($workforce->shock->assignment_id);
@@ -699,7 +699,7 @@ class WorkforceController extends Controller
             ->join('shocks', 'workforces.shock_id', '=', 'shocks.id')
             ->join('assignments', 'shocks.assignment_id', '=', 'assignments.id')
             ->accessibleBy(auth()->user())
-            ->where('workforces.id', $id)
+            ->where('workforces.id', Workforce::keyFromHashId($id))
             ->firstOrFail();
 
         $assignment = Assignment::findOrFail($workforce->shock->assignment_id);

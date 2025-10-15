@@ -66,7 +66,7 @@ class DocumentTransmittedController extends Controller
      */
     public function show($id): JsonResponse
     {
-        $documentTransmitted = DocumentTransmitted::findOrFail($id);
+        $documentTransmitted = DocumentTransmitted::findOrFail(DocumentTransmitted::keyFromHashId($id));
 
         return $this->responseSuccess(null, new DocumentTransmittedResource($documentTransmitted));
     }
@@ -78,7 +78,7 @@ class DocumentTransmittedController extends Controller
      */
     public function update(UpdateDocumentTransmittedRequest $request, $id): JsonResponse
     {
-        $documentTransmitted = DocumentTransmitted::findOrFail($id);
+        $documentTransmitted = DocumentTransmitted::findOrFail(DocumentTransmitted::keyFromHashId($id));
 
         $documentTransmitted->update([
             'label' => $request->label,
@@ -96,7 +96,7 @@ class DocumentTransmittedController extends Controller
      */
     public function destroy($id): JsonResponse
     {
-        $documentTransmitted = DocumentTransmitted::findOrFail($id);
+        $documentTransmitted = DocumentTransmitted::findOrFail(DocumentTransmitted::keyFromHashId($id));
 
         // $documentTransmitted->delete();
 

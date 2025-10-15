@@ -68,8 +68,10 @@ class PaymentTypeController extends Controller
      *
      * @authenticated
      */
-    public function show(PaymentType $paymentType): JsonResponse
+    public function show($id): JsonResponse
     {
+        $paymentType = PaymentType::findOrFail(PaymentType::keyFromHashId($id));
+
         return $this->responseSuccess(null, new PaymentTypeResource($paymentType->load('status:id,code,label')));
     }
 
@@ -80,7 +82,7 @@ class PaymentTypeController extends Controller
      */
     public function update(UpdatePaymentTypeRequest $request, $id): JsonResponse
     {
-        $paymentType = PaymentType::findOrFail($id);
+        $paymentType = PaymentType::findOrFail(PaymentType::keyFromHashId($id));
         $paymentType->update([
             'code' => $request->code,
             'label' => $request->label,
@@ -97,8 +99,10 @@ class PaymentTypeController extends Controller
      *
      * @authenticated
      */
-    public function destroy(PaymentType $paymentType): JsonResponse
+    public function destroy($id): JsonResponse
     {
+        $paymentType = PaymentType::findOrFail(PaymentType::keyFromHashId($id));
+
         // $paymentType->delete();
 
         return $this->responseDeleted();

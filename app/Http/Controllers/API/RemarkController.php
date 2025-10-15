@@ -76,8 +76,10 @@ class RemarkController extends Controller
      *
      * @authenticated
      */
-    public function show(Remark $remark): JsonResponse
+    public function show($id): JsonResponse
     {
+        $remark = Remark::findOrFail(Remark::keyFromHashId($id));
+
         return $this->responseSuccess(null, new RemarkResource($remark->load('status:id,label')));
     }
 
@@ -88,7 +90,7 @@ class RemarkController extends Controller
      */
     public function update(UpdateRemarkRequest $request, $id): JsonResponse
     {
-        $remark = Remark::find($id);
+        $remark = Remark::findOrFail(Remark::keyFromHashId($id));
 
         $remark->update([
             'label' => $request->label,
@@ -105,9 +107,12 @@ class RemarkController extends Controller
      *
      * @authenticated
      */
-    public function destroy(Remark $remark): JsonResponse
+    public function destroy($id): JsonResponse
     {
+        $remark = Remark::findOrFail(Remark::keyFromHashId($id));
+
         $remark->update([
+            'status_id' => Status::where('code', StatusEnum::DELETED)->first()->id,
             'deleted_by' => auth()->user()->id,
             'deleted_at' => Carbon::now(),
         ]);

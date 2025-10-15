@@ -67,7 +67,7 @@ class ExpertiseTypeController extends Controller
      */
     public function show($id): JsonResponse
     {
-        $expertiseType = ExpertiseType::findOrFail($id);
+        $expertiseType = ExpertiseType::findOrFail(ExpertiseType::keyFromHashId($id));
 
         return $this->responseSuccess(null, new ExpertiseTypeResource($expertiseType));
     }
@@ -79,7 +79,7 @@ class ExpertiseTypeController extends Controller
      */
     public function update(UpdateExpertiseTypeRequest $request, $id): JsonResponse
     {
-        $expertiseType = ExpertiseType::findOrFail($id);
+        $expertiseType = ExpertiseType::findOrFail(ExpertiseType::keyFromHashId($id));
 
         $expertiseType->update([
             'label' => $request->label,
@@ -97,7 +97,7 @@ class ExpertiseTypeController extends Controller
      */
     public function destroy($id): JsonResponse
     {
-        $expertiseType = ExpertiseType::findOrFail($id);
+        $expertiseType = ExpertiseType::findOrFail(ExpertiseType::keyFromHashId($id));
 
         // $expertiseType->delete();
 

@@ -86,7 +86,7 @@ class BrandController extends Controller
      */
     public function show($id): JsonResponse
     {
-        $brand = Brand::findOrFail($id);
+        $brand = Brand::findOrFail(Brand::keyFromHashId($id));
 
         return $this->responseSuccess(null, new BrandResource($brand));
     }
@@ -98,7 +98,7 @@ class BrandController extends Controller
      */
     public function update(UpdateBrandRequest $request, $id): JsonResponse
     {
-        $brand = Brand::findOrFail($id);
+        $brand = Brand::findOrFail(Brand::keyFromHashId($id));
 
         $brand->update([
             'label' => $request->label,
@@ -116,7 +116,7 @@ class BrandController extends Controller
      */
     public function destroy($id): JsonResponse
     {
-        $brand = Brand::findOrFail($id);
+        $brand = Brand::findOrFail(Brand::keyFromHashId($id));
 
         // $brand->delete();
 

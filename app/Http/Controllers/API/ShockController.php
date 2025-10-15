@@ -403,7 +403,7 @@ class ShockController extends Controller
     {
         $shock = Shock::accessibleBy(auth()->user())
             ->join('assignments', 'shocks.assignment_id', '=', 'assignments.id')
-            ->where('shocks.id', $id)
+            ->where('shocks.id', Shock::keyFromHashId($id))
             ->firstOrFail();
 
         return $this->responseSuccess(null, new ShockResource($shock->load('shockPoint', 'shockWorks', 'workforces')));
@@ -418,7 +418,7 @@ class ShockController extends Controller
     {
         $shock = Shock::accessibleBy(auth()->user())
             ->join('assignments', 'shocks.assignment_id', '=', 'assignments.id')
-            ->where('shocks.id', $id)
+            ->where('shocks.id', Shock::keyFromHashId($id))
             ->firstOrFail();
 
         $assignment = Assignment::findOrFail($shock->assignment_id);
@@ -467,7 +467,7 @@ class ShockController extends Controller
     {
         $shock = Shock::accessibleBy(auth()->user())
             ->join('assignments', 'shocks.assignment_id', '=', 'assignments.id')
-            ->where('shocks.id', $id)
+            ->where('shocks.id', Shock::keyFromHashId($id))
             ->firstOrFail();
 
         $assignment = Assignment::findOrFail($shock->assignment_id);
@@ -501,7 +501,7 @@ class ShockController extends Controller
     {
         $shock = Shock::accessibleBy(auth()->user())
             ->join('assignments', 'shocks.assignment_id', '=', 'assignments.id')
-            ->where('shocks.id', $id)
+            ->where('shocks.id', Shock::keyFromHashId($id))
             ->firstOrFail();
 
         $assignment = Assignment::findOrFail($shock->assignment_id);
@@ -535,7 +535,7 @@ class ShockController extends Controller
     {
         $shock = Shock::accessibleBy(auth()->user())
             ->join('assignments', 'shocks.assignment_id', '=', 'assignments.id')
-            ->where('shocks.id', $id)
+            ->where('shocks.id', Shock::keyFromHashId($id))
             ->firstOrFail();
 
         $assignment = Assignment::findOrFail($shock->assignment_id);

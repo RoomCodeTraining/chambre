@@ -18,18 +18,36 @@ class GeneralStateSeeder extends Seeder
     public function run(): void
     {
         GeneralState::create([
-            'code' => GeneralStateEnum::NEW,
-            'label' => "Neuf(ve)s",
-            'description' => "Neuf(ve)s",
+            'code' => GeneralStateEnum::VERY_GOOD,
+            'label' => "Tres bon",
+            'description' => "Tres bon",
             'status_id' => Status::firstWhere('code', StatusEnum::ACTIVE)->id,
             'created_by' => 1,
             'updated_by' => 1,
         ]);
 
         GeneralState::create([
-            'code' => GeneralStateEnum::USED,
-            'label' => "Occasion",
-            'description' => "Occasion",
+            'code' => GeneralStateEnum::GOOD,
+            'label' => "Bon",
+            'description' => "Bon",
+            'status_id' => Status::firstWhere('code', StatusEnum::ACTIVE)->id,
+            'created_by' => 1,
+            'updated_by' => 1,
+        ]);
+
+        GeneralState::create([
+            'code' => GeneralStateEnum::NORMAL,
+            'label' => "	",
+            'description' => "Normal",
+            'status_id' => Status::firstWhere('code', StatusEnum::ACTIVE)->id,
+            'created_by' => 1,
+            'updated_by' => 1,
+        ]);
+
+        GeneralState::create([
+            'code' => GeneralStateEnum::BAD,
+            'label' => "Mauvais",
+            'description' => "Mauvais",
             'status_id' => Status::firstWhere('code', StatusEnum::ACTIVE)->id,
             'created_by' => 1,
             'updated_by' => 1,

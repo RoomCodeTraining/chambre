@@ -67,7 +67,7 @@ class NumberPaintElementController extends Controller
      */
     public function show($id): JsonResponse
     {
-        $numberPaintElement = NumberPaintElement::findOrFail($id);
+        $numberPaintElement = NumberPaintElement::findOrFail(NumberPaintElement::keyFromHashId($id));
 
         return $this->responseSuccess(null, new NumberPaintElementResource($numberPaintElement));
     }
@@ -79,7 +79,7 @@ class NumberPaintElementController extends Controller
      */
     public function update(UpdateNumberPaintElementRequest $request, $id): JsonResponse
     {
-        $numberPaintElement = NumberPaintElement::findOrFail($id);
+        $numberPaintElement = NumberPaintElement::findOrFail(NumberPaintElement::keyFromHashId($id));
         $numberPaintElement->update([
             'label' => $request->label,
             'description' => $request->description,
@@ -97,7 +97,7 @@ class NumberPaintElementController extends Controller
      */
     public function destroy($id): JsonResponse
     {
-        $numberPaintElement = NumberPaintElement::findOrFail($id);
+        $numberPaintElement = NumberPaintElement::findOrFail(NumberPaintElement::keyFromHashId($id));
 
         // $numberPaintElement->delete();
 

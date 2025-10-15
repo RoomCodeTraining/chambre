@@ -85,7 +85,7 @@ class WorkforceTypeController extends Controller
      */
     public function show($id): JsonResponse
     {
-        $workforceType = WorkforceType::findOrFail($id);
+        $workforceType = WorkforceType::findOrFail(WorkforceType::keyFromHashId($id));
 
         return $this->responseSuccess(null, new WorkforceTypeResource($workforceType));
     }
@@ -97,7 +97,7 @@ class WorkforceTypeController extends Controller
      */
     public function update(UpdateWorkforceTypeRequest $request, $id): JsonResponse
     {
-        $workforceType = WorkforceType::findOrFail($id);
+        $workforceType = WorkforceType::findOrFail(WorkforceType::keyFromHashId($id));
         $workforceType->update([
             'label' => $request->label,
             'description' => $request->description,
@@ -114,7 +114,7 @@ class WorkforceTypeController extends Controller
      */
     public function destroy($id): JsonResponse
     {
-        $workforceType = WorkforceType::findOrFail($id);
+        $workforceType = WorkforceType::findOrFail(WorkforceType::keyFromHashId($id));
 
         // $workforceType->delete();
 

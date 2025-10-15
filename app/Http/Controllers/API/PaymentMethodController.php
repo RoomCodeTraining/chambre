@@ -68,8 +68,10 @@ class PaymentMethodController extends Controller
      *
      * @authenticated
      */
-    public function show(PaymentMethod $paymentMethod): JsonResponse
+    public function show($id): JsonResponse
     {
+        $paymentMethod = PaymentMethod::findOrFail(PaymentMethod::keyFromHashId($id));
+
         return $this->responseSuccess(null, new PaymentMethodResource($paymentMethod->load('status:id,code,label')));
     }
 
@@ -80,7 +82,7 @@ class PaymentMethodController extends Controller
      */
     public function update(UpdatePaymentMethodRequest $request, $id): JsonResponse
     {
-        $paymentMethod = PaymentMethod::findOrFail($id);
+        $paymentMethod = PaymentMethod::findOrFail(PaymentMethod::keyFromHashId($id));
         $paymentMethod->update([
             'code' => $request->code,
             'label' => $request->label,
@@ -97,8 +99,10 @@ class PaymentMethodController extends Controller
      *
      * @authenticated
      */
-    public function destroy(PaymentMethod $paymentMethod): JsonResponse
+    public function destroy($id): JsonResponse
     {
+        $paymentMethod = PaymentMethod::findOrFail(PaymentMethod::keyFromHashId($id));
+        
         // $paymentMethod->delete();
 
         return $this->responseDeleted();

@@ -67,12 +67,12 @@ class InsurerRelationshipController extends Controller
      *
      * @authenticated
      */
-    public function show(InsurerRelationship $insurerRelationship): JsonResponse
+    public function show($id): JsonResponse
     {
         $insurerRelationship = InsurerRelationship::
                                 with('insurer:id,code,label', 'expertFirm:id,code,label', 'status:id,code,label', 'createdBy:id,name')
                                 ->accessibleBy(auth()->user())
-                                ->where('insurer_relationships.id', $insurerRelationship->id)
+                                ->where('insurer_relationships.id', InsurerRelationship::keyFromHashId($id))
                                 ->firstOrFail();
 
         return $this->responseSuccess(null, new InsurerRelationshipResource($insurerRelationship));
@@ -83,12 +83,12 @@ class InsurerRelationshipController extends Controller
      *
      * @authenticated
      */
-    public function update(UpdateInsurerRelationshipRequest $request, InsurerRelationship $insurerRelationship): JsonResponse
+    public function update(UpdateInsurerRelationshipRequest $request, $id): JsonResponse
     {
         $insurerRelationship = InsurerRelationship::
                                 with('insurer:id,code,label', 'expertFirm:id,code,label', 'status:id,code,label', 'createdBy:id,name')
                                 ->accessibleBy(auth()->user())
-                                ->where('insurer_relationships.id', $insurerRelationship->id)
+                                ->where('insurer_relationships.id', InsurerRelationship::keyFromHashId($id))
                                 ->firstOrFail();
 
         $insurerRelationship->update($request->validated());
@@ -101,11 +101,11 @@ class InsurerRelationshipController extends Controller
      *
      * @authenticated
      */
-    public function enable(InsurerRelationship $insurerRelationship): JsonResponse
+    public function enable($id): JsonResponse
     {
         $insurerRelationship = InsurerRelationship::accessibleBy(auth()->user())
                                 ->accessibleBy(auth()->user())
-                                ->where('insurer_relationships.id', $insurerRelationship->id)
+                                ->where('insurer_relationships.id', InsurerRelationship::keyFromHashId($id))
                                 ->firstOrFail();
 
         $insurerRelationship->update(['status_id' => Status::firstWhere('code', StatusEnum::ACTIVE)->id]);
@@ -118,11 +118,11 @@ class InsurerRelationshipController extends Controller
      *
      * @authenticated
      */
-    public function disable(InsurerRelationship $insurerRelationship): JsonResponse
+    public function disable($id): JsonResponse
     {
         $insurerRelationship = InsurerRelationship::accessibleBy(auth()->user())
                                 ->accessibleBy(auth()->user())
-                                ->where('insurer_relationships.id', $insurerRelationship->id)
+                                ->where('insurer_relationships.id', InsurerRelationship::keyFromHashId($id))
                                 ->firstOrFail();
 
         $insurerRelationship->update(['status_id' => Status::firstWhere('code', StatusEnum::INACTIVE)->id]);

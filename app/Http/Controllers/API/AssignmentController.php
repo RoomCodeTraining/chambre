@@ -1139,7 +1139,7 @@ class AssignmentController extends Controller
      */
     public function realize(RealizeAssignmentRequest $request, $id): JsonResponse
     {
-        $assignment = Assignment::findOrFail($id);
+        $assignment = Assignment::findOrFail(Assignment::keyFromHashId($id));
 
         if($assignment->status_id != Status::where('code', StatusEnum::OPENED)->first()->id){
             return $this->responseUnprocessable("Le dossier n'est pas encore ouvert, veuillez l'ouvrir avant de le réaliser.", null);
@@ -1176,7 +1176,7 @@ class AssignmentController extends Controller
      */
     public function edit(EditAssignmentRequest $request, $id): JsonResponse
     {
-        $assignment = Assignment::findOrFail($id);
+        $assignment = Assignment::findOrFail(Assignment::keyFromHashId($id));
 
         if($assignment->status_id != Status::where('code', StatusEnum::REALIZED)->first()->id){
             return $this->responseUnprocessable("Le dossier n'est pas encore réalisé ou est déjà rédigé, veuillez le réaliser avant de le rédiger.", null);
@@ -1829,7 +1829,7 @@ class AssignmentController extends Controller
      */
     public function show($id): JsonResponse
     {
-        $assignment = Assignment::findOrFail($id);
+        $assignment = Assignment::findOrFail(Assignment::keyFromHashId($id));
         $assignment->load([
             'shocks' => function($query) {
                 $query->orderBy('position', 'asc');
@@ -1867,7 +1867,7 @@ class AssignmentController extends Controller
      */
     public function update(UpdateAssignmentRequest $request, $id): JsonResponse
     {
-        $assignment = Assignment::findOrFail($id);
+        $assignment = Assignment::findOrFail(Assignment::keyFromHashId($id));
 
         if($request->claim_number && Assignment::where('claim_number', $request->claim_number)->where(function($query){
             $query->where('status_id', Status::where('code', StatusEnum::OPENED)->first()->id)
@@ -2060,7 +2060,7 @@ class AssignmentController extends Controller
      */
     public function updateRealize(UpdateRealizedAssignmentRequest $request, $id): JsonResponse
     {
-        $assignment = Assignment::findOrFail($id);
+        $assignment = Assignment::findOrFail(Assignment::keyFromHashId($id));
 
         if($assignment->status_id != Status::where('code', StatusEnum::VALIDATED)->first()->id && $assignment->status_id != Status::where('code', StatusEnum::PAID)->first()->id){
             $assignment->update([
@@ -2095,7 +2095,7 @@ class AssignmentController extends Controller
      */
     public function updateEdit(UpdateEditAssignmentRequest $request, $id): JsonResponse
     {
-        $assignment = Assignment::findOrFail($id);
+        $assignment = Assignment::findOrFail(Assignment::keyFromHashId($id));
 
         if($assignment->status_id != Status::where('code', StatusEnum::VALIDATED)->first()->id && $assignment->status_id != Status::where('code', StatusEnum::PAID)->first()->id){
             $vehicle = Vehicle::with('vehicleGenre', 'vehicleEnergy')->findOrFail($assignment->vehicle_id);
@@ -2223,7 +2223,7 @@ class AssignmentController extends Controller
      */
     public function validate($id): JsonResponse
     {
-        $assignment = Assignment::findOrFail($id);
+        $assignment = Assignment::findOrFail(Assignment::keyFromHashId($id));
 
         $assignment->update([
             'is_validated' => 1,
@@ -2262,7 +2262,7 @@ class AssignmentController extends Controller
      */
     public function unvalidate($id): JsonResponse
     {
-        $assignment = Assignment::findOrFail($id);
+        $assignment = Assignment::findOrFail(Assignment::keyFromHashId($id));
 
         $assignment->update([
             'status_id' => Status::where('code', StatusEnum::EDITED)->first()->id,
@@ -2281,7 +2281,7 @@ class AssignmentController extends Controller
      */
     public function validateByRepairer($id): JsonResponse
     {
-        $assignment = Assignment::with('shocks:id,is_validated', 'shocks.shockWorks:id,is_validated', 'shocks.workforces:id,is_validated')->findOrFail($id);
+        $assignment = Assignment::with('shocks:id,is_validated', 'shocks.shockWorks:id,is_validated', 'shocks.workforces:id,is_validated')->findOrFail(Assignment::keyFromHashId($id));
 
         $assignment->update([
             'is_validated_by_repairer' => 1,
@@ -2316,7 +2316,7 @@ class AssignmentController extends Controller
      */
     public function unvalidateByRepairer($id): JsonResponse
     {
-        $assignment = Assignment::findOrFail($id);
+        $assignment = Assignment::findOrFail(Assignment::keyFromHashId($id));
 
         if($assignment->status_id != Status::where('code', StatusEnum::PENDING_FOR_REPAIRER_INVOICE_VALIDATION)->first()->id && $assignment->status_id != Status::where('code', StatusEnum::IN_EDITING)->first()->id){
             return $this->responseUnprocessable("Le dossier n'est pas en attente de validation de facture par l'expert.", null);
@@ -2338,7 +2338,7 @@ class AssignmentController extends Controller
      */
     public function validateByExpert($id): JsonResponse
     {
-        $assignment = Assignment::with('shocks:id,is_validated', 'shocks.shockWorks:id,is_validated', 'shocks.workforces:id,is_validated')->findOrFail($id);
+        $assignment = Assignment::with('shocks:id,is_validated', 'shocks.shockWorks:id,is_validated', 'shocks.workforces:id,is_validated')->findOrFail(Assignment::keyFromHashId($id));
 
         $assignment->update([
             'is_validated_by_expert' => 1,
@@ -2373,7 +2373,7 @@ class AssignmentController extends Controller
      */
     public function unvalidateByExpert($id): JsonResponse
     {
-        $assignment = Assignment::findOrFail($id);
+        $assignment = Assignment::findOrFail(Assignment::keyFromHashId($id));
 
         if($assignment->status_id != Status::where('code', StatusEnum::PENDING_FOR_REPAIRER_INVOICE_VALIDATION)->first()->id && $assignment->status_id != Status::where('code', StatusEnum::IN_EDITING)->first()->id){
             return $this->responseUnprocessable("Le dossier n'est pas en attente de validation de facture par l'expert.", null);
@@ -2395,7 +2395,7 @@ class AssignmentController extends Controller
      */
     public function close($id): JsonResponse
     {
-        $assignment = Assignment::findOrFail($id);
+        $assignment = Assignment::findOrFail(Assignment::keyFromHashId($id));
 
         $assignment->update([
             'closed_by' => auth()->user()->id,
@@ -2433,7 +2433,7 @@ class AssignmentController extends Controller
      */
     public function generate($id): JsonResponse
     {
-        $assignment = Assignment::findOrFail($id);
+        $assignment = Assignment::findOrFail(Assignment::keyFromHashId($id));
 
         if($assignment->status_id == Status::where('code', StatusEnum::EDITED)->first()->id || $assignment->status_id == Status::where('code', StatusEnum::VALIDATED)->first()->id || $assignment->status_id == Status::where('code', StatusEnum::PAID)->first()->id){
             $total_nb_hours = Workforce::join('shocks', 'workforces.shock_id', '=', 'shocks.id')
@@ -2472,7 +2472,7 @@ class AssignmentController extends Controller
      */
     public function orderShocks(Request $request, $id)
     {
-        $assignment = Assignment::findOrFail($id);
+        $assignment = Assignment::findOrFail(Assignment::keyFromHashId($id));
 
         $shocks = $request->get('shocks');
 
@@ -2499,7 +2499,7 @@ class AssignmentController extends Controller
      */
     public function orderPhotos(Request $request, $id)
     {
-        $assignment = Assignment::findOrFail($id);
+        $assignment = Assignment::findOrFail(Assignment::keyFromHashId($id));
 
         $photos = $request->get('photos');
 

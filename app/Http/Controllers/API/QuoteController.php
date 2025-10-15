@@ -31,24 +31,28 @@ class QuoteController extends Controller
         return $this->responseCreated('Quote created successfully', new QuoteResource($quote));
     }
 
-    public function show(Quote $quote): JsonResponse
+    public function show($id): JsonResponse
     {
+        $quote = Quote::findOrFail(Quote::keyFromHashId($id));
+
         return $this->responseSuccess(null, new QuoteResource($quote));
     }
 
-    public function update(UpdateQuoteRequest $request, Quote $quote): JsonResponse
+    public function update(UpdateQuoteRequest $request, $id): JsonResponse
     {
+        $quote = Quote::findOrFail(Quote::keyFromHashId($id));
         $quote->update($request->validated());
 
         return $this->responseSuccess('Quote updated Successfully', new QuoteResource($quote));
     }
 
-    public function destroy(Quote $quote): JsonResponse
+    public function destroy($id): JsonResponse
     {
-        $quote->delete();
+        $quote = Quote::findOrFail(Quote::keyFromHashId($id));
+
+        // $quote->delete();
 
         return $this->responseDeleted();
     }
 
-   
 }

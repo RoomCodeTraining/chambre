@@ -31,20 +31,26 @@ class UserActionTypeController extends Controller
         return $this->responseCreated('UserActionType created successfully', new UserActionTypeResource($userActionType));
     }
 
-    public function show(UserActionType $userActionType): JsonResponse
+    public function show($id): JsonResponse
     {
+        $userActionType = UserActionType::findOrFail(UserActionType::keyFromHashId($id));
+
         return $this->responseSuccess(null, new UserActionTypeResource($userActionType));
     }
 
-    public function update(UpdateUserActionTypeRequest $request, UserActionType $userActionType): JsonResponse
+    public function update(UpdateUserActionTypeRequest $request, $id): JsonResponse
     {
+        $userActionType = UserActionType::findOrFail(UserActionType::keyFromHashId($id));
+
         $userActionType->update($request->validated());
 
         return $this->responseSuccess('UserActionType updated Successfully', new UserActionTypeResource($userActionType));
     }
 
-    public function destroy(UserActionType $userActionType): JsonResponse
+    public function destroy($id): JsonResponse
     {
+        $userActionType = UserActionType::findOrFail(UserActionType::keyFromHashId($id));
+
         // $userActionType->delete();
 
         return $this->responseDeleted();

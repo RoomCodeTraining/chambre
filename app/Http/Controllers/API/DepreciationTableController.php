@@ -188,7 +188,7 @@ class DepreciationTableController extends Controller
      */
     public function show($id): JsonResponse
     {
-        $depreciationTable = DepreciationTable::findOrFail($id);
+        $depreciationTable = DepreciationTable::findOrFail(DepreciationTable::keyFromHashId($id));
         return $this->responseSuccess(null, new DepreciationTableResource($depreciationTable));
     }
 
@@ -199,7 +199,7 @@ class DepreciationTableController extends Controller
      */
     public function update(UpdateDepreciationTableRequest $request, $id): JsonResponse
     {
-        $depreciationTable = DepreciationTable::findOrFail($id);
+        $depreciationTable = DepreciationTable::findOrFail(DepreciationTable::keyFromHashId($id));
         $depreciationTable->update([
             'value' => $request->value,
             'vehicle_genre_id' => $request->vehicle_genre_id,
@@ -218,7 +218,7 @@ class DepreciationTableController extends Controller
      */
     public function destroy($id): JsonResponse
     {
-        $depreciationTable = DepreciationTable::findOrFail($id);
+        $depreciationTable = DepreciationTable::findOrFail(DepreciationTable::keyFromHashId($id));
         // $depreciationTable->delete();
 
         return $this->responseDeleted();

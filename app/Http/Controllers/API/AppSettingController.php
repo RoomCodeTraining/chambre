@@ -19,7 +19,7 @@ class AppSettingController extends Controller
 
     public function index(): AnonymousResourceCollection
     {
-        $appSettings = AppSetting::useFilters()->dynamicPaginate();
+        $appSettings = AppSetting::useFilters()->latest('created_at')->dynamicPaginate();
 
         return AppSettingResource::collection($appSettings);
     }
@@ -31,20 +31,26 @@ class AppSettingController extends Controller
         return $this->responseCreated('AppSetting created successfully', new AppSettingResource($appSetting));
     }
 
-    public function show(AppSetting $appSetting): JsonResponse
+    public function show($id): JsonResponse
     {
+        $appSetting = AppSetting::findOrFail(AppSetting::keyFromHashId($id));
+
         return $this->responseSuccess(null, new AppSettingResource($appSetting));
     }
 
-    public function update(UpdateAppSettingRequest $request, AppSetting $appSetting): JsonResponse
+    public function update(UpdateAppSettingRequest $request, $id): JsonResponse
     {
+        $appSetting = AppSetting::findOrFail(AppSetting::keyFromHashId($id));
+
         $appSetting->update($request->validated());
 
         return $this->responseSuccess('AppSetting updated Successfully', new AppSettingResource($appSetting));
     }
 
-    public function destroy(AppSetting $appSetting): JsonResponse
+    public function destroy($id): JsonResponse
     {
+        $appSetting = AppSetting::findOrFail(AppSetting::keyFromHashId($id));
+
         // $appSetting->delete();
 
         return $this->responseDeleted();

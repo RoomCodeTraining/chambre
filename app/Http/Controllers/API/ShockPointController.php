@@ -90,7 +90,7 @@ class ShockPointController extends Controller
      */
     public function show($id): JsonResponse
     {
-        $shockPoint = ShockPoint::findOrFail($id);
+        $shockPoint = ShockPoint::findOrFail(ShockPoint::keyFromHashId($id));
 
         return $this->responseSuccess(null, new ShockPointResource($shockPoint));
     }
@@ -102,7 +102,7 @@ class ShockPointController extends Controller
      */
     public function update(UpdateShockPointRequest $request, $id): JsonResponse
     {
-        $shockPoint = ShockPoint::findOrFail($id);
+        $shockPoint = ShockPoint::findOrFail(ShockPoint::keyFromHashId($id));
         $shockPoint->update([
             'label' => $request->label,
             'description' => $request->description,
@@ -119,7 +119,7 @@ class ShockPointController extends Controller
      */
     public function destroy($id): JsonResponse
     {
-        $shockPoint = ShockPoint::findOrFail($id);
+        $shockPoint = ShockPoint::findOrFail(ShockPoint::keyFromHashId($id));
 
         // $shockPoint->delete();
 

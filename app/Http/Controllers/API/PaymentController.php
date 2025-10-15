@@ -469,11 +469,11 @@ class PaymentController extends Controller
      *
      * @authenticated
      */
-    public function show(Payment $payment): JsonResponse
+    public function show($id): JsonResponse
     {
         $payment = Payment::join('assignments', 'payments.assignment_id', '=', 'assignments.id')
             ->accessibleBy(auth()->user())
-            ->where('payments.id', $payment->id)
+            ->where('payments.id', Payment::keyFromHashId($id))
             ->first();
 
         return $this->responseSuccess(null, new PaymentResource($payment->load('assignment:id,reference', 'paymentType:id,code,label', 'paymentMethod:id,code,label', 'status:id,code,label', 'createdBy:id,name,email,created_at', 'updatedBy:id,name,email,created_at', 'deletedBy:id,name,email,created_at')));
@@ -488,7 +488,7 @@ class PaymentController extends Controller
     {
         $payment = Payment::join('assignments', 'payments.assignment_id', '=', 'assignments.id')
             ->accessibleBy(auth()->user())
-            ->where('payments.id', $id)
+            ->where('payments.id', Payment::keyFromHashId($id))
             ->firstOrFail();
 
         $payment->update([
@@ -510,7 +510,7 @@ class PaymentController extends Controller
     {
         $payment = Payment::join('assignments', 'payments.assignment_id', '=', 'assignments.id')
             ->accessibleBy(auth()->user())
-            ->where('payments.id', $id)
+            ->where('payments.id', Payment::keyFromHashId($id))
             ->firstOrFail();
 
         $payment->update([
@@ -535,8 +535,9 @@ class PaymentController extends Controller
      *
      * @authenticated
      */
-    public function destroy(Payment $payment): JsonResponse
+    public function destroy($id): JsonResponse
     {
+        $payment = Payment::findOrFail(Payment::keyFromHashId($id));
         // $payment->delete();
 
         return $this->responseDeleted();

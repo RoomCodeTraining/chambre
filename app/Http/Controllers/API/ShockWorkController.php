@@ -291,7 +291,7 @@ class ShockWorkController extends Controller
         $shockWork = ShockWork::join('shocks', 'shock_works.shock_id', '=', 'shocks.id')
             ->join('assignments', 'shocks.assignment_id', '=', 'assignments.id')
             ->accessibleBy(auth()->user())
-            ->where('shock_works.id', $id)
+            ->where('shock_works.id', ShockWork::keyFromHashId($id))
             ->firstOrFail();
 
         return $this->responseSuccess(null, new ShockWorkResource($shockWork->load('supply', 'status')));
@@ -308,7 +308,7 @@ class ShockWorkController extends Controller
             ->join('shocks', 'shock_works.shock_id', '=', 'shocks.id')
             ->join('assignments', 'shocks.assignment_id', '=', 'assignments.id')
             ->accessibleBy(auth()->user())
-            ->where('shock_works.id', $id)
+            ->where('shock_works.id', ShockWork::keyFromHashId($id))
             ->firstOrFail();
 
         $assignment = Assignment::findOrFail($shockWork->shock->assignment_id);
@@ -539,7 +539,7 @@ class ShockWorkController extends Controller
             ->join('shocks', 'shock_works.shock_id', '=', 'shocks.id')
             ->join('assignments', 'shocks.assignment_id', '=', 'assignments.id')
             ->accessibleBy(auth()->user())
-            ->where('shock_works.id', $id)
+            ->where('shock_works.id', ShockWork::keyFromHashId($id))
             ->firstOrFail();
 
         $assignment = Assignment::findOrFail($shockWork->shock->assignment_id);
