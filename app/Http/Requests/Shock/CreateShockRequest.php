@@ -14,13 +14,33 @@ class CreateShockRequest extends FormRequest
 {
     public function prepareForValidation()
     {
+        if($this->shocks){
+            $shocks = [];
+            foreach ($this->shocks as $shock) {
+                $shock['shock_point_id'] = ShockPoint::keyFromHashId($shock['shock_point_id']);
+                $shock['paint_type_id'] = PaintType::keyFromHashId($shock['paint_type_id']);
+                $shock['hourly_rate_id'] = HourlyRate::keyFromHashId($shock['hourly_rate_id']);
+                
+                $shock_works = [];
+                foreach ($shock['shock_works'] as $shock_work) {
+                    $shock_work['supply_id'] = Supply::keyFromHashId($shock_work['supply_id']);
+                    $shock_works[] = $shock_work;
+                }
+                $shock['shock_works'] = $shock_works;
+
+                $workforces = [];
+                foreach ($shock['workforces'] as $workforce) {
+                    $workforce['workforce_type_id'] = WorkforceType::keyFromHashId($workforce['workforce_type_id']);
+                    $workforces[] = $workforce;
+                }
+                $shock['workforces'] = $workforces;
+                
+                $shocks[] = $shock;
+            }
+        }
         $this->merge([
             'assignment_id' => $this->assignment_id ? Assignment::keyFromHashId($this->assignment_id) : null,
-            'shocks.*.shock_point_id' => $this->shock_point_id ? ShockPoint::keyFromHashId($this->shock_point_id) : null,
-            'shocks.*.paint_type_id' => $this->paint_type_id ? PaintType::keyFromHashId($this->paint_type_id) : null,
-            'shocks.*.hourly_rate_id' => $this->hourly_rate_id ? HourlyRate::keyFromHashId($this->hourly_rate_id) : null,
-            'shocks.*.workforces.*.workforce_type_id' => $this->workforce_type_id ? WorkforceType::keyFromHashId($this->workforce_type_id) : null,
-            'shocks.*.shock_works.*.supply_id' => $this->supply_id ? Supply::keyFromHashId($this->supply_id) : null,
+            'shocks' => $shocks ?? null,
         ]);
     }
 

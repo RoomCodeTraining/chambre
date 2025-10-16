@@ -3,6 +3,7 @@
 namespace App\Http\Requests\ShockWork;
 
 use App\Models\Shock;
+use App\Models\Supply;
 use App\Models\PaintType;
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -10,16 +11,23 @@ class CreateShockWorkRequest extends FormRequest
 {
     public function prepareForValidation()
     {
+        if($this->shock_works){
+            $shock_works = [];
+            foreach ($this->shock_works as $shock_work) {
+                $shock_work['supply_id'] = Supply::keyFromHashId($shock_work['supply_id']);
+                $shock_works[] = $shock_work;
+            }
+        }
         $this->merge([
             'shock_id' => $this->shock_id ? Shock::keyFromHashId($this->shock_id) : null,
-            'paint_type_id' => $this->paint_type_id ? PaintType::keyFromHashId($this->paint_type_id) : null,
+            'shock_works' => $shock_works ?? null,
         ]);
     }
 
     public function rules(): array
     {
         return [
-            'paint_type_id' => 'required|exists:paint_types,id',
+            // 'paint_type_id' => 'required|exists:paint_types,id',
             'shock_id' => 'required|exists:shocks,id',
             'shock_works' => 'required|array',
             // 'shock_works.*.supply_id' => 'required|exists:supplies,id|unique:shock_works,supply_id,NULL,id,shock_id,' . $this->route('shock'),

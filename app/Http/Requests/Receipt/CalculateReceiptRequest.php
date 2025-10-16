@@ -10,9 +10,17 @@ class CalculateReceiptRequest extends FormRequest
 {
     public function prepareForValidation()
     {
+        if($this->receipts){
+            $receipts = [];
+            foreach ($this->receipts as $receipt) {
+                $receipt['receipt_type_id'] = ReceiptType::keyFromHashId($receipt['receipt_type_id']);
+                $receipts[] = $receipt;
+            }
+        }
+        
         $this->merge([
             'assignment_id' => $this->assignment_id ? Assignment::keyFromHashId($this->assignment_id) : null,
-            'receipts.*.receipt_type_id' => $this->receipt_type_id ? ReceiptType::keyFromHashId($this->receipt_type_id) : null,
+            'receipts' => $receipts ?? null,
         ]);
     }
 

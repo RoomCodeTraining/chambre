@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\API;
 
+use App\Models\Brand;
 use App\Models\Status;
 use App\Enums\StatusEnum;
 use App\Models\VehicleModel;
+use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 use App\Http\Controllers\Controller;
 use Essa\APIToolKit\Api\ApiResponse;
@@ -34,8 +36,13 @@ class VehicleModelController extends Controller
      */
     public function index(): AnonymousResourceCollection
     {
-        $vehicleModels = VehicleModel::with(['brand', 'status'])
-                    ->useFilters()
+        $vehicleModels = VehicleModel::with(['brand', 'status']);
+
+        if(request()->has('brand_id')){
+            $vehicleModels = $vehicleModels->where('brand_id', Brand::keyFromHashId(request()->brand_id));
+        }
+
+        $vehicleModels = $vehicleModels->useFilters()
                     ->latest('created_at')
                     ->dynamicPaginate();
 

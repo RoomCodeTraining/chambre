@@ -2,14 +2,24 @@
 
 namespace App\Http\Requests\Assignment;
 
+use App\Models\Client;
+use App\Models\Vehicle;
+use App\Models\ExpertiseType;
 use App\Models\AssignmentType;
 use App\Enums\AssignmentTypeEnum;
+use App\Models\DocumentTransmitted;
 use Illuminate\Foundation\Http\FormRequest;
 
 class CreateAssignmentRequest extends FormRequest
 {
     public function prepareForValidation()
     {
+        if($this->document_transmitted_id){
+            $document_transmitted_ids = [];
+            foreach ($this->document_transmitted_id as $document_transmitted_id) {
+                $document_transmitted_ids[] = DocumentTransmitted::keyFromHashId($document_transmitted_id);
+            }
+        }
         $this->merge([
             'assignment_type_id' => $this->assignment_type_id ? AssignmentType::keyFromHashId($this->assignment_type_id) : null,
             'expertise_type_id' => $this->expertise_type_id ? ExpertiseType::keyFromHashId($this->expertise_type_id) : null,
@@ -18,7 +28,7 @@ class CreateAssignmentRequest extends FormRequest
             'insurer_relationship_id' => $this->insurer_relationship_id ? InsurerRelationship::keyFromHashId($this->insurer_relationship_id) : null,
             'additional_insurer_relationship_id' => $this->additional_insurer_relationship_id ? InsurerRelationship::keyFromHashId($this->additional_insurer_relationship_id) : null,
             'repairer_relationship_id' => $this->repairer_relationship_id ? RepairerRelationship::keyFromHashId($this->repairer_relationship_id) : null,
-            'document_transmitted_id' => $this->document_transmitted_id ? DocumentTransmitted::keyFromHashId($this->document_transmitted_id) : null,
+            'document_transmitted_id.*' => $document_transmitted_ids ?? null,
         ]);
     }
 

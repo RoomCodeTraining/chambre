@@ -4,7 +4,9 @@ namespace App\Http\Controllers\API;
 
 use App\Models\Status;
 use App\Enums\StatusEnum;
+use App\Models\Assignment;
 use App\Models\Ascertainment;
+use App\Models\AscertainmentType;
 use Illuminate\Http\JsonResponse;
 use App\Http\Controllers\Controller;
 use Essa\APIToolKit\Api\ApiResponse;
@@ -34,8 +36,17 @@ class AscertainmentController extends Controller
      */
     public function index(): AnonymousResourceCollection
     {
-        $ascertainments = Ascertainment::with('status:id,code,label', 'ascertainmentType:id,code,label')
-            ->useFilters()
+        $ascertainments = Ascertainment::with('status:id,code,label', 'ascertainmentType:id,code,label');
+
+        if(request()->has('assignment_id')){
+            $ascertainments = $ascertainments->where('assignment_id', Assignment::keyFromHashId(request()->assignment_id));
+        }
+
+        if(request()->has('ascertainment_type_id')){
+            $ascertainments = $ascertainments->where('ascertainment_type_id', AscertainmentType::keyFromHashId(request()->ascertainment_type_id));
+        }
+
+        $ascertainments = $ascertainments->useFilters()
             ->dynamicPaginate();
 
         return AscertainmentResource::collection($ascertainments);

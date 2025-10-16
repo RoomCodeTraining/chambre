@@ -4,17 +4,24 @@ namespace App\Http\Requests\Assignment;
 
 use App\Models\Client;
 use App\Models\Vehicle;
+use App\Models\ExpertiseType;
+use App\Models\AssignmentType;
+use App\Enums\AssignmentTypeEnum;
+use App\Models\DocumentTransmitted;
 use App\Models\InsurerRelationship;
 use App\Models\RepairerRelationship;
-use App\Models\AssignmentType;
-use App\Models\ExpertiseType;
-use App\Models\DocumentTransmitted;
 use Illuminate\Foundation\Http\FormRequest;
 
 class UpdateAssignmentRequest extends FormRequest
 {
     public function prepareForValidation()
     {
+        if($this->document_transmitted_id){
+            $document_transmitted_ids = [];
+            foreach ($this->document_transmitted_id as $document_transmitted_id) {
+                $document_transmitted_ids[] = DocumentTransmitted::keyFromHashId($document_transmitted_id);
+            }
+        }
         $this->merge([
             'client_id' => $this->client_id ? Client::keyFromHashId($this->client_id) : null,
             'vehicle_id' => $this->vehicle_id ? Vehicle::keyFromHashId($this->vehicle_id) : null,
@@ -23,7 +30,7 @@ class UpdateAssignmentRequest extends FormRequest
             'repairer_relationship_id' => $this->repairer_relationship_id ? RepairerRelationship::keyFromHashId($this->repairer_relationship_id) : null,
             'assignment_type_id' => $this->assignment_type_id ? AssignmentType::keyFromHashId($this->assignment_type_id) : null,
             'expertise_type_id' => $this->expertise_type_id ? ExpertiseType::keyFromHashId($this->expertise_type_id) : null,
-            'document_transmitted_id' => $this->document_transmitted_id ? DocumentTransmitted::keyFromHashId($this->document_transmitted_id) : null,
+            'document_transmitted_id.*' => $document_transmitted_ids ?? null,
         ]);
     }
 
@@ -33,7 +40,7 @@ class UpdateAssignmentRequest extends FormRequest
             'client_id' => 'nullable|exists:clients,id',
             'vehicle_id' => 'required|exists:vehicles,id',
             'vehicle_mileage' => 'nullable|numeric',
-            'insurer_relationship_id' => 'nullable|exists:insurer_relationships,id',
+            'insurer_relationship_id' => 'nullable|required_if:assignment_type_id,'.AssignmentType::where('code', AssignmentTypeEnum::INSURER)->first()->hashId.'|exists:insurer_relationships,id',
             'additional_insurer_relationship_id' => 'nullable|exists:insurer_relationships,id',
             'repairer_relationship_id' => 'nullable|exists:repairer_relationships,id',
             'assignment_type_id' => 'required|exists:assignment_types,id',

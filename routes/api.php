@@ -79,6 +79,14 @@ Route::prefix('v1')->middleware(LogsOutDisabledUser::class)->group(function () {
     Route::prefix('vehicle-relationships')->group(base_path('routes/api/v1.vehicle.relationships.routes.php'));
     Route::prefix('insurer-relationships')->group(base_path('routes/api/v1.insurer.relationships.routes.php'));
     Route::prefix('repairer-relationships')->group(base_path('routes/api/v1.repairer.relationships.routes.php'));
+    Route::prefix('assignment-messages')->group(base_path('routes/api/v1.assignment.messages.routes.php'));
     Route::prefix('dashboard')->group(base_path('routes/api/v1.dashboard.routes.php'));
     Route::group([], base_path('routes/api/v1.common.routes.php'));
 });
+/*===========================
+=           assignmentMessages           =
+=============================*/
+
+Route::apiResource('/assignmentMessages', \App\Http\Controllers\API\AssignmentMessageController::class);
+
+/*=====  End of assignmentMessages   ======*/

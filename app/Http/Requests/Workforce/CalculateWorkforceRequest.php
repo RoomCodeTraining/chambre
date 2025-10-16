@@ -11,10 +11,18 @@ class CalculateWorkforceRequest extends FormRequest
 {
     public function prepareForValidation()
     {
+        if($this->workforces){
+            $workforces = [];
+            foreach ($this->workforces as $workforce) {
+                $workforce['workforce_type_id'] = WorkforceType::keyFromHashId($workforce['workforce_type_id']);
+                $workforces[] = $workforce;
+            }
+        }
         $this->merge([
             'shock_id' => $this->shock_id ? Shock::keyFromHashId($this->shock_id) : null,
             'hourly_rate_id' => $this->hourly_rate_id ? HourlyRate::keyFromHashId($this->hourly_rate_id) : null,
             'paint_type_id' => $this->paint_type_id ? PaintType::keyFromHashId($this->paint_type_id) : null,
+            'workforces' => $workforces ?? null,
         ]);
     }
 

@@ -18,11 +18,15 @@ class AssignmentFilters extends QueryFilters
         'status_id',
         'vehicle_id',
         'insurer_id',
-        'broker_id',
         'repairer_id',
         'client_id',
         'claim_nature_id',
-        'status_id',
+        'work_sheet_established_by',
+        'repairer_validation_by',
+        'expert_validation_by',
+        'cancelled_by',
+        'closed_by',
+        'deleted_by'
     ];
 
     protected array $allowedIncludes = [
