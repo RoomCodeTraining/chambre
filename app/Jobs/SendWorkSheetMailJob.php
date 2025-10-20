@@ -26,6 +26,7 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Http;
 
 class SendWorkSheetMailJob implements ShouldQueue
 {
@@ -104,7 +105,10 @@ class SendWorkSheetMailJob implements ShouldQueue
 				$domain = $parts[1];
 				// Vérifie l'existence du domaine via DNS (MX ou A)
 				if (checkdnsrr($domain, 'MX') || checkdnsrr($domain, 'A')) {
-					$valid_emails[] = $email;
+					$response = Http::timeout(5)->get("http://".$domain);
+                    if ($response->successful()) {
+                        $valid_emails[] = $email;
+                    }
 				}
 			}
 		}

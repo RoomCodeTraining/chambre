@@ -2076,6 +2076,7 @@ class AssignmentController extends Controller
         $shocks = $request->get('shock_points');
 
         if(count($shocks) > 0){
+            $shockPosition = 1;
             foreach ($shocks as $data) {
                 $shock = Shock::create([
                     'assignment_id' => $assignment->id,
@@ -2084,12 +2085,14 @@ class AssignmentController extends Controller
                     'hourly_rate_id' => 1,
                     'with_tax' => 0,
                     'is_before_quote' => 1,
+                    'position' => $shockPosition,
                     'status_id' => Status::where('code', StatusEnum::ACTIVE)->first()->id,
                     'created_by' => auth()->user()->id,
                     'updated_by' => auth()->user()->id,
                 ]);
 
                 if(count($data['works']) > 0){
+                    $shockWorkPosition = 1;
                     foreach ($data['works'] as $item) {
                         $shockWork = ShockWork::create([
                             'shock_id' => $shock->id,
@@ -2110,13 +2113,16 @@ class AssignmentController extends Controller
                             'new_amount_excluding_tax' => 0,
                             'new_amount_tax' => 0,
                             'new_amount' => 0,
+                            'position' => $shockWorkPosition,
                             'status_id' => Status::where('code', StatusEnum::ACTIVE)->first()->id,
                             'created_by' => auth()->user()->id,
                             'updated_by' => auth()->user()->id,
                         ]);
+                        $shockWorkPosition++;
                     }
         
                 }
+                $shockPosition++;
             }
         }
 
