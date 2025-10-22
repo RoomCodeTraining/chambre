@@ -62,10 +62,10 @@ class GenerateExpertiseReportPdfJob implements ShouldQueue
     public function handle(): void
     {
 
-        // ✅ Supprimer la limite de temps (par défaut 30s)
+        // Supprimer la limite de temps (par défaut 30s)
         set_time_limit(300); // ou 0 pour illimité, mais déconseillé en prod
 
-        // ✅ Augmenter la limite mémoire (optionnel si ton PDF est lourd)
+        // Augmenter la limite mémoire (optionnel si ton PDF est lourd)
         ini_set('memory_limit', '2048M');
 
         $assignment = Assignment::with('generalState', 'claimNature', 'technicalConclusion', 'documentTransmitted', 'assignmentType', 'expertiseType', 'status', 'vehicle', 'insurer', 'additionalInsurer', 'repairer', 'client', 'directedBy')
@@ -125,7 +125,7 @@ class GenerateExpertiseReportPdfJob implements ShouldQueue
 
         // $cover_photo = Photo::where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->where('is_cover', 1)->where('assignment_id', $assignment->id)->first();
 
-        // ✅ Photo de couverture
+        // Photo de couverture
         $cover_photo = Photo::where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)
         ->where('is_cover', 1)
         ->where('assignment_id', $assignment->id)
@@ -135,7 +135,7 @@ class GenerateExpertiseReportPdfJob implements ShouldQueue
         ? image_to_base64(public_path("storage/photos/report/{$assignment->reference}/{$cover_photo->name}"))
         : null;
 
-        // ✅ Photos avant travaux
+        // Photos avant travaux
         $photos_before_works = [];
         $photos_before = Photo::where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)
                             ->where('is_cover', '!=', 1)
@@ -147,7 +147,7 @@ class GenerateExpertiseReportPdfJob implements ShouldQueue
             $photos_before_works[] = image_to_base64(public_path("storage/photos/report/{$assignment->reference}/{$photo->name}"));
         }
 
-        // ✅ Photos pendant travaux
+        // Photos pendant travaux
         $photos_during_works = [];
         $photos_during = Photo::where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)
                             ->where('is_cover', '!=', 1)
@@ -159,7 +159,7 @@ class GenerateExpertiseReportPdfJob implements ShouldQueue
             $photos_during_works[] = image_to_base64(public_path("storage/photos/report/{$assignment->reference}/{$photo->name}"));
         }
 
-        // ✅ Photos après travaux
+        // Photos après travaux
         $photos_after_works = [];
         $photos_after = Photo::where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)
                             ->where('is_cover', '!=', 1)

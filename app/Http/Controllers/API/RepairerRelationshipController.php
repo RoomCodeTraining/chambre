@@ -35,11 +35,15 @@ class RepairerRelationshipController extends Controller
     public function index(): AnonymousResourceCollection
     {
         $repairerRelationships = RepairerRelationship::
-                                with('repairer:id,code,name', 'expertFirm:id,code,name', 'status:id,code,label', 'createdBy:id,name')
-                                ->accessibleBy(auth()->user())
-                                ->latest('created_at')
-                                ->useFilters()
-                                ->dynamicPaginate();
+                                with('repairer:id,code,name', 'expertFirm:id,code,name', 'status:id,code,label', 'createdBy:id,name');
+        if(request()->has('expert_firm_id')){
+            $repairerRelationships = $repairerRelationships->where('expert_firm_id', Entity::keyFromHashId(request()->expert_firm_id));
+        }
+
+        $repairerRelationships = $repairerRelationships->accessibleBy(auth()->user())
+                                                      ->latest('created_at')
+                                                      ->useFilters()
+                                                      ->dynamicPaginate();
 
         return RepairerRelationshipResource::collection($repairerRelationships);
     }
