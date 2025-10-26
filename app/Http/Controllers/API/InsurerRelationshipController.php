@@ -35,7 +35,7 @@ class InsurerRelationshipController extends Controller
     public function index(): AnonymousResourceCollection
     {
         $insurerRelationships = InsurerRelationship::
-                                with('insurer:id,code,name', 'expertFirm:id,code,name', 'status:id,code,label', 'createdBy:id,name')
+                                with('insurer:id,code,name', 'expertFirm:id,code,name', 'status:id,code,label', 'createdBy:id,name');
 
         if(request()->has('expert_firm_id')){
             $insurerRelationships = $insurerRelationships->where('expert_firm_id', Entity::keyFromHashId(request()->expert_firm_id));
@@ -53,7 +53,7 @@ class InsurerRelationshipController extends Controller
                                                     ->latest('created_at')
                                                     ->useFilters()
                                                     ->dynamicPaginate();
-                                                    
+
         return InsurerRelationshipResource::collection($insurerRelationships);
     }
 
