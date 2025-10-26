@@ -1459,23 +1459,23 @@ class AssignmentController extends Controller
                 }
             }
         } else {
-            if($request->assignment_type_id == AssignmentType::where('code', AssignmentTypeEnum::INSURER)->first()->id){
+            if($request->assignment_type_id == AssignmentType::where('code', AssignmentTypeEnum::INSURER)->first()?->id){
                 $reference = $insurer->prefix.'00001'.'-'.$suffix;
             }
 
-            if(AssignmentTypeEnum::PARTICULAR && $request->assignment_type_id == AssignmentType::where('code', AssignmentTypeEnum::PARTICULAR)->first()->id){
+            if(AssignmentTypeEnum::PARTICULAR && $request->assignment_type_id == AssignmentType::where('code', AssignmentTypeEnum::PARTICULAR)->first()?->id){
                 $reference = AssignmentReferencePrefixEnum::PARTICULAR->value.'00001'.'-'.$suffix;
             }
     
-            if(AssignmentTypeEnum::TAXI->value && $request->assignment_type_id == AssignmentType::where('code', AssignmentTypeEnum::TAXI)->first()->id){
+            if(AssignmentTypeEnum::TAXI->value && $request->assignment_type_id == AssignmentType::where('code', AssignmentTypeEnum::TAXI)->first()?->id){
                 $reference = AssignmentReferencePrefixEnum::TAXI->value.'00001'.'-'.$suffix;
             }
     
-            if(AssignmentTypeEnum::EVALUATION->value && $request->assignment_type_id == AssignmentType::where('code', AssignmentTypeEnum::EVALUATION)->first()->id){
+            if(AssignmentTypeEnum::EVALUATION->value && $request->assignment_type_id == AssignmentType::where('code', AssignmentTypeEnum::EVALUATION)->first()?->id){
                 $reference = AssignmentReferencePrefixEnum::EVALUATION->value.'00001'.'-'.$suffix;
             }
 
-            if(AssignmentTypeEnum::AGAINST_EXPERTISE->value && $request->assignment_type_id == AssignmentType::where('code', AssignmentTypeEnum::AGAINST_EXPERTISE)->first()->id){
+            if(AssignmentTypeEnum::AGAINST_EXPERTISE->value && $request->assignment_type_id == AssignmentType::where('code', AssignmentTypeEnum::AGAINST_EXPERTISE)->first()?->id){
                 $reference = AssignmentReferencePrefixEnum::AGAINST_EXPERTISE->value.'00001'.'-'.$suffix;
             }
         }
@@ -1486,9 +1486,9 @@ class AssignmentController extends Controller
             'reference' => $reference,
             'expert_firm_id' => $expert_firm->id,
             'vehicle_id' => $request->vehicle_id ?? null,
-            'insurer_id' => $insurer->id ? $insurer->id : null,
-            'additional_insurer_id' => $additional_insurer->id ? $additional_insurer->id : null,
-            'repairer_id' => $repairer->id ? $repairer->id : null,
+            'insurer_id' => $insurer ? $insurer->id : null,
+            'additional_insurer_id' => $additional_insurer ? $additional_insurer->id : null,
+            'repairer_id' => $repairer ? $repairer->id : null,
             'client_id' => $request->client_id ?? null,
             'assignment_type_id' => $request->assignment_type_id,
             'expertise_type_id' => $request->expertise_type_id,
