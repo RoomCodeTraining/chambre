@@ -1384,7 +1384,7 @@ class AssignmentController extends Controller
         })->count() > 0){
             return $this->responseUnprocessable('Le numéro de sinistre existe déjà pour un dossier ouvert, réalisé, rédigé ou validé');
         }
-
+        
         $expert_firm = Entity::find(InsurerRelationship::where('id', $request->insurer_relationship_id)->first()->expert_firm_id);
         $insurer = Entity::find(InsurerRelationship::where('id', $request->insurer_relationship_id)->first()->insurer_id);
         $additional_insurer = Entity::find(InsurerRelationship::where('id', $request->additional_insurer_relationship_id)->first()->insurer_id);
