@@ -1401,10 +1401,10 @@ class AssignmentController extends Controller
         $suffix = $month.'-'.$year.'-'. strtoupper($expert_firm->suffix ?? '');
         $reference = 'D'.$today;
         
-        $last_assignment = Assignment::where('reference_updated_at', 'like', Carbon::now()->format('Y-m').'%')->where(['expert_firm_id' => $expert_firm->id, 'assignment_type_id' => $request->assignment_type_id]);
+        $last_assignment = Assignment::where('reference_updated_at', 'like', Carbon::now()->format('Y-m').'%')->where(['expert_firm_id' => $expert_firm?->id, 'assignment_type_id' => $request->assignment_type_id]);
         
         if(AssignmentTypeEnum::INSURER->value && $request->assignment_type_id == AssignmentType::where('code', AssignmentTypeEnum::INSURER)->first()?->id){
-            $last_assignment = $last_assignment->where(['insurer_id' => $insurer->id])->latest('reference_updated_at')->first();
+            $last_assignment = $last_assignment->where(['insurer_id' => $insurer?->id])->latest('reference_updated_at')->first();
         } else {
             $last_assignment = $last_assignment->latest('reference_updated_at')->first();
         }
