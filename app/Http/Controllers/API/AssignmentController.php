@@ -1385,10 +1385,10 @@ class AssignmentController extends Controller
             return $this->responseUnprocessable('Le numéro de sinistre existe déjà pour un dossier ouvert, réalisé, rédigé ou validé');
         }
         
-        $expert_firm = Entity::find(InsurerRelationship::where('id', $request->insurer_relationship_id)->first()->expert_firm_id);
-        $insurer = Entity::find(InsurerRelationship::where('id', $request->insurer_relationship_id)->first()->insurer_id);
-        $additional_insurer = Entity::find(InsurerRelationship::where('id', $request->additional_insurer_relationship_id)->first()->insurer_id);
-        $repairer = Entity::find(RepairerRelationship::where('id', $request->repairer_relationship_id)->first()->repairer_id);
+        $expert_firm = Entity::find(InsurerRelationship::where('id', $request->insurer_relationship_id)->first()?->expert_firm_id);
+        $insurer = Entity::find(InsurerRelationship::where('id', $request->insurer_relationship_id)->first()?->insurer_id);
+        $additional_insurer = Entity::find(InsurerRelationship::where('id', $request->additional_insurer_relationship_id)->first()?->insurer_id);
+        $repairer = Entity::find(RepairerRelationship::where('id', $request->repairer_relationship_id)->first()?->repairer_id);
 
         $now = Carbon::now();
         $annee = date("Y");
@@ -1403,7 +1403,7 @@ class AssignmentController extends Controller
         
         $last_assignment = Assignment::where('reference_updated_at', 'like', Carbon::now()->format('Y-m').'%')->where(['expert_firm_id' => $expert_firm->id, 'assignment_type_id' => $request->assignment_type_id]);
         
-        if(AssignmentTypeEnum::INSURER->value && $request->assignment_type_id == AssignmentType::where('code', AssignmentTypeEnum::INSURER)->first()->id){
+        if(AssignmentTypeEnum::INSURER->value && $request->assignment_type_id == AssignmentType::where('code', AssignmentTypeEnum::INSURER)->first()?->id){
             $last_assignment = $last_assignment->where(['insurer_id' => $insurer->id])->latest('reference_updated_at')->first();
         } else {
             $last_assignment = $last_assignment->latest('reference_updated_at')->first();
