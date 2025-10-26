@@ -27,9 +27,9 @@ class CreateAssignmentRequest extends FormRequest
             'expertise_type_id' => $this->expertise_type_id ? ExpertiseType::keyFromHashId($this->expertise_type_id) : null,
             'client_id' => $this->client_id ? Client::keyFromHashId($this->client_id) : null,
             'vehicle_id' => $this->vehicle_id ? Vehicle::keyFromHashId($this->vehicle_id) : null,
-            'insurer_relationship_id' => $this->insurer_relationship_id,
-            'additional_insurer_relationship_id' => $this->additional_insurer_relationship_id,
-            'repairer_relationship_id' => $this->repairer_relationship_id,
+            'insurer_relationship_id' => $this->insurer_relationship_id ? InsurerRelationship::keyFromHashId($this->insurer_relationship_id) : null,
+            'additional_insurer_relationship_id' => $this->additional_insurer_relationship_id ? InsurerRelationship::keyFromHashId($this->additional_insurer_relationship_id) : null,
+            'repairer_relationship_id' => $this->repairer_relationship_id ? RepairerRelationship::keyFromHashId($this->repairer_relationship_id) : null,
             'document_transmitted_id.*' => $document_transmitted_ids ?? null,
         ]);
     }
