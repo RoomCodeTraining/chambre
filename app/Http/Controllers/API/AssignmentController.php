@@ -1398,7 +1398,7 @@ class AssignmentController extends Controller
 
         $year = substr($annee, -2);
         $month = date("m");
-        $suffix = $month.'-'.$year.'-'. strtoupper($expert_firm->suffix);
+        $suffix = $month.'-'.$year.'-'. strtoupper($expert_firm->suffix ?? '');
         $reference = 'D'.$today;
         
         $last_assignment = Assignment::where('reference_updated_at', 'like', Carbon::now()->format('Y-m').'%')->where(['expert_firm_id' => $expert_firm->id, 'assignment_type_id' => $request->assignment_type_id]);
@@ -2304,7 +2304,7 @@ class AssignmentController extends Controller
 
                 $year = substr($annee, -2);
                 $month = date("m");
-                $suffix = $month.'-'.$year.'-'. strtoupper($expert_firm->suffix);
+                $suffix = $month.'-'.$year.'-'. strtoupper($expert_firm->suffix ?? '');
                 $reference = 'D'.$today;
                 
                 $last_assignment = Assignment::where('reference_updated_at', 'like', Carbon::now()->format('Y-m').'%')->where(['expert_firm_id' => $expert_firm->id, 'assignment_type_id' => $request->assignment_type_id]);
