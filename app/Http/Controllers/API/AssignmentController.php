@@ -1375,12 +1375,12 @@ class AssignmentController extends Controller
     {
         if($request->claim_number && Assignment::where('claim_number', $request->claim_number)->where(function($query){
             $query->where('status_id', Status::where('code', StatusEnum::OPENED)->first()->id)
-                ->orWhere('status_id', Status::where('code', StatusEnum::REALIZED)->first()->id)
-                ->orWhere('status_id', Status::where('code', StatusEnum::PENDING_FOR_REPAIRER_INVOICE)->first()->id)
-                ->orWhere('status_id', Status::where('code', StatusEnum::PENDING_FOR_REPAIRER_INVOICE_VALIDATION)->first()->id)
-                ->orWhere('status_id', Status::where('code', StatusEnum::IN_EDITING)->first()->id)
-                ->orWhere('status_id', Status::where('code', StatusEnum::EDITED)->first()->id)
-                ->orWhere('status_id', Status::where('code', StatusEnum::VALIDATED)->first()->id);
+                ->orWhere('status_id', Status::where('code', StatusEnum::REALIZED)->first()?->id)
+                ->orWhere('status_id', Status::where('code', StatusEnum::PENDING_FOR_REPAIRER_INVOICE)->first()?->id)
+                ->orWhere('status_id', Status::where('code', StatusEnum::PENDING_FOR_REPAIRER_INVOICE_VALIDATION)->first()?->id)
+                ->orWhere('status_id',  Status::where('code', StatusEnum::IN_EDITING)->first()?->id)
+                ->orWhere('status_id', Status::where('code', StatusEnum::EDITED)->first()?->id)
+                ->orWhere('status_id', Status::where('code', StatusEnum::VALIDATED)->first()?->id);
         })->count() > 0){
             return $this->responseUnprocessable('Le numéro de sinistre existe déjà pour un dossier ouvert, réalisé, rédigé ou validé');
         }
