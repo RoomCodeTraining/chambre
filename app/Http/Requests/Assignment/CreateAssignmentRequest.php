@@ -8,6 +8,8 @@ use App\Models\ExpertiseType;
 use App\Models\AssignmentType;
 use App\Enums\AssignmentTypeEnum;
 use App\Models\DocumentTransmitted;
+use App\Models\InsurerRelationship;
+use App\Models\RepairerRelationship;
 use Illuminate\Foundation\Http\FormRequest;
 
 class CreateAssignmentRequest extends FormRequest
