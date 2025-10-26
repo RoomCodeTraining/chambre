@@ -1371,7 +1371,7 @@ class AssignmentController extends Controller
      *
      * @authenticated
      */
-    public function store(Request $request): JsonResponse
+    public function store(CreateAssignmentRequest $request): JsonResponse
     {
         if($request->claim_number && Assignment::where('claim_number', $request->claim_number)->where(function($query){
             $query->where('status_id', Status::where('code', StatusEnum::OPENED)->first()->id)
