@@ -1374,7 +1374,7 @@ class AssignmentController extends Controller
     public function store(CreateAssignmentRequest $request): JsonResponse
     {
         if($request->claim_number && Assignment::where('claim_number', $request->claim_number)->where(function($query){
-            $query->where('status_id', Status::where('code', StatusEnum::OPENED)->first()->id)
+            $query->where('status_id', Status::where('code', StatusEnum::OPENED)->first()?->id)
                 ->orWhere('status_id', Status::where('code', StatusEnum::REALIZED)->first()?->id)
                 ->orWhere('status_id', Status::where('code', StatusEnum::PENDING_FOR_REPAIRER_INVOICE)->first()?->id)
                 ->orWhere('status_id', Status::where('code', StatusEnum::PENDING_FOR_REPAIRER_INVOICE_VALIDATION)->first()?->id)
@@ -2030,13 +2030,13 @@ class AssignmentController extends Controller
         // }
 
         if($request->claim_number && Assignment::where('claim_number', $request->claim_number)->where(function($query){
-            $query->where('status_id', Status::where('code', StatusEnum::OPENED)->first()->id)
-                ->orWhere('status_id', Status::where('code', StatusEnum::REALIZED)->first()->id)
-                ->orWhere('status_id', Status::where('code', StatusEnum::PENDING_FOR_REPAIRER_INVOICE)->first()->id)
-                ->orWhere('status_id', Status::where('code', StatusEnum::PENDING_FOR_REPAIRER_INVOICE_VALIDATION)->first()->id)
-                ->orWhere('status_id', Status::where('code', StatusEnum::IN_EDITING)->first()->id)
-                ->orWhere('status_id', Status::where('code', StatusEnum::EDITED)->first()->id)
-                ->orWhere('status_id', Status::where('code', StatusEnum::VALIDATED)->first()->id);
+            $query->where('status_id', Status::where('code', StatusEnum::OPENED)->first()?->id)
+                ->orWhere('status_id', Status::where('code', StatusEnum::REALIZED)->first()?->id)
+                ->orWhere('status_id', Status::where('code', StatusEnum::PENDING_FOR_REPAIRER_INVOICE)->first()?->id)
+                ->orWhere('status_id', Status::where('code', StatusEnum::PENDING_FOR_REPAIRER_INVOICE_VALIDATION)->first()?->id)
+                ->orWhere('status_id', Status::where('code', StatusEnum::IN_EDITING)->first()?->id)
+                ->orWhere('status_id', Status::where('code', StatusEnum::EDITED)->first()?->id)
+                ->orWhere('status_id', Status::where('code', StatusEnum::VALIDATED)->first()?->id);
         })->count() > 1){
             return $this->responseUnprocessable('Le numéro de sinistre existe déjà pour un dossier ouvert, réalisé, rédigé ou validé');
         }
@@ -2271,10 +2271,13 @@ class AssignmentController extends Controller
         $assignment = Assignment::findOrFail(Assignment::keyFromHashId($id));
 
         if($request->claim_number && Assignment::where('claim_number', $request->claim_number)->where(function($query){
-            $query->where('status_id', Status::where('code', StatusEnum::OPENED)->first()->id)
-                ->orWhere('status_id', Status::where('code', StatusEnum::REALIZED)->first()->id)
-                ->orWhere('status_id', Status::where('code', StatusEnum::EDITED)->first()->id)
-                ->orWhere('status_id', Status::where('code', StatusEnum::VALIDATED)->first()->id);
+            $query->where('status_id', Status::where('code', StatusEnum::OPENED)->first()??->id)
+                ->orWhere('status_id', Status::where('code', StatusEnum::REALIZED)->first()?->id)
+                ->orWhere('status_id', Status::where('code', StatusEnum::PENDING_FOR_REPAIRER_INVOICE)->first()?->id)
+                ->orWhere('status_id', Status::where('code', StatusEnum::PENDING_FOR_REPAIRER_INVOICE_VALIDATION)->first()?->id)
+                ->orWhere('status_id',  Status::where('code', StatusEnum::IN_EDITING)->first()?->id)
+                ->orWhere('status_id', Status::where('code', StatusEnum::EDITED)->first()?->id)
+                ->orWhere('status_id', Status::where('code', StatusEnum::VALIDATED)->first()?->id);
         })->count() > 1){
             return $this->responseUnprocessable('Le numéro de sinistre existe déjà pour un dossier ouvert, réalisé, rédigé ou validé');
         }
@@ -2282,10 +2285,10 @@ class AssignmentController extends Controller
         $auth_user = User::with('currentRole')->where('id', auth()->user()->id)->first();
         
         if($auth_user->currentRole->name == RoleEnum::SYSTEM_ADMIN->value || $auth_user->currentRole->name == RoleEnum::ADMIN->value || $auth_user->currentRole->name == RoleEnum::EXPERT_MANAGER->value || $auth_user->currentRole->name == RoleEnum::VALIDATOR->value || $auth_user->currentRole->name == RoleEnum::CEO->value){
-            $expert_firm = Entity::find(InsurerRelationship::where('id', $request->insurer_relationship_id)->first()->expert_firm_id);
-            $insurer = Entity::find(InsurerRelationship::where('id', $request->insurer_relationship_id)->first()->insurer_id);
-            $additional_insurer = Entity::find(InsurerRelationship::where('id', $request->additional_insurer_relationship_id)->first()->insurer_id);
-            $repairer = Entity::find(RepairerRelationship::where('id', $request->repairer_relationship_id)->first()->repairer_id);
+            $expert_firm = Entity::find(InsurerRelationship::where('id', $request->insurer_relationship_id)->first()?->expert_firm_id);
+            $insurer = Entity::find(InsurerRelationship::where('id', $request->insurer_relationship_id)->first()?->insurer_id);
+            $additional_insurer = Entity::find(InsurerRelationship::where('id', $request->additional_insurer_relationship_id)->first()?->insurer_id);
+            $repairer = Entity::find(RepairerRelationship::where('id', $request->repairer_relationship_id)->first()?->repairer_id);
 
             $vehicle_id = $request->vehicle_id;
             $assignment_type_id = $request->assignment_type_id;
@@ -2306,7 +2309,7 @@ class AssignmentController extends Controller
                 
                 $last_assignment = Assignment::where('reference_updated_at', 'like', Carbon::now()->format('Y-m').'%')->where(['expert_firm_id' => $expert_firm->id, 'assignment_type_id' => $request->assignment_type_id]);
                 
-                if(AssignmentTypeEnum::INSURER->value && $request->assignment_type_id == AssignmentType::where('code', AssignmentTypeEnum::INSURER)->first()->id){
+                if(AssignmentTypeEnum::INSURER->value && $request->assignment_type_id == AssignmentType::where('code', AssignmentTypeEnum::INSURER)->first()?->id){
                     $last_assignment = $last_assignment->where(['insurer_id' => $insurer->id])->latest('reference_updated_at')->first();
                 } else {
                     $last_assignment = $last_assignment->latest('reference_updated_at')->first();
@@ -2362,42 +2365,42 @@ class AssignmentController extends Controller
                         }
                     }
                 } else {
-                    if($request->assignment_type_id == AssignmentType::where('code', AssignmentTypeEnum::INSURER)->first()->id){
+                    if($request->assignment_type_id == AssignmentType::where('code', AssignmentTypeEnum::INSURER)->first()?->id){
                         $reference = $insurer->prefix.'00001'.'-'.$suffix;
                     }
 
-                    if(AssignmentTypeEnum::PARTICULAR && $request->assignment_type_id == AssignmentType::where('code', AssignmentTypeEnum::PARTICULAR)->first()->id){
+                    if(AssignmentTypeEnum::PARTICULAR && $request->assignment_type_id == AssignmentType::where('code', AssignmentTypeEnum::PARTICULAR)->first()?->id){
                         $reference = AssignmentReferencePrefixEnum::PARTICULAR->value.'00001'.'-'.$suffix;
                     }
 
-                    if(AssignmentTypeEnum::TAXI->value && $request->assignment_type_id == AssignmentType::where('code', AssignmentTypeEnum::TAXI)->first()->id){
+                    if(AssignmentTypeEnum::TAXI->value && $request->assignment_type_id == AssignmentType::where('code', AssignmentTypeEnum::TAXI)->first()?->id){
                         $reference = AssignmentReferencePrefixEnum::TAXI->value.'00001'.'-'.$suffix;
                     }
             
-                    if(AssignmentTypeEnum::EVALUATION->value && $request->assignment_type_id == AssignmentType::where('code', AssignmentTypeEnum::EVALUATION)->first()->id){
+                    if(AssignmentTypeEnum::EVALUATION->value && $request->assignment_type_id == AssignmentType::where('code', AssignmentTypeEnum::EVALUATION)->first()?->id){
                         $reference = AssignmentReferencePrefixEnum::EVALUATION->value.'00001'.'-'.$suffix;
                     }
 
-                    if(AssignmentTypeEnum::AGAINST_EXPERTISE->value && $request->assignment_type_id == AssignmentType::where('code', AssignmentTypeEnum::AGAINST_EXPERTISE)->first()->id){
+                    if(AssignmentTypeEnum::AGAINST_EXPERTISE->value && $request->assignment_type_id == AssignmentType::where('code', AssignmentTypeEnum::AGAINST_EXPERTISE)->first()?->id){
                         $reference = AssignmentReferencePrefixEnum::AGAINST_EXPERTISE->value.'00001'.'-'.$suffix;
                     }
                 }
     
-                if($request->assignment_type_id == $assignment->assignment_type_id && $request->assignment_type_id != AssignmentType::where('code', AssignmentTypeEnum::INSURER)->first()->id){
+                if($request->assignment_type_id == $assignment->assignment_type_id && $request->assignment_type_id != AssignmentType::where('code', AssignmentTypeEnum::INSURER)->first()?->id){
                     $reference = $assignment->reference;
                 }
             }
         }
         
-        if($assignment->status_id != Status::where('code', StatusEnum::VALIDATED)->first()->id && $assignment->status_id != Status::where('code', StatusEnum::PAID)->first()->id){
+        if($assignment->status_id != Status::where('code', StatusEnum::VALIDATED)->first()?->id && $assignment->status_id != Status::where('code', StatusEnum::PAID)->first()?->id){
             $oldReference = $assignment->reference;
             $assignment->update([
                 'reference' => $reference ?? $assignment->reference,
                 'expert_firm_id' => $expert_firm->id ? $expert_firm->id : null,
-                'insurer_id' => $insurer->id ? $insurer->id : null,
-                'additional_insurer_id' => $additional_insurer->id ? $additional_insurer->id : null,
+                'insurer_id' => $insurer ? $insurer->id : null,
+                'additional_insurer_id' => $additional_insurer ? $additional_insurer->id : null,
                 'vehicle_id' => $vehicle_id ?? $assignment->vehicle_id,
-                'repairer_id' => $repairer->id ? $repairer->id : null,
+                'repairer_id' => $repairer ? $repairer->id : null,
                 'client_id' => $request->client_id ?? $assignment->client_id,
                 'assignment_type_id' => $assignment_type_id ?? $assignment->assignment_type_id,
                 // 'document_transmitted_id' => $request->document_transmitted_id ? json_encode($request->document_transmitted_id) : json_encode($assignment->document_transmitted_id),
@@ -2463,7 +2466,7 @@ class AssignmentController extends Controller
     {
         $assignment = Assignment::findOrFail(Assignment::keyFromHashId($id));
 
-        if($assignment->status_id != Status::where('code', StatusEnum::VALIDATED)->first()->id && $assignment->status_id != Status::where('code', StatusEnum::PAID)->first()->id){
+        if($assignment->status_id != Status::where('code', StatusEnum::VALIDATED)->first()?->id && $assignment->status_id != Status::where('code', StatusEnum::PAID)->first()?->id){
             $assignment->update([
                 'vehicle_mileage' => $request->mileage ?? $assignment->vehicle_mileage,
                 'expertise_date' => $request->expertise_date ?? $assignment->expertise_date,
@@ -2498,7 +2501,7 @@ class AssignmentController extends Controller
     {
         $assignment = Assignment::findOrFail(Assignment::keyFromHashId($id));
 
-        if($assignment->status_id != Status::where('code', StatusEnum::VALIDATED)->first()->id && $assignment->status_id != Status::where('code', StatusEnum::PAID)->first()->id){
+        if($assignment->status_id != Status::where('code', StatusEnum::VALIDATED)->first()?->id && $assignment->status_id != Status::where('code', StatusEnum::PAID)->first()?->id){
             $vehicle = Vehicle::with('vehicleGenre', 'vehicleEnergy')->findOrFail($assignment->vehicle_id);
 
             $vehicle->update([
