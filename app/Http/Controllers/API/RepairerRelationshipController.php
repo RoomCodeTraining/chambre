@@ -40,6 +40,14 @@ class RepairerRelationshipController extends Controller
             $repairerRelationships = $repairerRelationships->where('expert_firm_id', Entity::keyFromHashId(request()->expert_firm_id));
         }
 
+        if(request()->has('repairer_id')){
+            $repairerRelationships = $repairerRelationships->where('repairer_id', Entity::keyFromHashId(request()->repairer_id));
+        }
+
+        if(request()->has('status_id')){
+            $repairerRelationships = $repairerRelationships->where('status_id', Status::keyFromHashId(request()->status_id));
+        }
+
         $repairerRelationships = $repairerRelationships->accessibleBy(auth()->user())
                                                       ->latest('created_at')
                                                       ->useFilters()

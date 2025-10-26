@@ -36,11 +36,24 @@ class InsurerRelationshipController extends Controller
     {
         $insurerRelationships = InsurerRelationship::
                                 with('insurer:id,code,name', 'expertFirm:id,code,name', 'status:id,code,label', 'createdBy:id,name')
-                                ->accessibleBy(auth()->user())
-                                ->latest('created_at')
-                                ->useFilters()
-                                ->dynamicPaginate();
 
+        if(request()->has('expert_firm_id')){
+            $insurerRelationships = $insurerRelationships->where('expert_firm_id', Entity::keyFromHashId(request()->expert_firm_id));
+        }
+
+        if(request()->has('insurer_id')){
+            $insurerRelationships = $insurerRelationships->where('insurer_id', Entity::keyFromHashId(request()->insurer_id));
+        }
+
+        if(request()->has('status_id')){
+            $insurerRelationships = $insurerRelationships->where('status_id', Status::keyFromHashId(request()->status_id));
+        }
+
+        $insurerRelationships = $insurerRelationships->accessibleBy(auth()->user())
+                                                    ->latest('created_at')
+                                                    ->useFilters()
+                                                    ->dynamicPaginate();
+                                                    
         return InsurerRelationshipResource::collection($insurerRelationships);
     }
 

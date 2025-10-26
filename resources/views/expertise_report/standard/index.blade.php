@@ -248,9 +248,12 @@
                                     <th style="border: 1px solid; font-size: 10px;">NATURE DU SINISTRE : <br> <span style="font-size: 10px;">{{ mb_strtoupper($assignment->claimNature->label ?? '')}}</span></th>
                                     <th style="border: 1px solid; font-size: 10px;" colspan="2">POINTS DE CHOCS : <br> 
                                         <span style="font-size: 10px;">
-                                        @foreach($shocks as $shock)
-                                            {{ mb_strtoupper($shock?->shockPoint?->label ?? '')}} / 
-                                        @endforeach
+                                            @if($shocks->count() > 0)
+                                                @foreach($shocks as $index => $shock)
+                                                    {{ mb_strtoupper($shock?->shockPoint?->label ?? '') }}
+                                                    @if($index + 1 < $shocks->count()) / @endif
+                                                @endforeach
+                                            @endif
                                         </span>
                                     </th>
                                 </tr>
@@ -739,6 +742,14 @@
                 <tr style="border: 1px solid; font-size: 12px; text-align: left;">
                     <th style="border: 1px solid; font-size: 12px;">
                         AUTRES CHARGES
+                        @if($other_costs->count() > 0)
+                            (
+                            @foreach($other_costs as $index => $other_cost)
+                                {{ mb_strtoupper($other_cost?->otherCostType?->label ?? '') }}
+                                @if($index + 1 < $other_costs->count()), @endif
+                            @endforeach
+                            )
+                        @endif
                     </th>
                     <th style="border: 1px solid; font-size: 12px;">
                         <span class="text-danger">{{number_format($assignment?->other_cost_amount ?? 0, 0, ',', ' ')}} FCFA</span>
