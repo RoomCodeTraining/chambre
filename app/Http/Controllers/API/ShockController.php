@@ -101,7 +101,7 @@ class ShockController extends Controller
                     'shock_point_id' => $data['shock_point_id'],
                     'paint_type_id' => null,
                     'hourly_rate_id' => null,
-                    'with_tax' => $data['with_tax'],
+                    'with_tax' => null,
                     'position' => $shock_position,
                     'is_before_quote' => $is_validated ? 0 : 1,
                     'is_validated' => 0,
