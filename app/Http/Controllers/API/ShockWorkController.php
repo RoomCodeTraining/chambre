@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use App\Models\Shock;
+use App\Models\Entity;
 use App\Models\Status;
 use App\Models\Supply;
 use App\Models\Vehicle;
