@@ -104,7 +104,8 @@ class ShockController extends Controller
                     'shock_point_id' => $data['shock_point_id'],
                     'paint_type_id' => $data['paint_type_id'] ?? null,
                     'hourly_rate_id' => $data['hourly_rate_id'] ?? null,
-                    'with_tax' => ( ?? false,
+                    'with_tax' => (
+                    $data['with_tax'] ?? false),
                     'position' => $shock_position,
                     'is_before_quote' => $is_validated ? 0 : 1,
                     'is_validated' => 0,
@@ -211,7 +212,7 @@ class ShockController extends Controller
                         }
 
                         $amount_excluding_tax = ceil($total - ($total * $item['discount'] / 100));
-                        if((( ?? false) == false){
+                        if(!($data['with_tax'] ?? false)){
                             $amount_tax = 0;
                         } else {
                             $amount_tax = ceil((config('services.settings.tax_rate') * $amount_excluding_tax) / 100);
