@@ -11,6 +11,7 @@ use App\Models\ShockWork;
 use App\Models\Workforce;
 use App\Models\Assignment;
 use App\Models\HourlyRate;
+use App\Models\ShockPoint;
 use App\Enums\PaintTypeEnum;
 use Illuminate\Http\Request;
 use App\Enums\HourlyRateEnum;
@@ -68,7 +69,7 @@ class ShockController extends Controller
         ->join('assignments', 'shocks.assignment_id', '=', 'assignments.id')
         ->accessibleBy(auth()->user())
         ->useFilters()
-        ->orderBy('id', 'asc')
+        ->orderBy('shocks.id', 'asc')
         ->dynamicPaginate();
 
         return ShockResource::collection($shocks);
@@ -393,7 +394,7 @@ class ShockController extends Controller
             foreach ($shocks as $data) {
                 $shock = Shock::create([
                     'assignment_id' => $assignment->id,
-                    'shock_point_id' => $data['shock_point_id'],
+                    'shock_point_id' => ShockPoint::keyFromHashId($data['shock_point_id']),
                     'paint_type_id' => PaintType::where('code', PaintTypeEnum::ORDINARY)->first()->id,
                     'hourly_rate_id' => HourlyRate::where('value', HourlyRateEnum::ONE)->first()->id,
                     'with_tax' => ($data['with_tax'] ?? false),

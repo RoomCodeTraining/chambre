@@ -17,14 +17,14 @@ class CreateShockRequest extends FormRequest
         if($this->shocks){
             $shocks = [];
             foreach ($this->shocks as $shock) {
-                $shock['shock_point_id'] = $shock['shock_point_id'] ?? ShockPoint::keyFromHashId($shock['shock_point_id']);
-                $shock['paint_type_id'] = ($shock['paint_type_id'] ?? null) ? PaintType::keyFromHashId($shock['paint_type_id']) : null;
-                $shock['hourly_rate_id'] = ($shock['hourly_rate_id'] ?? null) ? HourlyRate::keyFromHashId($shock['hourly_rate_id']) : null;
+                $shock['shock_point_id'] = isset($shock['shock_point_id']) && $shock['shock_point_id'] ? ShockPoint::keyFromHashId($shock['shock_point_id']) : null;
+                $shock['paint_type_id'] = isset($shock['paint_type_id']) && $shock['paint_type_id'] ? PaintType::keyFromHashId($shock['paint_type_id']) : null;
+                $shock['hourly_rate_id'] = isset($shock['hourly_rate_id']) && $shock['hourly_rate_id'] ? HourlyRate::keyFromHashId($shock['hourly_rate_id']) : null;
                 
                 $shock_works = [];
                 if (isset($shock['shock_works']) && is_array($shock['shock_works'])) {
                     foreach ($shock['shock_works'] as $shock_work) {
-                        $shock_work['supply_id'] = ($shock_work['supply_id'] ?? null) ? Supply::keyFromHashId($shock_work['supply_id']) : null;
+                        $shock_work['supply_id'] = isset($shock_work['supply_id']) && $shock_work['supply_id'] ? Supply::keyFromHashId($shock_work['supply_id']) : null;
                         $shock_works[] = $shock_work;
                     }
                 }
@@ -33,7 +33,7 @@ class CreateShockRequest extends FormRequest
                 $workforces = [];
                 if (isset($shock['workforces']) && is_array($shock['workforces'])) {
                     foreach ($shock['workforces'] as $workforce) {
-                        $workforce['workforce_type_id'] = ($workforce['workforce_type_id'] ?? null) ? WorkforceType::keyFromHashId($workforce['workforce_type_id']) : null;
+                        $workforce['workforce_type_id'] = isset($workforce['workforce_type_id']) && $workforce['workforce_type_id'] ? WorkforceType::keyFromHashId($workforce['workforce_type_id']) : null;
                         $workforces[] = $workforce;
                     }
                 }
@@ -76,6 +76,15 @@ class CreateShockRequest extends FormRequest
             'shocks.*.workforces.*.nb_hours' => 'required|numeric',
             'shocks.*.workforces.*.discount' => 'required|numeric',
             'shocks.*.workforces.*.all_paint' => 'nullable|boolean',
+        ];
+    }
+
+    public function messages(): array
+    {
+        return [
+            'shocks.*.shock_point_id.unique' => 'Le point d\'impact est déjà utilisé pour cette affectation.',
+            'shocks.*.shock_point_id.exists' => 'Le point d\'impact est invalide.',
+            'shocks.*.shock_point_id.required' => 'Le point d\'impact est requis.',
         ];
     }
 }
