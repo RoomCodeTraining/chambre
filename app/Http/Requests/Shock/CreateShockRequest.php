@@ -17,7 +17,7 @@ class CreateShockRequest extends FormRequest
         if($this->shocks){
             $shocks = [];
             foreach ($this->shocks as $shock) {
-                $shock['shock_point_id'] = ($shock['shock_point_id'] ?? null) ? ShockPoint::keyFromHashId($shock['shock_point_id']) : null;
+                $shock['shock_point_id'] = $shock['shock_point_id'] ?? ShockPoint::keyFromHashId($shock['shock_point_id']);
                 $shock['paint_type_id'] = ($shock['paint_type_id'] ?? null) ? PaintType::keyFromHashId($shock['paint_type_id']) : null;
                 $shock['hourly_rate_id'] = ($shock['hourly_rate_id'] ?? null) ? HourlyRate::keyFromHashId($shock['hourly_rate_id']) : null;
                 
