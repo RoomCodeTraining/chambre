@@ -16,6 +16,7 @@ use App\Models\Receipt;
 use App\Models\Vehicle;
 use App\Enums\StatusEnum;
 use App\Models\OtherCost;
+use App\Models\PaintType;
 use App\Models\PhotoType;
 use App\Models\ShockWork;
 use App\Models\Workforce;
@@ -25,11 +26,13 @@ use App\Models\HourlyRate;
 use App\Models\ShockPoint;
 use App\Models\VehicleAge;
 use App\Models\ClaimNature;
+use App\Enums\PaintTypeEnum;
 use App\Enums\PhotoTypeEnum;
 use App\Models\VehicleGenre;
 use Illuminate\Http\Request;
 use App\Enums\EntityCodeEnum;
 use App\Enums\EntityTypeEnum;
+use App\Enums\HourlyRateEnum;
 use App\Models\Ascertainment;
 use App\Models\ExpertiseType;
 use App\Models\OtherCostType;
@@ -41,6 +44,7 @@ use App\Enums\ExpertiseTypeEnum;
 use App\Enums\WorkforceTypeEnum;
 use App\Models\AssignmentExpert;
 use App\Enums\AssignmentTypeEnum;
+use App\Models\AscertainmentType;
 use App\Models\DepreciationTable;
 use App\Models\PaintProductPrice;
 use Illuminate\Http\JsonResponse;
@@ -1626,7 +1630,7 @@ class AssignmentController extends Controller
             foreach ($ascertainments as $data) {
                 $ascertainment = Ascertainment::create([
                     'assignment_id' => $assignment->id,
-                    'ascertainment_type_id' => $data['ascertainment_type_id'],
+                    'ascertainment_type_id' => AscertainmentType::keyFromHashId($data['ascertainment_type_id']),
                     'very_good' => $data['very_good'],
                     'good' => $data['good'],
                     'acceptable' => $data['acceptable'],
@@ -1651,9 +1655,9 @@ class AssignmentController extends Controller
                 } else {
                     $shock = Shock::create([
                         'assignment_id' => $assignment->id,
-                        'shock_point_id' => $data['shock_point_id'],
-                        'paint_type_id' => $data['paint_type_id'],
-                        'hourly_rate_id' => $data['hourly_rate_id'],
+                        'shock_point_id' => ShockPoint::keyFromHashId($data['shock_point_id']),
+                        'paint_type_id' => PaintType::keyFromHashId($data['paint_type_id']),
+                        'hourly_rate_id' => HourlyRate::keyFromHashId($data['hourly_rate_id']),
                         'with_tax' => $data['with_tax'],
                         'status_id' => Status::where('code', StatusEnum::ACTIVE)->first()->id,
                         'created_by' => auth()->user()->id,
@@ -1795,7 +1799,7 @@ class AssignmentController extends Controller
             
                         $workforce = Workforce::create([
                             'shock_id' => $shock->id,
-                            'workforce_type_id' => $item['workforce_type_id'],
+                            'workforce_type_id' => WorkforceType::keyFromHashId($item['workforce_type_id']),
                             'nb_hours' => $item['nb_hours'],
                             'work_fee' => ceil(HourlyRate::where(['id' => $data['hourly_rate_id'], 'status_id' => Status::where('code', StatusEnum::ACTIVE)->first()->id])->first()->value),
                             'with_tax' => $data['with_tax'],
@@ -1898,7 +1902,7 @@ class AssignmentController extends Controller
             foreach ($other_costs as $data) {
                 $other_cost = OtherCost::create([
                     'assignment_id' => $assignment->id,
-                    'other_cost_type_id' => $data['other_cost_type_id'],
+                    'other_cost_type_id' => OtherCostType::keyFromHashId($data['other_cost_type_id']),
                     'amount_excluding_tax' => ceil($data['amount']),
                     'amount_tax' => 0,
                     'amount' => ceil($data['amount']),
@@ -2085,9 +2089,9 @@ class AssignmentController extends Controller
             foreach ($shocks as $data) {
                 $shock = Shock::create([
                     'assignment_id' => $assignment->id,
-                    'shock_point_id' => $data['shock_point_id'],
-                    'paint_type_id' => 1,
-                    'hourly_rate_id' => 1,
+                    'shock_point_id' => ShockPoint::keyFromHashId($data['shock_point_id']),
+                    'paint_type_id' => PaintType::where('code', PaintTypeEnum::ORDINARY)->first()->id,
+                    'hourly_rate_id' => HourlyRate::where('value', HourlyRateEnum::ONE)->first()->id,
                     'with_tax' => 0,
                     'is_before_quote' => 1,
                     'position' => $shockPosition,

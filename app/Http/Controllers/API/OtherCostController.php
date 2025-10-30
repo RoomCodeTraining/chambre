@@ -8,6 +8,7 @@ use App\Models\OtherCost;
 use App\Models\Assignment;
 use App\Models\HourlyRate;
 use App\Models\ExpertiseType;
+use App\Models\OtherCostType;
 use App\Models\PaintingPrice;
 use App\Models\WorkforceType;
 use App\Models\AssignmentType;
@@ -322,7 +323,7 @@ class OtherCostController extends Controller
             foreach ($other_costs as $data) {
                 $other_cost = OtherCost::create([
                     'assignment_id' => $assignment->id,
-                    'other_cost_type_id' => $data['other_cost_type_id'],
+                    'other_cost_type_id' => OtherCostType::keyFromHashId($data['other_cost_type_id']),
                     'amount_excluding_tax' => $data['amount'],
                     'amount_tax' => 0,
                     'amount' => $data['amount'],
