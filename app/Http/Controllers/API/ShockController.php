@@ -99,8 +99,8 @@ class ShockController extends Controller
                 $shock = Shock::create([
                     'assignment_id' => $assignment->id,
                     'shock_point_id' => $data['shock_point_id'],
-                    'paint_type_id' => $data['paint_type_id'] ?? null,
-                    'hourly_rate_id' => $data['hourly_rate_id'] ?? null,
+                    'paint_type_id' => null,
+                    'hourly_rate_id' => null,
                     'with_tax' => $data['with_tax'],
                     'position' => $shock_position,
                     'is_before_quote' => $is_validated ? 0 : 1,
