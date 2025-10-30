@@ -57,7 +57,8 @@ class ShockWorkController extends Controller
      */
     public function index(): AnonymousResourceCollection
     {
-        $shockWorks = ShockWork::with('supply', 'status')
+        $shockWorks = ShockWork::select('shock_works.*')
+                    ->with('supply', 'status')
                     ->join('shocks', 'shock_works.shock_id', '=', 'shocks.id')
                     ->join('assignments', 'shocks.assignment_id', '=', 'assignments.id')
                     ->accessibleBy(auth()->user())
@@ -75,7 +76,8 @@ class ShockWorkController extends Controller
      */
     public function calculate(CalculateShockWorkRequest $request): JsonResponse
     {
-        $shock = Shock::join('assignments', 'shocks.assignment_id', '=', 'assignments.id')
+        $shock = Shock::select('shocks.*')
+            ->join('assignments', 'shocks.assignment_id', '=', 'assignments.id')
             ->accessibleBy(auth()->user())
             ->where('shocks.id', $request->shock_id)
             ->firstOrFail();
@@ -184,7 +186,8 @@ class ShockWorkController extends Controller
      */
     public function store(CreateShockWorkRequest $request): JsonResponse
     {
-        $shock = Shock::join('assignments', 'shocks.assignment_id', '=', 'assignments.id')
+        $shock = Shock::select('shocks.*')
+            ->join('assignments', 'shocks.assignment_id', '=', 'assignments.id')
             ->accessibleBy(auth()->user())
             ->where('shocks.id', $request->shock_id)
             ->firstOrFail();
