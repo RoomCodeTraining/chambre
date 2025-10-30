@@ -50,7 +50,8 @@ class OtherCostController extends Controller
      */
     public function index(): AnonymousResourceCollection
     {
-        $otherCosts = OtherCost::with('otherCostType')
+        $otherCosts = OtherCost::select('other_costs.*')
+                        ->with('otherCostType')
                         ->join('assignments', 'other_costs.assignment_id', '=', 'assignments.id')
                         ->accessibleBy(auth()->user())
                         ->latest('created_at')
@@ -346,7 +347,8 @@ class OtherCostController extends Controller
      */
     public function show($id): JsonResponse
     {
-        $otherCost = OtherCost::join('assignments', 'other_costs.assignment_id', '=', 'assignments.id')
+        $otherCost = OtherCost::select('other_costs.*')
+            ->join('assignments', 'other_costs.assignment_id', '=', 'assignments.id')
             ->accessibleBy(auth()->user())
             ->where('other_costs.id', OtherCost::keyFromHashId($id))
             ->firstOrFail();
@@ -361,7 +363,8 @@ class OtherCostController extends Controller
      */
     public function update(UpdateOtherCostRequest $request, $id): JsonResponse
     {
-        $otherCost = OtherCost::join('assignments', 'other_costs.assignment_id', '=', 'assignments.id')
+        $otherCost = OtherCost::select('other_costs.*')
+            ->join('assignments', 'other_costs.assignment_id', '=', 'assignments.id')
             ->accessibleBy(auth()->user())
             ->where('other_costs.id', OtherCost::keyFromHashId($id))
             ->firstOrFail();
@@ -421,7 +424,8 @@ class OtherCostController extends Controller
      */
     public function destroy($id): JsonResponse
     {
-        $otherCost = OtherCost::join('assignments', 'other_costs.assignment_id', '=', 'assignments.id')
+        $otherCost = OtherCost::select('other_costs.*')
+            ->join('assignments', 'other_costs.assignment_id', '=', 'assignments.id')
             ->accessibleBy(auth()->user())
             ->where('other_costs.id', OtherCost::keyFromHashId($id))
             ->firstOrFail();

@@ -41,7 +41,8 @@ class PhotoController extends Controller
      */
     public function index(): AnonymousResourceCollection
     {
-        $photos = Photo::with('assignment:id,reference', 'assignmentRequest:id,reference', 'photoType:id,code,label', 'status:id,code,label')
+        $photos = Photo::select('photos.*')
+                        ->with('assignment:id,reference', 'assignmentRequest:id,reference', 'photoType:id,code,label', 'status:id,code,label')
                         ->join('assignments', 'photos.assignment_id', '=', 'assignments.id')
                         ->accessibleBy(auth()->user())
                         ->latest('photos.created_at')
@@ -161,7 +162,8 @@ class PhotoController extends Controller
      */
     public function show($id): JsonResponse
     {
-        $photo = Photo::with('assignment:id,reference', 'assignmentRequest:id,reference', 'photoType:id,code,label', 'status:id,code,label')
+        $photo = Photo::select('photos.*')
+            ->with('assignment:id,reference', 'assignmentRequest:id,reference', 'photoType:id,code,label', 'status:id,code,label')
             ->join('assignments', 'photos.assignment_id', '=', 'assignments.id')
             ->accessibleBy(auth()->user())
             ->where('photos.id', Photo::keyFromHashId($id))
@@ -177,7 +179,8 @@ class PhotoController extends Controller
      */
     public function update(UpdatePhotoRequest $request, $id): JsonResponse
     {
-        $photo = Photo::with('assignment')
+        $photo = Photo::select('photos.*')
+            ->with('assignment')
             ->join('assignments', 'photos.assignment_id', '=', 'assignments.id')
             ->accessibleBy(auth()->user())
             ->where('photos.id', Photo::keyFromHashId($id))
@@ -228,7 +231,8 @@ class PhotoController extends Controller
      */
     public function makeCover($id): JsonResponse
     {
-        $photo = Photo::with('assignment')
+        $photo = Photo::select('photos.*')
+            ->with('assignment')
             ->join('assignments', 'photos.assignment_id', '=', 'assignments.id')
             ->accessibleBy(auth()->user())
             ->where('photos.id', Photo::keyFromHashId($id))
@@ -258,7 +262,8 @@ class PhotoController extends Controller
      */
     public function destroy($id): JsonResponse
     {
-        $photo = Photo::with('assignment')
+        $photo = Photo::select('photos.*')
+            ->with('assignment')
             ->join('assignments', 'photos.assignment_id', '=', 'assignments.id')
             ->accessibleBy(auth()->user())
             ->where('photos.id', Photo::keyFromHashId($id))

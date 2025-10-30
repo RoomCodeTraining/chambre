@@ -187,14 +187,15 @@ class ShockWorkController extends Controller
     public function store(CreateShockWorkRequest $request): JsonResponse
     {
         $shock = Shock::select('shocks.*')
+            ->with('assignment')
+            ->join('shocks', 'shock_works.shock_id', '=', 'shocks.id')
             ->join('assignments', 'shocks.assignment_id', '=', 'assignments.id')
             ->accessibleBy(auth()->user())
             ->where('shocks.id', $request->shock_id)
             ->firstOrFail();
 
-        $assignment = Assignment::findOrFail($shock->assignment_id);
 
-        if($assignment->status_id == Status::where('code', StatusEnum::VALIDATED)->first()->id || $assignment->status_id == Status::where('code', StatusEnum::PAID)->first()->id){
+        if($shock->assignment->status_id == Status::where('code', StatusEnum::VALIDATED)->first()->id || $shock->assignment->status_id == Status::where('code', StatusEnum::PAID)->first()->id){
             return $this->responseUnprocessable("Impossible d'ajouter un travail de choc", null);
         }
 
@@ -293,7 +294,8 @@ class ShockWorkController extends Controller
      */
     public function show($id): JsonResponse
     {
-        $shockWork = ShockWork::join('shocks', 'shock_works.shock_id', '=', 'shocks.id')
+        $shockWork = ShockWork::select('shock_works.*')
+            ->join('shocks', 'shock_works.shock_id', '=', 'shocks.id')
             ->join('assignments', 'shocks.assignment_id', '=', 'assignments.id')
             ->accessibleBy(auth()->user())
             ->where('shock_works.id', ShockWork::keyFromHashId($id))
@@ -309,7 +311,8 @@ class ShockWorkController extends Controller
      */
     public function update(UpdateShockWorkRequest $request, $id): JsonResponse
     {
-        $shockWork = ShockWork::with('shock')
+        $shockWork = ShockWork::select('shock_works.*')
+            ->with('shock')
             ->join('shocks', 'shock_works.shock_id', '=', 'shocks.id')
             ->join('assignments', 'shocks.assignment_id', '=', 'assignments.id')
             ->accessibleBy(auth()->user())
@@ -540,7 +543,8 @@ class ShockWorkController extends Controller
      */
     public function destroy($id): JsonResponse
     {
-        $shockWork = ShockWork::with('shock')
+        $shockWork = ShockWork::select('shock_works.*')
+            ->with('shock')
             ->join('shocks', 'shock_works.shock_id', '=', 'shocks.id')
             ->join('assignments', 'shocks.assignment_id', '=', 'assignments.id')
             ->accessibleBy(auth()->user())

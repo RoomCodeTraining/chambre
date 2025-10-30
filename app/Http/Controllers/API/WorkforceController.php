@@ -53,7 +53,8 @@ class WorkforceController extends Controller
      */
     public function index(): AnonymousResourceCollection
     {
-        $workforces = Workforce::with('workforceType', 'status')
+        $workforces = Workforce::select('workforces.*')
+                    ->with('workforceType', 'status')
                     ->join('assignments', 'workforces.assignment_id', '=', 'assignments.id')
                     ->accessibleBy(auth()->user())
                     ->useFilters()
@@ -280,7 +281,8 @@ class WorkforceController extends Controller
      */
     public function store(CreateWorkforceRequest $request): JsonResponse
     {
-        $shock = Shock::with('assignment')
+        $shock = Shock::Shock::select('shocks.*')
+            ->with('assignment')
             ->join('shocks', 'workforces.shock_id', '=', 'shocks.id')
             ->join('assignments', 'shocks.assignment_id', '=', 'assignments.id')
             ->accessibleBy(auth()->user())
@@ -394,7 +396,8 @@ class WorkforceController extends Controller
      */
     public function update(UpdateWorkforceRequest $request, $id): JsonResponse
     {
-        $workforce = Workforce::with('shock')
+        $workforce = Workforce::select('workforces.*')
+            ->with('shock')
             ->join('shocks', 'workforces.shock_id', '=', 'shocks.id')
             ->join('assignments', 'shocks.assignment_id', '=', 'assignments.id')
             ->accessibleBy(auth()->user())
@@ -695,7 +698,8 @@ class WorkforceController extends Controller
      */
     public function destroy($id): JsonResponse
     {
-        $workforce = Workforce::with('shock')
+        $workforce = Workforce::select('workforces.*')
+            ->with('shock')
             ->join('shocks', 'workforces.shock_id', '=', 'shocks.id')
             ->join('assignments', 'shocks.assignment_id', '=', 'assignments.id')
             ->accessibleBy(auth()->user())
