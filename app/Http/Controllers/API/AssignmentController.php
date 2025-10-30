@@ -2469,13 +2469,15 @@ class AssignmentController extends Controller
     {
         $assignment = Assignment::findOrFail(Assignment::keyFromHashId($id));
 
+        $repairer_relationship = RepairerRelationship::findOrFail($request->repairer_relationship_id);
+
         if($assignment->status_id != Status::where('code', StatusEnum::VALIDATED)->first()?->id && $assignment->status_id != Status::where('code', StatusEnum::PAID)->first()?->id){
             $assignment->update([
                 'vehicle_mileage' => $request->mileage ?? $assignment->vehicle_mileage,
                 'expertise_date' => $request->expertise_date ?? $assignment->expertise_date,
                 'expertise_place' => $request->expertise_place ?? $assignment->expertise_place,
                 'point_noted' => $request->point_noted ?? $assignment->point_noted,
-                'repairer_id' => $request->repairer_id ?? $assignment->repairer_id,
+                'repairer_id' => $repairer_relationship->repairer_id ?? $assignment->repairer_id,
                 'directed_by' => $request->directed_by ?? $assignment->directed_by,
                 'updated_by' => auth()->user()->id,
             ]);
