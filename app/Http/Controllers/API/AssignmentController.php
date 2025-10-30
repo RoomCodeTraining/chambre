@@ -1541,12 +1541,14 @@ class AssignmentController extends Controller
             return $this->responseUnprocessable("Le dossier n'est pas encore ouvert, veuillez l'ouvrir avant de le réaliser.", null);
         }
 
+        $repairer_relationship = RepairerRelationship::findOrFail($request->repairer_relationship_id);
+
         $assignment->update([
             'expertise_date' => $request->expertise_date,
             'expertise_place' => $request->expertise_place,
             'point_noted' => $request->point_noted,
             'vehicle_mileage' => $request->mileage,
-            'repairer_id' => $request->repairer_id ?? $assignment->repairer_id,
+            'repairer_id' => $repairer_relationship->repairer_id,
             'directed_by' => $request->directed_by,
             'status_id' => Status::where('code', StatusEnum::REALIZED)->first()->id,
             'realized_by' => auth()->user()->id,

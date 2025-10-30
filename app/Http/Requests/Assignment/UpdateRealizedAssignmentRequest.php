@@ -2,7 +2,7 @@
 
 namespace App\Http\Requests\Assignment;
 
-use App\Models\Entity;
+use App\Models\RepairerRelationship;
 use App\Models\User;
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -11,7 +11,7 @@ class UpdateRealizedAssignmentRequest extends FormRequest
     public function prepareForValidation()
     {
         $this->merge([
-            'repairer_id' => $this->repairer_id ? Entity::keyFromHashId($this->repairer_id) : null,
+            'repairer_relationship_id' => $this->repairer_relationship_id ? RepairerRelationship::keyFromHashId($this->repairer_relationship_id) : null,
             'directed_by' => $this->directed_by ? User::keyFromHashId($this->directed_by) : null,
         ]);
     }
@@ -19,7 +19,7 @@ class UpdateRealizedAssignmentRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'repairer_id' => 'nullable|exists:entities,id',
+            'repairer_relationship_id' => 'nullable|exists:repairer_relationships,id',
             'directed_by' => 'required|exists:users,id',
             'expertise_date' => 'nullable|date_format:Y-m-d',
             'expertise_place' => 'nullable|string',
