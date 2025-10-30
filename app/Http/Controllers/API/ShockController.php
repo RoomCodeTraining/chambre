@@ -10,6 +10,7 @@ use App\Models\ShockWork;
 use App\Models\Workforce;
 use App\Models\Assignment;
 use App\Models\HourlyRate;
+use App\Enums\PaintTypeEnum;
 use Illuminate\Http\Request;
 use App\Models\ExpertiseType;
 use App\Models\PaintingPrice;
@@ -377,8 +378,8 @@ class ShockController extends Controller
                 $shock = Shock::create([
                     'assignment_id' => $assignment->id,
                     'shock_point_id' => $data['shock_point_id'],
-                    'paint_type_id' => null,
-                    'hourly_rate_id' => null,
+                    'paint_type_id' => PaintType::where('code', PaintTypeEnum::ORDINARY)->first()->id,
+                    'hourly_rate_id' => HourlyRate::where('code', HourlyRateEnum::ONE)->first()->id,
                     'with_tax' => false,
                     'position' => $shock_position,
                     'status_id' => Status::where('code', StatusEnum::ACTIVE)->first()->id,
