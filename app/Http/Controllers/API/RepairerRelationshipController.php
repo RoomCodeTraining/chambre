@@ -2,16 +2,17 @@
 
 namespace App\Http\Controllers\API;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\RepairerRelationship\UpdateRepairerRelationshipRequest;
-use App\Http\Requests\RepairerRelationship\CreateRepairerRelationshipRequest;
-use App\Http\Resources\RepairerRelationship\RepairerRelationshipResource;
-use App\Models\RepairerRelationship;
-use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
-use Essa\APIToolKit\Api\ApiResponse;
-use App\Enums\StatusEnum;
+use App\Models\Entity;
 use App\Models\Status;
+use App\Enums\StatusEnum;
+use Illuminate\Http\JsonResponse;
+use App\Http\Controllers\Controller;
+use App\Models\RepairerRelationship;
+use Essa\APIToolKit\Api\ApiResponse;
+use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
+use App\Http\Resources\RepairerRelationship\RepairerRelationshipResource;
+use App\Http\Requests\RepairerRelationship\CreateRepairerRelationshipRequest;
+use App\Http\Requests\RepairerRelationship\UpdateRepairerRelationshipRequest;
 
 /**
  * @group Gestion des rattachements réparateurs
