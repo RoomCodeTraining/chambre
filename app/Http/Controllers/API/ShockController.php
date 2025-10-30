@@ -13,6 +13,7 @@ use App\Models\Assignment;
 use App\Models\HourlyRate;
 use App\Enums\PaintTypeEnum;
 use Illuminate\Http\Request;
+use App\Enums\HourlyRateEnum;
 use App\Models\ExpertiseType;
 use App\Models\PaintingPrice;
 use App\Models\WorkforceType;
@@ -103,7 +104,7 @@ class ShockController extends Controller
                     'shock_point_id' => $data['shock_point_id'],
                     'paint_type_id' => $data['paint_type_id'] ?? null,
                     'hourly_rate_id' => $data['hourly_rate_id'] ?? null,
-                    'with_tax' => $data['with_tax'] ?? false,
+                    'with_tax' => ( ?? false,
                     'position' => $shock_position,
                     'is_before_quote' => $is_validated ? 0 : 1,
                     'is_validated' => 0,
@@ -210,7 +211,7 @@ class ShockController extends Controller
                         }
 
                         $amount_excluding_tax = ceil($total - ($total * $item['discount'] / 100));
-                        if(($data['with_tax'] ?? false) == false){
+                        if((( ?? false) == false){
                             $amount_tax = 0;
                         } else {
                             $amount_tax = ceil((config('services.settings.tax_rate') * $amount_excluding_tax) / 100);
@@ -395,7 +396,7 @@ class ShockController extends Controller
                     'shock_point_id' => $data['shock_point_id'],
                     'paint_type_id' => PaintType::where('code', PaintTypeEnum::ORDINARY)->first()->id,
                     'hourly_rate_id' => HourlyRate::where('code', HourlyRateEnum::ONE)->first()->id,
-                    'with_tax' => false,
+                    'with_tax' => ($data['with_tax'] ?? false),
                     'position' => $shock_position,
                     'status_id' => Status::where('code', StatusEnum::ACTIVE)->first()->id,
                     'created_by' => auth()->user()->id,
