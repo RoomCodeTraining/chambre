@@ -48,6 +48,7 @@ use App\Models\NumberPaintElement;
 use Illuminate\Support\Facades\DB;
 use Spatie\Permission\Models\Role;
 use App\Models\InsurerRelationship;
+use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;
 use App\Models\RepairerRelationship;
 use Essa\APIToolKit\Api\ApiResponse;
