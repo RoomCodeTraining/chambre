@@ -94,9 +94,9 @@ class DashboardController extends Controller
         // $this->authorize('viewAny', User::class);
 
         return $this->responseSuccess(null, [
-            'total_vehicles' => ['value' => Vehicle::accessibleBy(auth()->user())->count()],
-            'active_vehicles' => ['value' => Vehicle::where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->accessibleBy(auth()->user())->count()],
-            'inactive_vehicles' => ['value' => Vehicle::where('status_id', Status::where('code', StatusEnum::INACTIVE)->first()->id)->accessibleBy(auth()->user())->count()],
+            'total_vehicles' => ['value' => Vehicle::count()],
+            'active_vehicles' => ['value' => Vehicle::where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->count()],
+            'inactive_vehicles' => ['value' => Vehicle::where('status_id', Status::where('code', StatusEnum::INACTIVE)->first()->id)->count()],
         ]);
     }
 }
