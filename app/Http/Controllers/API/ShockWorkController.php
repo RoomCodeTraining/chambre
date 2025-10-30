@@ -229,7 +229,7 @@ class ShockWorkController extends Controller
                 $new_amount = ceil($new_amount_excluding_tax + $new_amount_tax);
                 
                 $shockWork = ShockWork::create([
-                    'shock_id' => $shock->id,
+                    'shock_id' => $request->shock_id,
                     'supply_id' => Supply::keyFromHashId($item['supply_id']),
                     'disassembly' => $item['disassembly'],
                     'replacement' => $item['replacement'],
