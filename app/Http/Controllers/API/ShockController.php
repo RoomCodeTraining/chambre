@@ -395,7 +395,7 @@ class ShockController extends Controller
                     'assignment_id' => $assignment->id,
                     'shock_point_id' => $data['shock_point_id'],
                     'paint_type_id' => PaintType::where('code', PaintTypeEnum::ORDINARY)->first()->id,
-                    'hourly_rate_id' => HourlyRate::where('code', HourlyRateEnum::ONE)->first()->id,
+                    'hourly_rate_id' => HourlyRate::where('value', HourlyRateEnum::ONE)->first()->id,
                     'with_tax' => ($data['with_tax'] ?? false),
                     'position' => $shock_position,
                     'status_id' => Status::where('code', StatusEnum::ACTIVE)->first()->id,
