@@ -72,7 +72,7 @@ class GenerateExpertiseReportPdfJob implements ShouldQueue
                         ->where('assignments.id', $this->_assignment->id)
                         ->first();
 
-        $shocks = Shock::with(['shockPoint', 
+        $shocks = Shock::select('shocks.*')->with(['shockPoint', 
                                 'shockWorks' => function($query) {
                                     $query->orderBy('position', 'asc');
                                 }, 'shockWorks.supply', 'workforces' => function($query) {
@@ -83,19 +83,19 @@ class GenerateExpertiseReportPdfJob implements ShouldQueue
                     ->orderBy('position', 'asc')
                     ->get();
 
-        $receipts = Receipt::with('receiptType')
+        $receipts = Receipt::select('receipts.*')->with('receiptType')
                     ->where('assignment_id', $assignment->id)
                     ->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)
                     ->orderBy('id', 'asc')
                     ->get();
 
-        $other_costs = OtherCost::with('otherCostType')
+        $other_costs = OtherCost::select('other_costs.*')->with('otherCostType')
                     ->where('assignment_id', $assignment->id)
                     ->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)
                     ->orderBy('id', 'asc')
                     ->get();
 
-        $ascertainments = Ascertainment::with('ascertainmentType')
+        $ascertainments = Ascertainment::select('ascertainments.*')->with('ascertainmentType')
                     ->where('assignment_id', $assignment->id)
                     ->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)
                     ->orderBy('id', 'asc')

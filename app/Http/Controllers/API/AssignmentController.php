@@ -100,7 +100,7 @@ class AssignmentController extends Controller
     {
         $start_date = request()->filled('start_date') ? Carbon::parse(request()->start_date)->startOfDay() : null;
         $end_date   = request()->filled('end_date') ? Carbon::parse(request()->end_date)->endOfDay() : null;
-        $assignments = Assignment::with([
+        $assignments = Assignment::select('assignments.*')->with([
                                 'shocks.shockPoint', 'shocks.shockWorks', 'shocks.shockWorks.supply', 'shocks.workforces', 'shocks.workforces.workforceType', 'shocks.paintType', 'shocks.hourlyRate', 'shocks.status', 'otherCosts', 'ascertainments', 'ascertainments.ascertainmentType', 'receipts', 'receipts.receiptType', 'status', 'vehicle', 'vehicle.brand', 'vehicle.vehicleModel', 'vehicle.color', 'vehicle.bodywork', 'insurer', 'additionalInsurer', 'repairer', 'client', 'assignmentType', 'expertiseType', 'generalState', 'claimNature', 'technicalConclusion', 'documentTransmitted', 'createdBy', 'updatedBy', 'deletedBy', 'closedBy', 'cancelledBy', 'editedBy', 'realizedBy', 'directedBy', 'workSheetEstablishedBy', 'validatedBy', 'openedBy',
                                 'shocks' => function($query) {
                                     $query->orderBy('position', 'asc');
@@ -244,7 +244,7 @@ class AssignmentController extends Controller
     {
         $start_date = request()->filled('start_date') ? Carbon::parse(request()->start_date)->startOfDay() : null;
         $end_date   = request()->filled('end_date') ? Carbon::parse(request()->end_date)->endOfDay() : null;
-        $assignments = Assignment::with([
+        $assignments = Assignment::select('assignments.*')->with([
                                 'shocks.shockPoint', 'shocks.shockWorks', 'shocks.shockWorks.supply', 'shocks.workforces', 'shocks.workforces.workforceType', 'shocks.paintType', 'shocks.hourlyRate', 'shocks.status', 'otherCosts', 'ascertainments', 'ascertainments.ascertainmentType', 'receipts', 'receipts.receiptType', 'status', 'vehicle', 'vehicle.brand', 'vehicle.vehicleModel', 'vehicle.color', 'vehicle.bodywork', 'insurer', 'additionalInsurer', 'repairer', 'client', 'assignmentType', 'expertiseType', 'generalState', 'claimNature', 'technicalConclusion', 'documentTransmitted', 'createdBy', 'updatedBy', 'deletedBy', 'closedBy', 'cancelledBy', 'editedBy', 'realizedBy', 'directedBy', 'workSheetEstablishedBy', 'validatedBy', 'openedBy',
                                 'shocks' => function($query) {
                                     $query->orderBy('position', 'asc');
@@ -390,7 +390,7 @@ class AssignmentController extends Controller
     {
         $start_date = request()->filled('start_date') ? Carbon::parse(request()->start_date)->startOfDay() : null;
         $end_date   = request()->filled('end_date') ? Carbon::parse(request()->end_date)->endOfDay() : null;
-        $assignments = Assignment::with([
+        $assignments = Assignment::select('assignments.*')->with([
                                 'shocks.shockPoint', 'shocks.shockWorks', 'shocks.shockWorks.supply', 'shocks.workforces', 'shocks.workforces.workforceType', 'shocks.paintType', 'shocks.hourlyRate', 'shocks.status', 'otherCosts', 'ascertainments', 'ascertainments.ascertainmentType', 'receipts', 'receipts.receiptType', 'status', 'vehicle', 'vehicle.brand', 'vehicle.vehicleModel', 'vehicle.color', 'vehicle.bodywork', 'insurer', 'additionalInsurer', 'repairer',
                                 'shocks' => function($query) {
                                     $query->orderBy('position', 'asc');
@@ -2238,7 +2238,7 @@ class AssignmentController extends Controller
     public function show($id): JsonResponse
     {
         $assignment = Assignment::findOrFail(Assignment::keyFromHashId($id));
-        $assignment->load([
+        $assignment = Assignment::select('assignments.*')->load([
             'shocks' => function($query) {
                 $query->orderBy('position', 'asc');
             },

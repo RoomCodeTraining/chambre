@@ -57,7 +57,7 @@ class GenerateWorkSheetPdfJob implements ShouldQueue
                         ->where('assignments.id', $this->_assignment->id)
                         ->first();
 
-        $shocks = Shock::with(['shockPoint', 
+        $shocks = Shock::select('shocks.*')->with(['shockPoint', 
                                 'shockWorks' => function($query) {
                                     $query->orderBy('position', 'asc');
                                 }, 'shockWorks.supply', 'workforces' => function($query) {

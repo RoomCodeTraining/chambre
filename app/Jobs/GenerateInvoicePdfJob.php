@@ -67,7 +67,7 @@ class GenerateInvoicePdfJob implements ShouldQueue
                         ->where('id', $this->invoice->assignment_id)
                         ->first();
 
-        $receipts = Receipt::with('receiptType')
+        $receipts = Receipt::select('receipts.*')->with('receiptType')
                     ->where('assignment_id', $assignment->id)
                     ->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)
                     ->orderBy('id', 'desc')
