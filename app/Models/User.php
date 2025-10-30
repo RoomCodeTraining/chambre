@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Carbon\Carbon;
+use App\Enums\RoleEnum;
 use App\Concerns\HasPhoto;
 use Illuminate\Support\Str;
 use App\Filters\UserFilters;
@@ -231,6 +232,70 @@ class User extends Authenticatable implements MustVerifyEmail
     public function isVerified()
     {
         return (bool) $this->email_verified_at && (bool) $this->welcome_valid_until;
+    }
+
+    /**
+     * Check if the user is a super admin.
+     */
+    public function isSuperAdmin(): bool
+    {
+        return $this->currentRole->name == RoleEnum::SYSTEM_ADMIN->value;
+    }
+
+    /**
+     * Check if the user is an admin.
+     */
+    public function isAdmin(): bool
+    {
+        return $this->currentRole->name == RoleEnum::ADMIN->value;
+    }
+
+    /**
+     * Check if the user is an expert admin.
+     */
+    public function isAdminExpert(): bool
+    {
+        return $this->currentRole->name == RoleEnum::EXPERT_ADMIN->value;
+    }
+
+    /**
+     * Check if the user is an insurer admin.
+     */
+    public function isInsurerAdmin(): bool
+    {
+        return $this->currentRole->name == RoleEnum::INSURER_ADMIN->value;
+    }
+
+    /**
+     * Check if the user is an insurer standard user.
+     */
+    public function isInsurerStandardUser(): bool
+    {
+        return $this->currentRole->name == RoleEnum::INSURER_STANDARD_USER->value;
+    }
+
+    /**
+     * Check if the user is a repairer admin.
+     */
+    public function isRepairerAdmin(): bool
+    {
+        return $this->currentRole->name == RoleEnum::REPAIRER_ADMIN->value;
+    }
+
+    /**
+     * Check if the user is a repairer standard user.
+     */
+    public function isRepairerStandardUser(): bool
+    {
+        return $this->currentRole->name == RoleEnum::REPAIRER_STANDARD_USER->value;
+    }
+
+    /**
+     * Check if the user is a client.
+     */
+    public function isClient(): bool
+    {
+        return $this->currentRole->name == RoleEnum::CLIENT->value;
     }
 
     public function passwordHistories()

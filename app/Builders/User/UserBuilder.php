@@ -34,6 +34,21 @@ class UserBuilder extends Builder
         return $this->model->currentRole->name == RoleEnum::REPAIRER_ADMIN->value;
     }
 
+    public function isInsurerStandardUser(): bool
+    {
+        return $this->model->currentRole->name == RoleEnum::INSURER_STANDARD_USER->value;
+    }
+
+    public function isRepairerStandardUser(): bool
+    {
+        return $this->model->currentRole->name == RoleEnum::REPAIRER_STANDARD_USER->value;
+    }
+
+    public function isClient(): bool
+    {
+        return $this->model->currentRole->name == RoleEnum::CLIENT->value;
+    }
+
     public function accessibleBy(?User $user)
     {
         if (empty($user)) {
