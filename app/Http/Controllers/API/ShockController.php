@@ -58,7 +58,8 @@ class ShockController extends Controller
      */
     public function index(): AnonymousResourceCollection
     {
-        $shocks = Shock::with([
+        $shocks = Shock::select('shocks.*')
+        ->with([
             'shockPoint',
             'shockWorks' => function($query) {
                 $query->orderBy('position', 'asc');
