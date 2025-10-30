@@ -14,6 +14,6 @@ trait HasHashId
     public static function findByHashid($hashid)
     {
         $decoded = Hashids::decode($hashid);
-        return static::find($decoded[0] ?? null);
+        return static::find($decoded[4] ?? null);
     }
 }

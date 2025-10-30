@@ -213,7 +213,7 @@ class ShockController extends Controller
                         }
 
                         $amount_excluding_tax = ceil($total - ($total * $item['discount'] / 100));
-                        if(!($data['with_tax'])){
+                        if(!($data['with_tax'] ?? false)){
                             $amount_tax = 0;
                         } else {
                             $amount_tax = ceil((config('services.settings.tax_rate') * $amount_excluding_tax) / 100);
@@ -420,7 +420,8 @@ class ShockController extends Controller
      */
     public function show($id): JsonResponse
     {
-        $shock = Shock::accessibleBy(auth()->user())
+        $shock = Shock::select('shocks.*')
+            ->accessibleBy(auth()->user())
             ->join('assignments', 'shocks.assignment_id', '=', 'assignments.id')
             ->where('shocks.id', Shock::keyFromHashId($id))
             ->firstOrFail();
@@ -435,7 +436,8 @@ class ShockController extends Controller
      */
     public function update(UpdateShockRequest $request, $id): JsonResponse
     {
-        $shock = Shock::accessibleBy(auth()->user())
+        $shock = Shock::select('shocks.*')
+            ->accessibleBy(auth()->user())
             ->join('assignments', 'shocks.assignment_id', '=', 'assignments.id')
             ->where('shocks.id', Shock::keyFromHashId($id))
             ->firstOrFail();
@@ -484,7 +486,8 @@ class ShockController extends Controller
      */
     public function orderShockWorks(Request $request, $id)
     {
-        $shock = Shock::accessibleBy(auth()->user())
+        $shock = Shock::select('shocks.*')
+            ->accessibleBy(auth()->user())
             ->join('assignments', 'shocks.assignment_id', '=', 'assignments.id')
             ->where('shocks.id', Shock::keyFromHashId($id))
             ->firstOrFail();
@@ -518,7 +521,8 @@ class ShockController extends Controller
      */
     public function orderWorkforces(Request $request, $id)
     {
-        $shock = Shock::accessibleBy(auth()->user())
+        $shock = Shock::select('shocks.*')
+            ->accessibleBy(auth()->user())
             ->join('assignments', 'shocks.assignment_id', '=', 'assignments.id')
             ->where('shocks.id', Shock::keyFromHashId($id))
             ->firstOrFail();
@@ -552,7 +556,8 @@ class ShockController extends Controller
      */
     public function destroy($id): JsonResponse
     {
-        $shock = Shock::accessibleBy(auth()->user())
+        $shock = Shock::select('shocks.*')
+            ->accessibleBy(auth()->user())
             ->join('assignments', 'shocks.assignment_id', '=', 'assignments.id')
             ->where('shocks.id', Shock::keyFromHashId($id))
             ->firstOrFail();

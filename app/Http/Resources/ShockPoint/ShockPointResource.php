@@ -11,7 +11,7 @@ class ShockPointResource extends JsonResource
     public function toArray($request): array
     {
         return [
-            'id' => $this->hashId,
+            'id' => $this->id,
             'code' => $this->code,
             'label' => $this->label,
             'description' => $this->description,
