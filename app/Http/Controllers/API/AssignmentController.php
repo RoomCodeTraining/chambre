@@ -2237,8 +2237,7 @@ class AssignmentController extends Controller
      */
     public function show($id): JsonResponse
     {
-        $assignment = Assignment::findOrFail(Assignment::keyFromHashId($id));
-        $assignment = Assignment::select('assignments.*')->load([
+        $assignment = Assignment::select('assignments.*')->with([
             'shocks' => function($query) {
                 $query->orderBy('position', 'asc');
             },
@@ -2264,7 +2263,8 @@ class AssignmentController extends Controller
             'ascertainments.ascertainmentType' => function($query) {
                 $query->orderBy('id', 'asc');
             },
-        ]);
+        ])->where('assignments.id', Assignment::keyFromHashId($id))
+        ->first();
         return $this->responseSuccess(null, new AssignmentResource($assignment));
     }
 
