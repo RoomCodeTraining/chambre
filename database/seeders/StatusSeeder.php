@@ -52,6 +52,12 @@ class StatusSeeder extends Seeder
         ]);
 
         Status::create([
+            'code' => StatusEnum::IN_EDITING,
+            'label' => "En cours de rédaction",
+            'description' => "En cours de rédaction",
+        ]);
+
+        Status::create([
             'code' => StatusEnum::EDITED,
             'label' => "Rédigé",
             'description' => "Rédigé",

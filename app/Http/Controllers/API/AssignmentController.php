@@ -2158,6 +2158,24 @@ class AssignmentController extends Controller
 
     }
 
+
+    /**
+     * Valider la fiche de travaux d'un dossier par l'expert
+     *
+     * @authenticated
+     */
+    public function validateWorkSheetByExpert($id): JsonResponse
+    {
+        $assignment = Assignment::with('shocks:id,is_validated', 'shocks.shockWorks:id,is_validated', 'shocks.workforces:id,is_validated')->findOrFail(Assignment::keyFromHashId($id));
+
+        $assignment->update([
+            'status_id' => Status::where('code', StatusEnum::PENDING_FOR_REPAIRER_INVOICE)->first()->id,
+            'updated_by' => auth()->user()->id,
+        ]);
+
+        return $this->responseSuccess('Fiche de travaux validée avec succès', new AssignmentResource($assignment));
+    }
+
     /**
      * Renvoyer une fiche de travaux
      *

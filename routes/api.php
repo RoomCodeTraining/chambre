@@ -83,10 +83,3 @@ Route::prefix('v1')->middleware(LogsOutDisabledUser::class)->group(function () {
     Route::prefix('dashboard')->group(base_path('routes/api/v1.dashboard.routes.php'));
     Route::group([], base_path('routes/api/v1.common.routes.php'));
 });
-/*===========================
-=           assignmentMessages           =
-=============================*/
-
-Route::apiResource('/assignmentMessages', \App\Http\Controllers\API\AssignmentMessageController::class);
-
-/*=====  End of assignmentMessages   ======*/
