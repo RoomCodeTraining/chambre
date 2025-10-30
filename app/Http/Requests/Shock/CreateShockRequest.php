@@ -17,20 +17,20 @@ class CreateShockRequest extends FormRequest
         if($this->shocks){
             $shocks = [];
             foreach ($this->shocks as $shock) {
-                $shock['shock_point_id'] = ShockPoint::keyFromHashId($shock['shock_point_id']);
-                $shock['paint_type_id'] = PaintType::keyFromHashId($shock['paint_type_id']);
-                $shock['hourly_rate_id'] = HourlyRate::keyFromHashId($shock['hourly_rate_id']);
+                $shock['shock_point_id'] = ShockPoint::keyFromHashId($shock['shock_point_id']) ?? null;
+                $shock['paint_type_id'] = PaintType::keyFromHashId($shock['paint_type_id']) ?? null;
+                $shock['hourly_rate_id'] = HourlyRate::keyFromHashId($shock['hourly_rate_id']) ?? null;
                 
                 $shock_works = [];
                 foreach ($shock['shock_works'] as $shock_work) {
-                    $shock_work['supply_id'] = Supply::keyFromHashId($shock_work['supply_id']);
+                    $shock_work['supply_id'] = Supply::keyFromHashId($shock_work['supply_id']) ?? null;
                     $shock_works[] = $shock_work;
                 }
                 $shock['shock_works'] = $shock_works;
 
                 $workforces = [];
                 foreach ($shock['workforces'] as $workforce) {
-                    $workforce['workforce_type_id'] = WorkforceType::keyFromHashId($workforce['workforce_type_id']);
+                    $workforce['workforce_type_id'] = WorkforceType::keyFromHashId($workforce['workforce_type_id']) ?? null;
                     $workforces[] = $workforce;
                 }
                 $shock['workforces'] = $workforces;
