@@ -53,6 +53,9 @@ Route::middleware('auth:sanctum')->name('assignments.')->group(function () {
     /** @uses AssignmentController::unvalidateByExpert */
     Route::put('/unvalidate-by-expert/{assignment}', [AssignmentController::class, 'unvalidateByExpert'])->name('unvalidateByExpert');
 
+    /** @uses AssignmentController::validateWorkSheetByExpert */
+    Route::put('/validate-work-sheet-by-expert/{assignment}', [AssignmentController::class, 'validateWorkSheetByExpert'])->name('validateWorkSheetByExpert');
+
     /** @uses AssignmentController::show */
     Route::get('/{assignment}', [AssignmentController::class, 'show'])->name('show');
 
@@ -70,9 +73,6 @@ Route::middleware('auth:sanctum')->name('assignments.')->group(function () {
 
     /** @uses AssignmentController::orderPhotos */
     Route::put('/{assignment}/order-photos', [AssignmentController::class, 'orderPhotos'])->name('order-photos');
-
-    /** @uses AssignmentController::validateWorkSheetByExpert */
-    Route::put('/{assignment}/validate-work-sheet-by-expert', [AssignmentController::class, 'validateWorkSheetByExpert'])->name('validate-work-sheet-by-expert');
 
     /** @uses AssignmentController::get_assignment_edition_time_to_expired */
     Route::get('/get/assignment-edition-time-to-expired', [AssignmentController::class, 'get_assignment_edition_time_to_expired'])->name('get_assignment_edition_time_to_expired');
