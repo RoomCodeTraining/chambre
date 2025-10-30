@@ -3,6 +3,7 @@
 namespace App\Http\Requests\Assignment;
 
 use App\Models\RepairerRelationship;
+use App\Models\User;
 use Illuminate\Foundation\Http\FormRequest;
 
 class RealizeAssignmentRequest extends FormRequest
@@ -11,6 +12,7 @@ class RealizeAssignmentRequest extends FormRequest
     {
         $this->merge([
             'repairer_relationship_id' => $this->repairer_relationship_id ? RepairerRelationship::keyFromHashId($this->repairer_relationship_id) : null,
+            'directed_by' => $this->directed_by ? User::keyFromHashId($this->directed_by) : null,
         ]);
     }
     public function rules(): array
