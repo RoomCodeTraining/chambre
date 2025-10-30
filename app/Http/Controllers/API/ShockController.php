@@ -6,6 +6,7 @@ use App\Models\Shock;
 use App\Models\Status;
 use App\Enums\StatusEnum;
 use App\Models\OtherCost;
+use App\Models\PaintType;
 use App\Models\ShockWork;
 use App\Models\Workforce;
 use App\Models\Assignment;
