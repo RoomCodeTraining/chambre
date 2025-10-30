@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\Models\Shock;
 use App\Models\Status;
+use App\Models\Supply;
 use App\Models\Vehicle;
 use App\Enums\StatusEnum;
 use App\Models\OtherCost;
@@ -228,7 +229,7 @@ class ShockWorkController extends Controller
                 
                 $shockWork = ShockWork::create([
                     'shock_id' => $shock->id,
-                    'supply_id' => $item['supply_id'],
+                    'supply_id' => Supply::keyFromHashId($item['supply_id']),
                     'disassembly' => $item['disassembly'],
                     'replacement' => $item['replacement'],
                     'repair' => $item['repair'],
