@@ -67,13 +67,13 @@ class RepairerRelationshipBuilder extends Builder
             return $this->where('expert_firm_id', $user->entity_id);
         }
 
-        if ($user->isInsurerAdmin()) {
-            return $this->where('insurer_id', $user->entity_id);
-        }
+        // if ($user->isInsurerAdmin()) {
+        //     return $this->where('insurer_id', $user->entity_id);
+        // }
 
-        if ($user->isInsurerStandardUser()) {
-            return $this->where('insurer_id', $user->entity_id);
-        }
+        // if ($user->isInsurerStandardUser()) {
+        //     return $this->where('insurer_id', $user->entity_id);
+        // }
 
         if ($user->isRepairerAdmin()) {
             return $this->where('repairer_id', $user->entity_id);
