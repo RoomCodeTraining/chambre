@@ -234,7 +234,7 @@ class AuthController extends Controller
     {
         $this->authorize('viewAny', User::class);
 
-        return $this->responseSuccess(null, new UserResource(auth()->user()->load('currentRole', 'status', 'permissions', 'entity')));
+        return $this->responseSuccess(null, new UserResource(auth()->user()->load('currentRole', 'status', 'permissions', 'entity', 'entity.entityType')));
     }
 
 
