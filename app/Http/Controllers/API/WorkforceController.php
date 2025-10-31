@@ -356,15 +356,22 @@ class WorkforceController extends Controller
 
             $user_entity = Entity::with('entityType:id,code')->findOrFail(auth()->user()->entity_id);
             if($is_validated){
-                if($user_entity->entityType->code == EntityTypeEnum::ORGANIZATION){
-                    $assignment->update([
-                        'is_validated_by_expert' => 0,
-                    ]);
-                }
-                if($user_entity->entityType->code == EntityTypeEnum::REPAIRER){
-                    $assignment->update([
-                        'is_validated_by_repairer' => 0,
-                    ]);
+                $pendingStatusId = Status::where('code', StatusEnum::PENDING_FOR_REPAIRER_INVOICE)->value('id');
+
+                if (in_array($user_entity->entityType->code, [EntityTypeEnum::ORGANIZATION, EntityTypeEnum::REPAIRER])) {
+                    $updateData = [
+                        'status_id' => $pendingStatusId,
+                    ];
+
+                    if ($user_entity->entityType->code === EntityTypeEnum::ORGANIZATION) {
+                        $updateData['is_validated_by_expert'] = 0;
+                    }
+
+                    if ($user_entity->entityType->code === EntityTypeEnum::REPAIRER) {
+                        $updateData['is_validated_by_repairer'] = 0;
+                    }
+
+                    $assignment->update($updateData);
                 }
             }
 
@@ -484,15 +491,22 @@ class WorkforceController extends Controller
 
             $user_entity = Entity::with('entityType:id,code')->findOrFail(auth()->user()->entity_id);
             if($is_validated){
-                if($user_entity->entityType->code == EntityTypeEnum::ORGANIZATION){
-                    $assignment->update([
-                        'is_validated_by_expert' => 0,
-                    ]);
-                }
-                if($user_entity->entityType->code == EntityTypeEnum::REPAIRER){
-                    $assignment->update([
-                        'is_validated_by_repairer' => 0,
-                    ]);
+                $pendingStatusId = Status::where('code', StatusEnum::PENDING_FOR_REPAIRER_INVOICE)->value('id');
+
+                if (in_array($user_entity->entityType->code, [EntityTypeEnum::ORGANIZATION, EntityTypeEnum::REPAIRER])) {
+                    $updateData = [
+                        'status_id' => $pendingStatusId,
+                    ];
+
+                    if ($user_entity->entityType->code === EntityTypeEnum::ORGANIZATION) {
+                        $updateData['is_validated_by_expert'] = 0;
+                    }
+
+                    if ($user_entity->entityType->code === EntityTypeEnum::REPAIRER) {
+                        $updateData['is_validated_by_repairer'] = 0;
+                    }
+
+                    $assignment->update($updateData);
                 }
             }
 
