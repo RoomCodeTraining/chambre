@@ -410,7 +410,7 @@ class ShockController extends Controller
 
         $this->recalculate($assignment->id);
         
-        return $this->responseCreated('Shock created successfully', new ShockResource($shock));
+        return $this->responseCreated('Shock created successfully', null);
     }
 
     /**
