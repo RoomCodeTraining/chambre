@@ -187,15 +187,16 @@ class ShockWorkController extends Controller
     public function store(CreateShockWorkRequest $request): JsonResponse
     {
         $shock = Shock::select('shocks.*')
-            ->with('assignment')
-            ->join('shocks', 'shock_works.shock_id', '=', 'shocks.id')
-            ->join('assignments', 'shocks.assignment_id', '=', 'assignments.id')
-            ->accessibleBy(auth()->user())
+            // ->with('assignment')
+            // ->join('shocks', 'shock_works.shock_id', '=', 'shocks.id')
+            // ->accessibleBy(auth()->user())
             ->where('shocks.id', $request->shock_id)
             ->firstOrFail();
 
+        $assignment = Assignment::where('id',$shock->assignment_id)->accessibleBy(auth()->user())->firstOrFail();
 
-        if($shock->assignment->status_id == Status::where('code', StatusEnum::VALIDATED)->first()->id || $shock->assignment->status_id == Status::where('code', StatusEnum::PAID)->first()->id){
+
+        if($assignment->status_id == Status::where('code', StatusEnum::VALIDATED)->first()->id || $assignment->status_id == Status::where('code', StatusEnum::PAID)->first()->id){
             return $this->responseUnprocessable("Impossible d'ajouter un travail de choc", null);
         }
 
