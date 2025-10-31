@@ -36,6 +36,9 @@ Route::middleware('auth:sanctum')->name('assignments.')->group(function () {
     Route::put('/update-edit/{assignment}', [AssignmentController::class, 'updateEdit'])->name('updateEdit');
 
     /** @uses AssignmentController::validate */
+    Route::put('/validate-edition/{assignment}', [AssignmentController::class, 'validateEdition'])->name('validateEdition');
+
+    /** @uses AssignmentController::validate */
     Route::put('/validate/{assignment}', [AssignmentController::class, 'validate'])->name('validate');
 
     /** @uses AssignmentController::unvalidate */

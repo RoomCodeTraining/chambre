@@ -2020,6 +2020,23 @@ class AssignmentController extends Controller
     }
 
     /**
+     * Valider la rédaction un dossier
+     *
+     * @authenticated
+     */
+    public function validateEdition($id): JsonResponse
+    {
+        $assignment = Assignment::findOrFail(Assignment::keyFromHashId($id));
+
+        $assignment->update([
+            'status_id' => Status::where('code', StatusEnum::EDITED)->first()->id,
+            'updated_by' => auth()->user()->id,
+        ]);
+
+        return $this->responseSuccess('Dossier validé avec succès', new AssignmentResource($assignment));
+    }
+
+    /**
      * Créer une fiche de travaux
      *
      * @authenticated
