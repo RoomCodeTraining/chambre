@@ -34,34 +34,10 @@ class AssignmentRequestController extends Controller
 
     public function store(CreateAssignmentRequestRequest $request): JsonResponse
     {
-        $client = Client::create(
-            [
-                'name' => $request->client_name,
-                'phone_1' => $request->client_phone,
-                'email' => $request->client_email,
-                'status_id' => Status::where('code', StatusEnum::ACTIVE)->first()->id,
-                'created_by' => auth()->user()->id,
-                'updated_by' => auth()->user()->id,
-            ]
-        );
-
-        $vehicle = Vehicle::create(
-            [
-                'license_plate' => strtoupper(str_replace(' ', '', $request->vehicle_license_plate)),
-                'brand_id' => $request->vehicle_brand_id,
-                'vehicle_model_id' => $request->vehicle_model_id,
-                'color_id' => $request->vehicle_color_id,
-                'new_market_value' => $request->vehicle_new_market_value,
-                'status_id' => Status::where('code', StatusEnum::ACTIVE)->first()->id,
-                'created_by' => auth()->user()->id,
-                'updated_by' => auth()->user()->id,
-            ]
-        );
-
         $assignmentRequest = AssignmentRequest::create([
             'expert_firm_id' => $request->expert_firm_id,
-            'client_id' => $client->id,
-            'vehicle_id' => $vehicle->id,
+            'client_id' => $request->client_id,
+            'vehicle_id' => $request->vehicle_id,
             'insurer_id' => $request->insurer_id,
             'repairer_id' => $request->repairer_id,
             'assignment_type_id' => $request->assignment_type_id,
@@ -102,13 +78,7 @@ class AssignmentRequestController extends Controller
                 }
             }
         }
-
-        // try {
-        //     dispatch(new GenerateWorkSheetPdfJob($assignment, false));
-        // } catch (\Exception $e) {
-        //     Log::error($e);
-        // }
-
+        
         return $this->responseCreated('AssignmentRequest created successfully', new AssignmentRequestResource($assignmentRequest));
     }
 

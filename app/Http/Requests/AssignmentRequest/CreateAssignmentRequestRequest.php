@@ -31,25 +31,16 @@ class CreateAssignmentRequestRequest extends FormRequest
             'expert_firm_id' => 'nullable|exists:entities,id',
             'assignment_type_id' => 'required|exists:assignment_types,id',
             'expertise_type_id' => 'required|exists:expertise_types,id',
-            'client_name' => 'nullable|string',
-            'client_phone' => 'nullable|string',
-            'client_email' => 'nullable|email',
-            'vehicle_license_plate' => 'required|string',
-            'vehicle_brand_id' => 'required|exists:brands,id',
-            'vehicle_model_id' => 'required|exists:vehicle_models,id',
-            'vehicle_color_id' => 'required|exists:colors,id',
-            'vehicle_new_market_value' => 'required|numeric',
-            'insurer_id' => 'nullable|required_if:assignment_type_id,'.AssignmentType::where('code', AssignmentTypeEnum::INSURER)->first()->id.'|exists:entities,id',
+            'client_id' => 'nullable|exists:clients,id',
+            'vehicle_id' => 'nullable|exists:vehicles,id',
+            'insurer_id' => 'nullable|exists:entities,id',
             'repairer_id' => 'nullable|exists:entities,id',
-
             'policy_number' => 'nullable|string',
-            'claim_number' => 'nullable|string|unique:assignment_requests,claim_number',
+            'claim_number' => 'nullable|string',
             'claim_date' => 'nullable|date_format:Y-m-d',
             'expertise_place' => 'nullable|string',
-
             'photos' => 'nullable|array',
             'photos.*' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg',
-            
         ];
     }
 

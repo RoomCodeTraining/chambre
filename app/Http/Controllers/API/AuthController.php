@@ -59,6 +59,28 @@ class AuthController extends Controller
         ]);
     }
 
+    public function register(RegisterRequest $request)
+    {
+        $user = User::create([
+            'username' => Str::random(10),
+            'code' => Str::random(10),
+            'email' => $request->email,
+            'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
+            'telephone' => $request->telephone,
+            'current_role_id' => Role::where('name', RoleEnum::CLIENT->value)->first()->id,
+            'password' => Hash::make($request->password),
+            'status_id' => Status::where('code', StatusEnum::ACTIVE->value)->first()->id,
+        ])->assignRole(Role::where('name', RoleEnum::CLIENT->value)->first()->id);
+
+        app(PermissionRegistrar::class)->setPermissionsTeamId($user->current_role_id);
+        $user->assignRole(Role::where('name', RoleEnum::CLIENT->value)->first()->name);
+
+        return $this->responseSuccess('Utilisateur créé avec succès', [
+            'token' => $user->createToken('auth_token')->plainTextToken,
+        ]);
+    }
+
     /**
      * Get a new Bearer token
      *
