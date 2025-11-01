@@ -39,7 +39,8 @@ Route::controller(TokenController::class)->name('auth.')->group(function () {
 Route::controller(AuthController::class)
     ->name('auth.')
     ->group(function () {
-        // Route::post('tokens', 'login')->name('login');
+        Route::post('register', 'register')->name('register');
+        // Route::post('login', 'login')->name('login');
         // Route::post('password/reset', 'passwordReset')->name('password.reset');
         // Route::post('password/forgot', 'passwordForgot')->name('password.forgot');
         Route::post('set-password', 'firstLogin')->name('first.login');
