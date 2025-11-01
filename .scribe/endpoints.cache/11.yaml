@@ -46,7 +46,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer a4Zb81avPh6D6gedkEV3c5f'
+      - 'Bearer e6364Vvfh81aEbaZdc5PgkD'
     controller: null
     method: null
     route: null
@@ -80,7 +80,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: mppkygfgirbzipewaygs
+        example: vzr
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -90,22 +90,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Adipisci fuga odio qui ex exercitationem beatae aut.'
+        example: 'Cumque harum et eveniet commodi sunt voluptate.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: mppkygfgirbzipewaygs
-      description: 'Adipisci fuga odio qui ex exercitationem beatae aut.'
+      label: vzr
+      description: 'Cumque harum et eveniet commodi sunt voluptate.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer b5D14g86vVaEaZd3c6khefP'
+      - 'Bearer e66vE5Vhdkg4DaZ8caPfb31'
     controller: null
     method: null
     route: null
@@ -135,14 +135,14 @@ endpoints:
         name: id
         description: 'The ID of the vehicle state.'
         required: true
-        example: veniam
+        example: placeat
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: veniam
+      id: placeat
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -162,7 +162,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 5eafd1ZvcP36aE8bg64kVDh'
+      - 'Bearer EaaPd1gcZ35kbDvV6feh486'
     controller: null
     method: null
     route: null
@@ -192,14 +192,14 @@ endpoints:
         name: id
         description: 'The ID of the vehicle state.'
         required: true
-        example: eos
+        example: omnis
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: eos
+      id: omnis
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -207,7 +207,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: eyjiubvmgzzjyhlis
+        example: hlgwxiyskndvvt
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -217,22 +217,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Et esse atque voluptates molestias voluptas aliquam animi.'
+        example: 'Magnam et aperiam similique laborum dolorum.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: eyjiubvmgzzjyhlis
-      description: 'Et esse atque voluptates molestias voluptas aliquam animi.'
+      label: hlgwxiyskndvvt
+      description: 'Magnam et aperiam similique laborum dolorum.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer fED5deg8a643PZ6chk1bvaV'
+      - 'Bearer hV15fbacPak36E46eZvD8gd'
     controller: null
     method: null
     route: null
@@ -262,14 +262,14 @@ endpoints:
         name: id
         description: 'The ID of the vehicle state.'
         required: true
-        example: est
+        example: suscipit
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: est
+      id: suscipit
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -280,7 +280,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer ec84v6a3fdZgDha51bVkP6E'
+      - 'Bearer 1bfvEhe36da8kD6g5cV4aZP'
     controller: null
     method: null
     route: null

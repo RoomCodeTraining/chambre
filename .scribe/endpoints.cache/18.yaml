@@ -46,7 +46,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer kbdP6veD3461f8agEcVa5Zh'
+      - 'Bearer a1ZgvcfD5k6PV8eE6ad4h3b'
     controller: null
     method: null
     route: null
@@ -80,7 +80,7 @@ endpoints:
         name: shock_id
         description: 'The <code>id</code> of an existing record in the shocks table.'
         required: true
-        example: voluptatem
+        example: ut
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -101,7 +101,7 @@ endpoints:
         name: 'shock_works[].supply_id'
         description: ''
         required: true
-        example: magnam
+        example: cumque
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -111,7 +111,7 @@ endpoints:
         name: 'shock_works[].disassembly'
         description: ''
         required: true
-        example: false
+        example: true
         type: boolean
         enumValues: []
         exampleWasSpecified: false
@@ -141,7 +141,7 @@ endpoints:
         name: 'shock_works[].paint'
         description: ''
         required: true
-        example: false
+        example: true
         type: boolean
         enumValues: []
         exampleWasSpecified: false
@@ -171,7 +171,7 @@ endpoints:
         name: 'shock_works[].comment'
         description: ''
         required: false
-        example: quibusdam
+        example: iure
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -181,7 +181,7 @@ endpoints:
         name: 'shock_works[].obsolescence_rate'
         description: ''
         required: true
-        example: 6303.9
+        example: 3815233.771459
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -191,7 +191,7 @@ endpoints:
         name: 'shock_works[].recovery_amount'
         description: ''
         required: true
-        example: 4120.209
+        example: 203239638.7
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -201,7 +201,7 @@ endpoints:
         name: 'shock_works[].discount'
         description: 'La valeur de value doit être supérieure ou égale à 0. La valeur de value ne peut pas être supérieure à 100.'
         required: true
-        example: 21
+        example: 16
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -211,35 +211,35 @@ endpoints:
         name: 'shock_works[].amount'
         description: ''
         required: true
-        example: 83639128.893103
+        example: 257510.21
         type: number
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      shock_id: voluptatem
+      shock_id: ut
       shock_works:
         -
-          supply_id: magnam
-          disassembly: false
+          supply_id: cumque
+          disassembly: true
           replacement: false
           repair: false
-          paint: false
+          paint: true
           obsolescence: true
           control: true
-          comment: quibusdam
-          obsolescence_rate: 6303.9
-          recovery_amount: 4120.209
-          discount: 21
-          amount: 83639128.893103
+          comment: iure
+          obsolescence_rate: 3815233.771459
+          recovery_amount: 203239638.7
+          discount: 16
+          amount: 257510.21
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer h1kDc8a3VbPvEdZ6eaf654g'
+      - 'Bearer 5aEdabZke43f6hvg18cDP6V'
     controller: null
     method: null
     route: null
@@ -273,7 +273,7 @@ endpoints:
         name: shock_id
         description: 'The <code>id</code> of an existing record in the shocks table.'
         required: true
-        example: qui
+        example: doloribus
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -294,7 +294,7 @@ endpoints:
         name: 'shock_works[].obsolescence_rate'
         description: ''
         required: true
-        example: 358621.924847
+        example: 355757107.0
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -304,7 +304,7 @@ endpoints:
         name: 'shock_works[].recovery_amount'
         description: ''
         required: true
-        example: 899102.49937556
+        example: 5038.15375221
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -314,7 +314,7 @@ endpoints:
         name: 'shock_works[].discount'
         description: 'La valeur de value doit être supérieure ou égale à 0. La valeur de value ne peut pas être supérieure à 100.'
         required: true
-        example: 20
+        example: 5
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -324,27 +324,27 @@ endpoints:
         name: 'shock_works[].amount'
         description: ''
         required: true
-        example: 407771082.0
+        example: 28.94026072
         type: number
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      shock_id: qui
+      shock_id: doloribus
       shock_works:
         -
-          obsolescence_rate: 358621.924847
-          recovery_amount: 899102.49937556
-          discount: 20
-          amount: 407771082.0
+          obsolescence_rate: 355757107.0
+          recovery_amount: 5038.15375221
+          discount: 5
+          amount: 28.94026072
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer fhab4Z85Eakcde6gvD31PV6'
+      - 'Bearer 8hZvV1gE346aDa6fdPce5bk'
     controller: null
     method: null
     route: null
@@ -374,14 +374,14 @@ endpoints:
         name: id
         description: 'The ID of the shock work.'
         required: true
-        example: sed
+        example: soluta
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: sed
+      id: soluta
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -401,7 +401,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Pc6vfb4h6dZgka8E1De5Va3'
+      - 'Bearer 56ahv4E13Z6bkPaVcgd8fDe'
     controller: null
     method: null
     route: null
@@ -431,14 +431,14 @@ endpoints:
         name: id
         description: 'The ID of the shock work.'
         required: true
-        example: esse
+        example: explicabo
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: esse
+      id: explicabo
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -446,7 +446,7 @@ endpoints:
         name: supply_id
         description: 'The <code>id</code> of an existing record in the supplies table.'
         required: true
-        example: eum
+        example: deleniti
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -516,7 +516,7 @@ endpoints:
         name: comment
         description: ''
         required: false
-        example: et
+        example: ut
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -526,7 +526,7 @@ endpoints:
         name: obsolescence_rate
         description: ''
         required: true
-        example: 14350882.36121
+        example: 281530.540407
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -536,7 +536,7 @@ endpoints:
         name: recovery_amount
         description: ''
         required: true
-        example: 48.0
+        example: 26.655
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -546,7 +546,7 @@ endpoints:
         name: discount
         description: 'La valeur de value doit être supérieure ou égale à 0. La valeur de value ne peut pas être supérieure à 100.'
         required: true
-        example: 24
+        example: 20
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -556,32 +556,32 @@ endpoints:
         name: amount
         description: ''
         required: true
-        example: 1575235.0
+        example: 384.880714
         type: number
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      supply_id: eum
+      supply_id: deleniti
       disassembly: true
       replacement: true
       repair: true
       paint: false
       obsolescence: true
       control: true
-      comment: et
-      obsolescence_rate: 14350882.36121
-      recovery_amount: 48.0
-      discount: 24
-      amount: 1575235.0
+      comment: ut
+      obsolescence_rate: 281530.540407
+      recovery_amount: 26.655
+      discount: 20
+      amount: 384.880714
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer vZ5he6gkP6a3a4bcDf18EdV'
+      - 'Bearer 6VecvaDkPaZd4368gfEh1b5'
     controller: null
     method: null
     route: null
@@ -611,14 +611,14 @@ endpoints:
         name: id
         description: 'The ID of the shock work.'
         required: true
-        example: aut
+        example: excepturi
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: aut
+      id: excepturi
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -629,7 +629,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer g8P6V14v5dah6EckZbf3aDe'
+      - 'Bearer VZeakDcEgP3hbd866fav514'
     controller: null
     method: null
     route: null
@@ -663,7 +663,7 @@ endpoints:
         name: vehicle_model_id
         description: 'The <code>id</code> of an existing record in the vehicle_models table.'
         required: true
-        example: magnam
+        example: doloribus
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -683,22 +683,22 @@ endpoints:
         name: date
         description: 'Must be a valid date in the format <code>Y-m-d</code>. Le champ value doit être une date antérieure au <code>tomorrow</code>.'
         required: false
-        example: '1999-09-30'
+        example: '1997-02-23'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      vehicle_model_id: magnam
-      date: '1999-09-30'
+      vehicle_model_id: doloribus
+      date: '1997-02-23'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer bD48hvPgeaafkZ31EV665cd'
+      - 'Bearer 4k38Pfv6eda56bZacDgEh1V'
     controller: null
     method: null
     route: null

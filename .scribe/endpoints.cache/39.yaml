@@ -46,7 +46,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Ve8v5faE3gh6ck4DZ1daP6b'
+      - 'Bearer V6aZeh3458vgcdPkfaDE6b1'
     controller: null
     method: null
     route: null
@@ -80,7 +80,7 @@ endpoints:
         name: param_1
         description: ''
         required: true
-        example: 9.95622842
+        example: 501685.771
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -90,7 +90,7 @@ endpoints:
         name: param_2
         description: ''
         required: true
-        example: 2.6576
+        example: 11818.5
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -100,7 +100,7 @@ endpoints:
         name: hourly_rate_id
         description: 'The <code>id</code> of an existing record in the hourly_rates table.'
         required: true
-        example: labore
+        example: rerum
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -110,7 +110,7 @@ endpoints:
         name: paint_type_id
         description: 'The <code>id</code> of an existing record in the paint_types table.'
         required: true
-        example: deleniti
+        example: sed
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -120,25 +120,25 @@ endpoints:
         name: number_paint_element_id
         description: 'The <code>id</code> of an existing record in the number_paint_elements table.'
         required: true
-        example: odit
+        example: dolorum
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      param_1: 9.95622842
-      param_2: 2.6576
-      hourly_rate_id: labore
-      paint_type_id: deleniti
-      number_paint_element_id: odit
+      param_1: 501685.771
+      param_2: 11818.5
+      hourly_rate_id: rerum
+      paint_type_id: sed
+      number_paint_element_id: dolorum
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 6Dvahfk3Ea1854cgZ6PdbVe'
+      - 'Bearer fb86hvgV6D3aPc5a4ZekE1d'
     controller: null
     method: null
     route: null
@@ -168,14 +168,14 @@ endpoints:
         name: paintingPrice
         description: ''
         required: true
-        example: dolores
+        example: cum
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      paintingPrice: dolores
+      paintingPrice: cum
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -195,7 +195,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer a1EVZfh3d6kDg45ve6cab8P'
+      - 'Bearer kfVhbDd3v1c68g5eEZa64Pa'
     controller: null
     method: null
     route: null
@@ -225,14 +225,14 @@ endpoints:
         name: paintingPrice
         description: ''
         required: true
-        example: et
+        example: in
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      paintingPrice: et
+      paintingPrice: in
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -240,7 +240,7 @@ endpoints:
         name: param_1
         description: ''
         required: true
-        example: 45590.6
+        example: 135.13105
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -250,7 +250,7 @@ endpoints:
         name: param_2
         description: ''
         required: true
-        example: 277.7
+        example: 148.1295388
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -260,7 +260,7 @@ endpoints:
         name: hourly_rate_id
         description: 'The <code>id</code> of an existing record in the hourly_rates table.'
         required: true
-        example: optio
+        example: rerum
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -270,7 +270,7 @@ endpoints:
         name: paint_type_id
         description: 'The <code>id</code> of an existing record in the paint_types table.'
         required: true
-        example: quas
+        example: consequatur
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -280,25 +280,25 @@ endpoints:
         name: number_paint_element_id
         description: 'The <code>id</code> of an existing record in the number_paint_elements table.'
         required: true
-        example: repudiandae
+        example: aut
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      param_1: 45590.6
-      param_2: 277.7
-      hourly_rate_id: optio
-      paint_type_id: quas
-      number_paint_element_id: repudiandae
+      param_1: 135.13105
+      param_2: 148.1295388
+      hourly_rate_id: rerum
+      paint_type_id: consequatur
+      number_paint_element_id: aut
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 65kvEabPghDe63fcVa1Zd84'
+      - 'Bearer dv6gV683hEf4D51abkcZPae'
     controller: null
     method: null
     route: null
@@ -328,14 +328,14 @@ endpoints:
         name: paintingPrice
         description: ''
         required: true
-        example: ea
+        example: voluptatem
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      paintingPrice: ea
+      paintingPrice: voluptatem
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -346,7 +346,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6hg6v4a1e5Ed8ZcVDbPaf3k'
+      - 'Bearer kcEh668d3vaD5ePfa1gZ4bV'
     controller: null
     method: null
     route: null

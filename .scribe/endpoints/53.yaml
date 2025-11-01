@@ -44,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Pa384Vv5bdhgkfZ1aeE6Dc6'
+      - 'Bearer 4dE5VbavZgk6Pf1ac3h86eD'
     controller: null
     method: null
     route: null
@@ -78,7 +78,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: jpghforpeeg
+        example: ehmbvahjikbxcxqqrsni
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -88,22 +88,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Qui asperiores ab tempora.'
+        example: 'Doloremque porro sint placeat cupiditate voluptatem iure laboriosam enim.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: jpghforpeeg
-      description: 'Qui asperiores ab tempora.'
+      label: ehmbvahjikbxcxqqrsni
+      description: 'Doloremque porro sint placeat cupiditate voluptatem iure laboriosam enim.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer fkaDhVg643Zcebv8a6dE51P'
+      - 'Bearer v5PZV63cdfake684Dh1gEba'
     controller: null
     method: null
     route: null
@@ -133,14 +133,14 @@ endpoints:
         name: id
         description: 'The ID of the ascertainment type.'
         required: true
-        example: sed
+        example: doloribus
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: sed
+      id: doloribus
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -160,7 +160,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer cak63heP18d4agf5bD6EZvV'
+      - 'Bearer b6hdvka4c1aeE53gDf6VZP8'
     controller: null
     method: null
     route: null
@@ -190,14 +190,14 @@ endpoints:
         name: id
         description: 'The ID of the ascertainment type.'
         required: true
-        example: tempora
+        example: numquam
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: tempora
+      id: numquam
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -205,7 +205,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: khlwfyyjhj
+        example: saqvalxmldjfab
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -215,22 +215,22 @@ endpoints:
         name: description
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: false
-        example: 'Fuga provident molestiae animi similique.'
+        example: 'Perspiciatis omnis recusandae voluptatum omnis.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: khlwfyyjhj
-      description: 'Fuga provident molestiae animi similique.'
+      label: saqvalxmldjfab
+      description: 'Perspiciatis omnis recusandae voluptatum omnis.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer avZf3816VPke6EdD4hca5bg'
+      - 'Bearer DfvZec65bhPaV638k1gdaE4'
     controller: null
     method: null
     route: null
@@ -260,14 +260,14 @@ endpoints:
         name: id
         description: 'The ID of the ascertainment type.'
         required: true
-        example: ut
+        example: perspiciatis
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: ut
+      id: perspiciatis
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -278,7 +278,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer P8fbead516ZVa6Evkh3D4cg'
+      - 'Bearer 1dvVkgZbPe568ah3Eaf4Dc6'
     controller: null
     method: null
     route: null

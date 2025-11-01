@@ -44,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 8vfd53ePDEkb1V64aZgch6a'
+      - 'Bearer 5h36DVZeaE1d84kfacP6gvb'
     controller: null
     method: null
     route: null
@@ -78,21 +78,21 @@ endpoints:
         name: insurer_id
         description: 'The <code>id</code> of an existing record in the entities table.'
         required: true
-        example: aut
+        example: ipsam
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      insurer_id: aut
+      insurer_id: ipsam
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 8D1fec4b6PZ6Vk3agahdv5E'
+      - 'Bearer Pch6V8f5kbD461a3ZvEgaed'
     controller: null
     method: null
     route: null
@@ -122,14 +122,14 @@ endpoints:
         name: insurerRelationship
         description: ''
         required: true
-        example: unde
+        example: ut
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      insurerRelationship: unde
+      insurerRelationship: ut
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -149,7 +149,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 5D61bevEfh4gkP86dZ3aVac'
+      - 'Bearer Vcka5af1v6bPDEd43g8Ze6h'
     controller: null
     method: null
     route: null
@@ -179,14 +179,14 @@ endpoints:
         name: insurerRelationship
         description: ''
         required: true
-        example: minima
+        example: et
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      insurerRelationship: minima
+      insurerRelationship: et
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -197,7 +197,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer v6bdV13cPDaZ5aEkfg48h6e'
+      - 'Bearer D5vZE6abdVPh8kca36g1f4e'
     controller: null
     method: null
     route: null
@@ -227,14 +227,14 @@ endpoints:
         name: insurerRelationship
         description: ''
         required: true
-        example: aut
+        example: quas
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      insurerRelationship: aut
+      insurerRelationship: quas
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -245,7 +245,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Zh5Vckf43edEDbv6Pa168ag'
+      - 'Bearer e1h8ZabVdacv6E64f3DPkg5'
     controller: null
     method: null
     route: null
@@ -275,14 +275,14 @@ endpoints:
         name: insurerRelationship
         description: ''
         required: true
-        example: qui
+        example: recusandae
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      insurerRelationship: qui
+      insurerRelationship: recusandae
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -293,7 +293,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer g1bVheDaf5E66P4aZ3cdv8k'
+      - 'Bearer D6agbkZ5Vdc6eah8143vPEf'
     controller: null
     method: null
     route: null

@@ -44,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer b64defV6EDaZg3ka1c8Phv5'
+      - 'Bearer Pfh4de6bkac61DvVEZ58a3g'
     controller: null
     method: null
     route: null
@@ -78,7 +78,7 @@ endpoints:
         name: code
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: wuusxryvssq
+        example: xbyqlvttcy
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -88,7 +88,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: fjdghbeatsfubxhgkhukpe
+        example: glsfdgbgzmptgnehg
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -98,23 +98,23 @@ endpoints:
         name: description
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: false
-        example: 'Assumenda dignissimos molestiae ratione.'
+        example: 'Id debitis expedita velit occaecati eum et commodi.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      code: wuusxryvssq
-      label: fjdghbeatsfubxhgkhukpe
-      description: 'Assumenda dignissimos molestiae ratione.'
+      code: xbyqlvttcy
+      label: glsfdgbgzmptgnehg
+      description: 'Id debitis expedita velit occaecati eum et commodi.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer fP6361aeZc4Vd5gahvEDbk8'
+      - 'Bearer 8gveEah1V6cDfad5P63Z4bk'
     controller: null
     method: null
     route: null
@@ -144,14 +144,14 @@ endpoints:
         name: id
         description: 'The ID of the status.'
         required: true
-        example: id
+        example: praesentium
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: id
+      id: praesentium
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -171,7 +171,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Zvh8D4b1d6ke6afaPcgV5E3'
+      - 'Bearer keD3EbVfhPdcg5va6a1Z486'
     controller: null
     method: null
     route: null
@@ -201,14 +201,14 @@ endpoints:
         name: id
         description: 'The ID of the status.'
         required: true
-        example: totam
+        example: voluptatibus
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: totam
+      id: voluptatibus
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -216,7 +216,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: awkpxopaihsm
+        example: ullrifktkzntthfbchh
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -226,22 +226,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Recusandae ullam distinctio qui.'
+        example: 'Tempora maxime temporibus veritatis.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: awkpxopaihsm
-      description: 'Recusandae ullam distinctio qui.'
+      label: ullrifktkzntthfbchh
+      description: 'Tempora maxime temporibus veritatis.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer bV15de646g3vfcZha8EPaDk'
+      - 'Bearer cf686h3a1DZd5bEvVe4kaPg'
     controller: null
     method: null
     route: null
@@ -271,14 +271,14 @@ endpoints:
         name: id
         description: 'The ID of the status.'
         required: true
-        example: facilis
+        example: magni
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: facilis
+      id: magni
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -289,7 +289,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 1kfhb84eZdv6DgP6a3EaV5c'
+      - 'Bearer Pf4d61cEaZ3D6eV8bgkhav5'
     controller: null
     method: null
     route: null

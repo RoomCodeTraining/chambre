@@ -6,6 +6,39 @@ endpoints:
   -
     httpMethods:
       - POST
+    uri: api/v1/auth/register
+    metadata:
+      groupName: Auth
+      groupDescription: |-
+
+        Auth API
+      subgroup: ''
+      subgroupDescription: ''
+      title: "Inscription d'un nouveau client"
+      description: ''
+      authenticated: false
+      deprecated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
     uri: api/v1/auth/set-password
     metadata:
       groupName: Auth
@@ -32,7 +65,7 @@ endpoints:
         name: email
         description: 'Le champ value doit être une adresse e-mail valide.'
         required: true
-        example: ejohnson@example.org
+        example: kilback.enrique@example.org
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -42,7 +75,7 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: nesciunt
+        example: dolore
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -52,7 +85,7 @@ endpoints:
         name: new_password
         description: 'Le texte de value ne peut pas contenir plus de 100 caractères.'
         required: true
-        example: dlwagvevvrq
+        example: polbfrehvxy
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -62,24 +95,24 @@ endpoints:
         name: new_password_confirmation
         description: 'Le texte de value ne peut pas contenir plus de 100 caractères.'
         required: true
-        example: wsiuomtyxtznfjkh
+        example: zgq
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      email: ejohnson@example.org
-      password: nesciunt
-      new_password: dlwagvevvrq
-      new_password_confirmation: wsiuomtyxtznfjkh
+      email: kilback.enrique@example.org
+      password: dolore
+      new_password: polbfrehvxy
+      new_password_confirmation: zgq
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 5cf4VD1gda3k6abZvPE8h6e'
+      - 'Bearer k68cfg5hVe61bE4da3PavZD'
     controller: null
     method: null
     route: null
@@ -113,7 +146,7 @@ endpoints:
         name: email
         description: 'Le champ value doit être une adresse e-mail valide.'
         required: true
-        example: hudson.clemmie@example.net
+        example: lamar26@example.net
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -123,22 +156,22 @@ endpoints:
         name: pin_code
         description: 'Le champ value doit contenir 6 chiffres.'
         required: true
-        example: '282921'
+        example: '849178'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      email: hudson.clemmie@example.net
-      pin_code: '282921'
+      email: lamar26@example.net
+      pin_code: '849178'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer DgVPak1E43c6vfd8Zeab6h5'
+      - 'Bearer VhaEvk685cbD3Z4dfe6Pga1'
     controller: null
     method: null
     route: null
@@ -172,21 +205,21 @@ endpoints:
         name: email
         description: 'Le champ value doit être une adresse e-mail valide.'
         required: true
-        example: ullrich.drake@example.net
+        example: jones.hulda@example.com
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      email: ullrich.drake@example.net
+      email: jones.hulda@example.com
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 1DbfadEvVkag564P6echZ83'
+      - 'Bearer DEkbeZ34v18fhPVagcd6a56'
     controller: null
     method: null
     route: null
@@ -223,7 +256,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer fedka66PahvcD1V3EbZ4g58'
+      - 'Bearer e3DEZkabc5Pa18V6dh4fgv6'
     controller: null
     method: null
     route: null
@@ -269,7 +302,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer c5aZdE4Dg136aP68bevVhfk'
+      - 'Bearer 1vda6a5e4k8E6ZgcV3PbfhD'
     controller: null
     method: null
     route: null

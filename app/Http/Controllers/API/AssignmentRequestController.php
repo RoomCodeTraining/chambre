@@ -14,6 +14,11 @@ use App\Http\Resources\AssignmentRequest\AssignmentRequestResource;
 use App\Http\Requests\AssignmentRequest\CreateAssignmentRequestRequest;
 use App\Http\Requests\AssignmentRequest\UpdateAssignmentRequestRequest;
 
+/**
+ * @group Gestion des demandes d'expertise
+ *
+ * APIs pour la gestion des demandes d'expertise
+ */
 class AssignmentRequestController extends Controller
 {
     public function __construct()
@@ -21,6 +26,11 @@ class AssignmentRequestController extends Controller
 
     }
 
+    /**
+     * Lister toutes les demandes d'expertise
+     *
+     * @authenticated
+     */
     public function index(): AnonymousResourceCollection
     {
         $assignmentRequests = AssignmentRequest::with('expertFirm','assignmentType', 'expertiseType', 'status', 'deletedBy', 'client', 'vehicle', 'insurer', 'repairer', 'createdBy', 'updatedBy')
@@ -32,6 +42,11 @@ class AssignmentRequestController extends Controller
         return AssignmentRequestResource::collection($assignmentRequests);
     }
 
+    /**
+     * Créer une demande d'expertise
+     *
+     * @authenticated
+     */
     public function store(CreateAssignmentRequestRequest $request): JsonResponse
     {
         $assignmentRequest = AssignmentRequest::create([
@@ -78,10 +93,15 @@ class AssignmentRequestController extends Controller
                 }
             }
         }
-        
+
         return $this->responseCreated('AssignmentRequest created successfully', new AssignmentRequestResource($assignmentRequest));
     }
 
+    /**
+     * Afficher une demande d'expertise
+     *
+     * @authenticated
+     */
     public function show($id): JsonResponse
     {
         $assignmentRequest = AssignmentRequest::findOrFail(AssignmentRequest::keyFromHashId($id));
@@ -89,6 +109,11 @@ class AssignmentRequestController extends Controller
         return $this->responseSuccess(null, new AssignmentRequestResource($assignmentRequest->load('expertFirm','assignmentType', 'expertiseType', 'status', 'deletedBy', 'client', 'vehicle', 'insurer', 'repairer', 'createdBy', 'updatedBy')));
     }
 
+    /**
+     * Mettre à jour une demande d'expertise
+     *
+     * @authenticated
+     */
     public function update(UpdateAssignmentRequestRequest $request, $id): JsonResponse
     {
         $assignmentRequest = AssignmentRequest::findOrFail(AssignmentRequest::keyFromHashId($id));
@@ -98,6 +123,11 @@ class AssignmentRequestController extends Controller
         return $this->responseSuccess('AssignmentRequest updated Successfully', new AssignmentRequestResource($assignmentRequest));
     }
 
+    /**
+     * Supprimer une demande d'expertise
+     *
+     * @authenticated
+     */
     public function destroy($id): JsonResponse
     {
         $assignmentRequest = AssignmentRequest::findOrFail(AssignmentRequest::keyFromHashId($id));

@@ -44,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer d4E5eb183agfa6ZV6DcvhPk'
+      - 'Bearer vVEe1kZD6hbcafd85P4a36g'
     controller: null
     method: null
     route: null
@@ -78,7 +78,7 @@ endpoints:
         name: value
         description: 'La valeur de value doit être supérieure ou égale à 0.'
         required: true
-        example: 89
+        example: 19
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -88,7 +88,7 @@ endpoints:
         name: paint_type_id
         description: 'The <code>id</code> of an existing record in the paint_types table.'
         required: true
-        example: culpa
+        example: vero
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -98,23 +98,23 @@ endpoints:
         name: number_paint_element_id
         description: 'The <code>id</code> of an existing record in the number_paint_elements table.'
         required: true
-        example: qui
+        example: quos
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      value: 89
-      paint_type_id: culpa
-      number_paint_element_id: qui
+      value: 19
+      paint_type_id: vero
+      number_paint_element_id: quos
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer EP63Da5cVf8kg1badvZ4he6'
+      - 'Bearer h3VkDaabZ1P6v8E46gfcde5'
     controller: null
     method: null
     route: null
@@ -144,14 +144,14 @@ endpoints:
         name: paintProductPrice
         description: ''
         required: true
-        example: voluptatum
+        example: distinctio
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      paintProductPrice: voluptatum
+      paintProductPrice: distinctio
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -171,7 +171,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer vkaaPfbV665gZE48dh1cDe3'
+      - 'Bearer 46PaEk36g1bc5fvaeh8dZVD'
     controller: null
     method: null
     route: null
@@ -201,14 +201,14 @@ endpoints:
         name: paintProductPrice
         description: ''
         required: true
-        example: voluptatibus
+        example: ratione
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      paintProductPrice: voluptatibus
+      paintProductPrice: ratione
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -216,7 +216,7 @@ endpoints:
         name: value
         description: ''
         required: true
-        example: 50518.0
+        example: 4.92593
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -226,7 +226,7 @@ endpoints:
         name: paint_type_id
         description: 'The <code>id</code> of an existing record in the paint_types table.'
         required: true
-        example: repellat
+        example: non
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -236,23 +236,23 @@ endpoints:
         name: number_paint_element_id
         description: 'The <code>id</code> of an existing record in the number_paint_elements table.'
         required: true
-        example: perspiciatis
+        example: omnis
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      value: 50518.0
-      paint_type_id: repellat
-      number_paint_element_id: perspiciatis
+      value: 4.92593
+      paint_type_id: non
+      number_paint_element_id: omnis
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 6aDa618PEvZcfdh4gbkV3e5'
+      - 'Bearer kaE3D45cPV8f6hagev6Zbd1'
     controller: null
     method: null
     route: null
@@ -282,14 +282,14 @@ endpoints:
         name: paintProductPrice
         description: ''
         required: true
-        example: ipsum
+        example: ut
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      paintProductPrice: ipsum
+      paintProductPrice: ut
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -300,7 +300,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer VvE8k63gb64efc1daPa5DZh'
+      - 'Bearer ac84e5Pf6EbZgD6hd31Vkav'
     controller: null
     method: null
     route: null
