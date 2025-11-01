@@ -19,6 +19,7 @@ class RegisterRequest extends FormRequest
             'last_name' => ['required', 'string', 'max:255'],
             'telephone' => ['required', 'string', 'max:255'],
             'password' => ['required', 'string', 'confirmed', 'max:100', Password::default()->min(12)->mixedCase()->numbers()->uncompromised()],
+            'password_confirmation' => ['required', 'string', 'confirmed', 'max:100', Password::default()->min(12)->mixedCase()->numbers()->uncompromised()],
         ];
     }
 
@@ -47,6 +48,14 @@ class RegisterRequest extends FormRequest
             'password.mixed_case' => 'Le mot de passe doit contenir au moins une lettre majuscule et une lettre minuscule',
             'password.numbers' => 'Le mot de passe doit contenir au moins un chiffre',
             'password.uncompromised' => 'Le mot de passe est trop simple',
+            'password_confirmation.required' => 'La confirmation du mot de passe est requise',
+            'password_confirmation.string' => 'La confirmation du mot de passe doit être une chaîne de caractères',
+            'password_confirmation.confirmed' => 'La confirmation du mot de passe et le mot de passe doivent être identiques',
+            'password_confirmation.max' => 'La confirmation du mot de passe doit contenir au maximum 100 caractères',
+            'password_confirmation.min' => 'La confirmation du mot de passe doit contenir au moins 12 caractères',
+            'password_confirmation.mixed_case' => 'La confirmation du mot de passe doit contenir au moins une lettre majuscule et une lettre minuscule',
+            'password_confirmation.numbers' => 'La confirmation du mot de passe doit contenir au moins un chiffre',
+            'password_confirmation.uncompromised' => 'La confirmation du mot de passe est trop simple',
         ];
     }
 }
