@@ -46,7 +46,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6vagcZ8fa5PbVkED14h6e3d'
+      - 'Bearer h3adP6aZ4gkEcf61v58ebVD'
     controller: null
     method: null
     route: null
@@ -94,7 +94,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer vEca1gDdh86kb6eZf453aVP'
+      - 'Bearer 3c8h4dvEZbafe1k65Da6PgV'
     controller: null
     method: null
     route: null
@@ -102,7 +102,7 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: 'api/v1/repairer-relationships/{repairerRelationship_id}'
+    uri: 'api/v1/repairer-relationships/{repairerRelationship}'
     metadata:
       groupName: 'Gestion des rattachements réparateurs'
       groupDescription: |-
@@ -120,18 +120,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      repairerRelationship_id:
-        name: repairerRelationship_id
-        description: 'The ID of the repairerRelationship.'
+      repairerRelationship:
+        name: repairerRelationship
+        description: ''
         required: true
-        example: 1
-        type: integer
+        example: est
+        type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      repairerRelationship_id: 1
+      repairerRelationship: est
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -151,7 +151,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer c38gvDabedhk6Z16Va4EfP5'
+      - 'Bearer 6da6PevhbfkZc4851gDVaE3'
     controller: null
     method: null
     route: null
@@ -159,7 +159,7 @@ endpoints:
   -
     httpMethods:
       - PUT
-    uri: 'api/v1/repairer-relationships/{repairerRelationship_id}'
+    uri: 'api/v1/repairer-relationships/{repairerRelationship}'
     metadata:
       groupName: 'Gestion des rattachements réparateurs'
       groupDescription: |-
@@ -177,18 +177,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      repairerRelationship_id:
-        name: repairerRelationship_id
-        description: 'The ID of the repairerRelationship.'
+      repairerRelationship:
+        name: repairerRelationship
+        description: ''
         required: true
-        example: 1
-        type: integer
+        example: est
+        type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      repairerRelationship_id: 1
+      repairerRelationship: est
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -199,7 +199,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer dvecDaZ86Vab5k4f613gPhE'
+      - 'Bearer vgaPV163b4dk8fE65cZaheD'
     controller: null
     method: null
     route: null
@@ -207,7 +207,7 @@ endpoints:
   -
     httpMethods:
       - PUT
-    uri: 'api/v1/repairer-relationships/{repairerRelationship_id}/enable'
+    uri: 'api/v1/repairer-relationships/{repairerRelationship}/enable'
     metadata:
       groupName: 'Gestion des rattachements réparateurs'
       groupDescription: |-
@@ -225,18 +225,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      repairerRelationship_id:
-        name: repairerRelationship_id
-        description: 'The ID of the repairerRelationship.'
+      repairerRelationship:
+        name: repairerRelationship
+        description: ''
         required: true
-        example: 1
-        type: integer
+        example: itaque
+        type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      repairerRelationship_id: 1
+      repairerRelationship: itaque
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -247,7 +247,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer V36hfP8acg4evkZDE1d65ab'
+      - 'Bearer 6ag8fkb14vcVDEed635PaZh'
     controller: null
     method: null
     route: null
@@ -255,7 +255,7 @@ endpoints:
   -
     httpMethods:
       - PUT
-    uri: 'api/v1/repairer-relationships/{repairerRelationship_id}/disable'
+    uri: 'api/v1/repairer-relationships/{repairerRelationship}/disable'
     metadata:
       groupName: 'Gestion des rattachements réparateurs'
       groupDescription: |-
@@ -273,18 +273,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      repairerRelationship_id:
-        name: repairerRelationship_id
-        description: 'The ID of the repairerRelationship.'
+      repairerRelationship:
+        name: repairerRelationship
+        description: ''
         required: true
-        example: 1
-        type: integer
+        example: ullam
+        type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      repairerRelationship_id: 1
+      repairerRelationship: ullam
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -295,7 +295,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer g5PdZ46f8Ec6eabvah31VkD'
+      - 'Bearer 4ZkPad63Ee65gDc1hvfbaV8'
     controller: null
     method: null
     route: null

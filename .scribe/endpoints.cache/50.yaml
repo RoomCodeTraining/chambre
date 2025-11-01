@@ -46,7 +46,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer fbgkZd8hPVa46vaeEc36D15'
+      - 'Bearer VbP4h8gv6a6Ec351fDkdZae'
     controller: null
     method: null
     route: null
@@ -80,21 +80,21 @@ endpoints:
         name: name
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: hutlwqtjl
+        example: xrxl
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      name: hutlwqtjl
+      name: xrxl
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer D5PE4gb8VZhfcd3e6a1v6ka'
+      - 'Bearer fe46dcVb31g6vkD8ahZP5aE'
     controller: null
     method: null
     route: null
@@ -124,14 +124,14 @@ endpoints:
         name: id
         description: 'The ID of the bank.'
         required: true
-        example: 7
-        type: integer
+        example: quaerat
+        type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 7
+      id: quaerat
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -151,7 +151,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer vZbP1geEaka6fV34D86chd5'
+      - 'Bearer 8a5fbZV6akv3gh4PEDedc61'
     controller: null
     method: null
     route: null
@@ -181,14 +181,14 @@ endpoints:
         name: id
         description: 'The ID of the bank.'
         required: true
-        example: 16
-        type: integer
+        example: voluptatem
+        type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 16
+      id: voluptatem
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -196,21 +196,21 @@ endpoints:
         name: name
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: nlcpvpqtoirr
+        example: uobkx
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      name: nlcpvpqtoirr
+      name: uobkx
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer e6fg153a4Ph8kV6bavZDcdE'
+      - 'Bearer e1P3b6fcg6ZhdaEvDkVa485'
     controller: null
     method: null
     route: null
@@ -240,14 +240,14 @@ endpoints:
         name: id
         description: 'The ID of the bank.'
         required: true
-        example: 18
+        example: 20
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 18
+      id: 20
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -258,7 +258,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer VdZbf6v86aEha1kg54eDc3P'
+      - 'Bearer e41ZbcgVafE8a5dhv63P6kD'
     controller: null
     method: null
     route: null

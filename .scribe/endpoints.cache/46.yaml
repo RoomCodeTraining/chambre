@@ -46,7 +46,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer VPkf18da3habZe4D6gE65vc'
+      - 'Bearer g1VDdZ3hvePaE56ka6cb84f'
     controller: null
     method: null
     route: null
@@ -80,7 +80,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: hfuqojdlsdqjwpqk
+        example: ikjqmnsbscwlcbkszwj
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -90,22 +90,22 @@ endpoints:
         name: description
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: false
-        example: 'Dignissimos ut aperiam quia quia facere distinctio.'
+        example: 'Laboriosam repudiandae aspernatur dolorem quia corporis ullam quo.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: hfuqojdlsdqjwpqk
-      description: 'Dignissimos ut aperiam quia quia facere distinctio.'
+      label: ikjqmnsbscwlcbkszwj
+      description: 'Laboriosam repudiandae aspernatur dolorem quia corporis ullam quo.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer eb361EZDcfgV8kda6a4vP5h'
+      - 'Bearer 5da34DE1kvc8egPh6ZVbf6a'
     controller: null
     method: null
     route: null
@@ -113,7 +113,7 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: 'api/v1/payment-methods/{paymentMethod_id}'
+    uri: 'api/v1/payment-methods/{paymentMethod}'
     metadata:
       groupName: 'Gestion des méthodes de paiement'
       groupDescription: |-
@@ -131,18 +131,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      paymentMethod_id:
-        name: paymentMethod_id
-        description: 'The ID of the paymentMethod.'
+      paymentMethod:
+        name: paymentMethod
+        description: ''
         required: true
-        example: 1
-        type: integer
+        example: voluptatem
+        type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      paymentMethod_id: 1
+      paymentMethod: voluptatem
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -162,7 +162,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer D8636ahc4g51kefaZPEdbVv'
+      - 'Bearer b5afec6v8Eg61D3dVZ4Phak'
     controller: null
     method: null
     route: null
@@ -192,14 +192,14 @@ endpoints:
         name: paymentMethod
         description: ''
         required: true
-        example: 1
-        type: integer
+        example: non
+        type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      paymentMethod: 1
+      paymentMethod: non
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -207,7 +207,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: dqnruoyrtobmfgiaz
+        example: dhyhwpxsnvejegn
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -217,22 +217,22 @@ endpoints:
         name: description
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: false
-        example: 'Rerum ratione vel perspiciatis quo reiciendis ab a.'
+        example: 'Provident nisi architecto quis est repudiandae eos rerum.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: dqnruoyrtobmfgiaz
-      description: 'Rerum ratione vel perspiciatis quo reiciendis ab a.'
+      label: dhyhwpxsnvejegn
+      description: 'Provident nisi architecto quis est repudiandae eos rerum.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer Zh834gPed5vaE66cDVfbak1'
+      - 'Bearer 5hVEa3gP648Z6abe1vfDckd'
     controller: null
     method: null
     route: null
@@ -240,7 +240,7 @@ endpoints:
   -
     httpMethods:
       - DELETE
-    uri: 'api/v1/payment-methods/{paymentMethod_id}'
+    uri: 'api/v1/payment-methods/{paymentMethod}'
     metadata:
       groupName: 'Gestion des méthodes de paiement'
       groupDescription: |-
@@ -258,18 +258,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      paymentMethod_id:
-        name: paymentMethod_id
-        description: 'The ID of the paymentMethod.'
+      paymentMethod:
+        name: paymentMethod
+        description: ''
         required: true
-        example: 1
-        type: integer
+        example: quae
+        type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      paymentMethod_id: 1
+      paymentMethod: quae
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -280,7 +280,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer a4PvedbgV6k8hc5D6fZ31aE'
+      - 'Bearer 3Dv1V65cgEka84bZ6daePfh'
     controller: null
     method: null
     route: null

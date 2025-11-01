@@ -46,7 +46,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer db35PZ6ga1Davcf6E8hVk4e'
+      - 'Bearer 8g4kc6Z5bEP36Df1aadhveV'
     controller: null
     method: null
     route: null
@@ -80,7 +80,7 @@ endpoints:
         name: name
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: bjwcqncbcupdurjrzuaueohr
+        example: adoamzdvmhvugqujfhp
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -90,7 +90,7 @@ endpoints:
         name: email
         description: 'Must match the regex /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/.'
         required: false
-        example: 'P@Z.D{2,}'
+        example: 'Xok@K-2u0Prp.k{2,}'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -100,7 +100,7 @@ endpoints:
         name: phone_1
         description: 'Le texte de value ne peut pas contenir plus de 20 caractères.'
         required: false
-        example: euz
+        example: cqpyyqkmcq
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -110,7 +110,7 @@ endpoints:
         name: phone_2
         description: 'Le texte de value ne peut pas contenir plus de 20 caractères.'
         required: false
-        example: mhkd
+        example: fakilkhik
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -120,25 +120,25 @@ endpoints:
         name: address
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: false
-        example: raptymxshoycjlqhoahxhllh
+        example: sxydvrrxrumatqxfzyrhuqrc
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      name: bjwcqncbcupdurjrzuaueohr
-      email: 'P@Z.D{2,}'
-      phone_1: euz
-      phone_2: mhkd
-      address: raptymxshoycjlqhoahxhllh
+      name: adoamzdvmhvugqujfhp
+      email: 'Xok@K-2u0Prp.k{2,}'
+      phone_1: cqpyyqkmcq
+      phone_2: fakilkhik
+      address: sxydvrrxrumatqxfzyrhuqrc
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer kD4Evh365aZaVcgd6Pbe8f1'
+      - 'Bearer 4VcvdeZgbf16hkPa6853aDE'
     controller: null
     method: null
     route: null
@@ -168,14 +168,14 @@ endpoints:
         name: id
         description: 'The ID of the client.'
         required: true
-        example: nesciunt
+        example: ad
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: nesciunt
+      id: ad
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -195,7 +195,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6cfZk85ebEaD36hg4VvaP1d'
+      - 'Bearer DVEgZ6Pdh51v36c8akfe4ba'
     controller: null
     method: null
     route: null
@@ -225,14 +225,14 @@ endpoints:
         name: id
         description: 'The ID of the client.'
         required: true
-        example: atque
+        example: est
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: atque
+      id: est
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -240,7 +240,7 @@ endpoints:
         name: name
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: ogy
+        example: igihvvoubfyakfnfdtaobljtb
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -250,7 +250,7 @@ endpoints:
         name: email
         description: 'Must match the regex /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/. Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: false
-        example: judah.reichel@example.com
+        example: rosie66@example.net
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -260,7 +260,7 @@ endpoints:
         name: phone_1
         description: 'Le texte de value ne peut pas contenir plus de 20 caractères.'
         required: false
-        example: uaym
+        example: byvoume
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -270,7 +270,7 @@ endpoints:
         name: phone_2
         description: 'Le texte de value ne peut pas contenir plus de 20 caractères.'
         required: false
-        example: rzaptptdxtdbujva
+        example: qpeedukcptjxppvbgj
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -280,25 +280,25 @@ endpoints:
         name: address
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: false
-        example: txdizdgdc
+        example: ctwwyygjabmwg
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      name: ogy
-      email: judah.reichel@example.com
-      phone_1: uaym
-      phone_2: rzaptptdxtdbujva
-      address: txdizdgdc
+      name: igihvvoubfyakfnfdtaobljtb
+      email: rosie66@example.net
+      phone_1: byvoume
+      phone_2: qpeedukcptjxppvbgj
+      address: ctwwyygjabmwg
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer k6bdacE6vhD34ZePVg1a5f8'
+      - 'Bearer ebadk456EvZD18fa3cgVhP6'
     controller: null
     method: null
     route: null
@@ -328,14 +328,14 @@ endpoints:
         name: id
         description: 'The ID of the client.'
         required: true
-        example: nam
+        example: veritatis
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: nam
+      id: veritatis
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -346,7 +346,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer f3V5b81gE4kvehaDd6ZPac6'
+      - 'Bearer d4b6ckD6ghEvVe85a3faZ1P'
     controller: null
     method: null
     route: null

@@ -46,7 +46,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer fda61geEhv8b3D6ak5cVZ4P'
+      - 'Bearer g851P643aefvdbkZhVD6Eca'
     controller: null
     method: null
     route: null
@@ -80,7 +80,7 @@ endpoints:
         name: assignment_id
         description: 'The <code>id</code> of an existing record in the assignments table.'
         required: true
-        example: voluptatem
+        example: molestiae
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -90,7 +90,7 @@ endpoints:
         name: date
         description: 'Must be a valid date in the format <code>Y-m-d</code>.'
         required: true
-        example: '2025-10-14'
+        example: '2025-11-01'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -100,7 +100,7 @@ endpoints:
         name: object
         description: ''
         required: true
-        example: soluta
+        example: et
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -110,7 +110,7 @@ endpoints:
         name: address
         description: ''
         required: false
-        example: eum
+        example: harum
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -120,25 +120,25 @@ endpoints:
         name: taxpayer_account_number
         description: ''
         required: false
-        example: repudiandae
+        example: corporis
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      assignment_id: voluptatem
-      date: '2025-10-14'
-      object: soluta
-      address: eum
-      taxpayer_account_number: repudiandae
+      assignment_id: molestiae
+      date: '2025-11-01'
+      object: et
+      address: harum
+      taxpayer_account_number: corporis
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer P1E6h3a84vVed5Zag6bfckD'
+      - 'Bearer v1fcbgdEP86VZa3ak4D5h6e'
     controller: null
     method: null
     route: null
@@ -168,14 +168,14 @@ endpoints:
         name: id
         description: 'The ID of the invoice.'
         required: true
-        example: 9
-        type: integer
+        example: dolores
+        type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 9
+      id: dolores
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -195,7 +195,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer gEhvaab13kZeV4D86c6f5Pd'
+      - 'Bearer ghkaEd1PfZc4aev56DbV638'
     controller: null
     method: null
     route: null
@@ -225,14 +225,14 @@ endpoints:
         name: id
         description: 'The ID of the invoice.'
         required: true
-        example: 19
-        type: integer
+        example: dolorem
+        type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 19
+      id: dolorem
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -240,7 +240,7 @@ endpoints:
         name: date
         description: 'Must be a valid date in the format <code>Y-m-d</code>.'
         required: true
-        example: '2025-10-14'
+        example: '2025-11-01'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -250,7 +250,7 @@ endpoints:
         name: object
         description: ''
         required: true
-        example: omnis
+        example: perferendis
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -260,7 +260,7 @@ endpoints:
         name: address
         description: ''
         required: false
-        example: laudantium
+        example: consequatur
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -270,24 +270,24 @@ endpoints:
         name: taxpayer_account_number
         description: ''
         required: false
-        example: ut
+        example: accusantium
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      date: '2025-10-14'
-      object: omnis
-      address: laudantium
-      taxpayer_account_number: ut
+      date: '2025-11-01'
+      object: perferendis
+      address: consequatur
+      taxpayer_account_number: accusantium
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer PabdheZ6k643fgDVav15Ec8'
+      - 'Bearer bD4E6kPaZ8dfh56V1ecv3ag'
     controller: null
     method: null
     route: null
@@ -317,14 +317,14 @@ endpoints:
         name: id
         description: 'The ID of the invoice.'
         required: true
-        example: 20
-        type: integer
+        example: iusto
+        type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 20
+      id: iusto
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -335,7 +335,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Vf1kv64gdh5ecP86b3aDEaZ'
+      - 'Bearer a4P8V63gfcdv6EbDa1eZk5h'
     controller: null
     method: null
     route: null
@@ -365,14 +365,14 @@ endpoints:
         name: invoice
         description: 'The invoice.'
         required: true
-        example: 15
-        type: integer
+        example: officia
+        type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      invoice: 15
+      invoice: officia
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -383,7 +383,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer vZ83fkegb4Dha61EV5dcP6a'
+      - 'Bearer Vg63ZkadP14568DhvEefbca'
     controller: null
     method: null
     route: null
@@ -413,14 +413,14 @@ endpoints:
         name: invoice
         description: 'The invoice.'
         required: true
-        example: 1
-        type: integer
+        example: nisi
+        type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      invoice: 1
+      invoice: nisi
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -431,7 +431,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer a56Z8kbP6fVgcev4d1h3DaE'
+      - 'Bearer 1be34kEhD6fcv8adVa6g5ZP'
     controller: null
     method: null
     route: null
@@ -477,7 +477,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer hPvV516fakgZ6E8bca4d3eD'
+      - 'Bearer v5eb6VdfgP1Ea36Zak8D4ch'
     controller: null
     method: null
     route: null

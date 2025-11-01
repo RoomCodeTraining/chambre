@@ -44,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer fhed6b58ZEa3V64caP1vDkg'
+      - 'Bearer 8vfd53ePDEkb1V64aZgch6a'
     controller: null
     method: null
     route: null
@@ -78,21 +78,21 @@ endpoints:
         name: insurer_id
         description: 'The <code>id</code> of an existing record in the entities table.'
         required: true
-        example: explicabo
+        example: aut
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      insurer_id: explicabo
+      insurer_id: aut
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 8f4d3PD5eakVvhZgE6bca16'
+      - 'Bearer 8D1fec4b6PZ6Vk3agahdv5E'
     controller: null
     method: null
     route: null
@@ -100,7 +100,7 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: 'api/v1/insurer-relationships/{insurerRelationship_id}'
+    uri: 'api/v1/insurer-relationships/{insurerRelationship}'
     metadata:
       groupName: 'Gestion des rattachements assureurs'
       groupDescription: |-
@@ -118,18 +118,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      insurerRelationship_id:
-        name: insurerRelationship_id
-        description: 'The ID of the insurerRelationship.'
+      insurerRelationship:
+        name: insurerRelationship
+        description: ''
         required: true
-        example: 1
-        type: integer
+        example: unde
+        type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      insurerRelationship_id: 1
+      insurerRelationship: unde
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -149,7 +149,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Z4de861EgDacPkafvbV3h56'
+      - 'Bearer 5D61bevEfh4gkP86dZ3aVac'
     controller: null
     method: null
     route: null
@@ -157,7 +157,7 @@ endpoints:
   -
     httpMethods:
       - PUT
-    uri: 'api/v1/insurer-relationships/{insurerRelationship_id}'
+    uri: 'api/v1/insurer-relationships/{insurerRelationship}'
     metadata:
       groupName: 'Gestion des rattachements assureurs'
       groupDescription: |-
@@ -175,18 +175,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      insurerRelationship_id:
-        name: insurerRelationship_id
-        description: 'The ID of the insurerRelationship.'
+      insurerRelationship:
+        name: insurerRelationship
+        description: ''
         required: true
-        example: 1
-        type: integer
+        example: minima
+        type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      insurerRelationship_id: 1
+      insurerRelationship: minima
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -197,7 +197,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer d3ck6aVv1ZEDa56fgb84heP'
+      - 'Bearer v6bdV13cPDaZ5aEkfg48h6e'
     controller: null
     method: null
     route: null
@@ -205,7 +205,7 @@ endpoints:
   -
     httpMethods:
       - PUT
-    uri: 'api/v1/insurer-relationships/{insurerRelationship_id}/enable'
+    uri: 'api/v1/insurer-relationships/{insurerRelationship}/enable'
     metadata:
       groupName: 'Gestion des rattachements assureurs'
       groupDescription: |-
@@ -223,18 +223,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      insurerRelationship_id:
-        name: insurerRelationship_id
-        description: 'The ID of the insurerRelationship.'
+      insurerRelationship:
+        name: insurerRelationship
+        description: ''
         required: true
-        example: 1
-        type: integer
+        example: aut
+        type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      insurerRelationship_id: 1
+      insurerRelationship: aut
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -245,7 +245,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Edev8Zaa46f5ckP3Dbh61gV'
+      - 'Bearer Zh5Vckf43edEDbv6Pa168ag'
     controller: null
     method: null
     route: null
@@ -253,7 +253,7 @@ endpoints:
   -
     httpMethods:
       - PUT
-    uri: 'api/v1/insurer-relationships/{insurerRelationship_id}/disable'
+    uri: 'api/v1/insurer-relationships/{insurerRelationship}/disable'
     metadata:
       groupName: 'Gestion des rattachements assureurs'
       groupDescription: |-
@@ -271,18 +271,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      insurerRelationship_id:
-        name: insurerRelationship_id
-        description: 'The ID of the insurerRelationship.'
+      insurerRelationship:
+        name: insurerRelationship
+        description: ''
         required: true
-        example: 1
-        type: integer
+        example: qui
+        type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      insurerRelationship_id: 1
+      insurerRelationship: qui
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -293,7 +293,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer ga3evkaEb6d41cDfhZ58PV6'
+      - 'Bearer g1bVheDaf5E66P4aZ3cdv8k'
     controller: null
     method: null
     route: null

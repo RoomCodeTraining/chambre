@@ -46,7 +46,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 613dP4fckvE85aghZaVbeD6'
+      - 'Bearer vda8gcbVZP351ek66D4afEh'
     controller: null
     method: null
     route: null
@@ -80,7 +80,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: opkokthtzfqmsc
+        example: qo
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -90,22 +90,22 @@ endpoints:
         name: description
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: false
-        example: 'Dicta perspiciatis ut suscipit iste magni accusamus.'
+        example: 'Hic consequuntur qui et fugiat.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: opkokthtzfqmsc
-      description: 'Dicta perspiciatis ut suscipit iste magni accusamus.'
+      label: qo
+      description: 'Hic consequuntur qui et fugiat.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer kaeE6g1bVh4dDcP56Z3af8v'
+      - 'Bearer v5h84V6gafb1cZEkdae6D3P'
     controller: null
     method: null
     route: null
@@ -113,7 +113,7 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: 'api/v1/photo-types/{photoType_id}'
+    uri: 'api/v1/photo-types/{photoType}'
     metadata:
       groupName: 'Gestion des types de photos'
       groupDescription: |-
@@ -131,18 +131,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      photoType_id:
-        name: photoType_id
-        description: 'The ID of the photoType.'
+      photoType:
+        name: photoType
+        description: ''
         required: true
-        example: 1
-        type: integer
+        example: consectetur
+        type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      photoType_id: 1
+      photoType: consectetur
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -162,7 +162,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 68h64dPDZVbfav1kea5E3cg'
+      - 'Bearer Efk85ga466PbDVcev3dhaZ1'
     controller: null
     method: null
     route: null
@@ -192,14 +192,14 @@ endpoints:
         name: photoType
         description: ''
         required: true
-        example: 1
-        type: integer
+        example: asperiores
+        type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      photoType: 1
+      photoType: asperiores
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -207,7 +207,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: jrkquicqzxulsmdbzz
+        example: zcuighomfqtjzgjo
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -217,22 +217,22 @@ endpoints:
         name: description
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: false
-        example: 'Rem est doloremque quas laboriosam.'
+        example: 'Iusto et ut in iste a et.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: jrkquicqzxulsmdbzz
-      description: 'Rem est doloremque quas laboriosam.'
+      label: zcuighomfqtjzgjo
+      description: 'Iusto et ut in iste a et.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 3bE4fgkcaha86VvD6dPe15Z'
+      - 'Bearer D61bEgaVv3fP6kech8a5Zd4'
     controller: null
     method: null
     route: null
@@ -240,7 +240,7 @@ endpoints:
   -
     httpMethods:
       - DELETE
-    uri: 'api/v1/photo-types/{photoType_id}'
+    uri: 'api/v1/photo-types/{photoType}'
     metadata:
       groupName: 'Gestion des types de photos'
       groupDescription: |-
@@ -258,18 +258,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      photoType_id:
-        name: photoType_id
-        description: 'The ID of the photoType.'
+      photoType:
+        name: photoType
+        description: ''
         required: true
-        example: 1
-        type: integer
+        example: et
+        type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      photoType_id: 1
+      photoType: et
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -280,7 +280,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer g6k3edh1vD5abE4P8caVfZ6'
+      - 'Bearer va64aP51dcDZhkgbf8E63Ve'
     controller: null
     method: null
     route: null

@@ -46,7 +46,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 186ZvaE3ah45kVPfDcb6dge'
+      - 'Bearer 5v64VZPdg3bc6EafDkeh1a8'
     controller: null
     method: null
     route: null
@@ -83,7 +83,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer dv86bPDV4gZa3Ec56kaf1eh'
+      - 'Bearer d4Df6e6k85ca1Egabv3hVZP'
     controller: null
     method: null
     route: null
@@ -91,7 +91,7 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: 'api/v1/payment-historics/{paymentHistoric_id}'
+    uri: 'api/v1/payment-historics/{paymentHistoric}'
     metadata:
       groupName: 'Gestion des historiques de paiement'
       groupDescription: |-
@@ -109,18 +109,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      paymentHistoric_id:
-        name: paymentHistoric_id
-        description: 'The ID of the paymentHistoric.'
+      paymentHistoric:
+        name: paymentHistoric
+        description: ''
         required: true
-        example: 17
-        type: integer
+        example: numquam
+        type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      paymentHistoric_id: 17
+      paymentHistoric: numquam
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -140,7 +140,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer kd4Va5Phg8c6aDvZ63ef1bE'
+      - 'Bearer 1PVef6vD5Zg4b3hdEakca86'
     controller: null
     method: null
     route: null
@@ -170,14 +170,14 @@ endpoints:
         name: paymentHistoric
         description: ''
         required: true
-        example: 6
-        type: integer
+        example: iure
+        type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      paymentHistoric: 6
+      paymentHistoric: iure
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -188,7 +188,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 861f6P4hedcVDZg3avabk5E'
+      - 'Bearer 51c6kvZ8DVadghbEP36e4af'
     controller: null
     method: null
     route: null
@@ -196,7 +196,7 @@ endpoints:
   -
     httpMethods:
       - DELETE
-    uri: 'api/v1/payment-historics/{paymentHistoric_id}'
+    uri: 'api/v1/payment-historics/{paymentHistoric}'
     metadata:
       groupName: 'Gestion des historiques de paiement'
       groupDescription: |-
@@ -214,18 +214,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      paymentHistoric_id:
-        name: paymentHistoric_id
-        description: 'The ID of the paymentHistoric.'
+      paymentHistoric:
+        name: paymentHistoric
+        description: ''
         required: true
-        example: 12
-        type: integer
+        example: atque
+        type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      paymentHistoric_id: 12
+      paymentHistoric: atque
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -236,7 +236,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6daPh14kEv63DVbfegZ8ca5'
+      - 'Bearer baV8h416Pa5gZcfEvdk3De6'
     controller: null
     method: null
     route: null

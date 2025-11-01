@@ -46,7 +46,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer V3PDZhE4ebc6vdaf51gk8a6'
+      - 'Bearer 83a56hDc4kbgV6dPfae1EvZ'
     controller: null
     method: null
     route: null
@@ -80,7 +80,7 @@ endpoints:
         name: code
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: bklguzpmjhtqesqjw
+        example: bkrklwjtqfkoehf
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -90,7 +90,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: uxpuavrjrzvqrmbxaidsel
+        example: zrvqszgehdwjtopqtlaf
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -100,7 +100,7 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Quibusdam voluptas voluptatum beatae laudantium explicabo est.'
+        example: 'Excepturi voluptatem ullam magnam in alias neque.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -110,7 +110,7 @@ endpoints:
         name: max_mileage_essence_per_year
         description: ''
         required: true
-        example: 121945.69
+        example: 352850.3
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -120,25 +120,25 @@ endpoints:
         name: max_mileage_diesel_per_year
         description: ''
         required: true
-        example: 1043.6
+        example: 9833932.404854
         type: number
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      code: bklguzpmjhtqesqjw
-      label: uxpuavrjrzvqrmbxaidsel
-      description: 'Quibusdam voluptas voluptatum beatae laudantium explicabo est.'
-      max_mileage_essence_per_year: 121945.69
-      max_mileage_diesel_per_year: 1043.6
+      code: bkrklwjtqfkoehf
+      label: zrvqszgehdwjtopqtlaf
+      description: 'Excepturi voluptatem ullam magnam in alias neque.'
+      max_mileage_essence_per_year: 352850.3
+      max_mileage_diesel_per_year: 9833932.404854
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer Pkbadgf5V843DvhcE6ea16Z'
+      - 'Bearer aE684PvDaehVf5Z3k61bcdg'
     controller: null
     method: null
     route: null
@@ -168,14 +168,14 @@ endpoints:
         name: id
         description: 'The ID of the vehicle genre.'
         required: true
-        example: molestiae
+        example: est
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: molestiae
+      id: est
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -195,7 +195,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer D6b4Zhc6k38vaEPge5dafV1'
+      - 'Bearer Eadbv6agZkeV415f36PhDc8'
     controller: null
     method: null
     route: null
@@ -225,14 +225,14 @@ endpoints:
         name: id
         description: 'The ID of the vehicle genre.'
         required: true
-        example: ipsa
+        example: voluptas
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: ipsa
+      id: voluptas
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -240,7 +240,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: bwmixgsehjersmwbfpj
+        example: qpzjnnqupswt
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -250,7 +250,7 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Dolore et a aut totam.'
+        example: 'Aspernatur optio ipsa doloremque similique.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -260,7 +260,7 @@ endpoints:
         name: max_mileage_essence_per_year
         description: ''
         required: true
-        example: 3087925.0
+        example: 7156615.626
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -270,24 +270,24 @@ endpoints:
         name: max_mileage_diesel_per_year
         description: ''
         required: true
-        example: 9008719.959
+        example: 60.445338396
         type: number
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      label: bwmixgsehjersmwbfpj
-      description: 'Dolore et a aut totam.'
-      max_mileage_essence_per_year: 3087925.0
-      max_mileage_diesel_per_year: 9008719.959
+      label: qpzjnnqupswt
+      description: 'Aspernatur optio ipsa doloremque similique.'
+      max_mileage_essence_per_year: 7156615.626
+      max_mileage_diesel_per_year: 60.445338396
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer b5Zfhgk4dEV8PDa3v16a6ec'
+      - 'Bearer bka6P3hcg8Zdfve1D64aV5E'
     controller: null
     method: null
     route: null
@@ -317,14 +317,14 @@ endpoints:
         name: id
         description: 'The ID of the vehicle genre.'
         required: true
-        example: deserunt
+        example: sapiente
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: deserunt
+      id: sapiente
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -335,7 +335,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer gva54ebfk38DcZdPEaVh166'
+      - 'Bearer aaDZbdVg3ekcEf6165P8v4h'
     controller: null
     method: null
     route: null

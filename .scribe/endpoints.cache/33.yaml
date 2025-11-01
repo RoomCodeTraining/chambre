@@ -46,7 +46,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 1ea8D6Z5Ph3V4kdcf6vbgEa'
+      - 'Bearer aPk8abhE6De56gZ4f1cV3dv'
     controller: null
     method: null
     route: null
@@ -80,7 +80,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: im
+        example: gtd
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -90,22 +90,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'At dolore amet facere quae.'
+        example: 'Enim error ipsam sint in earum.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: im
-      description: 'At dolore amet facere quae.'
+      label: gtd
+      description: 'Enim error ipsam sint in earum.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer Va65Dc3fZavhbeg841kd6PE'
+      - 'Bearer ahdePvkEc68654gVDa1Zf3b'
     controller: null
     method: null
     route: null
@@ -135,14 +135,14 @@ endpoints:
         name: otherCostType
         description: ''
         required: true
-        example: enim
+        example: dolorem
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      otherCostType: enim
+      otherCostType: dolorem
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -162,7 +162,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer EdbchgD8v6ZV45kafP63ea1'
+      - 'Bearer g4aZ1e5c6vPDhk836VfadbE'
     controller: null
     method: null
     route: null
@@ -192,14 +192,14 @@ endpoints:
         name: otherCostType
         description: ''
         required: true
-        example: cupiditate
+        example: nesciunt
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      otherCostType: cupiditate
+      otherCostType: nesciunt
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -207,7 +207,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: qanqowncnorrgsfwqcyg
+        example: vzcivbkbmg
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -217,22 +217,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Exercitationem atque recusandae exercitationem et harum.'
+        example: 'Molestiae quia id error saepe alias.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: qanqowncnorrgsfwqcyg
-      description: 'Exercitationem atque recusandae exercitationem et harum.'
+      label: vzcivbkbmg
+      description: 'Molestiae quia id error saepe alias.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 1kcZvgEDfb3VaPh586dae64'
+      - 'Bearer ekd6Eah5vacgDbf81V64ZP3'
     controller: null
     method: null
     route: null
@@ -262,14 +262,14 @@ endpoints:
         name: otherCostType
         description: ''
         required: true
-        example: dolores
+        example: mollitia
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      otherCostType: dolores
+      otherCostType: mollitia
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -280,7 +280,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 4h6DaV8b5fkeP3dcEgZv16a'
+      - 'Bearer cbfvgeaEa4Z8V6k6d3PD1h5'
     controller: null
     method: null
     route: null

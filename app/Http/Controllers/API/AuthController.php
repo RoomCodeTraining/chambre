@@ -59,6 +59,14 @@ class AuthController extends Controller
         ]);
     }
 
+    /**
+     * Inscription d'un nouveau client
+     *
+     * @param RegisterRequest $request
+     * @return void
+     * @unauthenticated
+     */
+
     public function register(RegisterRequest $request)
     {
         $user = User::create([

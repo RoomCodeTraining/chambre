@@ -44,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer cv645DZaeaVEg683P1bhkfd'
+      - 'Bearer Pa384Vv5bdhgkfZ1aeE6Dc6'
     controller: null
     method: null
     route: null
@@ -78,7 +78,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: c
+        example: jpghforpeeg
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -88,22 +88,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Et iste amet dicta ducimus ut et.'
+        example: 'Qui asperiores ab tempora.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: c
-      description: 'Et iste amet dicta ducimus ut et.'
+      label: jpghforpeeg
+      description: 'Qui asperiores ab tempora.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer ce35b68aDdhaZEkf41PvgV6'
+      - 'Bearer fkaDhVg643Zcebv8a6dE51P'
     controller: null
     method: null
     route: null
@@ -133,14 +133,14 @@ endpoints:
         name: id
         description: 'The ID of the ascertainment type.'
         required: true
-        example: veritatis
+        example: sed
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: veritatis
+      id: sed
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -160,7 +160,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer b45eVE6kZfhvD8P6g3cda1a'
+      - 'Bearer cak63heP18d4agf5bD6EZvV'
     controller: null
     method: null
     route: null
@@ -190,14 +190,14 @@ endpoints:
         name: id
         description: 'The ID of the ascertainment type.'
         required: true
-        example: culpa
+        example: tempora
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: culpa
+      id: tempora
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -205,7 +205,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: swmfeyfbaf
+        example: khlwfyyjhj
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -215,22 +215,22 @@ endpoints:
         name: description
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: false
-        example: 'Corrupti nobis quis rerum facere quis quis deserunt.'
+        example: 'Fuga provident molestiae animi similique.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: swmfeyfbaf
-      description: 'Corrupti nobis quis rerum facere quis quis deserunt.'
+      label: khlwfyyjhj
+      description: 'Fuga provident molestiae animi similique.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer VgeD148chkb6Z3Pad56Efav'
+      - 'Bearer avZf3816VPke6EdD4hca5bg'
     controller: null
     method: null
     route: null
@@ -260,14 +260,14 @@ endpoints:
         name: id
         description: 'The ID of the ascertainment type.'
         required: true
-        example: a
+        example: ut
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: a
+      id: ut
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -278,7 +278,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer aP4df13cD656k8bEavZVgeh'
+      - 'Bearer P8fbead516ZVa6Evkh3D4cg'
     controller: null
     method: null
     route: null

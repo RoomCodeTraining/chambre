@@ -46,7 +46,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer ZcdvVEf83a6P1k4eb56haDg'
+      - 'Bearer dhV5fv41e8DaPZkgcE63b6a'
     controller: null
     method: null
     route: null
@@ -80,7 +80,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: lx
+        example: zwfajl
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -90,22 +90,22 @@ endpoints:
         name: description
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: false
-        example: 'Consequuntur illum provident eum dignissimos ut vel.'
+        example: 'Dolore earum ipsa aut iure aut placeat velit quae.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: lx
-      description: 'Consequuntur illum provident eum dignissimos ut vel.'
+      label: zwfajl
+      description: 'Dolore earum ipsa aut iure aut placeat velit quae.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer D6dcha5P64fabZEV1kv38eg'
+      - 'Bearer f1he6cZadP4a358vkgb6EVD'
     controller: null
     method: null
     route: null
@@ -113,7 +113,7 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: 'api/v1/payment-types/{paymentType_id}'
+    uri: 'api/v1/payment-types/{paymentType}'
     metadata:
       groupName: 'Gestion des types de paiement'
       groupDescription: |-
@@ -131,18 +131,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      paymentType_id:
-        name: paymentType_id
-        description: 'The ID of the paymentType.'
+      paymentType:
+        name: paymentType
+        description: ''
         required: true
-        example: 1
-        type: integer
+        example: et
+        type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      paymentType_id: 1
+      paymentType: et
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -162,7 +162,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Dg8E5Pe6d1Zf6kVva3bca4h'
+      - 'Bearer V6e8g6Z4abc13DfkE5vhdPa'
     controller: null
     method: null
     route: null
@@ -192,14 +192,14 @@ endpoints:
         name: paymentType
         description: ''
         required: true
-        example: 1
-        type: integer
+        example: ea
+        type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      paymentType: 1
+      paymentType: ea
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -207,7 +207,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: uddkeqjppzi
+        example: wqbepmvd
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -217,22 +217,22 @@ endpoints:
         name: description
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: false
-        example: 'Quia eos repudiandae corporis.'
+        example: 'Consequatur omnis ratione saepe sequi est et occaecati.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: uddkeqjppzi
-      description: 'Quia eos repudiandae corporis.'
+      label: wqbepmvd
+      description: 'Consequatur omnis ratione saepe sequi est et occaecati.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer Vca1hkdDb5P46vZEfg38ae6'
+      - 'Bearer 5kdDv64Pec138aEfghZa6bV'
     controller: null
     method: null
     route: null
@@ -240,7 +240,7 @@ endpoints:
   -
     httpMethods:
       - DELETE
-    uri: 'api/v1/payment-types/{paymentType_id}'
+    uri: 'api/v1/payment-types/{paymentType}'
     metadata:
       groupName: 'Gestion des types de paiement'
       groupDescription: |-
@@ -258,18 +258,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      paymentType_id:
-        name: paymentType_id
-        description: 'The ID of the paymentType.'
+      paymentType:
+        name: paymentType
+        description: ''
         required: true
-        example: 1
-        type: integer
+        example: vero
+        type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      paymentType_id: 1
+      paymentType: vero
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -280,7 +280,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6hDgbf3PEaVv8dZa1ekc546'
+      - 'Bearer 68dga61vVf35kPD4hZEbeac'
     controller: null
     method: null
     route: null
