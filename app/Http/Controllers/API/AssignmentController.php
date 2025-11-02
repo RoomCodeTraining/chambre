@@ -2729,30 +2729,35 @@ class AssignmentController extends Controller
     {
         $assignment = Assignment::with('shocks:id,is_validated', 'shocks.shockWorks:id,is_validated', 'shocks.workforces:id,is_validated')->findOrFail(Assignment::keyFromHashId($id));
 
-        $assignment->update([
-            'is_validated_by_repairer' => 1,
-            'repairer_validation_by' => auth()->user()->id,
-            'repairer_validation_at' => Carbon::now(),
-            'status_id' => Status::where('code', StatusEnum::PENDING_FOR_REPAIRER_INVOICE_VALIDATION)->first()->id,
-            'updated_by' => auth()->user()->id,
-        ]);
-
-        if($assignment->is_validated_by_expert == 1 && $assignment->is_validated_by_repairer == 1){
-            Shock::where('assignment_id', $assignment->id)->update([
-                'is_validated' => 1,
+        if($assignment->status_id == Status::where('code', StatusEnum::PENDING_FOR_REPAIRER_INVOICE)->first()->id){
+            $assignment->update([
+                'is_validated_by_repairer' => 1,
+                'repairer_validation_by' => auth()->user()->id,
+                'repairer_validation_at' => Carbon::now(),
+                'status_id' => Status::where('code', StatusEnum::PENDING_FOR_REPAIRER_INVOICE_VALIDATION)->first()->id,
+                'updated_by' => auth()->user()->id,
             ]);
-
-
-            ShockWork::whereIn('shock_id', $assignment->shocks->pluck('id'))->update([
-                'is_validated' => 1,
-            ]);
-            
-            Workforce::whereIn('shock_id',$assignment->shocks->pluck('id'))->update([
-                'is_validated' => 1,
-            ]);
+    
+            if($assignment->is_validated_by_expert == 1 && $assignment->is_validated_by_repairer == 1){
+                Shock::where('assignment_id', $assignment->id)->update([
+                    'is_validated' => 1,
+                ]);
+    
+    
+                ShockWork::whereIn('shock_id', $assignment->shocks->pluck('id'))->update([
+                    'is_validated' => 1,
+                ]);
+                
+                Workforce::whereIn('shock_id',$assignment->shocks->pluck('id'))->update([
+                    'is_validated' => 1,
+                ]);
+            }
+            return $this->responseSuccess('Dossier validé par le repairer avec succès', new AssignmentResource($assignment));
+        } else {
+            return $this->responseUnprocessable("Le dossier n'est pas en attente de la facture du réparateur.", null);
         }
 
-        return $this->responseSuccess('Dossier validé par le repairer avec succès', new AssignmentResource($assignment));
+        
     }
 
     /**
@@ -2764,17 +2769,16 @@ class AssignmentController extends Controller
     {
         $assignment = Assignment::findOrFail(Assignment::keyFromHashId($id));
 
-        if($assignment->status_id != Status::where('code', StatusEnum::PENDING_FOR_REPAIRER_INVOICE_VALIDATION)->first()->id && $assignment->status_id != Status::where('code', StatusEnum::IN_EDITING)->first()->id){
-            return $this->responseUnprocessable("Le dossier n'est pas en attente de validation de facture par l'expert.", null);
+        if($assignment->status_id == Status::where('code', StatusEnum::PENDING_FOR_REPAIRER_INVOICE_VALIDATION)->first()->id){
+            $assignment->update([
+                'is_validated_by_expert' => 0,
+                'status_id' => Status::where('code', StatusEnum::PENDING_FOR_REPAIRER_INVOICE)->first()->id,
+                'updated_by' => auth()->user()->id,
+            ]);
+            return $this->responseSuccess('Dossier dévalidé par l\'expert avec succès', new AssignmentResource($assignment));
+        } else {
+            return $this->responseUnprocessable("Le dossier n'est pas en attente de validation de la facture du réparateur.", null);
         }
-
-        $assignment->update([
-            'is_validated_by_expert' => 0,
-            'status_id' => Status::where('code', StatusEnum::PENDING_FOR_REPAIRER_INVOICE)->first()->id,
-            'updated_by' => auth()->user()->id,
-        ]);
-
-        return $this->responseSuccess('Dossier dévalidé par l\'expert avec succès', new AssignmentResource($assignment));
     }
 
     /**
@@ -2786,30 +2790,34 @@ class AssignmentController extends Controller
     {
         $assignment = Assignment::with('shocks:id,is_validated', 'shocks.shockWorks:id,is_validated', 'shocks.workforces:id,is_validated')->findOrFail(Assignment::keyFromHashId($id));
 
-        $assignment->update([
-            'is_validated_by_expert' => 1,
-            'expert_validation_by' => auth()->user()->id,
-            'expert_validation_at' => Carbon::now(),
-            'status_id' => Status::where('code', StatusEnum::IN_EDITING)->first()->id,
-            'updated_by' => auth()->user()->id,
-        ]);
-
-        if($assignment->is_validated_by_expert == 1 && $assignment->is_validated_by_repairer == 1){
-            Shock::where('assignment_id', $assignment->id)->update([
-                'is_validated' => 1,
+        if($assignment->status_id == Status::where('code', StatusEnum::PENDING_FOR_REPAIRER_INVOICE)->first()->id && $assignment->status_id == Status::where('code', StatusEnum::PENDING_FOR_REPAIRER_INVOICE_VALIDATION)->first()->id){
+            $assignment->update([
+                'is_validated_by_expert' => 1,
+                'expert_validation_by' => auth()->user()->id,
+                'expert_validation_at' => Carbon::now(),
+                'status_id' => Status::where('code', StatusEnum::IN_EDITING)->first()->id,
+                'updated_by' => auth()->user()->id,
             ]);
-
-
-            ShockWork::whereIn('shock_id', $assignment->shocks->pluck('id'))->update([
-                'is_validated' => 1,
-            ]);
-            
-            Workforce::whereIn('shock_id',$assignment->shocks->pluck('id'))->update([
-                'is_validated' => 1,
-            ]);
+    
+            if($assignment->is_validated_by_expert == 1 && $assignment->is_validated_by_repairer == 1){
+                Shock::where('assignment_id', $assignment->id)->update([
+                    'is_validated' => 1,
+                ]);
+    
+    
+                ShockWork::whereIn('shock_id', $assignment->shocks->pluck('id'))->update([
+                    'is_validated' => 1,
+                ]);
+                
+                Workforce::whereIn('shock_id',$assignment->shocks->pluck('id'))->update([
+                    'is_validated' => 1,
+                ]);
+            }
+    
+            return $this->responseSuccess('Dossier validé par l\'expert avec succès', new AssignmentResource($assignment));
+        } else {
+            return $this->responseUnprocessable("Le dossier n'est pas en attente de facture du réparateur ou en attente de validation de facture par le repairer.", null);
         }
-
-        return $this->responseSuccess('Dossier validé par l\'expert avec succès', new AssignmentResource($assignment));
     }
 
     /**
@@ -2821,17 +2829,16 @@ class AssignmentController extends Controller
     {
         $assignment = Assignment::findOrFail(Assignment::keyFromHashId($id));
 
-        if($assignment->status_id != Status::where('code', StatusEnum::PENDING_FOR_REPAIRER_INVOICE_VALIDATION)->first()->id && $assignment->status_id != Status::where('code', StatusEnum::IN_EDITING)->first()->id){
-            return $this->responseUnprocessable("Le dossier n'est pas en attente de validation de facture par l'expert.", null);
+        if($assignment->status_id == Status::where('code', StatusEnum::PENDING_FOR_REPAIRER_INVOICE_VALIDATION)->first()->id){
+            $assignment->update([
+                'is_validated_by_expert' => 0,
+                'status_id' => Status::where('code', StatusEnum::PENDING_FOR_REPAIRER_INVOICE)->first()->id,
+                'updated_by' => auth()->user()->id,
+            ]);
+            return $this->responseSuccess('Dossier dévalidé par l\'expert avec succès', new AssignmentResource($assignment));
+        } else {
+            return $this->responseUnprocessable("Le dossier n'est pas encore validé par le repairer.", null);
         }
-
-        $assignment->update([
-            'is_validated_by_expert' => 0,
-            'status_id' => Status::where('code', StatusEnum::PENDING_FOR_REPAIRER_INVOICE)->first()->id,
-            'updated_by' => auth()->user()->id,
-        ]);
-
-        return $this->responseSuccess('Dossier dévalidé par l\'expert avec succès', new AssignmentResource($assignment));
     }
 
     /**
@@ -2881,7 +2888,7 @@ class AssignmentController extends Controller
     {
         $assignment = Assignment::findOrFail(Assignment::keyFromHashId($id));
 
-        if($assignment->status_id == Status::where('code', StatusEnum::EDITED)->first()->id || $assignment->status_id == Status::where('code', StatusEnum::VALIDATED)->first()->id || $assignment->status_id == Status::where('code', StatusEnum::PAID)->first()->id){
+        if($assignment->status_id == Status::where('code', StatusEnum::IN_EDITING)->first()->id || $assignment->status_id == Status::where('code', StatusEnum::EDITED)->first()->id || $assignment->status_id == Status::where('code', StatusEnum::VALIDATED)->first()->id || $assignment->status_id == Status::where('code', StatusEnum::PAID)->first()->id){
             $total_nb_hours = Workforce::join('shocks', 'workforces.shock_id', '=', 'shocks.id')
                             ->join('assignments', 'shocks.assignment_id', '=', 'assignments.id')
                             ->select('workforces.nb_hours')

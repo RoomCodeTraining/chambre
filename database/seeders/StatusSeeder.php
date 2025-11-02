@@ -41,14 +41,14 @@ class StatusSeeder extends Seeder
 
         Status::create([
             'code' => StatusEnum::PENDING_FOR_REPAIRER_INVOICE,
-            'label' => "En attente de facture du réparateur",
-            'description' => "En attente de facture du réparateur",
+            'label' => "En attente de la facture du réparateur",
+            'description' => "En attente de la facture du réparateur",
         ]);
 
         Status::create([
             'code' => StatusEnum::PENDING_FOR_REPAIRER_INVOICE_VALIDATION,
-            'label' => "Facture du réparateur validée",
-            'description' => "Facture du réparateur validée",
+            'label' => "En attente de validation de la facture du réparateur",
+            'description' => "En attente de validation de la facture du réparateur",
         ]);
 
         Status::create([
