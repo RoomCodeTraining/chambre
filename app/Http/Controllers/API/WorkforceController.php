@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use App\Models\Shock;
+use App\Models\Entity;
 use App\Models\Status;
 use App\Enums\StatusEnum;
 use App\Models\OtherCost;
@@ -10,6 +11,7 @@ use App\Models\ShockWork;
 use App\Models\Workforce;
 use App\Models\Assignment;
 use App\Models\HourlyRate;
+use App\Enums\EntityTypeEnum;
 use App\Models\ExpertiseType;
 use App\Models\PaintingPrice;
 use App\Models\WorkforceType;
