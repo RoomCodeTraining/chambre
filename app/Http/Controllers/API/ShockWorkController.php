@@ -339,7 +339,7 @@ class ShockWorkController extends Controller
             ->where('shock_works.id', ShockWork::keyFromHashId($id))
             ->firstOrFail();
 
-        $assignment = Assignment::findOrFail($shockWork->shock->assignment_id);
+        $assignment = Assignment::where('id',$shockWork->shock->assignment_id)->accessibleBy(auth()->user())->firstOrFail();
 
         $is_validated = false;
         if($assignment->is_validated_by_expert == 1 && $assignment->is_validated_by_repairer == 1){

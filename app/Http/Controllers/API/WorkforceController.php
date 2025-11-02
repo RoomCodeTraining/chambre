@@ -281,7 +281,7 @@ class WorkforceController extends Controller
      */
     public function store(CreateWorkforceRequest $request): JsonResponse
     {
-        $shock = Shock::Shock::select('shocks.*')
+        $shock = Shock::select('shocks.*')
             ->with('assignment')
             ->join('shocks', 'workforces.shock_id', '=', 'shocks.id')
             ->join('assignments', 'shocks.assignment_id', '=', 'assignments.id')
