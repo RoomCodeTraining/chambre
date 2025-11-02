@@ -187,9 +187,6 @@ class ShockWorkController extends Controller
     public function store(CreateShockWorkRequest $request): JsonResponse
     {
         $shock = Shock::select('shocks.*')
-            // ->with('assignment')
-            // ->join('shocks', 'shock_works.shock_id', '=', 'shocks.id')
-            // ->accessibleBy(auth()->user())
             ->where('shocks.id', $request->shock_id)
             ->firstOrFail();
 
@@ -332,10 +329,7 @@ class ShockWorkController extends Controller
     public function update(UpdateShockWorkRequest $request, $id): JsonResponse
     {
         $shockWork = ShockWork::select('shock_works.*')
-            ->with('shock')
-            ->join('shocks', 'shock_works.shock_id', '=', 'shocks.id')
-            ->join('assignments', 'shocks.assignment_id', '=', 'assignments.id')
-            ->accessibleBy(auth()->user())
+            ->with('shocks:id,assignment_id')
             ->where('shock_works.id', ShockWork::keyFromHashId($id))
             ->firstOrFail();
 
@@ -571,14 +565,11 @@ class ShockWorkController extends Controller
     public function destroy($id): JsonResponse
     {
         $shockWork = ShockWork::select('shock_works.*')
-            ->with('shock')
-            ->join('shocks', 'shock_works.shock_id', '=', 'shocks.id')
-            ->join('assignments', 'shocks.assignment_id', '=', 'assignments.id')
-            ->accessibleBy(auth()->user())
+            ->with('shock:id,assignment_id')
             ->where('shock_works.id', ShockWork::keyFromHashId($id))
             ->firstOrFail();
 
-        $assignment = Assignment::findOrFail($shockWork->shock->assignment_id);
+        $assignment = Assignment::where('id',$shockWork->shock->assignment_id)->accessibleBy(auth()->user())->firstOrFail();
 
         $is_validated = false;
         if($assignment->is_validated_by_expert == 1 && $assignment->is_validated_by_repairer == 1){

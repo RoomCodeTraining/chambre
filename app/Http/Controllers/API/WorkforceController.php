@@ -282,14 +282,13 @@ class WorkforceController extends Controller
     public function store(CreateWorkforceRequest $request): JsonResponse
     {
         $shock = Shock::select('shocks.*')
-            ->with('assignment')
-            ->join('shocks', 'workforces.shock_id', '=', 'shocks.id')
-            ->join('assignments', 'shocks.assignment_id', '=', 'assignments.id')
-            ->accessibleBy(auth()->user())
             ->where('shocks.id', $request->shock_id)
             ->firstOrFail();
 
-        if($shock->assignment->status_id == Status::where('code', StatusEnum::VALIDATED)->first()->id || $shock->assignment->status_id == Status::where('code', StatusEnum::PAID)->first()->id){
+        $assignment = Assignment::where('id',$shock->assignment_id)->accessibleBy(auth()->user())->firstOrFail();
+
+
+        if($assignment->status_id == Status::where('code', StatusEnum::VALIDATED)->first()->id || $assignment->status_id == Status::where('code', StatusEnum::PAID)->first()->id){
             return $this->responseUnprocessable("Impossible d'ajouter une main-d'oeuvre", null);
         }
 
@@ -298,7 +297,7 @@ class WorkforceController extends Controller
         $workforces = $request->get('workforces');
 
         $is_validated = false;
-        if($shock->assignment->is_validated_by_expert == 1 && $shock->assignment->is_validated_by_repairer == 1){
+        if($assignment->is_validated_by_expert == 1 && $assignment->is_validated_by_repairer == 1){
             $is_validated = true;
         }
 
@@ -404,14 +403,11 @@ class WorkforceController extends Controller
     public function update(UpdateWorkforceRequest $request, $id): JsonResponse
     {
         $workforce = Workforce::select('workforces.*')
-            ->with('shock')
-            ->join('shocks', 'workforces.shock_id', '=', 'shocks.id')
-            ->join('assignments', 'shocks.assignment_id', '=', 'assignments.id')
-            ->accessibleBy(auth()->user())
+            ->with('shock:id,assignment_id')
             ->where('workforces.id', Workforce::keyFromHashId($id))
             ->firstOrFail();
 
-        $assignment = Assignment::findOrFail($workforce->shock->assignment_id);
+        $assignment = Assignment::where('id',$workforce->shock->assignment_id)->accessibleBy(auth()->user())->firstOrFail();
 
         $is_validated = false;
         if($assignment->is_validated_by_expert == 1 && $assignment->is_validated_by_repairer == 1){
@@ -713,14 +709,11 @@ class WorkforceController extends Controller
     public function destroy($id): JsonResponse
     {
         $workforce = Workforce::select('workforces.*')
-            ->with('shock')
-            ->join('shocks', 'workforces.shock_id', '=', 'shocks.id')
-            ->join('assignments', 'shocks.assignment_id', '=', 'assignments.id')
-            ->accessibleBy(auth()->user())
+            ->with('shock:id,assignment_id')
             ->where('workforces.id', Workforce::keyFromHashId($id))
             ->firstOrFail();
 
-        $assignment = Assignment::findOrFail($workforce->shock->assignment_id);
+        $assignment = Assignment::where('id',$workforce->shock->assignment_id)->accessibleBy(auth()->user())->firstOrFail();
 
         $is_validated = false;
         if($assignment->is_validated_by_expert == 1 && $assignment->is_validated_by_repairer == 1){
