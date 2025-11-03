@@ -21,8 +21,8 @@ class CreateMultiplePhotoRequest extends FormRequest
         return [
             'assignment_id' => 'required|exists:assignments,id',
             'photo_type_id' => 'nullable|exists:photo_types,id',
-            'photos' => 'required|array',
-            'photos.*' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
+            // 'photos' => 'required|array',
+            // 'photos.*' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
         ];
     }
 }

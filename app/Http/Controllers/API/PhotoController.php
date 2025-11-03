@@ -45,6 +45,15 @@ class PhotoController extends Controller
                         ->with('assignment:id,reference', 'assignmentRequest:id,reference', 'photoType:id,code,label', 'status:id,code,label')
                         ->join('assignments', 'photos.assignment_id', '=', 'assignments.id')
                         ->accessibleBy(auth()->user())
+                        ->when(request()->has('assignment_id'), function($query){
+                            $query->where('photos.assignment_id', Assignment::keyFromHashId(request()->assignment_id));
+                        })
+                        ->when(request()->has('photo_type_id'), function($query){
+                            $query->where('photos.photo_type_id', PhotoType::keyFromHashId(request()->photo_type_id));
+                        })
+                        ->when(request()->has('status_id'), function($query){
+                            $query->where('photos.status_id', Status::keyFromHashId(request()->status_id));
+                        })
                         ->latest('photos.created_at')
                         ->useFilters()
                         ->dynamicPaginate();
@@ -65,7 +74,7 @@ class PhotoController extends Controller
         $time = date("is");
         $today = $annee.'_'.$mois_jour_heure.'_'.$time;
 
-        $assignment = Assignment::where('id', $request->assignment_id)->firstOrFail();
+        $assignment = Assignment::where('id', $request->assignment_id)->accessibleBy(auth()->user())->firstOrFail();
 
         if($request->hasfile('photo'))
         {
@@ -85,8 +94,7 @@ class PhotoController extends Controller
             ]);
         }
 
-        $assignment = Assignment::findOrFail($assignment->id);
-        if($assignment->status_id == Status::where('code', StatusEnum::EDITED)->first()->id || $assignment->status_id == Status::where('code', StatusEnum::VALIDATED)->first()->id){
+        if($assignment->status_id == Status::where('code', StatusEnum::IN_EDITING)->first()->id || $assignment->status_id == Status::where('code', StatusEnum::EDITED)->first()->id || $assignment->status_id == Status::where('code', StatusEnum::VALIDATED)->first()->id){
             // dispatch(new GenerateExpertiseReportPdfJob($assignment));
         }
 
@@ -106,7 +114,7 @@ class PhotoController extends Controller
         $time = date("is");
         $today = $annee.'_'.$mois_jour_heure.'_'.$time;
 
-        $assignment = Assignment::where('id', $request->assignment_id)->firstOrFail();
+        $assignment = Assignment::where('id', $request->assignment_id)->accessibleBy(auth()->user())->firstOrFail();
         
         $files = [];
         if($request->hasfile('photos'))
@@ -147,8 +155,7 @@ class PhotoController extends Controller
         //     $photo = $request->file('photo')->store('photos', 'public');
         // }
 
-        $assignment = Assignment::findOrFail($assignment->id);
-        if($assignment->status_id == Status::where('code', StatusEnum::EDITED)->first()->id || $assignment->status_id == Status::where('code', StatusEnum::VALIDATED)->first()->id){
+        if($assignment->status_id == Status::where('code', StatusEnum::IN_EDITING)->first()->id || $assignment->status_id == Status::where('code', StatusEnum::EDITED)->first()->id || $assignment->status_id == Status::where('code', StatusEnum::VALIDATED)->first()->id){
             // dispatch(new GenerateExpertiseReportPdfJob($assignment));
         }
 
@@ -180,11 +187,13 @@ class PhotoController extends Controller
     public function update(UpdatePhotoRequest $request, $id): JsonResponse
     {
         $photo = Photo::select('photos.*')
-            ->with('assignment')
+            ->with('assignment:id,reference,status_id')
             ->join('assignments', 'photos.assignment_id', '=', 'assignments.id')
             ->accessibleBy(auth()->user())
             ->where('photos.id', Photo::keyFromHashId($id))
             ->firstOrFail();
+
+        $assignment = Assignment::where('id', $photo->assignment_id)->accessibleBy(auth()->user())->firstOrFail();
 
         if($request->hasfile('photo'))
         {
@@ -203,10 +212,10 @@ class PhotoController extends Controller
             }
             $file = $request->file('photo');
 
-            if(file_exists(public_path("storage/photos/work-sheet/{$photo->assignment->reference}/{$photo->name}"))){
-                $file->move(public_path("storage/photos/work-sheet/{$photo->assignment->reference}"), $name);
+            if(file_exists(public_path("storage/photos/work-sheet/{$assignment->reference}/{$photo->name}"))){
+                $file->move(public_path("storage/photos/work-sheet/{$assignment->reference}"), $name);
             } else {
-                $file->move(public_path("storage/photos/report/{$photo->assignment->reference}"), $name);
+                $file->move(public_path("storage/photos/report/{$assignment->reference}"), $name);
             }
         }
 
@@ -216,8 +225,7 @@ class PhotoController extends Controller
             'updated_by' => auth()->user()->id,
         ]);
 
-        $assignment = Assignment::findOrFail($photo->assignment_id);
-        if($assignment->status_id == Status::where('code', StatusEnum::EDITED)->first()->id || $assignment->status_id == Status::where('code', StatusEnum::VALIDATED)->first()->id){
+        if($assignment->status_id == Status::where('code', StatusEnum::IN_EDITING)->first()->id || $assignment->status_id == Status::where('code', StatusEnum::EDITED)->first()->id || $assignment->status_id == Status::where('code', StatusEnum::VALIDATED)->first()->id){
             // dispatch(new GenerateExpertiseReportPdfJob($assignment));
         }
 
@@ -232,11 +240,13 @@ class PhotoController extends Controller
     public function makeCover($id): JsonResponse
     {
         $photo = Photo::select('photos.*')
-            ->with('assignment')
+            ->with('assignment:id,reference,status_id')
             ->join('assignments', 'photos.assignment_id', '=', 'assignments.id')
             ->accessibleBy(auth()->user())
             ->where('photos.id', Photo::keyFromHashId($id))
             ->firstOrFail();
+
+        $assignment = Assignment::where('id', $photo->assignment_id)->accessibleBy(auth()->user())->firstOrFail();
 
         Photo::query()->where('id', '!=', $photo->id)->update([
             'is_cover' => 0,
@@ -247,7 +257,6 @@ class PhotoController extends Controller
             'updated_by' => auth()->user()->id,
         ]);
 
-        $assignment = Assignment::findOrFail($photo->assignment_id);
         if($assignment->status_id != Status::where('code', StatusEnum::OPENED)->first()->id && $assignment->status_id != Status::where('code', StatusEnum::REALIZED)->first()->id){
             dispatch(new GenerateExpertiseReportPdfJob($assignment));
         }
@@ -263,18 +272,20 @@ class PhotoController extends Controller
     public function destroy($id): JsonResponse
     {
         $photo = Photo::select('photos.*')
-            ->with('assignment')
+            ->with('assignment:id,reference,status_id')
             ->join('assignments', 'photos.assignment_id', '=', 'assignments.id')
             ->accessibleBy(auth()->user())
             ->where('photos.id', Photo::keyFromHashId($id))
             ->firstOrFail();
 
-        if(file_exists(public_path("storage/photos/report/{$photo->assignment->reference}/{$photo->name}"))){
-            File::delete(public_path("storage/photos/report/{$photo->assignment->reference}/{$photo->name}"));
+        $assignment = Assignment::where('id', $photo->assignment_id)->accessibleBy(auth()->user())->firstOrFail();
+
+        if(file_exists(public_path("storage/photos/report/{$assignment->reference}/{$photo->name}"))){
+            File::delete(public_path("storage/photos/report/{$assignment->reference}/{$photo->name}"));
         }
 
-        if(file_exists(public_path("storage/photos/work-sheet/{$photo->assignment->reference}/{$photo->name}"))){
-            File::delete(public_path("storage/photos/work-sheet/{$photo->assignment->reference}/{$photo->name}"));
+        if(file_exists(public_path("storage/photos/work-sheet/{$assignment->reference}/{$photo->name}"))){
+            File::delete(public_path("storage/photos/work-sheet/{$assignment->reference}/{$photo->name}"));
         }
 
         $photo->update([
@@ -284,8 +295,7 @@ class PhotoController extends Controller
             'deleted_at' => Carbon::now(),
         ]);
 
-        $assignment = Assignment::findOrFail($photo->assignment_id);
-        if($assignment->status_id == Status::where('code', StatusEnum::EDITED)->first()->id || $assignment->status_id == Status::where('code', StatusEnum::VALIDATED)->first()->id){
+        if($assignment->status_id == Status::where('code', StatusEnum::IN_EDITING)->first()->id || $assignment->status_id == Status::where('code', StatusEnum::EDITED)->first()->id || $assignment->status_id == Status::where('code', StatusEnum::VALIDATED)->first()->id){
             // dispatch(new GenerateExpertiseReportPdfJob($assignment));
         }
 

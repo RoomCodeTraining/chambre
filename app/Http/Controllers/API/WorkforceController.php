@@ -58,7 +58,7 @@ class WorkforceController extends Controller
         $workforces = Workforce::select('workforces.*')
                     ->with('workforceType', 'status')
                     ->join('assignments', 'workforces.assignment_id', '=', 'assignments.id')
-                    ->accessibleBy(auth()->user())
+                    ->accessibleBy(auth()->user());
                     ->useFilters()
                     ->orderBy('position', 'asc')
                     ->dynamicPaginate();
