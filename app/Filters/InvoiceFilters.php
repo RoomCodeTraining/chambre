@@ -6,9 +6,7 @@ use Essa\APIToolKit\Filters\QueryFilters;
 
 class InvoiceFilters extends QueryFilters
 {
-    protected array $allowedFilters = [
-        'assignment_id',
-    ];
+    protected array $allowedFilters = [];
 
     protected array $columnSearch = ['invoices.reference'];
 

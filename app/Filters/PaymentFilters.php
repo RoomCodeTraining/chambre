@@ -6,9 +6,7 @@ use Essa\APIToolKit\Filters\QueryFilters;
 
 class PaymentFilters extends QueryFilters
 {
-    protected array $allowedFilters = [
-        'assignment_id',
-    ];
+    protected array $allowedFilters = [];
 
     protected array $columnSearch = ['payments.reference'];
 
