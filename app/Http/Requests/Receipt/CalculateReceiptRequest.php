@@ -10,10 +10,10 @@ class CalculateReceiptRequest extends FormRequest
 {
     public function prepareForValidation()
     {
-        if($this->receipts){
+        if(isset($this->receipts) && is_array($this->receipts)){
             $receipts = [];
             foreach ($this->receipts as $receipt) {
-                $receipt['receipt_type_id'] = ReceiptType::keyFromHashId($receipt['receipt_type_id']);
+                $receipt['receipt_type_id'] = isset($receipt['receipt_type_id']) && $receipt['receipt_type_id'] ? ReceiptType::keyFromHashId($receipt['receipt_type_id']) : null;
                 $receipts[] = $receipt;
             }
         }
