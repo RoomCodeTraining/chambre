@@ -13,17 +13,17 @@ class CalculateOtherCostRequest extends FormRequest
 {
     public function prepareForValidation()
     {
-        if($this->workforces){
+        if(isset($this->workforces) && is_array($this->workforces)){
             $workforces = [];
             foreach ($this->workforces as $workforce) {
-                $workforce['workforce_type_id'] = WorkforceType::keyFromHashId($workforce['workforce_type_id']);
+                $workforce['workforce_type_id'] = isset($workforce['workforce_type_id']) && $workforce['workforce_type_id'] ? WorkforceType::keyFromHashId($workforce['workforce_type_id']) : null;
                 $workforces[] = $workforce;
             }
         }
-        if($this->other_costs){
+        if(isset($this->other_costs) && is_array($this->other_costs)){
             $other_costs = [];
             foreach ($this->other_costs as $other_cost) {
-                $other_cost['other_cost_type_id'] = OtherCostType::keyFromHashId($other_cost['other_cost_type_id']);
+                $other_cost['other_cost_type_id'] = isset($other_cost['other_cost_type_id']) && $other_cost['other_cost_type_id'] ? OtherCostType::keyFromHashId($other_cost['other_cost_type_id']) : null;
                 $other_costs[] = $other_cost;
             }
         }

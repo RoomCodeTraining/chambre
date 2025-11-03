@@ -10,10 +10,10 @@ class CreateOtherCostRequest extends FormRequest
 {
     public function prepareForValidation()
     {
-        if($this->other_costs){
+        if(isset($this->other_costs) && is_array($this->other_costs)){
             $other_costs = [];
             foreach ($this->other_costs as $other_cost) {
-                $other_cost['other_cost_type_id'] = OtherCostType::keyFromHashId($other_cost['other_cost_type_id']);
+                $other_cost['other_cost_type_id'] = isset($other_cost['other_cost_type_id']) && $other_cost['other_cost_type_id'] ? OtherCostType::keyFromHashId($other_cost['other_cost_type_id']) : null;
                 $other_costs[] = $other_cost;
             }
         }

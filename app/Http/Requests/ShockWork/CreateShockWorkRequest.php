@@ -11,10 +11,10 @@ class CreateShockWorkRequest extends FormRequest
 {
     public function prepareForValidation()
     {
-        if($this->shock_works){
+        if(isset($this->shock_works) && is_array($this->shock_works)){
             $shock_works = [];
             foreach ($this->shock_works as $shock_work) {
-                $shock_work['supply_id'] = Supply::keyFromHashId($shock_work['supply_id']);
+                $shock_work['supply_id'] = isset($shock_work['supply_id']) && $shock_work['supply_id'] ? Supply::keyFromHashId($shock_work['supply_id']) : null;
                 $shock_works[] = $shock_work;
             }
         }
