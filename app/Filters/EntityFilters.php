@@ -6,7 +6,7 @@ use Essa\APIToolKit\Filters\QueryFilters;
 
 class EntityFilters extends QueryFilters
 {
-    protected array $allowedFilters = ['entity_type_id'];
+    protected array $allowedFilters = [];
 
     protected array $columnSearch = ['name'];
 

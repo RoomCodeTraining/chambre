@@ -7,26 +7,25 @@ use Essa\APIToolKit\Filters\QueryFilters;
 class AssignmentFilters extends QueryFilters
 {
     protected array $allowedFilters = [
-        'assignment_type_id',
-        'expertise_type_id',
-        'created_by',
-        'edited_by',
-        'directed_by',
-        'realized_by',
-        'validated_by',
-        // 'opened_by',
-        'status_id',
-        'vehicle_id',
-        'insurer_id',
-        'repairer_id',
-        'client_id',
-        'claim_nature_id',
-        'work_sheet_established_by',
-        'repairer_validation_by',
-        'expert_validation_by',
-        'cancelled_by',
-        'closed_by',
-        'deleted_by'
+        // 'assignment_type_id',
+        // 'expertise_type_id',
+        // 'created_by',
+        // 'edited_by',
+        // 'directed_by',
+        // 'realized_by',
+        // 'validated_by',
+        // 'status_id',
+        // 'vehicle_id',
+        // 'insurer_id',
+        // 'repairer_id',
+        // 'client_id',
+        // 'claim_nature_id',
+        // 'work_sheet_established_by',
+        // 'repairer_validation_by',
+        // 'expert_validation_by',
+        // 'cancelled_by',
+        // 'closed_by',
+        // 'deleted_by'
     ];
 
     protected array $allowedIncludes = [
