@@ -46,7 +46,7 @@ class EntityController extends Controller
     {
         $entities = Entity::with(['entityType','status'])
                     ->accessibleBy(auth()->user());
-        if(request()->filled('entity_type_code')){
+        if(request()->has('entity_type_code')){
             $entities = $entities->where('entity_type_id', EntityType::firstWhere('code', request()->entity_type_code)->id);
         }
         $entities = $entities->useFilters()->latest('created_at')->dynamicPaginate();
