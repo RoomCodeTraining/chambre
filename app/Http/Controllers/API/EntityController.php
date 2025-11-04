@@ -45,10 +45,11 @@ class EntityController extends Controller
     public function index(): AnonymousResourceCollection
     {
         $entities = Entity::with(['entityType','status'])
-                    ->accessibleBy(auth()->user())
-                    ->useFilters()
-                    ->latest('created_at')
-                    ->dynamicPaginate();
+                    ->accessibleBy(auth()->user());
+        if(request()->filled('entity_type_code')){
+            $entities = $entities->where('entity_type_id', EntityType::firstWhere('code', request()->entity_type_code)->id);
+        }
+        $entities = $entities->useFilters()->latest('created_at')->dynamicPaginate();
             
         return EntityResource::collection($entities);
     }
