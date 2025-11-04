@@ -36,6 +36,21 @@ class EntityBuilder extends Builder
         return $this->model->currentRole->name == RoleEnum::REPAIRER_ADMIN->value;
     }
 
+    public function isInsurerStandardUser(): bool
+    {
+        return $this->model->currentRole->name == RoleEnum::INSURER_STANDARD_USER->value;
+    }
+
+    public function isRepairerStandardUser(): bool
+    {
+        return $this->model->currentRole->name == RoleEnum::REPAIRER_STANDARD_USER->value;
+    }
+
+    public function isClient(): bool
+    {
+        return $this->model->currentRole->name == RoleEnum::CLIENT->value;
+    }
+
     public function accessibleBy(?User $user)
     {
         if (empty($user)) {
@@ -51,6 +66,18 @@ class EntityBuilder extends Builder
             return $this->whereIn('entity_type_id', $entityTypes);
         }
 
-        return $this->where('entity_type_id', $user->entity_type_id);
+        if ($user->isInsurerStandardUser()) {
+            return $this->where('entity_type_id', EntityType::firstWhere('code', EntityTypeEnum::INSURER)->id);
+        }
+
+        if ($user->isRepairerStandardUser()) {
+            return $this->where('entity_type_id', EntityType::firstWhere('code', EntityTypeEnum::REPAIRER)->id);
+        }
+
+        if ($user->isClient()) {
+            return $this;
+        }
+
+        return $this;
     }
 }
