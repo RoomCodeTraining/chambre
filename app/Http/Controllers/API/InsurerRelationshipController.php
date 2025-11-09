@@ -2,16 +2,17 @@
 
 namespace App\Http\Controllers\API;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\InsurerRelationship\UpdateInsurerRelationshipRequest;
-use App\Http\Requests\InsurerRelationship\CreateInsurerRelationshipRequest;
-use App\Http\Resources\InsurerRelationship\InsurerRelationshipResource;
-use App\Models\InsurerRelationship;
-use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
-use Essa\APIToolKit\Api\ApiResponse;
-use App\Enums\StatusEnum;
+use App\Models\Entity;
 use App\Models\Status;
+use App\Enums\StatusEnum;
+use Illuminate\Http\JsonResponse;
+use App\Models\InsurerRelationship;
+use App\Http\Controllers\Controller;
+use Essa\APIToolKit\Api\ApiResponse;
+use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
+use App\Http\Resources\InsurerRelationship\InsurerRelationshipResource;
+use App\Http\Requests\InsurerRelationship\CreateInsurerRelationshipRequest;
+use App\Http\Requests\InsurerRelationship\UpdateInsurerRelationshipRequest;
 
 /**
  * @group Gestion des rattachements assureurs

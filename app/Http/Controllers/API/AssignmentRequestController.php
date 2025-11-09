@@ -124,6 +124,23 @@ class AssignmentRequestController extends Controller
     }
 
     /**
+     * Accepter la demande d'expertise
+     *
+     * @authenticated
+     */
+    public function accept($id): JsonResponse
+    {
+        $assignmentRequest = AssignmentRequest::findOrFail(AssignmentRequest::keyFromHashId($id));
+
+        $assignmentRequest->update([
+            'status_id' => Status::where('code', StatusEnum::ACCEPTED)->first()->id,
+            'updated_by' => auth()->user()->id,
+        ]);
+
+        return $this->responseSuccess('Demandée d\'expertise acceptée avec succès', new AssignmentRequestResource($assignmentRequest));
+    }
+
+    /**
      * Supprimer une demande d'expertise
      *
      * @authenticated

@@ -86,7 +86,7 @@ class RepairerRelationshipBuilder extends Builder
         }
 
         if ($user->isClient()) {
-            return $this->where('client_id', $user->entity_id);
+            return $this;
         }
 
         return $this->where('expert_firm_id', $user->entity_id);
