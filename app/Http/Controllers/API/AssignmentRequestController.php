@@ -49,12 +49,15 @@ class AssignmentRequestController extends Controller
      */
     public function store(CreateAssignmentRequestRequest $request): JsonResponse
     {
+        $insurer = Entity::find(InsurerRelationship::where('id', $request->insurer_relationship_id)->first()?->insurer_id);
+        $repairer = Entity::find(RepairerRelationship::where('id', $request->repairer_relationship_id)->first()?->repairer_id);
+
         $assignmentRequest = AssignmentRequest::create([
             'expert_firm_id' => $request->expert_firm_id,
             'client_id' => $request->client_id,
             'vehicle_id' => $request->vehicle_id,
-            'insurer_id' => $request->insurer_id,
-            'repairer_id' => $request->repairer_id,
+            'insurer_id' => $insurer->id,
+            'repairer_id' => $repairer->id,
             'assignment_type_id' => $request->assignment_type_id,
             'expertise_type_id' => $request->expertise_type_id,
             'policy_number' => $request->policy_number,

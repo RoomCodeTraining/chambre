@@ -2,8 +2,17 @@
 
 namespace App\Http\Requests\AssignmentRequest;
 
+use App\Models\Brand;
+use App\Models\Color;
+use App\Models\Client;
+use App\Models\Entity;
+use App\Models\Vehicle;
+use App\Models\VehicleModel;
+use App\Models\ExpertiseType;
 use App\Models\AssignmentType;
 use App\Enums\AssignmentTypeEnum;
+use App\Models\InsurerRelationship;
+use App\Models\RepairerRelationship;
 use Illuminate\Foundation\Http\FormRequest;
 
 class CreateAssignmentRequestRequest extends FormRequest
