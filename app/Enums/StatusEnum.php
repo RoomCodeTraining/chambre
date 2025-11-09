@@ -26,4 +26,8 @@ enum StatusEnum: string
     case DRAFT = 'draft';
     case SUCCESS = 'success';
     case FAILED = 'failed';
+
+    case PENDING = 'pending';
+    case ACCEPTED = 'accepted';
+    case REJECTED = 'rejected';
 }

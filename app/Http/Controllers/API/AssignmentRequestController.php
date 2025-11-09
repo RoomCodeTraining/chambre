@@ -86,7 +86,7 @@ class AssignmentRequestController extends Controller
                     $photo = Photo::create([
                         'name' => $name,
                         'assignment_request_id' => $assignmentRequest->id,
-                        'status_id' => Status::where('code', StatusEnum::ACTIVE)->first()->id,
+                        'status_id' => Status::where('code', StatusEnum::PENDING)->first()->id,
                         'created_by' => auth()->user()->id,
                         'updated_by' => auth()->user()->id,
                     ]);
