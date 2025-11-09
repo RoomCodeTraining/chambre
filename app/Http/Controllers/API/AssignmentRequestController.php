@@ -137,6 +137,156 @@ class AssignmentRequestController extends Controller
             'updated_by' => auth()->user()->id,
         ]);
 
+        if($assignmentRequest->claim_number && Assignment::where('claim_number', $assignmentRequest->claim_number)->where(function($query){
+            $query->where('status_id', Status::where('code', StatusEnum::OPENED)->first()?->id)
+                ->orWhere('status_id', Status::where('code', StatusEnum::REALIZED)->first()?->id)
+                ->orWhere('status_id', Status::where('code', StatusEnum::PENDING_FOR_REPAIRER_INVOICE)->first()?->id)
+                ->orWhere('status_id', Status::where('code', StatusEnum::PENDING_FOR_REPAIRER_INVOICE_VALIDATION)->first()?->id)
+                ->orWhere('status_id',  Status::where('code', StatusEnum::IN_EDITING)->first()?->id)
+                ->orWhere('status_id', Status::where('code', StatusEnum::EDITED)->first()?->id)
+                ->orWhere('status_id', Status::where('code', StatusEnum::VALIDATED)->first()?->id);
+        })->count() > 0){
+            return $this->responseUnprocessable('Le numéro de sinistre existe déjà pour un dossier ouvert, réalisé, rédigé ou validé');
+        }
+        
+        $expert_firm = Entity::find($assignmentRequest->expert_firm_id);
+        $insurer = Entity::find($assignmentRequest->insurer_id);
+        $repairer = Entity::find($assignmentRequest->repairer_id);
+
+        $now = Carbon::now();
+        $annee = date("Y");
+        $mois_jour_heure = date("mdH");
+        $time = date("is");
+        $today = $annee.'_'.$mois_jour_heure.'_'.$time;
+
+        $year = substr($annee, -2);
+        $month = date("m");
+        $suffix = $month.'-'.$year.'-'. strtoupper($expert_firm->suffix);
+        $reference = 'D'.$today;
+        
+        $last_assignment = Assignment::where('reference_updated_at', 'like', Carbon::now()->format('Y-m').'%')->where(['expert_firm_id' => $expert_firm->id, 'assignment_type_id' => $request->assignment_type_id]);
+        
+        if(AssignmentTypeEnum::INSURER->value && $request->assignment_type_id == AssignmentType::where('code', AssignmentTypeEnum::INSURER)->first()?->id){
+            $last_assignment = $last_assignment->where(['insurer_id' => $insurer->id])->latest('reference_updated_at')->first();
+        } else {
+            $last_assignment = $last_assignment->latest('reference_updated_at')->first();
+        }
+
+        if($last_assignment){
+            $prefix = explode("-", $last_assignment->reference)[0];
+            $number = preg_match_all('/\d+/', $prefix, $matches);
+            $number = $matches[0][0];
+            $number = $number + 1;
+            $prefix = preg_split('/\d+/', $prefix);
+            if(mb_strlen($prefix[0]) == 1){
+                $prefix = $prefix[0][0];
+            } else {
+                $prefix = $prefix[0];
+            }
+            $length = mb_strlen($number);
+            if($length == 1){
+                $reference = $prefix.'0000'.$number.'-'.$suffix;
+            } else if($length == 2){
+                $reference = $prefix.'000'.$number.'-'.$suffix;
+            } else if($length == 3){
+                $reference = $prefix.'00'.$number.'-'.$suffix;
+            } else if($length == 4){
+                $reference = $prefix.'0'.$number.'-'.$suffix;
+            } else {
+                $reference = $prefix.$number.'-'.$suffix;
+            }
+            if(Assignment::where('reference', $reference)->exists()){
+                $assignment = Assignment::where('reference', $reference)->first();
+                
+                $prefix = explode("-", $assignment->reference)[0];
+                $number = preg_match_all('/\d+/', $prefix, $matches);
+                $number = $matches[0][0];
+                $number = $number + 1;
+                $prefix = preg_split('/\d+/', $prefix);
+                if(mb_strlen($prefix[0]) == 1){
+                    $prefix = $prefix[0][0];
+                } else {
+                    $prefix = $prefix[0];
+                }
+                $length = mb_strlen($number);
+                if($length == 1){
+                    $reference = $prefix.'0000'.$number.'-'.$suffix;
+                } else if($length == 2){
+                    $reference = $prefix.'000'.$number.'-'.$suffix;
+                } else if($length == 3){
+                    $reference = $prefix.'00'.$number.'-'.$suffix;
+                } else if($length == 4){
+                    $reference = $prefix.'0'.$number.'-'.$suffix;
+                } else {
+                    $reference = $prefix.$number.'-'.$suffix;
+                }
+            }
+        } else {
+            if($request->assignment_type_id == AssignmentType::where('code', AssignmentTypeEnum::INSURER)->first()?->id){
+                $reference = $insurer->prefix.'00001'.'-'.$suffix;
+            }
+
+            if(AssignmentTypeEnum::PARTICULAR && $request->assignment_type_id == AssignmentType::where('code', AssignmentTypeEnum::PARTICULAR)->first()?->id){
+                $reference = AssignmentReferencePrefixEnum::PARTICULAR->value.'00001'.'-'.$suffix;
+            }
+    
+            if(AssignmentTypeEnum::TAXI->value && $request->assignment_type_id == AssignmentType::where('code', AssignmentTypeEnum::TAXI)->first()?->id){
+                $reference = AssignmentReferencePrefixEnum::TAXI->value.'00001'.'-'.$suffix;
+            }
+    
+            if(AssignmentTypeEnum::EVALUATION->value && $request->assignment_type_id == AssignmentType::where('code', AssignmentTypeEnum::EVALUATION)->first()?->id){
+                $reference = AssignmentReferencePrefixEnum::EVALUATION->value.'00001'.'-'.$suffix;
+            }
+
+            if(AssignmentTypeEnum::AGAINST_EXPERTISE->value && $request->assignment_type_id == AssignmentType::where('code', AssignmentTypeEnum::AGAINST_EXPERTISE)->first()?->id){
+                $reference = AssignmentReferencePrefixEnum::AGAINST_EXPERTISE->value.'00001'.'-'.$suffix;
+            }
+        }
+
+        $vehicle = Vehicle::with('vehicleGenre', 'vehicleEnergy')->find($request->vehicle_id);
+
+        $assignment = Assignment::create([
+            'reference' => $reference,
+            'expert_firm_id' => $expert_firm->id,
+            'vehicle_id' => $request->vehicle_id ?? null,
+            'insurer_id' => $insurer ? $insurer->id : null,
+            'additional_insurer_id' => $additional_insurer ? $additional_insurer->id : null,
+            'repairer_id' => $repairer ? $repairer->id : null,
+            'client_id' => $request->client_id ?? null,
+            'assignment_type_id' => $request->assignment_type_id,
+            'expertise_type_id' => $request->expertise_type_id,
+            'document_transmitted_id' => json_encode($request->document_transmitted_id),
+            'assured_value' => $request->assured_value,
+            'policy_number' => $request->policy_number,
+            'claim_number' => $request->claim_number,
+            'claim_date' => $request->claim_date,
+            'expertise_date' => $request->expertise_date,
+            'seen_before_work_date' => $request->expertise_date,
+            'expertise_place' => $request->expertise_place,
+            'damage_declared' => $request->damage_declared,
+            'point_noted' => $request->point_noted,
+            'received_at' => $request->received_at,
+            'vehicle_mileage' => $request->vehicle_mileage,
+            'status_id' => Status::where('code', StatusEnum::OPENED)->first()->id,
+            'created_by' => auth()->user()->id,
+            'updated_by' => auth()->user()->id,
+            'reference_updated_by' => auth()->user()->id,
+            'reference_updated_at' => Carbon::now(),
+        ]);
+
+        if($request->vehicle_mileage){
+            $vehicle = Vehicle::where('id',$request->vehicle_id)->first();
+            $vehicle->mileage = $request->vehicle_mileage;
+            $vehicle->save();
+        }
+
+        try {
+            dispatch(new SendOpenedAssignmentNotificationJob($assignment));
+            dispatch(new GenerateExpertiseSheetPdfJob($assignment));
+        } catch (\Exception $e) {
+            Log::error($e);
+        }
+
         return $this->responseSuccess('Demandée d\'expertise acceptée avec succès', new AssignmentRequestResource($assignmentRequest));
     }
 
