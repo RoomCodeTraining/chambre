@@ -106,7 +106,8 @@ class AuthRequest extends FormRequest
         return [
             'token' => ['required'],
             'email' => ['required', 'email', 'exists:users,email'],
-            'password' => ['string', 'nullable', 'confirmed', 'max:100', Password::default()->min(12)->mixedCase()->numbers()->uncompromised(), new UnusedPassword($this->email)],
+            // 'password' => ['string', 'nullable', 'confirmed', 'max:100', Password::default()->min(12)->mixedCase()->numbers()->uncompromised(), new UnusedPassword($this->email)],
+            'password' => ['string', 'nullable', 'min:8', 'max:100'],
             'client_name' => ['nullable', 'string', 'max:255'],
         ];
     }
