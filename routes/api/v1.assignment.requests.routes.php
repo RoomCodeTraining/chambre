@@ -9,4 +9,5 @@ Route::middleware('auth:sanctum')->name('assignment.requests.')->group(function 
     Route::get('/{assignment_request}', [AssignmentRequestController::class, 'show'])->name('show');
     Route::put('/{assignment_request}', [AssignmentRequestController::class, 'update'])->name('update');
     Route::delete('/{assignment_request}', [AssignmentRequestController::class, 'destroy'])->name('destroy');
+    Route::post('/{assignment_request}/add-photos', [AssignmentRequestController::class, 'addPhotos'])->name('addPhotos');
 }); 

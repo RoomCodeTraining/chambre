@@ -28,33 +28,19 @@ class AddPhotosToAssignmentRequestRequest extends FormRequest
     {
         return [
             'assignment_request_id' => 'required|exists:assignment_requests,id',
-            'photos' => 'nullable|array',
-            'photos.*' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg',
+            'photos' => 'req|array',
+            'photos.*' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
         ];
     }
 
     public function messages(): array
     {
         return [
-            'expert_firm_id.exists' => 'Le cabinet d\'expert est invalide.',
-            'assignment_type_id.required' => 'Le type de mission est requis.',
-            'assignment_type_id.exists' => 'Le type de mission est invalide.',
-            'expertise_type_id.required' => 'Le type d\'expertise est requis.',
-            'expertise_type_id.exists' => 'Le type d\'expertise est invalide.',
-            'client_id.exists' => 'Le client est invalide.',
-            'vehicle_id.required' => 'Le véhicule est requis.',
-            'vehicle_id.exists' => 'Le véhicule est invalide.',
-            'insurer_relationship_id.required_if' => 'L\'assureur est requis pour une mission de type compagnie.',
-            'insurer_relationship_id.exists' => 'L\'assureur est invalide.',
-            'repairer_relationship_id.required_if' => 'Le repaireur est requis pour une mission de type réparateur.',
-            'repairer_relationship_id.exists' => 'Le repaireur est invalide.',
-            'policy_number.string' => 'Le numéro de police est invalide.',
-            'claim_number.string' => 'Le numéro de sinistre est invalide.',
-            'claim_date.date' => 'La date est invalide.',
-            'claim_date.date_format' => 'Le format de la date est invalide.',
-            'expertise_place.string' => 'Le lieu est invalide.',
-            'new_market_value.numeric' => 'La valeur neuve est invalide.',
+            'assignment_request_id.required' => 'La demande d\'expertise est requise.',
+            'assignment_request_id.exists' => 'La demande d\'expertise est invalide.',
+            'photos.required' => 'Les photos sont requises.',
             'photos.array' => 'Les photos sont invalides.',
+            'photos.*.required' => 'La photo est requise.',
             'photos.*.image' => 'La photo doit être une image.',
             'photos.*.mimes' => 'La photo doit être une image du format :values.',
         ];
