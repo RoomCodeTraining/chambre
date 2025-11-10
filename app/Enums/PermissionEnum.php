@@ -24,7 +24,7 @@ enum PermissionEnum: string
     case REJECT_ASSIGNMENT_REQUEST = 'assignment_request.reject';
     case CANCEL_ASSIGNMENT_REQUEST = 'assignment_request.cancel';
 
-    case VIEW_ASSIGNMENT = 'assignment.view'; 
+    case VIEW_ASSIGNMENT = 'assignment.view';
     case CREATE_ASSIGNMENT = 'assignment.create';
     case UPDATE_ASSIGNMENT = 'assignment.update';
     case REALIZE_ASSIGNMENT = 'assignment.realize';
