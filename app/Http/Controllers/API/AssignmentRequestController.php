@@ -17,6 +17,7 @@ use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use App\Http\Resources\AssignmentRequest\AssignmentRequestResource;
 use App\Http\Requests\AssignmentRequest\CreateAssignmentRequestRequest;
 use App\Http\Requests\AssignmentRequest\UpdateAssignmentRequestRequest;
+use Essa\APIToolKit\Api\ApiResponse;
 
 /**
  * @group Gestion des demandes d'expertise
@@ -25,6 +26,8 @@ use App\Http\Requests\AssignmentRequest\UpdateAssignmentRequestRequest;
  */
 class AssignmentRequestController extends Controller
 {
+    use ApiResponse;
+
     public function __construct()
     {
 
