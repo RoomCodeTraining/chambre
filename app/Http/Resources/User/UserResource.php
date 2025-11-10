@@ -4,6 +4,7 @@ namespace App\Http\Resources\User;
 
 use App\Http\Resources\RoleResource;
 use Illuminate\Http\Resources\MissingValue;
+use App\Http\Resources\Client\ClientResource;
 use App\Http\Resources\Entity\EntityResource;
 use App\Http\Resources\Office\OfficeResource;
 use App\Http\Resources\Status\StatusResource;
