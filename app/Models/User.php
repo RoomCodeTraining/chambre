@@ -331,6 +331,11 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->belongsTo(Entity::class);
     }
 
+    public function client() : BelongsTo
+    {
+        return $this->belongsTo(Client::class);
+    }
+
     public function status() : BelongsTo
     {
         return $this->belongsTo(Status::class);

@@ -40,7 +40,7 @@ class CreateAssignmentRequestRequest extends FormRequest
             'expert_firm_id' => 'nullable|exists:entities,id',
             'assignment_type_id' => 'required|exists:assignment_types,id',
             'expertise_type_id' => 'required|exists:expertise_types,id',
-            'client_id' => 'nullable|exists:users,id',
+            'client_id' => 'nullable|exists:clients,id',
             'vehicle_id' => 'nullable|exists:vehicles,id',
             'insurer_relationship_id' => 'nullable|required_if:assignment_type_id,'.AssignmentType::where('code', AssignmentTypeEnum::INSURER)->first()->hashId.'|exists:insurer_relationships,id',
             'repairer_relationship_id' => 'nullable|required_if:assignment_type_id,'.AssignmentType::where('code', AssignmentTypeEnum::REPAIRER)->first()->hashId.'|exists:repairer_relationships,id',

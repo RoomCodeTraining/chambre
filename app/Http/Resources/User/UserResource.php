@@ -24,6 +24,7 @@ class UserResource extends JsonResource
             'first_name' => $this->first_name,
             'telephone' => $this->telephone,
             'entity' => new EntityResource($this->whenLoaded('entity')),
+            'client' => new ClientResource($this->whenLoaded('client')),
             'photo_url' => $this->photo_url,
             'pending_verification' => (bool) $this->welcome_valid_until,
             'role' => (new RoleResource($this->whenLoaded('currentRole'))),

@@ -34,7 +34,7 @@ class UserController extends Controller
         $this->authorize('viewAny', User::class);
 
         $users = User::useFilters()
-            ->with(['currentRole','entity','status'])
+            ->with(['currentRole','entity','status','client'])
             ->latest('created_at')
             ->accessibleBy(auth()->user())
             ->useFilters()
@@ -66,7 +66,7 @@ class UserController extends Controller
 
         $this->authorize('view', $user);
 
-        return $this->responseSuccess(null, new UserResource($user->load('currentRole','entity','status')));
+        return $this->responseSuccess(null, new UserResource($user->load('currentRole','entity','status','client')));
     }
 
     /**
