@@ -28,7 +28,7 @@ class AddPhotosToAssignmentRequestRequest extends FormRequest
     {
         return [
             'assignment_request_id' => 'required|exists:assignment_requests,id',
-            'photos' => 'req|array',
+            'photos' => 'required|array',
             'photos.*' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
         ];
     }
