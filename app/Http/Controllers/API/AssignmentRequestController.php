@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use App\Models\Client;
+use App\Models\Entity;
 use App\Models\Status;
 use App\Models\Vehicle;
 use App\Enums\StatusEnum;
