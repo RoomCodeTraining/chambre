@@ -55,7 +55,14 @@ class AssignmentRequestController extends Controller
         $insurer = Entity::find(InsurerRelationship::where('id', $request->insurer_relationship_id)->first()?->insurer_id);
         $repairer = Entity::find(RepairerRelationship::where('id', $request->repairer_relationship_id)->first()?->repairer_id);
 
+        $now = Carbon::now();
+        $annee = date("Y");
+        $mois_jour_heure = date("mdH");
+        $time = date("is");
+        $today = $annee.'_'.$mois_jour_heure.'_'.$time;
+
         $assignmentRequest = AssignmentRequest::create([
+            'reference' => 'REQ'.$today,
             'expert_firm_id' => $request->expert_firm_id,
             'client_id' => $request->client_id,
             'vehicle_id' => $request->vehicle_id,
@@ -71,12 +78,6 @@ class AssignmentRequestController extends Controller
             'created_by' => auth()->user()->id,
             'updated_by' => auth()->user()->id,
         ]);
-
-        $now = Carbon::now();
-        $annee = date("Y");
-        $mois_jour_heure = date("mdH");
-        $time = date("is");
-        $today = $annee.'_'.$mois_jour_heure.'_'.$time;
         
         $files = [];
         if($request->hasfile('photos'))
