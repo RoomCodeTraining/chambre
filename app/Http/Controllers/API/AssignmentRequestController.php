@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\API;
 
+use Carbon\Carbon;
 use App\Models\Client;
 use App\Models\Entity;
 use App\Models\Status;
@@ -93,7 +94,7 @@ class AssignmentRequestController extends Controller
                     $photo = Photo::create([
                         'name' => $name,
                         'assignment_request_id' => $assignmentRequest->id,
-                        'status_id' => Status::where('code', StatusEnum::PENDING)->first()->id,
+                        'status_id' => Status::where('code', StatusEnum::ACTIVE)->first()->id,
                         'created_by' => auth()->user()->id,
                         'updated_by' => auth()->user()->id,
                     ]);
@@ -102,6 +103,46 @@ class AssignmentRequestController extends Controller
         }
 
         return $this->responseCreated('AssignmentRequest created successfully', new AssignmentRequestResource($assignmentRequest));
+    }
+
+    /**
+     * Ajouter des photos à une demande d'expertise
+     *
+     * @authenticated
+     */
+    public function addPhotos(AddPhotosToAssignmentRequestRequest $request, $id): JsonResponse
+    {
+        $assignmentRequest = AssignmentRequest::where('id', $request->assignment_request_id)->firstOrFail();
+
+        $now = Carbon::now();
+        $annee = date("Y");
+        $mois_jour_heure = date("mdH");
+        $time = date("is");
+        $today = $annee.'_'.$mois_jour_heure.'_'.$time;
+
+        $files = [];
+        if($request->hasfile('photos'))
+        {
+            $count = 0;
+            if($request->file('photos') && $request->hasfile('photos')){
+                foreach($request->file('photos') as $file)
+                {
+                    $count = $count + 1;
+                    $name = 'IMG_REQ'.$today.'_'.$count.'.png';
+                    $file->move(public_path("storage/photos/assignment-request/{$assignmentRequest->reference}"), $name);
+
+                    $photo = Photo::create([
+                        'name' => $name,
+                        'assignment_request_id' => $assignmentRequest->id,
+                        'status_id' => Status::where('code', StatusEnum::ACTIVE)->first()->id,
+                        'created_by' => auth()->user()->id,
+                        'updated_by' => auth()->user()->id,
+                    ]);
+                }
+            }
+        }
+
+        return $this->responseCreated('Photos added successfully', null);
     }
 
     /**
