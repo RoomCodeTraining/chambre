@@ -29,6 +29,9 @@ class RolesAndPermissionsSeeder extends Seeder
         $viewAssignmentRequest = Permission::create(['name' => \App\Enums\PermissionEnum::VIEW_ASSIGNMENT_REQUEST, 'guard_name' => 'sanctum']);
         $updateAssignmentRequest = Permission::create(['name' => \App\Enums\PermissionEnum::UPDATE_ASSIGNMENT_REQUEST, 'guard_name' => 'sanctum']);
         $deleteAssignmentRequest = Permission::create(['name' => \App\Enums\PermissionEnum::DELETE_ASSIGNMENT_REQUEST, 'guard_name' => 'sanctum']);
+        $acceptAssignmentRequest = Permission::create(['name' => \App\Enums\PermissionEnum::ACCEPT_ASSIGNMENT_REQUEST, 'guard_name' => 'sanctum']);
+        $rejectAssignmentRequest = Permission::create(['name' => \App\Enums\PermissionEnum::REJECT_ASSIGNMENT_REQUEST, 'guard_name' => 'sanctum']);
+        $cancelAssignmentRequest = Permission::create(['name' => \App\Enums\PermissionEnum::CANCEL_ASSIGNMENT_REQUEST, 'guard_name' => 'sanctum']);
 
         $createAssignment = Permission::create(['name' => \App\Enums\PermissionEnum::CREATE_ASSIGNMENT, 'guard_name' => 'sanctum']);
         $viewAssignment = Permission::create(['name' => \App\Enums\PermissionEnum::VIEW_ASSIGNMENT, 'guard_name' => 'sanctum']);
@@ -41,6 +44,10 @@ class RolesAndPermissionsSeeder extends Seeder
         $cancelAssignment = Permission::create(['name' => \App\Enums\PermissionEnum::CANCEL_ASSIGNMENT, 'guard_name' => 'sanctum']);
         $generateAssignment = Permission::create(['name' => \App\Enums\PermissionEnum::GENERATE_ASSIGNMENT, 'guard_name' => 'sanctum']);
         $assignmentStatistics = Permission::create(['name' => \App\Enums\PermissionEnum::ASSIGNMENT_STATISTICS, 'guard_name' => 'sanctum']);
+        $createWorksheetAssignment = Permission::create(['name' => \App\Enums\PermissionEnum::CREATE_WORKSHEET_ASSIGNMENT, 'guard_name' => 'sanctum']);
+        $createQuoteAssignment = Permission::create(['name' => \App\Enums\PermissionEnum::CREATE_QUOTE_ASSIGNMENT, 'guard_name' => 'sanctum']);
+        $validateQuoteAssignment = Permission::create(['name' => \App\Enums\PermissionEnum::VALIDATE_QUOTE_ASSIGNMENT, 'guard_name' => 'sanctum']);
+        $cancelQuoteAssignment = Permission::create(['name' => \App\Enums\PermissionEnum::CANCEL_QUOTE_ASSIGNMENT, 'guard_name' => 'sanctum']);
 
         $createInvoice = Permission::create(['name' => \App\Enums\PermissionEnum::CREATE_INVOICE, 'guard_name' => 'sanctum']);
         $viewInvoice = Permission::create(['name' => \App\Enums\PermissionEnum::VIEW_INVOICE, 'guard_name' => 'sanctum']);
@@ -101,6 +108,10 @@ class RolesAndPermissionsSeeder extends Seeder
             $viewAssignment,
             $generateAssignment,
             $assignmentStatistics,
+            $createWorksheetAssignment,
+            $createQuoteAssignment,
+            $validateQuoteAssignment,
+            $cancelQuoteAssignment,
             $viewInvoice,
             $generateInvoice,
             $invoiceStatistics,
@@ -124,7 +135,14 @@ class RolesAndPermissionsSeeder extends Seeder
             $enableUser,
             $disableUser,
             $resetUser,
+            $viewAssignmentRequest,
+            $acceptAssignmentRequest,
+            $rejectAssignmentRequest,
             $viewAssignment,
+            $createWorksheetAssignment,
+            $createQuoteAssignment,
+            $validateQuoteAssignment,
+            $cancelQuoteAssignment,
             $generateAssignment,
             $assignmentStatistics,
             $viewInvoice,
@@ -150,6 +168,9 @@ class RolesAndPermissionsSeeder extends Seeder
             $enableUser,
             $disableUser,
             $resetUser,
+            $viewAssignmentRequest,
+            $acceptAssignmentRequest,
+            $rejectAssignmentRequest,
             $createAssignment,
             $viewAssignment,
             $updateAssignment,
@@ -189,9 +210,20 @@ class RolesAndPermissionsSeeder extends Seeder
             $enableUser,
             $disableUser,
             $resetUser,
+            $viewAssignmentRequest,
+            $acceptAssignmentRequest,
+            $rejectAssignmentRequest,
             $createAssignment,
             $viewAssignment,
             $updateAssignment,
+            $createWorksheetAssignment,
+            $createQuoteAssignment,
+            $validateQuoteAssignment,
+            $cancelQuoteAssignment,
+            $createWorksheetAssignment,
+            $createQuoteAssignment,
+            $validateQuoteAssignment,
+            $cancelQuoteAssignment,
             $deleteAssignment,
             $realizeAssignment,
             $editAssignment,
@@ -208,8 +240,15 @@ class RolesAndPermissionsSeeder extends Seeder
             'guard_name' => 'sanctum',
         ])->givePermissionTo([
             $viewUser,
-            $createUser,
+            $updateUser,
+            $viewAssignmentRequest,
+            $acceptAssignmentRequest,
+            $rejectAssignmentRequest,
             $createAssignment,
+            $createWorksheetAssignment,
+            $createQuoteAssignment,
+            $validateQuoteAssignment,
+            $cancelQuoteAssignment,
             $viewAssignment,
             $updateAssignment,
             $deleteAssignment,
@@ -227,6 +266,9 @@ class RolesAndPermissionsSeeder extends Seeder
             'guard_name' => 'sanctum',
         ])->givePermissionTo([
             $viewUser,
+            $viewAssignmentRequest,
+            $acceptAssignmentRequest,
+            $rejectAssignmentRequest,
             $createAssignment,
             $viewAssignment,
             $updateAssignment,
@@ -242,6 +284,9 @@ class RolesAndPermissionsSeeder extends Seeder
             'guard_name' => 'sanctum',
         ])->givePermissionTo([
             $viewUser,
+            $viewAssignmentRequest,
+            $acceptAssignmentRequest,
+            $rejectAssignmentRequest,
             $createAssignment,
             $viewAssignment,
             $updateAssignment,
@@ -294,6 +339,9 @@ class RolesAndPermissionsSeeder extends Seeder
         ])->givePermissionTo([
             $viewUser,
             $updateUser,
+            $viewAssignmentRequest,
+            $acceptAssignmentRequest,
+            $rejectAssignmentRequest,
             $createAssignment,
             $viewAssignment,
             $updateAssignment,
@@ -314,6 +362,9 @@ class RolesAndPermissionsSeeder extends Seeder
             'guard_name' => 'sanctum',
         ])->givePermissionTo([
             $viewUser,
+            $viewAssignmentRequest,
+            $acceptAssignmentRequest,
+            $rejectAssignmentRequest,
             $createAssignment,
             $viewAssignment,
             $updateAssignment,
@@ -340,6 +391,9 @@ class RolesAndPermissionsSeeder extends Seeder
             'guard_name' => 'sanctum',
         ])->givePermissionTo([
             $viewUser,
+            $viewAssignmentRequest,
+            $acceptAssignmentRequest,
+            $rejectAssignmentRequest,
             $createAssignment,
             $viewAssignment,
             $updateAssignment,
@@ -407,6 +461,9 @@ class RolesAndPermissionsSeeder extends Seeder
         ])->givePermissionTo([
             $viewAssignment,
             $updateAssignment,
+            $createQuoteAssignment,
+            $validateQuoteAssignment,
+            $cancelQuoteAssignment,
             $viewUser,
             $createUser,
             $updateUser,
@@ -425,6 +482,9 @@ class RolesAndPermissionsSeeder extends Seeder
         ])->givePermissionTo([
             $viewAssignment,
             $updateAssignment,
+            $createQuoteAssignment,
+            $validateQuoteAssignment,
+            $cancelQuoteAssignment,
             $viewUser,
             $createUser,
             $updateUser,
@@ -441,10 +501,10 @@ class RolesAndPermissionsSeeder extends Seeder
             'description' => "Client.",
             'guard_name' => 'sanctum',
         ])->givePermissionTo([
-            $createAssignmentRequest,
+            $createAssignment,
             $viewAssignmentRequest,
-            $updateAssignmentRequest,
-            $deleteAssignmentRequest,
+            $acceptAssignmentRequest,
+            $rejectAssignmentRequest,
             $viewUser,
             $createAssignment,
             $viewAssignment,

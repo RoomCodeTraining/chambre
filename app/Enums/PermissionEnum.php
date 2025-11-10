@@ -20,11 +20,18 @@ enum PermissionEnum: string
     case CREATE_ASSIGNMENT_REQUEST = 'assignment_request.create';
     case UPDATE_ASSIGNMENT_REQUEST = 'assignment_request.update';
     case DELETE_ASSIGNMENT_REQUEST = 'assignment_request.delete';
+    case ACCEPT_ASSIGNMENT_REQUEST = 'assignment_request.accept';
+    case REJECT_ASSIGNMENT_REQUEST = 'assignment_request.reject';
+    case CANCEL_ASSIGNMENT_REQUEST = 'assignment_request.cancel';
 
     case VIEW_ASSIGNMENT = 'assignment.view';
     case CREATE_ASSIGNMENT = 'assignment.create';
     case UPDATE_ASSIGNMENT = 'assignment.update';
     case REALIZE_ASSIGNMENT = 'assignment.realize';
+    case CREATE_WORKSHEET_ASSIGNMENT = 'assignment.create_worksheet';
+    case CREATE_QUOTE_ASSIGNMENT = 'assignment.create_quote';
+    case VALIDATE_QUOTE_ASSIGNMENT = 'assignment.validate_quote';
+    case CANCEL_QUOTE_ASSIGNMENT = 'assignment.cancel_quote';
     case EDIT_ASSIGNMENT = 'assignment.edit';
     case VALIDATE_ASSIGNMENT = 'assignment.validate';
     case CLOSE_ASSIGNMENT = 'assignment.close';
