@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('pin_code_params')->nullable();
             $table->dateTime('pin_code_expires_at')->nullable();
             $table->unsignedBigInteger('entity_id')->index()->nullable();
+            $table->unsignedBigInteger('client_id')->index()->nullable();
             $table->unsignedBigInteger('status_id')->index()->nullable();
             $table->unsignedBigInteger('current_role_id')->index()->nullable();
             $table->unsignedBigInteger('enabled_by')->index()->nullable();
@@ -34,6 +35,11 @@ return new class extends Migration
             $table->foreign('entity_id')
                 ->references('id')
                 ->on('entities')
+                ->onDelete('cascade');
+
+            $table->foreign('client_id')
+                ->references('id')
+                ->on('clients')
                 ->onDelete('cascade');
 
             $table->foreign('current_role_id')
@@ -80,6 +86,7 @@ return new class extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->dropConstrainedForeignId('entity_id');
+            $table->dropConstrainedForeignId('client_id');
             $table->dropConstrainedForeignId('current_role_id');
             $table->dropConstrainedForeignId('status_id');
             $table->dropConstrainedForeignId('enabled_by');

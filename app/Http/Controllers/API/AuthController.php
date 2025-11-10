@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\Models\City;
 use App\Models\User;
+use App\Models\Client;
 use App\Models\Entity;
 use App\Models\Status;
 use App\Enums\RoleEnum;
@@ -72,7 +73,15 @@ class AuthController extends Controller
 
     public function register(RegisterRequest $request)
     {
+        $client = Client::create([
+            'name' => $request->first_name . ' ' . $request->last_name,
+            'email' => $request->email,
+            'phone_1' => $request->telephone,
+            'status_id' => Status::where('code', StatusEnum::ACTIVE->value)->first()->id,
+        ]);
+
         $user = User::create([
+            'client_id' => $client->id,
             'username' => Str::random(10),
             'code' => Str::random(10),
             'email' => $request->email,
@@ -86,6 +95,8 @@ class AuthController extends Controller
 
         app(PermissionRegistrar::class)->setPermissionsTeamId($user->current_role_id);
         $user->assignRole(Role::where('name', RoleEnum::CLIENT->value)->first()->name);
+
+        
 
         return $this->responseSuccess('Utilisateur créé avec succès', [
             'token' => $user->createToken('auth_token')->plainTextToken,
