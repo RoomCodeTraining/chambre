@@ -2,7 +2,14 @@
 
 namespace App\Http\Resources\AssignmentRequest;
 
+use App\Http\Resources\User\UserResource;
+use App\Http\Resources\Client\ClientResource;
+use App\Http\Resources\Entity\EntityResource;
+use App\Http\Resources\Status\StatusResource;
+use App\Http\Resources\Vehicle\VehicleResource;
 use Illuminate\Http\Resources\Json\JsonResource;
+use App\Http\Resources\ExpertiseType\ExpertiseTypeResource;
+use App\Http\Resources\AssignmentType\AssignmentTypeResource;
 
 class AssignmentRequestResource extends JsonResource
 {
