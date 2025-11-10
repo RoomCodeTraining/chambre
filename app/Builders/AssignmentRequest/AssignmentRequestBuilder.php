@@ -88,6 +88,7 @@ class AssignmentRequestBuilder extends Builder
             return $this;
         }
 
-        return $this->where('expert_firm_id', $user->entity_id);
+        // return $this->where('expert_firm_id', $user->entity_id);
+        return $this;
     }
 }
