@@ -84,7 +84,7 @@ class AssignmentRequestBuilder extends Builder
         }
 
         if ($user->isClient()) {
-            return $this->where('client_id', $user->entity_id);
+            return $this->where('client_id', $user->client_id);
         }
 
         return $this->where('expert_firm_id', $user->entity_id);
