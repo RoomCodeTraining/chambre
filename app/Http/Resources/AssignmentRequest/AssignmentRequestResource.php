@@ -3,13 +3,12 @@
 namespace App\Http\Resources\AssignmentRequest;
 
 use App\Http\Resources\User\UserResource;
+use App\Http\Resources\Photo\PhotoResource;
 use App\Http\Resources\Client\ClientResource;
 use App\Http\Resources\Entity\EntityResource;
 use App\Http\Resources\Status\StatusResource;
 use App\Http\Resources\Vehicle\VehicleResource;
 use Illuminate\Http\Resources\Json\JsonResource;
-use App\Http\Resources\ExpertiseType\ExpertiseTypeResource;
-use App\Http\Resources\AssignmentType\AssignmentTypeResource;
 
 class AssignmentRequestResource extends JsonResource
 {
@@ -28,8 +27,7 @@ class AssignmentRequestResource extends JsonResource
             'repairer' => new EntityResource($this->whenLoaded('repairer')),
             'client' => new ClientResource($this->whenLoaded('client')),
             'vehicle' => new VehicleResource($this->whenLoaded('vehicle')),
-            'assignment_type' => new AssignmentTypeResource($this->whenLoaded('assignmentType')),
-            'expertise_type' => new ExpertiseTypeResource($this->whenLoaded('expertiseType')),
+            'photos' => PhotoResource::collection($this->whenLoaded('photos')),
             'status' => new StatusResource($this->whenLoaded('status')),
             'created_by' => new UserResource($this->whenLoaded('createdBy')),
             'updated_by' => new UserResource($this->whenLoaded('updatedBy')),

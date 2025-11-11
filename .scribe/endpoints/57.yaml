@@ -1,20 +1,20 @@
-name: 'Gestion des rattachements réparateurs'
+name: 'Gestion des rattachements assureurs'
 description: |-
 
-  APIs pour la gestion des rattachements réparateurs
+  APIs pour la gestion des rattachements assureurs
 endpoints:
   -
     httpMethods:
       - GET
-    uri: api/v1/repairer-relationships
+    uri: api/v1/insurer-relationships
     metadata:
-      groupName: 'Gestion des rattachements réparateurs'
+      groupName: 'Gestion des rattachements assureurs'
       groupDescription: |-
 
-        APIs pour la gestion des rattachements réparateurs
+        APIs pour la gestion des rattachements assureurs
       subgroup: ''
       subgroupDescription: ''
-      title: 'Lister tous les rattachements réparateurs'
+      title: 'Lister tous les rattachements assureurs'
       description: ''
       authenticated: true
       deprecated: false
@@ -44,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 54v68khP36bgDc1EZafdeVa'
+      - 'Bearer PeE3afhcD18vVbda6g654Zk'
     controller: null
     method: null
     route: null
@@ -52,15 +52,15 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/v1/repairer-relationships
+    uri: api/v1/insurer-relationships
     metadata:
-      groupName: 'Gestion des rattachements réparateurs'
+      groupName: 'Gestion des rattachements assureurs'
       groupDescription: |-
 
-        APIs pour la gestion des rattachements réparateurs
+        APIs pour la gestion des rattachements assureurs
       subgroup: ''
       subgroupDescription: ''
-      title: 'Créer un rattachement réparateur'
+      title: 'Créer un rattachement assureur'
       description: ''
       authenticated: true
       deprecated: false
@@ -74,25 +74,25 @@ endpoints:
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      repairer_id:
-        name: repairer_id
+      insurer_id:
+        name: insurer_id
         description: 'The <code>id</code> of an existing record in the entities table.'
         required: true
-        example: impedit
+        example: sequi
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      repairer_id: impedit
+      insurer_id: sequi
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer v4efad38cbDPV56hgZ1aEk6'
+      - 'Bearer gecD6Ev1V6P35hda4baf8kZ'
     controller: null
     method: null
     route: null
@@ -100,15 +100,15 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: 'api/v1/repairer-relationships/{repairerRelationship}'
+    uri: 'api/v1/insurer-relationships/{insurerRelationship}'
     metadata:
-      groupName: 'Gestion des rattachements réparateurs'
+      groupName: 'Gestion des rattachements assureurs'
       groupDescription: |-
 
-        APIs pour la gestion des rattachements réparateurs
+        APIs pour la gestion des rattachements assureurs
       subgroup: ''
       subgroupDescription: ''
-      title: 'Afficher un rattachement réparateur'
+      title: 'Afficher un rattachement assureur'
       description: ''
       authenticated: true
       deprecated: false
@@ -118,18 +118,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      repairerRelationship:
-        name: repairerRelationship
+      insurerRelationship:
+        name: insurerRelationship
         description: ''
         required: true
-        example: quas
+        example: vitae
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      repairerRelationship: quas
+      insurerRelationship: vitae
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -149,7 +149,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer V3EPbh651Zfa48ak6cvDdeg'
+      - 'Bearer 6Eav1a83ekhVbf5ZdDPg6c4'
     controller: null
     method: null
     route: null
@@ -157,15 +157,15 @@ endpoints:
   -
     httpMethods:
       - PUT
-    uri: 'api/v1/repairer-relationships/{repairerRelationship}'
+    uri: 'api/v1/insurer-relationships/{insurerRelationship}'
     metadata:
-      groupName: 'Gestion des rattachements réparateurs'
+      groupName: 'Gestion des rattachements assureurs'
       groupDescription: |-
 
-        APIs pour la gestion des rattachements réparateurs
+        APIs pour la gestion des rattachements assureurs
       subgroup: ''
       subgroupDescription: ''
-      title: 'Mettre à jour un rattachement réparateur'
+      title: 'Mettre à jour un rattachement assureur'
       description: ''
       authenticated: true
       deprecated: false
@@ -175,18 +175,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      repairerRelationship:
-        name: repairerRelationship
+      insurerRelationship:
+        name: insurerRelationship
         description: ''
         required: true
-        example: qui
+        example: ullam
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      repairerRelationship: qui
+      insurerRelationship: ullam
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -197,7 +197,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer E5g38abVkhvf66eadPD14cZ'
+      - 'Bearer 85d6V3gk1a6efbvhZEPD4ca'
     controller: null
     method: null
     route: null
@@ -205,15 +205,15 @@ endpoints:
   -
     httpMethods:
       - PUT
-    uri: 'api/v1/repairer-relationships/{repairerRelationship}/enable'
+    uri: 'api/v1/insurer-relationships/{insurerRelationship}/enable'
     metadata:
-      groupName: 'Gestion des rattachements réparateurs'
+      groupName: 'Gestion des rattachements assureurs'
       groupDescription: |-
 
-        APIs pour la gestion des rattachements réparateurs
+        APIs pour la gestion des rattachements assureurs
       subgroup: ''
       subgroupDescription: ''
-      title: 'Activer un rattachement réparateur'
+      title: 'Activer un rattachement assureur'
       description: ''
       authenticated: true
       deprecated: false
@@ -223,18 +223,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      repairerRelationship:
-        name: repairerRelationship
+      insurerRelationship:
+        name: insurerRelationship
         description: ''
         required: true
-        example: qui
+        example: quia
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      repairerRelationship: qui
+      insurerRelationship: quia
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -245,7 +245,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer k6g5aeaPdDfhvbZc643V8E1'
+      - 'Bearer PekDVfdb58aag1c6346EZvh'
     controller: null
     method: null
     route: null
@@ -253,15 +253,15 @@ endpoints:
   -
     httpMethods:
       - PUT
-    uri: 'api/v1/repairer-relationships/{repairerRelationship}/disable'
+    uri: 'api/v1/insurer-relationships/{insurerRelationship}/disable'
     metadata:
-      groupName: 'Gestion des rattachements réparateurs'
+      groupName: 'Gestion des rattachements assureurs'
       groupDescription: |-
 
-        APIs pour la gestion des rattachements réparateurs
+        APIs pour la gestion des rattachements assureurs
       subgroup: ''
       subgroupDescription: ''
-      title: 'Désactiver un rattachement réparateur'
+      title: 'Désactiver un rattachement assureur'
       description: ''
       authenticated: true
       deprecated: false
@@ -271,18 +271,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      repairerRelationship:
-        name: repairerRelationship
+      insurerRelationship:
+        name: insurerRelationship
         description: ''
         required: true
-        example: veniam
+        example: ut
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      repairerRelationship: veniam
+      insurerRelationship: ut
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -293,7 +293,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer h1bVD5ackPvdg6fa368eZE4'
+      - 'Bearer hb1EVZP4d6gak5638vDefca'
     controller: null
     method: null
     route: null

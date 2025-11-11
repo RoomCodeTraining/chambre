@@ -46,7 +46,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 4dE5VbavZgk6Pf1ac3h86eD'
+      - 'Bearer 6cg35Vf1vdE8PkZDha6eb4a'
     controller: null
     method: null
     route: null
@@ -80,7 +80,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: ehmbvahjikbxcxqqrsni
+        example: aiscgplcvigebdtlnqu
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -90,22 +90,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Doloremque porro sint placeat cupiditate voluptatem iure laboriosam enim.'
+        example: 'Non odit a sapiente est vel.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: ehmbvahjikbxcxqqrsni
-      description: 'Doloremque porro sint placeat cupiditate voluptatem iure laboriosam enim.'
+      label: aiscgplcvigebdtlnqu
+      description: 'Non odit a sapiente est vel.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer v5PZV63cdfake684Dh1gEba'
+      - 'Bearer D8b3aZ4ghaE5dcek6PV16fv'
     controller: null
     method: null
     route: null
@@ -135,14 +135,14 @@ endpoints:
         name: id
         description: 'The ID of the ascertainment type.'
         required: true
-        example: doloribus
+        example: ut
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: doloribus
+      id: ut
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -162,7 +162,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer b6hdvka4c1aeE53gDf6VZP8'
+      - 'Bearer avaZPhDb8gVkE416fcde365'
     controller: null
     method: null
     route: null
@@ -192,14 +192,14 @@ endpoints:
         name: id
         description: 'The ID of the ascertainment type.'
         required: true
-        example: numquam
+        example: velit
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: numquam
+      id: velit
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -207,7 +207,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: saqvalxmldjfab
+        example: peeqlrsaxz
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -217,22 +217,22 @@ endpoints:
         name: description
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: false
-        example: 'Perspiciatis omnis recusandae voluptatum omnis.'
+        example: 'Voluptates est et quos sapiente non sed ut inventore.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: saqvalxmldjfab
-      description: 'Perspiciatis omnis recusandae voluptatum omnis.'
+      label: peeqlrsaxz
+      description: 'Voluptates est et quos sapiente non sed ut inventore.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer DfvZec65bhPaV638k1gdaE4'
+      - 'Bearer d13ahb8gvefZcV5a6D4EkP6'
     controller: null
     method: null
     route: null
@@ -262,14 +262,14 @@ endpoints:
         name: id
         description: 'The ID of the ascertainment type.'
         required: true
-        example: perspiciatis
+        example: consequatur
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: perspiciatis
+      id: consequatur
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -280,7 +280,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 1dvVkgZbPe568ah3Eaf4Dc6'
+      - 'Bearer avZehf1V645cEk36D8bdgaP'
     controller: null
     method: null
     route: null

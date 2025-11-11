@@ -1,20 +1,16 @@
-name: 'Gestion des profils utilisateur'
-description: |-
-
-  API pour la gestion des profils utilisateurs
+name: 'Statistiques du tableau de bord'
+description: ''
 endpoints:
   -
     httpMethods:
       - GET
-    uri: api/v1/roles
+    uri: api/v1/dashboard/users
     metadata:
-      groupName: 'Gestion des profils utilisateur'
-      groupDescription: |-
-
-        API pour la gestion des profils utilisateurs
+      groupName: 'Statistiques du tableau de bord'
+      groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Lister les profils utilisateur'
+      title: 'Afficher les statistiques des utilisateurs'
       description: ''
       authenticated: true
       deprecated: false
@@ -44,7 +40,183 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 64c853vbVkafePhad6EZDg1'
+      - 'Bearer acZvg16hDkVd8e5P6a3Ef4b'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/dashboard/assignments
+    metadata:
+      groupName: 'Statistiques du tableau de bord'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Afficher les statistiques des dossiers'
+      description: ''
+      authenticated: true
+      deprecated: false
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 81aVcZdh5E64kP36faDgbev'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/dashboard/insurers
+    metadata:
+      groupName: 'Statistiques du tableau de bord'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: "Afficher les statistiques des compagnies d'assurance"
+      description: ''
+      authenticated: true
+      deprecated: false
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer cedf5148V6abhZP3a6EgkvD'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/dashboard/repairers
+    metadata:
+      groupName: 'Statistiques du tableau de bord'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Afficher les statistiques des réparateurs'
+      description: ''
+      authenticated: true
+      deprecated: false
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer ba86ckdvE1fDge4Z3h56aPV'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/dashboard/vehicles
+    metadata:
+      groupName: 'Statistiques du tableau de bord'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Afficher les statistiques des véhicules'
+      description: ''
+      authenticated: true
+      deprecated: false
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer P4vZ6kchEegDdfaba3568V1'
     controller: null
     method: null
     route: null

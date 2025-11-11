@@ -44,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer V4bc5fh6k3vaDdagPeZE681'
+      - 'Bearer 686ehDa3v5cEP1gdakZV4bf'
     controller: null
     method: null
     route: null
@@ -78,7 +78,7 @@ endpoints:
         name: assignment_id
         description: 'The <code>id</code> of an existing record in the assignments table.'
         required: true
-        example: exercitationem
+        example: non
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -99,7 +99,7 @@ endpoints:
         name: 'other_costs[].other_cost_type_id'
         description: ''
         required: true
-        example: officia
+        example: inventore
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -109,25 +109,25 @@ endpoints:
         name: 'other_costs[].amount'
         description: ''
         required: true
-        example: 3.4073
+        example: 269.4
         type: number
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      assignment_id: exercitationem
+      assignment_id: non
       other_costs:
         -
-          other_cost_type_id: officia
-          amount: 3.4073
+          other_cost_type_id: inventore
+          amount: 269.4
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer hVe6vfdZ1PE8k34Dcaabg65'
+      - 'Bearer Z3gec5Df6da6abVE1vP8k4h'
     controller: null
     method: null
     route: null
@@ -161,7 +161,7 @@ endpoints:
         name: assignment_id
         description: 'The <code>id</code> of an existing record in the assignments table.'
         required: true
-        example: ut
+        example: provident
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -171,7 +171,7 @@ endpoints:
         name: hourly_rate_id
         description: 'The <code>id</code> of an existing record in the hourly_rates table.'
         required: true
-        example: error
+        example: iste
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -181,7 +181,7 @@ endpoints:
         name: paint_type_id
         description: 'The <code>id</code> of an existing record in the paint_types table.'
         required: true
-        example: optio
+        example: quae
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -224,7 +224,7 @@ endpoints:
         name: 'shock_works[].obsolescence_rate'
         description: ''
         required: true
-        example: 2950096.6
+        example: 151169830.74282
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -234,7 +234,7 @@ endpoints:
         name: 'shock_works[].recovery_amount'
         description: ''
         required: true
-        example: 272.3313095
+        example: 366597841.97
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -244,7 +244,7 @@ endpoints:
         name: 'shock_works[].amount'
         description: ''
         required: true
-        example: 727.477
+        example: 1.95494
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -254,7 +254,7 @@ endpoints:
         name: 'shock_works[].discount'
         description: ''
         required: true
-        example: 13.252
+        example: 443964.9
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -264,7 +264,7 @@ endpoints:
         name: 'workforces[].workforce_type_id'
         description: 'The <code>id</code> of an existing record in the workforce_types table.'
         required: true
-        example: harum
+        example: et
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -274,7 +274,7 @@ endpoints:
         name: 'workforces[].nb_hours'
         description: ''
         required: true
-        example: 14192.651801519
+        example: 30.35
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -284,7 +284,7 @@ endpoints:
         name: 'workforces[].discount'
         description: ''
         required: true
-        example: 41523408.78825
+        example: 23265.929015831
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -294,7 +294,7 @@ endpoints:
         name: 'other_costs[].other_cost_type_id'
         description: 'The <code>id</code> of an existing record in the other_cost_types table.'
         required: true
-        example: necessitatibus
+        example: perferendis
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -304,38 +304,38 @@ endpoints:
         name: 'other_costs[].amount'
         description: 'La valeur de value doit être supérieure ou égale à 0.'
         required: true
-        example: 32
+        example: 11
         type: number
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      assignment_id: ut
-      hourly_rate_id: error
-      paint_type_id: optio
+      assignment_id: provident
+      hourly_rate_id: iste
+      paint_type_id: quae
       shock_works:
         -
-          obsolescence_rate: 2950096.6
-          recovery_amount: 272.3313095
-          amount: 727.477
-          discount: 13.252
+          obsolescence_rate: 151169830.74282
+          recovery_amount: 366597841.97
+          amount: 1.95494
+          discount: 443964.9
       workforces:
         -
-          workforce_type_id: harum
-          nb_hours: 14192.651801519
-          discount: 41523408.78825
+          workforce_type_id: et
+          nb_hours: 30.35
+          discount: 23265.929015831
       other_costs:
         -
-          other_cost_type_id: necessitatibus
-          amount: 32
+          other_cost_type_id: perferendis
+          amount: 11
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer gve8ackhaP14E5dZD6f63bV'
+      - 'Bearer baekEV6fa1dhP8vD4cgZ635'
     controller: null
     method: null
     route: null
@@ -365,14 +365,14 @@ endpoints:
         name: otherCost
         description: ''
         required: true
-        example: quisquam
+        example: ipsum
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      otherCost: quisquam
+      otherCost: ipsum
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -392,7 +392,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer PDa65Za3E14cev6df8kbhVg'
+      - 'Bearer d86cE6aDavP5khVgf1e3Z4b'
     controller: null
     method: null
     route: null
@@ -422,14 +422,14 @@ endpoints:
         name: otherCost
         description: ''
         required: true
-        example: repellendus
+        example: inventore
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      otherCost: repellendus
+      otherCost: inventore
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -437,7 +437,7 @@ endpoints:
         name: other_cost_type_id
         description: 'The <code>id</code> of an existing record in the other_cost_types table.'
         required: true
-        example: et
+        example: rerum
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -447,22 +447,22 @@ endpoints:
         name: amount
         description: ''
         required: true
-        example: 33784896.21501
+        example: 570.236
         type: number
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      other_cost_type_id: et
-      amount: 33784896.21501
+      other_cost_type_id: rerum
+      amount: 570.236
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer eZV8513d6Eg4aafchbk6vPD'
+      - 'Bearer Eav853VhZPDakfgd6bec641'
     controller: null
     method: null
     route: null
@@ -492,14 +492,14 @@ endpoints:
         name: otherCost
         description: ''
         required: true
-        example: autem
+        example: magni
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      otherCost: autem
+      otherCost: magni
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -510,7 +510,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer a185deva6VP6EgbDZ4kchf3'
+      - 'Bearer 6ZcPbEag5dfVk3e684haDv1'
     controller: null
     method: null
     route: null

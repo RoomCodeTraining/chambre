@@ -46,7 +46,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer g1eb4PvD3c58faV66haZdEk'
+      - 'Bearer P6efva1DdgcZ3a5b68khEV4'
     controller: null
     method: null
     route: null
@@ -80,7 +80,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: lcdlyldgi
+        example: hsbajmudpadwbwwuxwdp
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -90,22 +90,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Aperiam id quia omnis quis rerum ad cum voluptatum.'
+        example: 'Ut quam unde est laboriosam provident.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: lcdlyldgi
-      description: 'Aperiam id quia omnis quis rerum ad cum voluptatum.'
+      label: hsbajmudpadwbwwuxwdp
+      description: 'Ut quam unde est laboriosam provident.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 1e66ZfvDbEakgda4Vc35h8P'
+      - 'Bearer 31ZfhPd646egv5aa8cVkEbD'
     controller: null
     method: null
     route: null
@@ -135,14 +135,14 @@ endpoints:
         name: id
         description: 'The ID of the remark.'
         required: true
-        example: error
+        example: nemo
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: error
+      id: nemo
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -162,7 +162,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer P1E3cv6Vbf8ZagheDd4k6a5'
+      - 'Bearer ZahPfDk536evb6gEVc418ad'
     controller: null
     method: null
     route: null
@@ -192,14 +192,14 @@ endpoints:
         name: id
         description: 'The ID of the remark.'
         required: true
-        example: a
+        example: dolorem
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: a
+      id: dolorem
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -207,7 +207,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: md
+        example: nuaydstgixdy
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -217,22 +217,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Sed ea eum minus quisquam voluptas corporis odit.'
+        example: 'Facilis aut dolores non.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: md
-      description: 'Sed ea eum minus quisquam voluptas corporis odit.'
+      label: nuaydstgixdy
+      description: 'Facilis aut dolores non.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 4veVba168f53DgaPh6ZkcEd'
+      - 'Bearer 1e643baf6V8dDgcEhZPa5kv'
     controller: null
     method: null
     route: null
@@ -262,14 +262,14 @@ endpoints:
         name: id
         description: 'The ID of the remark.'
         required: true
-        example: animi
+        example: at
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: animi
+      id: at
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -280,7 +280,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer h4aED83gPkbv6Zda5f1c6eV'
+      - 'Bearer 4dDkh8ZeVE1P5c6ga6abvf3'
     controller: null
     method: null
     route: null

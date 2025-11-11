@@ -46,7 +46,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Dvf5dEec3P68aVbgaZh6k14'
+      - 'Bearer f8kDP4v6h6dgeaZEb3caV51'
     controller: null
     method: null
     route: null
@@ -80,7 +80,7 @@ endpoints:
         name: license_plate
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: smubygdheuojzmtg
+        example: uklkgmyntjpgtyrocwpqnqka
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -90,7 +90,7 @@ endpoints:
         name: type
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: false
-        example: ojwls
+        example: fjv
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -100,7 +100,7 @@ endpoints:
         name: option
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: false
-        example: dcsi
+        example: ontfxbgmtwiuakqoqrapp
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -140,7 +140,7 @@ endpoints:
         name: mileage
         description: 'La valeur de value doit être supérieure ou égale à 0.'
         required: false
-        example: 27
+        example: 49
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -150,7 +150,7 @@ endpoints:
         name: new_market_value
         description: 'La valeur de value doit être supérieure ou égale à 0.'
         required: false
-        example: 62
+        example: 79
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -160,7 +160,7 @@ endpoints:
         name: serial_number
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: false
-        example: mcdfkudyo
+        example: tc
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -170,7 +170,7 @@ endpoints:
         name: first_entry_into_circulation_date
         description: 'Must be a valid date in the format <code>Y-m-d</code>. Le champ value doit être une date antérieure au <code>tomorrow</code>.'
         required: false
-        example: '1998-11-29'
+        example: '2012-08-25'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -180,7 +180,7 @@ endpoints:
         name: technical_visit_date
         description: 'Must be a valid date in the format <code>Y-m-d</code>. Le champ value doit être une date postérieure ou égale au <code>first_entry_into_circulation_date</code>.'
         required: false
-        example: '2118-10-30'
+        example: '2027-01-04'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -190,7 +190,7 @@ endpoints:
         name: fiscal_power
         description: ''
         required: false
-        example: 6
+        example: 18
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -200,7 +200,7 @@ endpoints:
         name: nb_seats
         description: ''
         required: false
-        example: 17
+        example: 9
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -210,7 +210,7 @@ endpoints:
         name: payload
         description: ''
         required: false
-        example: 9
+        example: 3
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -247,24 +247,24 @@ endpoints:
         nullable: true
         custom: []
     cleanBodyParameters:
-      license_plate: smubygdheuojzmtg
-      type: ojwls
-      option: dcsi
-      mileage: 27
-      new_market_value: 62
-      serial_number: mcdfkudyo
-      first_entry_into_circulation_date: '1998-11-29'
-      technical_visit_date: '2118-10-30'
-      fiscal_power: 6
-      nb_seats: 17
-      payload: 9
+      license_plate: uklkgmyntjpgtyrocwpqnqka
+      type: fjv
+      option: ontfxbgmtwiuakqoqrapp
+      mileage: 49
+      new_market_value: 79
+      serial_number: tc
+      first_entry_into_circulation_date: '2012-08-25'
+      technical_visit_date: '2027-01-04'
+      fiscal_power: 18
+      nb_seats: 9
+      payload: 3
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer ea63PfZbvcg4a1E5h8kDVd6'
+      - 'Bearer 15khaDe6a6PVfbgdcZ438vE'
     controller: null
     method: null
     route: null
@@ -294,14 +294,14 @@ endpoints:
         name: id
         description: 'The ID of the vehicle.'
         required: true
-        example: voluptas
+        example: quae
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: voluptas
+      id: quae
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -321,7 +321,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer kh3PaE685bvcVDfaZ6gd41e'
+      - 'Bearer db4kVPe68hvDEf16Zaa5g3c'
     controller: null
     method: null
     route: null
@@ -351,14 +351,14 @@ endpoints:
         name: id
         description: 'The ID of the vehicle.'
         required: true
-        example: labore
+        example: blanditiis
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: labore
+      id: blanditiis
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -366,7 +366,7 @@ endpoints:
         name: license_plate
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: qik
+        example: qivhzxpesmiyphbstuyp
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -376,7 +376,7 @@ endpoints:
         name: type
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: false
-        example: odnqqwwytp
+        example: towvmryefle
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -386,7 +386,7 @@ endpoints:
         name: option
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: false
-        example: jkaplobvm
+        example: cftnydeimua
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -426,7 +426,7 @@ endpoints:
         name: mileage
         description: 'La valeur de value doit être supérieure ou égale à 0.'
         required: false
-        example: 79
+        example: 32
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -436,7 +436,7 @@ endpoints:
         name: new_market_value
         description: 'La valeur de value doit être supérieure ou égale à 0.'
         required: false
-        example: 22
+        example: 20
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -446,7 +446,7 @@ endpoints:
         name: serial_number
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: false
-        example: pzskwbfskrpgqvebgqifaywz
+        example: uomhrbzglg
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -456,7 +456,7 @@ endpoints:
         name: first_entry_into_circulation_date
         description: 'Must be a valid date in the format <code>Y-m-d</code>. Le champ value doit être une date antérieure au <code>tomorrow</code>.'
         required: false
-        example: '2015-03-29'
+        example: '2002-10-25'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -466,7 +466,7 @@ endpoints:
         name: technical_visit_date
         description: 'Must be a valid date in the format <code>Y-m-d</code>. Le champ value doit être une date postérieure ou égale au <code>first_entry_into_circulation_date</code>.'
         required: false
-        example: '2065-04-02'
+        example: '2038-09-01'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -476,7 +476,7 @@ endpoints:
         name: fiscal_power
         description: ''
         required: false
-        example: 19
+        example: 3
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -486,7 +486,7 @@ endpoints:
         name: nb_seats
         description: ''
         required: false
-        example: 12
+        example: 19
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -496,7 +496,7 @@ endpoints:
         name: payload
         description: ''
         required: false
-        example: 19
+        example: 10
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -523,24 +523,24 @@ endpoints:
         nullable: true
         custom: []
     cleanBodyParameters:
-      license_plate: qik
-      type: odnqqwwytp
-      option: jkaplobvm
-      mileage: 79
-      new_market_value: 22
-      serial_number: pzskwbfskrpgqvebgqifaywz
-      first_entry_into_circulation_date: '2015-03-29'
-      technical_visit_date: '2065-04-02'
-      fiscal_power: 19
-      nb_seats: 12
-      payload: 19
+      license_plate: qivhzxpesmiyphbstuyp
+      type: towvmryefle
+      option: cftnydeimua
+      mileage: 32
+      new_market_value: 20
+      serial_number: uomhrbzglg
+      first_entry_into_circulation_date: '2002-10-25'
+      technical_visit_date: '2038-09-01'
+      fiscal_power: 3
+      nb_seats: 19
+      payload: 10
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 6ac4VDkEbea6fghZ185dv3P'
+      - 'Bearer fhaPE5bkZc1d68a3ge46vVD'
     controller: null
     method: null
     route: null
@@ -570,14 +570,14 @@ endpoints:
         name: id
         description: 'The ID of the vehicle.'
         required: true
-        example: voluptatem
+        example: eius
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: voluptatem
+      id: eius
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -588,7 +588,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer hV364Pav8D6gcbd1Zk5Eefa'
+      - 'Bearer 3Pv1aEead64gVfcDh85kZ6b'
     controller: null
     method: null
     route: null

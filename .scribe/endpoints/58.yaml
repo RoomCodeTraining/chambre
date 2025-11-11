@@ -1,16 +1,20 @@
-name: 'Statistiques du tableau de bord'
-description: ''
+name: 'Gestion des rattachements réparateurs'
+description: |-
+
+  APIs pour la gestion des rattachements réparateurs
 endpoints:
   -
     httpMethods:
       - GET
-    uri: api/v1/dashboard/users
+    uri: api/v1/repairer-relationships
     metadata:
-      groupName: 'Statistiques du tableau de bord'
-      groupDescription: ''
+      groupName: 'Gestion des rattachements réparateurs'
+      groupDescription: |-
+
+        APIs pour la gestion des rattachements réparateurs
       subgroup: ''
       subgroupDescription: ''
-      title: 'Afficher les statistiques des utilisateurs'
+      title: 'Lister tous les rattachements réparateurs'
       description: ''
       authenticated: true
       deprecated: false
@@ -40,7 +44,55 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 8hv3e5d16Da6gEbPfackV4Z'
+      - 'Bearer dcPf6Z61VD38vab54kghEea'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/repairer-relationships
+    metadata:
+      groupName: 'Gestion des rattachements réparateurs'
+      groupDescription: |-
+
+        APIs pour la gestion des rattachements réparateurs
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Créer un rattachement réparateur'
+      description: ''
+      authenticated: true
+      deprecated: false
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      repairer_id:
+        name: repairer_id
+        description: 'The <code>id</code> of an existing record in the entities table.'
+        required: true
+        example: et
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      repairer_id: et
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer eD6f8VgdaE5c4hvb361aPZk'
     controller: null
     method: null
     route: null
@@ -48,13 +100,15 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: api/v1/dashboard/assignments
+    uri: 'api/v1/repairer-relationships/{repairerRelationship}'
     metadata:
-      groupName: 'Statistiques du tableau de bord'
-      groupDescription: ''
+      groupName: 'Gestion des rattachements réparateurs'
+      groupDescription: |-
+
+        APIs pour la gestion des rattachements réparateurs
       subgroup: ''
       subgroupDescription: ''
-      title: 'Afficher les statistiques des dossiers'
+      title: 'Afficher un rattachement réparateur'
       description: ''
       authenticated: true
       deprecated: false
@@ -63,8 +117,19 @@ endpoints:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
+    urlParameters:
+      repairerRelationship:
+        name: repairerRelationship
+        description: ''
+        required: true
+        example: repellat
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      repairerRelationship: repellat
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -84,21 +149,23 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer gh6Vkf3aZaPEvde64D1bc85'
+      - 'Bearer dZkcfDa3haPEg84e16v5Vb6'
     controller: null
     method: null
     route: null
     custom: []
   -
     httpMethods:
-      - GET
-    uri: api/v1/dashboard/insurers
+      - PUT
+    uri: 'api/v1/repairer-relationships/{repairerRelationship}'
     metadata:
-      groupName: 'Statistiques du tableau de bord'
-      groupDescription: ''
+      groupName: 'Gestion des rattachements réparateurs'
+      groupDescription: |-
+
+        APIs pour la gestion des rattachements réparateurs
       subgroup: ''
       subgroupDescription: ''
-      title: "Afficher les statistiques des compagnies d'assurance"
+      title: 'Mettre à jour un rattachement réparateur'
       description: ''
       authenticated: true
       deprecated: false
@@ -107,42 +174,46 @@ endpoints:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
+    urlParameters:
+      repairerRelationship:
+        name: repairerRelationship
+        description: ''
+        required: true
+        example: voluptas
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      repairerRelationship: voluptas
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
-    responses:
-      -
-        status: 401
-        content: '{"message":"Unauthenticated."}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          access-control-allow-origin: '*'
-        description: null
-        custom: []
+    responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer a6f5gdkEZ6eVc8h41vbaP3D'
+      - 'Bearer Zf6V81ed5aa3EDP6vcbk4hg'
     controller: null
     method: null
     route: null
     custom: []
   -
     httpMethods:
-      - GET
-    uri: api/v1/dashboard/repairers
+      - PUT
+    uri: 'api/v1/repairer-relationships/{repairerRelationship}/enable'
     metadata:
-      groupName: 'Statistiques du tableau de bord'
-      groupDescription: ''
+      groupName: 'Gestion des rattachements réparateurs'
+      groupDescription: |-
+
+        APIs pour la gestion des rattachements réparateurs
       subgroup: ''
       subgroupDescription: ''
-      title: 'Afficher les statistiques des réparateurs'
+      title: 'Activer un rattachement réparateur'
       description: ''
       authenticated: true
       deprecated: false
@@ -151,42 +222,46 @@ endpoints:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
+    urlParameters:
+      repairerRelationship:
+        name: repairerRelationship
+        description: ''
+        required: true
+        example: aut
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      repairerRelationship: aut
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
-    responses:
-      -
-        status: 401
-        content: '{"message":"Unauthenticated."}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          access-control-allow-origin: '*'
-        description: null
-        custom: []
+    responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 6e3bfd6h8PagE415VvZakcD'
+      - 'Bearer da1c5kg8vDVbe6a6Zh4EP3f'
     controller: null
     method: null
     route: null
     custom: []
   -
     httpMethods:
-      - GET
-    uri: api/v1/dashboard/vehicles
+      - PUT
+    uri: 'api/v1/repairer-relationships/{repairerRelationship}/disable'
     metadata:
-      groupName: 'Statistiques du tableau de bord'
-      groupDescription: ''
+      groupName: 'Gestion des rattachements réparateurs'
+      groupDescription: |-
+
+        APIs pour la gestion des rattachements réparateurs
       subgroup: ''
       subgroupDescription: ''
-      title: 'Afficher les statistiques des véhicules'
+      title: 'Désactiver un rattachement réparateur'
       description: ''
       authenticated: true
       deprecated: false
@@ -195,28 +270,30 @@ endpoints:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
+    urlParameters:
+      repairerRelationship:
+        name: repairerRelationship
+        description: ''
+        required: true
+        example: totam
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      repairerRelationship: totam
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
-    responses:
-      -
-        status: 401
-        content: '{"message":"Unauthenticated."}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          access-control-allow-origin: '*'
-        description: null
-        custom: []
+    responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer e1ad8gfDZhVc5a646Pkb3Ev'
+      - 'Bearer bgvZV4h85dP16afceD3Eka6'
     controller: null
     method: null
     route: null

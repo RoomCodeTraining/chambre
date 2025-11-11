@@ -46,7 +46,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer aDZfv6c5Va6k4bP31dge8hE'
+      - 'Bearer 8khc6b4fEeV6vdZaP1aD5g3'
     controller: null
     method: null
     route: null
@@ -69,7 +69,7 @@ endpoints:
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: multipart/form-data
+      Content-Type: application/json
       Accept: application/json
     urlParameters: []
     cleanUrlParameters: []
@@ -80,7 +80,7 @@ endpoints:
         name: assignment_id
         description: 'The <code>id</code> of an existing record in the assignments table.'
         required: true
-        example: consequatur
+        example: qui
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -96,28 +96,15 @@ endpoints:
         exampleWasSpecified: false
         nullable: true
         custom: []
-      photos:
-        name: photos
-        description: 'Le champ value doit être une image.'
-        required: true
-        example:
-          - null
-        type: 'file[]'
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
     cleanBodyParameters:
-      assignment_id: consequatur
-    fileParameters:
-      photos:
-        - null
+      assignment_id: qui
+    fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer gvaE16h5D63abfPdkZc48eV'
+      - 'Bearer 4hvVgaa3c86keDd165EfZbP'
     controller: null
     method: null
     route: null
@@ -147,14 +134,14 @@ endpoints:
         name: id
         description: 'The ID of the photo.'
         required: true
-        example: modi
+        example: laboriosam
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: modi
+      id: laboriosam
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -174,7 +161,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 1PavgE45Z8kda636bhfceVD'
+      - 'Bearer hce4Zv6adgD5E36Vb18Pakf'
     controller: null
     method: null
     route: null
@@ -204,14 +191,14 @@ endpoints:
         name: id
         description: 'The ID of the photo.'
         required: true
-        example: eligendi
+        example: rerum
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: eligendi
+      id: rerum
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -243,7 +230,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer kZabc6eV8gh63a5E4DvdfP1'
+      - 'Bearer Ehv63Z8aafkD6V4cbePdg51'
     controller: null
     method: null
     route: null
@@ -273,14 +260,14 @@ endpoints:
         name: photo
         description: 'The photo.'
         required: true
-        example: culpa
+        example: aut
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      photo: culpa
+      photo: aut
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -291,7 +278,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer P1V38geZa6vhkd4a56bfcDE'
+      - 'Bearer PE3g86ca1ZD5fda6ekVh4vb'
     controller: null
     method: null
     route: null
@@ -321,14 +308,14 @@ endpoints:
         name: id
         description: 'The ID of the photo.'
         required: true
-        example: perferendis
+        example: voluptate
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: perferendis
+      id: voluptate
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -339,7 +326,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer VEDd64cbkf8P6Zavae531gh'
+      - 'Bearer cfgE6v3dD6a4Vebk5h8a1PZ'
     controller: null
     method: null
     route: null

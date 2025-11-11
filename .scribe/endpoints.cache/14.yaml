@@ -46,7 +46,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 5ceEgZP6V8ab13df4hva6kD'
+      - 'Bearer a36Da5Z18fchvb46kPVdgeE'
     controller: null
     method: null
     route: null
@@ -80,7 +80,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: ipaxpvcmpoeszwyvnglhqwcv
+        example: vxwrccf
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -90,22 +90,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Accusamus esse excepturi nostrum tempore est consequatur velit.'
+        example: 'Corrupti voluptatem laboriosam aliquam harum animi eius.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: ipaxpvcmpoeszwyvnglhqwcv
-      description: 'Accusamus esse excepturi nostrum tempore est consequatur velit.'
+      label: vxwrccf
+      description: 'Corrupti voluptatem laboriosam aliquam harum animi eius.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer a5b16kcZPhaEfe84D6dVv3g'
+      - 'Bearer 56akDZgE163e4afhv8bdPcV'
     controller: null
     method: null
     route: null
@@ -135,14 +135,14 @@ endpoints:
         name: id
         description: 'The ID of the workforce type.'
         required: true
-        example: odit
+        example: voluptas
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: odit
+      id: voluptas
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -162,7 +162,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 34Zga5vPbaV16ekdcf8hED6'
+      - 'Bearer 1h8g5ad6bD6vcefE3ZVPak4'
     controller: null
     method: null
     route: null
@@ -192,14 +192,14 @@ endpoints:
         name: id
         description: 'The ID of the workforce type.'
         required: true
-        example: quia
+        example: exercitationem
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: quia
+      id: exercitationem
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -207,7 +207,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: btaqqtnzqwtxrjuaeipjbui
+        example: llbvgxnbkrbapspqocpapm
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -217,22 +217,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Ducimus odio non similique.'
+        example: 'Error aut et ex et ipsum esse doloremque.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: btaqqtnzqwtxrjuaeipjbui
-      description: 'Ducimus odio non similique.'
+      label: llbvgxnbkrbapspqocpapm
+      description: 'Error aut et ex et ipsum esse doloremque.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer vahgkaDc31dP64ZE6e58Vfb'
+      - 'Bearer a1v658EPk3hadD6Vgfe4bcZ'
     controller: null
     method: null
     route: null
@@ -262,14 +262,14 @@ endpoints:
         name: id
         description: 'The ID of the workforce type.'
         required: true
-        example: itaque
+        example: exercitationem
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: itaque
+      id: exercitationem
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -280,7 +280,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer de6acvbD1EfaP68Vkg5Zh43'
+      - 'Bearer DvE6aVc5k4eZ3abPfd18hg6'
     controller: null
     method: null
     route: null
