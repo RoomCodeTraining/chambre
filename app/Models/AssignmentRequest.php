@@ -122,6 +122,14 @@ class AssignmentRequest extends Model
         return $this->belongsTo(Vehicle::class);
     }
 
+    /**
+     * Get the photos for this assignment request
+     */
+    public function photos(): HasMany
+    {
+        return $this->hasMany(Photo::class);
+    }
+
     public function newEloquentBuilder($query): AssignmentRequestBuilder
     {
         return new AssignmentRequestBuilder($query);

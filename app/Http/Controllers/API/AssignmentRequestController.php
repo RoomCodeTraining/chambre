@@ -160,7 +160,7 @@ class AssignmentRequestController extends Controller
     {
         $assignmentRequest = AssignmentRequest::findOrFail(AssignmentRequest::keyFromHashId($id));
 
-        return $this->responseSuccess(null, new AssignmentRequestResource($assignmentRequest->load('expertFirm','assignmentType', 'expertiseType', 'status', 'deletedBy', 'client', 'vehicle', 'insurer', 'repairer', 'createdBy', 'updatedBy')));
+        return $this->responseSuccess(null, new AssignmentRequestResource($assignmentRequest->load('expertFirm','assignmentType', 'expertiseType', 'status', 'deletedBy', 'client', 'vehicle', 'insurer', 'repairer', 'createdBy', 'updatedBy', 'photos')));
     }
 
     /**
