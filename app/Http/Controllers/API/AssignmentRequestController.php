@@ -186,10 +186,14 @@ class AssignmentRequestController extends Controller
     {
         $assignmentRequest = AssignmentRequest::findOrFail(AssignmentRequest::keyFromHashId($id));
 
-        $assignmentRequest->update([
-            'status_id' => Status::where('code', StatusEnum::REJECTED)->first()->id,
-            'updated_by' => auth()->user()->id,
-        ]);
+        if($assignmentRequest->status_id == Status::where('code', StatusEnum::PENDING)->first()->id){
+            $assignmentRequest->update([
+                'status_id' => Status::where('code', StatusEnum::REJECTED)->first()->id,
+                'updated_by' => auth()->user()->id,
+            ]);
+        } else {
+            return $this->responseUnprocessable('La demande d\'expertise n\'est pas en attente.', null);
+        }
 
         return $this->responseSuccess('Demandée d\'expertise rejetée avec succès', new AssignmentRequestResource($assignmentRequest));
     }
@@ -203,10 +207,14 @@ class AssignmentRequestController extends Controller
     {
         $assignmentRequest = AssignmentRequest::findOrFail(AssignmentRequest::keyFromHashId($id));
 
-        $assignmentRequest->update([
-            'status_id' => Status::where('code', StatusEnum::CANCELLED)->first()->id,
-            'updated_by' => auth()->user()->id,
-        ]);
+        if($assignmentRequest->status_id == Status::where('code', StatusEnum::PENDING)->first()->id){
+            $assignmentRequest->update([
+                'status_id' => Status::where('code', StatusEnum::CANCELLED)->first()->id,
+                'updated_by' => auth()->user()->id,
+            ]);
+        } else {
+            return $this->responseUnprocessable('La demande d\'expertise n\'est pas en attente.', null);
+        }
 
         return $this->responseSuccess('Demandée d\'expertise annulée avec succès', new AssignmentRequestResource($assignmentRequest));
     }
@@ -220,11 +228,11 @@ class AssignmentRequestController extends Controller
     {
         $assignmentRequest = AssignmentRequest::findOrFail(AssignmentRequest::keyFromHashId($id));
 
-        $assignmentRequest->update([
-            'status_id' => Status::where('code', StatusEnum::DELETED)->first()->id,
-            'deleted_at' => now(),
-            'deleted_by' => auth()->user()->id,
-        ]);
+        // $assignmentRequest->update([
+        //     'status_id' => Status::where('code', StatusEnum::DELETED)->first()->id,
+        //     'deleted_at' => now(),
+        //     'deleted_by' => auth()->user()->id,
+        // ]);
 
         return $this->responseDeleted();
     }

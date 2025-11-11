@@ -100,5 +100,17 @@ class StatusSeeder extends Seeder
             'description' => "Payé",
         ]);
 
+        Status::create([
+            'code' => StatusEnum::REJECTED,
+            'label' => "Rejeté(e)",
+            'description' => "Rejeté(e)",
+        ]);
+
+        Status::create([
+            'code' => StatusEnum::ACCEPTED,
+            'label' => "Accepté(e)",
+            'description' => "Accepté(e)",
+        ]);
+
     }
 }
