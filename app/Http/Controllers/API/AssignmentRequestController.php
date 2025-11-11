@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use Carbon\Carbon;
+use App\Models\Photo;
 use App\Models\Client;
 use App\Models\Entity;
 use App\Models\Status;
