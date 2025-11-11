@@ -45,6 +45,7 @@ use App\Enums\WorkforceTypeEnum;
 use App\Models\AssignmentExpert;
 use App\Enums\AssignmentTypeEnum;
 use App\Models\AscertainmentType;
+use App\Models\AssignmentRequest;
 use App\Models\DepreciationTable;
 use App\Models\PaintProductPrice;
 use Illuminate\Http\JsonResponse;

@@ -195,6 +195,23 @@ class AssignmentRequestController extends Controller
     }
 
     /**
+     * Annuler la demande d'expertise
+     *
+     * @authenticated
+     */
+    public function cancel($id): JsonResponse
+    {
+        $assignmentRequest = AssignmentRequest::findOrFail(AssignmentRequest::keyFromHashId($id));
+
+        $assignmentRequest->update([
+            'status_id' => Status::where('code', StatusEnum::CANCELLED)->first()->id,
+            'updated_by' => auth()->user()->id,
+        ]);
+
+        return $this->responseSuccess('Demandée d\'expertise annulée avec succès', new AssignmentRequestResource($assignmentRequest));
+    }
+
+    /**
      * Supprimer une demande d'expertise
      *
      * @authenticated
