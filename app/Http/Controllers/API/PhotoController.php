@@ -45,6 +45,7 @@ class PhotoController extends Controller
         $photos = Photo::select('photos.*')
                         ->with('assignment:id,reference', 'assignmentRequest:id,reference', 'photoType:id,code,label', 'status:id,code,label')
                         ->join('assignments', 'photos.assignment_id', '=', 'assignments.id')
+                        ->join('assignment_requests', 'photos.assignment_request_id', '=', 'assignment_requests.id')
                         ->accessibleBy(auth()->user())
                         ->when(request()->has('assignment_id'), function($query){
                             $query->where('photos.assignment_id', Assignment::keyFromHashId(request()->assignment_id));
