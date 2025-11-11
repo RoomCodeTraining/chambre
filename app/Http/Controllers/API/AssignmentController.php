@@ -1490,7 +1490,7 @@ class AssignmentController extends Controller
 
         $assignment = Assignment::create([
             'reference' => $reference,
-            'assignment_request_id' => $assignmentRequest->id,
+            'assignment_request_id' => $request->assignment_request_id ?? null,
             'expert_firm_id' => $expert_firm->id,
             'vehicle_id' => $request->vehicle_id ?? null,
             'insurer_id' => $insurer ? $insurer->id : null,
