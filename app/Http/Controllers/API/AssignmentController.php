@@ -1525,7 +1525,7 @@ class AssignmentController extends Controller
         }
 
         if($assignment->assignment_request_id){
-            $assignmentRequest = AssignmentRequest::where('assignment_request_id', $assignment->assignment_request_id)->first();
+            $assignmentRequest = AssignmentRequest::where('id', $assignment->assignment_request_id)->first();
 
             $assignmentRequest->update([
                 'status_id' => Status::where('code', StatusEnum::ACCEPTED)->first()->id,
