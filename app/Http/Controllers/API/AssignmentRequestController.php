@@ -116,7 +116,7 @@ class AssignmentRequestController extends Controller
      */
     public function addPhotos(AddPhotosToAssignmentRequestRequest $request, $id): JsonResponse
     {
-        $assignmentRequest = AssignmentRequest::where('id', $request->assignment_request_id)// ->accessibleBy(auth()->user())
+        $assignmentRequest = AssignmentRequest::where('id', AssignmentRequest::keyFromHashId($id))// ->accessibleBy(auth()->user())
                                             ->firstOrFail();
 
         $now = Carbon::now();

@@ -20,14 +20,12 @@ class AddPhotosToAssignmentRequestRequest extends FormRequest
     public function prepareForValidation()
     {
         $this->merge([
-            'assignment_request_id' => $this->assignment_request_id ? AssignmentRequest::keyFromHashId($this->assignment_request_id) : null,
         ]);
     }
 
     public function rules(): array
     {
         return [
-            'assignment_request_id' => 'required|exists:assignment_requests,id',
             'photos' => 'required|array',
             'photos.*' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
         ];
