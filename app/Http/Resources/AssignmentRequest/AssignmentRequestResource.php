@@ -16,7 +16,7 @@ class AssignmentRequestResource extends JsonResource
     {
         return [
             'id' => $this->hashId,
-            'reference' => $this->reference,
+            'reference' => $this->reference ?? null,
             'policy_number' => $this->policy_number,
             'claim_number' => $this->claim_number,
             'claim_date' => dateTimeFormat($this->claim_date),
