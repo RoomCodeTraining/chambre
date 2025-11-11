@@ -13,11 +13,12 @@ use Illuminate\Http\JsonResponse;
 use App\Models\InsurerRelationship;
 use App\Http\Controllers\Controller;
 use App\Models\RepairerRelationship;
+use Essa\APIToolKit\Api\ApiResponse;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use App\Http\Resources\AssignmentRequest\AssignmentRequestResource;
 use App\Http\Requests\AssignmentRequest\CreateAssignmentRequestRequest;
 use App\Http\Requests\AssignmentRequest\UpdateAssignmentRequestRequest;
-use Essa\APIToolKit\Api\ApiResponse;
+use App\Http\Requests\AssignmentRequest\AddPhotosToAssignmentRequestRequest;
 
 /**
  * @group Gestion des demandes d'expertise
