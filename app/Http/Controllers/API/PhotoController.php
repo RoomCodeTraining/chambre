@@ -9,6 +9,7 @@ use App\Enums\StatusEnum;
 use App\Models\PhotoType;
 use App\Models\Assignment;
 use App\Enums\PhotoTypeEnum;
+use App\Models\AssignmentRequest;
 use Illuminate\Http\JsonResponse;
 use App\Http\Controllers\Controller;
 use Essa\APIToolKit\Api\ApiResponse;
@@ -47,6 +48,9 @@ class PhotoController extends Controller
                         ->accessibleBy(auth()->user())
                         ->when(request()->has('assignment_id'), function($query){
                             $query->where('photos.assignment_id', Assignment::keyFromHashId(request()->assignment_id));
+                        })
+                        ->when(request()->has('assignment_request_id'), function($query){
+                            $query->where('photos.assignment_request_id', AssignmentRequest::keyFromHashId(request()->assignment_request_id));
                         })
                         ->when(request()->has('photo_type_id'), function($query){
                             $query->where('photos.photo_type_id', PhotoType::keyFromHashId(request()->photo_type_id));
