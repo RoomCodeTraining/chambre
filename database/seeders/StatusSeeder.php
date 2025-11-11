@@ -101,6 +101,12 @@ class StatusSeeder extends Seeder
         ]);
 
         Status::create([
+            'code' => StatusEnum::PENDING,
+            'label' => "En attente",
+            'description' => "En attente",
+        ]);
+
+        Status::create([
             'code' => StatusEnum::REJECTED,
             'label' => "Rejeté(e)",
             'description' => "Rejeté(e)",
