@@ -1489,6 +1489,7 @@ class AssignmentController extends Controller
 
         $assignment = Assignment::create([
             'reference' => $reference,
+            'assignment_request_id' => $assignmentRequest->id,
             'expert_firm_id' => $expert_firm->id,
             'vehicle_id' => $request->vehicle_id ?? null,
             'insurer_id' => $insurer ? $insurer->id : null,
@@ -1520,6 +1521,15 @@ class AssignmentController extends Controller
             $vehicle = Vehicle::where('id',$request->vehicle_id)->first();
             $vehicle->mileage = $request->vehicle_mileage;
             $vehicle->save();
+        }
+
+        if($assignment->assignment_request_id){
+            $assignmentRequest = AssignmentRequest::where('assignment_request_id', $assignment->assignment_request_id)->first();
+
+            $assignmentRequest->update([
+                'status_id' => Status::where('code', StatusEnum::ACCEPTED)->first()->id,
+                'updated_by' => auth()->user()->id,
+            ]);
         }
 
         try {

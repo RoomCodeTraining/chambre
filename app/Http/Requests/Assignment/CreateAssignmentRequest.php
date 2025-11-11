@@ -7,6 +7,7 @@ use App\Models\Vehicle;
 use App\Models\ExpertiseType;
 use App\Models\AssignmentType;
 use App\Enums\AssignmentTypeEnum;
+use App\Models\AssignmentRequest;
 use App\Models\DocumentTransmitted;
 use App\Models\InsurerRelationship;
 use App\Models\RepairerRelationship;
@@ -23,6 +24,7 @@ class CreateAssignmentRequest extends FormRequest
             }
         }
         $this->merge([
+            'assignment_request_id' => $this->assignment_request_id ? AssignmentRequest::keyFromHashId($this->assignment_request_id) : null,
             'assignment_type_id' => $this->assignment_type_id ? AssignmentType::keyFromHashId($this->assignment_type_id) : null,
             'expertise_type_id' => $this->expertise_type_id ? ExpertiseType::keyFromHashId($this->expertise_type_id) : null,
             'client_id' => $this->client_id ? Client::keyFromHashId($this->client_id) : null,
@@ -37,6 +39,7 @@ class CreateAssignmentRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'assignment_request_id' => 'nullable|exists:assignment_requests,id',
             'assignment_type_id' => 'required|exists:assignment_types,id',
             'expertise_type_id' => 'required|exists:expertise_types,id',
             'client_id' => 'nullable|exists:clients,id',
