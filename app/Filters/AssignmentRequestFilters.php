@@ -8,5 +8,14 @@ class AssignmentRequestFilters extends QueryFilters
 {
     protected array $allowedFilters = [];
 
-    protected array $columnSearch = [];
+    protected array $columnSearch = ['reference','claim_number','policy_number'];
+
+    protected array $relationSearch = [
+        'expertFirm' => ['name'],
+        'vehicle' => ['license_plate'],
+        'insurer' => ['name'],
+        'additionalInsurer' => ['name'],
+        'repairer' => ['name'],
+        'client' => ['name'],
+    ];
 }

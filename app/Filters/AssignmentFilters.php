@@ -49,13 +49,13 @@ class AssignmentFilters extends QueryFilters
 
 
     protected array $columnSearch = [
-        'reference','claim_number'
+        'reference','claim_number','policy_number'
     ];
 
     protected array $relationSearch = [
+        'expertFirm' => ['name'],
         'vehicle' => ['license_plate'],
         'insurer' => ['name'],
-        'broker' => ['name'],
         'additionalInsurer' => ['name'],
         'repairer' => ['name'],
         'client' => ['name'],
