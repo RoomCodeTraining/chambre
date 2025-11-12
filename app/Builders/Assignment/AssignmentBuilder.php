@@ -78,13 +78,13 @@ class AssignmentBuilder extends Builder
         }
 
         if ($user->isRepairerAdmin()) {
-            return $this->where('repairer_id', $user->entity_id);
-            // return $this->where('repairer_id', $user->entity_id)->whereNotIn('status_id', Status::whereIn('code', [StatusEnum::OPENED, StatusEnum::REALIZED])->pluck('id'));
+            // return $this->where('repairer_id', $user->entity_id);
+            return $this->where('repairer_id', $user->entity_id)->whereNotIn('status_id', Status::whereIn('code', [StatusEnum::OPENED, StatusEnum::REALIZED])->pluck('id'));
         }
 
         if ($user->isRepairerStandardUser()) {
-            return $this->where('repairer_id', $user->entity_id);
-            // return $this->where('repairer_id', $user->entity_id)->whereNotIn('status_id', Status::whereIn('code', [StatusEnum::OPENED, StatusEnum::REALIZED])->pluck('id'));
+            // return $this->where('repairer_id', $user->entity_id);
+            return $this->where('repairer_id', $user->entity_id)->whereNotIn('status_id', Status::whereIn('code', [StatusEnum::OPENED, StatusEnum::REALIZED])->pluck('id'));
         }
 
         if ($user->isClient()) {
