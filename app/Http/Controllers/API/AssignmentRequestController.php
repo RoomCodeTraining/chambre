@@ -43,7 +43,7 @@ class AssignmentRequestController extends Controller
     public function index(): AnonymousResourceCollection
     {
         $assignmentRequests = AssignmentRequest::with('expertFirm','assignmentType', 'expertiseType', 'status', 'deletedBy', 'client', 'vehicle', 'insurer', 'repairer', 'createdBy', 'updatedBy')
-                                    // ->accessibleBy(auth()->user())
+                                    ->accessibleBy(auth()->user())
                                     ->useFilters()
                                     ->latest('created_at')
                                     ->dynamicPaginate();

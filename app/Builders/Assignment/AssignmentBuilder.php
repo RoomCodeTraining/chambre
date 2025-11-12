@@ -72,22 +72,18 @@ class AssignmentBuilder extends Builder
         }
 
         if ($user->isInsurerAdmin()) {
-            // return $this->where('insurer_id', $user->entity_id);
             return $this->where(['insurer_id' => $user->entity_id, 'assignment_type_id' => AssignmentType::where('code', AssignmentTypeEnum::INSURER->value)->first()->id]);
         }
 
         if ($user->isInsurerStandardUser()) {
-            // return $this->where('insurer_id', $user->entity_id);
             return $this->where(['insurer_id' => $user->entity_id, 'assignment_type_id' => AssignmentType::where('code', AssignmentTypeEnum::INSURER->value)->first()->id]);
         }
 
         if ($user->isRepairerAdmin()) {
-            // return $this->where('repairer_id', $user->entity_id);
             return $this->where('repairer_id', $user->entity_id)->whereNotIn('status_id', Status::whereIn('code', [StatusEnum::OPENED, StatusEnum::REALIZED])->pluck('id'));
         }
 
         if ($user->isRepairerStandardUser()) {
-            // return $this->where('repairer_id', $user->entity_id);
             return $this->where('repairer_id', $user->entity_id)->whereNotIn('status_id', Status::whereIn('code', [StatusEnum::OPENED, StatusEnum::REALIZED])->pluck('id'));
         }
 
