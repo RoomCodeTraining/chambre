@@ -43,7 +43,7 @@ class PhotoController extends Controller
     public function index(): AnonymousResourceCollection
     {
         $photos = Photo::select('photos.*')
-                        ->with('assignment:id,reference', 'assignmentRequest:id,reference', 'photoType:id,code,label', 'status:id,code,label')
+                        ->with('assignment', 'assignmentRequest', 'photoType:id,code,label', 'status:id,code,label')
                         ->leftJoin('assignments', 'photos.assignment_id', '=', 'assignments.id')
                         ->leftJoin('assignment_requests', 'photos.assignment_request_id', '=', 'assignment_requests.id')
                         ->accessibleBy(auth()->user())
@@ -176,7 +176,8 @@ class PhotoController extends Controller
     {
         $photo = Photo::select('photos.*')
             ->with('assignment:id,reference', 'assignmentRequest:id,reference', 'photoType:id,code,label', 'status:id,code,label')
-            ->join('assignments', 'photos.assignment_id', '=', 'assignments.id')
+            ->leftJoin('assignments', 'photos.assignment_id', '=', 'assignments.id')
+            ->leftJoin('assignment_requests', 'photos.assignment_request_id', '=', 'assignment_requests.id')
             ->accessibleBy(auth()->user())
             ->where('photos.id', Photo::keyFromHashId($id))
             ->first();
@@ -193,7 +194,8 @@ class PhotoController extends Controller
     {
         $photo = Photo::select('photos.*')
             ->with('assignment:id,reference,status_id')
-            ->join('assignments', 'photos.assignment_id', '=', 'assignments.id')
+            ->leftJoin('assignments', 'photos.assignment_id', '=', 'assignments.id')
+            ->leftJoin('assignment_requests', 'photos.assignment_request_id', '=', 'assignment_requests.id')
             ->accessibleBy(auth()->user())
             ->where('photos.id', Photo::keyFromHashId($id))
             ->firstOrFail();
@@ -246,7 +248,8 @@ class PhotoController extends Controller
     {
         $photo = Photo::select('photos.*')
             ->with('assignment:id,reference,status_id')
-            ->join('assignments', 'photos.assignment_id', '=', 'assignments.id')
+            ->leftJoin('assignments', 'photos.assignment_id', '=', 'assignments.id')
+            ->leftJoin('assignment_requests', 'photos.assignment_request_id', '=', 'assignment_requests.id')
             ->accessibleBy(auth()->user())
             ->where('photos.id', Photo::keyFromHashId($id))
             ->firstOrFail();
@@ -278,7 +281,8 @@ class PhotoController extends Controller
     {
         $photo = Photo::select('photos.*')
             ->with('assignment:id,reference,status_id')
-            ->join('assignments', 'photos.assignment_id', '=', 'assignments.id')
+            ->leftJoin('assignments', 'photos.assignment_id', '=', 'assignments.id')
+            ->leftJoin('assignment_requests', 'photos.assignment_request_id', '=', 'assignment_requests.id')
             ->accessibleBy(auth()->user())
             ->where('photos.id', Photo::keyFromHashId($id))
             ->firstOrFail();
