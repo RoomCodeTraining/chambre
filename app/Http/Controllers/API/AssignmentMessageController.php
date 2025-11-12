@@ -31,6 +31,9 @@ class AssignmentMessageController extends Controller
             ->when(request()->has('status_id'), function($query){
                 $query->where('status_id', Status::keyFromHashId(request()->status_id));
             })
+            ->when(request()->has('created_by'), function($query){
+                $query->where('created_by', User::keyFromHashId(request()->created_by));
+            })
             ->useFilters()
             ->dynamicPaginate();
 
