@@ -25,6 +25,12 @@ class AssignmentMessageController extends Controller
     public function index(): AnonymousResourceCollection
     {
         $assignmentMessages = AssignmentMessage::with('assignment', 'createdBy', 'status')
+            ->when(request()->has('assignment_id'), function($query){
+                $query->where('assignment_id', Assignment::keyFromHashId(request()->assignment_id));
+            })
+            ->when(request()->has('status_id'), function($query){
+                $query->where('status_id', Status::keyFromHashId(request()->status_id));
+            })
             ->useFilters()
             ->dynamicPaginate();
 

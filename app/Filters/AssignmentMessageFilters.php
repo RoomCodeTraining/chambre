@@ -8,7 +8,7 @@ use Essa\APIToolKit\Filters\QueryFilters;
 
 class AssignmentMessageFilters extends QueryFilters
 {
-    protected array $allowedFilters = ['assignment_id', 'status_id'];
+    protected array $allowedFilters = [];
 
     protected array $columnSearch = [];
 }
