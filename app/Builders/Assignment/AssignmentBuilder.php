@@ -6,6 +6,8 @@ use App\Models\User;
 use App\Models\Status;
 use App\Enums\RoleEnum;
 use App\Enums\StatusEnum;
+use App\Models\AssignmentType;
+use App\Enums\AssignmentTypeEnum;
 use Spatie\Permission\Models\Role;
 use Illuminate\Database\Eloquent\Builder;
 
@@ -70,11 +72,13 @@ class AssignmentBuilder extends Builder
         }
 
         if ($user->isInsurerAdmin()) {
-            return $this->where('insurer_id', $user->entity_id);
+            // return $this->where('insurer_id', $user->entity_id);
+            return $this->where(['insurer_id' => $user->entity_id, 'assignment_type_id' => AssignmentType::where('code', AssignmentTypeEnum::INSURER->value)->first()->id]);
         }
 
         if ($user->isInsurerStandardUser()) {
-            return $this->where('insurer_id', $user->entity_id);
+            // return $this->where('insurer_id', $user->entity_id);
+            return $this->where(['insurer_id' => $user->entity_id, 'assignment_type_id' => AssignmentType::where('code', AssignmentTypeEnum::INSURER->value)->first()->id]);
         }
 
         if ($user->isRepairerAdmin()) {
