@@ -27,6 +27,8 @@ use App\Enums\ExpertiseTypeEnum;
 use NumberToWords\NumberToWords;
 use App\Enums\AssignmentTypeEnum;
 use Illuminate\Support\Facades\DB;
+use Spatie\Permission\Models\Role;
+use App\Enums\RoleEnum;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -78,10 +80,12 @@ class GenerateInvoicePdfJob implements ShouldQueue
         ? image_to_base64(public_path("storage/logos/{$logo->logo}"))
         : null;
 
+        $ceo = User::where(['entity_id' => $assignment->expert_firm_id, 'current_role_id' => Role::where('name', RoleEnum::CEO->value)->first()->id, 'status_id' => Status::where('code', StatusEnum::ACTIVE)->first()->id])->first();
+
         $numberToWords = new NumberToWords();
         $numberTransformer = $numberToWords->getNumberTransformer('fr');
 
-        $pdf = PDF::loadView('invoice/index',compact('invoice','assignment','receipts','logo','numberTransformer'));
+        $pdf = PDF::loadView('invoice/index',compact('invoice','assignment','receipts','logo','numberTransformer','ceo'));
         $pdf->set_option('isHtml5ParserEnabled', false);
         $pdf->set_option('isRemoteEnabled', true);
         $pdf->setOptions(['defaultFont' => 'sans-serif']);

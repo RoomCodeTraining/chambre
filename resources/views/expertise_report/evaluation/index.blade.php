@@ -171,8 +171,8 @@
                         <div class="p-1 bd-highlight" style="text-align:left;">Date du sinistre : 
                             <b>
                                 <span class="text-danger">
-                                    @if($assignment?->claim_starts_at)
-                                        {{ \Carbon\Carbon::parse($assignment?->claim_starts_at)->format('d/m/Y') ?? ''}}
+                                    @if($assignment?->claim_date)
+                                        {{ \Carbon\Carbon::parse($assignment?->claim_date)->format('d/m/Y') ?? ''}}
                                     @endif
                                 </span>
                             </b>
@@ -229,7 +229,7 @@
         <div style="page-break-after: always;"></div>
 
         <p style="text-align: justify; font-size: 12px;">
-            Nous  soussigné,  Bakary FANE,  Directeur-Gérant  du  Cabinet GERENTHON  ET CIE  01 B.P.  2173  ABIDJAN  01. Expert agréé  en  Automobile et matériels Industriels auprès de L'ASACI, avons été mandatés par <b>{{$assignment->client->name ?? ''}}</b> afin de :
+            Nous  soussigné, {{ $ceo?->first_name ?? ''}} {{ mb_strtoupper($ceo?->last_name ?? '')}},  Directeur-Gérant  du  Cabinet GERENTHON  ET CIE  01 B.P.  2173  ABIDJAN  01. Expert agréé  en  Automobile et matériels Industriels auprès de L'ASACI, avons été mandatés par <b>{{$assignment->client->name ?? ''}}</b> afin de :
             {!! $assignment->instructions !!}
         </p>
 
@@ -739,7 +739,7 @@
                 <b>
                     <div class="p-1 bd-highlight" style="text-decoration: underline;">L'expert</div>
                     <br><br>
-                    <div class="p-1 bd-highlight">Bakary FANE</div>
+                    <div class="p-1 bd-highlight">{{ $ceo?->first_name ?? ''}} {{ mb_strtoupper($ceo?->last_name ?? '')}}</div>
                 </b>
             </div>
         </div>

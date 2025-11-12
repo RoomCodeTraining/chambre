@@ -174,8 +174,8 @@
                         <div class="p-1 bd-highlight" style="text-align:left;">Date du sinistre : 
                             <b>
                                 <span class="text-danger">
-                                    @if($assignment?->claim_starts_at)
-                                        {{ \Carbon\Carbon::parse($assignment?->claim_starts_at)->format('d/m/Y') ?? ''}}
+                                    @if($assignment?->claim_date)
+                                        {{ \Carbon\Carbon::parse($assignment?->claim_date)->format('d/m/Y') ?? ''}}
                                     @endif
                                 </span>
                             </b>
@@ -464,7 +464,7 @@
                         <b>
                             <div class="p-1 bd-highlight" style="text-decoration: underline;">L'expert</div>
                             <br><br>
-                            <div class="p-1 bd-highlight">Bakary FANE</div>
+                            <div class="p-1 bd-highlight">{{ $ceo?->first_name ?? ''}} {{ mb_strtoupper($ceo?->last_name ?? '')}}</div>
                         </b>
                     </th>
                 </tr>

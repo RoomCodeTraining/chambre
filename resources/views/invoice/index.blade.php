@@ -270,7 +270,7 @@
                     <b>
                         <div class="p-1 bd-highlight" style="text-decoration: underline;">L'expert</div>
                         <br><br><br>
-                        <div class="p-1 bd-highlight">Bakary FANE</div>
+                        <div class="p-1 bd-highlight">{{ $ceo?->first_name ?? ''}} {{ mb_strtoupper($ceo?->last_name ?? '')}}</div>
                     </b>
                 </div>
             </div>

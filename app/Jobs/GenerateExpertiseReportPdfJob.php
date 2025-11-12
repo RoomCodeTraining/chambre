@@ -10,6 +10,7 @@ use App\Models\Shock;
 use App\Models\Entity;
 use App\Models\QrCode;
 use App\Models\Status;
+use App\Enums\RoleEnum;
 use App\Models\Payment;
 use App\Models\Receipt;
 use App\Enums\StatusEnum;
@@ -29,6 +30,7 @@ use App\Enums\ExpertiseTypeEnum;
 use NumberToWords\NumberToWords;
 use App\Enums\AssignmentTypeEnum;
 use Illuminate\Support\Facades\DB;
+use Spatie\Permission\Models\Role;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -104,6 +106,8 @@ class GenerateExpertiseReportPdfJob implements ShouldQueue
         $evaluations = json_decode($assignment->evaluations);
 
         $total_payment = Payment::where('assignment_id', $assignment->id)->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->sum('amount');
+
+        $ceo = User::where(['entity_id' => $assignment->expert_firm_id, 'current_role_id' => Role::where('name', RoleEnum::CEO->value)->first()->id, 'status_id' => Status::where('code', StatusEnum::ACTIVE)->first()->id])->first();
 
         // $qr_code = QrCode::where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->first();
         // $qr_code = null;
@@ -202,9 +206,9 @@ class GenerateExpertiseReportPdfJob implements ShouldQueue
         $numberTransformer = $numberToWords->getNumberTransformer('fr');
 
         if($assignment->expertise_type_id == ExpertiseType::where('code', ExpertiseTypeEnum::EVALUATION)->first()->id || $assignment->assignment_type_id == AssignmentType::where('code', AssignmentTypeEnum::EVALUATION)->first()->id){
-            $pdf = PDF::loadView('expertise_report/evaluation/index',compact('assignment','shocks','receipts','other_costs','logo','check_icon','qr_code','wbg','cover_photo','photos_before_works','photos_during_works','photos_after_works','numberTransformer','evaluations','ascertainments','total_payment'));
+            $pdf = PDF::loadView('expertise_report/evaluation/index',compact('assignment','shocks','receipts','other_costs','logo','check_icon','qr_code','wbg','cover_photo','photos_before_works','photos_during_works','photos_after_works','numberTransformer','evaluations','ascertainments','total_payment','ceo'));
         } else {
-            $pdf = PDF::loadView('expertise_report/standard/index',compact('assignment','shocks','receipts','other_costs','logo','check_icon','wbg','qr_code','cover_photo','photos_before_works','photos_during_works','photos_after_works','numberTransformer','evaluations','ascertainments','total_payment'));
+            $pdf = PDF::loadView('expertise_report/standard/index',compact('assignment','shocks','receipts','other_costs','logo','check_icon','wbg','qr_code','cover_photo','photos_before_works','photos_during_works','photos_after_works','numberTransformer','evaluations','ascertainments','total_payment','ceo'));
         }
         $pdf->set_option('isHtml5ParserEnabled', false);
         $pdf->set_option('isRemoteEnabled', true);
