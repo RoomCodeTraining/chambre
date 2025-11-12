@@ -43,7 +43,7 @@ class PhotoController extends Controller
     public function index(): AnonymousResourceCollection
     {
         $photos = Photo::select('photos.*')
-                        ->with('assignment', 'assignmentRequest', 'photoType:id,code,label', 'status:id,code,label')
+                        ->with('photoType:id,code,label', 'status:id,code,label')
                         ->leftJoin('assignments', 'photos.assignment_id', '=', 'assignments.id')
                         ->leftJoin('assignment_requests', 'photos.assignment_request_id', '=', 'assignment_requests.id')
                         ->accessibleBy(auth()->user())
