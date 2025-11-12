@@ -158,7 +158,7 @@ class AssignmentRequestController extends Controller
      */
     public function show($id): JsonResponse
     {
-        $assignmentRequest = AssignmentRequest::findOrFail(AssignmentRequest::keyFromHashId($id));
+        $assignmentRequest = AssignmentRequest::accessibleBy(auth()->user())->findOrFail(AssignmentRequest::keyFromHashId($id));
 
         return $this->responseSuccess(null, new AssignmentRequestResource($assignmentRequest->load('expertFirm','assignmentType', 'expertiseType', 'status', 'deletedBy', 'client', 'vehicle', 'insurer', 'repairer', 'createdBy', 'updatedBy', 'photos')));
     }
@@ -170,7 +170,7 @@ class AssignmentRequestController extends Controller
      */
     public function update(UpdateAssignmentRequestRequest $request, $id): JsonResponse
     {
-        $assignmentRequest = AssignmentRequest::findOrFail(AssignmentRequest::keyFromHashId($id));
+        $assignmentRequest = AssignmentRequest::accessibleBy(auth()->user())->findOrFail(AssignmentRequest::keyFromHashId($id));
 
         $assignmentRequest->update($request->validated());
 
@@ -184,7 +184,7 @@ class AssignmentRequestController extends Controller
      */
     public function reject($id): JsonResponse
     {
-        $assignmentRequest = AssignmentRequest::findOrFail(AssignmentRequest::keyFromHashId($id));
+        $assignmentRequest = AssignmentRequest::accessibleBy(auth()->user())->findOrFail(AssignmentRequest::keyFromHashId($id));
 
         if($assignmentRequest->status_id == Status::where('code', StatusEnum::PENDING)->first()->id){
             $assignmentRequest->update([
@@ -205,7 +205,7 @@ class AssignmentRequestController extends Controller
      */
     public function cancel($id): JsonResponse
     {
-        $assignmentRequest = AssignmentRequest::findOrFail(AssignmentRequest::keyFromHashId($id));
+        $assignmentRequest = AssignmentRequest::accessibleBy(auth()->user())->findOrFail(AssignmentRequest::keyFromHashId($id));
 
         if($assignmentRequest->status_id == Status::where('code', StatusEnum::PENDING)->first()->id){
             $assignmentRequest->update([
@@ -226,7 +226,7 @@ class AssignmentRequestController extends Controller
      */
     public function destroy($id): JsonResponse
     {
-        $assignmentRequest = AssignmentRequest::findOrFail(AssignmentRequest::keyFromHashId($id));
+        $assignmentRequest = AssignmentRequest::accessibleBy(auth()->user())->findOrFail(AssignmentRequest::keyFromHashId($id));
 
         // $assignmentRequest->update([
         //     'status_id' => Status::where('code', StatusEnum::DELETED)->first()->id,
