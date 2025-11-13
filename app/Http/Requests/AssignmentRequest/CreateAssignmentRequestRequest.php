@@ -20,9 +20,6 @@ class CreateAssignmentRequestRequest extends FormRequest
     public function prepareForValidation()
     {
         $this->merge([
-            'expert_firm_id' => $this->expert_firm_id ? Entity::keyFromHashId($this->expert_firm_id) : null,
-            // 'assignment_type_id' => $this->assignment_type_id ? AssignmentType::keyFromHashId($this->assignment_type_id) : null,
-            // 'expertise_type_id' => $this->expertise_type_id ? ExpertiseType::keyFromHashId($this->expertise_type_id) : null,
             'client_id' => $this->client_id ? Client::keyFromHashId($this->client_id) : null,
             'vehicle_id' => $this->vehicle_id ? Vehicle::keyFromHashId($this->vehicle_id) : null,
             'insurer_relationship_id' => $this->insurer_relationship_id ? InsurerRelationship::keyFromHashId($this->insurer_relationship_id) : null,
@@ -37,9 +34,6 @@ class CreateAssignmentRequestRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'expert_firm_id' => 'nullable|exists:entities,id',
-            // 'assignment_type_id' => 'required|exists:assignment_types,id',
-            // 'expertise_type_id' => 'required|exists:expertise_types,id',
             'client_id' => 'nullable|exists:clients,id',
             'vehicle_id' => 'nullable|exists:vehicles,id',
             'insurer_relationship_id' => 'nullable|exists:insurer_relationships,id',
