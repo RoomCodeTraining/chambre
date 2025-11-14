@@ -86,7 +86,6 @@ class EntityController extends Controller
                 if($request->hasfile('logo'))
                 {
                     $file = $request->file('logo');
-                    // $name = 'IMG_BP'.$today.'_'.$count.'.'.$file->getClientOriginalExtension();
                     $name = 'LOG_'.$today.'.png';
                     $file->move(public_path('storage/logos'), $name);
     
@@ -134,8 +133,29 @@ class EntityController extends Controller
 
         if(isset($request->logo) && $request->hasfile('logo'))
         {
-            $file = $request->file('logo');
-            $file->move(public_path('storage/logos'), $entity->logo);
+            if($entity->logo)
+            {
+                $file = $request->file('logo');
+                $file->move(public_path('storage/logos'), $entity->logo);
+            } else {
+                $now = Carbon::now();
+                $annee = date("Y");
+                $mois_jour_heure = date("mdH");
+                $time = date("is");
+                $today = $annee.'_'.$mois_jour_heure.'_'.$time;
+    
+                if($request->hasfile('logo'))
+                {
+                    $file = $request->file('logo');
+                    $name = 'LOG_'.$today.'.png';
+                    $file->move(public_path('storage/logos'), $name);
+    
+                    $entity->update([
+                        'logo' => $name,
+                    ]);
+                }
+            }
+            
         }
 
         return $this->responseSuccess('Entity updated Successfully', new EntityResource($entity));
