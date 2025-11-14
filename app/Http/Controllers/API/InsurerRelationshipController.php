@@ -36,7 +36,7 @@ class InsurerRelationshipController extends Controller
     public function index(): AnonymousResourceCollection
     {
         $insurerRelationships = InsurerRelationship::
-                                with('insurer:id,code,name', 'expertFirm:id,code,name', 'status:id,code,label', 'createdBy:id,name');
+                                with('insurer:id,code,name,logo', 'expertFirm:id,code,name,logo', 'status:id,code,label', 'createdBy:id,name');
 
         if(request()->has('expert_firm_id')){
             $insurerRelationships = $insurerRelationships->where('expert_firm_id', Entity::keyFromHashId(request()->expert_firm_id));
@@ -84,7 +84,7 @@ class InsurerRelationshipController extends Controller
     public function show($id): JsonResponse
     {
         $insurerRelationship = InsurerRelationship::
-                                with('insurer:id,code,label', 'expertFirm:id,code,label', 'status:id,code,label', 'createdBy:id,name')
+                                with('insurer:id,code,name,logo', 'expertFirm:id,code,name,logo', 'status:id,code,label', 'createdBy:id,name')
                                 ->accessibleBy(auth()->user())
                                 ->where('insurer_relationships.id', InsurerRelationship::keyFromHashId($id))
                                 ->firstOrFail();

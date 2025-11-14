@@ -36,7 +36,7 @@ class RepairerRelationshipController extends Controller
     public function index(): AnonymousResourceCollection
     {
         $repairerRelationships = RepairerRelationship::
-                                with('repairer:id,code,name', 'expertFirm:id,code,name', 'status:id,code,label', 'createdBy:id,name');
+                                with('repairer:id,code,name,logo', 'expertFirm:id,code,name,logo', 'status:id,code,label', 'createdBy:id,name');
         if(request()->has('expert_firm_id')){
             $repairerRelationships = $repairerRelationships->where('expert_firm_id', Entity::keyFromHashId(request()->expert_firm_id));
         }
@@ -83,7 +83,7 @@ class RepairerRelationshipController extends Controller
     public function show($id): JsonResponse
     {
         $repairerRelationship = RepairerRelationship::
-                                with('repairer:id,code,label', 'expertFirm:id,code,label', 'status:id,code,label', 'createdBy:id,name')
+                                with('repairer:id,code,name,logo', 'expertFirm:id,code,name,logo', 'status:id,code,label', 'createdBy:id,name')
                                 ->accessibleBy(auth()->user())
                                 ->where('repairer_relationships.id', RepairerRelationship::keyFromHashId($id))
                                 ->firstOrFail();
