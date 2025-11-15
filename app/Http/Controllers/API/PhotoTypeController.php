@@ -95,6 +95,40 @@ class PhotoTypeController extends Controller
     }
 
     /**
+     * Activer un type de photo
+     *
+     * @authenticated
+     */
+    public function enable($id): JsonResponse
+    {
+        $photoType = PhotoType::findOrFail(PhotoType::keyFromHashId($id));
+
+        $photoType->update([
+            'status_id' => Status::firstWhere('code', StatusEnum::ACTIVE)->id,
+            'updated_by' => auth()->user()->id,
+        ]);
+
+        return $this->responseSuccess('PhotoType enabled successfully', new PhotoTypeResource($photoType->load('status:id,code,label')));
+    }
+
+    /**
+     * Désactiver un type de photo
+     *
+     * @authenticated
+     */
+    public function disable($id): JsonResponse
+    {
+        $photoType = PhotoType::findOrFail(PhotoType::keyFromHashId($id));
+
+        $photoType->update([
+            'status_id' => Status::firstWhere('code', StatusEnum::INACTIVE)->id,
+            'updated_by' => auth()->user()->id,
+        ]);
+
+        return $this->responseSuccess('PhotoType disabled successfully', new PhotoTypeResource($photoType->load('status:id,code,label')));
+    }
+
+    /**
      * Supprimer un type de photo
      *
      * @authenticated

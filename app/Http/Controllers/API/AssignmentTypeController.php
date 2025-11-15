@@ -91,6 +91,40 @@ class AssignmentTypeController extends Controller
     }
 
     /**
+     * Activer un type de dossier
+     *
+     * @authenticated
+     */
+    public function enable($id): JsonResponse
+    {
+        $assignmentType = AssignmentType::findOrFail(AssignmentType::keyFromHashId($id));
+
+        $assignmentType->update([
+            'status_id' => Status::firstWhere('code', StatusEnum::ACTIVE)->id,
+            'updated_by' => auth()->user()->id,
+        ]);
+
+        return $this->responseSuccess('AssignmentType enabled successfully', new AssignmentTypeResource($assignmentType));
+    }
+
+    /**
+     * Désactiver un type de dossier
+     *
+     * @authenticated
+     */
+    public function disable($id): JsonResponse
+    {
+        $assignmentType = AssignmentType::findOrFail(AssignmentType::keyFromHashId($id));
+
+        $assignmentType->update([
+            'status_id' => Status::firstWhere('code', StatusEnum::INACTIVE)->id,
+            'updated_by' => auth()->user()->id,
+        ]);
+
+        return $this->responseSuccess('AssignmentType disabled successfully', new AssignmentTypeResource($assignmentType));
+    }
+
+    /**
      * Supprimer un type de dossier
      *
      * @authenticated

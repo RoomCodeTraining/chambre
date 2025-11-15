@@ -104,10 +104,6 @@ class GenerateExpertiseSheetPdfJob implements ShouldQueue
         ? image_to_base64(public_path("storage/logos/{$logoEntity->logo}"))
         : null;
 
-        $logo = $logo
-        ? image_to_base64(public_path("storage/logos/{$logo->logo}"))
-        : null;
-
         $path_check_icon = base_path('public/images/check-icon.png');
         $type_check_icon = pathinfo($path_check_icon, PATHINFO_EXTENSION);
         $data_check_icon = file_get_contents($path_check_icon);

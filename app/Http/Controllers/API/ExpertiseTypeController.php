@@ -91,6 +91,40 @@ class ExpertiseTypeController extends Controller
     }
 
     /**
+     * Activer un type d'expertise
+     *
+     * @authenticated
+     */
+    public function enable($id): JsonResponse
+    {
+        $expertiseType = ExpertiseType::findOrFail(ExpertiseType::keyFromHashId($id));
+
+        $expertiseType->update([
+            'status_id' => Status::firstWhere('code', StatusEnum::ACTIVE)->id,
+            'updated_by' => auth()->user()->id,
+        ]);
+
+        return $this->responseSuccess('ExpertiseType enabled successfully', new ExpertiseTypeResource($expertiseType));
+    }
+
+    /**
+     * Désactiver un type d'expertise
+     *
+     * @authenticated
+     */
+    public function disable($id): JsonResponse
+    {
+        $expertiseType = ExpertiseType::findOrFail(ExpertiseType::keyFromHashId($id));
+
+        $expertiseType->update([
+            'status_id' => Status::firstWhere('code', StatusEnum::INACTIVE)->id,
+            'updated_by' => auth()->user()->id,
+        ]);
+
+        return $this->responseSuccess('ExpertiseType disabled successfully', new ExpertiseTypeResource($expertiseType));
+    }
+
+    /**
      * Supprimer un type d'expertise
      *
      * @authenticated

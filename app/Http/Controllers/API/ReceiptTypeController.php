@@ -90,6 +90,40 @@ class ReceiptTypeController extends Controller
     }
 
     /**
+     * Activer un type de quittance
+     *
+     * @authenticated
+     */
+    public function enable($id): JsonResponse
+    {
+        $receiptType = ReceiptType::findOrFail(ReceiptType::keyFromHashId($id));
+
+        $receiptType->update([
+            'status_id' => Status::firstWhere('code', StatusEnum::ACTIVE)->id,
+            'updated_by' => auth()->user()->id,
+        ]);
+
+        return $this->responseSuccess('ReceiptType enabled successfully', new ReceiptTypeResource($receiptType));
+    }
+
+    /**
+     * Désactiver un type de quittance
+     *
+     * @authenticated
+     */
+    public function disable($id): JsonResponse
+    {
+        $receiptType = ReceiptType::findOrFail(ReceiptType::keyFromHashId($id));
+
+        $receiptType->update([
+            'status_id' => Status::firstWhere('code', StatusEnum::INACTIVE)->id,
+            'updated_by' => auth()->user()->id,
+        ]);
+
+        return $this->responseSuccess('ReceiptType disabled successfully', new ReceiptTypeResource($receiptType));
+    }
+
+    /**
      * Supprimer un type de quittance
      *
      * @authenticated

@@ -2,16 +2,21 @@
 
 namespace App\Http\Controllers\API;
 
+use App\Enums\StatusEnum;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UserActionType\UpdateUserActionTypeRequest;
 use App\Http\Requests\UserActionType\CreateUserActionTypeRequest;
 use App\Http\Resources\UserActionType\UserActionTypeResource;
+use App\Models\Status;
 use App\Models\UserActionType;
+use Essa\APIToolKit\Api\ApiResponse;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
 class UserActionTypeController extends Controller
 {
+    use ApiResponse;
+
     public function __construct()
     {
 
@@ -54,6 +59,30 @@ class UserActionTypeController extends Controller
         // $userActionType->delete();
 
         return $this->responseDeleted();
+    }
+
+    public function enable($id): JsonResponse
+    {
+        $userActionType = UserActionType::findOrFail(UserActionType::keyFromHashId($id));
+
+        $userActionType->update([
+            'status_id' => Status::firstWhere('code', StatusEnum::ACTIVE)->id,
+            'updated_by' => auth()->user()->id,
+        ]);
+
+        return $this->responseSuccess('UserActionType enabled successfully', new UserActionTypeResource($userActionType));
+    }
+
+    public function disable($id): JsonResponse
+    {
+        $userActionType = UserActionType::findOrFail(UserActionType::keyFromHashId($id));
+
+        $userActionType->update([
+            'status_id' => Status::firstWhere('code', StatusEnum::INACTIVE)->id,
+            'updated_by' => auth()->user()->id,
+        ]);
+
+        return $this->responseSuccess('UserActionType disabled successfully', new UserActionTypeResource($userActionType));
     }
 
    

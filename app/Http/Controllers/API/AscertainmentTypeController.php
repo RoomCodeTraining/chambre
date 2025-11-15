@@ -97,6 +97,40 @@ class AscertainmentTypeController extends Controller
     }
 
     /**
+     * Activer un type de constat
+     *
+     * @authenticated
+     */
+    public function enable($id): JsonResponse
+    {
+        $ascertainmentType = AscertainmentType::findOrFail(AscertainmentType::keyFromHashId($id));
+
+        $ascertainmentType->update([
+            'status_id' => Status::firstWhere('code', StatusEnum::ACTIVE)->id,
+            'updated_by' => auth()->user()->id,
+        ]);
+
+        return $this->responseSuccess('AscertainmentType enabled successfully', new AscertainmentTypeResource($ascertainmentType));
+    }
+
+    /**
+     * Désactiver un type de constat
+     *
+     * @authenticated
+     */
+    public function disable($id): JsonResponse
+    {
+        $ascertainmentType = AscertainmentType::findOrFail(AscertainmentType::keyFromHashId($id));
+
+        $ascertainmentType->update([
+            'status_id' => Status::firstWhere('code', StatusEnum::INACTIVE)->id,
+            'updated_by' => auth()->user()->id,
+        ]);
+
+        return $this->responseSuccess('AscertainmentType disabled successfully', new AscertainmentTypeResource($ascertainmentType));
+    }
+
+    /**
      * Supprimer un type de constat
      *
      * @authenticated

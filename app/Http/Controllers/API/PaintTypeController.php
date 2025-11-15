@@ -91,6 +91,40 @@ class PaintTypeController extends Controller
     }
 
     /**
+     * Activer un type de peinture
+     *
+     * @authenticated
+     */
+    public function enable($id): JsonResponse
+    {
+        $paintType = PaintType::findOrFail(PaintType::keyFromHashId($id));
+
+        $paintType->update([
+            'status_id' => Status::firstWhere('code', StatusEnum::ACTIVE)->id,
+            'updated_by' => auth()->user()->id,
+        ]);
+
+        return $this->responseSuccess('PaintType enabled successfully', new PaintTypeResource($paintType));
+    }
+
+    /**
+     * Désactiver un type de peinture
+     *
+     * @authenticated
+     */
+    public function disable($id): JsonResponse
+    {
+        $paintType = PaintType::findOrFail(PaintType::keyFromHashId($id));
+
+        $paintType->update([
+            'status_id' => Status::firstWhere('code', StatusEnum::INACTIVE)->id,
+            'updated_by' => auth()->user()->id,
+        ]);
+
+        return $this->responseSuccess('PaintType disabled successfully', new PaintTypeResource($paintType));
+    }
+
+    /**
      * Supprimer un type de peinture
      *
      * @authenticated

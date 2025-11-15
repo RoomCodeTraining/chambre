@@ -95,6 +95,40 @@ class PaymentTypeController extends Controller
     }
 
     /**
+     * Activer un type de paiement
+     *
+     * @authenticated
+     */
+    public function enable($id): JsonResponse
+    {
+        $paymentType = PaymentType::findOrFail(PaymentType::keyFromHashId($id));
+
+        $paymentType->update([
+            'status_id' => Status::firstWhere('code', StatusEnum::ACTIVE)->id,
+            'updated_by' => auth()->user()->id,
+        ]);
+
+        return $this->responseSuccess('PaymentType enabled successfully', new PaymentTypeResource($paymentType->load('status:id,code,label')));
+    }
+
+    /**
+     * Désactiver un type de paiement
+     *
+     * @authenticated
+     */
+    public function disable($id): JsonResponse
+    {
+        $paymentType = PaymentType::findOrFail(PaymentType::keyFromHashId($id));
+
+        $paymentType->update([
+            'status_id' => Status::firstWhere('code', StatusEnum::INACTIVE)->id,
+            'updated_by' => auth()->user()->id,
+        ]);
+
+        return $this->responseSuccess('PaymentType disabled successfully', new PaymentTypeResource($paymentType->load('status:id,code,label')));
+    }
+
+    /**
      * Supprimer un type de paiement
      *
      * @authenticated

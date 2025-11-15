@@ -106,6 +106,40 @@ class OtherCostTypeController extends Controller
     }
 
     /**
+     * Activer un type d'autre charge
+     *
+     * @authenticated
+     */
+    public function enable($id): JsonResponse
+    {
+        $otherCostType = OtherCostType::findOrFail(OtherCostType::keyFromHashId($id));
+
+        $otherCostType->update([
+            'status_id' => Status::firstWhere('code', StatusEnum::ACTIVE)->id,
+            'updated_by' => auth()->user()->id,
+        ]);
+
+        return $this->responseSuccess('OtherCostType enabled successfully', new OtherCostTypeResource($otherCostType));
+    }
+
+    /**
+     * Désactiver un type d'autre charge
+     *
+     * @authenticated
+     */
+    public function disable($id): JsonResponse
+    {
+        $otherCostType = OtherCostType::findOrFail(OtherCostType::keyFromHashId($id));
+
+        $otherCostType->update([
+            'status_id' => Status::firstWhere('code', StatusEnum::INACTIVE)->id,
+            'updated_by' => auth()->user()->id,
+        ]);
+
+        return $this->responseSuccess('OtherCostType disabled successfully', new OtherCostTypeResource($otherCostType));
+    }
+
+    /**
      * Supprimer un type d'autre charge
      *
      * @authenticated

@@ -108,6 +108,40 @@ class WorkforceTypeController extends Controller
     }
 
     /**
+     * Activer un type de main-d'œuvre
+     *
+     * @authenticated
+     */
+    public function enable($id): JsonResponse
+    {
+        $workforceType = WorkforceType::findOrFail(WorkforceType::keyFromHashId($id));
+
+        $workforceType->update([
+            'status_id' => Status::firstWhere('code', StatusEnum::ACTIVE)->id,
+            'updated_by' => auth()->user()->id,
+        ]);
+
+        return $this->responseSuccess('WorkforceType enabled successfully', new WorkforceTypeResource($workforceType));
+    }
+
+    /**
+     * Désactiver un type de main-d'œuvre
+     *
+     * @authenticated
+     */
+    public function disable($id): JsonResponse
+    {
+        $workforceType = WorkforceType::findOrFail(WorkforceType::keyFromHashId($id));
+
+        $workforceType->update([
+            'status_id' => Status::firstWhere('code', StatusEnum::INACTIVE)->id,
+            'updated_by' => auth()->user()->id,
+        ]);
+
+        return $this->responseSuccess('WorkforceType disabled successfully', new WorkforceTypeResource($workforceType));
+    }
+
+    /**
      * Supprimer un type de main-d'œuvre
      *
      * @authenticated

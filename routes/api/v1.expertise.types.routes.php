@@ -9,4 +9,6 @@ Route::middleware('auth:sanctum')->name('expertise.types.')->group(function () {
     Route::get('/{expertise_type}', [ExpertiseTypeController::class, 'show'])->name('show');
     Route::put('/{expertise_type}', [ExpertiseTypeController::class, 'update'])->name('update');
     Route::delete('/{expertise_type}', [ExpertiseTypeController::class, 'destroy'])->name('destroy');
+    Route::put('/{expertise_type}/enable', [ExpertiseTypeController::class, 'enable'])->name('enable');
+    Route::put('/{expertise_type}/disable', [ExpertiseTypeController::class, 'disable'])->name('disable');
 }); 
