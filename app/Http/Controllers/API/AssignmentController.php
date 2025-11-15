@@ -2154,8 +2154,6 @@ class AssignmentController extends Controller
         }
 
         $assignment->update([
-            'insurer_id' => $insurer ? $insurer->id : $assignment->insurer_id,
-            'additional_insurer_id' => $additional_insurer ? $additional_insurer->id : $assignment->additional_insurer_id,
             'repairer_id' => $repairer ? $repairer->id : $assignment->repairer_id,
             'client_id' => $client->id,
             'vehicle_id' => $request->vehicle_id ?? $assignment->vehicle_id,
