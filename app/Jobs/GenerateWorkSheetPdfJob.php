@@ -71,7 +71,7 @@ class GenerateWorkSheetPdfJob implements ShouldQueue
         // $qr_code = QrCode::where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->first();
         // $qr_code = null;
 
-        $logo = Entity::where('id', $assignment->expert_firm_id)->first()->logo;
+        $logo = Entity::where('id', $assignment->expert_firm_id)->first();
         $logo = $logo
         ? image_to_base64(public_path("storage/logos/{$logo->logo}"))
         : null;

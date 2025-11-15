@@ -175,21 +175,19 @@ class GenerateExpertiseReportPdfJob implements ShouldQueue
             $photos_after_works[] = image_to_base64(public_path("storage/photos/report/{$assignment->reference}/{$photo->name}"));
         }
 
-        // $cover_photo = null;
-
-        // if($photo){
-        //     $path_cover_photo = base_path('public/storage/photos/'.$assignment->reference.'/'.$photo->name);
-        //     if (file_exists($path_cover_photo)) {
-        //         $path_cover_photo = base_path('public/storage/photos/'.$assignment->reference.'/'.$photo->name);
-        //         $type_cover_photo = pathinfo($path_cover_photo, PATHINFO_EXTENSION);
-        //         $data_cover_photo = file_get_contents($path_cover_photo);
-        //         $cover_photo = 'data:image/'.$type_cover_photo.';base64,'.base64_encode($data_cover_photo);
-        //     }            
-        // }
-
-        $logo = Entity::where('id', $assignment->expert_firm_id)->first()->logo;
+        $logo = Entity::where('id', $assignment->expert_firm_id)->first();
         $logo = $logo
         ? image_to_base64(public_path("storage/logos/{$logo->logo}"))
+        : null;
+
+        // Photo de couverture
+        $cover_photo = Photo::where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)
+        ->where('is_cover', 1)
+        ->where('assignment_id', $assignment->id)
+        ->first();
+
+        $cover_photo = $cover_photo
+        ? image_to_base64(public_path("storage/photos/report/{$assignment->reference}/{$cover_photo->name}"))
         : null;
 
         $path_check_icon = base_path('public/images/check-icon.png');
