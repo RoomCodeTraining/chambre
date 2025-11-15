@@ -53,7 +53,7 @@ class GenerateWorkSheetPdfJob implements ShouldQueue
      */
     public function handle(): void
     {
-        $assignment = Assignment::with('generalState', 'technicalConclusion', 'documentTransmitted', 'assignmentType', 'expertiseType', 'status', 'vehicle', 'insurer', 'additionalInsurer', 'repairer', 'client', 'directedBy', 'workSheetEstablishedBy', 'workSheetRemark', 'reportRemark')
+        $assignment = Assignment::with('expertFirm','generalState', 'technicalConclusion', 'documentTransmitted', 'assignmentType', 'expertiseType', 'status', 'vehicle', 'insurer', 'additionalInsurer', 'repairer', 'client', 'directedBy', 'workSheetEstablishedBy', 'workSheetRemark', 'reportRemark')
                         ->where('assignments.id', $this->_assignment->id)
                         ->first();
 
@@ -71,9 +71,10 @@ class GenerateWorkSheetPdfJob implements ShouldQueue
         // $qr_code = QrCode::where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->first();
         // $qr_code = null;
 
-        $logo = Entity::where('id', $assignment->expert_firm_id)->first();
-        $logo = $logo
-        ? image_to_base64(public_path("storage/logos/{$logo->logo}"))
+        $logoEntity = Entity::select('logo')->find($assignment->expertFirm->id);
+
+        $logo = $logoEntity && $logoEntity->logo
+        ? image_to_base64(public_path("storage/logos/{$logoEntity->logo}"))
         : null;
 
         $path_check_icon = base_path('public/images/check-icon.png');

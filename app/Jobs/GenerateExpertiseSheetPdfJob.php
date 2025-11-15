@@ -49,7 +49,7 @@ class GenerateExpertiseSheetPdfJob implements ShouldQueue
      */
     public function handle(): void
     {
-        $assignment = Assignment::with('generalState', 'technicalConclusion', 'documentTransmitted', 'assignmentType', 'expertiseType', 'status', 'vehicle', 'insurer', 'additionalInsurer', 'repairer', 'client')
+        $assignment = Assignment::with('expertFirm','generalState', 'technicalConclusion', 'documentTransmitted', 'assignmentType', 'expertiseType', 'status', 'vehicle', 'insurer', 'additionalInsurer', 'repairer', 'client')
                         // ->join('entities as insurers', 'assignments.insurer_id', '=', 'insurers.id')
                         // ->join('entities as repairers', 'assignments.repairer_id', '=', 'repairers.id')
                         // ->join('clients', 'assignments.client_id', '=', 'clients.id')
@@ -98,7 +98,12 @@ class GenerateExpertiseSheetPdfJob implements ShouldQueue
 
         $payment = Payment::where('assignment_id', $assignment->id)->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->first();
 
-        $logo = Entity::where('id', $assignment->expert_firm_id)->first();
+        $logoEntity = Entity::select('logo')->find($assignment->expertFirm->id);
+
+        $logo = $logoEntity && $logoEntity->logo
+        ? image_to_base64(public_path("storage/logos/{$logoEntity->logo}"))
+        : null;
+
         $logo = $logo
         ? image_to_base64(public_path("storage/logos/{$logo->logo}"))
         : null;

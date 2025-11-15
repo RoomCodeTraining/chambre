@@ -70,7 +70,7 @@ class GenerateExpertiseReportPdfJob implements ShouldQueue
         // Augmenter la limite mémoire (optionnel si ton PDF est lourd)
         ini_set('memory_limit', '2048M');
 
-        $assignment = Assignment::with('generalState', 'claimNature', 'technicalConclusion', 'documentTransmitted', 'assignmentType', 'expertiseType', 'status', 'vehicle', 'insurer', 'additionalInsurer', 'repairer', 'client', 'directedBy')
+        $assignment = Assignment::with('expertFirm','generalState', 'claimNature', 'technicalConclusion', 'documentTransmitted', 'assignmentType', 'expertiseType', 'status', 'vehicle', 'insurer', 'additionalInsurer', 'repairer', 'client', 'directedBy')
                         ->where('assignments.id', $this->_assignment->id)
                         ->first();
 
@@ -107,7 +107,7 @@ class GenerateExpertiseReportPdfJob implements ShouldQueue
 
         $total_payment = Payment::where('assignment_id', $assignment->id)->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->sum('amount');
 
-        $ceo = User::where(['entity_id' => $assignment->expert_firm_id, 'current_role_id' => Role::where('name', RoleEnum::CEO->value)->first()->id, 'status_id' => Status::where('code', StatusEnum::ACTIVE)->first()->id])->first();
+        $ceo = User::where(['entity_id' => $assignment->expertFirm->id, 'current_role_id' => Role::where('name', RoleEnum::CEO->value)->first()->id, 'status_id' => Status::where('code', StatusEnum::ACTIVE)->first()->id])->first(); 
 
         // $qr_code = QrCode::where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->first();
         // $qr_code = null;
@@ -175,19 +175,10 @@ class GenerateExpertiseReportPdfJob implements ShouldQueue
             $photos_after_works[] = image_to_base64(public_path("storage/photos/report/{$assignment->reference}/{$photo->name}"));
         }
 
-        $logo = Entity::where('id', $assignment->expert_firm_id)->first();
-        $logo = $logo
-        ? image_to_base64(public_path("storage/logos/{$logo->logo}"))
-        : null;
+        $logoEntity = Entity::select('logo')->find($assignment->expertFirm->id);
 
-        // Photo de couverture
-        $cover_photo = Photo::where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)
-        ->where('is_cover', 1)
-        ->where('assignment_id', $assignment->id)
-        ->first();
-
-        $cover_photo = $cover_photo
-        ? image_to_base64(public_path("storage/photos/report/{$assignment->reference}/{$cover_photo->name}"))
+        $logo = $logoEntity && $logoEntity->logo
+        ? image_to_base64(public_path("storage/logos/{$logoEntity->logo}"))
         : null;
 
         $path_check_icon = base_path('public/images/check-icon.png');

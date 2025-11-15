@@ -65,7 +65,7 @@ class GenerateInvoicePdfJob implements ShouldQueue
                         ->where('id', $this->invoice->id)
                         ->first();
 
-        $assignment = Assignment::with('generalState', 'technicalConclusion', 'documentTransmitted', 'assignmentType', 'expertiseType', 'status', 'vehicle', 'insurer', 'additionalInsurer', 'broker', 'repairer', 'client', 'directedBy')
+        $assignment = Assignment::with('expertFirm','generalState', 'technicalConclusion', 'documentTransmitted', 'assignmentType', 'expertiseType', 'status', 'vehicle', 'insurer', 'additionalInsurer', 'broker', 'repairer', 'client', 'directedBy')
                         ->where('id', $this->invoice->assignment_id)
                         ->first();
 
@@ -75,12 +75,13 @@ class GenerateInvoicePdfJob implements ShouldQueue
                     ->orderBy('id', 'desc')
                     ->get();
         
-        $logo = Entity::where('id', $assignment->expert_firm_id)->first();
-        $logo = $logo
-        ? image_to_base64(public_path("storage/logos/{$logo->logo}"))
+        $logoEntity = Entity::select('logo')->find($assignment->expertFirm->id);
+
+        $logo = $logoEntity && $logoEntity->logo
+        ? image_to_base64(public_path("storage/logos/{$logoEntity->logo}"))
         : null;
 
-        $ceo = User::where(['entity_id' => $assignment->expert_firm_id, 'current_role_id' => Role::where('name', RoleEnum::CEO->value)->first()->id, 'status_id' => Status::where('code', StatusEnum::ACTIVE)->first()->id])->first();
+        $ceo = User::where(['entity_id' => $assignment->expertFirm->id, 'current_role_id' => Role::where('name', RoleEnum::CEO->value)->first()->id, 'status_id' => Status::where('code', StatusEnum::ACTIVE)->first()->id])->first();
 
         $numberToWords = new NumberToWords();
         $numberTransformer = $numberToWords->getNumberTransformer('fr');
