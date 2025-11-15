@@ -370,7 +370,7 @@ class ShockController extends Controller
         $updateReceiptService = app(UpdateReceiptService::class);
         $updateReceiptService->updateReceipt($assignment->id);
 
-        dispatch(new GenerateExpertiseReportPdfJob($assignment));
+        // dispatch(new GenerateExpertiseReportPdfJob($assignment));
     }
 
     /**
