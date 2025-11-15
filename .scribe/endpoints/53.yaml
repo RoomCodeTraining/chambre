@@ -44,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6cg35Vf1vdE8PkZDha6eb4a'
+      - 'Bearer vcEkfD3gbd84Vheaa665ZP1'
     controller: null
     method: null
     route: null
@@ -78,7 +78,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: aiscgplcvigebdtlnqu
+        example: itlzxdwundrezox
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -88,22 +88,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Non odit a sapiente est vel.'
+        example: 'Consequatur suscipit repellat ut inventore nisi voluptas quis.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: aiscgplcvigebdtlnqu
-      description: 'Non odit a sapiente est vel.'
+      label: itlzxdwundrezox
+      description: 'Consequatur suscipit repellat ut inventore nisi voluptas quis.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer D8b3aZ4ghaE5dcek6PV16fv'
+      - 'Bearer bcv6aVhE1Pk46aZ85def3gD'
     controller: null
     method: null
     route: null
@@ -133,14 +133,14 @@ endpoints:
         name: id
         description: 'The ID of the ascertainment type.'
         required: true
-        example: ut
+        example: rerum
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: ut
+      id: rerum
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -160,7 +160,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer avaZPhDb8gVkE416fcde365'
+      - 'Bearer v63aEk5V8gZ1efbahDd6Pc4'
     controller: null
     method: null
     route: null
@@ -190,14 +190,14 @@ endpoints:
         name: id
         description: 'The ID of the ascertainment type.'
         required: true
-        example: velit
+        example: pariatur
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: velit
+      id: pariatur
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -205,7 +205,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: peeqlrsaxz
+        example: myuizieudyw
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -215,22 +215,22 @@ endpoints:
         name: description
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: false
-        example: 'Voluptates est et quos sapiente non sed ut inventore.'
+        example: 'Velit corrupti tenetur accusantium facilis vel et tempora.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: peeqlrsaxz
-      description: 'Voluptates est et quos sapiente non sed ut inventore.'
+      label: myuizieudyw
+      description: 'Velit corrupti tenetur accusantium facilis vel et tempora.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer d13ahb8gvefZcV5a6D4EkP6'
+      - 'Bearer P13e65ZaEVcdagvh46b8kfD'
     controller: null
     method: null
     route: null
@@ -260,14 +260,14 @@ endpoints:
         name: id
         description: 'The ID of the ascertainment type.'
         required: true
-        example: consequatur
+        example: saepe
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: consequatur
+      id: saepe
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -278,7 +278,103 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer avZehf1V645cEk36D8bdgaP'
+      - 'Bearer v3h4k6fVab8Eda15PDceg6Z'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/ascertainment-types/{ascertainment_type}/enable'
+    metadata:
+      groupName: 'Gestion des types de constat'
+      groupDescription: |-
+
+        APIs pour la gestion des types de constat
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Activer un type de constat'
+      description: ''
+      authenticated: true
+      deprecated: false
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      ascertainment_type:
+        name: ascertainment_type
+        description: ''
+        required: true
+        example: odit
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      ascertainment_type: odit
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer E654geb1hc3aPdaf8DZV6vk'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/ascertainment-types/{ascertainment_type}/disable'
+    metadata:
+      groupName: 'Gestion des types de constat'
+      groupDescription: |-
+
+        APIs pour la gestion des types de constat
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Désactiver un type de constat'
+      description: ''
+      authenticated: true
+      deprecated: false
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      ascertainment_type:
+        name: ascertainment_type
+        description: ''
+        required: true
+        example: at
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      ascertainment_type: at
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer ek5bdfZg3h1E48VaPcDva66'
     controller: null
     method: null
     route: null

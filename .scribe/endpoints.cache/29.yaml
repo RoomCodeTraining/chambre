@@ -46,7 +46,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer e8EPh6kg3v5dZc6b4Va1Dfa'
+      - 'Bearer 61h4EeaVfbgP8Dcd6vZ3k5a'
     controller: null
     method: null
     route: null
@@ -80,7 +80,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: zrapidkuveeizdlvmv
+        example: drqzngcarbzcpzltepdvs
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -90,22 +90,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Accusantium dolore aut quis dolores sunt.'
+        example: 'Quibusdam omnis id quo et sit eum et.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: zrapidkuveeizdlvmv
-      description: 'Accusantium dolore aut quis dolores sunt.'
+      label: drqzngcarbzcpzltepdvs
+      description: 'Quibusdam omnis id quo et sit eum et.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 8adgkP5caE64ZbfDh63V1ve'
+      - 'Bearer fE36684kgcD5VPdahZe1abv'
     controller: null
     method: null
     route: null
@@ -162,7 +162,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 3eZ1d5hEDgP46vV8abca6kf'
+      - 'Bearer 35a8b4v1ZacgPE6dehVf6Dk'
     controller: null
     method: null
     route: null
@@ -207,7 +207,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: zywh
+        example: drcggh
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -217,22 +217,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Voluptatum eligendi esse eius perferendis excepturi in est.'
+        example: 'Deserunt error minima sapiente ratione ipsum architecto laboriosam.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: zywh
-      description: 'Voluptatum eligendi esse eius perferendis excepturi in est.'
+      label: drcggh
+      description: 'Deserunt error minima sapiente ratione ipsum architecto laboriosam.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 4fkV5acPv1Ehad863ZbDg6e'
+      - 'Bearer acZ3f641e5Dahd6VEvkPgb8'
     controller: null
     method: null
     route: null
@@ -280,7 +280,103 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer aPg8hav3fZ1k5db4D6eVEc6'
+      - 'Bearer f64daheZ1a6358vEPkbVDcg'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/assignment-types/{assignment_type}/enable'
+    metadata:
+      groupName: 'Gestion des types de dossiers'
+      groupDescription: |-
+
+        APIs pour la gestion des types de dossiers
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Activer un type de dossier'
+      description: ''
+      authenticated: true
+      deprecated: false
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      assignment_type:
+        name: assignment_type
+        description: ''
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      assignment_type: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer kfg18eaZ4av6c5EVb6h3PDd'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/assignment-types/{assignment_type}/disable'
+    metadata:
+      groupName: 'Gestion des types de dossiers'
+      groupDescription: |-
+
+        APIs pour la gestion des types de dossiers
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Désactiver un type de dossier'
+      description: ''
+      authenticated: true
+      deprecated: false
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      assignment_type:
+        name: assignment_type
+        description: ''
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      assignment_type: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer VeD4a8gkdva3ZhEcf56P6b1'
     controller: null
     method: null
     route: null

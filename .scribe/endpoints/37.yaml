@@ -44,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer fPEZe4gdDb3a5c6hVk8av61'
+      - 'Bearer VD1cPb6h8kgafa65vd34eEZ'
     controller: null
     method: null
     route: null
@@ -78,7 +78,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: bvldkamenpkfpuottyczmd
+        example: bwvfnqemnwggvezfnjylonw
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -88,22 +88,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Excepturi voluptas quis laborum eos mollitia.'
+        example: 'Quasi quia delectus ad quis molestiae.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: bvldkamenpkfpuottyczmd
-      description: 'Excepturi voluptas quis laborum eos mollitia.'
+      label: bwvfnqemnwggvezfnjylonw
+      description: 'Quasi quia delectus ad quis molestiae.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer P5fk4eZ8hbg3Va6avdDE16c'
+      - 'Bearer 8PafD6eEcaZhkVg16v3d54b'
     controller: null
     method: null
     route: null
@@ -133,14 +133,14 @@ endpoints:
         name: paintType
         description: ''
         required: true
-        example: animi
+        example: quaerat
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      paintType: animi
+      paintType: quaerat
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -160,7 +160,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 4fkgd8E5vaV6bPaeZc16h3D'
+      - 'Bearer DZhfb61adgeE5V8c6Pka34v'
     controller: null
     method: null
     route: null
@@ -190,14 +190,14 @@ endpoints:
         name: paintType
         description: ''
         required: true
-        example: reiciendis
+        example: suscipit
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      paintType: reiciendis
+      paintType: suscipit
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -205,7 +205,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: terxuiyfkyrrifllxfeq
+        example: ujyvxslbtmy
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -215,22 +215,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Iste doloremque velit quos pariatur omnis corporis sint.'
+        example: 'Sit quasi officiis qui provident nulla quam.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: terxuiyfkyrrifllxfeq
-      description: 'Iste doloremque velit quos pariatur omnis corporis sint.'
+      label: ujyvxslbtmy
+      description: 'Sit quasi officiis qui provident nulla quam.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 61PDdaa3ecvhZ84bkVgE5f6'
+      - 'Bearer EhZ1ag3Pbfkd68Dcae65vV4'
     controller: null
     method: null
     route: null
@@ -260,14 +260,14 @@ endpoints:
         name: paintType
         description: ''
         required: true
-        example: doloremque
+        example: qui
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      paintType: doloremque
+      paintType: qui
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -278,7 +278,103 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer vfg1abk6PEcZD5e684dha3V'
+      - 'Bearer DPecdaga68h5f4b6kVv31ZE'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/paint-types/{paintType}/enable'
+    metadata:
+      groupName: 'Gestion des types de peinture'
+      groupDescription: |-
+
+        APIs pour la gestion des types de peinture
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Activer un type de peinture'
+      description: ''
+      authenticated: true
+      deprecated: false
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      paintType:
+        name: paintType
+        description: ''
+        required: true
+        example: autem
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      paintType: autem
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer acE5fg6dPkDe8vhV46abZ13'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/paint-types/{paintType}/disable'
+    metadata:
+      groupName: 'Gestion des types de peinture'
+      groupDescription: |-
+
+        APIs pour la gestion des types de peinture
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Désactiver un type de peinture'
+      description: ''
+      authenticated: true
+      deprecated: false
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      paintType:
+        name: paintType
+        description: ''
+        required: true
+        example: cum
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      paintType: cum
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer vchP8ED3kdVa5b6agZ6f14e'
     controller: null
     method: null
     route: null

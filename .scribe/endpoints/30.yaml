@@ -44,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer kf1dce3EaDZ6hvab84gV6P5'
+      - 'Bearer gE8ba1acVPkZe645d6f3vhD'
     controller: null
     method: null
     route: null
@@ -78,7 +78,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: xvkksauagcyme
+        example: jvcfqkkfjwhnmvhkmb
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -88,22 +88,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Officia quibusdam suscipit optio dolorum aut ea soluta voluptas.'
+        example: 'Fugit deserunt adipisci voluptatem numquam voluptatem.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: xvkksauagcyme
-      description: 'Officia quibusdam suscipit optio dolorum aut ea soluta voluptas.'
+      label: jvcfqkkfjwhnmvhkmb
+      description: 'Fugit deserunt adipisci voluptatem numquam voluptatem.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer g6cbhakP8V561fE4DeZdv3a'
+      - 'Bearer a8bvaEckP31d4Zef56g6hDV'
     controller: null
     method: null
     route: null
@@ -133,14 +133,14 @@ endpoints:
         name: expertise_type
         description: ''
         required: true
-        example: aut
+        example: aliquam
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      expertise_type: aut
+      expertise_type: aliquam
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -160,7 +160,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer VE5DZPgfa6h368c1eavb4kd'
+      - 'Bearer d4h3af5gEkb8acPZV1D6ev6'
     controller: null
     method: null
     route: null
@@ -205,7 +205,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: qhwezymbeqvuzur
+        example: ktfbmkczcyluzfnqvumkvqjeq
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -215,22 +215,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Officia nemo illo mollitia officia distinctio.'
+        example: 'Aliquid excepturi eveniet laudantium eaque vitae.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: qhwezymbeqvuzur
-      description: 'Officia nemo illo mollitia officia distinctio.'
+      label: ktfbmkczcyluzfnqvumkvqjeq
+      description: 'Aliquid excepturi eveniet laudantium eaque vitae.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer va3hZP6Dkb5861dVfgaeEc4'
+      - 'Bearer 6kd8a61g4afchDE5beP3vZV'
     controller: null
     method: null
     route: null
@@ -260,14 +260,14 @@ endpoints:
         name: expertise_type
         description: ''
         required: true
-        example: et
+        example: nihil
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      expertise_type: et
+      expertise_type: nihil
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -278,7 +278,103 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer E6c365hDkPg1ebadva4f8VZ'
+      - 'Bearer cVbE68faa3k5Z4Ph61gedDv'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/expertise-types/{expertise_type}/enable'
+    metadata:
+      groupName: "Gestion des types d'expertise"
+      groupDescription: |-
+
+        APIs pour la gestion des types d'expertise
+      subgroup: ''
+      subgroupDescription: ''
+      title: "Activer un type d'expertise"
+      description: ''
+      authenticated: true
+      deprecated: false
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      expertise_type:
+        name: expertise_type
+        description: ''
+        required: true
+        example: ut
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      expertise_type: ut
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 35VgZ6e8vEfabd1c4Pha6Dk'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/expertise-types/{expertise_type}/disable'
+    metadata:
+      groupName: "Gestion des types d'expertise"
+      groupDescription: |-
+
+        APIs pour la gestion des types d'expertise
+      subgroup: ''
+      subgroupDescription: ''
+      title: "Désactiver un type d'expertise"
+      description: ''
+      authenticated: true
+      deprecated: false
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      expertise_type:
+        name: expertise_type
+        description: ''
+        required: true
+        example: magnam
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      expertise_type: magnam
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer daV4chvgbek6E6Z83P5fD1a'
     controller: null
     method: null
     route: null

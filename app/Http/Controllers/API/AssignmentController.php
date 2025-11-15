@@ -76,6 +76,8 @@ use App\Http\Requests\Assignment\CalculateAssignmentRequest;
 use App\Http\Requests\Assignment\UpdateEditAssignmentRequest;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use App\Http\Requests\Assignment\UpdateRealizedAssignmentRequest;
+use App\Http\Requests\Assignment\CreateAssignmentWorkSheetRequest;
+use App\Http\Requests\Assignment\AddAssignmentWorkSheetPhotoRequest;
 use App\Http\Requests\Assignment\CalculateEvaluationAssignmentRequest;
 
 /**
@@ -2051,9 +2053,9 @@ class AssignmentController extends Controller
      *
      * @authenticated
      */
-    public function create_work_sheet(Request $request, $id)
+    public function create_work_sheet(CreateAssignmentWorkSheetRequest $request, $id): JsonResponse
     {
-        $assignment = Assignment::where('id', $id)->firstOrFail();
+        $assignment = Assignment::where('id', Assignment::keyFromHashId($id))->firstOrFail();
 
         // if($assignment->status_id != Status::where('code', StatusEnum::OPENED)->first()->id && $assignment->status_id != Status::where('code', StatusEnum::REALIZED)->first()->id){
         //     return $this->responseUnprocessable("Impossible de créer la fiche de travaux.", null);
@@ -2075,17 +2077,23 @@ class AssignmentController extends Controller
             return $this->responseUnprocessable('Le numéro de sinistre existe déjà pour un dossier ouvert, réalisé, rédigé ou validé');
         }
 
-        $exist_client = Client::where('name', 'like', '%'.$request->name.'%')->first();
-        $exist_insurer = Entity::where('entity_type_id', EntityType::where('code', EntityTypeEnum::INSURER)->first()->id)->where('name', 'like', '%'.$request->name.'%')->first();
+        $insurer = Entity::find(InsurerRelationship::where('id', $request->insurer_relationship_id)->first()?->insurer_id);
+        $additional_insurer = Entity::find(InsurerRelationship::where('id', $request->additional_insurer_relationship_id)->first()?->insurer_id);
+        $repairer = Entity::find(RepairerRelationship::where('id', $request->repairer_relationship_id)->first()?->repairer_id);
 
-        if($exist_client){
-            $client = $exist_client;
+        if($request->client_id){
+            $client = Client::where('id', $request->client_id)->update([
+                'name' => $request->client_name,
+                'phone_1' => $request->client_phone,
+                'email' => strtolower($request->client_email),
+                'updated_by' => auth()->user()->id,
+            ]);
         } else {
             $client = Client::create(
                 [
                     'name' => $request->client_name,
                     'phone_1' => $request->client_phone,
-                    'email' => $request->client_email,
+                    'email' => strtolower($request->client_email),
                     'status_id' => Status::where('code', StatusEnum::ACTIVE)->first()->id,
                     'created_by' => auth()->user()->id,
                     'updated_by' => auth()->user()->id,
@@ -2093,23 +2101,7 @@ class AssignmentController extends Controller
             );
         }
 
-        if($exist_insurer){
-            $insurer = $exist_insurer;
-        } else {
-            $insurer = Entity::create(
-                [
-                    'name' => $request->insurer_name,
-                    'phone_1' => $request->insurer_phone,
-                    'email' => $request->insurer_email,
-                    'entity_type_id' => EntityType::where('code', EntityTypeEnum::INSURER)->first()->id,
-                    'status_id' => Status::where('code', StatusEnum::ACTIVE)->first()->id,
-                    'created_by' => auth()->user()->id,
-                    'updated_by' => auth()->user()->id,
-                ]
-            );
-        }
-
-        $shocks = $request->get('shock_points');
+        $shocks = $request->get('shocks');
 
         if(count($shocks) > 0){
             $shockPosition = 1;
@@ -2156,16 +2148,23 @@ class AssignmentController extends Controller
                         ]);
                         $shockWorkPosition++;
                     }
-        
                 }
                 $shockPosition++;
             }
         }
 
         $assignment->update([
+            'insurer_id' => $insurer ? $insurer->id : $assignment->insurer_id,
+            'additional_insurer_id' => $additional_insurer ? $additional_insurer->id : $assignment->additional_insurer_id,
+            'repairer_id' => $repairer ? $repairer->id : $assignment->repairer_id,
+            'client_id' => $client->id,
+            'vehicle_id' => $request->vehicle_id ?? $assignment->vehicle_id,
+            'vehicle_mileage' => $request->vehicle_mileage ?? $assignment->vehicle_mileage,
+            'policy_number' => $request->policy_number ?? $assignment->policy_number,
             'work_sheet_remark_id' => $request->work_sheet_remark_id,
             'expert_work_sheet_remark' => $request->expert_work_sheet_remark,
             'claim_number' => $request->claim_number ?? $assignment->claim_number,
+            'claim_date' => $request->claim_date ?? $assignment->claim_date,
             'emails' => json_encode($request->emails),
             'repairer_signature' => $request->repairer_signature,
             'customer_signature' => $request->customer_signature,
@@ -2228,9 +2227,9 @@ class AssignmentController extends Controller
      *
      * @authenticated
      */
-    public function add_work_sheet_photo(Request $request, $id)
+    public function add_work_sheet_photo(AddAssignmentWorkSheetPhotoRequest $request, $id)
     {
-        $assignment = Assignment::where('id', $id)->firstOrFail();
+        $assignment = Assignment::where('id', Assignment::keyFromHashId($id))->firstOrFail();
 
         // if($assignment->status_id != Status::where('code', StatusEnum::OPENED)->first()->id && $assignment->status_id != Status::where('code', StatusEnum::REALIZED)->first()->id){
         //     return $this->responseUnprocessable("Impossible de créer la fiche de travaux", null);

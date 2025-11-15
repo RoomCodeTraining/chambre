@@ -46,7 +46,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer c5gavVPk66bf48ea1DZhdE3'
+      - 'Bearer aa6cVfdDZEPkh1654b3evg8'
     controller: null
     method: null
     route: null
@@ -76,11 +76,21 @@ endpoints:
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
+      assignment_request_id:
+        name: assignment_request_id
+        description: 'The <code>id</code> of an existing record in the assignment_requests table.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
       assignment_type_id:
         name: assignment_type_id
         description: 'The <code>id</code> of an existing record in the assignment_types table.'
         required: true
-        example: quaerat
+        example: qui
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -90,7 +100,7 @@ endpoints:
         name: expertise_type_id
         description: 'The <code>id</code> of an existing record in the expertise_types table.'
         required: true
-        example: alias
+        example: error
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -110,7 +120,7 @@ endpoints:
         name: vehicle_id
         description: 'The <code>id</code> of an existing record in the vehicles table.'
         required: true
-        example: est
+        example: expedita
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -120,7 +130,7 @@ endpoints:
         name: vehicle_mileage
         description: ''
         required: false
-        example: 10.82953978
+        example: 1130.0
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -161,7 +171,7 @@ endpoints:
         description: 'The <code>id</code> of an existing record in the document_transmitteds table.'
         required: true
         example:
-          - dolorum
+          - occaecati
         type: 'string[]'
         enumValues: []
         exampleWasSpecified: false
@@ -171,7 +181,7 @@ endpoints:
         name: policy_number
         description: ''
         required: false
-        example: minus
+        example: autem
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -181,7 +191,7 @@ endpoints:
         name: claim_number
         description: ''
         required: false
-        example: velit
+        example: ad
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -191,7 +201,7 @@ endpoints:
         name: claim_date
         description: 'Must be a valid date in the format <code>Y-m-d</code>.'
         required: false
-        example: '2025-11-11'
+        example: '2025-11-15'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -201,7 +211,7 @@ endpoints:
         name: expertise_date
         description: 'Must be a valid date in the format <code>Y-m-d</code>.'
         required: false
-        example: '2025-11-11'
+        example: '2025-11-15'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -211,7 +221,7 @@ endpoints:
         name: expertise_place
         description: ''
         required: false
-        example: quis
+        example: sunt
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -221,7 +231,7 @@ endpoints:
         name: received_at
         description: 'Must be a valid date in the format <code>Y-m-d</code>.'
         required: false
-        example: '2025-11-11'
+        example: '2025-11-15'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -231,33 +241,33 @@ endpoints:
         name: damage_declared
         description: ''
         required: false
-        example: est
+        example: ad
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      assignment_type_id: quaerat
-      expertise_type_id: alias
-      vehicle_id: est
-      vehicle_mileage: 10.82953978
+      assignment_type_id: qui
+      expertise_type_id: error
+      vehicle_id: expedita
+      vehicle_mileage: 1130.0
       document_transmitted_id:
-        - dolorum
-      policy_number: minus
-      claim_number: velit
-      claim_date: '2025-11-11'
-      expertise_date: '2025-11-11'
-      expertise_place: quis
-      received_at: '2025-11-11'
-      damage_declared: est
+        - occaecati
+      policy_number: autem
+      claim_number: ad
+      claim_date: '2025-11-15'
+      expertise_date: '2025-11-15'
+      expertise_place: sunt
+      received_at: '2025-11-15'
+      damage_declared: ad
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer v5D6VfZPdbhcga834E1k6ae'
+      - 'Bearer D6gEc8fP314VkbeZ6vaa5dh'
     controller: null
     method: null
     route: null
@@ -287,25 +297,387 @@ endpoints:
         name: assignment
         description: ''
         required: true
-        example: temporibus
+        example: blanditiis
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      assignment: temporibus
+      assignment: blanditiis
     queryParameters: []
     cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
+    bodyParameters:
+      expertise_type_id:
+        name: expertise_type_id
+        description: 'The <code>id</code> of an existing record in the expertise_types table.'
+        required: true
+        example: sed
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      client_id:
+        name: client_id
+        description: 'The <code>id</code> of an existing record in the clients table.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      client_name:
+        name: client_name
+        description: ''
+        required: true
+        example: esse
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      client_phone:
+        name: client_phone
+        description: ''
+        required: false
+        example: rem
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      client_email:
+        name: client_email
+        description: 'Le champ value doit être une adresse e-mail valide.'
+        required: false
+        example: cschultz@example.net
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      vehicle_id:
+        name: vehicle_id
+        description: 'The <code>id</code> of an existing record in the vehicles table.'
+        required: true
+        example: corporis
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      vehicle_mileage:
+        name: vehicle_mileage
+        description: ''
+        required: false
+        example: 188.5
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      insurer_relationship_id:
+        name: insurer_relationship_id
+        description: 'This field is required when <code>assignment_type_id</code> is <code>1</code>. The <code>id</code> of an existing record in the insurer_relationships table.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      additional_insurer_relationship_id:
+        name: additional_insurer_relationship_id
+        description: 'The <code>id</code> of an existing record in the insurer_relationships table.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      repairer_relationship_id:
+        name: repairer_relationship_id
+        description: 'The <code>id</code> of an existing record in the repairer_relationships table.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      document_transmitted_id:
+        name: document_transmitted_id
+        description: 'The <code>id</code> of an existing record in the document_transmitteds table.'
+        required: true
+        example:
+          - dicta
+        type: 'string[]'
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      shocks:
+        name: shocks
+        description: ''
+        required: false
+        example: null
+        type: 'object[]'
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      work_sheet_remark_id:
+        name: work_sheet_remark_id
+        description: 'The <code>id</code> of an existing record in the remarks table.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      expert_work_sheet_remark:
+        name: expert_work_sheet_remark
+        description: ''
+        required: false
+        example: aliquid
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      policy_number:
+        name: policy_number
+        description: ''
+        required: false
+        example: aut
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      claim_number:
+        name: claim_number
+        description: ''
+        required: false
+        example: voluptatem
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      claim_date:
+        name: claim_date
+        description: 'Must be a valid date in the format <code>Y-m-d</code>.'
+        required: false
+        example: '2025-11-15'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      repairer_signature:
+        name: repairer_signature
+        description: ''
+        required: true
+        example: voluptates
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      customer_signature:
+        name: customer_signature
+        description: ''
+        required: true
+        example: beatae
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      emails:
+        name: emails
+        description: ''
+        required: false
+        example: null
+        type: object
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      'shocks[].shock_point_id':
+        name: 'shocks[].shock_point_id'
+        description: 'The <code>id</code> of an existing record in the shock_points table.'
+        required: true
+        example: laudantium
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].shock_works':
+        name: 'shocks[].shock_works'
+        description: ''
+        required: true
+        example:
+          - []
+        type: 'object[]'
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].shock_works[].supply_id':
+        name: 'shocks[].shock_works[].supply_id'
+        description: 'The <code>id</code> of an existing record in the supplies table.'
+        required: true
+        example: totam
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].shock_works[].disassembly':
+        name: 'shocks[].shock_works[].disassembly'
+        description: ''
+        required: true
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].shock_works[].replacement':
+        name: 'shocks[].shock_works[].replacement'
+        description: ''
+        required: true
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].shock_works[].repair':
+        name: 'shocks[].shock_works[].repair'
+        description: ''
+        required: true
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].shock_works[].paint':
+        name: 'shocks[].shock_works[].paint'
+        description: ''
+        required: true
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].shock_works[].control':
+        name: 'shocks[].shock_works[].control'
+        description: ''
+        required: true
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].shock_works[].comment':
+        name: 'shocks[].shock_works[].comment'
+        description: ''
+        required: false
+        example: dicta
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      'shocks[].shock_works[].obsolescence_rate':
+        name: 'shocks[].shock_works[].obsolescence_rate'
+        description: ''
+        required: true
+        example: 32.35781158
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].shock_works[].recovery_amount':
+        name: 'shocks[].shock_works[].recovery_amount'
+        description: ''
+        required: true
+        example: 23400224.094
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].shock_works[].amount':
+        name: 'shocks[].shock_works[].amount'
+        description: ''
+        required: true
+        example: 0.48863699
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'shocks[].shock_works[].discount':
+        name: 'shocks[].shock_works[].discount'
+        description: ''
+        required: true
+        example: 3.365
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      expertise_type_id: sed
+      client_name: esse
+      client_phone: rem
+      client_email: cschultz@example.net
+      vehicle_id: corporis
+      vehicle_mileage: 188.5
+      document_transmitted_id:
+        - dicta
+      expert_work_sheet_remark: aliquid
+      policy_number: aut
+      claim_number: voluptatem
+      claim_date: '2025-11-15'
+      repairer_signature: voluptates
+      customer_signature: beatae
+      shocks:
+        -
+          shock_point_id: laudantium
+          shock_works:
+            -
+              supply_id: totam
+              disassembly: false
+              replacement: false
+              repair: false
+              paint: false
+              control: true
+              comment: dicta
+              obsolescence_rate: 32.35781158
+              recovery_amount: 23400224.094
+              amount: 0.48863699
+              discount: 3.365
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer PafeZ6Ebav4g5V681hDd3kc'
+      - 'Bearer kVgf48bcDdEav6Z6e15Pha3'
     controller: null
     method: null
     route: null
@@ -335,14 +707,14 @@ endpoints:
         name: assignment
         description: ''
         required: true
-        example: dolorum
+        example: voluptate
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      assignment: dolorum
+      assignment: voluptate
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -353,7 +725,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer PE5k4vbZaaf3d8echD6Vg16'
+      - 'Bearer 4gh8e5ZVakPD3bf61dac6Ev'
     controller: null
     method: null
     route: null
@@ -376,32 +748,45 @@ endpoints:
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
+      Content-Type: multipart/form-data
       Accept: application/json
     urlParameters:
       assignment:
         name: assignment
         description: ''
         required: true
-        example: suscipit
+        example: repellat
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      assignment: suscipit
+      assignment: repellat
     queryParameters: []
     cleanQueryParameters: []
-    bodyParameters: []
+    bodyParameters:
+      photos:
+        name: photos
+        description: 'Le champ value doit être une image.'
+        required: false
+        example:
+          - null
+        type: 'file[]'
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
     cleanBodyParameters: []
-    fileParameters: []
+    fileParameters:
+      photos:
+        - null
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 4VaPg6D3fd16ekcEba5hZv8'
+      - 'Bearer 6Ek3vgPb8ZcD1da5hfae6V4'
     controller: null
     method: null
     route: null
@@ -435,7 +820,7 @@ endpoints:
         name: assignment_id
         description: 'The <code>id</code> of an existing record in the assignments table.'
         required: true
-        example: sint
+        example: quam
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -445,7 +830,7 @@ endpoints:
         name: vehicle_id
         description: 'The <code>id</code> of an existing record in the vehicles table.'
         required: true
-        example: sit
+        example: voluptas
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -455,7 +840,7 @@ endpoints:
         name: expertise_date
         description: 'Must be a valid date in the format <code>Y-m-d</code>. Le champ value doit être une date antérieure au <code>tomorrow</code>.'
         required: true
-        example: '2021-01-28'
+        example: '2017-04-18'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -465,7 +850,7 @@ endpoints:
         name: instructions
         description: ''
         required: false
-        example: ex
+        example: eius
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -475,7 +860,7 @@ endpoints:
         name: market_incidence_rate
         description: ''
         required: false
-        example: 52230122.0
+        example: 5163739.3275
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -525,7 +910,7 @@ endpoints:
         name: seen_before_work_date
         description: 'Must be a valid date in the format <code>Y-m-d</code>.'
         required: false
-        example: '2025-11-11'
+        example: '2025-11-15'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -535,7 +920,7 @@ endpoints:
         name: seen_during_work_date
         description: 'Must be a valid date in the format <code>Y-m-d</code>.'
         required: false
-        example: '2025-11-11'
+        example: '2025-11-15'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -545,7 +930,7 @@ endpoints:
         name: seen_after_work_date
         description: 'Must be a valid date in the format <code>Y-m-d</code>.'
         required: false
-        example: '2025-11-11'
+        example: '2025-11-15'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -555,7 +940,7 @@ endpoints:
         name: contact_date
         description: 'Must be a valid date in the format <code>Y-m-d</code>.'
         required: false
-        example: '2025-11-11'
+        example: '2025-11-15'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -565,7 +950,7 @@ endpoints:
         name: expertise_place
         description: ''
         required: false
-        example: hic
+        example: autem
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -575,7 +960,7 @@ endpoints:
         name: assured_value
         description: ''
         required: false
-        example: 3.795902
+        example: 28054705.2077
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -585,7 +970,7 @@ endpoints:
         name: salvage_value
         description: ''
         required: false
-        example: 469.784
+        example: 716748939.0
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -595,7 +980,7 @@ endpoints:
         name: work_duration
         description: ''
         required: false
-        example: ratione
+        example: ipsam
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -605,7 +990,7 @@ endpoints:
         name: expert_remark
         description: ''
         required: false
-        example: praesentium
+        example: similique
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -615,7 +1000,7 @@ endpoints:
         name: new_market_value
         description: ''
         required: false
-        example: 4.6498
+        example: 0.73294442
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -625,7 +1010,7 @@ endpoints:
         name: vehicle_new_market_value
         description: ''
         required: false
-        example: 26594.096
+        example: 6330928.9
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -635,7 +1020,7 @@ endpoints:
         name: vehicle_new_market_value_option
         description: ''
         required: false
-        example: doloribus
+        example: qui
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -675,7 +1060,7 @@ endpoints:
         name: 'ascertainments[].ascertainment_type_id'
         description: 'The <code>id</code> of an existing record in the ascertainment_types table.'
         required: true
-        example: voluptatem
+        example: ullam
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -715,7 +1100,7 @@ endpoints:
         name: 'ascertainments[].less_good'
         description: ''
         required: true
-        example: false
+        example: true
         type: boolean
         enumValues: []
         exampleWasSpecified: false
@@ -725,7 +1110,7 @@ endpoints:
         name: 'ascertainments[].bad'
         description: ''
         required: true
-        example: true
+        example: false
         type: boolean
         enumValues: []
         exampleWasSpecified: false
@@ -745,7 +1130,7 @@ endpoints:
         name: 'ascertainments[].comment'
         description: ''
         required: false
-        example: minima
+        example: iure
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -755,7 +1140,7 @@ endpoints:
         name: 'shocks[].shock_point_id'
         description: 'The <code>id</code> of an existing record in the shock_points table.'
         required: true
-        example: nesciunt
+        example: odit
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -775,7 +1160,7 @@ endpoints:
         name: 'shocks[].shock_works[].supply_id'
         description: 'The <code>id</code> of an existing record in the supplies table.'
         required: true
-        example: odio
+        example: qui
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -785,7 +1170,7 @@ endpoints:
         name: 'shocks[].shock_works[].disassembly'
         description: ''
         required: true
-        example: true
+        example: false
         type: boolean
         enumValues: []
         exampleWasSpecified: false
@@ -795,7 +1180,7 @@ endpoints:
         name: 'shocks[].shock_works[].replacement'
         description: ''
         required: true
-        example: false
+        example: true
         type: boolean
         enumValues: []
         exampleWasSpecified: false
@@ -835,7 +1220,7 @@ endpoints:
         name: 'shocks[].shock_works[].comment'
         description: ''
         required: false
-        example: incidunt
+        example: in
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -845,7 +1230,7 @@ endpoints:
         name: 'shocks[].shock_works[].obsolescence_rate'
         description: 'La valeur de value doit être supérieure ou égale à 0. La valeur de value ne peut pas être supérieure à 100.'
         required: true
-        example: 6
+        example: 10
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -855,7 +1240,7 @@ endpoints:
         name: 'shocks[].shock_works[].recovery_amount'
         description: ''
         required: true
-        example: 16548839.485645
+        example: 6227.07185
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -865,7 +1250,7 @@ endpoints:
         name: 'shocks[].shock_works[].discount'
         description: 'La valeur de value doit être supérieure ou égale à 0. La valeur de value ne peut pas être supérieure à 100.'
         required: true
-        example: 24
+        example: 14
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -875,7 +1260,7 @@ endpoints:
         name: 'shocks[].shock_works[].amount'
         description: ''
         required: true
-        example: 82060084.44
+        example: 3842.55216495
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -885,7 +1270,7 @@ endpoints:
         name: 'shocks[].paint_type_id'
         description: 'The <code>id</code> of an existing record in the paint_types table.'
         required: true
-        example: facere
+        example: magnam
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -895,7 +1280,7 @@ endpoints:
         name: 'shocks[].hourly_rate_id'
         description: 'The <code>id</code> of an existing record in the hourly_rates table.'
         required: true
-        example: cumque
+        example: similique
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -905,7 +1290,7 @@ endpoints:
         name: 'shocks[].with_tax'
         description: ''
         required: true
-        example: false
+        example: true
         type: boolean
         enumValues: []
         exampleWasSpecified: false
@@ -925,7 +1310,7 @@ endpoints:
         name: 'shocks[].workforces[].workforce_type_id'
         description: 'The <code>id</code> of an existing record in the workforce_types table.'
         required: true
-        example: hic
+        example: aliquam
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -935,7 +1320,7 @@ endpoints:
         name: 'shocks[].workforces[].nb_hours'
         description: ''
         required: true
-        example: 65343182.648015
+        example: 57.008
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -945,7 +1330,7 @@ endpoints:
         name: 'shocks[].workforces[].discount'
         description: 'La valeur de value doit être supérieure ou égale à 0. La valeur de value ne peut pas être supérieure à 100.'
         required: true
-        example: 6
+        example: 20
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -965,7 +1350,7 @@ endpoints:
         name: 'other_costs[].other_cost_type_id'
         description: 'The <code>id</code> of an existing record in the other_cost_types table.'
         required: true
-        example: consequatur
+        example: sed
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -975,76 +1360,76 @@ endpoints:
         name: 'other_costs[].amount'
         description: ''
         required: true
-        example: 22.6844
+        example: 14862.4924
         type: number
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      assignment_id: sint
-      vehicle_id: sit
-      expertise_date: '2021-01-28'
-      instructions: ex
-      market_incidence_rate: 52230122.0
-      seen_before_work_date: '2025-11-11'
-      seen_during_work_date: '2025-11-11'
-      seen_after_work_date: '2025-11-11'
-      contact_date: '2025-11-11'
-      expertise_place: hic
-      assured_value: 3.795902
-      salvage_value: 469.784
-      work_duration: ratione
-      expert_remark: praesentium
-      new_market_value: 4.6498
-      vehicle_new_market_value: 26594.096
-      vehicle_new_market_value_option: doloribus
+      assignment_id: quam
+      vehicle_id: voluptas
+      expertise_date: '2017-04-18'
+      instructions: eius
+      market_incidence_rate: 5163739.3275
+      seen_before_work_date: '2025-11-15'
+      seen_during_work_date: '2025-11-15'
+      seen_after_work_date: '2025-11-15'
+      contact_date: '2025-11-15'
+      expertise_place: autem
+      assured_value: 28054705.2077
+      salvage_value: 716748939.0
+      work_duration: ipsam
+      expert_remark: similique
+      new_market_value: 0.73294442
+      vehicle_new_market_value: 6330928.9
+      vehicle_new_market_value_option: qui
       ascertainments:
         -
-          ascertainment_type_id: voluptatem
+          ascertainment_type_id: ullam
           very_good: true
           good: false
           acceptable: false
-          less_good: false
-          bad: true
+          less_good: true
+          bad: false
           very_bad: false
-          comment: minima
+          comment: iure
       shocks:
         -
-          shock_point_id: nesciunt
+          shock_point_id: odit
           shock_works:
             -
-              supply_id: odio
-              disassembly: true
-              replacement: false
+              supply_id: qui
+              disassembly: false
+              replacement: true
               repair: false
               paint: true
               control: true
-              comment: incidunt
-              obsolescence_rate: 6
-              recovery_amount: 16548839.485645
-              discount: 24
-              amount: 82060084.44
-          paint_type_id: facere
-          hourly_rate_id: cumque
-          with_tax: false
+              comment: in
+              obsolescence_rate: 10
+              recovery_amount: 6227.07185
+              discount: 14
+              amount: 3842.55216495
+          paint_type_id: magnam
+          hourly_rate_id: similique
+          with_tax: true
           workforces:
             -
-              workforce_type_id: hic
-              nb_hours: 65343182.648015
-              discount: 6
+              workforce_type_id: aliquam
+              nb_hours: 57.008
+              discount: 20
               all_paint: false
       other_costs:
         -
-          other_cost_type_id: consequatur
-          amount: 22.6844
+          other_cost_type_id: sed
+          amount: 14862.4924
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer D8dVakvPEc1b6Z5e4hf63ag'
+      - 'Bearer 6h8d5bZgke1aDacfP43vE6V'
     controller: null
     method: null
     route: null
@@ -1074,14 +1459,14 @@ endpoints:
         name: assignment
         description: ''
         required: true
-        example: nihil
+        example: autem
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      assignment: nihil
+      assignment: autem
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -1089,7 +1474,7 @@ endpoints:
         name: expertise_date
         description: 'Must be a valid date in the format <code>Y-m-d</code>.'
         required: false
-        example: '2025-11-11'
+        example: '2025-11-15'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1099,7 +1484,7 @@ endpoints:
         name: expertise_place
         description: ''
         required: false
-        example: exercitationem
+        example: sequi
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1109,7 +1494,7 @@ endpoints:
         name: point_noted
         description: ''
         required: false
-        example: quaerat
+        example: optio
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1119,7 +1504,7 @@ endpoints:
         name: directed_by
         description: 'The <code>id</code> of an existing record in the users table.'
         required: true
-        example: magni
+        example: omnis
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1136,17 +1521,17 @@ endpoints:
         nullable: true
         custom: []
     cleanBodyParameters:
-      expertise_date: '2025-11-11'
-      expertise_place: exercitationem
-      point_noted: quaerat
-      directed_by: magni
+      expertise_date: '2025-11-15'
+      expertise_place: sequi
+      point_noted: optio
+      directed_by: omnis
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer v86V3heag6DPfa45Z1bkEcd'
+      - 'Bearer 5E4De1b8cfVh3aaPg66vZdk'
     controller: null
     method: null
     route: null
@@ -1176,14 +1561,14 @@ endpoints:
         name: assignment
         description: ''
         required: true
-        example: dignissimos
+        example: ipsum
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      assignment: dignissimos
+      assignment: ipsum
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -1231,7 +1616,7 @@ endpoints:
         name: seen_before_work_date
         description: 'Must be a valid date in the format <code>Y-m-d</code>.'
         required: false
-        example: '2025-11-11'
+        example: '2025-11-15'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1241,7 +1626,7 @@ endpoints:
         name: seen_during_work_date
         description: 'Must be a valid date in the format <code>Y-m-d</code>.'
         required: false
-        example: '2025-11-11'
+        example: '2025-11-15'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1251,7 +1636,7 @@ endpoints:
         name: seen_after_work_date
         description: 'Must be a valid date in the format <code>Y-m-d</code>.'
         required: false
-        example: '2025-11-11'
+        example: '2025-11-15'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1261,7 +1646,7 @@ endpoints:
         name: contact_date
         description: 'Must be a valid date in the format <code>Y-m-d</code>.'
         required: false
-        example: '2025-11-11'
+        example: '2025-11-15'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1271,7 +1656,7 @@ endpoints:
         name: expertise_place
         description: ''
         required: false
-        example: qui
+        example: suscipit
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1281,7 +1666,7 @@ endpoints:
         name: assured_value
         description: ''
         required: false
-        example: 2.061
+        example: 481069657.23
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -1291,7 +1676,7 @@ endpoints:
         name: salvage_value
         description: ''
         required: false
-        example: 260292163.2
+        example: 15.9316
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -1301,7 +1686,7 @@ endpoints:
         name: work_duration
         description: ''
         required: false
-        example: porro
+        example: aut
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1321,7 +1706,7 @@ endpoints:
         name: expert_report_remark
         description: ''
         required: false
-        example: recusandae
+        example: dolor
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1331,7 +1716,7 @@ endpoints:
         name: vehicle_new_market_value_option
         description: ''
         required: false
-        example: aut
+        example: error
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1341,7 +1726,7 @@ endpoints:
         name: new_market_value
         description: ''
         required: false
-        example: 266413.0
+        example: 17484130.648769
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -1351,7 +1736,7 @@ endpoints:
         name: depreciation_rate
         description: 'La valeur de value doit être supérieure ou égale à 0. La valeur de value ne peut pas être supérieure à 100.'
         required: false
-        example: 15
+        example: 4
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -1361,7 +1746,7 @@ endpoints:
         name: market_value
         description: ''
         required: false
-        example: 70421.1
+        example: 78.5
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -1371,7 +1756,7 @@ endpoints:
         name: instructions
         description: ''
         required: false
-        example: aut
+        example: consequuntur
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1381,7 +1766,7 @@ endpoints:
         name: market_incidence_rate
         description: ''
         required: false
-        example: 72.618
+        example: 9240.59076622
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -1422,7 +1807,7 @@ endpoints:
         name: 'ascertainments[].ascertainment_type_id'
         description: 'The <code>id</code> of an existing record in the ascertainment_types table.'
         required: true
-        example: numquam
+        example: alias
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1472,7 +1857,7 @@ endpoints:
         name: 'ascertainments[].bad'
         description: ''
         required: true
-        example: true
+        example: false
         type: boolean
         enumValues: []
         exampleWasSpecified: false
@@ -1482,7 +1867,7 @@ endpoints:
         name: 'ascertainments[].very_bad'
         description: ''
         required: true
-        example: true
+        example: false
         type: boolean
         enumValues: []
         exampleWasSpecified: false
@@ -1492,7 +1877,7 @@ endpoints:
         name: 'ascertainments[].comment'
         description: ''
         required: false
-        example: commodi
+        example: ab
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1502,7 +1887,7 @@ endpoints:
         name: 'shocks[].shock_point_id'
         description: 'The <code>id</code> of an existing record in the shock_points table.'
         required: true
-        example: repellat
+        example: at
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1522,7 +1907,7 @@ endpoints:
         name: 'shocks[].shock_works[].supply_id'
         description: 'The <code>id</code> of an existing record in the supplies table.'
         required: true
-        example: labore
+        example: ullam
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1532,7 +1917,7 @@ endpoints:
         name: 'shocks[].shock_works[].disassembly'
         description: ''
         required: true
-        example: false
+        example: true
         type: boolean
         enumValues: []
         exampleWasSpecified: false
@@ -1552,7 +1937,7 @@ endpoints:
         name: 'shocks[].shock_works[].repair'
         description: ''
         required: true
-        example: false
+        example: true
         type: boolean
         enumValues: []
         exampleWasSpecified: false
@@ -1562,7 +1947,7 @@ endpoints:
         name: 'shocks[].shock_works[].paint'
         description: ''
         required: true
-        example: true
+        example: false
         type: boolean
         enumValues: []
         exampleWasSpecified: false
@@ -1572,7 +1957,7 @@ endpoints:
         name: 'shocks[].shock_works[].control'
         description: ''
         required: true
-        example: false
+        example: true
         type: boolean
         enumValues: []
         exampleWasSpecified: false
@@ -1592,7 +1977,7 @@ endpoints:
         name: 'shocks[].shock_works[].comment'
         description: ''
         required: false
-        example: voluptatem
+        example: quae
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1602,7 +1987,7 @@ endpoints:
         name: 'shocks[].shock_works[].obsolescence_rate'
         description: 'La valeur de value doit être supérieure ou égale à 0. La valeur de value ne peut pas être supérieure à 100.'
         required: true
-        example: 14
+        example: 24
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -1612,7 +1997,7 @@ endpoints:
         name: 'shocks[].shock_works[].recovery_amount'
         description: ''
         required: true
-        example: 232.8
+        example: 351204.38075
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -1622,7 +2007,7 @@ endpoints:
         name: 'shocks[].shock_works[].discount'
         description: 'La valeur de value doit être supérieure ou égale à 0. La valeur de value ne peut pas être supérieure à 100.'
         required: true
-        example: 20
+        example: 7
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -1632,7 +2017,7 @@ endpoints:
         name: 'shocks[].shock_works[].amount'
         description: ''
         required: true
-        example: 388.6
+        example: 3849.968913896
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -1642,7 +2027,7 @@ endpoints:
         name: 'shocks[].paint_type_id'
         description: 'The <code>id</code> of an existing record in the paint_types table.'
         required: true
-        example: quasi
+        example: sint
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1652,7 +2037,7 @@ endpoints:
         name: 'shocks[].hourly_rate_id'
         description: 'The <code>id</code> of an existing record in the hourly_rates table.'
         required: true
-        example: ipsum
+        example: nesciunt
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1682,7 +2067,7 @@ endpoints:
         name: 'shocks[].workforces[].workforce_type_id'
         description: 'The <code>id</code> of an existing record in the workforce_types table.'
         required: true
-        example: id
+        example: ut
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1692,7 +2077,7 @@ endpoints:
         name: 'shocks[].workforces[].nb_hours'
         description: ''
         required: true
-        example: 2728723.2615969
+        example: 174.099562383
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -1702,7 +2087,7 @@ endpoints:
         name: 'shocks[].workforces[].discount'
         description: 'La valeur de value doit être supérieure ou égale à 0. La valeur de value ne peut pas être supérieure à 100.'
         required: true
-        example: 12
+        example: 21
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -1722,7 +2107,7 @@ endpoints:
         name: 'other_costs[].other_cost_type_id'
         description: 'The <code>id</code> of an existing record in the other_cost_types table.'
         required: true
-        example: ipsam
+        example: tempora
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1732,75 +2117,75 @@ endpoints:
         name: 'other_costs[].amount'
         description: ''
         required: true
-        example: 68616.238170607
+        example: 661.0
         type: number
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      seen_before_work_date: '2025-11-11'
-      seen_during_work_date: '2025-11-11'
-      seen_after_work_date: '2025-11-11'
-      contact_date: '2025-11-11'
-      expertise_place: qui
-      assured_value: 2.061
-      salvage_value: 260292163.2
-      work_duration: porro
-      expert_report_remark: recusandae
-      vehicle_new_market_value_option: aut
-      new_market_value: 266413.0
-      depreciation_rate: 15
-      market_value: 70421.1
-      instructions: aut
-      market_incidence_rate: 72.618
+      seen_before_work_date: '2025-11-15'
+      seen_during_work_date: '2025-11-15'
+      seen_after_work_date: '2025-11-15'
+      contact_date: '2025-11-15'
+      expertise_place: suscipit
+      assured_value: 481069657.23
+      salvage_value: 15.9316
+      work_duration: aut
+      expert_report_remark: dolor
+      vehicle_new_market_value_option: error
+      new_market_value: 17484130.648769
+      depreciation_rate: 4
+      market_value: 78.5
+      instructions: consequuntur
+      market_incidence_rate: 9240.59076622
       shocks:
         -
-          shock_point_id: repellat
+          shock_point_id: at
           shock_works:
             -
-              supply_id: labore
-              disassembly: false
+              supply_id: ullam
+              disassembly: true
               replacement: false
-              repair: false
-              paint: true
-              control: false
+              repair: true
+              paint: false
+              control: true
               obsolescence: true
-              comment: voluptatem
-              obsolescence_rate: 14
-              recovery_amount: 232.8
-              discount: 20
-              amount: 388.6
-          paint_type_id: quasi
-          hourly_rate_id: ipsum
+              comment: quae
+              obsolescence_rate: 24
+              recovery_amount: 351204.38075
+              discount: 7
+              amount: 3849.968913896
+          paint_type_id: sint
+          hourly_rate_id: nesciunt
           with_tax: true
           workforces:
             -
-              workforce_type_id: id
-              nb_hours: 2728723.2615969
-              discount: 12
+              workforce_type_id: ut
+              nb_hours: 174.099562383
+              discount: 21
               all_paint: false
       ascertainments:
         -
-          ascertainment_type_id: numquam
+          ascertainment_type_id: alias
           very_good: true
           good: true
           acceptable: false
           less_good: true
-          bad: true
-          very_bad: true
-          comment: commodi
+          bad: false
+          very_bad: false
+          comment: ab
       other_costs:
         -
-          other_cost_type_id: ipsam
-          amount: 68616.238170607
+          other_cost_type_id: tempora
+          amount: 661.0
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 6aP65vE4V1aZDegb8kdhc3f'
+      - 'Bearer 6Z1dkfP8hva4gbD3VE6cea5'
     controller: null
     method: null
     route: null
@@ -1830,14 +2215,14 @@ endpoints:
         name: assignment
         description: ''
         required: true
-        example: maxime
+        example: laborum
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      assignment: maxime
+      assignment: laborum
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -1855,7 +2240,7 @@ endpoints:
         name: vehicle_id
         description: 'The <code>id</code> of an existing record in the vehicles table.'
         required: true
-        example: porro
+        example: provident
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1865,7 +2250,7 @@ endpoints:
         name: vehicle_mileage
         description: ''
         required: false
-        example: 1.528
+        example: 64959.46874302
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -1873,7 +2258,7 @@ endpoints:
         custom: []
       insurer_relationship_id:
         name: insurer_relationship_id
-        description: 'This field is required when <code>assignment_type_id</code> is <code>ass_eLgoNjw3jE0MB</code>. The <code>id</code> of an existing record in the insurer_relationships table.'
+        description: 'This field is required when <code>assignment_type_id</code> is <code>assignmenttype_eLgoNjw3jE0MB</code>. The <code>id</code> of an existing record in the insurer_relationships table.'
         required: false
         example: null
         type: string
@@ -1905,7 +2290,7 @@ endpoints:
         name: assignment_type_id
         description: 'The <code>id</code> of an existing record in the assignment_types table.'
         required: true
-        example: exercitationem
+        example: sit
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1915,7 +2300,7 @@ endpoints:
         name: expertise_type_id
         description: 'The <code>id</code> of an existing record in the expertise_types table.'
         required: true
-        example: expedita
+        example: nisi
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1935,7 +2320,7 @@ endpoints:
         name: policy_number
         description: ''
         required: false
-        example: quisquam
+        example: esse
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1945,7 +2330,7 @@ endpoints:
         name: claim_number
         description: ''
         required: false
-        example: praesentium
+        example: et
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1955,7 +2340,7 @@ endpoints:
         name: claim_date
         description: 'Must be a valid date in the format <code>Y-m-d</code>.'
         required: false
-        example: '2025-11-11'
+        example: '2025-11-15'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1965,7 +2350,7 @@ endpoints:
         name: claim_ends_at
         description: 'Must be a valid date in the format <code>Y-m-d</code>.'
         required: false
-        example: '2025-11-11'
+        example: '2025-11-15'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1975,7 +2360,7 @@ endpoints:
         name: expertise_date
         description: 'Must be a valid date in the format <code>Y-m-d</code>.'
         required: false
-        example: '2025-11-11'
+        example: '2025-11-15'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1985,7 +2370,7 @@ endpoints:
         name: expertise_place
         description: ''
         required: false
-        example: eius
+        example: et
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1995,7 +2380,7 @@ endpoints:
         name: received_at
         description: 'Must be a valid date in the format <code>Y-m-d</code>.'
         required: false
-        example: '2025-11-11'
+        example: '2025-11-15'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -2005,32 +2390,32 @@ endpoints:
         name: damage_declared
         description: ''
         required: false
-        example: ex
+        example: omnis
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      vehicle_id: porro
-      vehicle_mileage: 1.528
-      assignment_type_id: exercitationem
-      expertise_type_id: expedita
-      policy_number: quisquam
-      claim_number: praesentium
-      claim_date: '2025-11-11'
-      claim_ends_at: '2025-11-11'
-      expertise_date: '2025-11-11'
-      expertise_place: eius
-      received_at: '2025-11-11'
-      damage_declared: ex
+      vehicle_id: provident
+      vehicle_mileage: 64959.46874302
+      assignment_type_id: sit
+      expertise_type_id: nisi
+      policy_number: esse
+      claim_number: et
+      claim_date: '2025-11-15'
+      claim_ends_at: '2025-11-15'
+      expertise_date: '2025-11-15'
+      expertise_place: et
+      received_at: '2025-11-15'
+      damage_declared: omnis
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 456avb8EhckdDae6ZgV3Pf1'
+      - 'Bearer bghZV1fcaD5v636eEPd84ka'
     controller: null
     method: null
     route: null
@@ -2060,14 +2445,14 @@ endpoints:
         name: assignment
         description: ''
         required: true
-        example: voluptas
+        example: placeat
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      assignment: voluptas
+      assignment: placeat
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -2085,7 +2470,7 @@ endpoints:
         name: directed_by
         description: 'The <code>id</code> of an existing record in the users table.'
         required: true
-        example: molestiae
+        example: iste
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -2095,7 +2480,7 @@ endpoints:
         name: expertise_date
         description: 'Must be a valid date in the format <code>Y-m-d</code>.'
         required: false
-        example: '2025-11-11'
+        example: '2025-11-15'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -2105,7 +2490,7 @@ endpoints:
         name: expertise_place
         description: ''
         required: false
-        example: impedit
+        example: beatae
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -2115,24 +2500,24 @@ endpoints:
         name: point_noted
         description: ''
         required: false
-        example: animi
+        example: voluptatum
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      directed_by: molestiae
-      expertise_date: '2025-11-11'
-      expertise_place: impedit
-      point_noted: animi
+      directed_by: iste
+      expertise_date: '2025-11-15'
+      expertise_place: beatae
+      point_noted: voluptatum
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 5vEZkgh1DabP846de63Vcfa'
+      - 'Bearer af8Zd1Eav3e6kgbc6hDP5V4'
     controller: null
     method: null
     route: null
@@ -2162,14 +2547,14 @@ endpoints:
         name: assignment
         description: ''
         required: true
-        example: doloremque
+        example: vel
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      assignment: doloremque
+      assignment: vel
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -2217,7 +2602,7 @@ endpoints:
         name: seen_before_work_date
         description: 'Must be a valid date in the format <code>Y-m-d</code>.'
         required: false
-        example: '2025-11-11'
+        example: '2025-11-15'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -2227,7 +2612,7 @@ endpoints:
         name: seen_during_work_date
         description: 'Must be a valid date in the format <code>Y-m-d</code>.'
         required: false
-        example: '2025-11-11'
+        example: '2025-11-15'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -2237,7 +2622,7 @@ endpoints:
         name: seen_after_work_date
         description: 'Must be a valid date in the format <code>Y-m-d</code>.'
         required: false
-        example: '2025-11-11'
+        example: '2025-11-15'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -2247,7 +2632,7 @@ endpoints:
         name: contact_date
         description: 'Must be a valid date in the format <code>Y-m-d</code>.'
         required: false
-        example: '2025-11-11'
+        example: '2025-11-15'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -2257,7 +2642,7 @@ endpoints:
         name: expertise_place
         description: ''
         required: false
-        example: nesciunt
+        example: et
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -2267,7 +2652,7 @@ endpoints:
         name: assured_value
         description: ''
         required: false
-        example: 527.981018
+        example: 41568191.44
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -2277,7 +2662,7 @@ endpoints:
         name: salvage_value
         description: ''
         required: false
-        example: 787.9670285
+        example: 18.9845945
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -2287,7 +2672,7 @@ endpoints:
         name: work_duration
         description: ''
         required: false
-        example: maxime
+        example: et
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -2307,7 +2692,7 @@ endpoints:
         name: expert_report_remark
         description: ''
         required: false
-        example: et
+        example: optio
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -2317,7 +2702,7 @@ endpoints:
         name: vehicle_new_market_value_option
         description: ''
         required: false
-        example: cupiditate
+        example: doloremque
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -2327,7 +2712,7 @@ endpoints:
         name: new_market_value
         description: ''
         required: false
-        example: 195371.96460139
+        example: 21.246
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -2337,7 +2722,7 @@ endpoints:
         name: depreciation_rate
         description: 'La valeur de value doit être supérieure ou égale à 0. La valeur de value ne peut pas être supérieure à 100.'
         required: false
-        example: 7
+        example: 8
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -2347,7 +2732,7 @@ endpoints:
         name: market_value
         description: ''
         required: false
-        example: 3008831.05
+        example: 427.695381
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -2357,7 +2742,7 @@ endpoints:
         name: instructions
         description: ''
         required: false
-        example: consequatur
+        example: aut
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -2367,35 +2752,35 @@ endpoints:
         name: market_incidence_rate
         description: ''
         required: false
-        example: 1.74153
+        example: 33918.3267
         type: number
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      seen_before_work_date: '2025-11-11'
-      seen_during_work_date: '2025-11-11'
-      seen_after_work_date: '2025-11-11'
-      contact_date: '2025-11-11'
-      expertise_place: nesciunt
-      assured_value: 527.981018
-      salvage_value: 787.9670285
-      work_duration: maxime
-      expert_report_remark: et
-      vehicle_new_market_value_option: cupiditate
-      new_market_value: 195371.96460139
-      depreciation_rate: 7
-      market_value: 3008831.05
-      instructions: consequatur
-      market_incidence_rate: 1.74153
+      seen_before_work_date: '2025-11-15'
+      seen_during_work_date: '2025-11-15'
+      seen_after_work_date: '2025-11-15'
+      contact_date: '2025-11-15'
+      expertise_place: et
+      assured_value: 41568191.44
+      salvage_value: 18.9845945
+      work_duration: et
+      expert_report_remark: optio
+      vehicle_new_market_value_option: doloremque
+      new_market_value: 21.246
+      depreciation_rate: 8
+      market_value: 427.695381
+      instructions: aut
+      market_incidence_rate: 33918.3267
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer VbEg8d63eaDhkf4c6Z5Pav1'
+      - 'Bearer cbhdag8VZfP51Da3v4e6k6E'
     controller: null
     method: null
     route: null
@@ -2425,14 +2810,14 @@ endpoints:
         name: assignment
         description: ''
         required: true
-        example: eos
+        example: qui
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      assignment: eos
+      assignment: qui
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -2443,7 +2828,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6P5e8Zhk6bf4v1dVa3cEaDg'
+      - 'Bearer 4cV8fabD631Phdegv6Zk5aE'
     controller: null
     method: null
     route: null
@@ -2473,14 +2858,14 @@ endpoints:
         name: assignment
         description: ''
         required: true
-        example: laudantium
+        example: magni
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      assignment: laudantium
+      assignment: magni
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -2491,7 +2876,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6PdbgVZc431fa5Da8hevEk6'
+      - 'Bearer c1ekaba6v54DdgE638hfPZV'
     controller: null
     method: null
     route: null
@@ -2521,14 +2906,14 @@ endpoints:
         name: assignment
         description: ''
         required: true
-        example: autem
+        example: unde
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      assignment: autem
+      assignment: unde
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -2539,7 +2924,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 84hbZ6aDgVdkcfv6E5aP31e'
+      - 'Bearer a5ZdPkhEDca6g36bef84v1V'
     controller: null
     method: null
     route: null
@@ -2569,14 +2954,14 @@ endpoints:
         name: assignment
         description: ''
         required: true
-        example: quia
+        example: eveniet
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      assignment: quia
+      assignment: eveniet
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -2587,7 +2972,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer cavfE63516bZdeVhDag4k8P'
+      - 'Bearer PdVbk6agfh6EacD1e83v54Z'
     controller: null
     method: null
     route: null
@@ -2617,14 +3002,14 @@ endpoints:
         name: assignment
         description: ''
         required: true
-        example: dolorem
+        example: quasi
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      assignment: dolorem
+      assignment: quasi
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -2635,7 +3020,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer c8D3k465ea6EdP1hfZVabgv'
+      - 'Bearer 3gVdE54h6DkbP18vZ6fceaa'
     controller: null
     method: null
     route: null
@@ -2665,14 +3050,14 @@ endpoints:
         name: assignment
         description: ''
         required: true
-        example: temporibus
+        example: hic
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      assignment: temporibus
+      assignment: hic
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -2683,7 +3068,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 3bgDPZcv86VafEdk1ea6h54'
+      - 'Bearer 6dkP5aEcv6bD81e3afgZVh4'
     controller: null
     method: null
     route: null
@@ -2713,14 +3098,14 @@ endpoints:
         name: assignment
         description: ''
         required: true
-        example: adipisci
+        example: qui
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      assignment: adipisci
+      assignment: qui
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -2731,7 +3116,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Phg63kEva541DdfaVe8bcZ6'
+      - 'Bearer D4bV8ZPegaEdk53ahv166cf'
     controller: null
     method: null
     route: null
@@ -2761,14 +3146,14 @@ endpoints:
         name: assignment
         description: ''
         required: true
-        example: ut
+        example: cum
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      assignment: ut
+      assignment: cum
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -2779,7 +3164,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6cZP3Va54a8dkDhgEebf61v'
+      - 'Bearer 6c1bkdD3VZfvghaa5E4e8P6'
     controller: null
     method: null
     route: null
@@ -2809,14 +3194,14 @@ endpoints:
         name: id
         description: 'The ID of the assignment.'
         required: true
-        example: omnis
+        example: et
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: omnis
+      id: et
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -2836,7 +3221,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 4h3586ZcvE6efPagkaDb1Vd'
+      - 'Bearer gkZbV6EeP58D4d3avfc16ah'
     controller: null
     method: null
     route: null
@@ -2866,14 +3251,14 @@ endpoints:
         name: assignment
         description: 'The assignment.'
         required: true
-        example: ullam
+        example: explicabo
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      assignment: ullam
+      assignment: explicabo
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -2884,7 +3269,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer a3aeb6gf5h14DV6kvPEZdc8'
+      - 'Bearer g1cvZae6hDb6P54k3VdEaf8'
     controller: null
     method: null
     route: null
@@ -2914,14 +3299,14 @@ endpoints:
         name: assignment
         description: 'The assignment.'
         required: true
-        example: aliquid
+        example: omnis
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      assignment: aliquid
+      assignment: omnis
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -2932,7 +3317,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer gka56P4achdZ8v6bED1f3Ve'
+      - 'Bearer fecakZ8E6PVaDd6v3g415hb'
     controller: null
     method: null
     route: null
@@ -2962,14 +3347,14 @@ endpoints:
         name: assignment
         description: 'The assignment.'
         required: true
-        example: quod
+        example: rerum
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      assignment: quod
+      assignment: rerum
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -2980,7 +3365,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer aa8PDvE6V1hedg6Z3ck4fb5'
+      - 'Bearer 3h4E1Dfk68egb5adZaPvVc6'
     controller: null
     method: null
     route: null
@@ -3010,14 +3395,14 @@ endpoints:
         name: assignment
         description: 'The assignment.'
         required: true
-        example: incidunt
+        example: et
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      assignment: incidunt
+      assignment: et
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -3028,7 +3413,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer b3dk6gvVEZhaD4aPefc5861'
+      - 'Bearer 1Dk6ca5vPZb4VhdEgf8a3e6'
     controller: null
     method: null
     route: null
@@ -3058,14 +3443,14 @@ endpoints:
         name: assignment
         description: 'The assignment.'
         required: true
-        example: minima
+        example: dolorem
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      assignment: minima
+      assignment: dolorem
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -3076,7 +3461,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer c8D34ZkEd616fvagPea5hVb'
+      - 'Bearer a5dPv4Vhbk6ge13fca86ZDE'
     controller: null
     method: null
     route: null
@@ -3122,7 +3507,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Va54fvgE6eZDad31ck6hb8P'
+      - 'Bearer V5aa3bfkE1hg6ecZdD8v46P'
     controller: null
     method: null
     route: null
@@ -3168,7 +3553,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer f6DEaaZv5ec864b3kdghPV1'
+      - 'Bearer Pd854b31cveahk6aZE6DVgf'
     controller: null
     method: null
     route: null
@@ -3214,7 +3599,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer P563f6h81EbvdZD4kgeaacV'
+      - 'Bearer Dvkd18eV65f3g4hPcZbEa6a'
     controller: null
     method: null
     route: null
@@ -3246,7 +3631,7 @@ endpoints:
         name: start_date
         description: 'La date de début de la période.'
         required: false
-        example: voluptas
+        example: at
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -3256,15 +3641,15 @@ endpoints:
         name: end_date
         description: 'La date de fin de la période.'
         required: false
-        example: asperiores
+        example: sint
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanQueryParameters:
-      start_date: voluptas
-      end_date: asperiores
+      start_date: at
+      end_date: sint
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
@@ -3282,7 +3667,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 863k4EdaVPebDcZvh16f5ag'
+      - 'Bearer kEdceVh6b54avZ86Paf3D1g'
     controller: null
     method: null
     route: null

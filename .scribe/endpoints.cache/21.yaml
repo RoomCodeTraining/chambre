@@ -46,7 +46,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer aVbfP6dZ613vaEck8g54Dhe'
+      - 'Bearer f5PdZVk61bacD4gvEeh386a'
     controller: null
     method: null
     route: null
@@ -76,16 +76,6 @@ endpoints:
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      expert_firm_id:
-        name: expert_firm_id
-        description: 'The <code>id</code> of an existing record in the entities table.'
-        required: false
-        example: null
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: true
-        custom: []
       client_id:
         name: client_id
         description: 'The <code>id</code> of an existing record in the clients table.'
@@ -130,7 +120,7 @@ endpoints:
         name: policy_number
         description: ''
         required: false
-        example: beatae
+        example: voluptas
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -140,7 +130,7 @@ endpoints:
         name: claim_number
         description: ''
         required: false
-        example: reiciendis
+        example: beatae
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -150,7 +140,7 @@ endpoints:
         name: claim_date
         description: 'Must be a valid date in the format <code>Y-m-d</code>.'
         required: false
-        example: '2025-11-11'
+        example: '2025-11-15'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -160,7 +150,7 @@ endpoints:
         name: expertise_place
         description: ''
         required: false
-        example: recusandae
+        example: quisquam
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -178,10 +168,10 @@ endpoints:
         nullable: true
         custom: []
     cleanBodyParameters:
-      policy_number: beatae
-      claim_number: reiciendis
-      claim_date: '2025-11-11'
-      expertise_place: recusandae
+      policy_number: voluptas
+      claim_number: beatae
+      claim_date: '2025-11-15'
+      expertise_place: quisquam
     fileParameters:
       photos:
         - null
@@ -190,7 +180,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Pk6hDgbv1caaVdE56e4Z83f'
+      - 'Bearer 4afE5kgce81vhbPaZD66Vd3'
     controller: null
     method: null
     route: null
@@ -220,14 +210,14 @@ endpoints:
         name: assignment_request
         description: ''
         required: true
-        example: dicta
+        example: necessitatibus
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      assignment_request: dicta
+      assignment_request: necessitatibus
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -247,7 +237,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer gVhav1E36dacfDZ4k56Pb8e'
+      - 'Bearer gf6cbvEd5Vak86DZeha1P34'
     controller: null
     method: null
     route: null
@@ -277,14 +267,14 @@ endpoints:
         name: assignment_request
         description: ''
         required: true
-        example: iure
+        example: aperiam
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      assignment_request: iure
+      assignment_request: aperiam
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -295,7 +285,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer gvbP41Z6d3h68aVk5cEDefa'
+      - 'Bearer ehbPV46kgaaE53cf8D1Zv6d'
     controller: null
     method: null
     route: null
@@ -325,14 +315,14 @@ endpoints:
         name: assignment_request
         description: ''
         required: true
-        example: doloremque
+        example: voluptatem
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      assignment_request: doloremque
+      assignment_request: voluptatem
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -343,7 +333,103 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Vc6PD3bZf1ak86ag5eEvh4d'
+      - 'Bearer EPcZe58fDv1hab6gk6ad4V3'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/assignment-requests/{assignment_request}/reject'
+    metadata:
+      groupName: "Gestion des demandes d'expertise"
+      groupDescription: |-
+
+        APIs pour la gestion des demandes d'expertise
+      subgroup: ''
+      subgroupDescription: ''
+      title: "Rejeter la demande d'expertise"
+      description: ''
+      authenticated: true
+      deprecated: false
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      assignment_request:
+        name: assignment_request
+        description: ''
+        required: true
+        example: eveniet
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      assignment_request: eveniet
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer bE5g1d6eaVfhP83a4vkD6Zc'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/assignment-requests/{assignment_request}/cancel'
+    metadata:
+      groupName: "Gestion des demandes d'expertise"
+      groupDescription: |-
+
+        APIs pour la gestion des demandes d'expertise
+      subgroup: ''
+      subgroupDescription: ''
+      title: "Annuler la demande d'expertise"
+      description: ''
+      authenticated: true
+      deprecated: false
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      assignment_request:
+        name: assignment_request
+        description: ''
+        required: true
+        example: minus
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      assignment_request: minus
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer VZ3f6c4vda5abhPge6Dk81E'
     controller: null
     method: null
     route: null
@@ -373,14 +459,14 @@ endpoints:
         name: assignment_request
         description: ''
         required: true
-        example: aut
+        example: a
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      assignment_request: aut
+      assignment_request: a
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -404,7 +490,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer e8facv4a3gEk6d1hbZP6VD5'
+      - 'Bearer Vc86eb5DvhdfEZak631P4ag'
     controller: null
     method: null
     route: null
