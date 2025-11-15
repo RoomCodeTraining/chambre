@@ -2801,7 +2801,7 @@ class AssignmentController extends Controller
     {
         $assignment = Assignment::with('shocks:id,is_validated', 'shocks.shockWorks:id,is_validated', 'shocks.workforces:id,is_validated')->findOrFail(Assignment::keyFromHashId($id));
 
-        if($assignment->status_id == Status::where('code', StatusEnum::PENDING_FOR_REPAIRER_INVOICE)->first()->id && $assignment->status_id == Status::where('code', StatusEnum::PENDING_FOR_REPAIRER_INVOICE_VALIDATION)->first()->id){
+        if($assignment->status_id == Status::where('code', StatusEnum::PENDING_FOR_REPAIRER_INVOICE)->first()->id || $assignment->status_id == Status::where('code', StatusEnum::PENDING_FOR_REPAIRER_INVOICE_VALIDATION)->first()->id){
             $assignment->update([
                 'is_validated_by_expert' => 1,
                 'expert_validation_by' => auth()->user()->id,
