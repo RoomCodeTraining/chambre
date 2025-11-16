@@ -59,43 +59,45 @@ class PaymentController extends Controller
             $payments = $payments->where('payments.date', '<=', $end_date);
         }
 
-        $assignment_type_id = AssignmentType::keyFromHashId(request()->assignment_type_id) ?? null;
-        if($assignment_type_id){
-            $payments = $payments->where(function($query) use ($assignment_type_id){
-                $query->where(['assignments.assignment_type_id' => $assignment_type_id]);
-            });
+        $assignment_type_id = null;
+        if(request()->has('assignment_type_id')){
+            $assignment_type_id = AssignmentType::keyFromHashId(request()->assignment_type_id);
+            $payments = $payments->where('assignments.assignment_type_id', $assignment_type_id);
         }
 
-        $expertise_type_id = ExpertiseType::keyFromHashId(request()->expertise_type_id) ?? null;
-        if($expertise_type_id){
-            $payments = $payments->where(function($query) use ($expertise_type_id){
-                $query->where(['assignments.expertise_type_id' => $expertise_type_id]);
-            });
+        $expertise_type_id = null;
+        if(request()->has('expertise_type_id')){
+            $expertise_type_id = ExpertiseType::keyFromHashId(request()->expertise_type_id);
+            $payments = $payments->where('assignments.expertise_type_id', $expertise_type_id);
         }
 
-        $vehicle_id = Vehicle::keyFromHashId(request()->vehicle_id) ?? null;
-        if($vehicle_id){
-            $payments = $payments->where(function($query) use ($vehicle_id){
-                $query->where(['assignments.vehicle_id' => $vehicle_id]);
-            });
+        $vehicle_id = null;
+        if(request()->has('vehicle_id')){
+            $vehicle_id = Vehicle::keyFromHashId(request()->vehicle_id);
+            $payments = $payments->where('assignments.vehicle_id', $vehicle_id);
         }
 
-        $client_id = Client::keyFromHashId(request()->client_id) ?? null;
-        if($client_id){
-            $payments = $payments->where(function($query) use ($client_id){
-                $query->where(['assignments.client_id' => $client_id]);
-            });
+        $client_id = null;
+        if(request()->has('client_id')){
+            $client_id = Client::keyFromHashId(request()->client_id);
+            $payments = $payments->where('assignments.client_id', $client_id);
         }
 
-        $insurer_id = Entity::keyFromHashId(request()->insurer_id) ?? null;
-        if($insurer_id){
-            $payments = $payments->where(function($query) use ($insurer_id){
-                $query->where(['assignments.insurer_id' => $insurer_id]);
-            });
+        $insurer_id = null;
+        if(request()->has('insurer_id')){
+            $insurer_id = Entity::keyFromHashId(request()->insurer_id);
+            $payments = $payments->where('assignments.insurer_id', $insurer_id);
         }
 
-        $status_id = Status::where('code', request()->status_code)->first()->id ?? null;
-        if($status_id){
+        $repairer_id = null;
+        if(request()->has('repairer_id')){
+            $repairer_id = Entity::keyFromHashId(request()->repairer_id);
+            $payments = $payments->where('assignments.repairer_id', $repairer_id);
+        }
+
+        $status_id = null;
+        if(request()->has('status_code')){
+            $status_id = Status::where('code', request()->status_code)->first()->id;
             $payments = $payments->where('status_id', $status_id);
         }
 
@@ -247,39 +249,40 @@ class PaymentController extends Controller
             $payments_by_year_and_month_count = $payments_by_year_and_month_count->where('payments.date', '<=', $end_date);
         }
 
-        $assignment_type_id = AssignmentType::keyFromHashId(request()->assignment_type_id) ?? null;
-        if($assignment_type_id){
-            $payments_by_year_and_month_count = $payments_by_year_and_month_count->where(function($query) use ($assignment_type_id){
-                $query->where(['assignments.assignment_type_id' => $assignment_type_id]);
-            });
+        $assignment_type_id = null;
+        if(request()->has('assignment_type_id')){
+            $assignment_type_id = AssignmentType::keyFromHashId(request()->assignment_type_id);
+            $payments_by_year_and_month_count = $payments_by_year_and_month_count->where('assignments.assignment_type_id', $assignment_type_id);
         }
 
-        $expertise_type_id = ExpertiseType::keyFromHashId(request()->expertise_type_id) ?? null;
-        if($expertise_type_id){
-            $payments_by_year_and_month_count = $payments_by_year_and_month_count->where(function($query) use ($expertise_type_id){
-                $query->where(['assignments.expertise_type_id' => $expertise_type_id]);
-            });
+        $expertise_type_id = null;
+        if(request()->has('expertise_type_id')){
+            $expertise_type_id = ExpertiseType::keyFromHashId(request()->expertise_type_id);
+            $payments_by_year_and_month_count = $payments_by_year_and_month_count->where('assignments.expertise_type_id', $expertise_type_id);
         }
 
-        $vehicle_id = Vehicle::keyFromHashId(request()->vehicle_id) ?? null;
-        if($vehicle_id){
-            $payments_by_year_and_month_count = $payments_by_year_and_month_count->where(function($query) use ($vehicle_id){
-                $query->where(['assignments.vehicle_id' => $vehicle_id]);
-            });
+        $vehicle_id = null;
+        if(request()->has('vehicle_id')){
+            $vehicle_id = Vehicle::keyFromHashId(request()->vehicle_id);
+            $payments_by_year_and_month_count = $payments_by_year_and_month_count->where('assignments.vehicle_id', $vehicle_id);
         }
 
-        $client_id = Client::keyFromHashId(request()->client_id) ?? null;
-        if($client_id){
-            $payments_by_year_and_month_count = $payments_by_year_and_month_count->where(function($query) use ($client_id){
-                $query->where(['assignments.client_id' => $client_id]);
-            });
+        $insurer_id = null;
+        if(request()->has('insurer_id')){
+            $insurer_id = Entity::keyFromHashId(request()->insurer_id);
+            $payments_by_year_and_month_count = $payments_by_year_and_month_count->where('assignments.insurer_id', $insurer_id);
         }
 
-        $insurer_id = Entity::keyFromHashId(request()->insurer_id) ?? null;
-        if($insurer_id){
-            $payments_by_year_and_month_count = $payments_by_year_and_month_count->where(function($query) use ($insurer_id){
-                $query->where(['assignments.insurer_id' => $insurer_id]);
-            });
+        $client_id = null;
+        if(request()->has('client_id')){
+            $client_id = Client::keyFromHashId(request()->client_id);
+            $payments_by_year_and_month_count = $payments_by_year_and_month_count->where('assignments.client_id', $client_id);
+        }
+
+        $repairer_id = null;
+        if(request()->has('repairer_id')){
+            $repairer_id = Entity::keyFromHashId(request()->repairer_id);
+            $payments_by_year_and_month_count = $payments_by_year_and_month_count->where('assignments.repairer_id', $repairer_id);
         }
 
         $payments_by_year_and_month_count = $payments_by_year_and_month_count
@@ -300,39 +303,40 @@ class PaymentController extends Controller
             $payments_by_year_and_month_amount = $payments_by_year_and_month_amount->where('payments.date', '<=', $end_date);
         }
 
-        $assignment_type_id = AssignmentType::keyFromHashId(request()->assignment_type_id) ?? null;
-        if($assignment_type_id){
-            $payments_by_year_and_month_amount = $payments_by_year_and_month_amount->where(function($query) use ($assignment_type_id){
-                $query->where(['assignments.assignment_type_id' => $assignment_type_id]);
-            });
+        $assignment_type_id = null;
+        if(request()->has('assignment_type_id')){
+            $assignment_type_id = AssignmentType::keyFromHashId(request()->assignment_type_id);
+            $payments_by_year_and_month_amount = $payments_by_year_and_month_amount->where('assignments.assignment_type_id', $assignment_type_id);
         }
 
-        $expertise_type_id = ExpertiseType::keyFromHashId(request()->expertise_type_id) ?? null;
-        if($expertise_type_id){
-            $payments_by_year_and_month_amount = $payments_by_year_and_month_amount->where(function($query) use ($expertise_type_id){
-                $query->where(['assignments.expertise_type_id' => $expertise_type_id]);
-            });
+        $expertise_type_id = null;
+        if(request()->has('expertise_type_id')){
+            $expertise_type_id = ExpertiseType::keyFromHashId(request()->expertise_type_id);
+            $payments_by_year_and_month_amount = $payments_by_year_and_month_amount->where('assignments.expertise_type_id', $expertise_type_id);
         }
 
-        $vehicle_id = Vehicle::keyFromHashId(request()->vehicle_id) ?? null;
-        if($vehicle_id){
-            $payments_by_year_and_month_amount = $payments_by_year_and_month_amount->where(function($query) use ($vehicle_id){
-                $query->where(['assignments.vehicle_id' => $vehicle_id]);
-            });
+        $vehicle_id = null;
+        if(request()->has('vehicle_id')){
+            $vehicle_id = Vehicle::keyFromHashId(request()->vehicle_id);
+            $payments_by_year_and_month_amount = $payments_by_year_and_month_amount->where('assignments.vehicle_id', $vehicle_id);
         }
 
-        $client_id = Client::keyFromHashId(request()->client_id) ?? null;
-        if($client_id){
-            $payments_by_year_and_month_amount = $payments_by_year_and_month_amount->where(function($query) use ($client_id){
-                $query->where(['assignments.client_id' => $client_id]);
-            });
+        $insurer_id = null;
+        if(request()->has('insurer_id')){
+            $insurer_id = Entity::keyFromHashId(request()->insurer_id);
+            $payments_by_year_and_month_amount = $payments_by_year_and_month_amount->where('assignments.insurer_id', $insurer_id);
+        }   
+
+        $client_id = null;
+        if(request()->has('client_id')){
+            $client_id = Client::keyFromHashId(request()->client_id);
+            $payments_by_year_and_month_amount = $payments_by_year_and_month_amount->where('assignments.client_id', $client_id);
         }
 
-        $insurer_id = Entity::keyFromHashId(request()->insurer_id) ?? null;
-        if($insurer_id){
-            $payments_by_year_and_month_amount = $payments_by_year_and_month_amount->where(function($query) use ($insurer_id){
-                $query->where(['assignments.insurer_id' => $insurer_id]);
-            });
+        $repairer_id = null;
+        if(request()->has('repairer_id')){
+            $repairer_id = Entity::keyFromHashId(request()->repairer_id);
+            $payments_by_year_and_month_amount = $payments_by_year_and_month_amount->where('assignments.repairer_id', $repairer_id);
         }
 
         $payments_by_year_and_month_amount = $payments_by_year_and_month_amount
