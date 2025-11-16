@@ -142,79 +142,79 @@ class AssignmentController extends Controller
             $assignments = $assignments->where('status_id', $status_id);
         }
 
-        if(request()->has('assignment_type_id')){
+        if(request()->filled('assignment_type_id')){
             $assignments = $assignments->where('assignment_type_id', AssignmentType::keyFromHashId(request()->assignment_type_id));
         }
 
-        if(request()->has('expertise_type_id')){
+        if(request()->filled('expertise_type_id')){
             $assignments = $assignments->where('expertise_type_id', ExpertiseType::keyFromHashId(request()->expertise_type_id));
         }
 
-        if(request()->has('created_by')){
+        if(request()->filled('created_by')){
             $assignments = $assignments->where('created_by', User::keyFromHashId(request()->created_by));
         }
 
-        if(request()->has('edited_by')){
+        if(request()->filled('edited_by')){
             $assignments = $assignments->where('edited_by', User::keyFromHashId(request()->edited_by));
         }
 
-        if(request()->has('directed_by')){
+        if(request()->filled('directed_by')){
             $assignments = $assignments->where('directed_by', User::keyFromHashId(request()->directed_by));
         }
 
-        if(request()->has('realized_by')){
+        if(request()->filled('realized_by')){
             $assignments = $assignments->where('realized_by', User::keyFromHashId(request()->realized_by));
         }
 
-        if(request()->has('validated_by')){
+        if(request()->filled('validated_by')){
             $assignments = $assignments->where('validated_by', User::keyFromHashId(request()->validated_by));
         }
 
-        if(request()->has('status_id')){
+        if(request()->filled('status_id')){
             $assignments = $assignments->where('status_id', Status::keyFromHashId(request()->status_id));
         }
 
-        if(request()->has('vehicle_id')){
+        if(request()->filled('vehicle_id')){
             $assignments = $assignments->where('vehicle_id', Vehicle::keyFromHashId(request()->vehicle_id));
         }
 
-        if(request()->has('insurer_id')){
+        if(request()->filled('insurer_id')){
             $assignments = $assignments->where('insurer_id', Entity::keyFromHashId(request()->insurer_id));
         }
 
-        if(request()->has('repairer_id')){
+        if(request()->filled('repairer_id')){
             $assignments = $assignments->where('repairer_id', Entity::keyFromHashId(request()->repairer_id));
         }
 
-        if(request()->has('client_id')){
+        if(request()->filled('client_id')){
             $assignments = $assignments->where('client_id', Client::keyFromHashId(request()->client_id));
         }
 
-        if(request()->has('claim_nature_id')){
+        if(request()->filled('claim_nature_id')){
             $assignments = $assignments->where('claim_nature_id', ClaimNature::keyFromHashId(request()->claim_nature_id));
         }
 
-        if(request()->has('work_sheet_established_by')){
+        if(request()->filled('work_sheet_established_by')){
             $assignments = $assignments->where('work_sheet_established_by', User::keyFromHashId(request()->work_sheet_established_by));
         }
 
-        if(request()->has('repairer_validation_by')){
+        if(request()->filled('repairer_validation_by')){
             $assignments = $assignments->where('repairer_validation_by', User::keyFromHashId(request()->repairer_validation_by));
         }
 
-        if(request()->has('expert_validation_by')){
+        if(request()->filled('expert_validation_by')){
             $assignments = $assignments->where('expert_validation_by', User::keyFromHashId(request()->expert_validation_by));
         }
 
-        if(request()->has('cancelled_by')){
+        if(request()->filled('cancelled_by')){
             $assignments = $assignments->where('cancelled_by', User::keyFromHashId(request()->cancelled_by));
         }
 
-        if(request()->has('closed_by')){
+        if(request()->filled('closed_by')){
             $assignments = $assignments->where('closed_by', User::keyFromHashId(request()->closed_by));
         }
 
-        if(request()->has('deleted_by')){
+        if(request()->filled('deleted_by')){
             $assignments = $assignments->where('deleted_by', User::keyFromHashId(request()->deleted_by));
         }
 
@@ -286,79 +286,79 @@ class AssignmentController extends Controller
             $assignments = $assignments->where('status_id', $status_id);
         }
 
-        if(request()->has('assignment_type_id')){
+        if(request()->filled('assignment_type_id')){
             $assignments = $assignments->where('assignment_type_id', AssignmentType::keyFromHashId(request()->assignment_type_id));
         }
 
-        if(request()->has('expertise_type_id')){
+        if(request()->filled('expertise_type_id')){
             $assignments = $assignments->where('expertise_type_id', ExpertiseType::keyFromHashId(request()->expertise_type_id));
         }
 
-        if(request()->has('created_by')){
+        if(request()->filled('created_by')){
             $assignments = $assignments->where('created_by', User::keyFromHashId(request()->created_by));
         }
 
-        if(request()->has('edited_by')){
+        if(request()->filled('edited_by')){
             $assignments = $assignments->where('edited_by', User::keyFromHashId(request()->edited_by));
         }
 
-        if(request()->has('directed_by')){
+        if(request()->filled('directed_by')){
             $assignments = $assignments->where('directed_by', User::keyFromHashId(request()->directed_by));
         }
 
-        if(request()->has('realized_by')){
+        if(request()->filled('realized_by')){
             $assignments = $assignments->where('realized_by', User::keyFromHashId(request()->realized_by));
         }
 
-        if(request()->has('validated_by')){
+        if(request()->filled('validated_by')){
             $assignments = $assignments->where('validated_by', User::keyFromHashId(request()->validated_by));
         }
 
-        if(request()->has('status_id')){
+        if(request()->filled('status_id')){
             $assignments = $assignments->where('status_id', Status::keyFromHashId(request()->status_id));
         }
 
-        if(request()->has('vehicle_id')){
+        if(request()->filled('vehicle_id')){
             $assignments = $assignments->where('vehicle_id', Vehicle::keyFromHashId(request()->vehicle_id));
         }
 
-        if(request()->has('insurer_id')){
+        if(request()->filled('insurer_id')){
             $assignments = $assignments->where('insurer_id', Entity::keyFromHashId(request()->insurer_id));
         }
 
-        if(request()->has('repairer_id')){
+        if(request()->filled('repairer_id')){
             $assignments = $assignments->where('repairer_id', Entity::keyFromHashId(request()->repairer_id));
         }
 
-        if(request()->has('client_id')){
+        if(request()->filled('client_id')){
             $assignments = $assignments->where('client_id', Client::keyFromHashId(request()->client_id));
         }
 
-        if(request()->has('claim_nature_id')){
+        if(request()->filled('claim_nature_id')){
             $assignments = $assignments->where('claim_nature_id', ClaimNature::keyFromHashId(request()->claim_nature_id));
         }
 
-        if(request()->has('work_sheet_established_by')){
+        if(request()->filled('work_sheet_established_by')){
             $assignments = $assignments->where('work_sheet_established_by', User::keyFromHashId(request()->work_sheet_established_by));
         }
 
-        if(request()->has('repairer_validation_by')){
+        if(request()->filled('repairer_validation_by')){
             $assignments = $assignments->where('repairer_validation_by', User::keyFromHashId(request()->repairer_validation_by));
         }
 
-        if(request()->has('expert_validation_by')){
+        if(request()->filled('expert_validation_by')){
             $assignments = $assignments->where('expert_validation_by', User::keyFromHashId(request()->expert_validation_by));
         }
 
-        if(request()->has('cancelled_by')){
+        if(request()->filled('cancelled_by')){
             $assignments = $assignments->where('cancelled_by', User::keyFromHashId(request()->cancelled_by));
         }
 
-        if(request()->has('closed_by')){
+        if(request()->filled('closed_by')){
             $assignments = $assignments->where('closed_by', User::keyFromHashId(request()->closed_by));
         }
 
-        if(request()->has('deleted_by')){
+        if(request()->filled('deleted_by')){
             $assignments = $assignments->where('deleted_by', User::keyFromHashId(request()->deleted_by));
         }
 
@@ -432,79 +432,79 @@ class AssignmentController extends Controller
             $assignments = $assignments->where('status_id', $status_id);
         }
 
-        if(request()->has('assignment_type_id')){
+        if(request()->filled('assignment_type_id')){
             $assignments = $assignments->where('assignment_type_id', User::keyFromHashId(request()->assignment_type_id));
         }
 
-        if(request()->has('expertise_type_id')){
+        if(request()->filled('expertise_type_id')){
             $assignments = $assignments->where('expertise_type_id', ExpertiseType::keyFromHashId(request()->expertise_type_id));
         }
 
-        if(request()->has('created_by')){
+        if(request()->filled('created_by')){
             $assignments = $assignments->where('created_by', User::keyFromHashId(request()->created_by));
         }
 
-        if(request()->has('edited_by')){
+        if(request()->filled('edited_by')){
             $assignments = $assignments->where('edited_by', User::keyFromHashId(request()->edited_by));
         }
 
-        if(request()->has('directed_by')){
+        if(request()->filled('directed_by')){
             $assignments = $assignments->where('directed_by', User::keyFromHashId(request()->directed_by));
         }
 
-        if(request()->has('realized_by')){
+        if(request()->filled('realized_by')){
             $assignments = $assignments->where('realized_by', User::keyFromHashId(request()->realized_by));
         }
 
-        if(request()->has('validated_by')){
+        if(request()->filled('validated_by')){
             $assignments = $assignments->where('validated_by', User::keyFromHashId(request()->validated_by));
         }
 
-        if(request()->has('status_id')){
+        if(request()->filled('status_id')){
             $assignments = $assignments->where('status_id', Status::keyFromHashId(request()->status_id));
         }
 
-        if(request()->has('vehicle_id')){
+        if(request()->filled('vehicle_id')){
             $assignments = $assignments->where('vehicle_id', Vehicle::keyFromHashId(request()->vehicle_id));
         }
 
-        if(request()->has('insurer_id')){
+        if(request()->filled('insurer_id')){
             $assignments = $assignments->where('insurer_id', Entity::keyFromHashId(request()->insurer_id));
         }
 
-        if(request()->has('repairer_id')){
+        if(request()->filled('repairer_id')){
             $assignments = $assignments->where('repairer_id', Entity::keyFromHashId(request()->repairer_id));
         }
 
-        if(request()->has('client_id')){
+        if(request()->filled('client_id')){
             $assignments = $assignments->where('client_id', Client::keyFromHashId(request()->client_id));
         }
 
-        if(request()->has('claim_nature_id')){
+        if(request()->filled('claim_nature_id')){
             $assignments = $assignments->where('claim_nature_id', ClaimNature::keyFromHashId(request()->claim_nature_id));
         }
 
-        if(request()->has('work_sheet_established_by')){
+        if(request()->filled('work_sheet_established_by')){
             $assignments = $assignments->where('work_sheet_established_by', User::keyFromHashId(request()->work_sheet_established_by));
         }
 
-        if(request()->has('repairer_validation_by')){
+        if(request()->filled('repairer_validation_by')){
             $assignments = $assignments->where('repairer_validation_by', User::keyFromHashId(request()->repairer_validation_by));
         }
 
-        if(request()->has('expert_validation_by')){
+        if(request()->filled('expert_validation_by')){
             $assignments = $assignments->where('expert_validation_by', User::keyFromHashId(request()->expert_validation_by));
         }
 
-        if(request()->has('cancelled_by')){
+        if(request()->filled('cancelled_by')){
             $assignments = $assignments->where('cancelled_by', User::keyFromHashId(request()->cancelled_by));
         }
 
-        if(request()->has('closed_by')){
+        if(request()->filled('closed_by')){
             $assignments = $assignments->where('closed_by', User::keyFromHashId(request()->closed_by));
         }
 
-        if(request()->has('deleted_by')){
+        if(request()->filled('deleted_by')){
             $assignments = $assignments->where('deleted_by', User::keyFromHashId(request()->deleted_by));
         }
 
@@ -555,79 +555,79 @@ class AssignmentController extends Controller
             $assignments = $assignments->where('status_id', $status_id);
         }
 
-        if(request()->has('assignment_type_id')){
+        if(request()->filled('assignment_type_id')){
             $assignments = $assignments->where('assignment_type_id', User::keyFromHashId(request()->assignment_type_id));
         }
 
-        if(request()->has('expertise_type_id')){
+        if(request()->filled('expertise_type_id')){
             $assignments = $assignments->where('expertise_type_id', ExpertiseType::keyFromHashId(request()->expertise_type_id));
         }
 
-        if(request()->has('created_by')){
+        if(request()->filled('created_by')){
             $assignments = $assignments->where('created_by', User::keyFromHashId(request()->created_by));
         }
 
-        if(request()->has('edited_by')){
+        if(request()->filled('edited_by')){
             $assignments = $assignments->where('edited_by', User::keyFromHashId(request()->edited_by));
         }
 
-        if(request()->has('directed_by')){
+        if(request()->filled('directed_by')){
             $assignments = $assignments->where('directed_by', User::keyFromHashId(request()->directed_by));
         }
 
-        if(request()->has('realized_by')){
+        if(request()->filled('realized_by')){
             $assignments = $assignments->where('realized_by', User::keyFromHashId(request()->realized_by));
         }
 
-        if(request()->has('validated_by')){
+        if(request()->filled('validated_by')){
             $assignments = $assignments->where('validated_by', User::keyFromHashId(request()->validated_by));
         }
 
-        if(request()->has('status_id')){
+        if(request()->filled('status_id')){
             $assignments = $assignments->where('status_id', Status::keyFromHashId(request()->status_id));
         }
 
-        if(request()->has('vehicle_id')){
+        if(request()->filled('vehicle_id')){
             $assignments = $assignments->where('vehicle_id', Vehicle::keyFromHashId(request()->vehicle_id));
         }
 
-        if(request()->has('insurer_id')){
+        if(request()->filled('insurer_id')){
             $assignments = $assignments->where('insurer_id', Entity::keyFromHashId(request()->insurer_id));
         }
 
-        if(request()->has('repairer_id')){
+        if(request()->filled('repairer_id')){
             $assignments = $assignments->where('repairer_id', Entity::keyFromHashId(request()->repairer_id));
         }
 
-        if(request()->has('client_id')){
+        if(request()->filled('client_id')){
             $assignments = $assignments->where('client_id', Client::keyFromHashId(request()->client_id));
         }
 
-        if(request()->has('claim_nature_id')){
+        if(request()->filled('claim_nature_id')){
             $assignments = $assignments->where('claim_nature_id', ClaimNature::keyFromHashId(request()->claim_nature_id));
         }
 
-        if(request()->has('work_sheet_established_by')){
+        if(request()->filled('work_sheet_established_by')){
             $assignments = $assignments->where('work_sheet_established_by', User::keyFromHashId(request()->work_sheet_established_by));
         }
 
-        if(request()->has('repairer_validation_by')){
+        if(request()->filled('repairer_validation_by')){
             $assignments = $assignments->where('repairer_validation_by', User::keyFromHashId(request()->repairer_validation_by));
         }
 
-        if(request()->has('expert_validation_by')){
+        if(request()->filled('expert_validation_by')){
             $assignments = $assignments->where('expert_validation_by', User::keyFromHashId(request()->expert_validation_by));
         }
 
-        if(request()->has('cancelled_by')){
+        if(request()->filled('cancelled_by')){
             $assignments = $assignments->where('cancelled_by', User::keyFromHashId(request()->cancelled_by));
         }
 
-        if(request()->has('closed_by')){
+        if(request()->filled('closed_by')){
             $assignments = $assignments->where('closed_by', User::keyFromHashId(request()->closed_by));
         }
 
-        if(request()->has('deleted_by')){
+        if(request()->filled('deleted_by')){
             $assignments = $assignments->where('deleted_by', User::keyFromHashId(request()->deleted_by));
         }
 
@@ -715,87 +715,87 @@ class AssignmentController extends Controller
             $assignments_by_year_and_month_count = $assignments_by_year_and_month_count->where('assignments.created_at', '<=', $end_date);
         }
 
-        if(request()->has('assignment_type_id')){
+        if(request()->filled('assignment_type_id')){
             $assignments_by_year_and_month_count = $assignments_by_year_and_month_count->where('assignments.assignment_type_id', AssignmentType::keyFromHashId(request()->assignment_type_id));
         }
 
-        if(request()->has('expertise_type_id')){
+        if(request()->filled('expertise_type_id')){
             $assignments_by_year_and_month_count = $assignments_by_year_and_month_count->where('assignments.expertise_type_id', ExpertiseType::keyFromHashId(request()->expertise_type_id));
         }
 
-        if(request()->has('created_by')){
+        if(request()->filled('created_by')){
             $assignments_by_year_and_month_count = $assignments_by_year_and_month_count->where('assignments.created_by', User::keyFromHashId(request()->created_by));
         }
 
-        if(request()->has('edited_by')){
+        if(request()->filled('edited_by')){
             $assignments_by_year_and_month_count = $assignments_by_year_and_month_count->where('assignments.edited_by', User::keyFromHashId(request()->edited_by));
         }
 
-        if(request()->has('directed_by')){
+        if(request()->filled('directed_by')){
             $assignments = $assignments->where('directed_by', User::keyFromHashId(request()->directed_by));
         }
 
-        if(request()->has('realized_by')){
+        if(request()->filled('realized_by')){
             $assignments_by_year_and_month_count = $assignments_by_year_and_month_count->where('assignments.realized_by', User::keyFromHashId(request()->realized_by));
         }
 
-        if(request()->has('validated_by')){
+        if(request()->filled('validated_by')){
             $assignments_by_year_and_month_count = $assignments_by_year_and_month_count->where('assignments.validated_by', User::keyFromHashId(request()->validated_by));
         }
 
-        if(request()->has('status_id')){
+        if(request()->filled('status_id')){
             $assignments_by_year_and_month_count = $assignments_by_year_and_month_count->where('assignments.status_id', Status::keyFromHashId(request()->status_id));
         }
 
-        if(request()->has('vehicle_id')){
+        if(request()->filled('vehicle_id')){
             $assignments_by_year_and_month_count = $assignments_by_year_and_month_count->where('assignments.vehicle_id', Vehicle::keyFromHashId(request()->vehicle_id));
         }
 
-        if(request()->has('insurer_id')){
+        if(request()->filled('insurer_id')){
             $assignments_by_year_and_month_count = $assignments_by_year_and_month_count->where('assignments.insurer_id', Entity::keyFromHashId(request()->insurer_id));
         }
 
-        if(request()->has('repairer_id')){
+        if(request()->filled('repairer_id')){
             $assignments_by_year_and_month_count = $assignments_by_year_and_month_count->where('assignments.repairer_id', Entity::keyFromHashId(request()->repairer_id));
         }
 
-        if(request()->has('client_id')){
+        if(request()->filled('client_id')){
             $assignments_by_year_and_month_count = $assignments_by_year_and_month_count->where('assignments.client_id', Client::keyFromHashId(request()->client_id));
         }
 
-        if(request()->has('claim_nature_id')){
+        if(request()->filled('claim_nature_id')){
             $assignments_by_year_and_month_count = $assignments_by_year_and_month_count->where('assignments.claim_nature_id', ClaimNature::keyFromHashId(request()->claim_nature_id));
         }
 
-        if(request()->has('work_sheet_established_by')){
+        if(request()->filled('work_sheet_established_by')){
             $assignments_by_year_and_month_count = $assignments_by_year_and_month_count->where('assignments.work_sheet_established_by', User::keyFromHashId(request()->work_sheet_established_by));
         }
 
-        if(request()->has('repairer_validation_by')){
+        if(request()->filled('repairer_validation_by')){
             $assignments_by_year_and_month_count = $assignments_by_year_and_month_count->where('assignments.repairer_validation_by', User::keyFromHashId(request()->repairer_validation_by));
         }
 
-        if(request()->has('expert_validation_by')){
+        if(request()->filled('expert_validation_by')){
             $assignments_by_year_and_month_count = $assignments_by_year_and_month_count->where('assignments.expert_validation_by', User::keyFromHashId(request()->expert_validation_by));
         }
 
-        if(request()->has('cancelled_by')){
+        if(request()->filled('cancelled_by')){
             $assignments_by_year_and_month_count = $assignments_by_year_and_month_count->where('assignments.cancelled_by', User::keyFromHashId(request()->cancelled_by));
         }
 
-        if(request()->has('closed_by')){
+        if(request()->filled('closed_by')){
             $assignments_by_year_and_month_count = $assignments_by_year_and_month_count->where('assignments.closed_by', User::keyFromHashId(request()->closed_by));
         }
 
-        if(request()->has('deleted_by')){
+        if(request()->filled('deleted_by')){
             $assignments_by_year_and_month_count = $assignments_by_year_and_month_count->where('assignments.deleted_by', User::keyFromHashId(request()->deleted_by));
         }
 
-        if (request()->has('opened_by')) {
+        if (request()->filled('opened_by')) {
             $assignments_by_year_and_month_count = $assignments_by_year_and_month_count->where('assignments.created_by', User::keyFromHashId(request()->opened_by));
         }
 
-        if (request()->has('status_id')) {
+        if (request()->filled('status_id')) {
             $assignments_by_year_and_month_count = $assignments_by_year_and_month_count->where('assignments.status_id', Status::keyFromHashId(request()->status_id));
         }
         
@@ -824,87 +824,87 @@ class AssignmentController extends Controller
             $assignments_by_year_and_month_amount = $assignments_by_year_and_month_amount->where('assignments.created_at', '<=', $end_date);
         }
 
-        if(request()->has('assignment_type_id')){
+        if(request()->filled('assignment_type_id')){
             $assignments_by_year_and_month_amount = $assignments_by_year_and_month_amount->where('assignments.assignment_type_id', AssignmentType::keyFromHashId(request()->assignment_type_id));
         }
 
-        if(request()->has('expertise_type_id')){
+        if(request()->filled('expertise_type_id')){
             $assignments_by_year_and_month_amount = $assignments_by_year_and_month_amount->where('assignments.expertise_type_id', ExpertiseType::keyFromHashId(request()->expertise_type_id));
         }
 
-        if(request()->has('created_by')){
+        if(request()->filled('created_by')){
             $assignments_by_year_and_month_amount = $assignments_by_year_and_month_amount->where('assignments.created_by', User::keyFromHashId(request()->created_by));
         }
 
-        if(request()->has('edited_by')){
+        if(request()->filled('edited_by')){
             $assignments_by_year_and_month_amount = $assignments_by_year_and_month_amount->where('assignments.edited_by', User::keyFromHashId(request()->edited_by));
         }
 
-        if(request()->has('directed_by')){
+        if(request()->filled('directed_by')){
             $assignments_by_year_and_month_amount = $assignments_by_year_and_month_amount->where('assignments.directed_by', User::keyFromHashId(request()->directed_by));
         }
 
-        if(request()->has('realized_by')){
+        if(request()->filled('realized_by')){
             $assignments_by_year_and_month_amount = $assignments_by_year_and_month_amount->where('assignments.realized_by', User::keyFromHashId(request()->realized_by));
         }
 
-        if(request()->has('validated_by')){
+        if(request()->filled('validated_by')){
             $assignments_by_year_and_month_amount = $assignments_by_year_and_month_amount->where('assignments.validated_by', User::keyFromHashId(request()->validated_by));
         }
 
-        if(request()->has('status_id')){
+        if(request()->filled('status_id')){
             $assignments_by_year_and_month_amount = $assignments_by_year_and_month_amount->where('assignments.status_id', Status::keyFromHashId(request()->status_id));
         }
 
-        if(request()->has('vehicle_id')){
+        if(request()->filled('vehicle_id')){
             $assignments_by_year_and_month_amount = $assignments_by_year_and_month_amount->where('assignments.vehicle_id', Vehicle::keyFromHashId(request()->vehicle_id));
         }
 
-        if(request()->has('insurer_id')){
+        if(request()->filled('insurer_id')){
             $assignments_by_year_and_month_amount = $assignments_by_year_and_month_amount->where('assignments.insurer_id', Entity::keyFromHashId(request()->insurer_id));
         }
 
-        if(request()->has('repairer_id')){
+        if(request()->filled('repairer_id')){
             $assignments_by_year_and_month_amount = $assignments_by_year_and_month_amount->where('assignments.repairer_id', Entity::keyFromHashId(request()->repairer_id));
         }
 
-        if(request()->has('client_id')){
+        if(request()->filled('client_id')){
             $assignments_by_year_and_month_amount = $assignments_by_year_and_month_amount->where('assignments.client_id', Client::keyFromHashId(request()->client_id));
         }
 
-        if(request()->has('claim_nature_id')){
+        if(request()->filled('claim_nature_id')){
             $assignments_by_year_and_month_amount = $assignments_by_year_and_month_amount->where('assignments.claim_nature_id', ClaimNature::keyFromHashId(request()->claim_nature_id));
         }
 
-        if(request()->has('work_sheet_established_by')){
+        if(request()->filled('work_sheet_established_by')){
             $assignments_by_year_and_month_amount = $assignments_by_year_and_month_amount->where('assignments.work_sheet_established_by', User::keyFromHashId(request()->work_sheet_established_by));
         }
 
-        if(request()->has('repairer_validation_by')){
+        if(request()->filled('repairer_validation_by')){
             $assignments_by_year_and_month_amount = $assignments_by_year_and_month_amount->where('assignments.repairer_validation_by', User::keyFromHashId(request()->repairer_validation_by));
         }
 
-        if(request()->has('expert_validation_by')){
+        if(request()->filled('expert_validation_by')){
             $assignments_by_year_and_month_amount = $assignments_by_year_and_month_amount->where('assignments.expert_validation_by', User::keyFromHashId(request()->expert_validation_by));
         }
 
-        if(request()->has('cancelled_by')){
+        if(request()->filled('cancelled_by')){
             $assignments_by_year_and_month_amount = $assignments_by_year_and_month_amount->where('assignments.cancelled_by', User::keyFromHashId(request()->cancelled_by));
         }
 
-        if(request()->has('closed_by')){
+        if(request()->filled('closed_by')){
             $assignments_by_year_and_month_amount = $assignments_by_year_and_month_amount->where('assignments.closed_by', User::keyFromHashId(request()->closed_by));
         }
 
-        if(request()->has('deleted_by')){
+        if(request()->filled('deleted_by')){
             $assignments_by_year_and_month_amount = $assignments_by_year_and_month_amount->where('assignments.deleted_by', User::keyFromHashId(request()->deleted_by));
         }
 
-        if(request()->has('opened_by')){
+        if(request()->filled('opened_by')){
             $assignments_by_year_and_month_amount = $assignments_by_year_and_month_amount->where('assignments.created_by', User::keyFromHashId(request()->opened_by));
         }
 
-        if(request()->has('status_id')){
+        if(request()->filled('status_id')){
             $assignments_by_year_and_month_amount = $assignments_by_year_and_month_amount->where('assignments.status_id', Status::keyFromHashId(request()->status_id));
         }
 
