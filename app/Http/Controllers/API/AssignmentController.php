@@ -2101,14 +2101,20 @@ class AssignmentController extends Controller
             );
         }
 
-        $shocks = $request->get('shocks');
+        $shocks = $request->input('shocks');
 
         if(count($shocks) > 0){
             $shockPosition = 1;
             foreach ($shocks as $data) {
+                // Vérifier si shock_point_id est déjà déchiffré (entier) ou encore un hashId (chaîne)
+                $shockPointId = $data['shock_point_id'] ?? null;
+                if ($shockPointId && !is_numeric($shockPointId)) {
+                    $shockPointId = ShockPoint::keyFromHashId($shockPointId);
+                }
+
                 $shock = Shock::create([
                     'assignment_id' => $assignment->id,
-                    'shock_point_id' => ShockPoint::keyFromHashId($data['shock_point_id']),
+                    'shock_point_id' => $shockPointId,
                     'paint_type_id' => PaintType::where('code', PaintTypeEnum::ORDINARY)->first()->id,
                     'hourly_rate_id' => HourlyRate::where('value', HourlyRateEnum::ONE)->first()->id,
                     'with_tax' => 0,
@@ -2119,12 +2125,18 @@ class AssignmentController extends Controller
                     'updated_by' => auth()->user()->id,
                 ]);
 
-                if(count($data['works']) > 0){
+                if(count($data['works'] ?? []) > 0){
                     $shockWorkPosition = 1;
                     foreach ($data['works'] as $item) {
+                        // Vérifier si supply_id est déjà déchiffré (entier) ou encore un hashId (chaîne)
+                        $supplyId = $item['supply_id'] ?? null;
+                        if ($supplyId && !is_numeric($supplyId)) {
+                            $supplyId = Supply::keyFromHashId($supplyId);
+                        }
+
                         $shockWork = ShockWork::create([
                             'shock_id' => $shock->id,
-                            'supply_id' => $item['designation_id'],
+                            'supply_id' => $supplyId,
                             'disassembly' => $item['disassembly'],
                             'replacement' => $item['replacement'],
                             'repair' => $item['repair'],

@@ -25,17 +25,15 @@ class CreateAssignmentWorkSheetRequest extends FormRequest
             $shocks = [];
             foreach ($this->shocks as $shock) {
                 $shock['shock_point_id'] = isset($shock['shock_point_id']) && $shock['shock_point_id'] ? ShockPoint::keyFromHashId($shock['shock_point_id']) : null;
-                $shock['paint_type_id'] = isset($shock['paint_type_id']) && $shock['paint_type_id'] ? PaintType::keyFromHashId($shock['paint_type_id']) : null;
-                $shock['hourly_rate_id'] = isset($shock['hourly_rate_id']) && $shock['hourly_rate_id'] ? HourlyRate::keyFromHashId($shock['hourly_rate_id']) : null;
                 
-                $shock_works = [];
-                if (isset($shock['shock_works']) && is_array($shock['shock_works'])) {
-                    foreach ($shock['shock_works'] as $shock_work) {
-                        $shock_work['supply_id'] = isset($shock_work['supply_id']) && $shock_work['supply_id'] ? Supply::keyFromHashId($shock_work['supply_id']) : null;
-                        $shock_works[] = $shock_work;
+                $works = [];
+                if (isset($shock['works']) && is_array($shock['works'])) {
+                    foreach ($shock['works'] as $work) {
+                        $work['supply_id'] = isset($work['supply_id']) && $work['supply_id'] ? Supply::keyFromHashId($work['supply_id']) : null;
+                        $works[] = $work;
                     }
                 }
-                $shock['shock_works'] = $shock_works;
+                $shock['works'] = $works;
 
                 $workforces = [];
                 if (isset($shock['workforces']) && is_array($shock['workforces'])) {
