@@ -60,43 +60,43 @@ class PaymentController extends Controller
         }
 
         $assignment_type_id = null;
-        if(request()->has('assignment_type_id')){
+        if(request()->filled('assignment_type_id')){
             $assignment_type_id = AssignmentType::keyFromHashId(request()->assignment_type_id);
             $payments = $payments->where('assignments.assignment_type_id', $assignment_type_id);
         }
 
         $expertise_type_id = null;
-        if(request()->has('expertise_type_id')){
+        if(request()->filled('expertise_type_id')){
             $expertise_type_id = ExpertiseType::keyFromHashId(request()->expertise_type_id);
             $payments = $payments->where('assignments.expertise_type_id', $expertise_type_id);
         }
 
         $vehicle_id = null;
-        if(request()->has('vehicle_id')){
+        if(request()->filled('vehicle_id')){
             $vehicle_id = Vehicle::keyFromHashId(request()->vehicle_id);
             $payments = $payments->where('assignments.vehicle_id', $vehicle_id);
         }
 
         $client_id = null;
-        if(request()->has('client_id')){
+        if(request()->filled('client_id')){
             $client_id = Client::keyFromHashId(request()->client_id);
             $payments = $payments->where('assignments.client_id', $client_id);
         }
 
         $insurer_id = null;
-        if(request()->has('insurer_id')){
+        if(request()->filled('insurer_id')){
             $insurer_id = Entity::keyFromHashId(request()->insurer_id);
             $payments = $payments->where('assignments.insurer_id', $insurer_id);
         }
 
         $repairer_id = null;
-        if(request()->has('repairer_id')){
+        if(request()->filled('repairer_id')){
             $repairer_id = Entity::keyFromHashId(request()->repairer_id);
             $payments = $payments->where('assignments.repairer_id', $repairer_id);
         }
 
         $status_id = null;
-        if(request()->has('status_code')){
+        if(request()->filled('status_code')){
             $status_id = Status::where('code', request()->status_code)->first()->id;
             $payments = $payments->where('status_id', $status_id);
         }
@@ -250,39 +250,45 @@ class PaymentController extends Controller
         }
 
         $assignment_type_id = null;
-        if(request()->has('assignment_type_id')){
+        if(request()->filled('assignment_type_id')){
             $assignment_type_id = AssignmentType::keyFromHashId(request()->assignment_type_id);
             $payments_by_year_and_month_count = $payments_by_year_and_month_count->where('assignments.assignment_type_id', $assignment_type_id);
         }
 
         $expertise_type_id = null;
-        if(request()->has('expertise_type_id')){
+        if(request()->filled('expertise_type_id')){
             $expertise_type_id = ExpertiseType::keyFromHashId(request()->expertise_type_id);
             $payments_by_year_and_month_count = $payments_by_year_and_month_count->where('assignments.expertise_type_id', $expertise_type_id);
         }
 
         $vehicle_id = null;
-        if(request()->has('vehicle_id')){
+        if(request()->filled('vehicle_id')){
             $vehicle_id = Vehicle::keyFromHashId(request()->vehicle_id);
             $payments_by_year_and_month_count = $payments_by_year_and_month_count->where('assignments.vehicle_id', $vehicle_id);
         }
 
         $insurer_id = null;
-        if(request()->has('insurer_id')){
+        if(request()->filled('insurer_id')){
             $insurer_id = Entity::keyFromHashId(request()->insurer_id);
             $payments_by_year_and_month_count = $payments_by_year_and_month_count->where('assignments.insurer_id', $insurer_id);
         }
 
         $client_id = null;
-        if(request()->has('client_id')){
+        if(request()->filled('client_id')){
             $client_id = Client::keyFromHashId(request()->client_id);
             $payments_by_year_and_month_count = $payments_by_year_and_month_count->where('assignments.client_id', $client_id);
         }
 
         $repairer_id = null;
-        if(request()->has('repairer_id')){
+        if(request()->filled('repairer_id')){
             $repairer_id = Entity::keyFromHashId(request()->repairer_id);
             $payments_by_year_and_month_count = $payments_by_year_and_month_count->where('assignments.repairer_id', $repairer_id);
+        }
+
+        $status_id = null;
+        if(request()->filled('status_code')){
+            $status_id = Status::where('code', request()->status_code)->first()->id;
+            $payments_by_year_and_month_count = $payments_by_year_and_month_count->where('status_id', $status_id);
         }
 
         $payments_by_year_and_month_count = $payments_by_year_and_month_count
@@ -304,39 +310,45 @@ class PaymentController extends Controller
         }
 
         $assignment_type_id = null;
-        if(request()->has('assignment_type_id')){
+        if(request()->filled('assignment_type_id')){
             $assignment_type_id = AssignmentType::keyFromHashId(request()->assignment_type_id);
             $payments_by_year_and_month_amount = $payments_by_year_and_month_amount->where('assignments.assignment_type_id', $assignment_type_id);
         }
 
         $expertise_type_id = null;
-        if(request()->has('expertise_type_id')){
+        if(request()->filled('expertise_type_id')){
             $expertise_type_id = ExpertiseType::keyFromHashId(request()->expertise_type_id);
             $payments_by_year_and_month_amount = $payments_by_year_and_month_amount->where('assignments.expertise_type_id', $expertise_type_id);
         }
 
         $vehicle_id = null;
-        if(request()->has('vehicle_id')){
+        if(request()->filled('vehicle_id')){
             $vehicle_id = Vehicle::keyFromHashId(request()->vehicle_id);
             $payments_by_year_and_month_amount = $payments_by_year_and_month_amount->where('assignments.vehicle_id', $vehicle_id);
         }
 
         $insurer_id = null;
-        if(request()->has('insurer_id')){
+        if(request()->filled('insurer_id')){
             $insurer_id = Entity::keyFromHashId(request()->insurer_id);
             $payments_by_year_and_month_amount = $payments_by_year_and_month_amount->where('assignments.insurer_id', $insurer_id);
         }   
 
         $client_id = null;
-        if(request()->has('client_id')){
+        if(request()->filled('client_id')){
             $client_id = Client::keyFromHashId(request()->client_id);
             $payments_by_year_and_month_amount = $payments_by_year_and_month_amount->where('assignments.client_id', $client_id);
         }
 
         $repairer_id = null;
-        if(request()->has('repairer_id')){
+        if(request()->filled('repairer_id')){
             $repairer_id = Entity::keyFromHashId(request()->repairer_id);
             $payments_by_year_and_month_amount = $payments_by_year_and_month_amount->where('assignments.repairer_id', $repairer_id);
+        }
+
+        $status_id = null;
+        if(request()->filled('status_code')){
+            $status_id = Status::where('code', request()->status_code)->first()->id;
+            $payments_by_year_and_month_amount = $payments_by_year_and_month_amount->where('status_id', $status_id);
         }
 
         $payments_by_year_and_month_amount = $payments_by_year_and_month_amount
