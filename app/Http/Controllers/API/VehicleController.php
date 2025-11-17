@@ -36,6 +36,7 @@ class VehicleController extends Controller
     public function index(): AnonymousResourceCollection
     {
         $vehicles = Vehicle::with('brand', 'vehicleModel', 'vehicleGenre', 'vehicleEnergy', 'color', 'bodywork')
+                            ->accessibleBy(auth()->user())
                             ->latest('created_at')
                             ->useFilters()
                             ->dynamicPaginate();
@@ -65,10 +66,20 @@ class VehicleController extends Controller
                 ->first();  
 
             if($request->vehicle_mileage){
-                $vehicle = Vehicle::where('id',$request->vehicle_id)->first();
                 $vehicle->mileage = $request->vehicle_mileage;
-                $vehicle->save();
             }
+
+            $relationships = json_decode($vehicle->relationships ?? '[]', true);
+            if (!is_array($relationships)) {
+                $relationships = [];
+            }
+
+            if (!in_array(auth()->user()->entity_id, $relationships)) {
+                $relationships[] = auth()->user()->entity_id;
+            }
+
+            $vehicle->relationships = json_encode($relationships);
+            $vehicle->save();
 
         } else {
             $vehicleModel = VehicleModel::where('id', $request->vehicle_model_id)->first();
@@ -91,6 +102,7 @@ class VehicleController extends Controller
                 'fiscal_power' => $request->fiscal_power ?? 0,
                 'payload' => $request->payload ?? 0,
                 'nb_seats' => $request->nb_seats ?? 0,
+                'relationships' => json_encode([auth()->user()->entity_id]),
                 'status_id' => Status::where('code', StatusEnum::ACTIVE)->first()->id,
                 'created_by' => auth()->user()->id,
                 'updated_by' => auth()->user()->id,
@@ -107,7 +119,7 @@ class VehicleController extends Controller
      */
     public function show($id): JsonResponse
     {
-        $vehicle = Vehicle::findOrFail(Vehicle::keyFromHashId($id));
+        $vehicle = Vehicle::accessibleBy(auth()->user())->findOrFail(Vehicle::keyFromHashId($id));
 
         return $this->responseSuccess(null, new VehicleResource($vehicle->load('brand', 'vehicleModel', 'vehicleGenre', 'vehicleEnergy', 'color', 'bodywork')));
     }
@@ -119,7 +131,7 @@ class VehicleController extends Controller
      */
     public function update(UpdateVehicleRequest $request, $id): JsonResponse
     {
-        $vehicle = Vehicle::findOrFail(Vehicle::keyFromHashId($id));
+        $vehicle = Vehicle::accessibleBy(auth()->user())->findOrFail(Vehicle::keyFromHashId($id));
         $vehicleModel = VehicleModel::where('id', $request->vehicle_model_id)->first();
         $vehicle->update([
             'brand_id' => $vehicleModel->brand_id ?? null,
@@ -152,7 +164,7 @@ class VehicleController extends Controller
      */
     public function destroy($id): JsonResponse
     {
-        $vehicle = Vehicle::findOrFail(Vehicle::keyFromHashId($id));
+        $vehicle = Vehicle::accessibleBy(auth()->user())->findOrFail(Vehicle::keyFromHashId($id));
 
         // $vehicle->delete();
 

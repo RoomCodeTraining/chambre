@@ -13,7 +13,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
-
+use App\Builders\Vehicle\VehicleBuilder;
 class Vehicle extends Model
 {
     use Filterable;
@@ -125,5 +125,10 @@ class Vehicle extends Model
     public function deletedBy(): BelongsTo
     {
         return $this->belongsTo(User::class, 'deleted_by');
+    }
+
+    public function newEloquentBuilder($query): VehicleBuilder
+    {
+        return new VehicleBuilder($query);
     }
 }
