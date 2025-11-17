@@ -1554,9 +1554,9 @@ class AssignmentController extends Controller
     {
         $assignment = Assignment::findOrFail(Assignment::keyFromHashId($id));
 
-        if($assignment->status_id != Status::where('code', StatusEnum::OPENED)->first()->id){
-            return $this->responseUnprocessable("Le dossier n'est pas encore ouvert, veuillez l'ouvrir avant de le réaliser.", null);
-        }
+        // if($assignment->status_id != Status::where('code', StatusEnum::OPENED)->first()->id){
+        //     return $this->responseUnprocessable("Le dossier n'est pas encore ouvert, veuillez l'ouvrir avant de le réaliser.", null);
+        // }
 
         $repairer_relationship = RepairerRelationship::findOrFail($request->repairer_relationship_id);
 
@@ -2344,16 +2344,17 @@ class AssignmentController extends Controller
         }
 
         $auth_user = User::with('currentRole')->where('id', auth()->user()->id)->first();
+
+        $expert_firm = Entity::find(InsurerRelationship::where('id', $request->insurer_relationship_id)->first()?->expert_firm_id);
+        $insurer = Entity::find(InsurerRelationship::where('id', $request->insurer_relationship_id)->first()?->insurer_id);
+        $additional_insurer = Entity::find(InsurerRelationship::where('id', $request->additional_insurer_relationship_id)->first()?->insurer_id);
+        $repairer = Entity::find(RepairerRelationship::where('id', $request->repairer_relationship_id)->first()?->repairer_id);
+
+        $vehicle_id = $request->vehicle_id;
+        $assignment_type_id = $request->assignment_type_id;
+        $expertise_type_id = $request->expertise_type_id;
         
         if($auth_user->currentRole->name == RoleEnum::SYSTEM_ADMIN->value || $auth_user->currentRole->name == RoleEnum::ADMIN->value || $auth_user->currentRole->name == RoleEnum::EXPERT_MANAGER->value || $auth_user->currentRole->name == RoleEnum::VALIDATOR->value || $auth_user->currentRole->name == RoleEnum::CEO->value){
-            $expert_firm = Entity::find(InsurerRelationship::where('id', $request->insurer_relationship_id)->first()?->expert_firm_id);
-            $insurer = Entity::find(InsurerRelationship::where('id', $request->insurer_relationship_id)->first()?->insurer_id);
-            $additional_insurer = Entity::find(InsurerRelationship::where('id', $request->additional_insurer_relationship_id)->first()?->insurer_id);
-            $repairer = Entity::find(RepairerRelationship::where('id', $request->repairer_relationship_id)->first()?->repairer_id);
-
-            $vehicle_id = $request->vehicle_id;
-            $assignment_type_id = $request->assignment_type_id;
-            $expertise_type_id = $request->expertise_type_id;
 
             if($request->assignment_type_id != $assignment->assignment_type_id || $insurer->id != $assignment->insurer_id){
 
