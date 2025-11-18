@@ -36,7 +36,7 @@ class VehicleController extends Controller
     public function index(): AnonymousResourceCollection
     {
         $vehicles = Vehicle::with('brand', 'vehicleModel', 'vehicleGenre', 'vehicleEnergy', 'color', 'bodywork')
-                            ->accessibleBy(auth()->user())
+                            // ->accessibleBy(auth()->user())
                             ->latest('created_at')
                             ->useFilters()
                             ->dynamicPaginate();
