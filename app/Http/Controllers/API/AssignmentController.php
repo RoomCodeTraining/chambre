@@ -2168,7 +2168,7 @@ class AssignmentController extends Controller
 
         $assignment->update([
             'repairer_id' => $repairer ? $repairer->id : $assignment->repairer_id,
-            'client_id' => $client ? $client->id : $assignment->client_id,,
+            'client_id' => $client ? $client->id : $assignment->client_id,
             'vehicle_id' => $request->vehicle_id ?? $assignment->vehicle_id,
             'vehicle_mileage' => $request->vehicle_mileage ?? $assignment->vehicle_mileage,
             'policy_number' => $request->policy_number ?? $assignment->policy_number,
