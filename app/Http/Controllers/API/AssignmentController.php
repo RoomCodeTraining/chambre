@@ -2088,6 +2088,7 @@ class AssignmentController extends Controller
                 'email' => strtolower($request->client_email),
                 'updated_by' => auth()->user()->id,
             ]);
+            $client = Client::where('id', $request->client_id)->first();
         } else {
             $client = Client::create(
                 [
