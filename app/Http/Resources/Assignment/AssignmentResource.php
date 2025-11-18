@@ -128,7 +128,7 @@ class AssignmentResource extends JsonResource
             'general_state' => new GeneralStateResource($this->whenLoaded('generalState')),
             'work_sheet_remark' => new GeneralStateResource($this->whenLoaded('workSheetRemark')),
             'report_remark' => new GeneralStateResource($this->whenLoaded('reportRemark')),
-            'shocks' => ShockResource::collection($this->whenLoaded('shocks')),
+            // 'shocks' => ShockResource::collection($this->whenLoaded('shocks')),
             'other_costs' => OtherCostResource::collection($this->whenLoaded('otherCosts')),
             'receipts' => ReceiptResource::collection($this->whenLoaded('receipts')),
             'ascertainments' => AscertainmentResource::collection($this->whenLoaded('ascertainments')),
