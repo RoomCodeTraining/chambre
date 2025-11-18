@@ -172,7 +172,6 @@ class AssignmentResource extends JsonResource
             'realized_at' => dateTimeFormat($this->realized_at),
             'reference_updated_at' => dateTimeFormat($this->reference_updated_at),
             'work_sheet_established_at' => dateTimeFormat($this->work_sheet_established_at),
-            'cancelled_at' => dateTimeFormat($this->cancelled_at),
             'edition_time_expire_at' => $this->created_at ? dateTimeFormat($this->created_at->addHours(24)) : null,
             'edition_status' => $this->status ? $this->status->id == Status::where('code', StatusEnum::OPENED)->first()->id || $this->status->id == Status::where('code', StatusEnum::REALIZED)->first()->id || $this->status->id == Status::where('code', StatusEnum::EDITED)->first()->id ? $edition : "done" : null,
             'edition_per_cent' => ceil($edition_per_cent),
