@@ -389,7 +389,6 @@ class ShockWorkController extends Controller
             || $shockWork->amount != $request->amount
             || $shockWork->obsolescence_rate != $obsolescence_rate
             || $shockWork->discount != $discount
-            || $shockWork->obsolescence_rate != $obsolescence_rate
             || $shockWork->obsolescence_amount != $obsolescence_amount
             || $shockWork->discount_amount != $discount_amount
             || $shockWork->recovery_amount != $recovery_amount
