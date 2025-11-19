@@ -13,6 +13,7 @@ use App\Models\ShockWork;
 use App\Models\Workforce;
 use App\Models\Assignment;
 use Illuminate\Http\Request;
+use App\Enums\EntityTypeEnum;
 use App\Models\ExpertiseType;
 use App\Models\WorkforceType;
 use App\Models\AssignmentType;
