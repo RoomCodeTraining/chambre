@@ -66,7 +66,7 @@ class ReceiptController extends Controller
 
         $receipts_data = $request->get('receipts');
         foreach($receipts_data as $receipt){
-            if($receipt['receipt_type_id'] == ReceiptType::where('code', ReceiptTypeEnum::WORK_FEE)->first()->id){
+            if(ReceiptType::keyFromHashId($receipt['receipt_type_id']) == ReceiptType::where('code', ReceiptTypeEnum::WORK_FEE)->first()->id){
                 $assignment = Assignment::with('technicalConclusion')->find($request->assignment_id);
                 $amount = $assignment->total_amount;
                 if($amount){
@@ -92,7 +92,7 @@ class ReceiptController extends Controller
             
             $receipts[] = [
                 'assignment_id' => $request->assignment_id,
-                'receipt_type_id' => $receipt['receipt_type_id'],
+                'receipt_type_id' => ReceiptType::keyFromHashId($receipt['receipt_type_id']),
                 'amount_excluding_tax' => $amount_excluding_tax,
                 'amount_tax' => $amount_tax,
                 'amount' => $amount,
@@ -169,7 +169,7 @@ class ReceiptController extends Controller
     {
         $receipts = $request->get('receipts');
         foreach($receipts as $receipt){
-            if($receipt['receipt_type_id'] == ReceiptType::where('code', ReceiptTypeEnum::WORK_FEE)->first()->id){
+            if(ReceiptType::keyFromHashId($receipt['receipt_type_id']) == ReceiptType::where('code', ReceiptTypeEnum::WORK_FEE)->first()->id){
                 $assignment = Assignment::with('technicalConclusion')->find($request->assignment_id);
                 $amount = $assignment->total_amount;
                 if($amount){
