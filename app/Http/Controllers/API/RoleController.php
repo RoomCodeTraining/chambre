@@ -9,6 +9,7 @@ use App\Models\OrganizationType;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Spatie\Permission\Models\Role;
+use App\Models\Role as AppRole;
 
 /**
  * @group Gestion des profils utilisateur

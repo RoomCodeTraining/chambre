@@ -46,7 +46,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer gE8ba1acVPkZe645d6f3vhD'
+      - 'Bearer EP3c158Zdg6ba6fa4vDekhV'
     controller: null
     method: null
     route: null
@@ -80,7 +80,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: jvcfqkkfjwhnmvhkmb
+        example: fdzftcknormekbfyeeytnj
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -90,22 +90,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Fugit deserunt adipisci voluptatem numquam voluptatem.'
+        example: 'Fugit odit labore et veniam vitae.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: jvcfqkkfjwhnmvhkmb
-      description: 'Fugit deserunt adipisci voluptatem numquam voluptatem.'
+      label: fdzftcknormekbfyeeytnj
+      description: 'Fugit odit labore et veniam vitae.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer a8bvaEckP31d4Zef56g6hDV'
+      - 'Bearer 8cP1gak4e56Zf3VDvhEda6b'
     controller: null
     method: null
     route: null
@@ -135,14 +135,14 @@ endpoints:
         name: expertise_type
         description: ''
         required: true
-        example: aliquam
+        example: amet
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      expertise_type: aliquam
+      expertise_type: amet
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -162,7 +162,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer d4h3af5gEkb8acPZV1D6ev6'
+      - 'Bearer e36dZE1b6aa58P4kghcVDfv'
     controller: null
     method: null
     route: null
@@ -192,14 +192,14 @@ endpoints:
         name: expertise_type
         description: ''
         required: true
-        example: esse
+        example: pariatur
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      expertise_type: esse
+      expertise_type: pariatur
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -207,7 +207,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: ktfbmkczcyluzfnqvumkvqjeq
+        example: jiywioqq
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -217,22 +217,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Aliquid excepturi eveniet laudantium eaque vitae.'
+        example: 'Libero sed quia dignissimos occaecati iusto vel.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: ktfbmkczcyluzfnqvumkvqjeq
-      description: 'Aliquid excepturi eveniet laudantium eaque vitae.'
+      label: jiywioqq
+      description: 'Libero sed quia dignissimos occaecati iusto vel.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 6kd8a61g4afchDE5beP3vZV'
+      - 'Bearer kv1a53b4hd6D8Pfc6EgZeaV'
     controller: null
     method: null
     route: null
@@ -262,14 +262,14 @@ endpoints:
         name: expertise_type
         description: ''
         required: true
-        example: nihil
+        example: fugit
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      expertise_type: nihil
+      expertise_type: fugit
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -280,7 +280,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer cVbE68faa3k5Z4Ph61gedDv'
+      - 'Bearer Pk6ca68E4v3ehg5bDZ1fadV'
     controller: null
     method: null
     route: null
@@ -310,14 +310,14 @@ endpoints:
         name: expertise_type
         description: ''
         required: true
-        example: ut
+        example: aut
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      expertise_type: ut
+      expertise_type: aut
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -328,7 +328,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 35VgZ6e8vEfabd1c4Pha6Dk'
+      - 'Bearer 4eb8Dvfa63dcEZ1P5h6gakV'
     controller: null
     method: null
     route: null
@@ -358,14 +358,14 @@ endpoints:
         name: expertise_type
         description: ''
         required: true
-        example: magnam
+        example: facilis
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      expertise_type: magnam
+      expertise_type: facilis
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -376,7 +376,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer daV4chvgbek6E6Z83P5fD1a'
+      - 'Bearer Pha6D6cgba3dV1Ek8f54evZ'
     controller: null
     method: null
     route: null

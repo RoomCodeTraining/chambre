@@ -44,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6egEZ5ahP3bcdk18aV4f6vD'
+      - 'Bearer g661b3kDE8PaVhcev5a4dZf'
     controller: null
     method: null
     route: null
@@ -78,7 +78,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: kgwuzusagadl
+        example: brg
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -88,22 +88,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Exercitationem delectus magnam deserunt omnis quaerat officiis.'
+        example: 'Assumenda aliquid inventore non vitae voluptatem.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: kgwuzusagadl
-      description: 'Exercitationem delectus magnam deserunt omnis quaerat officiis.'
+      label: brg
+      description: 'Assumenda aliquid inventore non vitae voluptatem.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer kEac6fVD58ZaPe61bd3vhg4'
+      - 'Bearer eVg3c61ZD5aEk8Phfv6ba4d'
     controller: null
     method: null
     route: null
@@ -133,14 +133,14 @@ endpoints:
         name: id
         description: 'The ID of the workforce type.'
         required: true
-        example: optio
+        example: qui
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: optio
+      id: qui
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -160,7 +160,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 8cfgkDbP651de6EZhV4vaa3'
+      - 'Bearer Pe6V1a6cEkvbahDd348g5Zf'
     controller: null
     method: null
     route: null
@@ -190,14 +190,14 @@ endpoints:
         name: id
         description: 'The ID of the workforce type.'
         required: true
-        example: dicta
+        example: sunt
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: dicta
+      id: sunt
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -205,7 +205,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: nztfhs
+        example: etexvgbbei
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -215,22 +215,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Dolor sed temporibus quo quod eos doloremque.'
+        example: 'Temporibus incidunt ut non autem expedita.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: nztfhs
-      description: 'Dolor sed temporibus quo quod eos doloremque.'
+      label: etexvgbbei
+      description: 'Temporibus incidunt ut non autem expedita.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer fE4Zh61k5aeDbgvPda6V83c'
+      - 'Bearer fZ3veg8Eba5dVcDkaPh4616'
     controller: null
     method: null
     route: null
@@ -260,14 +260,14 @@ endpoints:
         name: id
         description: 'The ID of the workforce type.'
         required: true
-        example: consequuntur
+        example: iste
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: consequuntur
+      id: iste
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -278,7 +278,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer e1dPgh58D4EbZkvcfaVa663'
+      - 'Bearer 1fVv36a5Pch6gDdkE4Z8abe'
     controller: null
     method: null
     route: null
@@ -308,14 +308,14 @@ endpoints:
         name: workforce_type
         description: ''
         required: true
-        example: ipsam
+        example: illo
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      workforce_type: ipsam
+      workforce_type: illo
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -326,7 +326,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer akDgv8h6eEd13ZbfPa64V5c'
+      - 'Bearer P318ghVE6kaveZdbc456aDf'
     controller: null
     method: null
     route: null
@@ -356,14 +356,14 @@ endpoints:
         name: workforce_type
         description: ''
         required: true
-        example: soluta
+        example: vitae
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      workforce_type: soluta
+      workforce_type: vitae
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -374,7 +374,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 1b6g8kVDa4P6EZ5aefdh3cv'
+      - 'Bearer EZkef56a4g36cva1bVdP8Dh'
     controller: null
     method: null
     route: null

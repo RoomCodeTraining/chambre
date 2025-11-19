@@ -44,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer cD8Ehg3ZvP5e1f6bV4aad6k'
+      - 'Bearer ekvaDafE8V46bP65dg3cZ1h'
     controller: null
     method: null
     route: null
@@ -78,7 +78,7 @@ endpoints:
         name: code
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: tuay
+        example: qnxkkyudpjstfvedqcomgb
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -88,7 +88,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: jtowiaciiarnlfkoraacc
+        example: zh
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -98,23 +98,23 @@ endpoints:
         name: description
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: false
-        example: 'Ut assumenda nemo consectetur sunt ab.'
+        example: 'Aut molestiae unde ut repellendus doloribus.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      code: tuay
-      label: jtowiaciiarnlfkoraacc
-      description: 'Ut assumenda nemo consectetur sunt ab.'
+      code: qnxkkyudpjstfvedqcomgb
+      label: zh
+      description: 'Aut molestiae unde ut repellendus doloribus.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer hvEb6ad468e31gckfa5VZPD'
+      - 'Bearer aDEvVPf38dhac64ebZ1k56g'
     controller: null
     method: null
     route: null
@@ -144,14 +144,14 @@ endpoints:
         name: id
         description: 'The ID of the status.'
         required: true
-        example: ex
+        example: impedit
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: ex
+      id: impedit
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -171,7 +171,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 61af568vEVghecZDd3Pb4ak'
+      - 'Bearer hdaV56EfP13Z6cb8D4vaegk'
     controller: null
     method: null
     route: null
@@ -201,14 +201,14 @@ endpoints:
         name: id
         description: 'The ID of the status.'
         required: true
-        example: soluta
+        example: laudantium
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: soluta
+      id: laudantium
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -216,7 +216,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: bpajhbcpqgujmv
+        example: wenyugyj
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -226,22 +226,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Consectetur quis et qui quia.'
+        example: 'Quasi consequatur et soluta dolores quia harum.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: bpajhbcpqgujmv
-      description: 'Consectetur quis et qui quia.'
+      label: wenyugyj
+      description: 'Quasi consequatur et soluta dolores quia harum.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer e6PvEf153a6gkdcb8VZah4D'
+      - 'Bearer ac358vP6aZf6eEdhb4VDg1k'
     controller: null
     method: null
     route: null
@@ -271,14 +271,14 @@ endpoints:
         name: id
         description: 'The ID of the status.'
         required: true
-        example: voluptatem
+        example: sit
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: voluptatem
+      id: sit
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -289,7 +289,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer kdfV8E46cgeZb1Da5P63hva'
+      - 'Bearer cghb51da6DakvPE3Z6fe8V4'
     controller: null
     method: null
     route: null

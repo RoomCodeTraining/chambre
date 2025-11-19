@@ -1,20 +1,20 @@
-name: 'Gestion des profils utilisateur'
+name: 'Gestion des permissions'
 description: |-
 
-  API pour la gestion des profils utilisateurs
+  API pour la gestion des permissions
 endpoints:
   -
     httpMethods:
       - GET
-    uri: api/v1/roles
+    uri: api/v1/permissions
     metadata:
-      groupName: 'Gestion des profils utilisateur'
+      groupName: 'Gestion des permissions'
       groupDescription: |-
 
-        API pour la gestion des profils utilisateurs
+        API pour la gestion des permissions
       subgroup: ''
       subgroupDescription: ''
-      title: 'Lister les profils utilisateur'
+      title: 'Lister les permissions'
       description: ''
       authenticated: true
       deprecated: false
@@ -44,7 +44,92 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer v1abhZePd683cfD4V6Eak5g'
+      - 'Bearer a4fdDPeg63Z5Va18hbck6vE'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/permissions
+    metadata:
+      groupName: 'Gestion des permissions'
+      groupDescription: |-
+
+        API pour la gestion des permissions
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      deprecated: false
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer V6k8bdDa4e6f1PZEvc3h5ga'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/permissions/{id}'
+    metadata:
+      groupName: 'Gestion des permissions'
+      groupDescription: |-
+
+        API pour la gestion des permissions
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      deprecated: false
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the permission.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer fE8ePdh6acgvVDb65431kaZ'
     controller: null
     method: null
     route: null

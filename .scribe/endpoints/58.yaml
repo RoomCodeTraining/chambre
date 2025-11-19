@@ -44,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer E6Vf5Zkgdvbc4h8ae1D3aP6'
+      - 'Bearer 8gZehaD4ak5f63VPcE1d6vb'
     controller: null
     method: null
     route: null
@@ -78,21 +78,21 @@ endpoints:
         name: repairer_id
         description: 'The <code>id</code> of an existing record in the entities table.'
         required: true
-        example: quod
+        example: laudantium
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      repairer_id: quod
+      repairer_id: laudantium
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer aDh653PdbZkVca86v4ge1Ef'
+      - 'Bearer bgfPeac64ah3vkEd56ZV81D'
     controller: null
     method: null
     route: null
@@ -122,14 +122,14 @@ endpoints:
         name: repairerRelationship
         description: ''
         required: true
-        example: sit
+        example: consequatur
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      repairerRelationship: sit
+      repairerRelationship: consequatur
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -149,7 +149,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 43kDe5PdvhVZ8fcbE61g6aa'
+      - 'Bearer bV6vcDEehZ1agPf3d8ka654'
     controller: null
     method: null
     route: null
@@ -179,14 +179,14 @@ endpoints:
         name: repairerRelationship
         description: ''
         required: true
-        example: et
+        example: vel
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      repairerRelationship: et
+      repairerRelationship: vel
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -197,7 +197,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer aP3EkZ6bagcef6D8Vv1dh54'
+      - 'Bearer gd18bha36aEDePZcV5fk6v4'
     controller: null
     method: null
     route: null
@@ -214,54 +214,6 @@ endpoints:
       subgroup: ''
       subgroupDescription: ''
       title: 'Activer un rattachement réparateur'
-      description: ''
-      authenticated: true
-      deprecated: false
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      repairerRelationship:
-        name: repairerRelationship
-        description: ''
-        required: true
-        example: mollitia
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-    cleanUrlParameters:
-      repairerRelationship: mollitia
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer Pc3bkVd1668agfZ5vD4Eaeh'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - PUT
-    uri: 'api/v1/repairer-relationships/{repairerRelationship}/disable'
-    metadata:
-      groupName: 'Gestion des rattachements réparateurs'
-      groupDescription: |-
-
-        APIs pour la gestion des rattachements réparateurs
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Désactiver un rattachement réparateur'
       description: ''
       authenticated: true
       deprecated: false
@@ -293,7 +245,55 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer d5ha4VfaveZEgb6k1cD368P'
+      - 'Bearer 3fg486ZEbvh15kVaecd6aPD'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/repairer-relationships/{repairerRelationship}/disable'
+    metadata:
+      groupName: 'Gestion des rattachements réparateurs'
+      groupDescription: |-
+
+        APIs pour la gestion des rattachements réparateurs
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Désactiver un rattachement réparateur'
+      description: ''
+      authenticated: true
+      deprecated: false
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      repairerRelationship:
+        name: repairerRelationship
+        description: ''
+        required: true
+        example: quia
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      repairerRelationship: quia
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 1aeZd3VcEbhgP68vfa45D6k'
     controller: null
     method: null
     route: null

@@ -46,7 +46,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer vcEkfD3gbd84Vheaa665ZP1'
+      - 'Bearer g1aZ3v6adf5hE486PcbVeDk'
     controller: null
     method: null
     route: null
@@ -80,7 +80,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: itlzxdwundrezox
+        example: ylwpehmotvqyfiwt
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -90,22 +90,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Consequatur suscipit repellat ut inventore nisi voluptas quis.'
+        example: 'Voluptas autem commodi doloribus porro dolorum voluptatem non.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: itlzxdwundrezox
-      description: 'Consequatur suscipit repellat ut inventore nisi voluptas quis.'
+      label: ylwpehmotvqyfiwt
+      description: 'Voluptas autem commodi doloribus porro dolorum voluptatem non.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer bcv6aVhE1Pk46aZ85def3gD'
+      - 'Bearer hv368eEaVad15Z4kcDgfbP6'
     controller: null
     method: null
     route: null
@@ -135,14 +135,14 @@ endpoints:
         name: id
         description: 'The ID of the ascertainment type.'
         required: true
-        example: rerum
+        example: dicta
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: rerum
+      id: dicta
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -162,7 +162,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer v63aEk5V8gZ1efbahDd6Pc4'
+      - 'Bearer 6PhcD63av5V4df18EaZkgeb'
     controller: null
     method: null
     route: null
@@ -192,14 +192,14 @@ endpoints:
         name: id
         description: 'The ID of the ascertainment type.'
         required: true
-        example: pariatur
+        example: quibusdam
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: pariatur
+      id: quibusdam
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -207,7 +207,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: myuizieudyw
+        example: iuczufsdoelryecklbbdg
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -217,22 +217,22 @@ endpoints:
         name: description
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: false
-        example: 'Velit corrupti tenetur accusantium facilis vel et tempora.'
+        example: 'Quo quis consequatur atque.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: myuizieudyw
-      description: 'Velit corrupti tenetur accusantium facilis vel et tempora.'
+      label: iuczufsdoelryecklbbdg
+      description: 'Quo quis consequatur atque.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer P13e65ZaEVcdagvh46b8kfD'
+      - 'Bearer 5aEZhk4f3P8v16e6DcadgbV'
     controller: null
     method: null
     route: null
@@ -262,14 +262,14 @@ endpoints:
         name: id
         description: 'The ID of the ascertainment type.'
         required: true
-        example: saepe
+        example: reprehenderit
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: saepe
+      id: reprehenderit
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -280,7 +280,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer v3h4k6fVab8Eda15PDceg6Z'
+      - 'Bearer 1adkgfe686VP4caZv5bED3h'
     controller: null
     method: null
     route: null
@@ -310,14 +310,14 @@ endpoints:
         name: ascertainment_type
         description: ''
         required: true
-        example: odit
+        example: debitis
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      ascertainment_type: odit
+      ascertainment_type: debitis
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -328,7 +328,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer E654geb1hc3aPdaf8DZV6vk'
+      - 'Bearer b16afkg34PVa8E6veZ5dchD'
     controller: null
     method: null
     route: null
@@ -358,14 +358,14 @@ endpoints:
         name: ascertainment_type
         description: ''
         required: true
-        example: at
+        example: omnis
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      ascertainment_type: at
+      ascertainment_type: omnis
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -376,7 +376,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer ek5bdfZg3h1E48VaPcDva66'
+      - 'Bearer a6vZh81c6dfE5gDk3e4PVab'
     controller: null
     method: null
     route: null

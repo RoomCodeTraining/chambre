@@ -44,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer DVk1eE4g5fd6bPhacavZ863'
+      - 'Bearer vD6aPc3kfe4E5dVgZ8ahb61'
     controller: null
     method: null
     route: null
@@ -78,7 +78,7 @@ endpoints:
         name: shock_id
         description: 'The <code>id</code> of an existing record in the shocks table.'
         required: true
-        example: quibusdam
+        example: explicabo
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -88,7 +88,7 @@ endpoints:
         name: hourly_rate_id
         description: 'The <code>id</code> of an existing record in the hourly_rates table.'
         required: true
-        example: est
+        example: quas
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -98,7 +98,7 @@ endpoints:
         name: with_tax
         description: ''
         required: true
-        example: true
+        example: false
         type: boolean
         enumValues: []
         exampleWasSpecified: false
@@ -108,7 +108,7 @@ endpoints:
         name: paint_type_id
         description: 'The <code>id</code> of an existing record in the paint_types table.'
         required: true
-        example: iure
+        example: minima
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -129,7 +129,7 @@ endpoints:
         name: 'workforces[].workforce_type_id'
         description: ''
         required: true
-        example: accusamus
+        example: voluptatum
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -139,7 +139,7 @@ endpoints:
         name: 'workforces[].nb_hours'
         description: ''
         required: true
-        example: 30012227.400025
+        example: 20106393.20069
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -149,7 +149,7 @@ endpoints:
         name: 'workforces[].discount'
         description: 'La valeur de value doit être supérieure ou égale à 0. La valeur de value ne peut pas être supérieure à 100.'
         required: true
-        example: 25
+        example: 2
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -159,30 +159,30 @@ endpoints:
         name: 'workforces[].all_paint'
         description: ''
         required: false
-        example: true
+        example: false
         type: boolean
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      shock_id: quibusdam
-      hourly_rate_id: est
-      with_tax: true
-      paint_type_id: iure
+      shock_id: explicabo
+      hourly_rate_id: quas
+      with_tax: false
+      paint_type_id: minima
       workforces:
         -
-          workforce_type_id: accusamus
-          nb_hours: 30012227.400025
-          discount: 25
-          all_paint: true
+          workforce_type_id: voluptatum
+          nb_hours: 20106393.20069
+          discount: 2
+          all_paint: false
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 6daVc3abg8EDfk1456PhZev'
+      - 'Bearer 86eDa43Pbfcgh5dE1kZVva6'
     controller: null
     method: null
     route: null
@@ -216,7 +216,7 @@ endpoints:
         name: shock_id
         description: 'The <code>id</code> of an existing record in the shocks table.'
         required: true
-        example: nisi
+        example: consequatur
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -226,7 +226,7 @@ endpoints:
         name: hourly_rate_id
         description: 'The <code>id</code> of an existing record in the hourly_rates table.'
         required: true
-        example: quis
+        example: officiis
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -236,7 +236,7 @@ endpoints:
         name: paint_type_id
         description: 'The <code>id</code> of an existing record in the paint_types table.'
         required: true
-        example: sit
+        example: voluptatum
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -268,7 +268,7 @@ endpoints:
         name: 'shock_works[].obsolescence_rate'
         description: ''
         required: true
-        example: 12919.44813
+        example: 160975.9208
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -278,7 +278,7 @@ endpoints:
         name: 'shock_works[].recovery_amount'
         description: ''
         required: true
-        example: 4891538.7817775
+        example: 4.32007243
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -288,7 +288,7 @@ endpoints:
         name: 'shock_works[].amount'
         description: ''
         required: true
-        example: 14.04171467
+        example: 6.141723355
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -298,7 +298,7 @@ endpoints:
         name: 'shock_works[].discount'
         description: 'La valeur de value doit être supérieure ou égale à 0. La valeur de value ne peut pas être supérieure à 100.'
         required: true
-        example: 25
+        example: 17
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -308,7 +308,7 @@ endpoints:
         name: 'workforces[].workforce_type_id'
         description: 'The <code>id</code> of an existing record in the workforce_types table.'
         required: true
-        example: enim
+        example: qui
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -318,7 +318,7 @@ endpoints:
         name: 'workforces[].nb_hours'
         description: ''
         required: true
-        example: 166827280.61
+        example: 354573835.0
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -328,7 +328,7 @@ endpoints:
         name: 'workforces[].discount'
         description: 'La valeur de value doit être supérieure ou égale à 0. La valeur de value ne peut pas être supérieure à 100.'
         required: true
-        example: 1
+        example: 10
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -355,20 +355,20 @@ endpoints:
         nullable: true
         custom: []
     cleanBodyParameters:
-      shock_id: nisi
-      hourly_rate_id: quis
-      paint_type_id: sit
+      shock_id: consequatur
+      hourly_rate_id: officiis
+      paint_type_id: voluptatum
       shock_works:
         -
-          obsolescence_rate: 12919.44813
-          recovery_amount: 4891538.7817775
-          amount: 14.04171467
-          discount: 25
+          obsolescence_rate: 160975.9208
+          recovery_amount: 4.32007243
+          amount: 6.141723355
+          discount: 17
       workforces:
         -
-          workforce_type_id: enim
-          nb_hours: 166827280.61
-          discount: 1
+          workforce_type_id: qui
+          nb_hours: 354573835.0
+          discount: 10
           with_tax: false
           all_paint: true
     fileParameters: []
@@ -377,7 +377,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer P8ZhcE4ve663aDgbfk5d1Va'
+      - 'Bearer 6hebdv8P3ZD5gcVEk6aa1f4'
     controller: null
     method: null
     route: null
@@ -407,14 +407,14 @@ endpoints:
         name: id
         description: 'The ID of the workforce.'
         required: true
-        example: suscipit
+        example: necessitatibus
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: suscipit
+      id: necessitatibus
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -434,7 +434,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 8k453P6cd1EbDh6afvageVZ'
+      - 'Bearer 8k4D3g56vaVadbh1E6cPefZ'
     controller: null
     method: null
     route: null
@@ -464,14 +464,14 @@ endpoints:
         name: id
         description: 'The ID of the workforce.'
         required: true
-        example: atque
+        example: possimus
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: atque
+      id: possimus
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -479,7 +479,7 @@ endpoints:
         name: workforce_type_id
         description: 'The <code>id</code> of an existing record in the workforce_types table.'
         required: true
-        example: necessitatibus
+        example: sunt
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -489,7 +489,7 @@ endpoints:
         name: hourly_rate_id
         description: 'The <code>id</code> of an existing record in the hourly_rates table.'
         required: true
-        example: vero
+        example: ea
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -499,7 +499,7 @@ endpoints:
         name: paint_type_id
         description: 'The <code>id</code> of an existing record in the paint_types table.'
         required: true
-        example: ipsa
+        example: quae
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -519,7 +519,7 @@ endpoints:
         name: nb_hours
         description: ''
         required: true
-        example: 696.28366812
+        example: 2977649.6283146
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -529,7 +529,7 @@ endpoints:
         name: discount
         description: 'La valeur de value doit être supérieure ou égale à 0. La valeur de value ne peut pas être supérieure à 100.'
         required: true
-        example: 10
+        example: 24
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -546,12 +546,12 @@ endpoints:
         nullable: true
         custom: []
     cleanBodyParameters:
-      workforce_type_id: necessitatibus
-      hourly_rate_id: vero
-      paint_type_id: ipsa
+      workforce_type_id: sunt
+      hourly_rate_id: ea
+      paint_type_id: quae
       with_tax: false
-      nb_hours: 696.28366812
-      discount: 10
+      nb_hours: 2977649.6283146
+      discount: 24
       all_paint: true
     fileParameters: []
     responses: []
@@ -559,7 +559,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 5fg1EVdavc68bah6ePZk34D'
+      - 'Bearer 8PZ6khv1ag4E6bV3d5eDacf'
     controller: null
     method: null
     route: null
@@ -589,14 +589,14 @@ endpoints:
         name: id
         description: 'The ID of the workforce.'
         required: true
-        example: nostrum
+        example: quasi
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: nostrum
+      id: quasi
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -607,7 +607,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6vkbca5VfPa8463ZghdEeD1'
+      - 'Bearer avDEaeVkhZgc68P6d5314bf'
     controller: null
     method: null
     route: null

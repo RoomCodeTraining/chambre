@@ -42,7 +42,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer bavkVPD5dhf8g3ceaZ6614E'
+      - 'Bearer d1egPE36hafv4acbkZDV865'
     controller: null
     method: null
     route: null
@@ -74,7 +74,7 @@ endpoints:
         name: code
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: ykyetpjtyqggg
+        example: zcrnmcjfvvblsenpbbysilzlp
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -84,7 +84,7 @@ endpoints:
         name: value
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: stsuzvohcdqbcmkvriik
+        example: byjrkjrobztyrkhbitbflpu
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -94,7 +94,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: rwagtmpvzwmrgegphfx
+        example: crubqvaeulfkmcagkgkqy
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -104,24 +104,24 @@ endpoints:
         name: description
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: false
-        example: 'Repellendus iusto cupiditate beatae sunt excepturi nisi in.'
+        example: 'Voluptas deserunt eum quae animi laudantium aut non.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      code: ykyetpjtyqggg
-      value: stsuzvohcdqbcmkvriik
-      label: rwagtmpvzwmrgegphfx
-      description: 'Repellendus iusto cupiditate beatae sunt excepturi nisi in.'
+      code: zcrnmcjfvvblsenpbbysilzlp
+      value: byjrkjrobztyrkhbitbflpu
+      label: crubqvaeulfkmcagkgkqy
+      description: 'Voluptas deserunt eum quae animi laudantium aut non.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 3eafbZvhE58a6PVkD1dg46c'
+      - 'Bearer cdv3EaVPkbe46g1h8DZa5f6'
     controller: null
     method: null
     route: null
@@ -149,14 +149,14 @@ endpoints:
         name: appSetting
         description: ''
         required: true
-        example: omnis
+        example: eum
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      appSetting: omnis
+      appSetting: eum
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -176,7 +176,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer h1aD83Evbe6dZcVafg4k65P'
+      - 'Bearer ekva6gac3EV8Z1P64bfDdh5'
     controller: null
     method: null
     route: null
@@ -204,14 +204,14 @@ endpoints:
         name: appSetting
         description: ''
         required: true
-        example: et
+        example: nobis
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      appSetting: et
+      appSetting: nobis
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -219,7 +219,7 @@ endpoints:
         name: code
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: eletzjknzkogtxags
+        example: pchpfsncgdjpqeggjauxtz
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -229,7 +229,7 @@ endpoints:
         name: value
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: lmfz
+        example: gc
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -239,7 +239,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: goseyqxyzxnu
+        example: oidbguusa
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -249,24 +249,24 @@ endpoints:
         name: description
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: false
-        example: 'Nulla suscipit explicabo minima velit culpa doloribus.'
+        example: 'Consequatur provident quidem inventore sed error sunt fugit.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      code: eletzjknzkogtxags
-      value: lmfz
-      label: goseyqxyzxnu
-      description: 'Nulla suscipit explicabo minima velit culpa doloribus.'
+      code: pchpfsncgdjpqeggjauxtz
+      value: gc
+      label: oidbguusa
+      description: 'Consequatur provident quidem inventore sed error sunt fugit.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer eg66dDh1EPvaZb8f4c5k3aV'
+      - 'Bearer 4b6c5Ee3DaVP6f1ka8Zvgdh'
     controller: null
     method: null
     route: null
@@ -275,320 +275,6 @@ endpoints:
     httpMethods:
       - DELETE
     uri: 'api/v1/user-actions/{appSetting}'
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: true
-      deprecated: false
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      appSetting:
-        name: appSetting
-        description: ''
-        required: true
-        example: voluptas
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-    cleanUrlParameters:
-      appSetting: voluptas
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer EcDagav3f85Zh6PkdVe6b41'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - GET
-    uri: api/v1/app-settings
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: true
-      deprecated: false
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        status: 401
-        content: '{"message":"Unauthenticated."}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          access-control-allow-origin: '*'
-        description: null
-        custom: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer Vagfe8d3Zb1c6hk4DaP56Ev'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: api/v1/app-settings
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: true
-      deprecated: false
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      code:
-        name: code
-        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
-        required: true
-        example: yirvfbiubcfygca
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      value:
-        name: value
-        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
-        required: true
-        example: wxva
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      label:
-        name: label
-        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
-        required: true
-        example: yef
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      description:
-        name: description
-        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
-        required: false
-        example: 'Nihil occaecati qui et vero sit deserunt omnis placeat.'
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: true
-        custom: []
-    cleanBodyParameters:
-      code: yirvfbiubcfygca
-      value: wxva
-      label: yef
-      description: 'Nihil occaecati qui et vero sit deserunt omnis placeat.'
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer 3cba6PdfEk6ehDvV4ga581Z'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - GET
-    uri: 'api/v1/app-settings/{appSetting}'
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: true
-      deprecated: false
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      appSetting:
-        name: appSetting
-        description: ''
-        required: true
-        example: incidunt
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-    cleanUrlParameters:
-      appSetting: incidunt
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        status: 401
-        content: '{"message":"Unauthenticated."}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          access-control-allow-origin: '*'
-        description: null
-        custom: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer gEveDP6853cZVhd4afb6ka1'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - PUT
-    uri: 'api/v1/app-settings/{appSetting}'
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: true
-      deprecated: false
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      appSetting:
-        name: appSetting
-        description: ''
-        required: true
-        example: quo
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-    cleanUrlParameters:
-      appSetting: quo
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      code:
-        name: code
-        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
-        required: true
-        example: soqohwczmvfxyyi
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      value:
-        name: value
-        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
-        required: true
-        example: tdwytqdqhwyfejdi
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      label:
-        name: label
-        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
-        required: true
-        example: fbsysbtxo
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      description:
-        name: description
-        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
-        required: false
-        example: 'Dignissimos doloribus hic aut facilis esse.'
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: true
-        custom: []
-    cleanBodyParameters:
-      code: soqohwczmvfxyyi
-      value: tdwytqdqhwyfejdi
-      label: fbsysbtxo
-      description: 'Dignissimos doloribus hic aut facilis esse.'
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer 1bdvk5Zaf6V48Eeah3DPc6g'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - DELETE
-    uri: 'api/v1/app-settings/{appSetting}'
     metadata:
       groupName: Endpoints
       groupDescription: ''
@@ -626,7 +312,321 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer v65hgPfDa8V6dZEb34c1kea'
+      - 'Bearer ZP6kavh1agE84dcfVe5b63D'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/app-settings
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      deprecated: false
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6v6aeDPcad1bZkE4gh35V8f'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/app-settings
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      deprecated: false
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      code:
+        name: code
+        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
+        required: true
+        example: r
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      value:
+        name: value
+        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
+        required: true
+        example: dqcshiubnlypaerxegdmp
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      label:
+        name: label
+        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
+        required: true
+        example: riuwzqnrnqaqxqcknakojt
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      description:
+        name: description
+        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
+        required: false
+        example: 'Ea aut voluptas omnis sed reprehenderit odio a quae.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+    cleanBodyParameters:
+      code: r
+      value: dqcshiubnlypaerxegdmp
+      label: riuwzqnrnqaqxqcknakojt
+      description: 'Ea aut voluptas omnis sed reprehenderit odio a quae.'
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer bEgk46vV3DP6e1hZ8da5fca'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/app-settings/{appSetting}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      deprecated: false
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      appSetting:
+        name: appSetting
+        description: ''
+        required: true
+        example: ut
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      appSetting: ut
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 3dfE1v8Dbk5aaZe46VPhg6c'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/app-settings/{appSetting}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      deprecated: false
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      appSetting:
+        name: appSetting
+        description: ''
+        required: true
+        example: quas
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      appSetting: quas
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      code:
+        name: code
+        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
+        required: true
+        example: vcwvldnnmkadf
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      value:
+        name: value
+        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
+        required: true
+        example: chricip
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      label:
+        name: label
+        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
+        required: true
+        example: zmsnhb
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      description:
+        name: description
+        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
+        required: false
+        example: 'Fuga eveniet iure et odit velit necessitatibus dicta.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+    cleanBodyParameters:
+      code: vcwvldnnmkadf
+      value: chricip
+      label: zmsnhb
+      description: 'Fuga eveniet iure et odit velit necessitatibus dicta.'
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer ag3D45ea1bVEk6ZdPf86cvh'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/app-settings/{appSetting}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      deprecated: false
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      appSetting:
+        name: appSetting
+        description: ''
+        required: true
+        example: repellat
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      appSetting: repellat
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 361fagvk85ab4dZhPVceDE6'
     controller: null
     method: null
     route: null
@@ -670,7 +670,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6edhbVZE8vD3fka5P4g1a6c'
+      - 'Bearer De5gP66vZf4dVE1khac8b3a'
     controller: null
     method: null
     route: null
@@ -705,7 +705,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Z1v3fa84kDEPdbeaVg5h66c'
+      - 'Bearer 1afVavcd5668g4eD3bPhkEZ'
     controller: null
     method: null
     route: null
@@ -733,14 +733,14 @@ endpoints:
         name: clientRelationship
         description: ''
         required: true
-        example: est
+        example: sit
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      clientRelationship: est
+      clientRelationship: sit
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -760,7 +760,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer cd1b5DkZE6e6favgha8P4V3'
+      - 'Bearer V36cE6fg5Ph1bvaZ4k8Ddea'
     controller: null
     method: null
     route: null
@@ -788,14 +788,14 @@ endpoints:
         name: clientRelationship
         description: ''
         required: true
-        example: et
+        example: ut
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      clientRelationship: et
+      clientRelationship: ut
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -806,7 +806,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 4Dh6E6gcPZ1baVf8a35vkde'
+      - 'Bearer 6cbavhP3a6VDZkd58Ee4fg1'
     controller: null
     method: null
     route: null
@@ -834,14 +834,14 @@ endpoints:
         name: clientRelationship
         description: ''
         required: true
-        example: officia
+        example: nemo
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      clientRelationship: officia
+      clientRelationship: nemo
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -852,7 +852,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer dgD8ZE1vehbV6k3Pca56a4f'
+      - 'Bearer E8D6b1e5PZvada3g6Vhkcf4'
     controller: null
     method: null
     route: null
@@ -896,7 +896,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer aPb163kdDVcghZE8fave456'
+      - 'Bearer k58fVP6DhdZa6bEe4ga1v3c'
     controller: null
     method: null
     route: null
@@ -931,7 +931,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer cP3v8e1dakV46gDEfhbaZ56'
+      - 'Bearer D6d3hvVE1agabPkc4ef86Z5'
     controller: null
     method: null
     route: null
@@ -959,14 +959,14 @@ endpoints:
         name: vehicleRelationship
         description: ''
         required: true
-        example: amet
+        example: sed
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      vehicleRelationship: amet
+      vehicleRelationship: sed
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -986,7 +986,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer P3hZa8daE66Vg51Dbfvkc4e'
+      - 'Bearer fV6k1b853PvaadgDehEc64Z'
     controller: null
     method: null
     route: null
@@ -1014,14 +1014,14 @@ endpoints:
         name: vehicleRelationship
         description: ''
         required: true
-        example: expedita
+        example: maxime
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      vehicleRelationship: expedita
+      vehicleRelationship: maxime
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -1032,7 +1032,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer E4PgaZkfde3avcV1bh665D8'
+      - 'Bearer 3bE1aeahvZ6D54Vk8g6dfcP'
     controller: null
     method: null
     route: null
@@ -1060,14 +1060,14 @@ endpoints:
         name: vehicleRelationship
         description: ''
         required: true
-        example: cum
+        example: ut
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      vehicleRelationship: cum
+      vehicleRelationship: ut
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -1078,7 +1078,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer efZ4bd1V6aD56Pca3khgE8v'
+      - 'Bearer Dh3afd1ge84cVbvPEa6k6Z5'
     controller: null
     method: null
     route: null
@@ -1122,7 +1122,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer cbad31De4kv6ZgP85VhEf6a'
+      - 'Bearer cV41bekh3E5dvfaZg6aD86P'
     controller: null
     method: null
     route: null
@@ -1154,7 +1154,7 @@ endpoints:
         name: assignment_id
         description: 'The <code>id</code> of an existing record in the assignments table.'
         required: true
-        example: perspiciatis
+        example: quis
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1164,22 +1164,22 @@ endpoints:
         name: message
         description: ''
         required: true
-        example: eveniet
+        example: voluptatem
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      assignment_id: perspiciatis
-      message: eveniet
+      assignment_id: quis
+      message: voluptatem
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 66Eh4davPf3ecbDVkgaZ815'
+      - 'Bearer a1g8Z6hvEdVe5DbPak3f46c'
     controller: null
     method: null
     route: null
@@ -1207,14 +1207,14 @@ endpoints:
         name: id
         description: 'The ID of the assignment message.'
         required: true
-        example: in
+        example: qui
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: in
+      id: qui
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -1234,7 +1234,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer gaZ6c8ev1PfD6Vh4bE3d5ka'
+      - 'Bearer Eh86Vb64ZkPc1dgD53avafe'
     controller: null
     method: null
     route: null
@@ -1262,14 +1262,14 @@ endpoints:
         name: id
         description: 'The ID of the assignment message.'
         required: true
-        example: aut
+        example: quibusdam
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: aut
+      id: quibusdam
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -1280,7 +1280,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 1d34c6a8ZbhEvPD6ekagV5f'
+      - 'Bearer PE6V4Dbghka6d83fvacZ1e5'
     controller: null
     method: null
     route: null
@@ -1308,14 +1308,14 @@ endpoints:
         name: id
         description: 'The ID of the assignment message.'
         required: true
-        example: maiores
+        example: quia
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: maiores
+      id: quia
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -1326,7 +1326,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 3Eefc1Dak6VP4dv8ba5hg6Z'
+      - 'Bearer VEd35hkgbD4aa6ef68v1cPZ'
     controller: null
     method: null
     route: null
