@@ -2947,7 +2947,6 @@ class AssignmentController extends Controller
      */
     public function orderShocks(Request $request, $id)
     {
-        dd($id);
         $assignment = Assignment::find(Assignment::keyFromHashId($id));
 
         $shocks = $request->get('shocks');
@@ -2955,7 +2954,7 @@ class AssignmentController extends Controller
         if(count($shocks) > 0){
             $position = 1;
             for ($i = 0; $i < count($shocks); $i++) {
-                $shock = Shock::findOrFail($shocks[$i]);
+                $shock = Shock::findOrFail(Shock::keyFromHashId($shocks[$i]));
                 $shock->update([
                     'position' => $position,
                 ]);
