@@ -81,5 +81,7 @@ Route::prefix('v1')->middleware(LogsOutDisabledUser::class)->group(function () {
     Route::prefix('repairer-relationships')->group(base_path('routes/api/v1.repairer.relationships.routes.php'));
     Route::prefix('assignment-messages')->group(base_path('routes/api/v1.assignment.messages.routes.php'));
     Route::prefix('dashboard')->group(base_path('routes/api/v1.dashboard.routes.php'));
+    Route::prefix('permissions')->group(base_path('routes/api/v1.permissions.routes.php'));
+    Route::prefix('roles')->group(base_path('routes/api/v1.roles.routes.php'));
     Route::group([], base_path('routes/api/v1.common.routes.php'));
 });

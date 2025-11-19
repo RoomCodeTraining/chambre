@@ -39,4 +39,53 @@ class RoleController extends Controller
 
         return RoleResource::collection($users);
     }
+
+    /**
+     * Lister les profils utilisateur
+     */
+    public function list(): AnonymousResourceCollection
+    {
+        $roles = AppRole::with(['permissions'])
+            ->accessibleBy(auth()->user())
+            ->latest('created_at')
+            ->useFilters()
+            ->dynamicPaginate();
+
+        return RoleResource::collection($roles);
+    }
+
+    public function store(Request $request)
+    {
+        $role = Role::create([
+            'name' => $request->name,
+            'guard_name' => 'sanctum',
+        ]);
+
+        return new RoleResource($role);
+
+        return response()->json(['message' => 'Role created successfully'], 201);
+    }
+
+    public function update(Request $request, Role $role)
+    {
+        $role->update([
+            'name' => $request->name,
+        ]);
+
+        return new RoleResource($role);
+    }
+
+    public function givePermissionToRole(Request $request, Role $role)
+    {
+        $role->givePermissionTo($request->permissions);
+
+        return response()->json(['message' => 'Permission added to role successfully'], 200);
+    }
+
+    public function revokePermissionToRole(Request $request, Role $role)
+    {
+        $role->revokePermissionTo($request->permissions);
+
+        return response()->json(['message' => 'Permission revoked from role successfully'], 200);
+    }
 }
