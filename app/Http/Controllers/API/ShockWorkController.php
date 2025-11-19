@@ -329,7 +329,7 @@ class ShockWorkController extends Controller
     public function update(UpdateShockWorkRequest $request, $id): JsonResponse
     {
         $shockWork = ShockWork::select('shock_works.*')
-            ->with('shocks:id,assignment_id')
+            ->with('shock:id,assignment_id')
             ->where('shock_works.id', ShockWork::keyFromHashId($id))
             ->firstOrFail();
 
