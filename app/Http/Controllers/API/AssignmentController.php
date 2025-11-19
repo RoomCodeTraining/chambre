@@ -2981,7 +2981,7 @@ class AssignmentController extends Controller
         if(count($photos) > 0){
             $position = 1;
             for ($i = 0; $i < count($photos); $i++) {
-                $photo = Photo::findOrFail($photos[$i]);
+                $photo = Photo::findOrFail(Photo::keyFromHashId($photos[$i]));
                 $photo->update([
                     'position' => $position,
                 ]);
