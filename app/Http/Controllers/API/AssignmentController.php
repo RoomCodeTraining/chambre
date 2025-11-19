@@ -2135,6 +2135,31 @@ class AssignmentController extends Controller
                             $supplyId = Supply::keyFromHashId($supplyId);
                         }
 
+                        $amount = $item['amount'] ?? 0;
+
+                        $discount = $item['discount'] ?? 0;
+                        $discount_amount_excluding_tax = ceil(($discount * $amount) / 100);
+                        $discount_amount_tax = ceil((config('services.settings.tax_rate') * $discount_amount_excluding_tax) / 100);
+                        $discount_amount = ceil($discount_amount_excluding_tax + $discount_amount_tax);
+
+                        $obsolescence_rate = $item['obsolescence_rate'] ?? 0;
+                        $obsolescence_amount_excluding_tax = ceil(($obsolescence_rate * ($amount - $discount_amount_excluding_tax)) / 100);
+                        $obsolescence_amount_tax = ceil((config('services.settings.tax_rate') * $obsolescence_amount_excluding_tax) / 100);
+                        $obsolescence_amount = ceil($obsolescence_amount_excluding_tax + $obsolescence_amount_tax);
+        
+                        $recovery_amount = $item['recovery_amount'] ?? 0;
+                        $recovery_amount_excluding_tax = ceil(($recovery_amount * $amount) / 100);
+                        $recovery_amount_tax = 0;
+                        $recovery_amount = ceil($recovery_amount_excluding_tax + $recovery_amount_tax);
+        
+                        $new_amount_excluding_tax = ceil($amount - ($obsolescence_amount_excluding_tax + $discount_amount_excluding_tax));
+                        if($request->expertise_type_id == ExpertiseType::where('code', ExpertiseTypeEnum::EVALUATION)->first()->id || $request->assignment_type_id == AssignmentType::where('code', AssignmentTypeEnum::EVALUATION)->first()->id){
+                            $new_amount_tax = 0;
+                        } else {
+                            $new_amount_tax = ceil((config('services.settings.tax_rate') * $new_amount_excluding_tax) / 100);
+                        }                        
+                        $new_amount = ceil($new_amount_excluding_tax + $new_amount_tax);
+                        
                         $shockWork = ShockWork::create([
                             'shock_id' => $shock->id,
                             'supply_id' => $supplyId,
@@ -2142,19 +2167,25 @@ class AssignmentController extends Controller
                             'replacement' => $item['replacement'],
                             'repair' => $item['repair'],
                             'paint' => $item['paint'],
+                            'control' => $item['control'],
+                            'comment' => $item['comment'],
+                            'position' => shockWorkPosition,
                             'is_before_quote' => 1,
-                            'obsolescence_rate' => 0,
-                            'obsolescence_amount_excluding_tax' => 0,
-                            'obsolescence_amount_tax' => 0,
-                            'obsolescence_amount' => 0,
-                            'recovery_amount' => 0,
-                            'recovery_amount_excluding_tax' => 0,
-                            'recovery_amount_tax' => 0,
-                            'recovery_amount' => 0,
-                            'new_amount_excluding_tax' => 0,
-                            'new_amount_tax' => 0,
-                            'new_amount' => 0,
-                            'position' => $shockWorkPosition,
+                            'obsolescence_rate' => $obsolescence_rate,
+                            'obsolescence_amount_excluding_tax' => $obsolescence_amount_excluding_tax,
+                            'obsolescence_amount_tax' => $obsolescence_amount_tax,
+                            'obsolescence_amount' => $obsolescence_amount,
+                            'recovery_amount' => $recovery_amount,
+                            'recovery_amount_excluding_tax' => $recovery_amount_excluding_tax,
+                            'recovery_amount_tax' => $recovery_amount_tax,
+                            'recovery_amount' => $recovery_amount,
+                            'discount' => $discount,
+                            'discount_amount_excluding_tax' => $discount_amount_excluding_tax,
+                            'discount_amount_tax' => $discount_amount_tax,
+                            'discount_amount' => $discount_amount,
+                            'new_amount_excluding_tax' => $new_amount_excluding_tax,
+                            'new_amount_tax' => $new_amount_tax,
+                            'new_amount' => $new_amount,
                             'status_id' => Status::where('code', StatusEnum::ACTIVE)->first()->id,
                             'created_by' => auth()->user()->id,
                             'updated_by' => auth()->user()->id,
