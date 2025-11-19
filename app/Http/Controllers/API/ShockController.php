@@ -503,7 +503,7 @@ class ShockController extends Controller
         if(count($shock_works) > 0){
             $position = 1;
             for ($i = 0; $i < count($shock_works); $i++) {
-                $shockWork = ShockWork::findOrFail($shock_works[$i]);
+                $shockWork = ShockWork::findOrFail(ShockWork::keyFromHashId($shock_works[$i]));
                 $shockWork->update([
                     'position' => $position,
                 ]);
@@ -538,7 +538,7 @@ class ShockController extends Controller
         if(count($workforces) > 0){
             $position = 1;
             for ($i = 0; $i < count($workforces); $i++) {
-                $workforce = Workforce::findOrFail($workforces[$i]);
+                $workforce = Workforce::findOrFail(Workforce::keyFromHashId($workforces[$i]));
                 $workforce->update([
                     'position' => $position,
                 ]);
