@@ -340,7 +340,7 @@ class ReceiptController extends Controller
             'deleted_by' => auth()->user()->id,
         ]);
 
-        // $receipt->delete();
+        $receipt->delete();
 
         $this->recalculate($receipt->assignment_id);
 
