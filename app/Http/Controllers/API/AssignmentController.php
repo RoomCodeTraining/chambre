@@ -2210,6 +2210,8 @@ class AssignmentController extends Controller
             'updated_by' => auth()->user()->id,
         ]);
 
+        dispatch(new GenerateWorkSheetPdfJob($assignment, true));
+
         return $this->responseSuccess('Fiche de travaux validée avec succès', new AssignmentResource($assignment));
     }
 
@@ -2933,9 +2935,7 @@ class AssignmentController extends Controller
         }
 
         dispatch(new GenerateExpertiseSheetPdfJob($assignment));
-        if($assignment->work_sheet_established_at){
-            dispatch(new GenerateWorkSheetPdfJob($assignment, true));
-        }
+        dispatch(new GenerateWorkSheetPdfJob($assignment, true));
 
         return $this->responseSuccess('Rapport d\'expertise généré avec succès', new AssignmentResource($assignment));
     }
