@@ -379,6 +379,17 @@ class ShockWorkController extends Controller
             || $shockWork->isDirty('amount') 
             || $shockWork->isDirty('obsolescence_rate') 
             || $shockWork->isDirty('discount') 
+            || $shockWork->disassembly != $request->disassembly
+            || $shockWork->replacement != $request->replacement
+            || $shockWork->repair != $request->repair
+            || $shockWork->paint != $request->paint
+            || $shockWork->obsolescence != $request->obsolescence
+            || $shockWork->control != $request->control
+            || $shockWork->comment != $request->comment
+            || $shockWork->amount != $request->amount
+            || $shockWork->obsolescence_rate != $request->obsolescence_rate
+            || $shockWork->discount != $request->discount
+            || $shockWork->obsolescence_rate != $obsolescence_rate
             || $shockWork->obsolescence_amount != $obsolescence_amount
             || $shockWork->discount_amount != $discount_amount
             || $shockWork->recovery_amount != $recovery_amount
