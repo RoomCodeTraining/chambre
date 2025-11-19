@@ -301,7 +301,7 @@ class ShockWorkController extends Controller
             $this->recalculate($shockWork->shock_id);
         }
         
-        return $this->responseCreated('ShockWork created successfully', ['shock_work' => new ShockWorkResource($shockWork->load('supply', 'status')), 'assignment' => new AssignmentResource()]);
+        return $this->responseCreated('ShockWork created successfully', ['shock_work' => new ShockWorkResource($shockWork->load('supply', 'status'))]);
     }
 
     /**
