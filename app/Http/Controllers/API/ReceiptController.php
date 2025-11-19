@@ -195,7 +195,7 @@ class ReceiptController extends Controller
             
             $receipt = Receipt::create([
                 'assignment_id' => $request->assignment_id,
-                'receipt_type_id' => $receipt['receipt_type_id'],
+                'receipt_type_id' => ReceiptType::keyFromHashId($receipt['receipt_type_id']),
                 'amount_excluding_tax' => $receipt_amount_excluding_tax,
                 'amount_tax' => $receipt_amount_tax,
                 'amount' => $receipt_amount,

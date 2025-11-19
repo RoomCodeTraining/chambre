@@ -2947,7 +2947,8 @@ class AssignmentController extends Controller
      */
     public function orderShocks(Request $request, $id)
     {
-        $assignment = Assignment::findOrFail(Assignment::keyFromHashId($id));
+        dd($id);
+        $assignment = Assignment::find(Assignment::keyFromHashId($id));
 
         $shocks = $request->get('shocks');
 
