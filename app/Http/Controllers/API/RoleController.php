@@ -2,14 +2,16 @@
 
 namespace App\Http\Controllers\API;
 
+use App\Models\Permission;
+use Illuminate\Http\Request;
+use App\Models\Role as AppRole;
+use App\Models\OrganizationType;
+use Spatie\Permission\Models\Role;
 use App\Enums\RoleEnum as EnumsRole;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\RoleResource;
-use App\Models\OrganizationType;
-use Illuminate\Http\Request;
+use Essa\APIToolKit\Api\ApiResponse;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
-use Spatie\Permission\Models\Role;
-use App\Models\Role as AppRole;
 
 /**
  * @group Gestion des profils utilisateur
@@ -18,6 +20,8 @@ use App\Models\Role as AppRole;
  */
 class RoleController extends Controller
 {
+    use ApiResponse;
+
     /**
      * Lister les profils utilisateur
      */
@@ -76,17 +80,35 @@ class RoleController extends Controller
         return new RoleResource($role);
     }
 
-    public function givePermissionToRole(Request $request, Role $role)
+    public function givePermissionToRole(Request $request, $id)
     {
-        $role->givePermissionTo($request->permissions);
+        $role = Role::accessibleBy(auth()->user())->findOrFail(Role::keyFromHashId($id));
 
-        return response()->json(['message' => 'Permission added to role successfully'], 200);
+        $permissions = [];
+        if(count($request->permissions) > 0){
+            for ($i = 0; $i < count($request->permissions); $i++) {
+                $permission = Permission::accessibleBy(auth()->user())->findOrFail(Permission::keyFromHashId($request->permissions[$i]));
+                $permissions[] = $permission->name;
+            }
+            $role->givePermissionTo($permissions);
+        }
+
+        return $this->responseSuccess('Permission added to role successfully', new RoleResource($role));
     }
 
-    public function revokePermissionToRole(Request $request, Role $role)
+    public function revokePermissionToRole(Request $request, $id)
     {
-        $role->revokePermissionTo($request->permissions);
+        $role = Role::accessibleBy(auth()->user())->findOrFail(Role::keyFromHashId($id));
 
-        return response()->json(['message' => 'Permission revoked from role successfully'], 200);
+        $permissions = [];
+        if(count($request->permissions) > 0){
+            for ($i = 0; $i < count($request->permissions); $i++) {
+                $permission = Permission::accessibleBy(auth()->user())->findOrFail(Permission::keyFromHashId($request->permissions[$i]));
+                $permissions[] = $permission->name;
+            }
+            $role->revokePermissionTo($permissions);
+        }
+
+        return $this->responseSuccess('Permission revoked from role successfully', new RoleResource($role));
     }
 }

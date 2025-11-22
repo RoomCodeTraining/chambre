@@ -38,6 +38,20 @@ class EntityTypeSeeder extends Seeder
         ]);
 
         EntityType::create([
+            'code' => \App\Enums\EntityTypeEnum::BROKER,
+            'label' => "Courtier en assurances",
+            'description' => "Courtier en assurances",
+            'status_id' => Status::firstWhere('code', \App\Enums\StatusEnum::ACTIVE)->id,
+        ]);
+
+        EntityType::create([
+            'code' => \App\Enums\EntityTypeEnum::AGENT,
+            'label' => "Agent général",
+            'description' => "Agent général",
+            'status_id' => Status::firstWhere('code', \App\Enums\StatusEnum::ACTIVE)->id,
+        ]);
+
+        EntityType::create([
             'code' => \App\Enums\EntityTypeEnum::REPAIRER,
             'label' => "Réparateur",
             'description' => "Réparateur",

@@ -37,7 +37,7 @@ class InsurerController extends Controller
     public function index(): AnonymousResourceCollection
     {
         $insurers = Entity::with('entityType', 'status')
-            ->where('entity_type_id', EntityType::where('code', EntityTypeEnum::INSURER)->first()->id)
+            ->whereIn('entity_type_id', [EntityType::where('code', EntityTypeEnum::INSURER)->first()->id, EntityType::where('code', EntityTypeEnum::BROKER)->first()->id, EntityType::where('code', EntityTypeEnum::AGENT)->first()->id])
             ->latest('created_at')
             ->useFilters()
             ->dynamicPaginate();

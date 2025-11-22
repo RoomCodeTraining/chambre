@@ -241,19 +241,35 @@ class Assignment extends Model
     }
 
     /**
-     * Get the user who repairer validated this assignment
+     * Get the user who repairer validated the quote of this assignment
      */
-    public function repairerValidatedBy(): BelongsTo
+    public function quoteValidatedByRepairerBy(): BelongsTo
     {
-        return $this->belongsTo(User::class, 'repairer_validation_by');
+        return $this->belongsTo(User::class, 'quote_validated_by_repairer_by');
     }
 
     /**
-     * Get the user who expert validated this assignment
+     * Get the user who expert validated the quote of this assignment
      */
-    public function expertValidatedBy(): BelongsTo
+    public function quoteValidatedByExpertBy(): BelongsTo
     {
-        return $this->belongsTo(User::class, 'expert_validation_by');
+        return $this->belongsTo(User::class, 'quote_validated_by_expert_by');
+    }
+
+    /**
+     * Get the user who repairer unvalidated the quote of this assignment
+     */
+    public function quoteUnvalidatedByRepairerBy(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'quote_unvalidated_by_repairer_by');
+    }
+
+    /**
+     * Get the user who expert unvalidated the quote of this assignment
+     */
+    public function quoteUnvalidatedByExpertBy(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'quote_unvalidated_by_expert_by');
     }
 
     /**
@@ -262,6 +278,38 @@ class Assignment extends Model
     public function validatedBy(): BelongsTo
     {
         return $this->belongsTo(User::class, 'validated_by');
+    }
+
+    /**
+     * Get the user who validated the quote of this assignment by repairer
+     */
+    public function validatedByRepairerBy(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'validated_by_repairer_by');
+    }
+
+    /**
+     * Get the user who validated the quote of this assignment by expert
+     */
+    public function validatedByExpertBy(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'validated_by_expert_by');
+    }
+
+    /**
+     * Get the user who unvalidated the quote of this assignment by repairer
+     */
+    public function unvalidatedByRepairerBy(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'unvalidated_by_repairer_by');
+    }
+
+    /**
+     * Get the user who unvalidated the quote of this assignment by expert
+     */
+    public function unvalidatedByExpertBy(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'unvalidated_by_expert_by');
     }
 
     /**

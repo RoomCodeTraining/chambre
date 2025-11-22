@@ -13,10 +13,12 @@ enum StatusEnum: string
     case INACTIVE = 'inactive';
     case OPENED = 'opened';
     case REALIZED = 'realized';
-    case PENDING_FOR_REPAIRER_INVOICE = 'pending_for_repairer_invoice';
-    case PENDING_FOR_REPAIRER_INVOICE_VALIDATION = 'pending_for_repairer_invoice_validation';
+    case PENDING_FOR_REPAIRER_QUOTE = 'pending_for_repairer_quote';
+    case PENDING_FOR_REPAIRER_QUOTE_VALIDATION = 'pending_for_repairer_quote_validation';
     case IN_EDITING = 'in_editing';
     case EDITED = 'edited';
+    case PENDING_FOR_REPAIRER_VALIDATION = 'pending_for_repairer_validation';
+    case PENDING_FOR_EXPERT_VALIDATION = 'pending_for_expert_validation';
     case VALIDATED = 'validated';
     case PAID = 'paid';
     case CLOSED = 'closed';

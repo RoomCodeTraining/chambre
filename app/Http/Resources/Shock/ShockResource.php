@@ -21,7 +21,7 @@ class ShockResource extends JsonResource
             'position' => $this->position,
             'with_tax' => $this->with_tax,
             'is_before_quote' => (bool) $this->is_before_quote,
-            'is_validated' => (bool) $this->is_validated,
+            'quote_validated' => (bool) $this->quote_validated,
             'obsolescence_amount_excluding_tax' => $this->obsolescence_amount_excluding_tax,
             'obsolescence_amount_tax' => $this->obsolescence_amount_tax,
             'obsolescence_amount' => $this->obsolescence_amount,

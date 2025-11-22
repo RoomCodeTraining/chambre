@@ -19,7 +19,7 @@ class WorkforceResource extends JsonResource
             'work_fee' => $this->work_fee,
             'with_tax' => $this->with_tax,
             'is_before_quote' => (bool) $this->is_before_quote,
-            'is_validated' => (bool) $this->is_validated,
+            'quote_validated' => (bool) $this->quote_validated,
             'discount' => $this->discount,
             'all_paint' => $this->all_paint,
             'position' => $this->position,

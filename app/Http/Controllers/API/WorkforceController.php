@@ -298,9 +298,9 @@ class WorkforceController extends Controller
 
         $workforces = $request->get('workforces');
 
-        $is_validated = false;
-        if($assignment->is_validated_by_expert == 1 && $assignment->is_validated_by_repairer == 1){
-            $is_validated = true;
+        $quote_validated = false;
+        if($assignment->quote_validated_by_expert == 1 && $assignment->quote_validated_by_repairer == 1){
+            $quote_validated = true;
         }
 
         if(count($workforces) > 0){
@@ -346,8 +346,8 @@ class WorkforceController extends Controller
                     'amount_tax' => $amount_tax,
                     'amount' => $amount,
                     'position' => $workforce_position,
-                    'is_before_quote' => $is_validated ? 0 : 1,
-                    'is_validated' => $is_validated,
+                    'is_before_quote' => $quote_validated ? 0 : 1,
+                    'quote_validated' => $quote_validated,
                     'status_id' => Status::where('code', StatusEnum::ACTIVE)->first()->id,
                     'created_by' => auth()->user()->id,
                     'updated_by' => auth()->user()->id,
@@ -356,8 +356,8 @@ class WorkforceController extends Controller
             }
 
             $user_entity = Entity::with('entityType:id,code')->findOrFail(auth()->user()->entity_id);
-            if($is_validated){
-                $pendingStatusId = Status::where('code', StatusEnum::PENDING_FOR_REPAIRER_INVOICE)->value('id');
+            if($quote_validated){
+                $pendingStatusId = Status::where('code', StatusEnum::PENDING_FOR_REPAIRER_QUOTE)->value('id');
 
                 if (in_array($user_entity->entityType->code, [EntityTypeEnum::ORGANIZATION, EntityTypeEnum::REPAIRER])) {
                     $updateData = [
@@ -365,11 +365,11 @@ class WorkforceController extends Controller
                     ];
 
                     if ($user_entity->entityType->code === EntityTypeEnum::ORGANIZATION) {
-                        $updateData['is_validated_by_expert'] = 0;
+                        $updateData['quote_validated_by_expert'] = 0;
                     }
 
                     if ($user_entity->entityType->code === EntityTypeEnum::REPAIRER) {
-                        $updateData['is_validated_by_repairer'] = 0;
+                        $updateData['quote_validated_by_repairer'] = 0;
                     }
 
                     $assignment->update($updateData);
@@ -411,9 +411,9 @@ class WorkforceController extends Controller
 
         $assignment = Assignment::where('id',$workforce->shock->assignment_id)->accessibleBy(auth()->user())->firstOrFail();
 
-        $is_validated = false;
-        if($assignment->is_validated_by_expert == 1 && $assignment->is_validated_by_repairer == 1){
-            $is_validated = true;
+        $quote_validated = false;
+        if($assignment->quote_validated_by_expert == 1 && $assignment->quote_validated_by_repairer == 1){
+            $quote_validated = true;
         }
 
         if($assignment->status_id == Status::where('code', StatusEnum::VALIDATED)->first()->id || $assignment->status_id == Status::where('code', StatusEnum::PAID)->first()->id){
@@ -468,8 +468,8 @@ class WorkforceController extends Controller
                 'with_tax' => $request->with_tax,
                 'discount' => $request->discount,
                 'all_paint' => $request->all_paint ?? false,
-                'is_before_quote' => $is_validated ? 0 : 1,
-                'is_validated' => $is_validated,
+                'is_before_quote' => $quote_validated ? 0 : 1,
+                'quote_validated' => $quote_validated,
                 'amount_excluding_tax' => $amount_excluding_tax,
                 'amount_tax' => $amount_tax,
                 'amount' => $amount,
@@ -482,14 +482,14 @@ class WorkforceController extends Controller
                 $shock->update([
                     'paint_type_id' => $request->paint_type_id,
                     'hourly_rate_id' => $request->hourly_rate_id,
-                    'is_before_quote' => $is_validated ? 0 : 1,
-                    'is_validated' => $is_validated,
+                    'is_before_quote' => $quote_validated ? 0 : 1,
+                    'quote_validated' => $quote_validated,
                 ]);
             }
 
             $user_entity = Entity::with('entityType:id,code')->findOrFail(auth()->user()->entity_id);
-            if($is_validated){
-                $pendingStatusId = Status::where('code', StatusEnum::PENDING_FOR_REPAIRER_INVOICE)->value('id');
+            if($quote_validated){
+                $pendingStatusId = Status::where('code', StatusEnum::PENDING_FOR_REPAIRER_QUOTE)->value('id');
 
                 if (in_array($user_entity->entityType->code, [EntityTypeEnum::ORGANIZATION, EntityTypeEnum::REPAIRER])) {
                     $updateData = [
@@ -497,11 +497,11 @@ class WorkforceController extends Controller
                     ];
 
                     if ($user_entity->entityType->code === EntityTypeEnum::ORGANIZATION) {
-                        $updateData['is_validated_by_expert'] = 0;
+                        $updateData['quote_validated_by_expert'] = 0;
                     }
 
                     if ($user_entity->entityType->code === EntityTypeEnum::REPAIRER) {
-                        $updateData['is_validated_by_repairer'] = 0;
+                        $updateData['quote_validated_by_repairer'] = 0;
                     }
 
                     $assignment->update($updateData);
@@ -717,9 +717,9 @@ class WorkforceController extends Controller
 
         $assignment = Assignment::where('id',$workforce->shock->assignment_id)->accessibleBy(auth()->user())->firstOrFail();
 
-        $is_validated = false;
-        if($assignment->is_validated_by_expert == 1 && $assignment->is_validated_by_repairer == 1){
-            $is_validated = true;
+        $quote_validated = false;
+        if($assignment->quote_validated_by_expert == 1 && $assignment->quote_validated_by_repairer == 1){
+            $quote_validated = true;
         }
 
         if($assignment->status_id == Status::where('code', StatusEnum::VALIDATED)->first()->id || $assignment->status_id == Status::where('code', StatusEnum::PAID)->first()->id){
@@ -727,8 +727,8 @@ class WorkforceController extends Controller
         }
 
         $workforce->update([
-            'is_before_quote' => $is_validated ? 0 : 1,
-            'is_validated' => $is_validated,
+            'is_before_quote' => $quote_validated ? 0 : 1,
+            'quote_validated' => $quote_validated,
             'status_id' => Status::where('code', StatusEnum::DELETED)->first()->id,
             'deleted_at' => now(),
             'deleted_by' => auth()->user()->id,
@@ -737,15 +737,15 @@ class WorkforceController extends Controller
         $workforce->delete();
 
         $user_entity = Entity::with('entityType:id,code')->findOrFail(auth()->user()->entity_id);
-        if($is_validated){
+        if($quote_validated){
             if($user_entity->entityType->code == EntityTypeEnum::ORGANIZATION){
                 $assignment->update([
-                    'is_validated_by_expert' => 0,
+                    'quote_validated_by_expert' => 0,
                 ]);
             }
             if($user_entity->entityType->code == EntityTypeEnum::REPAIRER){
                 $assignment->update([
-                    'is_validated_by_repairer' => 0,
+                    'quote_validated_by_repairer' => 0,
                 ]);
             }
         }
@@ -753,8 +753,8 @@ class WorkforceController extends Controller
         $shock = Shock::find($workforce->shock_id);
 
         $shock->update([
-            'is_before_quote' => $is_validated ? 0 : 1,
-            'is_validated' => $is_validated,
+            'is_before_quote' => $quote_validated ? 0 : 1,
+            'quote_validated' => $quote_validated,
         ]);
 
         $this->recalculate($workforce->shock_id, $workforce->paint_type_id, $workforce->hourly_rate_id, $workforce->with_tax);

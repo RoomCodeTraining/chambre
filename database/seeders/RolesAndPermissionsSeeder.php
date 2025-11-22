@@ -36,18 +36,29 @@ class RolesAndPermissionsSeeder extends Seeder
         $createAssignment = Permission::create(['name' => \App\Enums\PermissionEnum::CREATE_ASSIGNMENT, 'guard_name' => 'sanctum']);
         $viewAssignment = Permission::create(['name' => \App\Enums\PermissionEnum::VIEW_ASSIGNMENT, 'guard_name' => 'sanctum']);
         $updateAssignment = Permission::create(['name' => \App\Enums\PermissionEnum::UPDATE_ASSIGNMENT, 'guard_name' => 'sanctum']);
-        $deleteAssignment = Permission::create(['name' => \App\Enums\PermissionEnum::DELETE_ASSIGNMENT, 'guard_name' => 'sanctum']);
         $realizeAssignment = Permission::create(['name' => \App\Enums\PermissionEnum::REALIZE_ASSIGNMENT, 'guard_name' => 'sanctum']);
+        $updateRealizedAssignment = Permission::create(['name' => \App\Enums\PermissionEnum::UPDATE_REALIZED_ASSIGNMENT, 'guard_name' => 'sanctum']);
+        $createQuoteAssignment = Permission::create(['name' => \App\Enums\PermissionEnum::CREATE_QUOTE_ASSIGNMENT, 'guard_name' => 'sanctum']);
+        $validateQuoteAssignment = Permission::create(['name' => \App\Enums\PermissionEnum::VALIDATE_QUOTE_ASSIGNMENT, 'guard_name' => 'sanctum']);
+        $unvalidateQuoteAssignment = Permission::create(['name' => \App\Enums\PermissionEnum::UNVALIDATE_QUOTE_ASSIGNMENT, 'guard_name' => 'sanctum']);
+        $validateQuoteWithConditionAssignment = Permission::create(['name' => \App\Enums\PermissionEnum::VALIDATE_QUOTE_WITH_CONDITION_ASSIGNMENT, 'guard_name' => 'sanctum']);
+        $createWorksheetAssignment = Permission::create(['name' => \App\Enums\PermissionEnum::CREATE_WORKSHEET_ASSIGNMENT, 'guard_name' => 'sanctum']);
+        $validateWorkSheetByExpertAssignment = Permission::create(['name' => \App\Enums\PermissionEnum::VALIDATE_WORK_SHEET_BY_EXPERT_ASSIGNMENT, 'guard_name' => 'sanctum']);
+        $unvalidateWorkSheetByExpertAssignment = Permission::create(['name' => \App\Enums\PermissionEnum::UNVALIDATE_WORK_SHEET_BY_EXPERT_ASSIGNMENT, 'guard_name' => 'sanctum']);
         $editAssignment = Permission::create(['name' => \App\Enums\PermissionEnum::EDIT_ASSIGNMENT, 'guard_name' => 'sanctum']);
+        $updateEditedAssignment = Permission::create(['name' => \App\Enums\PermissionEnum::UPDATE_EDITED_ASSIGNMENT, 'guard_name' => 'sanctum']);
         $validateAssignment = Permission::create(['name' => \App\Enums\PermissionEnum::VALIDATE_ASSIGNMENT, 'guard_name' => 'sanctum']);
+        $unvalidateAssignment = Permission::create(['name' => \App\Enums\PermissionEnum::UNVALIDATE_ASSIGNMENT, 'guard_name' => 'sanctum']);
+        $validateByRepairerAssignment = Permission::create(['name' => \App\Enums\PermissionEnum::VALIDATE_BY_REPAIRER_ASSIGNMENT, 'guard_name' => 'sanctum']);
+        $unvalidateByRepairerAssignment = Permission::create(['name' => \App\Enums\PermissionEnum::UNVALIDATE_BY_REPAIRER_ASSIGNMENT, 'guard_name' => 'sanctum']);
+        $validateByExpertAssignment = Permission::create(['name' => \App\Enums\PermissionEnum::VALIDATE_BY_EXPERT_ASSIGNMENT, 'guard_name' => 'sanctum']);
+        $unvalidateByExpertAssignment = Permission::create(['name' => \App\Enums\PermissionEnum::UNVALIDATE_BY_EXPERT_ASSIGNMENT, 'guard_name' => 'sanctum']);
         $closeAssignment = Permission::create(['name' => \App\Enums\PermissionEnum::CLOSE_ASSIGNMENT, 'guard_name' => 'sanctum']);
         $cancelAssignment = Permission::create(['name' => \App\Enums\PermissionEnum::CANCEL_ASSIGNMENT, 'guard_name' => 'sanctum']);
         $generateAssignment = Permission::create(['name' => \App\Enums\PermissionEnum::GENERATE_ASSIGNMENT, 'guard_name' => 'sanctum']);
         $assignmentStatistics = Permission::create(['name' => \App\Enums\PermissionEnum::ASSIGNMENT_STATISTICS, 'guard_name' => 'sanctum']);
-        $createWorksheetAssignment = Permission::create(['name' => \App\Enums\PermissionEnum::CREATE_WORKSHEET_ASSIGNMENT, 'guard_name' => 'sanctum']);
-        $createQuoteAssignment = Permission::create(['name' => \App\Enums\PermissionEnum::CREATE_QUOTE_ASSIGNMENT, 'guard_name' => 'sanctum']);
-        $validateQuoteAssignment = Permission::create(['name' => \App\Enums\PermissionEnum::VALIDATE_QUOTE_ASSIGNMENT, 'guard_name' => 'sanctum']);
         $cancelQuoteAssignment = Permission::create(['name' => \App\Enums\PermissionEnum::CANCEL_QUOTE_ASSIGNMENT, 'guard_name' => 'sanctum']);
+        $deleteAssignment = Permission::create(['name' => \App\Enums\PermissionEnum::DELETE_ASSIGNMENT, 'guard_name' => 'sanctum']);
 
         $createInvoice = Permission::create(['name' => \App\Enums\PermissionEnum::CREATE_INVOICE, 'guard_name' => 'sanctum']);
         $viewInvoice = Permission::create(['name' => \App\Enums\PermissionEnum::VIEW_INVOICE, 'guard_name' => 'sanctum']);
@@ -1137,14 +1148,26 @@ class RolesAndPermissionsSeeder extends Seeder
             $createAssignment,
             $viewAssignment,
             $updateAssignment,
+            $createQuoteAssignment,
+            $validateQuoteAssignment,
+            $unvalidateQuoteAssignment,
+            $validateQuoteWithConditionAssignment,
+            $createWorksheetAssignment,
+            $validateWorkSheetByExpertAssignment,
+            $unvalidateWorkSheetByExpertAssignment,
             $realizeAssignment,
+            $updateRealizedAssignment,
             $editAssignment,
+            $updateEditedAssignment,
+            $validateAssignment,
+            $unvalidateAssignment,
+            $validateByRepairerAssignment,
+            $unvalidateByRepairerAssignment,
+            $validateByExpertAssignment,
+            $unvalidateByExpertAssignment,
             $cancelAssignment,
             $generateAssignment,
             $assignmentStatistics,
-            $createWorksheetAssignment,
-            $validateQuoteAssignment,
-            $cancelQuoteAssignment,
 
             $viewShock,
             $createShock,
@@ -1372,18 +1395,26 @@ class RolesAndPermissionsSeeder extends Seeder
             $createAssignment,
             $viewAssignment,
             $updateAssignment,
-            $deleteAssignment,
+            $createQuoteAssignment,
+            $validateQuoteAssignment,
+            $unvalidateQuoteAssignment,
+            $validateQuoteWithConditionAssignment,
+            $createWorksheetAssignment,
+            $validateWorkSheetByExpertAssignment,
+            $unvalidateWorkSheetByExpertAssignment,
             $realizeAssignment,
+            $updateRealizedAssignment,
             $editAssignment,
+            $updateEditedAssignment,
             $validateAssignment,
-            $closeAssignment,
+            $unvalidateAssignment,
+            $validateByRepairerAssignment,
+            $unvalidateByRepairerAssignment,
+            $validateByExpertAssignment,
+            $unvalidateByExpertAssignment,
             $cancelAssignment,
             $generateAssignment,
             $assignmentStatistics,
-            $createWorksheetAssignment,
-            $createQuoteAssignment,
-            $validateQuoteAssignment,
-            $cancelQuoteAssignment,
 
             $createInvoice,
             $viewInvoice,
@@ -1619,18 +1650,26 @@ class RolesAndPermissionsSeeder extends Seeder
             $createAssignment,
             $viewAssignment,
             $updateAssignment,
-            $deleteAssignment,
+            $createQuoteAssignment,
+            $validateQuoteAssignment,
+            $unvalidateQuoteAssignment,
+            $validateQuoteWithConditionAssignment,
+            $createWorksheetAssignment,
+            $validateWorkSheetByExpertAssignment,
+            $unvalidateWorkSheetByExpertAssignment,
             $realizeAssignment,
+            $updateRealizedAssignment,
             $editAssignment,
+            $updateEditedAssignment,
             $validateAssignment,
-            $closeAssignment,
+            $unvalidateAssignment,
+            $validateByRepairerAssignment,
+            $unvalidateByRepairerAssignment,
+            $validateByExpertAssignment,
+            $unvalidateByExpertAssignment,
             $cancelAssignment,
             $generateAssignment,
             $assignmentStatistics,
-            $createWorksheetAssignment,
-            $createQuoteAssignment,
-            $validateQuoteAssignment,
-            $cancelQuoteAssignment,
 
             $viewShock,
             $createShock,
@@ -1851,7 +1890,23 @@ class RolesAndPermissionsSeeder extends Seeder
 
             $viewAssignmentRequest,
 
+            $createAssignment,
             $viewAssignment,
+            $updateAssignment,
+            $createQuoteAssignment,
+            $validateQuoteAssignment,
+            $unvalidateQuoteAssignment,
+            $validateQuoteWithConditionAssignment,
+            $createWorksheetAssignment,
+            $validateWorkSheetByExpertAssignment,
+            $unvalidateWorkSheetByExpertAssignment,
+            $realizeAssignment,
+            $updateRealizedAssignment,
+            $editAssignment,
+            $updateEditedAssignment,
+            $cancelAssignment,
+            $generateAssignment,
+            $assignmentStatistics,
 
             $viewInvoice,
             $generateInvoice,
@@ -2227,8 +2282,17 @@ class RolesAndPermissionsSeeder extends Seeder
             $resetUser,
 
             $viewAssignmentRequest,
+            $acceptAssignmentRequest,
+            $rejectAssignmentRequest,
 
+            $createAssignment,
             $viewAssignment,
+            $updateAssignment,
+            $realizeAssignment,
+            $updateRealizedAssignment,
+            $editAssignment,
+            $generateAssignment,
+            $assignmentStatistics,
 
             $viewInvoice,
             $generateInvoice,
@@ -2605,7 +2669,14 @@ class RolesAndPermissionsSeeder extends Seeder
 
             $viewAssignmentRequest,
 
+            $createAssignment,
             $viewAssignment,
+            $updateAssignment,
+            $realizeAssignment,
+            $updateRealizedAssignment,
+            $editAssignment,
+            $generateAssignment,
+            $assignmentStatistics,
 
             $viewInvoice,
             $generateInvoice,
@@ -2982,7 +3053,25 @@ class RolesAndPermissionsSeeder extends Seeder
 
             $viewAssignmentRequest,
 
+            $createAssignment,
             $viewAssignment,
+            $updateAssignment,
+            $createQuoteAssignment,
+            $validateQuoteAssignment,
+            $unvalidateQuoteAssignment,
+            $validateQuoteWithConditionAssignment,
+            $createWorksheetAssignment,
+            $validateWorkSheetByExpertAssignment,
+            $unvalidateWorkSheetByExpertAssignment,
+            $realizeAssignment,
+            $updateRealizedAssignment,
+            $editAssignment,
+            $updateEditedAssignment,
+            $validateAssignment,
+            $unvalidateAssignment,
+            $cancelAssignment,
+            $generateAssignment,
+            $assignmentStatistics,
 
             $viewInvoice,
             $generateInvoice,

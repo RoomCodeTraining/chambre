@@ -73,6 +73,34 @@ class DashboardController extends Controller
     }
 
     /**
+     * Afficher les statistiques des courtiers en assurances
+     */
+    public function brokers() : JsonResponse
+    {
+        // $this->authorize('viewAny', User::class);
+
+        return $this->responseSuccess(null, [
+            'total_brokers' => ['value' => Entity::where('entity_type_id', EntityType::where('code', EntityTypeEnum::BROKER)->first()->id)->accessibleBy(auth()->user())->count()],
+            'active_brokers' => ['value' => Entity::where('entity_type_id', EntityType::where('code', EntityTypeEnum::BROKER)->first()->id)->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->accessibleBy(auth()->user())->count()],
+            'inactive_brokers' => ['value' => Entity::where('entity_type_id', EntityType::where('code', EntityTypeEnum::BROKER)->first()->id)->where('status_id', Status::where('code', StatusEnum::INACTIVE)->first()->id)->accessibleBy(auth()->user())->count()],
+        ]);
+    }
+
+    /**
+     * Afficher les statistiques des agents généraux
+     */
+    public function agents() : JsonResponse
+    {
+        // $this->authorize('viewAny', User::class);
+
+        return $this->responseSuccess(null, [
+            'total_agents' => ['value' => Entity::where('entity_type_id', EntityType::where('code', EntityTypeEnum::AGENT)->first()->id)->accessibleBy(auth()->user())->count()],
+            'active_agents' => ['value' => Entity::where('entity_type_id', EntityType::where('code', EntityTypeEnum::AGENT)->first()->id)->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->accessibleBy(auth()->user())->count()],
+            'inactive_agents' => ['value' => Entity::where('entity_type_id', EntityType::where('code', EntityTypeEnum::AGENT)->first()->id)->where('status_id', Status::where('code', StatusEnum::INACTIVE)->first()->id)->accessibleBy(auth()->user())->count()],
+        ]);
+    }
+
+    /**
      * Afficher les statistiques des réparateurs
      */
     public function repairers() : JsonResponse

@@ -22,6 +22,9 @@ Route::middleware(['auth:sanctum'])->name('users.')->group(function () {
         Route::post('{id}/reset', 'reset')->name('reset');
         Route::post('update/profile', 'update_profile')->name('update-profile');
         Route::post('{id}/reset-user-password', 'reset_user_password')->name('reset-user-password');
+
+        Route::post('{id}/give-permission-to-user', 'givePermissionToUser')->name('givePermissionToUser');
+        Route::post('{id}/revoke-permission-to-user', 'revokePermissionToUser')->name('revokePermissionToUser');
     });
 });
 Route::post('users/reset-password', [UserController::class, 'reset_password'])->name('reset-password');

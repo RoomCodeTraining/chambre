@@ -40,13 +40,13 @@ class StatusSeeder extends Seeder
         ]);
 
         Status::create([
-            'code' => StatusEnum::PENDING_FOR_REPAIRER_INVOICE,
+            'code' => StatusEnum::PENDING_FOR_REPAIRER_QUOTE,
             'label' => "En attente de la facture du réparateur",
             'description' => "En attente de la facture du réparateur",
         ]);
 
         Status::create([
-            'code' => StatusEnum::PENDING_FOR_REPAIRER_INVOICE_VALIDATION,
+            'code' => StatusEnum::PENDING_FOR_REPAIRER_QUOTE_VALIDATION,
             'label' => "En attente de validation de la facture du réparateur",
             'description' => "En attente de validation de la facture du réparateur",
         ]);

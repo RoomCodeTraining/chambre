@@ -16,12 +16,12 @@ Ce document décrit le cycle de vie complet d'une affectation (assignment) dans 
        │
        ↓
 ┌───────────────────────────────────┐
-│ PENDING_FOR_REPAIRER_INVOICE      │ ← En attente de la facture du réparateur
+│ PENDING_FOR_REPAIRER_QUOTE      │ ← En attente de la facture du réparateur
 └───────────────┬───────────────────┘
                 │
                 ↓
 ┌───────────────────────────────────────────────┐
-│ PENDING_FOR_REPAIRER_INVOICE_VALIDATION       │ ← Facture soumise, en attente de validation
+│ PENDING_FOR_REPAIRER_QUOTE_VALIDATION       │ ← Facture soumise, en attente de validation
 └───────────────┬───────────────────────────────┘
                 │
                 ↓
@@ -97,7 +97,7 @@ Ce document décrit le cycle de vie complet d'une affectation (assignment) dans 
 - 💰 Ajouter les coûts
 - 👷 Ajouter la main d'œuvre
 - 📸 Ajouter photos et documents
-- ✅ Passer au statut PENDING_FOR_REPAIRER_INVOICE
+- ✅ Passer au statut PENDING_FOR_REPAIRER_QUOTE
 
 **Acteurs:** Expert, Expert Admin
 
@@ -108,14 +108,14 @@ Ce document décrit le cycle de vie complet d'une affectation (assignment) dans 
 
 ---
 
-### 4. ⏳ PENDING_FOR_REPAIRER_INVOICE (En attente facture réparateur)
+### 4. ⏳ PENDING_FOR_REPAIRER_QUOTE (En attente facture réparateur)
 **Description:** Expertise terminée, en attente que le réparateur soumette sa facture.
 
 **Actions disponibles:**
 - 📄 Le réparateur peut soumettre sa facture
 - 📧 Relance automatique du réparateur (après délai)
 - 👀 Consulter l'expertise
-- ✅ Passer au statut PENDING_FOR_REPAIRER_INVOICE_VALIDATION
+- ✅ Passer au statut PENDING_FOR_REPAIRER_QUOTE_VALIDATION
 
 **Acteurs:** Réparateur, Expert Admin
 
@@ -125,12 +125,12 @@ Ce document décrit le cycle de vie complet d'une affectation (assignment) dans 
 
 ---
 
-### 5. 🔍 PENDING_FOR_REPAIRER_INVOICE_VALIDATION (Validation facture en attente)
+### 5. 🔍 PENDING_FOR_REPAIRER_QUOTE_VALIDATION (Validation facture en attente)
 **Description:** Facture du réparateur soumise, en attente de validation par l'expert.
 
 **Actions disponibles:**
 - ✅ Valider la facture
-- ❌ Rejeter la facture (retour à PENDING_FOR_REPAIRER_INVOICE)
+- ❌ Rejeter la facture (retour à PENDING_FOR_REPAIRER_QUOTE)
 - 💬 Demander des modifications
 - ✅ Passer au statut IN_EDITING après validation
 
@@ -263,7 +263,7 @@ Ce document décrit le cycle de vie complet d'une affectation (assignment) dans 
 - 💬 Ajouter raison d'annulation
 
 **Accès depuis:**
-- Peut être annulé depuis: DRAFT, OPENED, REALIZED, PENDING_FOR_REPAIRER_INVOICE
+- Peut être annulé depuis: DRAFT, OPENED, REALIZED, PENDING_FOR_REPAIRER_QUOTE
 
 **⚠️ Ne peut PAS être annulé depuis:**
 - VALIDATED, PAID, CLOSED
@@ -322,7 +322,7 @@ Ce document décrit le cycle de vie complet d'une affectation (assignment) dans 
 - ❌ Pas accès paiements
 
 ### 👨‍🔧 Expert
-- ✅ OPENED → REALIZED → PENDING_FOR_REPAIRER_INVOICE
+- ✅ OPENED → REALIZED → PENDING_FOR_REPAIRER_QUOTE
 - ✅ Édition durant IN_EDITING
 - ❌ Ne peut pas valider seul
 
@@ -332,7 +332,7 @@ Ce document décrit le cycle de vie complet d'une affectation (assignment) dans 
 - ❌ Pas de modifications techniques
 
 ### 🛠️ Réparateur Admin
-- ✅ PENDING_FOR_REPAIRER_INVOICE → PENDING_FOR_REPAIRER_INVOICE_VALIDATION
+- ✅ PENDING_FOR_REPAIRER_QUOTE → PENDING_FOR_REPAIRER_QUOTE_VALIDATION
 - ✅ Soumission facture
 - ❌ Pas accès autres statuts
 
@@ -368,7 +368,7 @@ if (days_since_paid > 90) {
 **Autorisés:**
 - IN_EDITING → REALIZED (corrections nécessaires)
 - EDITED → IN_EDITING (révisions)
-- PENDING_FOR_REPAIRER_INVOICE_VALIDATION → PENDING_FOR_REPAIRER_INVOICE (rejet facture)
+- PENDING_FOR_REPAIRER_QUOTE_VALIDATION → PENDING_FOR_REPAIRER_QUOTE (rejet facture)
 
 **Interdits:**
 - PAID → tout autre statut
@@ -385,8 +385,8 @@ if (days_since_paid > 90) {
 |--------|--------------|---------------|
 | OPENED | 📧 Nouvelle affectation | Expert, Client |
 | REALIZED | 📧 Expertise terminée | Admin, Assureur |
-| PENDING_FOR_REPAIRER_INVOICE | 📧 Attente facture | Réparateur |
-| PENDING_FOR_REPAIRER_INVOICE_VALIDATION | 📧 Facture à valider | Expert |
+| PENDING_FOR_REPAIRER_QUOTE | 📧 Attente facture | Réparateur |
+| PENDING_FOR_REPAIRER_QUOTE_VALIDATION | 📧 Facture à valider | Expert |
 | VALIDATED | 📧 Rapport validé | Tous |
 | PAID | 📧 Paiement confirmé | Comptable, Admin |
 | CLOSED | 📧 Dossier clôturé | Tous |
@@ -400,9 +400,9 @@ if (days_since_paid > 90) {
 ```
 📈 Temps moyen par statut:
 - OPENED → REALIZED: 2-3 jours
-- REALIZED → PENDING_FOR_REPAIRER_INVOICE: 1 jour
-- PENDING_FOR_REPAIRER_INVOICE → PENDING_FOR_REPAIRER_INVOICE_VALIDATION: 24-48h
-- PENDING_FOR_REPAIRER_INVOICE_VALIDATION → IN_EDITING: 1 jour
+- REALIZED → PENDING_FOR_REPAIRER_QUOTE: 1 jour
+- PENDING_FOR_REPAIRER_QUOTE → PENDING_FOR_REPAIRER_QUOTE_VALIDATION: 24-48h
+- PENDING_FOR_REPAIRER_QUOTE_VALIDATION → IN_EDITING: 1 jour
 - IN_EDITING → EDITED: 2-4 heures
 - EDITED → VALIDATED: 24 heures
 - VALIDATED → PAID: 7-15 jours
@@ -414,7 +414,7 @@ if (days_since_paid > 90) {
 ### Alertes
 
 - 🔴 Expertise en OPENED depuis > 5 jours
-- 🟠 En PENDING_FOR_REPAIRER_INVOICE depuis > 48h
+- 🟠 En PENDING_FOR_REPAIRER_QUOTE depuis > 48h
 - 🟡 En IN_EDITING depuis > 48h
 - 🟢 Workflow normal
 
@@ -439,11 +439,11 @@ WHERE id = ?
 
 **Réinitialisation de validation:**
 ```php
-// Retour à PENDING_FOR_REPAIRER_INVOICE
+// Retour à PENDING_FOR_REPAIRER_QUOTE
 $assignment->update([
     'is_validated_by_expert' => 0,
     'is_validated_by_repairer' => 0,
-    'status_id' => Status::where('code', StatusEnum::PENDING_FOR_REPAIRER_INVOICE)->first()->id
+    'status_id' => Status::where('code', StatusEnum::PENDING_FOR_REPAIRER_QUOTE)->first()->id
 ]);
 ```
 

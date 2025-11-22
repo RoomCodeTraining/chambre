@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 
 use Carbon\Carbon;
 use App\Models\User;
+use App\Models\Permission;
 use Illuminate\Http\JsonResponse;
 use App\Http\Controllers\Controller;
 use Essa\APIToolKit\Api\ApiResponse;
@@ -274,5 +275,37 @@ class UserController extends Controller
             $pass[] = $alphabet[$n];
         }
         return implode($pass); //turn the array into a string
+    }
+
+    public function givePermissionToUser(Request $request, $id)
+    {
+        $user = User::accessibleBy(auth()->user())->findOrFail(User::keyFromHashId($id));
+
+        $permissions = [];
+        if(count($request->permissions) > 0){
+            for ($i = 0; $i < count($request->permissions); $i++) {
+                $permission = Permission::accessibleBy(auth()->user())->findOrFail(Permission::keyFromHashId($request->permissions[$i]));
+                $permissions[] = $permission->name;
+            }
+            $user->givePermissionTo($permissions);
+        }
+
+        return $this->responseSuccess('Permission added to user successfully', new UserResource($user));
+    }
+
+    public function revokePermissionToUser(Request $request, $id)
+    {
+        $user = User::accessibleBy(auth()->user())->findOrFail(User::keyFromHashId($id));
+
+        $permissions = [];
+        if(count($request->permissions) > 0){
+            for ($i = 0; $i < count($request->permissions); $i++) {
+                $permission = Permission::accessibleBy(auth()->user())->findOrFail(Permission::keyFromHashId($request->permissions[$i]));
+                $permissions[] = $permission->name;
+            }
+            $user->revokePermissionTo($permissions);
+        }
+
+        return $this->responseSuccess('Permission revoked from user successfully', new UserResource($user));
     }
 }
