@@ -1,12 +1,12 @@
 <?php
 
-use App\Http\Controllers\API\AppSettingController;
+use App\Http\Controllers\API\UserActionController;
 use Illuminate\Support\Facades\Route;
 
-Route::middleware('auth:sanctum')->name('app-settings.')->group(function () {
-    Route::get('/', [AppSettingController::class, 'index'])->name('index');
-    Route::post('/', [AppSettingController::class, 'store'])->name('store');
-    Route::get('/{appSetting}', [AppSettingController::class, 'show'])->name('show');
-    Route::put('/{appSetting}', [AppSettingController::class, 'update'])->name('update');
-    Route::delete('/{appSetting}', [AppSettingController::class, 'destroy'])->name('destroy');
+Route::middleware('auth:sanctum')->name('user.actions.')->group(function () {
+    Route::get('/', [UserActionController::class, 'index'])->name('index');
+    Route::post('/', [UserActionController::class, 'store'])->name('store');
+    Route::get('/{id}', [UserActionController::class, 'show'])->name('show');
+    Route::put('/{id}', [UserActionController::class, 'update'])->name('update');
+    Route::delete('/{id}', [UserActionController::class, 'destroy'])->name('destroy');
 }); 
