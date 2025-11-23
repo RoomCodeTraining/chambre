@@ -109,7 +109,7 @@ class EntityController extends Controller
     {
         $entity = Entity::accessibleBy(auth()->user())->findOrFail(Entity::keyFromHashId($id));
 
-        return $this->responseSuccess(null, new EntityResource($entity));
+        return $this->responseSuccess(null, new EntityResource($entity)->load('entityType','status'));
     }
 
     /**
