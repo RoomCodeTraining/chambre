@@ -2016,7 +2016,7 @@ class AssignmentController extends Controller
             'total_amount_tax' => $total_amount_tax,
             'total_amount' => $total_amount,
             'evaluations' => $vehicle->vehicleGenre && $vehicle->vehicleEnergy ? json_encode($evaluations) : null,
-            'status_id' => Status::where('code', StatusEnum::EDITED)->first()->id,
+            'status_id' => Status::where('code', StatusEnum::PENDING_FOR_REPAIRER_VALIDATION)->first()->id,
             'updated_by' => auth()->user()->id,
             'edited_by' => auth()->user()->id,
             'edited_at' => Carbon::now(),
