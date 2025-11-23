@@ -2237,6 +2237,8 @@ class AssignmentController extends Controller
         $assignment = Assignment::with('shocks:id,quote_validated', 'shocks.shockWorks:id,quote_validated', 'shocks.workforces:id,quote_validated')->findOrFail(Assignment::keyFromHashId($id));
 
         $assignment->update([
+            'work_sheet_established_by' => auth()->user()->id,
+            'work_sheet_established_at' => Carbon::now(),
             'status_id' => Status::where('code', StatusEnum::PENDING_FOR_REPAIRER_QUOTE)->first()->id,
             'updated_by' => auth()->user()->id,
         ]);
