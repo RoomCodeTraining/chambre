@@ -7,6 +7,7 @@ use App\Models\Status;
 use App\Enums\StatusEnum;
 use App\Models\UserAction;
 use App\Models\UserActionType;
+use App\Services\Agent\GetAgent;
 use App\Enums\UserActionTypeEnum;
 use Illuminate\Http\JsonResponse;
 use App\Http\Requests\AuthRequest;
@@ -22,7 +23,7 @@ use Symfony\Component\HttpKernel\Exception\UnprocessableEntityHttpException;
  */
 class TokenController extends Controller
 {
-    public function logAction(?User $user, string $description, int $status_id)
+    public function logAction(?User $user, string $description, ?int $status_id)
     {
         $getAgent = app(GetAgent::class);
         $agentInfo = $getAgent->getAgentInfo();
@@ -57,7 +58,7 @@ class TokenController extends Controller
 
         $data = $generateToken->execute($user, $tokenName, $expiresAt);
 
-        $this->logAction($user, "Génération de token d'accès", Status::where('code', StatusEnum::SUCCESS->value)->first()->id);
+        $this->logAction($user, "Génération de token d'accès", Status::where('code', StatusEnum::SUCCESS->value)->first()?->id ?? null);
 
         return response()->json($data);
     }

@@ -118,5 +118,17 @@ class StatusSeeder extends Seeder
             'description' => "Accepté(e)",
         ]);
 
+        Status::create([
+            'code' => StatusEnum::SUCCESS,
+            'label' => "Succès",
+            'description' => "Succès",
+        ]);
+
+        Status::create([
+            'code' => StatusEnum::FAILED,
+            'label' => "Échec",
+            'description' => "Échec",
+        ]);
+
     }
 }
