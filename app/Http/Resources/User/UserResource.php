@@ -2,7 +2,7 @@
 
 namespace App\Http\Resources\User;
 
-use App\Http\Resources\RoleResource;
+use App\Http\Resources\Role\RoleResource;
 use Illuminate\Http\Resources\MissingValue;
 use App\Http\Resources\Client\ClientResource;
 use App\Http\Resources\Entity\EntityResource;
