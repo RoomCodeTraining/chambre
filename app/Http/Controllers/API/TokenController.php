@@ -22,7 +22,7 @@ use Symfony\Component\HttpKernel\Exception\UnprocessableEntityHttpException;
  */
 class TokenController extends Controller
 {
-    public function logAction(?User $user, string $description, string $status)
+    public function logAction(?User $user, string $description, int $status_id)
     {
         $getAgent = app(GetAgent::class);
         $agentInfo = $getAgent->getAgentInfo();
@@ -36,7 +36,7 @@ class TokenController extends Controller
             'user_id' => $user ? $user->id : null,
             'user_action_type_id' => UserActionType::where('code', UserActionTypeEnum::LOGIN_USER->value)->first()->id ?? null,
             'description' => $description,
-            'status' => $status,
+            'status_id' => $status_id,
         ]);
     }
     /**
