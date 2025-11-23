@@ -25,7 +25,7 @@ return new class extends Migration
             $table->boolean('control')->default(false);
             $table->text('comment')->nullable();
             $table->boolean('is_before_quote')->default(false);
-            $table->boolean('is_validated')->default(false);
+            $table->boolean('quote_validated')->default(false);
 
             $table->decimal('amount', 18, 2)->nullable();
 
