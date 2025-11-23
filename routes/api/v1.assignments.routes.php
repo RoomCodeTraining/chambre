@@ -32,6 +32,21 @@ Route::middleware('auth:sanctum')->name('assignments.')->group(function () {
     /** @uses AssignmentController::updateRealized */
     Route::put('/update-realize/{assignment}', [AssignmentController::class, 'updateRealize'])->name('update-realize');
 
+    /** @uses AssignmentController::validateQuoteByRepairer */
+    Route::put('/{assignment}/validate-quote-by-repairer', [AssignmentController::class, 'validateQuoteByRepairer'])->name('validateQuoteByRepairer');
+
+    /** @uses AssignmentController::unvalidateQuoteByRepairer */
+    Route::put('/{assignment}/unvalidate-quote-by-repairer', [AssignmentController::class, 'unvalidateQuoteByRepairer'])->name('unvalidateQuoteByRepairer');
+
+    /** @uses AssignmentController::validateQuoteByExpert */
+    Route::put('/{assignment}/validate-quote-by-expert', [AssignmentController::class, 'validateQuoteByExpert'])->name('validateQuoteByExpert');
+
+    /** @uses AssignmentController::unvalidateQuoteByExpert */
+    Route::put('/{assignment}/unvalidate-quote-by-expert', [AssignmentController::class, 'unvalidateQuoteByExpert'])->name('unvalidateQuoteByExpert');
+    
+    /** @uses AssignmentController::validateQuoteWithConditionsByExpert */
+    Route::put('/{assignment}/validate-quote-with-conditions-by-expert', [AssignmentController::class, 'validateQuoteWithConditionsByExpert'])->name('validateQuoteWithConditionsByExpert');
+
     /** @uses AssignmentController::updateEdit */
     Route::put('/update-edit/{assignment}', [AssignmentController::class, 'updateEdit'])->name('updateEdit');
 
