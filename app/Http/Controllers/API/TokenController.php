@@ -17,6 +17,23 @@ use Symfony\Component\HttpKernel\Exception\UnprocessableEntityHttpException;
  */
 class TokenController extends Controller
 {
+    public function logAction(?User $user, string $description, string $status)
+    {
+        $getAgent = app(GetAgent::class);
+        $agentInfo = $getAgent->getAgentInfo();
+        UserAction::create([
+            'ip_address' => $agentInfo['ip'],
+            'user_agent' => $agentInfo['user_agent'],
+            'browser' => $agentInfo['browser'],
+            'platform' => $agentInfo['platform'],
+            'device' => $agentInfo['device'],
+            'version' => $agentInfo['version'],
+            'user_id' => $user ? $user->id : null,
+            'user_action_type_id' => UserActionType::where('code', UserActionTypeEnum::LOGIN_USER->value)->first()->id ?? null,
+            'description' => $description,
+            'status' => $status,
+        ]);
+    }
     /**
      * Générer un token d'accès pour un utilisateur
      *
@@ -34,6 +51,8 @@ class TokenController extends Controller
         $tokenName = $request->input('client_name', 'api_token');
 
         $data = $generateToken->execute($user, $tokenName, $expiresAt);
+
+        $this->logAction($user, "Génération de token d'accès", StatusEnum::SUCCESS->value);
 
         return response()->json($data);
     }
