@@ -2725,7 +2725,7 @@ class AssignmentController extends Controller
      */
     public function validateQuoteByRepairer($id): JsonResponse
     {
-        $assignment = Assignment::with('shocks:id,quote_validated', 'shocks.shockWorks:id,quote_validated', 'shocks.workforces:id,quote_validated')->findOrFail(Assignment::keyFromHashId($id));
+        $assignment = Assignment::with('shocks:id,quote_validated', 'shocks.shockWorks:id,quote_validated', 'shocks.workforces:id,quote_validated')->find(Assignment::keyFromHashId($id));
 
         if($assignment->status_id == Status::where('code', StatusEnum::PENDING_FOR_REPAIRER_QUOTE)->first()->id){
             $assignment->update([
@@ -2938,7 +2938,7 @@ class AssignmentController extends Controller
      */
     public function validateByRepairer($id): JsonResponse
     {
-        $assignment = Assignment::with('shocks:id,is_validated', 'shocks.shockWorks:id,is_validated', 'shocks.workforces:id,is_validated')->findOrFail(Assignment::keyFromHashId($id));
+        $assignment = Assignment::with('shocks:id,quote_validated', 'shocks.shockWorks:id,quote_validated', 'shocks.workforces:id,quote_validated')->findOrFail(Assignment::keyFromHashId($id));
 
         if($assignment->status_id == Status::where('code', StatusEnum::PENDING_FOR_REPAIRER_VALIDATION)->first()->id){
             $assignment->update([
