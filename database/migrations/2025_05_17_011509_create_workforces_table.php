@@ -24,6 +24,7 @@ return new class extends Migration
             $table->decimal('amount_excluding_tax', 18, 2)->nullable();
             $table->decimal('amount_tax', 18, 2)->nullable();
             $table->decimal('amount', 18, 2)->nullable();
+            $table->boolean('quote_validated')->default(false);
             $table->unsignedBigInteger('shock_id')->index()->nullable();
             $table->unsignedBigInteger('workforce_type_id')->index()->nullable();
             $table->unsignedBigInteger('status_id')->index()->nullable();
