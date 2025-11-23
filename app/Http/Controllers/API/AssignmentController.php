@@ -2234,7 +2234,7 @@ class AssignmentController extends Controller
      */
     public function validateWorkSheetByExpert($id): JsonResponse
     {
-        $assignment = Assignment::with('shocks:id,is_validated', 'shocks.shockWorks:id,is_validated', 'shocks.workforces:id,is_validated')->findOrFail(Assignment::keyFromHashId($id));
+        $assignment = Assignment::with('shocks:id,quote_validated', 'shocks.shockWorks:id,quote_validated', 'shocks.workforces:id,quote_validated')->findOrFail(Assignment::keyFromHashId($id));
 
         $assignment->update([
             'status_id' => Status::where('code', StatusEnum::PENDING_FOR_REPAIRER_QUOTE)->first()->id,
