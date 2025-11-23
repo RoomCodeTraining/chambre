@@ -2854,7 +2854,7 @@ class AssignmentController extends Controller
     {
         $assignment = Assignment::findOrFail(Assignment::keyFromHashId($id));
 
-        if($assignment->status_id == Status::where('code', StatusEnum::PENDING_FOR_REPAIRER_QUOTE_VALIDATION)->first()->id){
+        if($assignment->status_id == Status::where('code', StatusEnum::IN_EDITING)->first()->id){
             $assignment->update([
                 'quote_validated_by_expert' => 0,
                 'agreement_for_work_subject_to_conditions' => 0,
