@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware(['auth:sanctum'])->name('permissions.')->group(function () {
     Route::controller(PermissionController::class)->group(function () {
         Route::get('', 'index')->name('index');
+        Route::get('list/all', 'list')->name('list');
         Route::post('', 'store')->name('store');
         Route::put('{permission}', 'update')->name('update');
     });

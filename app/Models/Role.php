@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Essa\APIToolKit\Filters\Filterable;
 use App\Filters\RoleFilters;
-// use App\Builders\Role\RoleBuilder;
+use App\Builders\Role\RoleBuilder;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Permission\Models\Permission;
 use Illuminate\Database\Eloquent\Relations\HasOne;
@@ -39,9 +39,9 @@ class Role extends \Spatie\Permission\Models\Role
     //     return $this->belongsToMany(Permission::class);
     // }
 
-    // public function newEloquentBuilder($query): RoleBuilder
-    // {
-    //     return new RoleBuilder($query);
-    // }
+    public function newEloquentBuilder($query): RoleBuilder
+    {
+        return new RoleBuilder($query);
+    }
 
 }

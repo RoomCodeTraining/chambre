@@ -7,6 +7,7 @@ use App\Filters\PermissionFilters;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Deligoez\LaravelModelHashId\Traits\HasHashId;
 use Deligoez\LaravelModelHashId\Traits\HasHashIdRouting;
+use App\Builders\Permission\PermissionBuilder;
 
 class Permission extends \Spatie\Permission\Models\Permission
 {
@@ -17,6 +18,11 @@ class Permission extends \Spatie\Permission\Models\Permission
     public function team()
     {
         return $this->belongsTo(Office::class);
+    }
+
+    public function newEloquentBuilder($query): PermissionBuilder
+    {
+        return new PermissionBuilder($query);
     }
 
 }

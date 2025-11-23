@@ -8,10 +8,12 @@ use App\Models\OrganizationType;
 use Spatie\Permission\Models\Role;
 use App\Enums\RoleEnum as EnumsRole;
 use App\Http\Controllers\Controller;
+use App\Models\Permission as AppPermission;
 use Spatie\Permission\Models\Permission;
 use App\Http\Resources\Role\RoleResource;
 use App\Http\Resources\Permission\PermissionResource;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
+use Essa\APIToolKit\Api\ApiResponse;
 
 /**
  * @group Gestion des permissions
@@ -20,6 +22,8 @@ use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
  */
 class PermissionController extends Controller
 {
+    use ApiResponse;
+
     /**
      * Lister les permissions
      */
@@ -27,7 +31,7 @@ class PermissionController extends Controller
     {
         $currentUser = $request->user();
 
-        $permissions = Permission::query()
+        $permissions = AppPermission::query()
             // ->when($currentUser->hasRole(EnumsRole::OFFICE_ADMIN->value), fn ($query) => $query->whereIn('name', [EnumsRole::STANDARD_USER]))
             // ->when($currentUser->hasRole(EnumsRole::MAIN_OFFICE_ADMIN->value) && in_array($currentUser->organization->organizationType->code, [OrganizationType::BROKER, OrganizationType::BANCASSURANCE]), function ($query) {
             //     $query->whereIn('name', [EnumsRole::OFFICE_ADMIN, EnumsRole::STANDARD_USER]);
@@ -35,6 +39,15 @@ class PermissionController extends Controller
             //     $query->whereIn('name', [EnumsRole::STOCK_MANAGER, EnumsRole::OFFICE_MANAGER, EnumsRole::BROKER_MANAGER, EnumsRole::FINANCE_MANAGER, EnumsRole::OFFICE_ADMIN, EnumsRole::OFFICE_MASTER, EnumsRole::STANDARD_USER]);
             // })
             ->paginate($request->input('per_page', 25));
+
+        return PermissionResource::collection($permissions);
+    }
+
+    public function list(Request $request): AnonymousResourceCollection
+    {
+        $permissions = AppPermission::with(['roles'])
+            ->latest('created_at')
+            ->dynamicPaginate();
 
         return PermissionResource::collection($permissions);
     }
