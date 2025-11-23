@@ -2,13 +2,18 @@
 
 namespace App\Http\Controllers\API;
 
-use App\Actions\Auth\GenerateTokenAction;
-use App\Http\Controllers\Controller;
-use App\Http\Requests\AuthRequest;
 use App\Models\User;
+use App\Models\Status;
+use App\Enums\StatusEnum;
+use App\Models\UserAction;
+use App\Models\UserActionType;
+use App\Enums\UserActionTypeEnum;
 use Illuminate\Http\JsonResponse;
+use App\Http\Requests\AuthRequest;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Laravel\Sanctum\PersonalAccessToken;
+use App\Actions\Auth\GenerateTokenAction;
 use Symfony\Component\HttpFoundation\Response as HttpFoundationResponse;
 use Symfony\Component\HttpKernel\Exception\UnprocessableEntityHttpException;
 
@@ -52,7 +57,7 @@ class TokenController extends Controller
 
         $data = $generateToken->execute($user, $tokenName, $expiresAt);
 
-        $this->logAction($user, "Génération de token d'accès", StatusEnum::SUCCESS->value);
+        $this->logAction($user, "Génération de token d'accès", Status::where('code', StatusEnum::SUCCESS->value)->first()->id);
 
         return response()->json($data);
     }
