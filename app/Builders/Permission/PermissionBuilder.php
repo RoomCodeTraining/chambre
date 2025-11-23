@@ -30,10 +30,9 @@ class PermissionBuilder extends Builder
         }
 
         if ($user->isAdmin()) {
-            $roles = Role::whereIn('name', [RoleEnum::GENERAL_MEANS_MANAGER->value, RoleEnum::ACCOUNTING_MANAGER->value, RoleEnum::OTHER_MANAGER->value, RoleEnum::GENERAL_MEANS_RESPONSIBLE->value, RoleEnum::UNASSIGNED->value])->pluck('id');
-            return $this->whereIn('current_role_id', $roles);
+            return $this;
         }
 
-        return $this->where('current_role_id', $user->current_role_id);
+        return $this;
     }
 }
