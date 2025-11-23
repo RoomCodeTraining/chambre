@@ -2819,7 +2819,7 @@ class AssignmentController extends Controller
     }
 
     /**
-     * Valider le devis par l'expert
+     * Valider le devis par l'expert sous réserve de conditions
      *
      * @authenticated
      */
