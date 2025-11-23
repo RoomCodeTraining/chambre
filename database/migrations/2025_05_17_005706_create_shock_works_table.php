@@ -26,7 +26,6 @@ return new class extends Migration
             $table->text('comment')->nullable();
             $table->boolean('is_before_quote')->default(false);
             $table->boolean('quote_validated')->default(false);
-
             $table->decimal('amount', 18, 2)->nullable();
 
             $table->decimal('obsolescence_rate', 5, 2)->nullable();
