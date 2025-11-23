@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::table('shock_works', function (Blueprint $table) {
             $table->boolean('is_for_work_sheet')->default(false);
+            $table->boolean('quote_validated')->default(false);
         });
     }
 
@@ -23,6 +24,7 @@ return new class extends Migration
     {
         Schema::table('shock_works', function (Blueprint $table) {
             $table->dropColumn('is_for_work_sheet');
+            $table->dropColumn('quote_validated');
         });
     }
 };
