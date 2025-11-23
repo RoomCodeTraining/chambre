@@ -35,12 +35,57 @@ class UserController extends Controller
     {
         $this->authorize('viewAny', User::class);
 
-        $users = User::useFilters()
-            ->with(['currentRole','entity','status','client'])
+        $users = User::with(['currentRole','entity','status','client'])
             ->latest('created_at')
-            ->accessibleBy(auth()->user())
-            ->useFilters()
-            ->dynamicPaginate();
+            ->accessibleBy(auth()->user());
+
+            if(request()->filled('status_id')){
+                $users = $users->where('status_id', Status::keyFromHashId(request()->status_id));
+            }
+    
+            if(request()->filled('current_role_id')){
+                $users = $users->where('current_role_id', Role::keyFromHashId(request()->current_role_id));
+            }
+    
+            if(request()->filled('entity_id')){
+                $users = $users->where('entity_id', Entity::keyFromHashId(request()->entity_id));
+            }
+    
+            if(request()->filled('client_id')){
+                $users = $users->where('client_id', Client::keyFromHashId(request()->client_id));
+            }
+            
+            $users = $users->dynamicPaginate();
+
+        return UserResource::collection($users);
+    }
+
+    /**
+     * Lister les utilisateurs
+     */
+    public function list(): AnonymousResourceCollection
+    {
+        $users = User::with(['currentRole', 'permissions','entity','status','client'])
+            ->latest('created_at')
+            ->accessibleBy(auth()->user());
+
+        if(request()->filled('status_id')){
+            $users = $users->where('status_id', Status::keyFromHashId(request()->status_id));
+        }
+
+        if(request()->filled('current_role_id')){
+            $users = $users->where('current_role_id', Role::keyFromHashId(request()->current_role_id));
+        }
+
+        if(request()->filled('entity_id')){
+            $users = $users->where('entity_id', Entity::keyFromHashId(request()->entity_id));
+        }
+
+        if(request()->filled('client_id')){
+            $users = $users->where('client_id', Client::keyFromHashId(request()->client_id));
+        }
+
+        $users = $users->dynamicPaginate();
 
         return UserResource::collection($users);
     }
