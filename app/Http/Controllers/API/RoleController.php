@@ -6,7 +6,6 @@ use App\Models\Permission;
 use Illuminate\Http\Request;
 use App\Models\Role as AppRole;
 use App\Models\OrganizationType;
-use App\Models\Permission as AppPermission;
 use Spatie\Permission\Models\Role;
 use App\Enums\RoleEnum as EnumsRole;
 use App\Http\Controllers\Controller;
@@ -89,7 +88,7 @@ class RoleController extends Controller
         $permissions = [];
         if(count($request->permissions) > 0){
             for ($i = 0; $i < count($request->permissions); $i++) {
-                $permission = AppPermission::findOrFail(AppPermission::keyFromHashId($request->permissions[$i]));
+                $permission = Permission::accessibleBy(auth()->user())->findOrFail(Permission::keyFromHashId($request->permissions[$i]));
                 $permissions[] = $permission->name;
             }
             $role->givePermissionTo($permissions);
