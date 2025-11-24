@@ -2875,16 +2875,6 @@ class AssignmentController extends Controller
             'updated_by' => auth()->user()->id,
         ]);
 
-        $receipt_amount = Receipt::where('assignment_id', $assignment->id)->sum('amount');
-        $payment_amount = Payment::where('assignment_id', $assignment->id)->sum('amount');
-        if($receipt_amount > 0){
-            if($receipt_amount <= $payment_amount){
-                $assignment->update([
-                    'status_id' => Status::where('code', StatusEnum::PAID)->first()->id,
-                ]);
-            } 
-        }
-
         dispatch(new GenerateExpertiseReportPdfJob($assignment));
 
         if($assignment->is_validated == 0){
@@ -3010,6 +3000,16 @@ class AssignmentController extends Controller
                 Workforce::whereIn('shock_id',$assignment->shocks->pluck('id'))->update([
                     'is_validated' => 1,
                 ]);
+            }
+
+            $receipt_amount = Receipt::where('assignment_id', $assignment->id)->sum('amount');
+            $payment_amount = Payment::where('assignment_id', $assignment->id)->sum('amount');
+            if($receipt_amount > 0){
+                if($receipt_amount <= $payment_amount){
+                    $assignment->update([
+                        'status_id' => Status::where('code', StatusEnum::PAID)->first()->id,
+                    ]);
+                } 
             }
     
             return $this->responseSuccess('Dossier validé par l\'expert avec succès', new AssignmentResource($assignment));
