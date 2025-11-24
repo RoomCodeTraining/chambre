@@ -2032,23 +2032,6 @@ class AssignmentController extends Controller
     }
 
     /**
-     * Valider la rédaction un dossier
-     *
-     * @authenticated
-     */
-    public function validateEdition($id): JsonResponse
-    {
-        $assignment = Assignment::findOrFail(Assignment::keyFromHashId($id));
-
-        $assignment->update([
-            'status_id' => Status::where('code', StatusEnum::EDITED)->first()->id,
-            'updated_by' => auth()->user()->id,
-        ]);
-
-        return $this->responseSuccess('Dossier validé avec succès', new AssignmentResource($assignment));
-    }
-
-    /**
      * Créer une fiche de travaux
      *
      * @authenticated
@@ -2870,11 +2853,11 @@ class AssignmentController extends Controller
     }
 
     /**
-     * Valider un dossier
+     * Valider la rédaction d'un dossier
      *
      * @authenticated
      */
-    public function validateEditing($id): JsonResponse
+    public function validateEdition($id): JsonResponse
     {
         $assignment = Assignment::findOrFail(Assignment::keyFromHashId($id));
 
@@ -2915,11 +2898,11 @@ class AssignmentController extends Controller
     }
 
     /**
-     * Dévalider un dossier
+     * Dévalider la rédaction d'un dossier
      *
      * @authenticated
      */
-    public function unvalidateEditing($id): JsonResponse
+    public function unvalidateEdition($id): JsonResponse
     {
         $assignment = Assignment::findOrFail(Assignment::keyFromHashId($id));
 
