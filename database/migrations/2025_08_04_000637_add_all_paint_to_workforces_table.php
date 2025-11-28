@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::table('workforces', function (Blueprint $table) {
             $table->boolean('all_paint')->default(false);
+            $table->boolean('old_all_paint')->default(false);
         });
     }
 

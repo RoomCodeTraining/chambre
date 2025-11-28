@@ -16,17 +16,25 @@ return new class extends Migration
         Schema::create('workforces', function (Blueprint $table) {
             $table->bigIncrements('id')->unsigned();
             $table->decimal('nb_hours', 18, 2)->nullable();
+            $table->decimal('old_nb_hours', 18, 2)->nullable();
             $table->decimal('work_fee', 18, 2)->nullable();
+            $table->decimal('old_work_fee', 18, 2)->nullable();
             $table->boolean('with_tax')->default(false);
             $table->boolean('is_before_quote')->default(false);
             $table->boolean('is_validated')->default(false);
             $table->decimal('discount', 18, 2)->nullable();
+            $table->decimal('old_discount', 18, 2)->nullable();
             $table->decimal('amount_excluding_tax', 18, 2)->nullable();
+            $table->decimal('old_amount_excluding_tax', 18, 2)->nullable();
             $table->decimal('amount_tax', 18, 2)->nullable();
+            $table->decimal('old_amount_tax', 18, 2)->nullable();
             $table->decimal('amount', 18, 2)->nullable();
+            $table->decimal('old_amount', 18, 2)->nullable();
             $table->boolean('quote_validated')->default(false);
             $table->unsignedBigInteger('shock_id')->index()->nullable();
+            $table->unsignedBigInteger('old_shock_id')->index()->nullable();
             $table->unsignedBigInteger('workforce_type_id')->index()->nullable();
+            $table->unsignedBigInteger('old_workforce_type_id')->index()->nullable();
             $table->unsignedBigInteger('status_id')->index()->nullable();
             $table->unsignedBigInteger('created_by')->index()->nullable();
             $table->timestamp('created_at')->nullable();

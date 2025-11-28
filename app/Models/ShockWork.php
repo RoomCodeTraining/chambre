@@ -49,6 +49,14 @@ class ShockWork extends Model
     }
 
     /**
+     * Get the old supply used in this work
+     */
+    public function oldSupply(): BelongsTo
+    {
+        return $this->belongsTo(Supply::class, 'old_supply_id');
+    }
+
+    /**
      * Get the status of this shock work
      */
     public function status(): BelongsTo

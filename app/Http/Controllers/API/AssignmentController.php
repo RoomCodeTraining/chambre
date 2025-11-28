@@ -2937,15 +2937,6 @@ class AssignmentController extends Controller
                 Shock::where('assignment_id', $assignment->id)->update([
                     'is_validated' => 1,
                 ]);
-    
-    
-                ShockWork::whereIn('shock_id', $assignment->shocks->pluck('id'))->update([
-                    'is_validated' => 1,
-                ]);
-                
-                Workforce::whereIn('shock_id',$assignment->shocks->pluck('id'))->update([
-                    'is_validated' => 1,
-                ]);
             }
             return $this->responseSuccess('Dossier validé par le repairer avec succès', new AssignmentResource($assignment));
         } else {
@@ -3000,14 +2991,6 @@ class AssignmentController extends Controller
     
             if($assignment->is_validated_by_expert == 1 && $assignment->is_validated_by_repairer == 1){
                 Shock::where('assignment_id', $assignment->id)->update([
-                    'is_validated' => 1,
-                ]);
-    
-                ShockWork::whereIn('shock_id', $assignment->shocks->pluck('id'))->update([
-                    'is_validated' => 1,
-                ]);
-                
-                Workforce::whereIn('shock_id',$assignment->shocks->pluck('id'))->update([
                     'is_validated' => 1,
                 ]);
             }

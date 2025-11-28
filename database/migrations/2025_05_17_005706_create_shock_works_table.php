@@ -16,7 +16,6 @@ return new class extends Migration
         Schema::create('shock_works', function (Blueprint $table) {
             $table->bigIncrements('id')->unsigned();
             $table->unsignedBigInteger('shock_id')->index()->nullable();
-            $table->unsignedBigInteger('old_shock_id')->index()->nullable();
             $table->unsignedBigInteger('supply_id')->index()->nullable();
             $table->unsignedBigInteger('old_supply_id')->index()->nullable();
             $table->boolean('disassembly')->default(false);
@@ -32,6 +31,7 @@ return new class extends Migration
             $table->boolean('control')->default(false);
             $table->boolean('old_control')->default(false);
             $table->text('comment')->nullable();
+            $table->text('old_comment')->nullable();
             $table->boolean('is_before_quote')->default(false);
             $table->boolean('quote_validated')->default(false);
             $table->decimal('amount', 18, 2)->nullable();
@@ -68,7 +68,7 @@ return new class extends Migration
             $table->decimal('old_new_amount_tax', 18, 2)->nullable();
             $table->decimal('new_amount', 18, 2)->nullable();
             $table->decimal('old_new_amount', 18, 2)->nullable();
-            
+
             $table->unsignedBigInteger('status_id')->index()->nullable();
             $table->unsignedBigInteger('created_by')->index()->nullable();
             $table->timestamp('created_at')->nullable();

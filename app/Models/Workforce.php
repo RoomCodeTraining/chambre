@@ -41,6 +41,14 @@ class Workforce extends Model
     }
 
     /**
+     * Get the old workforce type that this workforce belongs to
+     */
+    public function oldWorkforceType(): BelongsTo
+    {
+        return $this->belongsTo(WorkforceType::class, 'old_workforce_type_id');
+    }
+
+    /**
      * Get the shock that this workforce belongs to
      */
     public function shock(): BelongsTo
