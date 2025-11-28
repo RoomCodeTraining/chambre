@@ -2715,6 +2715,7 @@ class AssignmentController extends Controller
         if($assignment->status_id == Status::where('code', StatusEnum::PENDING_FOR_REPAIRER_QUOTE)->first()->id){
             $assignment->update([
                 'quote_validated_by_repairer' => 1,
+                'quote_validated' => $assignment->quote_validated_by_expert == 1 ? 1 : 0,
                 'quote_validated_by_repairer_by' => auth()->user()->id,
                 'quote_validated_by_repairer_at' => Carbon::now(),
                 'status_id' => Status::where('code', StatusEnum::PENDING_FOR_REPAIRER_QUOTE_VALIDATION)->first()->id,
@@ -2752,6 +2753,7 @@ class AssignmentController extends Controller
         if($assignment->status_id == Status::where('code', StatusEnum::PENDING_FOR_REPAIRER_QUOTE_VALIDATION)->first()->id){
             $assignment->update([
                 'quote_validated_by_repairer' => 0,
+                'quote_validated' => 0,
                 'quote_unvalidated_by_repairer_by' => auth()->user()->id,
                 'quote_unvalidated_by_repairer_at' => Carbon::now(),
                 'status_id' => Status::where('code', StatusEnum::PENDING_FOR_REPAIRER_QUOTE)->first()->id,
@@ -2776,6 +2778,7 @@ class AssignmentController extends Controller
             $assignment->update([
                 'quote_validated_by_expert' => 1,
                 'agreement_for_work_subject_to_conditions' => 0,
+                'quote_validated' => $assignment->quote_validated_by_repairer == 1 ? 1 : 0,
                 'quote_validated_by_expert_by' => auth()->user()->id,
                 'quote_validated_by_expert_at' => Carbon::now(),
                 'status_id' => Status::where('code', StatusEnum::IN_EDITING)->first()->id,
@@ -2840,6 +2843,7 @@ class AssignmentController extends Controller
         if($assignment->status_id == Status::where('code', StatusEnum::IN_EDITING)->first()->id){
             $assignment->update([
                 'quote_validated_by_expert' => 0,
+                'quote_validated' => 0,
                 'agreement_for_work_subject_to_conditions' => 0,
                 'quote_unvalidated_by_expert_by' => auth()->user()->id,
                 'quote_unvalidated_by_expert_at' => Carbon::now(),
