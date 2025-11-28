@@ -189,11 +189,6 @@ return new class extends Migration
                 ->on('users')
                 ->onDelete('cascade');
 
-            $table->foreign('validated_by')
-                ->references('id')
-                ->on('users')
-                ->onDelete('cascade');
-
             $table->foreign('closed_by')
                 ->references('id')
                 ->on('users')
