@@ -2840,20 +2840,30 @@ class AssignmentController extends Controller
     {
         $assignment = Assignment::accessibleBy(auth()->user())->findOrFail(Assignment::keyFromHashId($id));
 
-        if($assignment->status_id == Status::where('code', StatusEnum::IN_EDITING)->first()->id){
-            $assignment->update([
-                'quote_validated_by_expert' => 0,
-                'quote_validated' => 0,
-                'agreement_for_work_subject_to_conditions' => 0,
-                'quote_unvalidated_by_expert_by' => auth()->user()->id,
-                'quote_unvalidated_by_expert_at' => Carbon::now(),
-                'status_id' => Status::where('code', StatusEnum::PENDING_FOR_REPAIRER_QUOTE)->first()->id,
-                'updated_by' => auth()->user()->id,
-            ]);
-            return $this->responseSuccess('Dossier dévalidé par l\'expert avec succès', new AssignmentResource($assignment));
-        } else {
-            return $this->responseUnprocessable("Le dossier n'est pas encore validé par le repairer.", null);
-        }
+        // if($assignment->status_id == Status::where('code', StatusEnum::IN_EDITING)->first()->id){
+        //     $assignment->update([
+        //         'quote_validated_by_expert' => 0,
+        //         'quote_validated' => 0,
+        //         'agreement_for_work_subject_to_conditions' => 0,
+        //         'quote_unvalidated_by_expert_by' => auth()->user()->id,
+        //         'quote_unvalidated_by_expert_at' => Carbon::now(),
+        //         'status_id' => Status::where('code', StatusEnum::PENDING_FOR_REPAIRER_QUOTE)->first()->id,
+        //         'updated_by' => auth()->user()->id,
+        //     ]);
+        //     return $this->responseSuccess('Dossier dévalidé par l\'expert avec succès', new AssignmentResource($assignment));
+        // } else {
+        //     return $this->responseUnprocessable("Le dossier n'est pas encore validé par le repairer.", null);
+        // }
+        $assignment->update([
+            'quote_validated_by_expert' => 0,
+            'quote_validated' => 0,
+            'agreement_for_work_subject_to_conditions' => 0,
+            'quote_unvalidated_by_expert_by' => auth()->user()->id,
+            'quote_unvalidated_by_expert_at' => Carbon::now(),
+            'status_id' => Status::where('code', StatusEnum::PENDING_FOR_REPAIRER_QUOTE)->first()->id,
+            'updated_by' => auth()->user()->id,
+        ]);
+        return $this->responseSuccess('Dossier dévalidé par l\'expert avec succès', new AssignmentResource($assignment));
     }
 
     /**
