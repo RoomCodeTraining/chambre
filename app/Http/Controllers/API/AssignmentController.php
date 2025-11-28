@@ -2922,6 +2922,7 @@ class AssignmentController extends Controller
         if($assignment->status_id == Status::where('code', StatusEnum::PENDING_FOR_REPAIRER_VALIDATION)->first()->id){
             $assignment->update([
                 'is_validated_by_repairer' => 1,
+                'is_validated' => $assignment->is_validated_by_expert == 1 ? 1 : 0,
                 'validated_by_repairer_by' => auth()->user()->id,
                 'validated_by_repairer_at' => Carbon::now(),
                 'status_id' => Status::where('code', StatusEnum::PENDING_FOR_EXPERT_VALIDATION)->first()->id,
@@ -2962,6 +2963,7 @@ class AssignmentController extends Controller
         if($assignment->status_id == Status::where('code', StatusEnum::PENDING_FOR_EXPERT_VALIDATION)->first()->id){
             $assignment->update([
                 'is_validated_by_expert' => 0,
+                'is_validated' => 0,
                 'unvalidated_by_expert_by' => auth()->user()->id,
                 'unvalidated_by_expert_at' => Carbon::now(),
                 'status_id' => Status::where('code', StatusEnum::PENDING_FOR_REPAIRER_VALIDATION)->first()->id,
@@ -2985,6 +2987,7 @@ class AssignmentController extends Controller
         if($assignment->status_id == Status::where('code', StatusEnum::IN_EDITING)->first()->id || $assignment->status_id == Status::where('code', StatusEnum::PENDING_FOR_EXPERT_VALIDATION)->first()->id){
             $assignment->update([
                 'is_validated_by_expert' => 1,
+                'is_validated' => $assignment->is_validated_by_repairer == 1 ? 1 : 0,
                 'validated_by_expert_by' => auth()->user()->id,
                 'validated_by_expert_at' => Carbon::now(),
                 'status_id' => Status::where('code', StatusEnum::VALIDATED)->first()->id,
@@ -3039,6 +3042,7 @@ class AssignmentController extends Controller
             }
             $assignment->update([
                 'is_validated_by_expert' => 0,
+                'is_validated' => 0,
                 'unvalidated_by_expert_by' => auth()->user()->id,
                 'unvalidated_by_expert_at' => Carbon::now(),
                 'status_id' => $status_id,
