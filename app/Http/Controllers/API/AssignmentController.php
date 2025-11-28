@@ -2865,6 +2865,10 @@ class AssignmentController extends Controller
     {
         $assignment = Assignment::accessibleBy(auth()->user())->findOrFail(Assignment::keyFromHashId($id));
 
+        if($assignment->agreement_for_work_subject_to_conditions == 1){
+            return $this->responseUnprocessable("Le devis du dossier n'est pas validé definitivement par l'expert, veuillez le valider avant de valider la rédaction.", null);
+        }
+
         if($assignment->assignment_type_id == AssignmentType::where('code', AssignmentTypeEnum::INSURER)->first()->id){
             $status_id = Status::where('code', StatusEnum::PENDING_FOR_REPAIRER_VALIDATION)->first()->id;
         } else {
