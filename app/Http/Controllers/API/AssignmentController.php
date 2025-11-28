@@ -3003,7 +3003,6 @@ class AssignmentController extends Controller
                     'is_validated' => 1,
                 ]);
     
-    
                 ShockWork::whereIn('shock_id', $assignment->shocks->pluck('id'))->update([
                     'is_validated' => 1,
                 ]);

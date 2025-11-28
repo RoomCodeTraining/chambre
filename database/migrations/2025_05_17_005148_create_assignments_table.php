@@ -81,14 +81,8 @@ return new class extends Migration
             $table->timestamp('work_sheet_established_at')->nullable();
             $table->unsignedBigInteger('realized_by')->index()->nullable();
             $table->timestamp('realized_at')->nullable();
-            $table->unsignedBigInteger('repairer_validation_by')->index()->nullable();
-            $table->timestamp('repairer_validation_at')->nullable();
-            $table->unsignedBigInteger('expert_validation_by')->index()->nullable();
-            $table->timestamp('expert_validation_at')->nullable();
             $table->unsignedBigInteger('edited_by')->index()->nullable();
             $table->timestamp('edited_at')->nullable();
-            $table->unsignedBigInteger('validated_by')->index()->nullable();
-            $table->timestamp('validated_at')->nullable();
             $table->unsignedBigInteger('closed_by')->index()->nullable();
             $table->timestamp('closed_at')->nullable();
             $table->unsignedBigInteger('cancelled_by')->index()->nullable();
@@ -186,16 +180,6 @@ return new class extends Migration
                 ->onDelete('cascade');
 
             $table->foreign('realized_by')
-                ->references('id')
-                ->on('users')
-                ->onDelete('cascade');
-
-            $table->foreign('repairer_validation_by')
-                ->references('id')
-                ->on('users')
-                ->onDelete('cascade');
-
-            $table->foreign('expert_validation_by')
                 ->references('id')
                 ->on('users')
                 ->onDelete('cascade');
