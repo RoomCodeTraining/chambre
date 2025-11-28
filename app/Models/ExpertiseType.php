@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Deligoez\LaravelModelHashId\Traits\HasHashId;
 use Deligoez\LaravelModelHashId\Traits\HasHashIdRouting;
+use App\Builders\ExpertiseType\ExpertiseTypeBuilder;
 
 
 class ExpertiseType extends Model
@@ -46,6 +47,11 @@ class ExpertiseType extends Model
     public function deletedBy()
     {
         return $this->belongsTo(User::class, 'deleted_by');
+    }
+
+    public function newEloquentBuilder($query): ExpertiseTypeBuilder
+    {
+        return new ExpertiseTypeBuilder($query);
     }
 
 }

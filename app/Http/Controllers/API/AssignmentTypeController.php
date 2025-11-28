@@ -34,7 +34,7 @@ class AssignmentTypeController extends Controller
      */
     public function index(): AnonymousResourceCollection
     {
-        $assignmentTypes = AssignmentType::useFilters()->dynamicPaginate();
+        $assignmentTypes = AssignmentType::accessibleBy(auth()->user())->useFilters()->dynamicPaginate();
 
         return AssignmentTypeResource::collection($assignmentTypes);
     }
@@ -67,7 +67,7 @@ class AssignmentTypeController extends Controller
      */
     public function show($id): JsonResponse
     {
-        $assignmentType = AssignmentType::findOrFail(AssignmentType::keyFromHashId($id));
+        $assignmentType = AssignmentType::accessibleBy(auth()->user())->findOrFail(AssignmentType::keyFromHashId($id));
 
         return $this->responseSuccess(null, new AssignmentTypeResource($assignmentType));
     }
@@ -79,7 +79,7 @@ class AssignmentTypeController extends Controller
      */
     public function update(UpdateAssignmentTypeRequest $request, $id): JsonResponse
     {
-        $assignmentType = AssignmentType::findOrFail(AssignmentType::keyFromHashId($id));
+        $assignmentType = AssignmentType::accessibleBy(auth()->user())->findOrFail(AssignmentType::keyFromHashId($id));
 
         $assignmentType->update([
             'label' => $request->label,
@@ -97,7 +97,7 @@ class AssignmentTypeController extends Controller
      */
     public function enable($id): JsonResponse
     {
-        $assignmentType = AssignmentType::findOrFail(AssignmentType::keyFromHashId($id));
+        $assignmentType = AssignmentType::accessibleBy(auth()->user())->findOrFail(AssignmentType::keyFromHashId($id));
 
         $assignmentType->update([
             'status_id' => Status::firstWhere('code', StatusEnum::ACTIVE)->id,
@@ -114,7 +114,7 @@ class AssignmentTypeController extends Controller
      */
     public function disable($id): JsonResponse
     {
-        $assignmentType = AssignmentType::findOrFail(AssignmentType::keyFromHashId($id));
+        $assignmentType = AssignmentType::accessibleBy(auth()->user())->findOrFail(AssignmentType::keyFromHashId($id));
 
         $assignmentType->update([
             'status_id' => Status::firstWhere('code', StatusEnum::INACTIVE)->id,
@@ -131,7 +131,7 @@ class AssignmentTypeController extends Controller
      */
     public function destroy($id): JsonResponse
     {
-        $assignmentType = AssignmentType::findOrFail(AssignmentType::keyFromHashId($id));
+        $assignmentType = AssignmentType::accessibleBy(auth()->user())->findOrFail(AssignmentType::keyFromHashId($id));
 
         $assignmentType->update([
             'status_id' => Status::where('code', StatusEnum::DELETED)->first()->id,

@@ -34,7 +34,7 @@ class ExpertiseTypeController extends Controller
      */
     public function index(): AnonymousResourceCollection
     {
-        $expertiseTypes = ExpertiseType::useFilters()->dynamicPaginate();
+        $expertiseTypes = ExpertiseType::accessibleBy(auth()->user())->useFilters()->dynamicPaginate();
 
         return ExpertiseTypeResource::collection($expertiseTypes);
     }
@@ -67,7 +67,7 @@ class ExpertiseTypeController extends Controller
      */
     public function show($id): JsonResponse
     {
-        $expertiseType = ExpertiseType::findOrFail(ExpertiseType::keyFromHashId($id));
+        $expertiseType = ExpertiseType::accessibleBy(auth()->user())->findOrFail(ExpertiseType::keyFromHashId($id));
 
         return $this->responseSuccess(null, new ExpertiseTypeResource($expertiseType));
     }
@@ -79,7 +79,7 @@ class ExpertiseTypeController extends Controller
      */
     public function update(UpdateExpertiseTypeRequest $request, $id): JsonResponse
     {
-        $expertiseType = ExpertiseType::findOrFail(ExpertiseType::keyFromHashId($id));
+        $expertiseType = ExpertiseType::accessibleBy(auth()->user())->findOrFail(ExpertiseType::keyFromHashId($id));
 
         $expertiseType->update([
             'label' => $request->label,
@@ -97,7 +97,7 @@ class ExpertiseTypeController extends Controller
      */
     public function enable($id): JsonResponse
     {
-        $expertiseType = ExpertiseType::findOrFail(ExpertiseType::keyFromHashId($id));
+        $expertiseType = ExpertiseType::accessibleBy(auth()->user())->findOrFail(ExpertiseType::keyFromHashId($id));
 
         $expertiseType->update([
             'status_id' => Status::firstWhere('code', StatusEnum::ACTIVE)->id,
@@ -114,7 +114,7 @@ class ExpertiseTypeController extends Controller
      */
     public function disable($id): JsonResponse
     {
-        $expertiseType = ExpertiseType::findOrFail(ExpertiseType::keyFromHashId($id));
+        $expertiseType = ExpertiseType::accessibleBy(auth()->user())->findOrFail(ExpertiseType::keyFromHashId($id));
 
         $expertiseType->update([
             'status_id' => Status::firstWhere('code', StatusEnum::INACTIVE)->id,
@@ -131,7 +131,7 @@ class ExpertiseTypeController extends Controller
      */
     public function destroy($id): JsonResponse
     {
-        $expertiseType = ExpertiseType::findOrFail(ExpertiseType::keyFromHashId($id));
+        $expertiseType = ExpertiseType::accessibleBy(auth()->user())->findOrFail(ExpertiseType::keyFromHashId($id));
 
         // $expertiseType->delete();
 

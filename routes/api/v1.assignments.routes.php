@@ -83,6 +83,10 @@ Route::middleware('auth:sanctum')->name('assignments.')->group(function () {
     /** @uses AssignmentController::close */
     Route::put('/{assignment}/close', [AssignmentController::class, 'close'])->name('close');
 
+    /** @uses AssignmentController::classifyWithoutFurtherAction */
+    Route::put('/classify-without-further-action/{assignment}', [AssignmentController::class, 'classifyWithoutFurtherAction'])->name('classifyWithoutFurtherAction');
+
+
     /** @uses AssignmentController::cancel */
     Route::put('/{assignment}/cancel', [AssignmentController::class, 'cancel'])->name('cancel');
 

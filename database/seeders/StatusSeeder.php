@@ -101,6 +101,12 @@ class StatusSeeder extends Seeder
         ]);
 
         Status::create([
+            'code' => StatusEnum::CLASSIFIED_WITHOUT_FURTHER_ACTION,
+            'label' => "Classé sans suite",
+            'description' => "Classé sans suite",
+        ]);
+
+        Status::create([
             'code' => StatusEnum::PENDING,
             'label' => "En attente",
             'description' => "En attente",

@@ -26,6 +26,7 @@ enum StatusEnum: string
     case DELETED = 'deleted';
     case ARCHIVED = 'archived';
     case DRAFT = 'draft';
+    case CLASSIFIED_WITHOUT_FURTHER_ACTION = 'classified_without_further_action';
     case SUCCESS = 'success';
     case FAILED = 'failed';
 
