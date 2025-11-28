@@ -337,7 +337,7 @@ class WorkforceController extends Controller
                 $workforce = Workforce::create([
                     'shock_id' => $shock->id,
                     'workforce_type_id' => WorkforceType::keyFromHashId($item['workforce_type_id']),
-                    'old_workforce_type_id' => $item['workforce_type_id'],
+                    'old_workforce_type_id' => WorkforceType::keyFromHashId($item['workforce_type_id']),
                     'nb_hours' => $item['nb_hours'],
                     'old_nb_hours' => $item['nb_hours'],
                     'work_fee' => ceil(HourlyRate::where(['id' => $request->hourly_rate_id, 'status_id' => Status::where('code', StatusEnum::ACTIVE)->first()->id])->first()->value),
