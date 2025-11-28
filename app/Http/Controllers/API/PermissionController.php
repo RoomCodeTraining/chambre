@@ -46,6 +46,7 @@ class PermissionController extends Controller
     public function list(Request $request): AnonymousResourceCollection
     {
         $permissions = AppPermission::with(['roles'])
+            ->accessibleBy($request->user())
             ->latest('created_at')
             ->dynamicPaginate();
 
