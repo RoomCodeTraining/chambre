@@ -2977,7 +2977,7 @@ class AssignmentController extends Controller
      */
     public function validateByExpert($id): JsonResponse
     {
-        $assignment = Assignment::with('shocks:id,is_validated', 'shocks.shockWorks:id,is_validated', 'shocks.workforces:id,is_validated')->accessibleBy(auth()->user())->findOrFail(Assignment::keyFromHashId($id));
+        $assignment = Assignment::with('shocks:id,is_validated', 'shocks.shockWorks:id,quote_validated', 'shocks.workforces:id,quote_validated')->accessibleBy(auth()->user())->findOrFail(Assignment::keyFromHashId($id));
 
         if($assignment->status_id == Status::where('code', StatusEnum::IN_EDITING)->first()->id || $assignment->status_id == Status::where('code', StatusEnum::PENDING_FOR_EXPERT_VALIDATION)->first()->id){
             $assignment->update([
