@@ -51,7 +51,7 @@ class RoleController extends Controller
     public function list(Request $request): AnonymousResourceCollection
     {
         $roles = AppRole::with(['permissions'])
-            ->accessibleBy(auth()->user())
+            // ->accessibleBy(auth()->user())
             ->latest('created_at')
             ->dynamicPaginate();
 
