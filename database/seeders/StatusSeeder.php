@@ -64,6 +64,18 @@ class StatusSeeder extends Seeder
         ]);
 
         Status::create([
+            'code' => StatusEnum::PENDING_FOR_REPAIRER_VALIDATION,
+            'label' => "En attente de validation du dossier par le réparateur",
+            'description' => "En attente de validation du dossier par le réparateur",
+        ]);
+
+        Status::create([
+            'code' => StatusEnum::PENDING_FOR_EXPERT_VALIDATION,
+            'label' => "En attente de validation du dossier par l'expert",
+            'description' => "En attente de validation du dossier par l'expert",
+        ]);
+
+        Status::create([
             'code' => StatusEnum::VALIDATED,
             'label' => "Validé",
             'description' => "Validé",
