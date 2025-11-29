@@ -683,16 +683,28 @@ class ShockWorkController extends Controller
         $vehicles = Vehicle::where('vehicle_model_id', $request->vehicle_model_id)->get();
         $assignments = Assignment::whereIn('vehicle_id', $vehicles->pluck('id'))->get();
         $shock = Shock::with('assignment:id,reference')->whereIn('assignment_id', $assignments->pluck('id'))->get();
-        $shockWorks = ShockWork::with('supply:id,code,label', 'shock.assignment.repairer:id,code,name')->whereIn('shock_id', $shock->pluck('id'))->distinct('supply_id')->latest('created_at')->dynamicPaginate();
+        $shockWorks = ShockWork::with('supply:id,code,label', 'shock.assignment.repairer:id,code,name')->whereIn('shock_id', $shock->pluck('id'))->where('replacement', true);
+
         if($request->supply_id && $request->date){
-            $shockWorks = ShockWork::with('supply:id,code,label', 'shock.assignment.repairer:id,code,name')->whereIn('shock_id', $shock->pluck('id'))->where('supply_id', $request->supply_id)->where('created_at', '>=', $request->date)->distinct('supply_id')->latest('created_at')->dynamicPaginate();
+            $shockWorks = $shockWorks->where('supply_id', $request->supply_id)->where('created_at', '>=', $request->date);
         }
         if($request->supply_id && !$request->date){
-            $shockWorks = ShockWork::with('supply:id,code,label', 'shock.assignment.repairer:id,code,name')->whereIn('shock_id', $shock->pluck('id'))->where('supply_id', $request->supply_id)->distinct('supply_id')->latest('created_at')->dynamicPaginate();
+            $shockWorks = $shockWorks->where('supply_id', $request->supply_id);
         }
         if($request->date && !$request->supply_id){
-            $shockWorks = ShockWork::with('supply:id,code,label', 'shock.assignment.repairer:id,code,name')->whereIn('shock_id', $shock->pluck('id'))->where('created_at', '>=', $request->date)->distinct('supply_id')->latest('created_at')->dynamicPaginate();
+            $shockWorks = $shockWorks->where('created_at', '>=', $request->date);
         }
-        return ShockWorkResource::collection($shockWorks);
+        
+        $shockWorks = $shockWorks->distinct('supply_id')->latest('created_at')->dynamicPaginate();
+        $shockWorks_mean = $shockWorks->mean('amount');
+        $shockWorks_max = $shockWorks->max('amount');
+        $shockWorks_min = $shockWorks->min('amount');
+
+        return $this->responseSuccess('ShockWorks fetched Successfully', [
+            'shockWorks' => $shockWorks,
+            'shockWorks_mean' => $shockWorks_mean,
+            'shockWorks_max' => $shockWorks_max,
+            'shockWorks_min' => $shockWorks_min,
+        ]);
     }
 }

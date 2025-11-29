@@ -919,6 +919,109 @@ class AssignmentController extends Controller
             $assignments_by_year_and_month_amount = [];
         }
 
+        // Cout total sinistre des dossiers par année et mois
+        $assignments_total_shock_amount_by_year_and_month = Assignment::selectRaw('YEAR(assignments.created_at) as year, MONTH(assignments.created_at) as month, SUM(assignments.shock_amount) as amount');
+
+        if($start_date && $end_date){
+            $assignments_total_shock_amount_by_year_and_month = $assignments_total_shock_amount_by_year_and_month->whereBetween('assignments.created_at', [$start_date, $end_date]);
+        } elseif ($start_date) {
+            $assignments_total_shock_amount_by_year_and_month = $assignments_total_shock_amount_by_year_and_month->where('assignments.created_at', '>=', $start_date);
+        } elseif ($end_date) {
+            $assignments_total_shock_amount_by_year_and_month = $assignments_total_shock_amount_by_year_and_month->where('assignments.created_at', '<=', $end_date);
+        }
+
+        if(request()->filled('assignment_type_id')){
+            $assignments_total_shock_amount_by_year_and_month = $assignments_total_shock_amount_by_year_and_month->where('assignments.assignment_type_id', AssignmentType::keyFromHashId(request()->assignment_type_id));
+        }
+
+        if(request()->filled('expertise_type_id')){
+            $assignments_total_shock_amount_by_year_and_month = $assignments_total_shock_amount_by_year_and_month->where('assignments.expertise_type_id', ExpertiseType::keyFromHashId(request()->expertise_type_id));
+        }
+
+        if(request()->filled('created_by')){
+            $assignments_total_shock_amount_by_year_and_month = $assignments_total_shock_amount_by_year_and_month->where('assignments.created_by', User::keyFromHashId(request()->created_by));
+        }
+
+        if(request()->filled('edited_by')){
+            $assignments_total_shock_amount_by_year_and_month = $assignments_total_shock_amount_by_year_and_month->where('assignments.edited_by', User::keyFromHashId(request()->edited_by));
+        }
+
+        if(request()->filled('directed_by')){
+            $assignments_total_shock_amount_by_year_and_month = $assignments_total_shock_amount_by_year_and_month->where('assignments.directed_by', User::keyFromHashId(request()->directed_by));
+        }
+
+        if(request()->filled('realized_by')){
+            $assignments_total_shock_amount_by_year_and_month = $assignments_total_shock_amount_by_year_and_month->where('assignments.realized_by', User::keyFromHashId(request()->realized_by));
+        }
+
+        if(request()->filled('validated_by')){
+            $assignments_total_shock_amount_by_year_and_month = $assignments_total_shock_amount_by_year_and_month->where('assignments.validated_by', User::keyFromHashId(request()->validated_by));
+        }
+
+        if(request()->filled('status_id')){
+            $assignments_total_shock_amount_by_year_and_month = $assignments_total_shock_amount_by_year_and_month->where('assignments.status_id', Status::keyFromHashId(request()->status_id));
+        }
+
+        if(request()->filled('vehicle_id')){
+            $assignments_total_shock_amount_by_year_and_month = $assignments_total_shock_amount_by_year_and_month->where('assignments.vehicle_id', Vehicle::keyFromHashId(request()->vehicle_id));
+        }
+
+        if(request()->filled('insurer_id')){
+            $assignments_total_shock_amount_by_year_and_month = $assignments_total_shock_amount_by_year_and_month->where('assignments.insurer_id', Entity::keyFromHashId(request()->insurer_id));
+        }
+
+        if(request()->filled('repairer_id')){
+            $assignments_total_shock_amount_by_year_and_month = $assignments_total_shock_amount_by_year_and_month->where('assignments.repairer_id', Entity::keyFromHashId(request()->repairer_id));
+        }
+
+        if(request()->filled('client_id')){
+            $assignments_total_shock_amount_by_year_and_month = $assignments_total_shock_amount_by_year_and_month->where('assignments.client_id', Client::keyFromHashId(request()->client_id));
+        }
+
+        if(request()->filled('claim_nature_id')){
+            $assignments_total_shock_amount_by_year_and_month = $assignments_total_shock_amount_by_year_and_month->where('assignments.claim_nature_id', ClaimNature::keyFromHashId(request()->claim_nature_id));
+        }
+
+        if(request()->filled('work_sheet_established_by')){
+            $assignments_total_shock_amount_by_year_and_month = $assignments_total_shock_amount_by_year_and_month->where('assignments.work_sheet_established_by', User::keyFromHashId(request()->work_sheet_established_by));
+        }
+
+        if(request()->filled('repairer_validation_by')){
+            $assignments_total_shock_amount_by_year_and_month = $assignments_total_shock_amount_by_year_and_month->where('assignments.repairer_validation_by', User::keyFromHashId(request()->repairer_validation_by));
+        }
+
+        if(request()->filled('expert_validation_by')){
+            $assignments_total_shock_amount_by_year_and_month = $assignments_total_shock_amount_by_year_and_month->where('assignments.expert_validation_by', User::keyFromHashId(request()->expert_validation_by));
+        }
+
+        if(request()->filled('cancelled_by')){
+            $assignments_total_shock_amount_by_year_and_month = $assignments_total_shock_amount_by_year_and_month->where('assignments.cancelled_by', User::keyFromHashId(request()->cancelled_by));
+        }
+
+        if(request()->filled('closed_by')){
+            $assignments_total_shock_amount_by_year_and_month = $assignments_total_shock_amount_by_year_and_month->where('assignments.closed_by', User::keyFromHashId(request()->closed_by));
+        }
+
+        if(request()->filled('deleted_by')){
+            $assignments_total_shock_amount_by_year_and_month = $assignments_total_shock_amount_by_year_and_month->where('assignments.deleted_by', User::keyFromHashId(request()->deleted_by));
+        }
+
+        if(request()->filled('opened_by')){
+            $assignments_total_shock_amount_by_year_and_month = $assignments_total_shock_amount_by_year_and_month->where('assignments.created_by', User::keyFromHashId(request()->opened_by));
+        }
+
+        if(request()->filled('status_id')){
+            $assignments_total_shock_amount_by_year_and_month = $assignments_total_shock_amount_by_year_and_month->where('assignments.status_id', Status::keyFromHashId(request()->status_id));
+        }
+
+        $assignments_total_shock_amount_by_year_and_month = $assignments_total_shock_amount_by_year_and_month
+            ->groupBy(DB::raw('YEAR(assignments.created_at)'), DB::raw('MONTH(assignments.created_at)'))
+            ->orderBy('year', 'desc')
+            ->orderBy('month', 'desc')
+            ->accessibleBy(auth()->user())
+            ->useFilters()
+            ->get();
+
         // Export des statistiques des dossiers
 
         // Création d'un classeur avec deux feuilles
@@ -980,6 +1083,34 @@ class AssignmentController extends Controller
             }
         }
 
+        if(count($assignments_total_shock_amount_by_year_and_month) > 0){
+            $export_assignments_total_shock_amount_by_year_and_month_data = [];
+            // En-tête
+            $export_assignments_total_shock_amount_by_year_and_month_data[] = [
+                'Année',
+                'Mois',
+                'Montant des dossiers'
+            ];
+            
+            foreach ($assignments_total_shock_amount_by_year_and_month as $assignment) {
+                $export_assignments_total_shock_amount_by_year_and_month_data[] = [
+                    $assignment->year,
+                    $assignment->month,
+                    $assignment->amount,
+                ];
+            }
+
+            // Deuxième feuille : Coût total des sinistres par année et mois
+            $sheetAmount = $spreadsheet->createSheet();
+            $sheetAmount->setTitle('Coût total des sinistres');
+
+            foreach ($export_assignments_total_shock_amount_by_year_and_month_data as $rowIndex => $row) {
+                foreach ($row as $colIndex => $value) {
+                    $sheetAmount->setCellValueByColumnAndRow($colIndex + 1, $rowIndex + 1, $value);
+                }
+            }
+        }
+
         // Sauvegarde du fichier
         $filename = 'export_assignments_stats.xlsx';
         $filepath = storage_path('app/public/exports/' . $filename);
@@ -996,6 +1127,7 @@ class AssignmentController extends Controller
         return $this->responseSuccess('Statistiques des dossiers', [
             'assignments_by_year_and_month_count' => $assignments_by_year_and_month_count,
             'assignments_by_year_and_month_amount' => $assignments_by_year_and_month_amount,
+            'assignments_total_shock_amount_by_year_and_month' => $assignments_total_shock_amount_by_year_and_month,
             'export_url' => $url,
         ]);
     }
