@@ -694,15 +694,15 @@ class ShockWorkController extends Controller
         if($request->date && !$request->supply_id){
             $shockWorks = $shockWorks->where('created_at', '>=', $request->date);
         }
-        
+
         $shockWorks = $shockWorks->distinct('supply_id')->latest('created_at')->dynamicPaginate();
-        $shockWorks_mean = $shockWorks->mean('amount');
+        $shockWorks_avg = $shockWorks->avg('amount');
         $shockWorks_max = $shockWorks->max('amount');
         $shockWorks_min = $shockWorks->min('amount');
 
         return $this->responseSuccess('ShockWorks fetched Successfully', [
             'shockWorks' => $shockWorks,
-            'shockWorks_mean' => $shockWorks_mean,
+            'shockWorks_avg' => $shockWorks_avg,
             'shockWorks_max' => $shockWorks_max,
             'shockWorks_min' => $shockWorks_min,
         ]);
