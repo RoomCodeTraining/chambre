@@ -678,7 +678,7 @@ class ShockWorkController extends Controller
      *
      * @authenticated
      */
-    public function get_supply_price_by_vehicle_brand_and_vehicle_model(GetSupplyPriceRequest $request): AnonymousResourceCollection
+    public function get_supply_price_by_vehicle_brand_and_vehicle_model(GetSupplyPriceRequest $request): JsonResponse
     {
         $vehicles = Vehicle::where('vehicle_model_id', $request->vehicle_model_id)->get();
         $assignments = Assignment::whereIn('vehicle_id', $vehicles->pluck('id'))->get();
