@@ -29,6 +29,8 @@ class AssignmentRequestResource extends JsonResource
             'vehicle' => new VehicleResource($this->whenLoaded('vehicle')),
             'photos' => PhotoResource::collection($this->whenLoaded('photos')),
             'status' => new StatusResource($this->whenLoaded('status')),
+            'cancelled_by' => new UserResource($this->whenLoaded('cancelledBy')),
+            'rejected_by' => new UserResource($this->whenLoaded('rejectedBy')),
             'created_by' => new UserResource($this->whenLoaded('createdBy')),
             'updated_by' => new UserResource($this->whenLoaded('updatedBy')),
             'deleted_by' => new UserResource($this->whenLoaded('deletedBy')),

@@ -20,6 +20,8 @@ return new class extends Migration
             $table->string('claim_number')->nullable();
             $table->date('claim_date')->nullable();
             $table->string('expertise_place')->nullable();
+            $table->text('cancellation_reason')->nullable();
+            $table->text('rejection_reason')->nullable();
             $table->unsignedBigInteger('expert_firm_id')->index()->nullable();
             $table->unsignedBigInteger('insurer_id')->index()->nullable();
             $table->unsignedBigInteger('repairer_id')->index()->nullable();
@@ -30,6 +32,10 @@ return new class extends Migration
             $table->unsignedBigInteger('status_id')->index()->nullable();
             $table->unsignedBigInteger('created_by')->index()->nullable();
             $table->timestamp('created_at')->nullable();
+            $table->unsignedBigInteger('cancelled_by')->index()->nullable();
+            $table->timestamp('cancelled_at')->nullable();
+            $table->unsignedBigInteger('rejected_by')->index()->nullable();
+            $table->timestamp('rejected_at')->nullable();
             $table->unsignedBigInteger('updated_by')->index()->nullable();
             $table->timestamp('updated_at')->nullable();
             $table->unsignedBigInteger('deleted_by')->index()->nullable();

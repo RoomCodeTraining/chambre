@@ -281,6 +281,14 @@ class Assignment extends Model
     }
 
     /**
+     * Get the user who unvalidated this assignment
+     */
+    public function unvalidatedBy(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'unvalidated_by');
+    }
+
+    /**
      * Get the user who validated the quote of this assignment by repairer
      */
     public function validatedByRepairerBy(): BelongsTo

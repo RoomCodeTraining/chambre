@@ -57,8 +57,17 @@ return new class extends Migration
     {
         Schema::table('assignments', function (Blueprint $table) {
             $table->dropColumn('agreement_for_work_subject_to_conditions');
+            $table->dropColumn('quote_validated');
             $table->dropColumn('quote_validated_by_repairer');
+            $table->dropConstrainedForeignId('quote_validated_by_repairer_by');
+            $table->dropColumn('quote_validated_by_repairer_at');
+            $table->dropConstrainedForeignId('quote_unvalidated_by_repairer_by');
+            $table->dropColumn('quote_unvalidated_by_repairer_at');
             $table->dropColumn('quote_validated_by_expert');
+            $table->dropConstrainedForeignId('quote_validated_by_expert_by');
+            $table->dropColumn('quote_validated_by_expert_at');
+            $table->dropConstrainedForeignId('quote_unvalidated_by_expert_by');
+            $table->dropColumn('quote_unvalidated_by_expert_at');
         });
     }
 };

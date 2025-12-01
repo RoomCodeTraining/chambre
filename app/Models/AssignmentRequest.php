@@ -59,6 +59,22 @@ class AssignmentRequest extends Model
     }
 
     /**
+     * Get the user who cancelled this assignment request
+     */
+    public function cancelledBy(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'cancelled_by');
+    }
+
+    /**
+     * Get the user who rejected this assignment request
+     */
+    public function rejectedBy(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'rejected_by');
+    }
+
+    /**
      * Get the user who last updated this assignment request
      */
     public function updatedBy(): BelongsTo

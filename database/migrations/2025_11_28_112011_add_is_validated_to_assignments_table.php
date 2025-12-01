@@ -50,7 +50,14 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('assignments', function (Blueprint $table) {
-            //
+            $table->dropConstrainedForeignId('validated_by_repairer_by');
+            $table->dropColumn('validated_by_repairer_at');
+            $table->dropConstrainedForeignId('unvalidated_by_repairer_by');
+            $table->dropColumn('unvalidated_by_repairer_at');
+            $table->dropConstrainedForeignId('validated_by_expert_by');
+            $table->dropColumn('validated_by_expert_at');
+            $table->dropConstrainedForeignId('unvalidated_by_expert_by');
+            $table->dropColumn('unvalidated_by_expert_at');
         });
     }
 };

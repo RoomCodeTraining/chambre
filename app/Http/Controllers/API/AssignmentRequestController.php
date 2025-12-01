@@ -16,6 +16,8 @@ use App\Http\Controllers\Controller;
 use App\Models\RepairerRelationship;
 use Essa\APIToolKit\Api\ApiResponse;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
+use App\Http\Requests\Assignment\CancelAssignmentRequestRequest;
+use App\Http\Requests\Assignment\RejectAssignmentRequestRequest;
 use App\Http\Resources\AssignmentRequest\AssignmentRequestResource;
 use App\Http\Requests\AssignmentRequest\CreateAssignmentRequestRequest;
 use App\Http\Requests\AssignmentRequest\UpdateAssignmentRequestRequest;
@@ -159,7 +161,7 @@ class AssignmentRequestController extends Controller
     {
         $assignmentRequest = AssignmentRequest::accessibleBy(auth()->user())->findOrFail(AssignmentRequest::keyFromHashId($id));
 
-        return $this->responseSuccess(null, new AssignmentRequestResource($assignmentRequest->load('expertFirm','assignmentType', 'expertiseType', 'status', 'deletedBy', 'client', 'vehicle', 'insurer', 'repairer', 'createdBy', 'updatedBy', 'photos')));
+        return $this->responseSuccess(null, new AssignmentRequestResource($assignmentRequest->load('expertFirm','assignmentType', 'expertiseType', 'status', 'deletedBy', 'client', 'vehicle', 'insurer', 'repairer', 'createdBy', 'updatedBy', 'cancelledBy', 'rejectedBy', 'photos')));
     }
 
     /**
@@ -181,12 +183,15 @@ class AssignmentRequestController extends Controller
      *
      * @authenticated
      */
-    public function reject($id): JsonResponse
+    public function reject(RejectAssignmentRequestRequest $request, $id): JsonResponse
     {
         $assignmentRequest = AssignmentRequest::accessibleBy(auth()->user())->findOrFail(AssignmentRequest::keyFromHashId($id));
 
         if($assignmentRequest->status_id == Status::where('code', StatusEnum::PENDING)->first()->id){
             $assignmentRequest->update([
+                'rejection_reason' => $request->rejection_reason,
+                'rejected_by' => auth()->user()->id,
+                'rejected_at' => Carbon::now(),
                 'status_id' => Status::where('code', StatusEnum::REJECTED)->first()->id,
                 'updated_by' => auth()->user()->id,
             ]);
@@ -202,12 +207,15 @@ class AssignmentRequestController extends Controller
      *
      * @authenticated
      */
-    public function cancel($id): JsonResponse
+    public function cancel(CancelAssignmentRequestRequest $request, $id): JsonResponse
     {
         $assignmentRequest = AssignmentRequest::accessibleBy(auth()->user())->findOrFail(AssignmentRequest::keyFromHashId($id));
 
         if($assignmentRequest->status_id == Status::where('code', StatusEnum::PENDING)->first()->id){
             $assignmentRequest->update([
+                'cancellation_reason' => $request->cancellation_reason,
+                'cancelled_by' => auth()->user()->id,
+                'cancelled_at' => Carbon::now(),
                 'status_id' => Status::where('code', StatusEnum::CANCELLED)->first()->id,
                 'updated_by' => auth()->user()->id,
             ]);

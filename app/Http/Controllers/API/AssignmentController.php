@@ -68,17 +68,24 @@ use App\Services\WorkDuration\WorkDurationService;
 use App\Jobs\SendValidatedAssignmentNotificationJob;
 use App\Http\Resources\Assignment\AssignmentResource;
 use App\Http\Requests\Assignment\EditAssignmentRequest;
+use App\Http\Requests\Assignment\CloseAssignmentRequest;
+use App\Http\Requests\Assignment\CancelAssignmentRequest;
 use App\Http\Requests\Assignment\CreateAssignmentRequest;
 use App\Http\Requests\Assignment\UpdateAssignmentRequest;
 use App\Http\Requests\Assignment\RealizeAssignmentRequest;
 use App\Http\Requests\Assignment\EvaluateAssignmentRequest;
 use App\Http\Requests\Assignment\CalculateAssignmentRequest;
+use App\Http\Requests\Assignment\UnvalidateAssignmentRequest;
 use App\Http\Requests\Assignment\UpdateEditAssignmentRequest;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use App\Http\Requests\Assignment\UpdateRealizedAssignmentRequest;
 use App\Http\Requests\Assignment\CreateAssignmentWorkSheetRequest;
 use App\Http\Requests\Assignment\AddAssignmentWorkSheetPhotoRequest;
+use App\Http\Requests\Assignment\UnvalidateAssignmentByExpertRequest;
 use App\Http\Requests\Assignment\CalculateEvaluationAssignmentRequest;
+use App\Http\Requests\Assignment\UnvalidateAssignmentByRepairerRequest;
+use App\Http\Requests\Assignment\UnvalidateQuoteAssignmentByExpertRequest;
+use App\Http\Requests\Assignment\UnvalidateQuoteAssignmentByRepairerRequest;
 
 /**
  * @group Gestion des dossiers
@@ -2446,7 +2453,7 @@ class AssignmentController extends Controller
             'shocks' => function($query) {
                 $query->orderBy('position', 'asc');
             },
-            'shocks.shockPoint', 'shocks.shockWorks', 'shocks.shockWorks.supply', 'shocks.workforces', 'shocks.workforces.workforceType', 'shocks.paintType', 'shocks.hourlyRate', 'shocks.status', 'otherCosts', 'ascertainments', 'ascertainments.ascertainmentType', 'receipts', 'receipts.receiptType', 'status', 'vehicle', 'claimNature', 'vehicle.brand', 'vehicle.vehicleModel', 'vehicle.color', 'vehicle.bodywork', 'insurer', 'additionalInsurer', 'repairer', 'client', 'assignmentType', 'expertiseType', 'generalState', 'technicalConclusion', 'documentTransmitted', 'createdBy', 'updatedBy', 'deletedBy', 'closedBy', 'cancelledBy', 'editedBy', 'realizedBy', 'referenceUpdatedBy', 'validatedByRepairerBy', 'validatedByExpertBy', 'unvalidatedByRepairerBy', 'unvalidatedByExpertBy', 'directedBy', 'workSheetEstablishedBy', 'validatedBy', 'payments', 'invoices', 'openedBy',
+            'shocks.shockPoint', 'shocks.shockWorks', 'shocks.shockWorks.supply', 'shocks.workforces', 'shocks.workforces.workforceType', 'shocks.paintType', 'shocks.hourlyRate', 'shocks.status', 'otherCosts', 'ascertainments', 'ascertainments.ascertainmentType', 'receipts', 'receipts.receiptType', 'status', 'vehicle', 'claimNature', 'vehicle.brand', 'vehicle.vehicleModel', 'vehicle.color', 'vehicle.bodywork', 'insurer', 'additionalInsurer', 'repairer', 'client', 'assignmentType', 'expertiseType', 'generalState', 'technicalConclusion', 'documentTransmitted', 'createdBy', 'updatedBy', 'deletedBy', 'closedBy', 'cancelledBy', 'editedBy', 'realizedBy', 'referenceUpdatedBy', 'validatedByRepairerBy', 'validatedByExpertBy', 'unvalidatedByRepairerBy', 'unvalidatedByExpertBy', 'directedBy', 'workSheetEstablishedBy', 'validatedBy', 'unvalidatedBy', 'payments', 'invoices', 'openedBy', 
             'quoteValidatedByRepairerBy', 'quoteValidatedByExpertBy', 'quoteUnvalidatedByRepairerBy', 'quoteUnvalidatedByExpertBy', 'validatedByRepairerBy', 'validatedByExpertBy', 'unvalidatedByRepairerBy', 'unvalidatedByExpertBy',
             'shocks.shockWorks' => function($query) {
                 $query->orderBy('position', 'asc');
@@ -2878,7 +2885,7 @@ class AssignmentController extends Controller
      *
      * @authenticated
      */
-    public function unvalidateQuoteByRepairer($id): JsonResponse
+    public function unvalidateQuoteByRepairer(UnvalidateQuoteAssignmentByRepairerRequest $request, $id): JsonResponse
     {
         $assignment = Assignment::accessibleBy(auth()->user())->findOrFail(Assignment::keyFromHashId($id));
 
@@ -2888,6 +2895,7 @@ class AssignmentController extends Controller
                 'quote_validated' => 0,
                 'quote_unvalidated_by_repairer_by' => auth()->user()->id,
                 'quote_unvalidated_by_repairer_at' => Carbon::now(),
+                'quote_unvalidation_by_repairer_reason' => $request->quote_unvalidation_by_repairer_reason,
                 'status_id' => Status::where('code', StatusEnum::PENDING_FOR_REPAIRER_QUOTE)->first()->id,
                 'updated_by' => auth()->user()->id,
             ]);
@@ -2968,7 +2976,7 @@ class AssignmentController extends Controller
      *
      * @authenticated
      */
-    public function unvalidateQuoteByExpert($id): JsonResponse
+    public function unvalidateQuoteByExpert(UnvalidateQuoteAssignmentByExpertRequest $request, $id): JsonResponse
     {
         $assignment = Assignment::accessibleBy(auth()->user())->findOrFail(Assignment::keyFromHashId($id));
 
@@ -2979,6 +2987,7 @@ class AssignmentController extends Controller
                 'agreement_for_work_subject_to_conditions' => 0,
                 'quote_unvalidated_by_expert_by' => auth()->user()->id,
                 'quote_unvalidated_by_expert_at' => Carbon::now(),
+                'quote_unvalidation_by_expert_reason' => $request->quote_unvalidation_by_expert_reason,
                 'status_id' => Status::where('code', StatusEnum::PENDING_FOR_REPAIRER_QUOTE)->first()->id,
                 'updated_by' => auth()->user()->id,
             ]);
@@ -3032,11 +3041,14 @@ class AssignmentController extends Controller
      *
      * @authenticated
      */
-    public function unvalidateEdition($id): JsonResponse
+    public function unvalidateEdition(UnvalidateAssignmentRequest $request, $id): JsonResponse
     {
         $assignment = Assignment::accessibleBy(auth()->user())->findOrFail(Assignment::keyFromHashId($id));
 
         $assignment->update([
+            'unvalidated_by' => auth()->user()->id,
+            'unvalidated_at' => Carbon::now(),
+            'unvalidation_reason' => $request->unvalidation_reason,
             'status_id' => Status::where('code', StatusEnum::IN_EDITING)->first()->id,
             'updated_by' => auth()->user()->id,
         ]);
@@ -3083,7 +3095,7 @@ class AssignmentController extends Controller
      *
      * @authenticated
      */
-    public function unvalidateByRepairer($id): JsonResponse
+    public function unvalidateByRepairer(UnvalidateAssignmentByRepairerRequest $request, $id): JsonResponse
     {
         $assignment = Assignment::accessibleBy(auth()->user())->findOrFail(Assignment::keyFromHashId($id));
 
@@ -3093,6 +3105,7 @@ class AssignmentController extends Controller
                 'is_validated' => 0,
                 'unvalidated_by_expert_by' => auth()->user()->id,
                 'unvalidated_by_expert_at' => Carbon::now(),
+                'unvalidation_by_repairer_reason' => $request->unvalidation_by_repairer_reason,
                 'status_id' => Status::where('code', StatusEnum::PENDING_FOR_REPAIRER_VALIDATION)->first()->id,
                 'updated_by' => auth()->user()->id,
             ]);
@@ -3148,7 +3161,7 @@ class AssignmentController extends Controller
      *
      * @authenticated
      */
-    public function unvalidateByExpert($id): JsonResponse
+    public function unvalidateByExpert(UnvalidateAssignmentByExpertRequest $request, $id): JsonResponse
     {
         $assignment = Assignment::accessibleBy(auth()->user())->findOrFail(Assignment::keyFromHashId($id));
 
@@ -3163,6 +3176,7 @@ class AssignmentController extends Controller
                 'is_validated' => 0,
                 'unvalidated_by_expert_by' => auth()->user()->id,
                 'unvalidated_by_expert_at' => Carbon::now(),
+                'unvalidation_by_expert_reason' => $request->unvalidation_by_expert_reason,
                 'status_id' => $status_id,
                 'updated_by' => auth()->user()->id,
             ]);
@@ -3177,13 +3191,14 @@ class AssignmentController extends Controller
      *
      * @authenticated
      */
-    public function close($id): JsonResponse
+    public function close(CloseAssignmentRequest $request, $id): JsonResponse
     {
         $assignment = Assignment::accessibleBy(auth()->user())->findOrFail(Assignment::keyFromHashId($id));
 
         $assignment->update([
             'closed_by' => auth()->user()->id,
             'closed_at' => Carbon::now(),
+            'closing_reason' => $request->closing_reason,
             'status_id' => Status::where('code', StatusEnum::CLOSED)->first()->id,
             'updated_by' => auth()->user()->id,
         ]);
@@ -3215,11 +3230,12 @@ class AssignmentController extends Controller
      *
      * @authenticated
      */
-    public function cancel($id): JsonResponse
+    public function cancel(CancelAssignmentRequest $request, $id): JsonResponse
     {
         $assignment = Assignment::accessibleBy(auth()->user())->findOrFail(Assignment::keyFromHashId($id));
 
         $assignment->update([
+            'cancellation_reason' => $request->cancellation_reason,
             'cancelled_by' => auth()->user()->id,
             'cancelled_at' => Carbon::now(),
             'status_id' => Status::where('code', StatusEnum::CANCELLED)->first()->id,
