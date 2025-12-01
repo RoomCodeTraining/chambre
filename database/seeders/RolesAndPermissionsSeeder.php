@@ -427,6 +427,20 @@ class RolesAndPermissionsSeeder extends Seeder
         $enableRemark = Permission::create(['name' => \App\Enums\PermissionEnum::ENABLE_REMARK, 'guard_name' => 'sanctum']);
         $disableRemark = Permission::create(['name' => \App\Enums\PermissionEnum::DISABLE_REMARK, 'guard_name' => 'sanctum']);
 
+        $createGeneralStatusDeadline = Permission::create(['name' => \App\Enums\PermissionEnum::CREATE_GENERAL_STATUS_DEADLINE, 'guard_name' => 'sanctum']);
+        $viewGeneralStatusDeadline = Permission::create(['name' => \App\Enums\PermissionEnum::VIEW_GENERAL_STATUS_DEADLINE, 'guard_name' => 'sanctum']);
+        $updateGeneralStatusDeadline = Permission::create(['name' => \App\Enums\PermissionEnum::UPDATE_GENERAL_STATUS_DEADLINE, 'guard_name' => 'sanctum']);
+        $deleteGeneralStatusDeadline = Permission::create(['name' => \App\Enums\PermissionEnum::DELETE_GENERAL_STATUS_DEADLINE, 'guard_name' => 'sanctum']);
+        $enableGeneralStatusDeadline = Permission::create(['name' => \App\Enums\PermissionEnum::ENABLE_GENERAL_STATUS_DEADLINE, 'guard_name' => 'sanctum']);
+        $disableGeneralStatusDeadline = Permission::create(['name' => \App\Enums\PermissionEnum::DISABLE_GENERAL_STATUS_DEADLINE, 'guard_name' => 'sanctum']);
+
+        $createStatusDeadline = Permission::create(['name' => \App\Enums\PermissionEnum::CREATE_STATUS_DEADLINE, 'guard_name' => 'sanctum']);
+        $viewStatusDeadline = Permission::create(['name' => \App\Enums\PermissionEnum::VIEW_STATUS_DEADLINE, 'guard_name' => 'sanctum']);
+        $updateStatusDeadline = Permission::create(['name' => \App\Enums\PermissionEnum::UPDATE_STATUS_DEADLINE, 'guard_name' => 'sanctum']);
+        $deleteStatusDeadline = Permission::create(['name' => \App\Enums\PermissionEnum::DELETE_STATUS_DEADLINE, 'guard_name' => 'sanctum']);
+        $enableStatusDeadline = Permission::create(['name' => \App\Enums\PermissionEnum::ENABLE_STATUS_DEADLINE, 'guard_name' => 'sanctum']);
+        $disableStatusDeadline = Permission::create(['name' => \App\Enums\PermissionEnum::DISABLE_STATUS_DEADLINE, 'guard_name' => 'sanctum']);
+
         $dashboard = Permission::create(['name' => \App\Enums\PermissionEnum::DASHBOARD, 'guard_name' => 'sanctum']);
 
         Role::create([
@@ -774,6 +788,20 @@ class RolesAndPermissionsSeeder extends Seeder
             $deleteUserActionType,
             $enableUserActionType,
             $disableUserActionType,
+
+            $createGeneralStatusDeadline,
+            $viewGeneralStatusDeadline,
+            $updateGeneralStatusDeadline,
+            $deleteGeneralStatusDeadline,
+            $enableGeneralStatusDeadline,
+            $disableGeneralStatusDeadline,
+
+            $createStatusDeadline,
+            $viewStatusDeadline,
+            $updateStatusDeadline,
+            $deleteStatusDeadline,
+            $enableStatusDeadline,
+            $disableStatusDeadline,
 
             $dashboard,
         ]);
@@ -1124,6 +1152,20 @@ class RolesAndPermissionsSeeder extends Seeder
             $enableUserActionType,
             $disableUserActionType,
 
+            $createGeneralStatusDeadline,
+            $viewGeneralStatusDeadline,
+            $updateGeneralStatusDeadline,
+            $deleteGeneralStatusDeadline,
+            $enableGeneralStatusDeadline,
+            $disableGeneralStatusDeadline,
+
+            $createStatusDeadline,
+            $viewStatusDeadline,
+            $updateStatusDeadline,
+            $deleteStatusDeadline,
+            $enableStatusDeadline,
+            $disableStatusDeadline,
+
             $dashboard,
         ]);
 
@@ -1370,6 +1412,13 @@ class RolesAndPermissionsSeeder extends Seeder
             $viewUserAction,
             $updateUserAction,
             $deleteUserAction,
+
+            $createStatusDeadline,
+            $viewStatusDeadline,
+            $updateStatusDeadline,
+            $deleteStatusDeadline,
+            $enableStatusDeadline,
+            $disableStatusDeadline,
 
             $dashboard,
         ]);

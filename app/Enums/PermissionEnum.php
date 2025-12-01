@@ -417,6 +417,20 @@ enum PermissionEnum: string
     case DELETE_REMARK = 'remark.delete';
     case ENABLE_REMARK = 'remark.enable';
     case DISABLE_REMARK = 'remark.disable';
+
+    case VIEW_GENERAL_STATUS_DEADLINE = 'general_status_deadline.view';
+    case CREATE_GENERAL_STATUS_DEADLINE = 'general_status_deadline.create';
+    case UPDATE_GENERAL_STATUS_DEADLINE = 'general_status_deadline.update';
+    case DELETE_GENERAL_STATUS_DEADLINE = 'general_status_deadline.delete';
+    case ENABLE_GENERAL_STATUS_DEADLINE = 'general_status_deadline.enable';
+    case DISABLE_GENERAL_STATUS_DEADLINE = 'general_status_deadline.disable';
+
+    case VIEW_STATUS_DEADLINE = 'status_deadline.view';
+    case CREATE_STATUS_DEADLINE = 'status_deadline.create';
+    case UPDATE_STATUS_DEADLINE = 'status_deadline.update';
+    case DELETE_STATUS_DEADLINE = 'status_deadline.delete';
+    case ENABLE_STATUS_DEADLINE = 'status_deadline.enable';
+    case DISABLE_STATUS_DEADLINE = 'status_deadline.disable';
     
 
     case DASHBOARD = 'dashboard.view';
