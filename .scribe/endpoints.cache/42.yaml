@@ -46,7 +46,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer fh8g1EaVZd45cD6P6ak3bve'
+      - 'Bearer k1a56efZa3v4dhgc8VDPb6E'
     controller: null
     method: null
     route: null
@@ -80,7 +80,7 @@ endpoints:
         name: param_1
         description: ''
         required: true
-        example: 830.301534
+        example: 18.313
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -90,7 +90,7 @@ endpoints:
         name: param_2
         description: ''
         required: true
-        example: 4344.976
+        example: 1.856068
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -100,7 +100,7 @@ endpoints:
         name: param_3
         description: ''
         required: true
-        example: 9.8233
+        example: 6018.6899035
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -110,24 +110,24 @@ endpoints:
         name: param_4
         description: ''
         required: true
-        example: 0.595
+        example: 0.4769374
         type: number
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      param_1: 830.301534
-      param_2: 4344.976
-      param_3: 9.8233
-      param_4: 0.595
+      param_1: 18.313
+      param_2: 1.856068
+      param_3: 6018.6899035
+      param_4: 0.4769374
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer d6Pacgh1bfvZke5VD3846aE'
+      - 'Bearer DgPdbakE3vZ86164e5cfVah'
     controller: null
     method: null
     route: null
@@ -157,14 +157,14 @@ endpoints:
         name: workFee
         description: ''
         required: true
-        example: illum
+        example: excepturi
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      workFee: illum
+      workFee: excepturi
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -184,7 +184,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer c43a5PvEDdbZk8gaeV1hf66'
+      - 'Bearer eaagfd1Z36VEDP56kcv4h8b'
     controller: null
     method: null
     route: null
@@ -214,14 +214,14 @@ endpoints:
         name: workFee
         description: ''
         required: true
-        example: repudiandae
+        example: ab
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      workFee: repudiandae
+      workFee: ab
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -229,7 +229,7 @@ endpoints:
         name: param_1
         description: ''
         required: true
-        example: 34.2949
+        example: 307.17499214
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -239,7 +239,7 @@ endpoints:
         name: param_2
         description: ''
         required: true
-        example: 326.026
+        example: 322.748561
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -249,7 +249,7 @@ endpoints:
         name: param_3
         description: ''
         required: true
-        example: 26710949.25
+        example: 2.8209
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -259,24 +259,24 @@ endpoints:
         name: param_4
         description: ''
         required: true
-        example: 3.74830889
+        example: 139719.364965
         type: number
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      param_1: 34.2949
-      param_2: 326.026
-      param_3: 26710949.25
-      param_4: 3.74830889
+      param_1: 307.17499214
+      param_2: 322.748561
+      param_3: 2.8209
+      param_4: 139719.364965
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer Pc1afDEakd35e4gbh8v66VZ'
+      - 'Bearer 8h1gaEd3PkvDf6cbae4Z65V'
     controller: null
     method: null
     route: null
@@ -306,14 +306,14 @@ endpoints:
         name: workFee
         description: ''
         required: true
-        example: occaecati
+        example: fuga
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      workFee: occaecati
+      workFee: fuga
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -324,7 +324,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer dhZ58D416VEk6vaaPfecgb3'
+      - 'Bearer bZ6fcgE36P1vh5aDk84edaV'
     controller: null
     method: null
     route: null

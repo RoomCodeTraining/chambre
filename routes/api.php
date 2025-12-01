@@ -83,5 +83,23 @@ Route::prefix('v1')->middleware(LogsOutDisabledUser::class)->group(function () {
     Route::prefix('dashboard')->group(base_path('routes/api/v1.dashboard.routes.php'));
     Route::prefix('permissions')->group(base_path('routes/api/v1.permissions.routes.php'));
     Route::prefix('roles')->group(base_path('routes/api/v1.roles.routes.php'));
+    Route::prefix('general-status-deadlines')->group(base_path('routes/api/v1.general.status.deadlines.routes.php'));
+    Route::prefix('status-deadlines')->group(base_path('routes/api/v1.status.deadlines.routes.php'));
     Route::group([], base_path('routes/api/v1.common.routes.php'));
 });
+
+/*===========================
+=           generalStatusDeadlines           =
+=============================*/
+
+Route::apiResource('/generalStatusDeadlines', \App\Http\Controllers\API\GeneralStatusDeadlineController::class);
+
+/*=====  End of generalStatusDeadlines   ======*/
+
+/*===========================
+=           statusDeadlines           =
+=============================*/
+
+Route::apiResource('/statusDeadlines', \App\Http\Controllers\API\StatusDeadlineController::class);
+
+/*=====  End of statusDeadlines   ======*/

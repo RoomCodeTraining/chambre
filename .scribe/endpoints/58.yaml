@@ -44,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 8gZehaD4ak5f63VPcE1d6vb'
+      - 'Bearer h8c6Z6baE4k5vPaf3DVdg1e'
     controller: null
     method: null
     route: null
@@ -78,21 +78,21 @@ endpoints:
         name: repairer_id
         description: 'The <code>id</code> of an existing record in the entities table.'
         required: true
-        example: laudantium
+        example: et
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      repairer_id: laudantium
+      repairer_id: et
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer bgfPeac64ah3vkEd56ZV81D'
+      - 'Bearer cZ1hfagDdvbVk865eP6E43a'
     controller: null
     method: null
     route: null
@@ -122,14 +122,14 @@ endpoints:
         name: repairerRelationship
         description: ''
         required: true
-        example: consequatur
+        example: incidunt
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      repairerRelationship: consequatur
+      repairerRelationship: incidunt
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -149,7 +149,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer bV6vcDEehZ1agPf3d8ka654'
+      - 'Bearer 8Z3D6EbVkPadfv614g5ecah'
     controller: null
     method: null
     route: null
@@ -197,7 +197,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer gd18bha36aEDePZcV5fk6v4'
+      - 'Bearer e4ah61Zc86Pf53bdaVvEDkg'
     controller: null
     method: null
     route: null
@@ -227,14 +227,14 @@ endpoints:
         name: repairerRelationship
         description: ''
         required: true
-        example: illo
+        example: voluptate
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      repairerRelationship: illo
+      repairerRelationship: voluptate
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -245,7 +245,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 3fg486ZEbvh15kVaecd6aPD'
+      - 'Bearer 43dbahZkE5V6PcD16vegf8a'
     controller: null
     method: null
     route: null
@@ -275,14 +275,14 @@ endpoints:
         name: repairerRelationship
         description: ''
         required: true
-        example: quia
+        example: architecto
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      repairerRelationship: quia
+      repairerRelationship: architecto
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -293,7 +293,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 1aeZd3VcEbhgP68vfa45D6k'
+      - 'Bearer hVfvd6gcbZaaP13586DE4ek'
     controller: null
     method: null
     route: null

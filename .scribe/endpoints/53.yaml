@@ -44,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer g1aZ3v6adf5hE486PcbVeDk'
+      - 'Bearer aZE6gdcD4bP6Vek1hv8af35'
     controller: null
     method: null
     route: null
@@ -78,7 +78,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: ylwpehmotvqyfiwt
+        example: tszghqjiyhnvtbg
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -88,22 +88,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Voluptas autem commodi doloribus porro dolorum voluptatem non.'
+        example: 'Et ad quo quas et nihil dicta unde.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: ylwpehmotvqyfiwt
-      description: 'Voluptas autem commodi doloribus porro dolorum voluptatem non.'
+      label: tszghqjiyhnvtbg
+      description: 'Et ad quo quas et nihil dicta unde.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer hv368eEaVad15Z4kcDgfbP6'
+      - 'Bearer D86vaf51ZVg6h3Ec4bkaPde'
     controller: null
     method: null
     route: null
@@ -133,14 +133,14 @@ endpoints:
         name: id
         description: 'The ID of the ascertainment type.'
         required: true
-        example: dicta
+        example: necessitatibus
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: dicta
+      id: necessitatibus
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -160,7 +160,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6PhcD63av5V4df18EaZkgeb'
+      - 'Bearer ckDVdgP4a1veh86Ef36Za5b'
     controller: null
     method: null
     route: null
@@ -190,14 +190,14 @@ endpoints:
         name: id
         description: 'The ID of the ascertainment type.'
         required: true
-        example: quibusdam
+        example: dolor
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: quibusdam
+      id: dolor
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -205,7 +205,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: iuczufsdoelryecklbbdg
+        example: grrndfbj
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -215,22 +215,22 @@ endpoints:
         name: description
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: false
-        example: 'Quo quis consequatur atque.'
+        example: 'Voluptates aut quo ducimus omnis fuga natus et.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: iuczufsdoelryecklbbdg
-      description: 'Quo quis consequatur atque.'
+      label: grrndfbj
+      description: 'Voluptates aut quo ducimus omnis fuga natus et.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 5aEZhk4f3P8v16e6DcadgbV'
+      - 'Bearer Df63cb16v8V4ZaaPdEghek5'
     controller: null
     method: null
     route: null
@@ -260,14 +260,14 @@ endpoints:
         name: id
         description: 'The ID of the ascertainment type.'
         required: true
-        example: reprehenderit
+        example: atque
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: reprehenderit
+      id: atque
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -278,7 +278,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 1adkgfe686VP4caZv5bED3h'
+      - 'Bearer Va14egav83bEkc6Z6dhDf5P'
     controller: null
     method: null
     route: null
@@ -308,14 +308,14 @@ endpoints:
         name: ascertainment_type
         description: ''
         required: true
-        example: debitis
+        example: minima
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      ascertainment_type: debitis
+      ascertainment_type: minima
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -326,7 +326,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer b16afkg34PVa8E6veZ5dchD'
+      - 'Bearer 4g6Zhcdb316vEaP5Vaf8keD'
     controller: null
     method: null
     route: null
@@ -356,14 +356,14 @@ endpoints:
         name: ascertainment_type
         description: ''
         required: true
-        example: omnis
+        example: odit
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      ascertainment_type: omnis
+      ascertainment_type: odit
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -374,7 +374,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer a6vZh81c6dfE5gDk3e4PVab'
+      - 'Bearer a1dVfv8g6E65P43ebcZkDha'
     controller: null
     method: null
     route: null

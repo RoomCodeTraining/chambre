@@ -44,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer kaP1E3ah5dZv8egc46b6VfD'
+      - 'Bearer P3fcEaad8v5D4gkbVZe166h'
     controller: null
     method: null
     route: null
@@ -90,7 +90,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer VDg6aZv5c83hk6PfEdb1e4a'
+      - 'Bearer 8afE654V3acd61hkevZgDPb'
     controller: null
     method: null
     route: null
@@ -127,7 +127,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 3fed6VaDEP1g6chZ85vkab4'
+      - 'Bearer 56e8ghaPZ1c4bDEfvdaV3k6'
     controller: null
     method: null
     route: null
@@ -175,7 +175,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6a3b4h5V8ZkEaDeP1fvdc6g'
+      - 'Bearer cfhZkDad4bV8vaPEg66e513'
     controller: null
     method: null
     route: null
@@ -183,7 +183,7 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: 'api/v1/roles/{role_id}/give-permission-to-role'
+    uri: 'api/v1/roles/{role}/give-permission-to-role'
     metadata:
       groupName: 'Gestion des profils utilisateur'
       groupDescription: |-
@@ -201,18 +201,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      role_id:
-        name: role_id
-        description: 'The ID of the role.'
+      role:
+        name: role
+        description: 'The role.'
         required: true
-        example: 1
-        type: integer
+        example: sunt
+        type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      role_id: 1
+      role: sunt
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -223,7 +223,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer dafEh6VcvPgk31a5eD6b8Z4'
+      - 'Bearer fa6D4Ev1V8aPbe3dZk56hcg'
     controller: null
     method: null
     route: null
@@ -231,7 +231,7 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: 'api/v1/roles/{role_id}/revoke-permission-to-role'
+    uri: 'api/v1/roles/{role}/revoke-permission-to-role'
     metadata:
       groupName: 'Gestion des profils utilisateur'
       groupDescription: |-
@@ -249,18 +249,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      role_id:
-        name: role_id
-        description: 'The ID of the role.'
+      role:
+        name: role
+        description: 'The role.'
         required: true
-        example: 1
-        type: integer
+        example: sint
+        type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      role_id: 1
+      role: sint
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -271,7 +271,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 1ce56bVE8fDdah3aZP4kg6v'
+      - 'Bearer gbvhaeadD185Ec4k366VfZP'
     controller: null
     method: null
     route: null

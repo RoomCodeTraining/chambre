@@ -12,11 +12,12 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Deligoez\LaravelModelHashId\Traits\HasHashId;
 use Deligoez\LaravelModelHashId\Traits\HasHashIdRouting;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 
 class AssignmentMessage extends Model
 {
-    use HasFactory, Filterable, HasHashId, HasHashIdRouting;
+    use HasFactory, Filterable, HasHashId, HasHashIdRouting, SoftDeletes;
 
     protected string $default_filters = AssignmentMessageFilters::class;
 

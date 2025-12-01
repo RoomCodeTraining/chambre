@@ -46,7 +46,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 4bEkZfe65adg3ac16D8hvPV'
+      - 'Bearer 1aavgc843D6ZkbEe56VfdhP'
     controller: null
     method: null
     route: null
@@ -80,7 +80,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: pgxun
+        example: tyiplzpbrgptwnfjpziqngowp
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -90,7 +90,7 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Illo ut beatae iure ut omnis inventore architecto consequuntur.'
+        example: 'Enim illum odit dolores voluptatem eaque et quae labore.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -100,23 +100,23 @@ endpoints:
         name: value
         description: 'La valeur de value doit être supérieure ou égale à 0.'
         required: true
-        example: 44
+        example: 24
         type: number
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      label: pgxun
-      description: 'Illo ut beatae iure ut omnis inventore architecto consequuntur.'
-      value: 44
+      label: tyiplzpbrgptwnfjpziqngowp
+      description: 'Enim illum odit dolores voluptatem eaque et quae labore.'
+      value: 24
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer bv36ZfaE4cdP5ega86hkVD1'
+      - 'Bearer vhZ5ec4aDg1P6adf3kVbE86'
     controller: null
     method: null
     route: null
@@ -146,14 +146,14 @@ endpoints:
         name: hourlyRate
         description: ''
         required: true
-        example: dolorem
+        example: magni
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      hourlyRate: dolorem
+      hourlyRate: magni
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -173,7 +173,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Vde3gfh5v6D81P6bEkZc4aa'
+      - 'Bearer d86ehg136EZkv5P4aVafbcD'
     controller: null
     method: null
     route: null
@@ -203,14 +203,14 @@ endpoints:
         name: hourlyRate
         description: ''
         required: true
-        example: velit
+        example: odio
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      hourlyRate: velit
+      hourlyRate: odio
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -218,7 +218,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: pkzikbkeooy
+        example: aporzlmslvcsrqagmsi
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -228,7 +228,7 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Aut illum quidem et ad temporibus.'
+        example: 'Quidem et eveniet incidunt consectetur.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -238,23 +238,23 @@ endpoints:
         name: value
         description: ''
         required: true
-        example: 29034637.490141
+        example: 2.3
         type: number
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      label: pkzikbkeooy
-      description: 'Aut illum quidem et ad temporibus.'
-      value: 29034637.490141
+      label: aporzlmslvcsrqagmsi
+      description: 'Quidem et eveniet incidunt consectetur.'
+      value: 2.3
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 4kedZ3ca5gfvPED8bVah661'
+      - 'Bearer kE6DbV3PZcfa6vae185hgd4'
     controller: null
     method: null
     route: null
@@ -284,14 +284,14 @@ endpoints:
         name: hourlyRate
         description: ''
         required: true
-        example: quasi
+        example: quibusdam
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      hourlyRate: quasi
+      hourlyRate: quibusdam
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -302,7 +302,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 1d435vVa6efgbD6aEPc8khZ'
+      - 'Bearer 156kaZVebPhgE4cd8Dv3a6f'
     controller: null
     method: null
     route: null

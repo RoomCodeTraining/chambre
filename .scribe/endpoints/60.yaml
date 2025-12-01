@@ -44,7 +44,53 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer a4fdDPeg63Z5Va18hbck6vE'
+      - 'Bearer 6E43kac6ZfhVPb8dgv1a5De'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/permissions/list/all
+    metadata:
+      groupName: 'Gestion des permissions'
+      groupDescription: |-
+
+        API pour la gestion des permissions
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      deprecated: false
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6vf635DgbEZhd4Ve18akcPa'
     controller: null
     method: null
     route: null
@@ -81,7 +127,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer V6k8bdDa4e6f1PZEvc3h5ga'
+      - 'Bearer dV4vb83gk5ZhceaD1aPf6E6'
     controller: null
     method: null
     route: null
@@ -129,7 +175,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer fE8ePdh6acgvVDb65431kaZ'
+      - 'Bearer c66ZvbeE5V3h8Pa4gD1fakd'
     controller: null
     method: null
     route: null

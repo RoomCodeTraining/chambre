@@ -46,7 +46,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer f4Dh1Vd3aEc5ve6ag6bZP8k'
+      - 'Bearer 3DV66vgkPcZ5E14afhbde8a'
     controller: null
     method: null
     route: null
@@ -80,7 +80,7 @@ endpoints:
         name: assignment_id
         description: 'The <code>id</code> of an existing record in the assignments table.'
         required: true
-        example: assumenda
+        example: temporibus
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -97,14 +97,14 @@ endpoints:
         nullable: true
         custom: []
     cleanBodyParameters:
-      assignment_id: assumenda
+      assignment_id: temporibus
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 148v6b56chkPfaagVe3dEDZ'
+      - 'Bearer 83E6Pabg645kZcdvDheafV1'
     controller: null
     method: null
     route: null
@@ -134,14 +134,14 @@ endpoints:
         name: id
         description: 'The ID of the photo.'
         required: true
-        example: repudiandae
+        example: amet
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: repudiandae
+      id: amet
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -161,7 +161,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer cZf36a1Pk5aebvDdVgh84E6'
+      - 'Bearer D6f4ca6gZdaeVv5kbh18EP3'
     controller: null
     method: null
     route: null
@@ -191,14 +191,14 @@ endpoints:
         name: id
         description: 'The ID of the photo.'
         required: true
-        example: ratione
+        example: sit
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: ratione
+      id: sit
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -230,7 +230,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Evh6k6f1DPaV4eb35adg8cZ'
+      - 'Bearer eg6kaDa18dEvP4Vf63bh5Zc'
     controller: null
     method: null
     route: null
@@ -260,14 +260,14 @@ endpoints:
         name: photo
         description: 'The photo.'
         required: true
-        example: enim
+        example: nulla
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      photo: enim
+      photo: nulla
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -278,7 +278,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer gV1DaEavfe56Z8Pchdb436k'
+      - 'Bearer hvZ8fd6gD41a3ckeVEbPa56'
     controller: null
     method: null
     route: null
@@ -308,14 +308,14 @@ endpoints:
         name: id
         description: 'The ID of the photo.'
         required: true
-        example: minus
+        example: non
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: minus
+      id: non
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -326,7 +326,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer VZ5E4vd8Pgea6cafkh16D3b'
+      - 'Bearer chPva61bDkEaZVd385f6g4e'
     controller: null
     method: null
     route: null
