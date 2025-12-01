@@ -86,6 +86,7 @@ use App\Http\Requests\Assignment\CalculateEvaluationAssignmentRequest;
 use App\Http\Requests\Assignment\UnvalidateAssignmentByRepairerRequest;
 use App\Http\Requests\Assignment\UnvalidateQuoteAssignmentByExpertRequest;
 use App\Http\Requests\Assignment\UnvalidateQuoteAssignmentByRepairerRequest;
+use App\Http\Requests\Assignment\ValidateAssignmentQuoteWithConditionsRequest;
 
 /**
  * @group Gestion des dossiers
@@ -2951,7 +2952,7 @@ class AssignmentController extends Controller
      *
      * @authenticated
      */
-    public function validateQuoteWithConditionsByExpert($id): JsonResponse
+    public function validateQuoteWithConditionsByExpert(ValidateAssignmentQuoteWithConditionsRequest $request, $id): JsonResponse
     {
         $assignment = Assignment::with('shocks:id,quote_validated', 'shocks.shockWorks:id,quote_validated', 'shocks.workforces:id,quote_validated')->accessibleBy(auth()->user())->findOrFail(Assignment::keyFromHashId($id));
 
@@ -2959,6 +2960,7 @@ class AssignmentController extends Controller
             $assignment->update([
                 'quote_validated_by_expert' => 1,
                 'agreement_for_work_subject_to_conditions' => 1,
+                'conditions' => $request->conditions,
                 'quote_validated_by_expert_by' => auth()->user()->id,
                 'quote_validated_by_expert_at' => Carbon::now(),
                 'status_id' => Status::where('code', StatusEnum::IN_EDITING)->first()->id,

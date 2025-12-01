@@ -109,6 +109,7 @@ class AssignmentResource extends JsonResource
             'total_amount_tax' => $this->total_amount_tax,
             'total_amount' => $this->total_amount,
             'emails' => json_decode($this->emails),
+            'conditions' => $this->conditions,
             'qr_codes' => QrCode::where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->first()->qr_code ?? null,
             'expert_firm' => new EntityResource($this->whenLoaded('expertFirm')),
             'insurer' => new EntityResource($this->whenLoaded('insurer')),

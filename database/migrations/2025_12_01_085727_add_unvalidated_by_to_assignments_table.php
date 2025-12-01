@@ -16,6 +16,8 @@ return new class extends Migration
             $table->timestamp('unvalidated_at')->nullable();
             $table->text('unvalidation_reason')->nullable();
 
+            $table->text('conditions')->nullable();
+
             $table->text('cancellation_reason')->nullable();
             $table->text('closing_reason')->nullable();
 
