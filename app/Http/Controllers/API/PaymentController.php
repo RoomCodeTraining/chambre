@@ -222,7 +222,7 @@ class PaymentController extends Controller
         $writer = new \PhpOffice\PhpSpreadsheet\Writer\Xlsx($spreadsheet);
         $writer->save($filepath);
 
-        $url = asset('storage/exports/' . $filename);
+        $url = asset('storage/exports/' . auth()->user()->code . '/' . $filename);
 
         return $url;
     }
@@ -426,7 +426,7 @@ class PaymentController extends Controller
         $writer = new \PhpOffice\PhpSpreadsheet\Writer\Xlsx($spreadsheet);
         $writer->save($filepath);
 
-        $url = asset('storage/exports/' . $filename);
+        $url = asset('storage/exports/' . auth()->user()->code . '/' . $filename);
 
         return $this->responseSuccess('Statistiques des paiements', [
             'payments_by_year_and_month_count' => $payments_by_year_and_month_count,

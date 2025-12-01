@@ -687,7 +687,7 @@ class AssignmentController extends Controller
         $writer = new \PhpOffice\PhpSpreadsheet\Writer\Xlsx($spreadsheet);
         $writer->save($filepath);
 
-        $url = asset('storage/exports/' . $filename);
+        $url = asset('storage/exports/'. auth()->user()->code . '/' . $filename);
 
         return $url;
     }
@@ -1122,7 +1122,7 @@ class AssignmentController extends Controller
         $writer = new \PhpOffice\PhpSpreadsheet\Writer\Xlsx($spreadsheet);
         $writer->save($filepath);
 
-        $url = asset('storage/exports/' . $filename);
+        $url = asset('storage/exports/'. auth()->user()->code . '/' . $filename);
 
         return $this->responseSuccess('Statistiques des dossiers', [
             'assignments_by_year_and_month_count' => $assignments_by_year_and_month_count,
