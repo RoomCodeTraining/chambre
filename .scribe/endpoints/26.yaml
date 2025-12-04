@@ -44,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer a1v3bd5VheD6PZf8ca6kgE4'
+      - 'Bearer P483bfkZevaa1DcdEV66hg5'
     controller: null
     method: null
     route: null
@@ -78,21 +78,21 @@ endpoints:
         name: code
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: hhhwnvsqtfgwzrq
+        example: dp
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      code: hhhwnvsqtfgwzrq
+      code: dp
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 8b16vcagdfeEk6DZ3Va54Ph'
+      - 'Bearer 4ha5edP86kbv61Da3fEVZcg'
     controller: null
     method: null
     route: null
@@ -122,14 +122,14 @@ endpoints:
         name: qrCode
         description: ''
         required: true
-        example: et
+        example: quia
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      qrCode: et
+      qrCode: quia
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -149,7 +149,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer cZEgf451DbVP3ve68kaad6h'
+      - 'Bearer 8E3ba6P6Vd1efZhgvD4ac5k'
     controller: null
     method: null
     route: null
@@ -194,21 +194,21 @@ endpoints:
         name: code
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: uullhivlecegxzj
+        example: tgajd
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      code: uullhivlecegxzj
+      code: tgajd
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 6b16cvdage8aV54hk3DZEPf'
+      - 'Bearer 8f63davDahkPb4ZeE15gcV6'
     controller: null
     method: null
     route: null
@@ -238,14 +238,14 @@ endpoints:
         name: qrCode
         description: ''
         required: true
-        example: impedit
+        example: dolor
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      qrCode: impedit
+      qrCode: dolor
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -256,7 +256,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer e6Df4cPhadvb6EZ83Vkag15'
+      - 'Bearer 6VPa314E5v6faZc8dbegDhk'
     controller: null
     method: null
     route: null

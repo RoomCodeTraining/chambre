@@ -44,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 4fbahg3k8e5c6VDZ6avPEd1'
+      - 'Bearer a8cV51bEde4g6afv63kZPDh'
     controller: null
     method: null
     route: null
@@ -78,7 +78,7 @@ endpoints:
         name: code
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: okmyex
+        example: gfi
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -88,7 +88,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: hjv
+        example: qhvwyqczqvpuluztcxuxjbtpl
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -98,23 +98,23 @@ endpoints:
         name: description
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: false
-        example: 'Est molestiae mollitia magni quod eum.'
+        example: 'Non id beatae accusamus repellendus.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      code: okmyex
-      label: hjv
-      description: 'Est molestiae mollitia magni quod eum.'
+      code: gfi
+      label: qhvwyqczqvpuluztcxuxjbtpl
+      description: 'Non id beatae accusamus repellendus.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer a8dvVgab5661PehfkcE4ZD3'
+      - 'Bearer 8cv36dgV4Ebaa5Z1P6kefDh'
     controller: null
     method: null
     route: null
@@ -144,14 +144,14 @@ endpoints:
         name: id
         description: 'The ID of the status.'
         required: true
-        example: et
+        example: voluptatem
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: et
+      id: voluptatem
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -171,7 +171,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 5af16vd4DhEgVka3e8bZc6P'
+      - 'Bearer cD865ZVd1e6PaE4gvak3bhf'
     controller: null
     method: null
     route: null
@@ -201,14 +201,14 @@ endpoints:
         name: id
         description: 'The ID of the status.'
         required: true
-        example: ipsa
+        example: mollitia
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: ipsa
+      id: mollitia
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -216,7 +216,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: hsgidwleagodcbtaym
+        example: paijlbknxpnzvrotibhvfk
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -226,22 +226,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Et nobis tempore consequuntur dolorem quos nam.'
+        example: 'Atque ex est adipisci voluptas voluptatem quibusdam distinctio.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: hsgidwleagodcbtaym
-      description: 'Et nobis tempore consequuntur dolorem quos nam.'
+      label: paijlbknxpnzvrotibhvfk
+      description: 'Atque ex est adipisci voluptas voluptatem quibusdam distinctio.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer eadEVb53gv6hkf6ZDc84P1a'
+      - 'Bearer 1edfgD634baP8aEkc65vZVh'
     controller: null
     method: null
     route: null
@@ -271,14 +271,14 @@ endpoints:
         name: id
         description: 'The ID of the status.'
         required: true
-        example: molestiae
+        example: necessitatibus
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: molestiae
+      id: necessitatibus
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -289,7 +289,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer ecDf63a16P8aZvEVbkh4d5g'
+      - 'Bearer fhdEPgkVZ4aavc36eDb6815'
     controller: null
     method: null
     route: null

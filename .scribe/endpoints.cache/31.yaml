@@ -46,7 +46,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6c84EPkaaveDgbZdhV1f356'
+      - 'Bearer 56a1kdbPcVe8vEDh364Zgfa'
     controller: null
     method: null
     route: null
@@ -80,7 +80,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: rephgzjlzz
+        example: crtstrbl
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -90,22 +90,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Aut et consequatur mollitia et.'
+        example: 'Culpa totam nisi voluptatem excepturi.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: rephgzjlzz
-      description: 'Aut et consequatur mollitia et.'
+      label: crtstrbl
+      description: 'Culpa totam nisi voluptatem excepturi.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer ae61afPZ85VDk6hEg3d4bvc'
+      - 'Bearer 1dv6aaecEP86VbD3kfh5g4Z'
     controller: null
     method: null
     route: null
@@ -162,7 +162,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6fag865bhcvkVdD31P4eaZE'
+      - 'Bearer E3f646bvegdk8ZaDa5Phc1V'
     controller: null
     method: null
     route: null
@@ -192,14 +192,14 @@ endpoints:
         name: document_transmitted
         description: ''
         required: true
-        example: sed
+        example: magnam
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      document_transmitted: sed
+      document_transmitted: magnam
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -207,7 +207,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: i
+        example: jq
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -217,22 +217,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Iste necessitatibus delectus dolorem aut aperiam deserunt.'
+        example: 'Est molestiae enim quo asperiores recusandae exercitationem.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: i
-      description: 'Iste necessitatibus delectus dolorem aut aperiam deserunt.'
+      label: jq
+      description: 'Est molestiae enim quo asperiores recusandae exercitationem.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 85Eda3PZDfaV6cb1vek64gh'
+      - 'Bearer PVDZ3b841cEe6afvgk5adh6'
     controller: null
     method: null
     route: null
@@ -262,14 +262,14 @@ endpoints:
         name: document_transmitted
         description: ''
         required: true
-        example: eveniet
+        example: ullam
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      document_transmitted: eveniet
+      document_transmitted: ullam
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -280,7 +280,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer E6b5ah8kfegdcP1VvZ43D6a'
+      - 'Bearer 5b1vPd6aDa86cZEe34fkhgV'
     controller: null
     method: null
     route: null

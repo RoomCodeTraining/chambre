@@ -44,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 1Zv6DP6k4Vdca38ab5gEfeh'
+      - 'Bearer Z6VfkacD6bE1834dPhea5gv'
     controller: null
     method: null
     route: null
@@ -78,7 +78,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: toamawmejvpvfzxuhxrpbpr
+        example: tykqprvkfgwcmepgdbwpyqey
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -88,22 +88,22 @@ endpoints:
         name: description
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: false
-        example: 'Explicabo blanditiis beatae doloribus ut.'
+        example: 'Aut est ut ratione est eum deleniti qui.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: toamawmejvpvfzxuhxrpbpr
-      description: 'Explicabo blanditiis beatae doloribus ut.'
+      label: tykqprvkfgwcmepgdbwpyqey
+      description: 'Aut est ut ratione est eum deleniti qui.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer akdfae3VPZDc4h58E1bg66v'
+      - 'Bearer a1h6k6gdZD83aP54bVfcEve'
     controller: null
     method: null
     route: null
@@ -133,14 +133,14 @@ endpoints:
         name: paymentType
         description: ''
         required: true
-        example: aperiam
+        example: dolor
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      paymentType: aperiam
+      paymentType: dolor
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -160,7 +160,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 4daZae5fb6Phk8gcv1ED3V6'
+      - 'Bearer 1cvfPEk4eZ66dVg3b5aDh8a'
     controller: null
     method: null
     route: null
@@ -190,14 +190,14 @@ endpoints:
         name: paymentType
         description: ''
         required: true
-        example: sint
+        example: laudantium
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      paymentType: sint
+      paymentType: laudantium
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -205,7 +205,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: ojtturokkmketjnpfnj
+        example: ulyhnqugxjtq
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -215,22 +215,22 @@ endpoints:
         name: description
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: false
-        example: 'Accusamus voluptas facilis ex id quasi eum sapiente.'
+        example: 'Odit quaerat pariatur qui velit est.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: ojtturokkmketjnpfnj
-      description: 'Accusamus voluptas facilis ex id quasi eum sapiente.'
+      label: ulyhnqugxjtq
+      description: 'Odit quaerat pariatur qui velit est.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer cv8ba3164dDVPg6f5eZEahk'
+      - 'Bearer 14vhcad6b3EkfaeD5V86PgZ'
     controller: null
     method: null
     route: null
@@ -260,14 +260,14 @@ endpoints:
         name: paymentType
         description: ''
         required: true
-        example: deleniti
+        example: ad
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      paymentType: deleniti
+      paymentType: ad
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -278,7 +278,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Pad68feDV6b5Za3Evhg1kc4'
+      - 'Bearer DbE5kaad63PeVc8v1Z64fgh'
     controller: null
     method: null
     route: null
@@ -295,54 +295,6 @@ endpoints:
       subgroup: ''
       subgroupDescription: ''
       title: 'Activer un type de paiement'
-      description: ''
-      authenticated: true
-      deprecated: false
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      paymentType:
-        name: paymentType
-        description: ''
-        required: true
-        example: aut
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-    cleanUrlParameters:
-      paymentType: aut
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer fZac6g4vP3bk8aVEd6h51eD'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - PUT
-    uri: 'api/v1/payment-types/{paymentType}/disable'
-    metadata:
-      groupName: 'Gestion des types de paiement'
-      groupDescription: |-
-
-        APIs pour la gestion des types de paiement
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Désactiver un type de paiement'
       description: ''
       authenticated: true
       deprecated: false
@@ -374,7 +326,55 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer g5PZ86fvebV1E6aadk34cDh'
+      - 'Bearer Za8eafcDPv35d1V66Ehkg4b'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/payment-types/{paymentType}/disable'
+    metadata:
+      groupName: 'Gestion des types de paiement'
+      groupDescription: |-
+
+        APIs pour la gestion des types de paiement
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Désactiver un type de paiement'
+      description: ''
+      authenticated: true
+      deprecated: false
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      paymentType:
+        name: paymentType
+        description: ''
+        required: true
+        example: nam
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      paymentType: nam
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer aZa61veg5k8P4cDfhdbV36E'
     controller: null
     method: null
     route: null

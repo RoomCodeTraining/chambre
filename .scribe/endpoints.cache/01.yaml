@@ -33,7 +33,7 @@ endpoints:
         name: email
         description: 'Le champ value doit être une adresse e-mail valide.'
         required: true
-        example: aterry@example.org
+        example: khand@example.com
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -43,7 +43,7 @@ endpoints:
         name: first_name
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: gcmcwvtqpzf
+        example: yobcqojvookl
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -53,7 +53,7 @@ endpoints:
         name: last_name
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: acuymfmcjiivyl
+        example: lfxac
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -63,7 +63,7 @@ endpoints:
         name: telephone
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: mbzsezfpsh
+        example: cbwrofifhig
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -73,18 +73,18 @@ endpoints:
         name: password
         description: 'Le texte de value doit contenir au moins 8 caractères. Le texte de value ne peut pas contenir plus de 100 caractères.'
         required: true
-        example: "g7'L!xP[8ZKgE>G%?"
+        example: '^@2zF0s:'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      email: aterry@example.org
-      first_name: gcmcwvtqpzf
-      last_name: acuymfmcjiivyl
-      telephone: mbzsezfpsh
-      password: "g7'L!xP[8ZKgE>G%?"
+      email: khand@example.com
+      first_name: yobcqojvookl
+      last_name: lfxac
+      telephone: cbwrofifhig
+      password: '^@2zF0s:'
     fileParameters: []
     responses: []
     responseFields: []
@@ -122,7 +122,7 @@ endpoints:
         name: email
         description: 'Le champ value doit être une adresse e-mail valide.'
         required: true
-        example: darrick70@example.org
+        example: eugene.walker@example.com
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -132,7 +132,7 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: harum
+        example: optio
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -142,7 +142,7 @@ endpoints:
         name: new_password
         description: 'Le texte de value ne peut pas contenir plus de 100 caractères.'
         required: true
-        example: iywvvlwevhoquqcpfj
+        example: d
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -152,24 +152,24 @@ endpoints:
         name: new_password_confirmation
         description: 'Le texte de value ne peut pas contenir plus de 100 caractères.'
         required: true
-        example: phvqgudky
+        example: zzlzclaonz
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      email: darrick70@example.org
-      password: harum
-      new_password: iywvvlwevhoquqcpfj
-      new_password_confirmation: phvqgudky
+      email: eugene.walker@example.com
+      password: optio
+      new_password: d
+      new_password_confirmation: zzlzclaonz
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer e6ZD5EVbvPfk4a1ch8gd6a3'
+      - 'Bearer f58g6b1PvZhaVD3E4ae6kcd'
     controller: null
     method: null
     route: null
@@ -203,7 +203,7 @@ endpoints:
         name: email
         description: 'Le champ value doit être une adresse e-mail valide.'
         required: true
-        example: odenesik@example.com
+        example: yondricka@example.net
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -213,22 +213,22 @@ endpoints:
         name: pin_code
         description: 'Le champ value doit contenir 6 chiffres.'
         required: true
-        example: '232025'
+        example: '953715'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      email: odenesik@example.com
-      pin_code: '232025'
+      email: yondricka@example.net
+      pin_code: '953715'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 6gv3e6P1baEa8f5chk4DdVZ'
+      - 'Bearer EhPVdDvegc566b831Zaak4f'
     controller: null
     method: null
     route: null
@@ -262,21 +262,21 @@ endpoints:
         name: email
         description: 'Le champ value doit être une adresse e-mail valide.'
         required: true
-        example: alisa.luettgen@example.org
+        example: gibson.christop@example.net
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      email: alisa.luettgen@example.org
+      email: gibson.christop@example.net
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 1DZ85fbdVaaEck636hPgve4'
+      - 'Bearer 6fZEhc3V4Pv1aD5gkdb8e6a'
     controller: null
     method: null
     route: null
@@ -313,7 +313,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer kePa43D1Eh658bVgvfZ6cad'
+      - 'Bearer a584kc3P1fe6Dg6hEvdVbaZ'
     controller: null
     method: null
     route: null
@@ -359,7 +359,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 5fEe8PZk6g41dvD6cb3hVaa'
+      - 'Bearer 3dg81ebVDkhPZ5a46v6fcaE'
     controller: null
     method: null
     route: null

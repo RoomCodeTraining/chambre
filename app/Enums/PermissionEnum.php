@@ -431,7 +431,13 @@ enum PermissionEnum: string
     case DELETE_STATUS_DEADLINE = 'status_deadline.delete';
     case ENABLE_STATUS_DEADLINE = 'status_deadline.enable';
     case DISABLE_STATUS_DEADLINE = 'status_deadline.disable';
-    
 
+    case VIEW_FNE_SETTING = 'fne_setting.view';
+    case CREATE_FNE_SETTING = 'fne_setting.create';
+    case UPDATE_FNE_SETTING = 'fne_setting.update';
+    case DELETE_FNE_SETTING = 'fne_setting.delete';
+    case ENABLE_FNE_SETTING = 'fne_setting.enable';
+    case DISABLE_FNE_SETTING = 'fne_setting.disable';
+    
     case DASHBOARD = 'dashboard.view';
 }

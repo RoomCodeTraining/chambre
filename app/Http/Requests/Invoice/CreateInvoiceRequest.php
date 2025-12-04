@@ -21,8 +21,15 @@ class CreateInvoiceRequest extends FormRequest
             'assignment_id' => 'required|exists:assignments,id',
             'date' => 'required|date_format:Y-m-d',
             'object' => 'required|string',
+            'type' => 'required|in:sale,credit_bill',
+            'payment_method' => 'required|in:cash,bank_transfer,check,credit_card,other',
+            'template' => 'required|in:B2C,B2B',
+            'foreign_currency' => 'nullable|string',
+            'foreign_currency_rate' => 'nullable|numeric|min:0|max:100',
+            'discount' => 'nullable|numeric|min:0|max:100',
+            'invoice_reference' => 'nullable|required_if:type,credit_bill|exists:invoices,reference|string',
             'address' => 'nullable|string',
-            'taxpayer_account_number' => 'nullable|string',
+            'taxpayer_account_number' => 'nullable|string|required_if:template,B2B',
         ];
     }
 

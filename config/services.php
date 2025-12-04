@@ -40,4 +40,8 @@ return [
         'small_supply_rate' => env('SMALL_SUPPLY_RATE', 2),
     ],
 
+    'fne' => [
+        'url' => env('FNE_URL'),
+    ],
+
 ];

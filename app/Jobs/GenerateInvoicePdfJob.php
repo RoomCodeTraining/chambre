@@ -92,5 +92,7 @@ class GenerateInvoicePdfJob implements ShouldQueue
         $pdf->setOptions(['defaultFont' => 'sans-serif']);
         $pdf->save(public_path("storage/invoice/".$invoice->reference.".pdf"));
         $pdf->setBasePath($_SERVER['DOCUMENT_ROOT']);
+
+        dispatch(new SendInvoiceJob($invoice));
     }
 }

@@ -437,7 +437,7 @@ class InvoiceController extends Controller
     {
         $assignment = Assignment::accessibleBy(auth()->user())->findOrFail($request->assignment_id);
 
-        if(Invoice::where('assignment_id', $assignment->id)->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->exists()){
+        if(Invoice::where(['assignment_id' => $assignment->id, 'type' => $request->type, 'status_id' => Status::where('code', StatusEnum::ACTIVE)->first()->id])->exists()){
             return $this->responseUnprocessable("La facture est déjà générée pour ce dossier.");
         }
 
@@ -458,6 +458,13 @@ class InvoiceController extends Controller
             'date' => $request->date,
             'object' => $request->object,
             'assignment_id' => $request->assignment_id,
+            'type' => $request->type,
+            'invoice_reference' => $request->type == 'credit_bill' ? $request->invoice_reference : null,
+            'payment_method' => $request->payment_method,
+            'template' => $request->template,
+            'foreign_currency' => $request->foreign_currency,
+            'foreign_currency_rate' => $request->foreign_currency_rate,
+            'discount' => $request->discount,
             'status_id' => Status::where('code', StatusEnum::ACTIVE)->first()->id,
             'created_by' => auth()->user()->id,
             'updated_by' => auth()->user()->id,

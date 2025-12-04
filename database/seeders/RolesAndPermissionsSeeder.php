@@ -441,6 +441,13 @@ class RolesAndPermissionsSeeder extends Seeder
         $enableStatusDeadline = Permission::create(['name' => \App\Enums\PermissionEnum::ENABLE_STATUS_DEADLINE, 'guard_name' => 'sanctum']);
         $disableStatusDeadline = Permission::create(['name' => \App\Enums\PermissionEnum::DISABLE_STATUS_DEADLINE, 'guard_name' => 'sanctum']);
 
+        $createFneSetting = Permission::create(['name' => \App\Enums\PermissionEnum::CREATE_FNE_SETTING, 'guard_name' => 'sanctum']);
+        $viewFneSetting = Permission::create(['name' => \App\Enums\PermissionEnum::VIEW_FNE_SETTING, 'guard_name' => 'sanctum']);
+        $updateFneSetting = Permission::create(['name' => \App\Enums\PermissionEnum::UPDATE_FNE_SETTING, 'guard_name' => 'sanctum']);
+        $deleteFneSetting = Permission::create(['name' => \App\Enums\PermissionEnum::DELETE_FNE_SETTING, 'guard_name' => 'sanctum']);
+        $enableFneSetting = Permission::create(['name' => \App\Enums\PermissionEnum::ENABLE_FNE_SETTING, 'guard_name' => 'sanctum']);
+        $disableFneSetting = Permission::create(['name' => \App\Enums\PermissionEnum::DISABLE_FNE_SETTING, 'guard_name' => 'sanctum']);
+
         $dashboard = Permission::create(['name' => \App\Enums\PermissionEnum::DASHBOARD, 'guard_name' => 'sanctum']);
 
         Role::create([
@@ -802,6 +809,13 @@ class RolesAndPermissionsSeeder extends Seeder
             $deleteStatusDeadline,
             $enableStatusDeadline,
             $disableStatusDeadline,
+
+            $createFneSetting,
+            $viewFneSetting,
+            $updateFneSetting,
+            $deleteFneSetting,
+            $enableFneSetting,
+            $disableFneSetting,
 
             $dashboard,
         ]);
@@ -1166,6 +1180,13 @@ class RolesAndPermissionsSeeder extends Seeder
             $enableStatusDeadline,
             $disableStatusDeadline,
 
+            $createFneSetting,
+            $viewFneSetting,
+            $updateFneSetting,
+            $deleteFneSetting,
+            $enableFneSetting,
+            $disableFneSetting,
+
             $dashboard,
         ]);
 
@@ -1419,6 +1440,13 @@ class RolesAndPermissionsSeeder extends Seeder
             $deleteStatusDeadline,
             $enableStatusDeadline,
             $disableStatusDeadline,
+
+            $createFneSetting,
+            $viewFneSetting,
+            $updateFneSetting,
+            $deleteFneSetting,
+            $enableFneSetting,
+            $disableFneSetting,
 
             $dashboard,
         ]);

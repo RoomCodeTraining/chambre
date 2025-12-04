@@ -44,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6Va1gPfvZ5a6hDec4d83bkE'
+      - 'Bearer VEhk1v5gf486ZecD6ab3Pad'
     controller: null
     method: null
     route: null
@@ -78,7 +78,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: rdwhrkfsyzsz
+        example: ujkknrdnzs
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -88,22 +88,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Dolor ut est sit ut accusantium voluptatem.'
+        example: 'Magni eveniet sunt et corrupti.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: rdwhrkfsyzsz
-      description: 'Dolor ut est sit ut accusantium voluptatem.'
+      label: ujkknrdnzs
+      description: 'Magni eveniet sunt et corrupti.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer hc6kEe56DVPa38Z1ag4vfbd'
+      - 'Bearer dcZ36aDh1fEVakbvgP584e6'
     controller: null
     method: null
     route: null
@@ -133,14 +133,14 @@ endpoints:
         name: id
         description: 'The ID of the vehicle energy.'
         required: true
-        example: rerum
+        example: qui
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: rerum
+      id: qui
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -160,7 +160,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 8PeVZagfk5cDbh4vdE6a136'
+      - 'Bearer 68Zh6vDVgfe3dcPk1aa4Eb5'
     controller: null
     method: null
     route: null
@@ -190,14 +190,14 @@ endpoints:
         name: id
         description: 'The ID of the vehicle energy.'
         required: true
-        example: expedita
+        example: corporis
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: expedita
+      id: corporis
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -205,7 +205,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: artq
+        example: noaiifgjtpfxikozkdyz
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -215,22 +215,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Adipisci ipsum veniam dignissimos eos occaecati porro beatae.'
+        example: 'Et iusto consequatur qui earum repudiandae pariatur quod.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: artq
-      description: 'Adipisci ipsum veniam dignissimos eos occaecati porro beatae.'
+      label: noaiifgjtpfxikozkdyz
+      description: 'Et iusto consequatur qui earum repudiandae pariatur quod.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer ekfPEDa1db8654V6vg3cZha'
+      - 'Bearer 6ebDvZa4d63c5V81kfPhaEg'
     controller: null
     method: null
     route: null
@@ -260,14 +260,14 @@ endpoints:
         name: id
         description: 'The ID of the vehicle energy.'
         required: true
-        example: exercitationem
+        example: nisi
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: exercitationem
+      id: nisi
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -278,7 +278,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer g6EfP154e3kv6aZaDhb8Vdc'
+      - 'Bearer cev8VkEa54ZbPD66hg31fda'
     controller: null
     method: null
     route: null

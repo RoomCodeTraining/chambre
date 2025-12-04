@@ -85,6 +85,7 @@ Route::prefix('v1')->middleware(LogsOutDisabledUser::class)->group(function () {
     Route::prefix('roles')->group(base_path('routes/api/v1.roles.routes.php'));
     Route::prefix('general-status-deadlines')->group(base_path('routes/api/v1.general.status.deadlines.routes.php'));
     Route::prefix('status-deadlines')->group(base_path('routes/api/v1.status.deadlines.routes.php'));
+    Route::prefix('fne-settings')->group(base_path('routes/api/v1.fne.settings.routes.php'));
     Route::group([], base_path('routes/api/v1.common.routes.php'));
 });
 
@@ -103,3 +104,11 @@ Route::apiResource('/generalStatusDeadlines', \App\Http\Controllers\API\GeneralS
 Route::apiResource('/statusDeadlines', \App\Http\Controllers\API\StatusDeadlineController::class);
 
 /*=====  End of statusDeadlines   ======*/
+
+/*===========================
+=           fneSettings           =
+=============================*/
+
+Route::apiResource('/fneSettings', \App\Http\Controllers\API\FneSettingController::class);
+
+/*=====  End of fneSettings   ======*/

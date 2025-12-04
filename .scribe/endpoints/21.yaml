@@ -44,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer a8aZPk66hde53gv4DVE1fbc'
+      - 'Bearer P5EbvZcdDka13V4hea6g8f6'
     controller: null
     method: null
     route: null
@@ -118,7 +118,7 @@ endpoints:
         name: policy_number
         description: ''
         required: false
-        example: vero
+        example: consequatur
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -128,7 +128,7 @@ endpoints:
         name: claim_number
         description: ''
         required: false
-        example: soluta
+        example: nobis
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -138,7 +138,7 @@ endpoints:
         name: claim_date
         description: 'Must be a valid date in the format <code>Y-m-d</code>.'
         required: false
-        example: '2025-12-01'
+        example: '2025-12-04'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -148,7 +148,7 @@ endpoints:
         name: expertise_place
         description: ''
         required: false
-        example: officia
+        example: vitae
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -166,10 +166,10 @@ endpoints:
         nullable: true
         custom: []
     cleanBodyParameters:
-      policy_number: vero
-      claim_number: soluta
-      claim_date: '2025-12-01'
-      expertise_place: officia
+      policy_number: consequatur
+      claim_number: nobis
+      claim_date: '2025-12-04'
+      expertise_place: vitae
     fileParameters:
       photos:
         - null
@@ -178,7 +178,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer DgbaeZP4Vcf63a8Evk65d1h'
+      - 'Bearer 5Zd3fhEbDaaP6e8vcgkV461'
     controller: null
     method: null
     route: null
@@ -208,14 +208,14 @@ endpoints:
         name: assignment_request
         description: ''
         required: true
-        example: ut
+        example: expedita
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      assignment_request: ut
+      assignment_request: expedita
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -235,7 +235,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer gZae53V8acb6f1EPDh6vdk4'
+      - 'Bearer haeg8fa6bZ6P1c5dvDV3Ek4'
     controller: null
     method: null
     route: null
@@ -265,14 +265,14 @@ endpoints:
         name: assignment_request
         description: ''
         required: true
-        example: et
+        example: dolorem
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      assignment_request: et
+      assignment_request: dolorem
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -283,7 +283,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer ZeP4f8hgc61a35DkaEbv6dV'
+      - 'Bearer 6bED5c1keh8a64vga3ZdVfP'
     controller: null
     method: null
     route: null
@@ -313,14 +313,14 @@ endpoints:
         name: assignment_request
         description: ''
         required: true
-        example: ea
+        example: in
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      assignment_request: ea
+      assignment_request: in
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -331,7 +331,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer g6v8P43dEVbD6akcf5a1Zeh'
+      - 'Bearer Vb6fk31hc8dea4Da5vEP6Zg'
     controller: null
     method: null
     route: null
@@ -361,14 +361,14 @@ endpoints:
         name: assignment_request
         description: ''
         required: true
-        example: quo
+        example: explicabo
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      assignment_request: quo
+      assignment_request: explicabo
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -379,7 +379,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer g15Zf3dca6eEkahbVDv846P'
+      - 'Bearer 1k8d6DZ4hEa6cVabev53fgP'
     controller: null
     method: null
     route: null
@@ -409,14 +409,14 @@ endpoints:
         name: assignment_request
         description: ''
         required: true
-        example: alias
+        example: omnis
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      assignment_request: alias
+      assignment_request: omnis
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -427,7 +427,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 1fc8ha4Zkvg6P5D36aEeVbd'
+      - 'Bearer E5dbgkaDV1c86ZvhefP34a6'
     controller: null
     method: null
     route: null
@@ -457,14 +457,14 @@ endpoints:
         name: assignment_request
         description: ''
         required: true
-        example: officiis
+        example: temporibus
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      assignment_request: officiis
+      assignment_request: temporibus
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -488,7 +488,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer D1bh5ga4ZEvVfek38a66cdP'
+      - 'Bearer eVa61h358DPd6bZv4kfgEca'
     controller: null
     method: null
     route: null

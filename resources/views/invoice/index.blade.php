@@ -98,10 +98,12 @@
             
             <table class="table table-bordered text-left">
                 <tbody>
-                    <tr>
+                <tr>
                         <td>
+                            <b style="text-decoration: underline;">
+                                {{ $invoice?->type == 'credit_bill' ? 'AVOIR' : 'DOIT' }}
+                            </b> 
                             @if($assignment?->assignmentType?->code == 'insurer')
-                            <b style="text-decoration: underline;">DOIT</b> 
                                 @if($assignment?->additionalInsurer)
                                     <b> : 
                                         <span style="padding-left: 10px;">
@@ -130,7 +132,6 @@
                                     @endif
                                 @endif
                             @else
-                            <b style="text-decoration: underline;">Client</b> 
                             <b> : 
                                 <span style="padding-left: 10px;">
                                     {{ $assignment?->client?->name ?? '' }}

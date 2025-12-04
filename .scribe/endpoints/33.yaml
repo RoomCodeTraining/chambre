@@ -44,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer cv6f6ka1aV4gD3ZEbeP58hd'
+      - 'Bearer 6Zhbga5k346DV81eadfcPvE'
     controller: null
     method: null
     route: null
@@ -78,7 +78,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: cfnawkzvrkuaezhtvakl
+        example: bpkaiwxedeimhxlga
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -88,22 +88,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Est adipisci harum voluptatem eos.'
+        example: 'Qui vitae consequatur iste.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: cfnawkzvrkuaezhtvakl
-      description: 'Est adipisci harum voluptatem eos.'
+      label: bpkaiwxedeimhxlga
+      description: 'Qui vitae consequatur iste.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer V56hcP1k4fZa6bagv8D3edE'
+      - 'Bearer EZPed8a6vkDa316fV5bg4ch'
     controller: null
     method: null
     route: null
@@ -133,14 +133,14 @@ endpoints:
         name: otherCostType
         description: ''
         required: true
-        example: aut
+        example: quo
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      otherCostType: aut
+      otherCostType: quo
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -160,7 +160,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 35dEhevaagPVD64c81bZf6k'
+      - 'Bearer vD1Pdaecb48V536g6ZhakEf'
     controller: null
     method: null
     route: null
@@ -190,14 +190,14 @@ endpoints:
         name: otherCostType
         description: ''
         required: true
-        example: nemo
+        example: repellendus
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      otherCostType: nemo
+      otherCostType: repellendus
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -205,7 +205,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: arndxdrsoynjnenwcej
+        example: hful
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -215,22 +215,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Id quibusdam quos veritatis nihil alias hic dicta.'
+        example: 'Iste doloribus et eaque deserunt quis eveniet.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: arndxdrsoynjnenwcej
-      description: 'Id quibusdam quos veritatis nihil alias hic dicta.'
+      label: hful
+      description: 'Iste doloribus et eaque deserunt quis eveniet.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer Vb6P4cDaZ6h5efk83Egd1av'
+      - 'Bearer gPD64daVbZcEhe3fk81a56v'
     controller: null
     method: null
     route: null
@@ -260,14 +260,14 @@ endpoints:
         name: otherCostType
         description: ''
         required: true
-        example: a
+        example: nisi
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      otherCostType: a
+      otherCostType: nisi
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -278,7 +278,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer V6c1daDfP5aZ4Eeh683vgbk'
+      - 'Bearer cd3a8kZb5vEVe1Dfh6g64Pa'
     controller: null
     method: null
     route: null
@@ -308,14 +308,14 @@ endpoints:
         name: otherCostType
         description: ''
         required: true
-        example: voluptatum
+        example: sint
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      otherCostType: voluptatum
+      otherCostType: sint
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -326,7 +326,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Zk56a8cVP6b3DadEg1hv4fe'
+      - 'Bearer Ek35VgfZa1vePdba6h4Dc68'
     controller: null
     method: null
     route: null
@@ -356,14 +356,14 @@ endpoints:
         name: otherCostType
         description: ''
         required: true
-        example: neque
+        example: corrupti
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      otherCostType: neque
+      otherCostType: corrupti
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -374,7 +374,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 83hakEce6Dfadb54ZVP6gv1'
+      - 'Bearer bdE8v5e4316hfVgc6kDaaZP'
     controller: null
     method: null
     route: null
