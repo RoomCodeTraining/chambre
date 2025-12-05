@@ -2,6 +2,9 @@
 
 namespace App\Http\Requests\Workforce;
 
+use App\Models\PaintType;
+use App\Models\HourlyRate;
+use App\Models\WorkforceType;
 use Illuminate\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
 
