@@ -25,6 +25,7 @@ class UpdateShockWorkRequest extends FormRequest
             'paint' => 'required|boolean',
             'obsolescence' => 'required|boolean',
             'control' => 'required|boolean',
+            'in_order' => 'required|boolean',
             'comment' => 'nullable|string',
             'obsolescence_rate' => 'required|numeric',
             'recovery_amount' => 'required|numeric',

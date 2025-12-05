@@ -26,6 +26,8 @@ class ShockWorkResource extends JsonResource
             'old_obsolescence' => (bool) $this->old_obsolescence,
             'control' => (bool) $this->control,
             'old_control' => (bool) $this->old_control,
+            'in_order' => (bool) $this->in_order,
+            'old_in_order' => (bool) $this->old_in_order,
             'comment' => $this->comment,
             'old_comment' => $this->old_comment,
             'is_before_quote' => (bool) $this->is_before_quote,

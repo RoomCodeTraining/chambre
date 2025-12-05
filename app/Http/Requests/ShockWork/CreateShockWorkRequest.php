@@ -38,6 +38,7 @@ class CreateShockWorkRequest extends FormRequest
             'shock_works.*.paint' => 'required|boolean',
             'shock_works.*.obsolescence' => 'required|boolean',
             'shock_works.*.control' => 'required|boolean',
+            'shock_works.*.in_order' => 'required|boolean',
             'shock_works.*.comment' => 'nullable|string',
             'shock_works.*.obsolescence_rate' => 'required|numeric',
             'shock_works.*.recovery_amount' => 'required|numeric',

@@ -70,6 +70,7 @@ class CalculateAssignmentRequest extends FormRequest
             'shocks.*.shock_works.*.repair' => 'required|boolean',
             'shocks.*.shock_works.*.paint' => 'required|boolean',
             'shocks.*.shock_works.*.control' => 'required|boolean',
+            'shocks.*.shock_works.*.in_order' => 'required|boolean',
             'shocks.*.shock_works.*.comment' => 'nullable|string',
             'shocks.*.shock_works.*.obsolescence_rate' => 'required|numeric|min:0|max:100',
             'shocks.*.shock_works.*.recovery_amount' => 'required|numeric',

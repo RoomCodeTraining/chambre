@@ -158,6 +158,8 @@ class ShockController extends Controller
                             'obsolescence' => $item['obsolescence'],
                             'old_obsolescence' => $item['obsolescence'],
                             'old_control' => $item['control'],
+                            'in_order' => $item['in_order'],
+                            'old_in_order' => $item['in_order'],
                             'comment' => $item['comment'],
                             'old_comment' => $item['comment'],
                             'position' => $shock_work_position,
@@ -319,6 +321,9 @@ class ShockController extends Controller
                 $total_small_supply_amount = ceil($total_small_supply_amount_excluding_tax + $total_small_supply_amount_tax);
     
                 $shock->update([
+                    'shock_work_in_order_amount_excluding_tax' => ceil($total_in_order_amount_excluding_tax),
+                    'shock_work_in_order_amount_tax' => ceil($total_in_order_amount_tax),
+                    'shock_work_in_order_amount' => ceil($total_in_order_amount),
                     'shock_work_obsolescence_amount_excluding_tax' => ceil($total_obsolescence_amount_excluding_tax),
                     'shock_work_obsolescence_amount_tax' => ceil($total_obsolescence_amount_tax),
                     'shock_work_obsolescence_amount' => ceil($total_obsolescence_amount),

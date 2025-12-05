@@ -106,6 +106,9 @@ class ShockWorkController extends Controller
         $total_new_amount_excluding_tax = 0;
         $total_new_amount_tax = 0;
         $total_new_amount = 0;
+        $total_in_order_amount_excluding_tax = 0;
+        $total_in_order_amount_tax = 0;
+        $total_in_order_amount = 0;
 
         $shockWorks = $request->get('shock_works');
 
@@ -161,6 +164,11 @@ class ShockWorkController extends Controller
             $total_new_amount_excluding_tax += $new_amount_excluding_tax;
             $total_new_amount_tax += $new_amount_tax;
             $total_new_amount += $new_amount;
+            if($item['in_order'] == true){
+                $total_in_order_amount_excluding_tax += $new_amount_excluding_tax;
+                $total_in_order_amount_tax += $new_amount_tax;
+                $total_in_order_amount += $new_amount;
+            }
         }
 
         return $this->responseSuccess('ShockWork calculated successfully', [
@@ -176,6 +184,9 @@ class ShockWorkController extends Controller
             'total_new_amount_excluding_tax' => $total_new_amount_excluding_tax,
             'total_new_amount_tax' => $total_new_amount_tax,
             'total_new_amount' => $total_new_amount,
+            'total_in_order_amount_excluding_tax' => $total_in_order_amount_excluding_tax,
+            'total_in_order_amount_tax' => $total_in_order_amount_tax,
+            'total_in_order_amount' => $total_in_order_amount,
             'shock_works' => $shock_works,
         ]);
     }
@@ -245,6 +256,8 @@ class ShockWorkController extends Controller
                     'old_paint' => $item['paint'],
                     'control' => $item['control'],
                     'old_control' => $item['control'],
+                    'in_order' => $item['in_order'],
+                    'old_in_order' => $item['in_order'],
                     'comment' => $item['comment'],
                     'old_comment' => $item['comment'],
                     'position' => $shock_work_position,
@@ -399,6 +412,7 @@ class ShockWorkController extends Controller
             || $shockWork->isDirty('paint') 
             || $shockWork->isDirty('obsolescence') 
             || $shockWork->isDirty('control') 
+            || $shockWork->isDirty('in_order')
             || $shockWork->isDirty('comment') 
             || $shockWork->isDirty('amount') 
             || $shockWork->isDirty('obsolescence_rate') 
@@ -409,6 +423,7 @@ class ShockWorkController extends Controller
             || $shockWork->paint != $request->paint
             || $shockWork->obsolescence != $request->obsolescence
             || $shockWork->control != $request->control
+            || $shockWork->in_order != $request->in_order
             || $shockWork->comment != $request->comment
             || $shockWork->amount != $request->amount
             || $shockWork->obsolescence_rate != $obsolescence_rate
@@ -430,6 +445,8 @@ class ShockWorkController extends Controller
                 'old_paint' => $shockWork->getOriginal('paint'),
                 'control' => $request->control,
                 'old_control' => $shockWork->getOriginal('control'),
+                'in_order' => $request->in_order,
+                'old_in_order' => $shockWork->getOriginal('in_order'),
                 'comment' => $request->comment,
                 'old_comment' => $shockWork->getOriginal('comment'),
                 'obsolescence' => $request->obsolescence,
@@ -509,6 +526,10 @@ class ShockWorkController extends Controller
     {
         $shock = Shock::findOrFail($id);
 
+        $total_in_order_amount_excluding_tax = ShockWork::where('shock_id', $shock->id)->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->where('in_order', true)->sum('new_amount_excluding_tax');
+        $total_in_order_amount_tax = ShockWork::where('shock_id', $shock->id)->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->where('in_order', true)->sum('new_amount_tax');
+        $total_in_order_amount = ShockWork::where('shock_id', $shock->id)->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->where('in_order', true)->sum('new_amount');
+
         $total_obsolescence_amount_excluding_tax = ShockWork::where('shock_id', $shock->id)->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->sum('obsolescence_amount_excluding_tax');
         $total_obsolescence_amount_tax = ShockWork::where('shock_id', $shock->id)->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->sum('obsolescence_amount_tax');
         $total_obsolescence_amount = ShockWork::where('shock_id', $shock->id)->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->sum('obsolescence_amount');
@@ -556,6 +577,9 @@ class ShockWorkController extends Controller
         $total_small_supply_amount = ceil($total_small_supply_amount_excluding_tax + $total_small_supply_amount_tax);
 
         $shock->update([
+            'shock_work_in_order_amount_excluding_tax' => ceil($total_in_order_amount_excluding_tax),
+            'shock_work_in_order_amount_tax' => ceil($total_in_order_amount_tax),
+            'shock_work_in_order_amount' => ceil($total_in_order_amount),
             'shock_work_obsolescence_amount_excluding_tax' => ceil($total_obsolescence_amount_excluding_tax),
             'shock_work_obsolescence_amount_tax' => ceil($total_obsolescence_amount_tax),
             'shock_work_obsolescence_amount' => ceil($total_obsolescence_amount),

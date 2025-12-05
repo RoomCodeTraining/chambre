@@ -76,13 +76,12 @@ class DepreciationTableController extends Controller
 
         $market_incidence = ceil($result->vehicle_new_value * $market_incidence_rate / 100);
 
-        if($market_incidence > $result->theorical_vehicle_market_value){
-            $market_incidence = $result->theorical_vehicle_market_value / 2;
+        if($kilometric_incidence > $result->theorical_vehicle_market_value){
+            $kilometric_incidence = $result->theorical_vehicle_market_value / 2;
         }
-        
         $vehicle_market_value = $result->theorical_vehicle_market_value + $market_incidence + $kilometric_incidence;
-
-        $depreciation_rate = $result->vehicle_new_value > 0 ? 100 - ($vehicle_market_value * 100 / $result->vehicle_new_value) : 0;
+        $depreciation_rate = $result->vehicle_new_value > 0 ? number_format(100 - ($vehicle_market_value * 100 / $result->vehicle_new_value), 2, ',', '') : 0;
+        $depreciation_rate = floatval(str_replace(',', '.', $depreciation_rate));
 
         $result = [
             'expertise_date' => $result->expertise_date,
@@ -98,7 +97,7 @@ class DepreciationTableController extends Controller
             'market_incidence' => $market_incidence,
             'kilometric_incidence' => $kilometric_incidence,
             'depreciation_rate' => $depreciation_rate,
-            'vehicle_market_value' => $vehicle_market_value,
+            'vehicle_market_value' =>  ceil($result->vehicle_new_value - ($result->vehicle_new_value * $depreciation_rate / 100))
         ];
 
         return $this->responseSuccess('DepreciationTable created successfully', $result);

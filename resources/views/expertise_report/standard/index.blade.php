@@ -563,6 +563,11 @@
                                 @endif
                             </td>
                             <td style="border: 1px solid; font-size: 12px; vertical-align: middle;">
+                                @if($item?->in_order)
+                                <img src="{{$check_icon}}" alt="" width="12" style="padding-top:3px;">
+                                @endif
+                            </td>
+                            <td style="border: 1px solid; font-size: 12px; vertical-align: middle;">
                                 {{number_format($item?->amount ?? 0, 0, ',', ' ')}}
                             </td>
                             <td style="border: 1px solid; font-size: 12px; vertical-align: middle;">
@@ -591,6 +596,7 @@
                                 <b>
                                     <div class="p-1 bd-highlight">MONTANT PIÈCE NEUVES HT : {{number_format($shock?->shock_work_new_amount_excluding_tax ?? 0, 0, ',', ' ')}} FCFA</div>
                                     <div class="p-1 bd-highlight">MONTANT PIÈCE NEUVES TTC : {{number_format($shock?->shock_work_new_amount ?? 0, 0, ',', ' ')}} FCFA</div>
+                                    <div class="p-1 bd-highlight">MONTANT PIÈCE EN COMMANDE TTC : {{number_format($shock?->shock_work_in_order_amount ?? 0, 0, ',', ' ')}} FCFA</div>
                                     <div class="p-1 bd-highlight">MONTANT TOTAL REMISSE TTC : {{number_format($shock?->shock_work_discount_amount ?? 0, 0, ',', ' ')}} FCFA</div>
                                     <div class="p-1 bd-highlight" style="color: red;">MONTANT TOTAL VETUSTÉ TTC : {{number_format($shock?->shock_work_obsolescence_amount ?? 0, 0, ',', ' ')}} FCFA</div>
                                     <div class="p-1 bd-highlight">MONTANT PIÈCE RÉCUPÉRATION TTC : {{number_format($shock?->shock_work_recovery_amount ?? 0, 0, ',', ' ')}} FCFA</div>

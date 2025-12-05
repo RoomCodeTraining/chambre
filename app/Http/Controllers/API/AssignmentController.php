@@ -1463,8 +1463,8 @@ class AssignmentController extends Controller
             $less_value_work = $total_amount;
             $market_incidence = ceil($result->vehicle_new_value * $request->market_incidence_rate / 100);
 
-            if($market_incidence > $theorical_vehicle_market_value){
-                $market_incidence = $theorical_vehicle_market_value / 2;
+            if($kilometric_incidence > $theorical_vehicle_market_value){
+                $kilometric_incidence = $theorical_vehicle_market_value / 2;
             }
             
             if($assignment->assignment_type_id == AssignmentType::where('code', AssignmentTypeEnum::EVALUATION)->first()->id){
@@ -2078,8 +2078,8 @@ class AssignmentController extends Controller
             $less_value_work = $total_amount;
             $market_incidence = ceil($result->vehicle_new_value * $request->market_incidence_rate / 100);
 
-            if($market_incidence > $theorical_vehicle_market_value){
-                $market_incidence = $theorical_vehicle_market_value / 2;
+            if($kilometric_incidence > $theorical_vehicle_market_value){
+                $kilometric_incidence = $theorical_vehicle_market_value / 2;
             }
 
             if($assignment->assignment_type_id == AssignmentType::where('code', AssignmentTypeEnum::EVALUATION)->first()->id){
@@ -2765,8 +2765,8 @@ class AssignmentController extends Controller
                     $less_value_work = $assignment->total_amount;
                     $market_incidence = ceil($result->vehicle_new_value * $assignment_evaluations->market_incidence_rate / 100);
 
-                    if($market_incidence > $theorical_vehicle_market_value){
-                        $market_incidence = $theorical_vehicle_market_value / 2;
+                    if($kilometric_incidence > $theorical_vehicle_market_value){
+                        $kilometric_incidence = $theorical_vehicle_market_value / 2;
                     }
 
                     if($assignment->assignment_type_id == AssignmentType::where('code', AssignmentTypeEnum::EVALUATION)->first()->id){
