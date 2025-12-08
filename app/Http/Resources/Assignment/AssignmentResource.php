@@ -8,6 +8,7 @@ use App\Models\QrCode;
 use App\Models\Status;
 use App\Models\Payment;
 use App\Enums\StatusEnum;
+use App\Services\Deadline\Deadline;
 use App\Models\DocumentTransmitted;
 use App\Http\Resources\User\UserResource;
 use App\Http\Resources\Photo\PhotoResource;
@@ -38,26 +39,15 @@ class AssignmentResource extends JsonResource
 {
     public function toArray($request): array
     {
-        $now = now();
-        if($this->created_at){
-            $created_at = Carbon::parse($this->created_at);
-
-            $edition_time_to_expire = $created_at->diffInHours($now);
-            $edition_per_cent = $edition_time_to_expire * 100 / 24;
-            $edition = $edition_per_cent > 100 ? "expired" : "in_progress";
-
-            $recovery_time_to_expire = $created_at->diffInHours($now);
-            $recovery_per_cent = $recovery_time_to_expire * 100 / 48;
-            $recovery = $recovery_per_cent > 100 ? "expired" : "in_progress";
-        } else {
-            $edition_time_to_expire = null;
-            $edition_per_cent = null;
-            $edition = null;
-            $recovery_time_to_expire = null;
-            $recovery_per_cent = null;
-            $recovery = null;
-        }
-
+        $realized_deadline = Deadline::calculateDeadline($this->id, StatusEnum::REALIZED);
+        $pending_for_repairer_quote_deadline = Deadline::calculateDeadline($this->id, StatusEnum::PENDING_FOR_REPAIRER_QUOTE);
+        $pending_for_repairer_quote_validation_deadline = Deadline::calculateDeadline($this->id, StatusEnum::PENDING_FOR_REPAIRER_QUOTE_VALIDATION);
+        $in_editing_deadline = Deadline::calculateDeadline($this->id, StatusEnum::IN_EDITING);
+        $pending_for_repairer_validation_deadline = Deadline::calculateDeadline($this->id, StatusEnum::PENDING_FOR_REPAIRER_VALIDATION);
+        $pending_for_expert_validation_deadline = Deadline::calculateDeadline($this->id, StatusEnum::PENDING_FOR_EXPERT_VALIDATION);
+        $validated_deadline = Deadline::calculateDeadline($this->id, StatusEnum::VALIDATED);
+        $paid_deadline = Deadline::calculateDeadline($this->id, StatusEnum::PAID);
+        
         $work_sheet_established_by = User::where('id', $this->work_sheet_established_by)->first();
 
         $expert_signature = $work_sheet_established_by ? $work_sheet_established_by->signature : null;
@@ -197,12 +187,14 @@ class AssignmentResource extends JsonResource
             'reference_updated_at' => dateTimeFormat($this->reference_updated_at),
             'work_sheet_established_at' => dateTimeFormat($this->work_sheet_established_at),
             'cancelled_at' => dateTimeFormat($this->cancelled_at),
-            'edition_time_expire_at' => $this->created_at ? dateTimeFormat($this->created_at->addHours(24)) : null,
-            'edition_status' => $this->status ? $this->status->id == Status::where('code', StatusEnum::OPENED)->first()->id || $this->status->id == Status::where('code', StatusEnum::REALIZED)->first()->id || $this->status->id == Status::where('code', StatusEnum::EDITED)->first()->id ? $edition : "done" : null,
-            'edition_per_cent' => ceil($edition_per_cent),
-            'recovery_time_expire_at' => $this->created_at ? dateTimeFormat($this->created_at->addHours(48)) : null,
-            'recovery_status' => $this->status ? $this->status->id == Status::where('code', StatusEnum::OPENED)->first()->id || $this->status->id == Status::where('code', StatusEnum::REALIZED)->first()->id || $this->status->id == Status::where('code', StatusEnum::EDITED)->first()->id || $this->status->id == Status::where('code', StatusEnum::VALIDATED)->first()->id ? $recovery : "done" : null,
-            'recovery_per_cent' => ceil($recovery_per_cent),
+            'realized_deadline' => $realized_deadline,
+            'pending_for_repairer_quote_deadline' => $pending_for_repairer_quote_deadline,
+            'pending_for_repairer_quote_validation_deadline' => $pending_for_repairer_quote_validation_deadline,
+            'in_editing_deadline' => $in_editing_deadline,
+            'pending_for_repairer_validation_deadline' => $pending_for_repairer_validation_deadline,
+            'pending_for_expert_validation_deadline' => $pending_for_expert_validation_deadline,
+            'validated_deadline' => $validated_deadline,
+            'paid_deadline' => $paid_deadline,
         ];
     }
 }

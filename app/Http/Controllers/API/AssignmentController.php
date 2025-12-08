@@ -111,7 +111,7 @@ class AssignmentController extends Controller
     {
         $start_date = request()->filled('start_date') ? Carbon::parse(request()->start_date)->startOfDay() : null;
         $end_date   = request()->filled('end_date') ? Carbon::parse(request()->end_date)->endOfDay() : null;
-        $assignments = Assignment::select('assignments.*')->with([
+        $assignments = Assignment::with('expertFirm')->select('assignments.*')->with([
                                 'shocks.shockPoint', 'shocks.shockWorks', 'shocks.shockWorks.supply', 'shocks.workforces', 'shocks.workforces.workforceType', 'shocks.paintType', 'shocks.hourlyRate', 'shocks.status', 'otherCosts', 'ascertainments', 'ascertainments.ascertainmentType', 'receipts', 'receipts.receiptType', 'status', 'vehicle', 'vehicle.brand', 'vehicle.vehicleModel', 'vehicle.color', 'vehicle.bodywork', 'insurer', 'additionalInsurer', 'repairer', 'client', 'assignmentType', 'expertiseType', 'generalState', 'claimNature', 'technicalConclusion', 'documentTransmitted', 'createdBy', 'updatedBy', 'deletedBy', 'closedBy', 'cancelledBy', 'editedBy', 'realizedBy', 'directedBy', 'workSheetEstablishedBy', 'referenceUpdatedBy', 'validatedBy', 'openedBy',
                                 'shocks' => function($query) {
                                     $query->orderBy('position', 'asc');
@@ -186,6 +186,10 @@ class AssignmentController extends Controller
             $assignments = $assignments->where('vehicle_id', Vehicle::keyFromHashId(request()->vehicle_id));
         }
 
+        if(request()->filled('expert_firm_id')){
+            $assignments = $assignments->where('expert_firm_id', Entity::keyFromHashId(request()->expert_firm_id));
+        }
+
         if(request()->filled('insurer_id')){
             $assignments = $assignments->where('insurer_id', Entity::keyFromHashId(request()->insurer_id));
         }
@@ -255,7 +259,7 @@ class AssignmentController extends Controller
     {
         $start_date = request()->filled('start_date') ? Carbon::parse(request()->start_date)->startOfDay() : null;
         $end_date   = request()->filled('end_date') ? Carbon::parse(request()->end_date)->endOfDay() : null;
-        $assignments = Assignment::select('assignments.*')->with([
+        $assignments = Assignment::with('expertFirm')->select('assignments.*')->with([
                                 'shocks.shockPoint', 'shocks.shockWorks', 'shocks.shockWorks.supply', 'shocks.workforces', 'shocks.workforces.workforceType', 'shocks.paintType', 'shocks.hourlyRate', 'shocks.status', 'otherCosts', 'ascertainments', 'ascertainments.ascertainmentType', 'receipts', 'receipts.receiptType', 'status', 'vehicle', 'vehicle.brand', 'vehicle.vehicleModel', 'vehicle.color', 'vehicle.bodywork', 'insurer', 'additionalInsurer', 'repairer', 'client', 'assignmentType', 'expertiseType', 'generalState', 'claimNature', 'technicalConclusion', 'documentTransmitted', 'createdBy', 'updatedBy', 'deletedBy', 'closedBy', 'cancelledBy', 'editedBy', 'realizedBy', 'directedBy', 'workSheetEstablishedBy', 'validatedBy', 'openedBy',
                                 'shocks' => function($query) {
                                     $query->orderBy('position', 'asc');
@@ -324,6 +328,10 @@ class AssignmentController extends Controller
 
         if(request()->filled('status_id')){
             $assignments = $assignments->where('status_id', Status::keyFromHashId(request()->status_id));
+        }
+
+        if(request()->filled('expert_firm_id')){
+            $assignments = $assignments->where('expert_firm_id', Entity::keyFromHashId(request()->expert_firm_id));
         }
 
         if(request()->filled('vehicle_id')){
@@ -401,7 +409,7 @@ class AssignmentController extends Controller
     {
         $start_date = request()->filled('start_date') ? Carbon::parse(request()->start_date)->startOfDay() : null;
         $end_date   = request()->filled('end_date') ? Carbon::parse(request()->end_date)->endOfDay() : null;
-        $assignments = Assignment::select('assignments.*')->with([
+        $assignments = Assignment::with('expertFirm')->select('assignments.*')->with([
                                 'shocks.shockPoint', 'shocks.shockWorks', 'shocks.shockWorks.supply', 'shocks.workforces', 'shocks.workforces.workforceType', 'shocks.paintType', 'shocks.hourlyRate', 'shocks.status', 'otherCosts', 'ascertainments', 'ascertainments.ascertainmentType', 'receipts', 'receipts.receiptType', 'status', 'vehicle', 'vehicle.brand', 'vehicle.vehicleModel', 'vehicle.color', 'vehicle.bodywork', 'insurer', 'additionalInsurer', 'repairer',
                                 'shocks' => function($query) {
                                     $query->orderBy('position', 'asc');
@@ -474,6 +482,10 @@ class AssignmentController extends Controller
 
         if(request()->filled('vehicle_id')){
             $assignments = $assignments->where('vehicle_id', Vehicle::keyFromHashId(request()->vehicle_id));
+        }
+
+        if(request()->filled('expert_firm_id')){
+            $assignments = $assignments->where('expert_firm_id', Entity::keyFromHashId(request()->expert_firm_id));
         }
 
         if(request()->filled('insurer_id')){
@@ -549,7 +561,7 @@ class AssignmentController extends Controller
         $start_date = $start_date ? Carbon::parse($start_date)->startOfDay() : null;
         $end_date = $end_date ? Carbon::parse($end_date)->endOfDay() : null;
 
-        $assignments = \App\Models\Assignment::with('client', 'insurer', 'additionalInsurer', 'repairer', 'status');
+        $assignments = \App\Models\Assignment::with('expertFirm', 'client', 'insurer', 'additionalInsurer', 'repairer', 'status');
 
         if ($start_date && $end_date) {
             $assignments = $assignments->where('assignments.created_at', '>=', $start_date)->where('assignments.created_at', '<=', $end_date);
@@ -597,6 +609,10 @@ class AssignmentController extends Controller
 
         if(request()->filled('vehicle_id')){
             $assignments = $assignments->where('vehicle_id', Vehicle::keyFromHashId(request()->vehicle_id));
+        }
+
+        if(request()->filled('expert_firm_id')){
+            $assignments = $assignments->where('expert_firm_id', Entity::keyFromHashId(request()->expert_firm_id));
         }
 
         if(request()->filled('insurer_id')){
@@ -654,6 +670,7 @@ class AssignmentController extends Controller
             'Référence',
             'Véhicule',
             'Client',
+            'Expert',
             'Assureur',
             'Assureur additionnel',
             'Réparateur',
@@ -666,6 +683,7 @@ class AssignmentController extends Controller
                 $assignment->reference,
                 $assignment->vehicle ? $assignment->vehicle->license_plate : '',
                 $assignment->client ? $assignment->client->name : '',
+                $assignment->expertFirm ? $assignment->expertFirm->name : '',
                 $assignment->insurer ? $assignment->insurer->name : '',
                 $assignment->additionalInsurer ? $assignment->additionalInsurer->name : '',
                 $assignment->repairer ? $assignment->repairer->name : '',
@@ -757,6 +775,10 @@ class AssignmentController extends Controller
 
         if(request()->filled('vehicle_id')){
             $assignments_by_year_and_month_count = $assignments_by_year_and_month_count->where('assignments.vehicle_id', Vehicle::keyFromHashId(request()->vehicle_id));
+        }
+
+        if(request()->filled('expert_firm_id')){
+            $assignments_by_year_and_month_count = $assignments_by_year_and_month_count->where('assignments.expert_firm_id', Entity::keyFromHashId(request()->expert_firm_id));
         }
 
         if(request()->filled('insurer_id')){
@@ -868,6 +890,10 @@ class AssignmentController extends Controller
             $assignments_by_year_and_month_amount = $assignments_by_year_and_month_amount->where('assignments.vehicle_id', Vehicle::keyFromHashId(request()->vehicle_id));
         }
 
+        if(request()->filled('expert_firm_id')){
+            $assignments_by_year_and_month_amount = $assignments_by_year_and_month_amount->where('assignments.expert_firm_id', Entity::keyFromHashId(request()->expert_firm_id));
+        }
+
         if(request()->filled('insurer_id')){
             $assignments_by_year_and_month_amount = $assignments_by_year_and_month_amount->where('assignments.insurer_id', Entity::keyFromHashId(request()->insurer_id));
         }
@@ -972,6 +998,10 @@ class AssignmentController extends Controller
 
         if(request()->filled('vehicle_id')){
             $assignments_total_shock_amount_by_year_and_month = $assignments_total_shock_amount_by_year_and_month->where('assignments.vehicle_id', Vehicle::keyFromHashId(request()->vehicle_id));
+        }
+
+        if(request()->filled('expert_firm_id')){
+            $assignments_total_shock_amount_by_year_and_month = $assignments_total_shock_amount_by_year_and_month->where('assignments.expert_firm_id', Entity::keyFromHashId(request()->expert_firm_id));
         }
 
         if(request()->filled('insurer_id')){
@@ -1698,14 +1728,14 @@ class AssignmentController extends Controller
         //     return $this->responseUnprocessable("Le dossier n'est pas encore ouvert, veuillez l'ouvrir avant de le réaliser.", null);
         // }
 
-        $repairer_relationship = RepairerRelationship::findOrFail($request->repairer_relationship_id);
+        $repairer_relationship = RepairerRelationship::find($request->repairer_relationship_id) ?? null;
 
         $assignment->update([
             'expertise_date' => $request->expertise_date,
             'expertise_place' => $request->expertise_place,
             'point_noted' => $request->point_noted,
             'vehicle_mileage' => $request->mileage,
-            'repairer_id' => $repairer_relationship->repairer_id,
+            'repairer_id' => $repairer_relationship?->repairer_id,
             'directed_by' => $request->directed_by,
             'status_id' => Status::where('code', StatusEnum::REALIZED)->first()->id,
             'realized_by' => auth()->user()->id,
@@ -2450,7 +2480,7 @@ class AssignmentController extends Controller
      */
     public function show($id): JsonResponse
     {
-        $assignment = Assignment::accessibleBy(auth()->user())->select('assignments.*')->with([
+        $assignment = Assignment::accessibleBy(auth()->user())->with('expertFirm')->select('assignments.*')->with([
             'shocks' => function($query) {
                 $query->orderBy('position', 'asc');
             },
@@ -2688,7 +2718,7 @@ class AssignmentController extends Controller
     {
         $assignment = Assignment::accessibleBy(auth()->user())->findOrFail(Assignment::keyFromHashId($id));
 
-        $repairer_relationship = RepairerRelationship::findOrFail($request->repairer_relationship_id);
+        $repairer_relationship = RepairerRelationship::find($request->repairer_relationship_id) ?? null;
 
         if($assignment->status_id != Status::where('code', StatusEnum::VALIDATED)->first()?->id && $assignment->status_id != Status::where('code', StatusEnum::PAID)->first()?->id){
             $assignment->update([

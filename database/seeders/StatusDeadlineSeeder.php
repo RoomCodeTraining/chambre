@@ -14,6 +14,6 @@ class StatusDeadlineSeeder extends Seeder
      */
     public function run(): void
     {
-        StatusDeadline::factory(10)->create();
+        //
     }
 }

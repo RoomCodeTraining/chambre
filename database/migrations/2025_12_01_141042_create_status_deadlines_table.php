@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('status_deadlines', function (Blueprint $table) {
             $table->bigIncrements('id')->unsigned();
             $table->integer('time_limit')->nullable();
+            $table->unsignedBigInteger('entity_id')->index()->nullable();
             $table->unsignedBigInteger('general_status_deadline_id')->index()->nullable();
             $table->unsignedBigInteger('status_id')->index()->nullable();
             $table->unsignedBigInteger('created_by')->index()->nullable();
@@ -24,6 +25,11 @@ return new class extends Migration
             $table->timestamp('updated_at')->nullable();
             $table->unsignedBigInteger('deleted_by')->index()->nullable();
             $table->timestamp('deleted_at')->nullable();
+
+            $table->foreign('entity_id')
+                ->references('id')
+                ->on('entities')
+                ->onDelete('cascade');
 
             $table->foreign('general_status_deadline_id')
                 ->references('id')

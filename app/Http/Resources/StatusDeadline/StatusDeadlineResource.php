@@ -6,6 +6,7 @@ use Illuminate\Http\Resources\Json\JsonResource;
 use App\Http\Resources\Status\StatusResource;
 use App\Http\Resources\GeneralStatusDeadline\GeneralStatusDeadlineResource;
 use App\Http\Resources\User\UserResource;
+use App\Http\Resources\Entity\EntityResource;
 
 class StatusDeadlineResource extends JsonResource
 {
@@ -14,6 +15,7 @@ class StatusDeadlineResource extends JsonResource
         return [
             'id' => $this->hashId,
             'time_limit' => $this->time_limit,
+            'entity' => new EntityResource($this->whenLoaded('entity')),
             'general_status_deadline' => new GeneralStatusDeadlineResource($this->whenLoaded('generalStatusDeadline')),
             'status' => new StatusResource($this->whenLoaded('status')),
             'created_by' => new UserResource($this->whenLoaded('createdBy')),

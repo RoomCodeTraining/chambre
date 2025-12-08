@@ -54,6 +54,7 @@ class StatusDeadlineController extends Controller
         }
         $statusDeadline = StatusDeadline::create([
             'time_limit' => $request->time_limit,
+            'entity_id' => auth()->user()->entity_id,
             'general_status_deadline_id' => $request->general_status_deadline_id,
             'status_id' => Status::where('code', StatusEnum::ACTIVE)->first()->id,
             'created_by' => auth()->user()->id,

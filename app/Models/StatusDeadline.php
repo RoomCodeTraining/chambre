@@ -26,6 +26,14 @@ class StatusDeadline extends Model
     protected $guarded = [];
 
     /**
+     * Get the entity of this status deadline
+     */
+    public function entity(): BelongsTo
+    {
+        return $this->belongsTo(Entity::class);
+    }
+
+    /**
      * Get the status of this status deadline
      */
     public function status(): BelongsTo

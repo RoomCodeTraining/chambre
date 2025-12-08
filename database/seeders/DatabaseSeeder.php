@@ -54,6 +54,7 @@ class DatabaseSeeder extends Seeder
             AppSettingSeeder::class,
             InsurerRelationshipSeeder::class,
             RepairerRelationshipSeeder::class,
+            GeneralStatusDeadlineSeeder::class,
         ]);
     }
 }
