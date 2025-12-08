@@ -39,14 +39,14 @@ class AssignmentResource extends JsonResource
 {
     public function toArray($request): array
     {
-        $realized_deadline = Deadline::calculateDeadline($this->id, StatusEnum::REALIZED);
-        $pending_for_repairer_quote_deadline = Deadline::calculateDeadline($this->id, StatusEnum::PENDING_FOR_REPAIRER_QUOTE);
-        $pending_for_repairer_quote_validation_deadline = Deadline::calculateDeadline($this->id, StatusEnum::PENDING_FOR_REPAIRER_QUOTE_VALIDATION);
-        $in_editing_deadline = Deadline::calculateDeadline($this->id, StatusEnum::IN_EDITING);
-        $pending_for_repairer_validation_deadline = Deadline::calculateDeadline($this->id, StatusEnum::PENDING_FOR_REPAIRER_VALIDATION);
-        $pending_for_expert_validation_deadline = Deadline::calculateDeadline($this->id, StatusEnum::PENDING_FOR_EXPERT_VALIDATION);
-        $validated_deadline = Deadline::calculateDeadline($this->id, StatusEnum::VALIDATED);
-        $paid_deadline = Deadline::calculateDeadline($this->id, StatusEnum::PAID);
+        $realized_deadline = Deadline::calculateDeadline($this->id, StatusEnum::REALIZED->value);
+        $pending_for_repairer_quote_deadline = Deadline::calculateDeadline($this->id, StatusEnum::PENDING_FOR_REPAIRER_QUOTE->value);
+        $pending_for_repairer_quote_validation_deadline = Deadline::calculateDeadline($this->id, StatusEnum::PENDING_FOR_REPAIRER_QUOTE_VALIDATION->value);
+        $in_editing_deadline = Deadline::calculateDeadline($this->id, StatusEnum::IN_EDITING->value);
+        $pending_for_repairer_validation_deadline = Deadline::calculateDeadline($this->id, StatusEnum::PENDING_FOR_REPAIRER_VALIDATION->value);
+        $pending_for_expert_validation_deadline = Deadline::calculateDeadline($this->id, StatusEnum::PENDING_FOR_EXPERT_VALIDATION->value);
+        $validated_deadline = Deadline::calculateDeadline($this->id, StatusEnum::VALIDATED->value);
+        $paid_deadline = Deadline::calculateDeadline($this->id, StatusEnum::PAID->value);
         
         $work_sheet_established_by = User::where('id', $this->work_sheet_established_by)->first();
 

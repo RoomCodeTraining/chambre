@@ -40,12 +40,60 @@ class Deadline
             $expiration_at = dateTimeFormat($assignment->created_at->addHours($deadline->time_limit));
             $status = $expiration_per_cent > 100 ? "expired" : "in_progress";
 
-            if($assignment->realized_at){
-                $done_date = $assignment->created_at->diffInHours($assignment->realized_at);
+            if($status_code == StatusEnum::PENDING_FOR_REPAIRER_QUOTE->value && $assignment->quote_validated_by_repairer_at){
+                $done_date = $assignment->created_at->diffInHours($assignment->quote_validated_by_repairer_at);
                 $done_per_cent = $done_date * 100 / $deadline->time_limit;
                 $status = "done";
-                $done_at = dateTimeFormat($assignment->realized_at);
-                $efficiency_per_cent = $assignment->realized_at ? 100 - $done_per_cent : null;
+                $done_at = dateTimeFormat($assignment->quote_validated_by_repairer_at);
+                $efficiency_per_cent = $assignment->quote_validated_by_repairer_at ? 100 - $done_per_cent : null;
+            }
+
+            if($status_code == StatusEnum::PENDING_FOR_REPAIRER_QUOTE_VALIDATION->value && $assignment->quote_validated_by_expert_at){
+                $done_date = $assignment->created_at->diffInHours($assignment->quote_validated_by_expert_at);
+                $done_per_cent = $done_date * 100 / $deadline->time_limit;
+                $status = "done";
+                $done_at = dateTimeFormat($assignment->quote_validated_by_expert_at);
+                $efficiency_per_cent = $assignment->quote_validated_by_expert_at ? 100 - $done_per_cent : null;
+            }
+
+            if($status_code == StatusEnum::IN_EDITING->value && $assignment->validated_at){
+                $done_date = $assignment->created_at->diffInHours($assignment->validated_at);
+                $done_per_cent = $done_date * 100 / $deadline->time_limit;
+                $status = "done";
+                $done_at = dateTimeFormat($assignment->validated_at);
+                $efficiency_per_cent = $assignment->validated_at ? 100 - $done_per_cent : null;
+            }
+
+            if($status_code == StatusEnum::PENDING_FOR_REPAIRER_VALIDATION->value && $assignment->validated_by_repairer_at){
+                $done_date = $assignment->created_at->diffInHours($assignment->validated_by_repairer_at);
+                $done_per_cent = $done_date * 100 / $deadline->time_limit;
+                $status = "done";
+                $done_at = dateTimeFormat($assignment->validated_by_repairer_at);
+                $efficiency_per_cent = $assignment->validated_by_repairer_at ? 100 - $done_per_cent : null;
+            }
+
+            if($status_code == StatusEnum::PENDING_FOR_EXPERT_VALIDATION->value && $assignment->validated_by_expert_at){
+                $done_date = $assignment->created_at->diffInHours($assignment->validated_by_expert_at);
+                $done_per_cent = $done_date * 100 / $deadline->time_limit;
+                $status = "done";
+                $done_at = dateTimeFormat($assignment->validated_by_expert_at);
+                $efficiency_per_cent = $assignment->validated_by_expert_at ? 100 - $done_per_cent : null;
+            }
+
+            if($status_code == StatusEnum::VALIDATED->value && $assignment->validated_at){
+                $done_date = $assignment->created_at->diffInHours($assignment->validated_at);
+                $done_per_cent = $done_date * 100 / $deadline->time_limit;
+                $status = "done";
+                $done_at = dateTimeFormat($assignment->validated_at);
+                $efficiency_per_cent = $assignment->validated_at ? 100 - $done_per_cent : null;
+            }
+
+            if($status_code == StatusEnum::PAID->value && $assignment->paid_at){
+                $done_date = $assignment->created_at->diffInHours($assignment->paid_at);
+                $done_per_cent = $done_date * 100 / $deadline->time_limit;
+                $status = "done";
+                $done_at = dateTimeFormat($assignment->paid_at);
+                $efficiency_per_cent = $assignment->paid_at ? 100 - $done_per_cent : null;
             }
 
         }
