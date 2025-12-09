@@ -5,7 +5,7 @@
         <meta name="robots" content="noindex, nofollow">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Rapport d'expertise {{$assignment->reference}} / BCA-CI</title>
+        <title>Rapport d'expertise {{$assignment->reference}} / {{assignment?->expertFirm?->name ?? ''}}</title>
 
         <!-- Fonts -->
         <link rel="stylesheet" href="{{ asset('assets/font-awesome/css/font-awesome.min.css') }}">
@@ -109,10 +109,7 @@
         </header>
         <footer>
             <hr style="border: 1px solid black;">
-            <b>SARL au Capital de 5.000.000 FCFA | RCCM : CI-ABJ-03-2025-813-04454</b><br>
-            <b>NCC : 2502756B – Tel : (+225) 07 07 17 00 40 / 27 21 35 91 32 / 27 21 34 17 30</b><br>
-            <b>Siège social : Abidjan, Marcory CAP SUD, Rue Thomas Edison</b><br>
-            <b>Numéro de Compte Bancaire NSIA BANQUE : CI042 01228 085807302001 11</b>
+            <b>{{$assignment?->expertFirm?->footer_description ?? ''}}</b><br>
 
             <div style="text-align: right;">
                 Page <span class="pagenum"></span>

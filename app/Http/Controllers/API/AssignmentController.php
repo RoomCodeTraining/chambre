@@ -62,6 +62,7 @@ use App\Jobs\GenerateWorkSheetPdfJob;
 use App\Jobs\GenerateExpertiseSheetPdfJob;
 use App\Jobs\GenerateExpertiseReportPdfJob;
 use App\Enums\AssignmentReferencePrefixEnum;
+use App\Jobs\GenerateInformationReportPdfJob;
 use App\Services\MarketValue\MarketValueService;
 use App\Jobs\SendOpenedAssignmentNotificationJob;
 use App\Services\WorkDuration\WorkDurationService;
@@ -2369,6 +2370,7 @@ class AssignmentController extends Controller
 
         try {
             dispatch(new GenerateWorkSheetPdfJob($assignment, false));
+            dispatch(new GenerateInformationReportPdfJob($assignment));
         } catch (\Exception $e) {
             Log::error($e);
         }
@@ -2395,6 +2397,7 @@ class AssignmentController extends Controller
         ]);
 
         dispatch(new GenerateWorkSheetPdfJob($assignment, true));
+        dispatch(new GenerateInformationReportPdfJob($assignment));
 
         return $this->responseSuccess('Fiche de travaux validée avec succès', new AssignmentResource($assignment));
     }
@@ -2414,6 +2417,7 @@ class AssignmentController extends Controller
         ]);
 
         dispatch(new GenerateWorkSheetPdfJob($assignment, false));
+        dispatch(new GenerateInformationReportPdfJob($assignment));
 
         return $this->responseCreated('Opération effectuée avec succès', new AssignmentResource($assignment));
 
@@ -3308,6 +3312,7 @@ class AssignmentController extends Controller
 
         dispatch(new GenerateExpertiseSheetPdfJob($assignment));
         dispatch(new GenerateWorkSheetPdfJob($assignment, true));
+        dispatch(new GenerateInformationReportPdfJob($assignment));
 
         return $this->responseSuccess('Rapport d\'expertise généré avec succès', new AssignmentResource($assignment));
     }

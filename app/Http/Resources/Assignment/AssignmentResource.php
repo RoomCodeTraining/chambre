@@ -162,6 +162,7 @@ class AssignmentResource extends JsonResource
             'reference_updated_by' => new UserResource($this->whenLoaded('referenceUpdatedBy')),
             'work_sheet_established_by' => new UserResource($this->whenLoaded('workSheetEstablishedBy')),
             'expertise_sheet' => url('storage/expertise_sheet/'.$this->reference.'.pdf?v='.time()),
+            'information_report' => url('storage/information_report/'.$this->reference.'.pdf?v='.time()),
             'expertise_report' => url('storage/expertise_report/'.$this->reference.'.pdf?v='.time()),
             'work_sheet' => url('storage/work_sheet/'.$this->reference.'.pdf?v='.time()),
             'expert_signature' => url('storage/signature/'.$expert_signature),
