@@ -7,11 +7,12 @@ use App\Enums\StatusEnum;
 use App\Models\StatusDeadline;
 use Illuminate\Http\JsonResponse;
 use App\Http\Controllers\Controller;
+use Essa\APIToolKit\Api\ApiResponse;
+use App\Models\GeneralStatusDeadline;
 use App\Http\Resources\StatusDeadline\StatusDeadlineResource;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use App\Http\Requests\StatusDeadline\CreateStatusDeadlineRequest;
 use App\Http\Requests\StatusDeadline\UpdateStatusDeadlineRequest;
-use Essa\APIToolKit\Api\ApiResponse;
 
 /**
  * @group Gestion des délais de statuts
