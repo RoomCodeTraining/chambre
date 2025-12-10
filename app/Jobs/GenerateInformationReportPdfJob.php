@@ -103,10 +103,11 @@ class GenerateInformationReportPdfJob implements ShouldQueue
         $data_qr_code = file_get_contents($path_qr_code);
         $qr_code = 'data:image/'.$type_qr_code.';base64,'.base64_encode($data_qr_code);
 
-        $path = base_path('public/images/logo_eg.jpg');
-        $type = pathinfo($path, PATHINFO_EXTENSION);
-        $data = file_get_contents($path);
-        $logo = 'data:image/'.$type.';base64,'.base64_encode($data);
+        $logoEntity = Entity::select('logo')->find($assignment->expertFirm->id);
+
+        $logo = $logoEntity && $logoEntity->logo
+        ? image_to_base64(public_path("storage/logos/{$logoEntity->logo}"))
+        : null;
 
         $path_check_icon = base_path('public/images/check-icon.png');
         $type_check_icon = pathinfo($path_check_icon, PATHINFO_EXTENSION);
