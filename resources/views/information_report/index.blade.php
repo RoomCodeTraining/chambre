@@ -311,7 +311,7 @@
                         Montant approximatif en lettres
                     </th>
                     <th style="border: 1px solid; font-size: 12px; vertical-align: middle;">
-                        <b>{{$numberTransformer->toWords($assignment?->assured_value ?? 0)}} FRANCS CFA</b>
+                        <b style="text-transform: uppercase;">{{$numberTransformer->toWords($assignment?->assured_value ?? 0)}} FRANCS CFA</b>
                     </th>
                 </tr>
                 <tr style="border: 1px solid; font-size: 12px;">
