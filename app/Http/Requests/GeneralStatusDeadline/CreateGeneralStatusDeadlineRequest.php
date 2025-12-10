@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\GeneralStatusDeadline;
 
+use App\Models\Status;
 use Illuminate\Foundation\Http\FormRequest;
 
 class CreateGeneralStatusDeadlineRequest extends FormRequest
