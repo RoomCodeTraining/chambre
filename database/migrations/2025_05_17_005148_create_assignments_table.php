@@ -24,6 +24,10 @@ return new class extends Migration
             $table->date('received_at')->nullable();
             $table->text('damage_declared')->nullable();
             $table->text('point_noted')->nullable();
+            $table->text('mission_source')->nullable();
+            $table->text('circumstance')->nullable();
+            $table->boolean('shock_point_conformity')->default(true)->nullable();
+            $table->decimal('approximate_amount', 18, 2)->nullable();
             $table->text('document_transmitted_id')->nullable();
             $table->date('seen_before_work_date')->nullable();
             $table->date('seen_during_work_date')->nullable();

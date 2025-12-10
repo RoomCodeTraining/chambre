@@ -60,6 +60,10 @@ class CreateAssignmentRequest extends FormRequest
             'received_at' => 'nullable|date_format:Y-m-d',
 
             'damage_declared' => 'nullable|string',
+            'mission_source' => 'nullable|string', // Source de la mission
+            'circumstance' => 'nullable|string', // Circonstances du sinistre
+            'shock_point_conformity' => 'nullable|boolean', // Conformité du point de choc à la déclaration
+            'approximate_amount' => 'nullable|numeric', // Montant approximatif en chiffres
             
         ];
     }

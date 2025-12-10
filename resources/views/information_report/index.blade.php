@@ -5,7 +5,7 @@
         <meta name="robots" content="noindex, nofollow">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Fiche des travaux {{$assignment->reference}} / BCA-CI</title>
+        <title>Rapport d'information {{$assignment->reference}} / {{assignment?->expertFirm?->name ?? ''}}</title>
 
         <!-- Fonts -->
         <link rel="stylesheet" href="{{ asset('assets/font-awesome/css/font-awesome.min.css') }}">
@@ -120,7 +120,7 @@
                 <th style="border: 1px solid; font-size: 12px; vertical-align: middle;">
                     <img src="{{$logo}}" alt="logo" style="text-align: center; width:170px; height:100px;">
                 </th>
-                <th style="border: 1px solid; font-size: 12px; vertical-align: middle;">FICHE D'INFORMATIONS <span class="text-danger">N° {{$assignment->reference ?? ''}}</span></th>
+                <th style="border: 1px solid; font-size: 12px; vertical-align: middle;">RAPPORT D'INFORMATIONS <span class="text-danger">N° {{$assignment->reference ?? ''}}</span></th>
                 <th style="border: 1px solid; font-size: 12px; vertical-align: middle;">
                     <img src="{{$qr_code}}" alt="qr_code" style="text-align: center; width:100px; height:100px;">
                     <br>
@@ -151,7 +151,7 @@
                         Source de la mission
                     </th>
                     <th style="border: 1px solid; font-size: 12px; vertical-align: middle;">
-                        <b>{{$assignment?->source_of_mission ?? ''}}</b>
+                        <b>{{$assignment?->mission_source ?? ''}}</b>
                     </th>
                 </tr>
                 <tr style="border: 1px solid; font-size: 12px;">
@@ -211,7 +211,7 @@
                         Circonstances du sinistre
                     </th>
                     <th style="border: 1px solid; font-size: 12px; vertical-align: middle;">
-                        <b>{{$assignment?->claim_circumstances ?? ''}}</b>
+                        <b>{{$assignment?->circumstance ?? ''}}</b>
                     </th>
                 </tr>
                 <tr style="border: 1px solid; font-size: 12px;">
@@ -224,13 +224,61 @@
                 </tr>
                 <tr style="border: 1px solid; font-size: 12px;">
                     <th style="border: 1px solid; font-size: 12px; vertical-align: middle;">
-                        Observation mission
+                        Date de reception de la mission
                     </th>
                     <th style="border: 1px solid; font-size: 12px; vertical-align: middle;">
-                        <b>{{$assignment?->observation ?? ''}}</b>
+                        <b> {{ \Carbon\Carbon::parse($assignment?->received_at)->format('d/m/Y') ?? ''}}</b>
                     </th>
                 </tr>
             </thead>
+        </table>
+
+        <table class="table text-center">
+            <thead style="border: 1px solid; font-size: 12px;">
+                <tr style="border: 1px solid; font-size: 12px;">
+                    <th colspan="3" style="border: 1px solid; font-size: 12px; background-color: rgb(223, 221, 218);">IDENTIFICATION DU VEHICULE</th>
+                </tr>
+            </thead>
+            <tbody style="border: 1px solid; font-size: 12px; border-spacing: 0px;">
+                <tr style="border: 1px solid; font-size: 12px;" colspan="3">
+                    <th style="border: 1px solid; font-size: 12px; vertical-align: middle;" colspan="3">
+                        <table width="100%" class="table text-left" style="border: 1px white; font-size: 12px;">
+                            <tr style="border: 1px white; font-size: 12px;" colspan="3">
+                                <th width="33%" style="padding: 10px; border: 1px white; font-size: 12px; text-align: center;" colspan="3">
+                                    <b>CARACTERISTIQUES DU VEHICULE</b>
+                                </th>
+                            </tr>
+                            <tr style="border: 1px white; font-size: 12px;" colspan="3">
+                                <td width="33%" style="border: 1px white; font-size: 12px;">Immatriculation : <span class="text-danger">{{$assignment?->vehicle?->license_plate ?? ''}}</span></td>
+                                <td width="33%" style="border: 1px white; font-size: 12px;">N° Série : {{$assignment?->vehicle?->serial_number ?? ''}}</td>
+                                <td width="34%" style="border: 1px white; font-size: 12px;">Énergie : {{$assignment?->vehicle?->vehicleEnergy?->label ?? ''}}</td>
+                            </tr>
+                            <tr style="border: 1px white; font-size: 12px;" colspan="3">
+                                <td width="33%" style="border: 1px white; font-size: 12px;">Marque - Modèle : {{ $assignment?->vehicle?->brand?->label ?? '' }} {{ $assignment?->vehicle?->vehicleModel?->label ?? '' }}</td>
+                                <td width="33%" style="border: 1px white; font-size: 12px;">Genre : {{$assignment?->vehicle?->vehicleGenre?->label ?? ''}}</td>
+                                <td width="34%" style="border: 1px white; font-size: 12px;">Date de visite technique : @if($assignment?->vehicle?->technical_visit_date) {{ \Carbon\Carbon::parse($assignment?->vehicle?->technical_visit_date)->format('d/m/Y') ?? ''}} @endif</td>
+                            </tr>
+                            <tr style="border: 1px white; font-size: 12px;" colspan="3">
+                                <td width="33%" style="border: 1px white; font-size: 12px;">Nombre de places : {{$assignment?->vehicle?->nb_seats ?? ''}}</td>
+                                <td width="33%" style="border: 1px white; font-size: 12px;">Couleur : {{$assignment?->vehicle?->color?->label ?? ''}}</td>
+                                <td width="34%" style="border: 1px white; font-size: 12px;">Mise en circulation : @if($assignment?->vehicle?->first_entry_into_circulation_date) {{ \Carbon\Carbon::parse($assignment?->vehicle?->first_entry_into_circulation_date)->format('d/m/Y') ?? ''}} @endif</td>
+                            </tr>
+                            <tr style="border: 1px white; font-size: 12px;" colspan="3">
+                                <td width="33%" style="border: 1px white; font-size: 12px;">KM Compteur : 
+                                    @if($assignment?->vehicle_mileage)
+                                        {{ number_format($assignment?->vehicle_mileage ?? 0, 0, ',', ' ') }}
+                                    @else
+                                        {{ number_format($assignment?->vehicle?->mileage ?? 0, 0, ',', ' ') }}
+                                    @endif
+                                </td>
+                                <td width="33%" style="border: 1px white; font-size: 12px;">Puissance fiscale : {{$assignment?->vehicle?->fiscal_power ?? ''}}</td>
+                                <td width="34%" style="border: 1px white; font-size: 12px;">État général : </td>
+                            </tr>
+                        </table>
+                    </th>
+                    
+                </tr>
+            </tbody>
         </table>
 
         <table class="table text-center">
@@ -285,7 +333,7 @@
                         Conformité du point de choc à la déclaration
                     </th>
                     <th style="border: 1px solid; font-size: 12px; vertical-align: middle;">
-                        <b>{{$assignment?->point_noted ?? ''}}</b>
+                        <b>{{$assignment?->shock_point_conformity ? 'OUI' : 'NON'}}</b>
                     </th>
                 </tr>
             </thead>
@@ -303,7 +351,7 @@
                         Montant approximatif en chiffres
                     </th>
                     <th style="border: 1px solid; font-size: 12px; vertical-align: middle;">
-                        <b>{{number_format($assignment?->assured_value ?? 0, 0, ',', ' ') ?? ''}} FCFA</b>
+                        <b>{{number_format($assignment?->approximate_amount ?? 0, 0, ',', ' ') ?? ''}} FCFA</b>
                     </th>
                 </tr>
                 <tr style="border: 1px solid; font-size: 12px;">
@@ -311,7 +359,7 @@
                         Montant approximatif en lettres
                     </th>
                     <th style="border: 1px solid; font-size: 12px; vertical-align: middle;">
-                        <b style="text-transform: uppercase;">{{$numberTransformer->toWords($assignment?->assured_value ?? 0)}} FRANCS CFA</b>
+                        <b style="text-transform: uppercase;">{{$numberTransformer->toWords($assignment?->approximate_amount ?? 0)}} FRANCS CFA</b>
                     </th>
                 </tr>
                 <tr style="border: 1px solid; font-size: 12px;">

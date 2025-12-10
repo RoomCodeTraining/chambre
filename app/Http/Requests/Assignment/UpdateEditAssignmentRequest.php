@@ -38,6 +38,10 @@ class UpdateEditAssignmentRequest extends FormRequest
             'assured_value' => 'nullable|numeric', // Valeur assurée
             'salvage_value' => 'nullable|numeric', // Valeur de sauvetage
             'work_duration' => 'nullable|string', // Durée des travaux
+            'mission_source' => 'nullable|string', // Source de la mission
+            'circumstance' => 'nullable|string', // Circonstances du sinistre
+            'shock_point_conformity' => 'nullable|boolean', // Conformité du point de choc à la déclaration
+            'approximate_amount' => 'nullable|numeric', // Montant approximatif en chiffres
             'report_remark_id' => 'nullable|exists:remarks,id', // Note de l'expert dans le rapport à selectionner
             'expert_report_remark' => 'nullable|string', // Note de l'expert dans le rapport
             'vehicle_new_market_value_option' => 'nullable|string', // Option de la valeur neuve du véhicule
