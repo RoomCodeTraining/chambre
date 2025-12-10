@@ -67,25 +67,25 @@ class FneSettingBuilder extends Builder
         }
 
         if ($user->isInsurerAdmin()) {
-            return $this->where('fne_settings.entity_id', $user->entity_id);
+            return $this->where('entity_id', $user->entity_id);
         }
 
         if ($user->isInsurerStandardUser()) {
-            return $this->where('fne_settings.entity_id', $user->entity_id);
+            return $this->where('entity_id', $user->entity_id);
         }
 
         if ($user->isRepairerAdmin()) {
-            return $this->where('fne_settings.entity_id', $user->entity_id);
+            return $this->where('entity_id', $user->entity_id);
         }
 
         if ($user->isRepairerStandardUser()) {
-            return $this->where('fne_settings.entity_id', $user->entity_id);
+            return $this->where('entity_id', $user->entity_id);
         }
 
         if ($user->isClient()) {
-            return $this->where('fne_settings.entity_id', $user->entity_id);
+            return $this->where('entity_id', $user->entity_id);
         }
 
-        return $this->where('fne_settings.entity_id', $user->entity_id);
+        return $this->where('entity_id', $user->entity_id);
     }
 }

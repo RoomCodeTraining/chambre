@@ -93,6 +93,8 @@ class GenerateInvoicePdfJob implements ShouldQueue
         $pdf->save(public_path("storage/invoice/".$invoice->reference.".pdf"));
         $pdf->setBasePath($_SERVER['DOCUMENT_ROOT']);
 
-        dispatch(new SendInvoiceJob($invoice));
+        if($invoice->is_fne){
+            dispatch(new SendInvoiceJob($invoice));
+        }
     }
 }

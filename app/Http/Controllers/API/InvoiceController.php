@@ -462,6 +462,7 @@ class InvoiceController extends Controller
             'invoice_reference' => $request->type == 'credit_bill' ? $request->invoice_reference : null,
             'payment_method' => $request->payment_method,
             'template' => $request->template,
+            'is_fne' => $request->is_fne,
             'foreign_currency' => $request->foreign_currency,
             'foreign_currency_rate' => $request->foreign_currency_rate,
             'discount' => $request->discount,

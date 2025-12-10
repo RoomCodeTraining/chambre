@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('invoice_reference')->nullable();
             $table->string('payment_method')->default('cash')->nullable();
             $table->string('template')->default('B2C')->nullable();
+            $table->boolean('is_fne')->default(false)->nullable();
             $table->string('foreign_currency')->nullable();
             $table->decimal('foreign_currency_rate', 18, 2)->default(0)->nullable();
             $table->decimal('discount', 18, 2)->default(0)->nullable();

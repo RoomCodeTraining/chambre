@@ -24,6 +24,7 @@ class CreateInvoiceRequest extends FormRequest
             'type' => 'required|in:sale,credit_bill',
             'payment_method' => 'required|in:cash,card,check,mobile-money,transfer,deferred',
             'template' => 'required|in:B2C,B2B,B2F,B2G',
+            'is_fne' => 'nullable|boolean',
             'foreign_currency' => 'nullable|string',
             'foreign_currency_rate' => 'nullable|numeric|min:0|max:100',
             'discount' => 'nullable|numeric|min:0|max:100',
@@ -40,6 +41,14 @@ class CreateInvoiceRequest extends FormRequest
             'date.date_format' => 'Le format de la date est invalide.',
             'address.string' => 'L\'adresse est invalide.',
             'taxpayer_account_number.string' => 'Le numéro de compte contribuable est invalide.',
+            'is_fne.boolean' => 'Le statut FNE est invalide.',
+            'foreign_currency.string' => 'La devise étrangère est invalide.',
+            'foreign_currency_rate.numeric' => 'Le taux de change est invalide.',
+            'foreign_currency_rate.min' => 'Le taux de change doit être supérieur à 0.',
+            'foreign_currency_rate.max' => 'Le taux de change doit être inférieur à 100.',
+            'discount.numeric' => 'Le montant de la remise est invalide.',
+            'discount.min' => 'Le montant de la remise doit être supérieur à 0.',
+            'discount.max' => 'Le montant de la remise doit être inférieur à 100.',
         ];
     }
 }

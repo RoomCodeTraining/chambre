@@ -21,6 +21,7 @@ class InvoiceResource extends JsonResource
             'invoice_reference' => $this->invoice_reference,
             'payment_method' => $this->payment_method,
             'template' => $this->template,
+            'is_fne' => $this->is_fne,
             'foreign_currency' => $this->foreign_currency,
             'foreign_currency_rate' => $this->foreign_currency_rate,
             'discount' => $this->discount,
