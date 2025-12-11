@@ -104,7 +104,7 @@ class SendInvoiceJob implements ShouldQueue
             $formattedClient = [
                 'id' => $client->id,
                 'code' => $client->code ?? $client->name, // Use code if exists, otherwise use name
-                'name' => $client->name,
+                'name' => $client->name . " / " . $assignment?->client?->name,
                 'email' => $client->email ?? "N/A",
                 'telephone' => $client->telephone ?? "N/A",
                 'address' => $client->address ?? "N/A",
@@ -136,7 +136,7 @@ class SendInvoiceJob implements ShouldQueue
                 'taxpayer_account_number' => $assignment?->expertFirm?->taxpayer_account_number,
                 'point_sale' => $fneSetting?->point_sale,
                 'establishment' => $fneSetting?->establishment,
-                'commercial_message' => $fneSetting?->commercial_message,
+                'commercial_message' => "N° de facture : ".$invoice->reference." - N° du rapport : ".$assignment->reference. " - N° de sinistre : ".$assignment->claim_number,
                 'footer' => $fneSetting?->footer,
                 'fne_token' => $fneSetting?->token,
             ],
