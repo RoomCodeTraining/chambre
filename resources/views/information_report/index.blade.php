@@ -200,8 +200,8 @@
                     </th>
                     <th style="border: 1px solid; font-size: 12px; vertical-align: middle;">
                         <b>
-                            @if($assignment?->claim_starts_at)
-                                {{ \Carbon\Carbon::parse($assignment?->claim_starts_at)->format('d/m/Y') ?? ''}}
+                            @if($assignment?->claim_date)
+                                {{ \Carbon\Carbon::parse($assignment?->claim_date)->format('d/m/Y') ?? ''}}
                             @endif
                         </b>
                     </th>
