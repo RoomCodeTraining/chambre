@@ -81,6 +81,7 @@ use App\Http\Requests\Assignment\UpdateEditAssignmentRequest;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use App\Http\Requests\Assignment\UpdateRealizedAssignmentRequest;
 use App\Http\Requests\Assignment\CreateAssignmentWorkSheetRequest;
+use App\Http\Requests\Assignment\AddInformationToAssignmentRequest;
 use App\Http\Requests\Assignment\AddAssignmentWorkSheetPhotoRequest;
 use App\Http\Requests\Assignment\UnvalidateAssignmentByExpertRequest;
 use App\Http\Requests\Assignment\CalculateEvaluationAssignmentRequest;
@@ -2880,6 +2881,30 @@ class AssignmentController extends Controller
         } else {
             return $this->responseUnprocessable("Impossible de mettre à jour ce dossier, car il est déjà payé.", null);
         }
+
+    }
+
+    /**
+     * Mettre à jour un dossier les informations d'un dossier redirigé
+     *
+     * @authenticated
+     */
+    public function addInformation(AddInformationToAssignmentRequest $request, $id): JsonResponse
+    {
+        $assignment = Assignment::accessibleBy(auth()->user())->findOrFail(Assignment::keyFromHashId($id));
+
+        $assignment->update([
+            'damage_declared' => $request->damage_declared ?? $assignment->damage_declared,
+            'mission_source' => $request->mission_source ?? $assignment->mission_source,
+            'circumstance' => $request->circumstance ?? $assignment->circumstance,
+            'shock_point_conformity' => $request->shock_point_conformity ?? $assignment->shock_point_conformity,
+            'approximate_amount' => $request->approximate_amount ?? $assignment->approximate_amount,
+            'updated_by' => auth()->user()->id,
+        ]);
+
+        dispatch(new GenerateInformationReportPdfJob($assignment));
+
+        return $this->responseCreated('Informations ajoutées avec succès', new AssignmentResource($assignment));
 
     }
 

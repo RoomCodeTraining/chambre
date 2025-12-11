@@ -29,6 +29,9 @@ Route::middleware('auth:sanctum')->name('assignments.')->group(function () {
     /** @uses AssignmentController::update */
     Route::put('/update/{assignment}', [AssignmentController::class, 'update'])->name('update');
 
+    /** @uses AssignmentController::addInformation */
+    Route::put('/add-information/{assignment}', [AssignmentController::class, 'addInformation'])->name('addInformation');
+
     /** @uses AssignmentController::updateRealized */
     Route::put('/update-realize/{assignment}', [AssignmentController::class, 'updateRealize'])->name('update-realize');
 
