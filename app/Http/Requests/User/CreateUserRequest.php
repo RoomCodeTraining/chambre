@@ -24,8 +24,8 @@ class CreateUserRequest extends FormRequest
             'first_name' => ['required', 'string', 'max:255'],
             'last_name' => ['required', 'string', 'max:255'],
             'telephone' => ['nullable', 'string', 'max:255'],
-            'entity_id' => ['required', 'exists:entities,id'],
-            'role' => ['required', 'exists:roles,name'],
+            // 'entity_id' => ['required', 'exists:entities,id'],
+            // 'role' => ['required', 'exists:roles,name'],
             'password' => [
                 'sometimes',
                 'nullable',
