@@ -22,7 +22,7 @@ class CreateUserAction
     {
         // $entity = Entity::firstWhere('code', $data['entity']);
 
-        $role = Role::firstWhere('name', RoleEnum::EXPERT);
+        $role = Role::firstWhere('name', $data['role']);
 
         /**
          * @var User $user
@@ -38,7 +38,7 @@ class CreateUserAction
                 'first_name' => $data['first_name'] ?? null,
                 'last_name' => $data['last_name'] ?? null,
                 'telephone' => $data['telephone'] ?? null,
-                'entity_id' => Entity::firstWhere('code', 'BCA_CI')->id,
+                'entity_id' => $data['entity_id'] ?? null,
                 'current_role_id' => $role->id,
                 // 'password' => bcrypt($password),
                 'password' => bcrypt('12345678'),
