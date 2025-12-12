@@ -30,6 +30,7 @@ class RegisterRequest extends FormRequest
         return [
             'email.required' => 'L\'email est requis',
             'email.email' => 'L\'email doit être une adresse email valide',
+            'email.unique' => 'L\'email est déjà utilisé',
             'first_name.required' => 'Le prénom est requis',
             'first_name.string' => 'Le prénom doit être une chaîne de caractères',
             'first_name.max' => 'Le prénom doit contenir au maximum 255 caractères',
@@ -39,6 +40,7 @@ class RegisterRequest extends FormRequest
             'telephone.required' => 'Le téléphone est requis',
             'telephone.string' => 'Le téléphone doit être une chaîne de caractères',
             'telephone.max' => 'Le téléphone doit contenir au maximum 255 caractères',
+            'telephone.unique' => 'Le téléphone est déjà utilisé',
             'password.required' => 'Le mot de passe est requis',
             'password.string' => 'Le mot de passe doit être une chaîne de caractères',
             'password.confirmed' => 'Le mot de passe et la confirmation du mot de passe doivent être identiques',
