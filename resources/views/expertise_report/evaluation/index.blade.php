@@ -460,7 +460,7 @@
                             @endif
                         </td>
                         <td style="border: 1px solid; font-size: 12px; vertical-align: middle;">
-                            {{number_format($item->new_amount ?? 0, 0, ',', ' ')}}
+                            {{number_format($item->recovery_amount ?? 0, 0, ',', ' ')}}
                         </td>
                     </tr>
                     @endforeach
@@ -471,7 +471,7 @@
                     <tr  style="border: 1px solid; font-size: 12px;">
                         <div class="text-left d-flex flex-column bd-highlight" style="text-align:left;">
                             <b>
-                                <div class="p-1 bd-highlight">Montant pièce Neuves TTC : {{number_format($shock->shock_work_new_amount ?? 0, 0, ',', ' ')}} FCFA</div>
+                                <div class="p-1 bd-highlight">MONTANT PIÈCE RÉCUPÉRATION TTC : {{number_format($shock?->shock_work_recovery_amount ?? 0, 0, ',', ' ')}} FCFA</div>
                             </b>
                         </div>
                     </tr>

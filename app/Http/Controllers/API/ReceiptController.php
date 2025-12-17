@@ -64,10 +64,11 @@ class ReceiptController extends Controller
         $receipt_amount_tax = 0;
         $receipt_amount = 0;
 
+        $assignment = Assignment::with('technicalConclusion')->find($request->assignment_id);
+
         $receipts_data = $request->get('receipts');
         foreach($receipts_data as $receipt){
-            if(ReceiptType::keyFromHashId($receipt['receipt_type_id']) == ReceiptType::where('code', ReceiptTypeEnum::WORK_FEE)->first()->id){
-                $assignment = Assignment::with('technicalConclusion')->find($request->assignment_id);
+            if(ReceiptType::keyFromHashId($receipt['receipt_type_id']) == ReceiptType::where('code', ReceiptTypeEnum::WORK_FEE)->first()->id && $assignment->assignment_type_id != AssignmentType::where('code', AssignmentTypeEnum::EVALUATION)->first()->id){
                 $amount = $assignment->total_amount;
                 if($amount){
                     if($assignment->technicalConclusion &&$assignment->technicalConclusion->code != 'TC001'){
@@ -167,10 +168,11 @@ class ReceiptController extends Controller
      */
     public function store(CreateMultipleReceiptRequest $request): JsonResponse
     {
+        $assignment = Assignment::with('technicalConclusion')->find($request->assignment_id);
+
         $receipts = $request->get('receipts');
         foreach($receipts as $receipt){
-            if(ReceiptType::keyFromHashId($receipt['receipt_type_id']) == ReceiptType::where('code', ReceiptTypeEnum::WORK_FEE)->first()->id){
-                $assignment = Assignment::with('technicalConclusion')->find($request->assignment_id);
+            if(ReceiptType::keyFromHashId($receipt['receipt_type_id']) == ReceiptType::where('code', ReceiptTypeEnum::WORK_FEE)->first()->id && $assignment->assignment_type_id != AssignmentType::where('code', AssignmentTypeEnum::EVALUATION)->first()->id){
                 $amount = $assignment->total_amount;
                 if($amount){
                     if($assignment->technicalConclusion && $assignment->technicalConclusion->code != 'TC001'){
@@ -254,7 +256,7 @@ class ReceiptController extends Controller
             return $this->responseUnprocessable("Le dossier est déjà réglé.");
         }
 
-        if($request->receipt_type_id == ReceiptType::where('code', ReceiptTypeEnum::WORK_FEE)->first()->id){
+        if($request->receipt_type_id == ReceiptType::where('code', ReceiptTypeEnum::WORK_FEE)->first()->id && $assignment->assignment_type_id != AssignmentType::where('code', AssignmentTypeEnum::EVALUATION)->first()->id){
             $amount = $assignment->total_amount;
             if($amount){
                 if($assignment->technicalConclusion && $assignment->technicalConclusion->code != 'TC001'){
