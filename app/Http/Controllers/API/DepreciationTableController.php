@@ -70,6 +70,7 @@ class DepreciationTableController extends Controller
             $is_up = true;
         } else {
             $is_up = false;
+            $kilometric_incidence = -1 * $kilometric_incidence;
         }
 
         $market_incidence_rate = $request->market_incidence_rate ?? 0;
@@ -79,7 +80,7 @@ class DepreciationTableController extends Controller
         if($kilometric_incidence > $result->theorical_vehicle_market_value){
             $kilometric_incidence = $result->theorical_vehicle_market_value / 2;
         }
-        $vehicle_market_value = $result->theorical_vehicle_market_value + $market_incidence + $kilometric_incidence;
+        $vehicle_market_value = $is_up ? $result->theorical_vehicle_market_value + $market_incidence + $kilometric_incidence : $result->theorical_vehicle_market_value + $market_incidence - $kilometric_incidence;
         $depreciation_rate = $result->vehicle_new_value > 0 ? number_format(100 - ($vehicle_market_value * 100 / $result->vehicle_new_value), 2, ',', '') : 0;
         $depreciation_rate = floatval(str_replace(',', '.', $depreciation_rate));
 
