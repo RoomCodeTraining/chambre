@@ -20,13 +20,13 @@ use App\Mail\SendWorkSheetMail;
 use NumberToWords\NumberToWords;
 use Illuminate\Support\Facades\DB;
 use Spatie\Permission\Models\Role;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
+use App\Services\EmailValidationService;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
-use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Http;
 
 class SendWorkSheetMailJob implements ShouldQueue
 {
@@ -95,24 +95,8 @@ class SendWorkSheetMailJob implements ShouldQueue
 		}
 
 		// Vérifier si le nom de domaine des emails existe
-		$valid_emails = [];
-		foreach ($emails as $email) {
-			if (!is_string($email) || $email === '') {
-				continue;
-			}
-			$parts = explode('@', $email);
-			if (count($parts) == 2) {
-				$domain = $parts[1];
-				// Vérifie l'existence du domaine via DNS (MX ou A)
-				if (checkdnsrr($domain, 'MX') || checkdnsrr($domain, 'A')) {
-					$response = Http::timeout(5)->get("http://".$domain);
-                    if ($response->successful()) {
-                        $valid_emails[] = $email;
-                    }
-				}
-			}
-		}
-		$emails = $valid_emails;
+		$emailValidationService = new EmailValidationService();
+		$emails = $emailValidationService->validateEmails($emails);
         $nb_email = count($emails);
 
         if($file &&  $nb_email > 0){

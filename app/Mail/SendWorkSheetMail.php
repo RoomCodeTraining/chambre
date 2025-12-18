@@ -45,7 +45,7 @@ class SendWorkSheetMail extends Mailable
                     );
 
         foreach ($this->photos_path as $photo) {
-            $mail->attach($photo); // ✅ ici on passe chaque fichier individuellement
+            $mail->attach($photo); // Ici on passe chaque fichier individuellement
         }
 
         return $mail;
