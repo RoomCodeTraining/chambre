@@ -99,15 +99,17 @@ class MarketValueService
                 'vehicle_energy' => $vehicle_energy,
             ];
         } else {
+            $theorical_depreciation_rate = 85;
+            $theorical_vehicle_market_value = ceil($vehicle_new_value - ($vehicle_new_value * $theorical_depreciation_rate / 100));
             return [
                 'expertise_date' => $expertise_date,
                 'first_entry_into_circulation_date' => $first_entry_into_circulation_date,
                 'vehicle_new_value' => $vehicle_new_value,
                 'year_diff' => $year_diff,
                 'month_diff' => $month_diff,
-                'vehicle_age' => 0,
-                'theorical_depreciation_rate' => 0,
-                'theorical_vehicle_market_value' => 0,
+                'vehicle_age' => $month_diff,
+                'theorical_depreciation_rate' => $theorical_depreciation_rate,
+                'theorical_vehicle_market_value' => $theorical_vehicle_market_value,
                 'vehicle_genre' => $vehicle_genre,
                 'vehicle_energy' => $vehicle_energy,
             ];
