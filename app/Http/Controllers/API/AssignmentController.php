@@ -2818,23 +2818,22 @@ class AssignmentController extends Controller
                     }
                     $depreciation_rate = $result->vehicle_new_value > 0 ? number_format(100 - ($vehicle_market_value * 100 / $result->vehicle_new_value), 2, ',', '') : 0;
                     $depreciation_rate = floatval(str_replace(',', '.', $depreciation_rate));
+
+                    $evaluations = [
+                        'vehicle_age' => $result->vehicle_age,
+                        'diff_year' => $result->year_diff,
+                        'diff_month' => $result->month_diff,
+                        'theorical_depreciation_rate' => $theorical_depreciation_rate,
+                        'theorical_vehicle_market_value' => $theorical_vehicle_market_value,
+                        'market_incidence_rate' => $assignment_evaluations->market_incidence_rate ?? 0,
+                        'less_value_work' => $less_value_work ?? 0,
+                        'is_up' => $is_up,
+                        'kilometric_incidence' => $kilometric_incidence,
+                        'market_incidence' => $market_incidence ?? 0,
+                        'depreciation_rate' => $depreciation_rate ?? 0,
+                        'vehicle_market_value' =>  ceil($result->vehicle_new_value - ($result->vehicle_new_value * $depreciation_rate / 100)) ?? 0,
+                    ];
                 }
-
-                $evaluations = [
-                    'vehicle_age' => $result->vehicle_age,
-                    'diff_year' => $result->year_diff,
-                    'diff_month' => $result->month_diff,
-                    'theorical_depreciation_rate' => $theorical_depreciation_rate,
-                    'theorical_vehicle_market_value' => $theorical_vehicle_market_value,
-                    'market_incidence_rate' => $assignment_evaluations->market_incidence_rate ?? 0,
-                    'less_value_work' => $less_value_work ?? 0,
-                    'is_up' => $is_up,
-                    'kilometric_incidence' => $kilometric_incidence,
-                    'market_incidence' => $market_incidence ?? 0,
-                    'depreciation_rate' => $depreciation_rate ?? 0,
-                    'vehicle_market_value' =>  ceil($result->vehicle_new_value - ($result->vehicle_new_value * $depreciation_rate / 100)) ?? 0,
-                ];
-
             }
 
             if($request->evaluations){
