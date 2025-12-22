@@ -21,6 +21,9 @@ return new class extends Migration
             $table->text('cancellation_reason')->nullable();
             $table->text('closing_reason')->nullable();
 
+            $table->unsignedBigInteger('classified_without_further_action_by')->index()->nullable();
+            $table->timestamp('classified_without_further_action_at')->nullable();
+
             $table->text('unvalidation_by_expert_reason')->nullable();
             $table->text('unvalidation_by_repairer_reason')->nullable();
             $table->text('quote_unvalidation_by_repairer_reason')->nullable();
