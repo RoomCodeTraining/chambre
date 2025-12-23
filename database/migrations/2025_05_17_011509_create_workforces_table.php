@@ -32,7 +32,6 @@ return new class extends Migration
             $table->decimal('old_amount', 18, 2)->nullable();
             $table->boolean('quote_validated')->default(false);
             $table->unsignedBigInteger('shock_id')->index()->nullable();
-            $table->unsignedBigInteger('old_shock_id')->index()->nullable();
             $table->unsignedBigInteger('workforce_type_id')->index()->nullable();
             $table->unsignedBigInteger('old_workforce_type_id')->index()->nullable();
             $table->unsignedBigInteger('status_id')->index()->nullable();

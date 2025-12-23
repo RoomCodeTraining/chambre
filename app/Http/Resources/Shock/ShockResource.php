@@ -40,6 +40,7 @@ class ShockResource extends JsonResource
             'amount_excluding_tax' => $this->amount_excluding_tax,
             'amount_tax' => $this->amount_tax,
             'amount' => $this->amount,
+            'is_for_work_sheet' => (bool) $this->is_for_work_sheet,
             'assignment' => new AssignmentResource($this->whenLoaded('assignment')),
             'shock_point' => new ShockPointResource($this->whenLoaded('shockPoint')),
             'paint_type' => new PaintTypeResource($this->whenLoaded('paintType')),

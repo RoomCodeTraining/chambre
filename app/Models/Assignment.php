@@ -329,6 +329,14 @@ class Assignment extends Model
     }
 
     /**
+     * Get the user who agreed for the work subject to conditions
+     */
+    public function agreementForWorkSubjectToConditionsBy(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'agreement_for_work_subject_to_conditions_by');
+    }
+
+    /**
      * Get the other costs for this assignment
      */
     public function otherCosts(): HasMany

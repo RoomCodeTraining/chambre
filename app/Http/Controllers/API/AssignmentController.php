@@ -2495,8 +2495,8 @@ class AssignmentController extends Controller
             'shocks' => function($query) {
                 $query->orderBy('position', 'asc');
             },
-            'shocks.shockPoint', 'shocks.shockWorks', 'shocks.shockWorks.supply', 'shocks.workforces', 'shocks.workforces.workforceType', 'shocks.paintType', 'shocks.hourlyRate', 'shocks.status', 'otherCosts', 'ascertainments', 'ascertainments.ascertainmentType', 'receipts', 'receipts.receiptType', 'status', 'vehicle', 'claimNature', 'vehicle.brand', 'vehicle.vehicleModel', 'vehicle.color', 'vehicle.bodywork', 'insurer', 'additionalInsurer', 'repairer', 'client', 'assignmentType', 'expertiseType', 'generalState', 'technicalConclusion', 'documentTransmitted', 'createdBy', 'updatedBy', 'deletedBy', 'closedBy', 'cancelledBy', 'editedBy', 'realizedBy', 'referenceUpdatedBy', 'validatedByRepairerBy', 'validatedByExpertBy', 'unvalidatedByRepairerBy', 'unvalidatedByExpertBy', 'directedBy', 'workSheetEstablishedBy', 'validatedBy', 'unvalidatedBy', 'payments', 'invoices', 'openedBy', 
-            'quoteValidatedByRepairerBy', 'quoteValidatedByExpertBy', 'quoteUnvalidatedByRepairerBy', 'quoteUnvalidatedByExpertBy', 'validatedByRepairerBy', 'validatedByExpertBy', 'unvalidatedByRepairerBy', 'unvalidatedByExpertBy',
+            'shocks.shockPoint', 'shocks.shockWorks', 'shocks.shockWorks.supply', 'shocks.workforces', 'shocks.workforces.workforceType', 'shocks.paintType', 'shocks.hourlyRate', 'shocks.status', 'otherCosts', 'ascertainments', 'ascertainments.ascertainmentType', 'receipts', 'receipts.receiptType', 'status', 'vehicle', 'claimNature', 'vehicle.brand', 'vehicle.vehicleModel', 'vehicle.color', 'vehicle.bodywork', 'insurer', 'additionalInsurer', 'repairer', 'client', 'assignmentType', 'expertiseType', 'generalState', 'technicalConclusion', 'documentTransmitted', 'createdBy', 'updatedBy', 'deletedBy', 'closedBy', 'cancelledBy', 'editedBy', 'realizedBy', 'referenceUpdatedBy', 'directedBy', 'workSheetEstablishedBy', 'validatedBy', 'unvalidatedBy', 'payments', 'invoices', 'openedBy', 
+            'quoteValidatedByRepairerBy', 'quoteValidatedByExpertBy', 'quoteUnvalidatedByRepairerBy', 'quoteUnvalidatedByExpertBy', 'validatedByRepairerBy', 'validatedByExpertBy', 'unvalidatedByRepairerBy', 'unvalidatedByExpertBy', 'agreementForWorkSubjectToConditionsBy',
             'shocks.shockWorks' => function($query) {
                 $query->orderBy('position', 'asc');
             },
@@ -3033,6 +3033,8 @@ class AssignmentController extends Controller
                 'conditions' => $request->conditions,
                 'quote_validated_by_expert_by' => auth()->user()->id,
                 'quote_validated_by_expert_at' => Carbon::now(),
+                'agreement_for_work_subject_to_conditions_by' => auth()->user()->id,
+                'agreement_for_work_subject_to_conditions_at' => Carbon::now(),
                 'status_id' => Status::where('code', StatusEnum::IN_EDITING)->first()->id,
                 'updated_by' => auth()->user()->id,
             ]);

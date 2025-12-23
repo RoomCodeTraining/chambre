@@ -62,7 +62,7 @@ class EntityBuilder extends Builder
         }
 
         if ($user->isAdmin()) {
-            $entityTypes = EntityType::whereIn('code', [EntityTypeEnum::ORGANIZATION->value, EntityTypeEnum::INSURER->value, EntityTypeEnum::REPAIRER->value])->pluck('id');
+            $entityTypes = EntityType::whereIn('code', [EntityTypeEnum::ORGANIZATION->value, EntityTypeEnum::INSURER->value, EntityTypeEnum::REPAIRER->value, EntityTypeEnum::BROKER->value, EntityTypeEnum::AGENT->value])->pluck('id');
             return $this->whereIn('entity_type_id', $entityTypes);
         }
 

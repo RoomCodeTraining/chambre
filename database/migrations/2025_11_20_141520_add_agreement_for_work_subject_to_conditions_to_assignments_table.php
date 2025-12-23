@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::table('assignments', function (Blueprint $table) {
             $table->boolean('agreement_for_work_subject_to_conditions')->default(false);
+            $table->unsignedBigInteger('agreement_for_work_subject_to_conditions_by')->index()->nullable();
+            $table->timestamp('agreement_for_work_subject_to_conditions_at')->nullable();
 
             $table->boolean('quote_validated')->default(false);
             $table->boolean('quote_validated_by_repairer')->default(false);
