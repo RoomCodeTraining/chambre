@@ -29,6 +29,9 @@ return new class extends Migration
             $table->text('quote_unvalidation_by_repairer_reason')->nullable();
             $table->text('quote_unvalidation_by_expert_reason')->nullable();
 
+            $table->boolean('required_for_repairer_quote_validation')->default(false)->nullable();
+            $table->boolean('required_for_repairer_validation')->default(false)->nullable();
+
             $table->foreign('unvalidated_by')
                 ->references('id')
                 ->on('users')

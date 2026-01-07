@@ -163,13 +163,12 @@
                             </b>
                         </div>
                         <div class="p-1 bd-highlight" style="text-align:left;">ASSURE : <b> <span class="text-danger">{{mb_strtoupper($assignment?->client?->name ?? '')}}</span></b></div>
-                        <div class="p-1 bd-highlight" style="text-align:left;">N° Police : <b>{{mb_strtoupper($assignment?->policy_number ?? '')}}</b></div>
-                        <div class="p-1 bd-highlight" style="text-align:left;">N° Sinistre : <b> <span class="text-danger">{{mb_strtoupper($assignment?->claim_number ?? '')}}</span></b></div>
-                        <div class="p-1 bd-highlight" style="text-align:left;">Date du sinistre : 
+                        <div class="p-1 bd-highlight" style="text-align:left;">Lieu d'expertise : <b>{{$assignment?->expertise_place ?? ''}}</b></div>
+                        <div class="p-1 bd-highlight" style="text-align:left;">Date d'expertise : 
                             <b>
                                 <span class="text-danger">
-                                    @if($assignment?->claim_date)
-                                        {{ \Carbon\Carbon::parse($assignment?->claim_date)->format('d/m/Y') ?? ''}}
+                                    @if($assignment?->expertise_date)
+                                        {{ \Carbon\Carbon::parse($assignment?->expertise_date)->format('d/m/Y') ?? ''}}
                                     @endif
                                 </span>
                             </b>
@@ -740,6 +739,26 @@
                 </b>
             </div>
         </div>
+
+        @if($photos_before_works && count($photos_before_works) > 0)
+        <div style="page-break-after: always;"></div>
+
+        <table class="table table-borderless text-center" style="margin: 0; padding: 0; border-collapse: collapse; width: 100%; padding-top: 10px;">
+            <thead style="border: 1px solid; font-size: 12px;">
+                <tr style="border: 1px solid; font-size: 12px; background-color: rgb(223, 221, 218);">
+                    <th colspan="2" style="border: 1px solid; font-size: 12px;">PHOTOS DU VÉHICULE</th>
+                </tr>
+            </thead>
+        </table>
+
+        <div style="padding-top: 20px; margin: 10px;">
+        @foreach($photos_before_works as $photo)
+            @if($photo)
+                <img src="{{ $photo }}" style="width: 100%; height: 48%; object-fit: cover; display: block; padding-bottom: 5px;">
+            @endif
+        @endforeach
+        </div>
+        @endif
 
     </body>
 </html>

@@ -355,7 +355,7 @@ class ShockWorkController extends Controller
             ->where('shock_works.id', ShockWork::keyFromHashId($id))
             ->firstOrFail();
 
-        return $this->responseSuccess(null, new ShockWorkResource($shockWork->load('supply', 'status')));
+        return $this->responseSuccess(null, new ShockWorkResource($shockWork->load('supply', 'oldSupply', 'status')));
     }
 
     /**

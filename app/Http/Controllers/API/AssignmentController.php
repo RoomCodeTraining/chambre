@@ -2394,14 +2394,19 @@ class AssignmentController extends Controller
      *
      * @authenticated
      */
-    public function validateWorkSheetByExpert($id): JsonResponse
+    public function validateWorkSheetByExpert(ValidateWorkSheetByExpertAssignmentRequest $request, $id): JsonResponse
     {
         $assignment = Assignment::with('shocks:id,quote_validated', 'shocks.shockWorks:id,quote_validated', 'shocks.workforces:id,quote_validated')->findOrFail(Assignment::keyFromHashId($id));
+
+        $status_id = Status::where('code', StatusEnum::IN_EDITING)->first()->id;
+        if($request->required_for_repairer_quote_validation == 1){
+            $status_id = Status::where('code', StatusEnum::PENDING_FOR_REPAIRER_QUOTE)->first()->id;
+        }
 
         $assignment->update([
             'work_sheet_established_by' => auth()->user()->id,
             'work_sheet_established_at' => Carbon::now(),
-            'status_id' => Status::where('code', StatusEnum::PENDING_FOR_REPAIRER_QUOTE)->first()->id,
+            'status_id' => $status_id,
             'updated_by' => auth()->user()->id,
         ]);
 
@@ -3084,11 +3089,17 @@ class AssignmentController extends Controller
             return $this->responseUnprocessable("Le devis du dossier n'est pas validé definitivement par l'expert, veuillez le valider avant de valider la rédaction.", null);
         }
 
-        if($assignment->assignment_type_id == AssignmentType::where('code', AssignmentTypeEnum::INSURER)->first()->id){
+        if($assignment->required_for_repairer_validation == 1){
             $status_id = Status::where('code', StatusEnum::PENDING_FOR_REPAIRER_VALIDATION)->first()->id;
         } else {
             $status_id = Status::where('code', StatusEnum::VALIDATED)->first()->id;
         }
+
+        // if($assignment->assignment_type_id == AssignmentType::where('code', AssignmentTypeEnum::INSURER)->first()->id){
+        //     $status_id = Status::where('code', StatusEnum::PENDING_FOR_REPAIRER_VALIDATION)->first()->id;
+        // } else {
+        //     $status_id = Status::where('code', StatusEnum::VALIDATED)->first()->id;
+        // }
 
         $assignment->update([
             'is_validated' => 1,
@@ -3327,6 +3338,74 @@ class AssignmentController extends Controller
     public function generate($id): JsonResponse
     {
         $assignment = Assignment::accessibleBy(auth()->user())->findOrFail(Assignment::keyFromHashId($id));
+
+        $vehicle = Vehicle::with('vehicleGenre', 'vehicleEnergy')->findOrFail($assignment->vehicle_id);
+
+        if($vehicle->vehicleGenre && $vehicle->vehicleEnergy){
+            $marketValueService = app(MarketValueService::class);
+            $result = json_decode(json_encode($marketValueService->calculateTheoreticalMarketValue($vehicle->vehicleGenre->id, $vehicle->vehicleEnergy->id, $vehicle->new_market_value, $vehicle->mileage, $vehicle->first_entry_into_circulation_date, $assignment->expertise_date)));
+            
+            $kilometric_incidence = 0;
+            $is_up = null;
+            if ($vehicle->vehicleEnergy->code == 'VE01') {
+                $max_mileage_essence_per_month = $vehicle->vehicleGenre->max_mileage_essence_per_year / 12;
+                $kilometric_incidence = (($max_mileage_essence_per_month * $result->month_diff) - $vehicle->mileage) * 25;
+            } else {
+                $max_mileage_diesel_per_month = $vehicle->vehicleGenre->max_mileage_diesel_per_year / 12;
+                $kilometric_incidence = (($max_mileage_diesel_per_month * $result->month_diff) -$vehicle->mileage) * 40;
+            }
+
+            if ($kilometric_incidence > 0) {
+                $is_up = true;
+            } else {
+                $is_up = false;
+                $kilometric_incidence = -1 * $kilometric_incidence;
+            }
+
+            $expertise_date = $result->expertise_date;
+            $first_entry_into_circulation_date = $result->first_entry_into_circulation_date;
+            $vehicle_age = $result->vehicle_age;
+            $theorical_depreciation_rate = $result->theorical_depreciation_rate;
+            $theorical_vehicle_market_value = $result->theorical_vehicle_market_value;
+
+
+            if($assignment->evaluations){
+                $assignment_evaluations = json_decode($assignment->evaluations);
+                $less_value_work = $assignment->total_amount;
+                $market_incidence = ceil($result->vehicle_new_value * $assignment_evaluations->market_incidence_rate / 100);
+
+                if($kilometric_incidence > $theorical_vehicle_market_value){
+                    $kilometric_incidence = $theorical_vehicle_market_value / 2;
+                }
+
+                if($assignment->assignment_type_id == AssignmentType::where('code', AssignmentTypeEnum::EVALUATION)->first()->id){
+                    $vehicle_market_value = $is_up ? $theorical_vehicle_market_value + $market_incidence + $kilometric_incidence - $less_value_work : $theorical_vehicle_market_value + $market_incidence - $kilometric_incidence - $less_value_work;
+                } else {
+                    $vehicle_market_value = $is_up ? $theorical_vehicle_market_value + $market_incidence + $kilometric_incidence : $theorical_vehicle_market_value + $market_incidence - $kilometric_incidence;
+                }
+                $depreciation_rate = $result->vehicle_new_value > 0 ? number_format(100 - ($vehicle_market_value * 100 / $result->vehicle_new_value), 2, ',', '') : 0;
+                $depreciation_rate = floatval(str_replace(',', '.', $depreciation_rate));
+
+                $evaluations = [
+                    'vehicle_age' => $result->vehicle_age,
+                    'diff_year' => $result->year_diff,
+                    'diff_month' => $result->month_diff,
+                    'theorical_depreciation_rate' => $theorical_depreciation_rate,
+                    'theorical_vehicle_market_value' => $theorical_vehicle_market_value,
+                    'market_incidence_rate' => $assignment_evaluations->market_incidence_rate ?? 0,
+                    'less_value_work' => $less_value_work ?? 0,
+                    'is_up' => $is_up,
+                    'kilometric_incidence' => $kilometric_incidence,
+                    'market_incidence' => $market_incidence ?? 0,
+                    'depreciation_rate' => $depreciation_rate ?? 0,
+                    'vehicle_market_value' =>  ceil($result->vehicle_new_value - ($result->vehicle_new_value * $depreciation_rate / 100)),
+                ];
+
+                $assignment->update([
+                    'evaluations' => json_encode($evaluations),
+                ]);
+            }
+        }
 
         if($assignment->status_id == Status::where('code', StatusEnum::IN_EDITING)->first()->id || $assignment->status_id == Status::where('code', StatusEnum::EDITED)->first()->id || $assignment->status_id == Status::where('code', StatusEnum::VALIDATED)->first()->id || $assignment->status_id == Status::where('code', StatusEnum::PAID)->first()->id){
             $total_nb_hours = Workforce::join('shocks', 'workforces.shock_id', '=', 'shocks.id')

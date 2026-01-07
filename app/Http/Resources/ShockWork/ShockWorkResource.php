@@ -72,6 +72,7 @@ class ShockWorkResource extends JsonResource
             'is_for_work_sheet' => (bool) $this->is_for_work_sheet,
             'shock' => new ShockResource($this->whenLoaded('shock')),
             'supply' => new SupplyResource($this->whenLoaded('supply')),
+            'old_supply' => new SupplyResource($this->whenLoaded('oldSupply')),
             'status' => new StatusResource($this->whenLoaded('status')),
             'created_by' => new UserResource($this->whenLoaded('createdBy')),
             'updated_by' => new UserResource($this->whenLoaded('updatedBy')),

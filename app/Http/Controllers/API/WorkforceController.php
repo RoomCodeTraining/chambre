@@ -56,7 +56,7 @@ class WorkforceController extends Controller
     public function index(): AnonymousResourceCollection
     {
         $workforces = Workforce::select('workforces.*')
-                    ->with('workforceType', 'status')
+                    ->with('workforceType', 'oldWorkforceType', 'status')
                     ->join('assignments', 'workforces.assignment_id', '=', 'assignments.id')
                     ->accessibleBy(auth()->user())
                     ->useFilters()
@@ -402,7 +402,7 @@ class WorkforceController extends Controller
             ->where('workforces.id', Workforce::keyFromHashId($id))
             ->firstOrFail();
 
-        return $this->responseSuccess(null, new WorkforceResource($workforce->load('workforceType', 'status')));
+        return $this->responseSuccess(null, new WorkforceResource($workforce->load('workforceType', 'oldWorkforceType', 'status')));
     }
 
     /**

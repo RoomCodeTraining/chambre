@@ -5154,6 +5154,148 @@ class RolesAndPermissionsSeeder extends Seeder
 
             $dashboard,
         ]);
+
+        Role::create([
+            'name' => \App\Enums\RoleEnum::REPAIRER_STANDARD_USER,
+            'label' => 'Utilisateur standard réparateur',
+            'description' => "Utilisateur standard réparateur.",
+            'guard_name' => 'sanctum',
+        ])->givePermissionTo([
+            $createUser,
+            $viewUser,
+            $updateUser,
+            $deleteUser,
+            $enableUser,
+            $disableUser,
+            $resetUser,
+
+            $viewUser,
+            
+            $viewAssignment,
+            $updateAssignment,
+            $generateAssignment,
+            $createQuoteAssignment,
+            $validateQuoteAssignment,
+            $cancelQuoteAssignment,
+            $assignmentStatistics,
+
+            $viewShock,
+            $createShock,
+            $updateShock,
+            $deleteShock,
+
+            $createShockWork,
+            $viewShockWork,
+            $updateShockWork,
+            $deleteShockWork,
+
+            $createShockPoint,
+            $viewShockPoint,
+            $updateShockPoint,
+            $deleteShockPoint,
+            $enableShockPoint,
+            $disableShockPoint,
+
+            $createWorkforce,
+            $viewWorkforce,
+            $updateWorkforce,
+            $deleteWorkforce,
+
+            $viewGeneralState,
+
+            $viewClaimNature,
+
+            $viewTechnicalConclusion,
+
+            $viewDocumentTransmitted,
+
+            $viewAssignmentDocument,
+
+            $viewStatus,
+
+            $viewRole,
+
+            $viewPermission,
+
+
+            $viewEntity,
+
+            $viewEntityType,
+
+            $createVehicle,
+            $viewVehicle,
+            $updateVehicle,
+            
+            $viewVehicleGenre,
+
+            $viewVehicleEnergy,
+
+            $viewVehicleAge,
+
+            $viewVehicleModel,
+
+            $viewVehicleState,
+
+            $createColor,
+            $viewColor,
+            $updateColor,
+
+            $createBodywork,
+            $viewBodywork,
+            $updateBodywork,
+
+            $createAssignmentMessage,
+            $viewAssignmentMessage,
+            $updateAssignmentMessage,
+            $deleteAssignmentMessage,
+
+            
+            $viewReceiptType,
+
+            $viewSupply,
+
+            $viewPaintType,
+
+            $viewPaintProductPrice,
+
+            $viewPaintingPrice,
+
+            $viewHourlyRate,
+
+            $viewWorkFee,
+
+            $viewDepreciationTable,
+
+            $viewAscertainmentType,
+
+            $createRemark,
+            $viewRemark,
+            $updateRemark,
+            $deleteRemark,
+            $enableRemark,
+            $disableRemark,
+
+            $viewInsurerRelationship,
+
+            $viewRepairerRelationship,
+
+            $viewNumberPaintElement,
+
+            $viewOtherCostType,
+
+            $createClient,
+            $viewClient,
+            $updateClient,
+
+            $createUserAction,
+            $viewUserAction,
+            $updateUserAction,
+            $deleteUserAction,
+
+            $viewUserActionType,
+
+            $dashboard,
+        ]);
         
         Role::create([
             'name' => \App\Enums\RoleEnum::CLIENT,

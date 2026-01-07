@@ -47,11 +47,11 @@ class DashboardController extends Controller
             'total_assignments' => ['value' => Assignment::accessibleBy(auth()->user())->count()],
             'open_assignments' => ['value' => Assignment::where('status_id', Status::where('code', StatusEnum::OPENED)->first()->id)->accessibleBy(auth()->user())->count()],
             'realized_assignments' => ['value' => Assignment::where('status_id', Status::where('code', StatusEnum::REALIZED)->first()->id)->accessibleBy(auth()->user())->count()],
-            'edited_assignments' => ['value' => Assignment::where('status_id', Status::where('code', StatusEnum::EDITED)->first()->id)->count()],
+            'edited_assignments' => ['value' => Assignment::where('status_id', Status::where('code', StatusEnum::EDITED)->first()->id)->accessibleBy(auth()->user())->count()],
             'validated_assignments' => ['value' => Assignment::where('status_id', Status::where('code', StatusEnum::VALIDATED)->first()->id)->accessibleBy(auth()->user())->count()],
             'paid_assignments' => ['value' => Assignment::where('status_id', Status::where('code', StatusEnum::PAID)->first()->id)->accessibleBy(auth()->user())->count()],
             'closed_assignments' => ['value' => Assignment::where('status_id', Status::where('code', StatusEnum::CLOSED)->first()->id)->accessibleBy(auth()->user())->count()],
-            'cancelled_assignments' => ['value' => Assignment::where('status_id', Status::where('code', StatusEnum::CANCELLED)->first()->id)->count()],
+            'cancelled_assignments' => ['value' => Assignment::where('status_id', Status::where('code', StatusEnum::CANCELLED)->first()->id)->accessibleBy(auth()->user())->count()],
 
             'assignments_edition_time_expired' => Assignment::where('created_at', '<', Carbon::now()->subHours(24))->accessibleBy(auth()->user())->count(),
             'assignments_recovery_time_expired' => Assignment::where('created_at', '<', Carbon::now()->subHours(48))->accessibleBy(auth()->user())->count(),

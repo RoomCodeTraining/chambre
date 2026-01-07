@@ -157,6 +157,8 @@ class AssignmentResource extends JsonResource
             'agreement_for_work_subject_to_conditions_by' => new UserResource($this->whenLoaded('agreementForWorkSubjectToConditionsBy')),
             'unvalidation_by_expert_reason' => $this->unvalidation_by_expert_reason,
             'unvalidation_by_repairer_reason' => $this->unvalidation_by_repairer_reason,
+            'required_for_repairer_quote_validation' => $this->required_for_repairer_quote_validation,
+            'required_for_repairer_validation' => $this->required_for_repairer_validation,
             'directed_by' => new UserResource($this->whenLoaded('directedBy')),
             'edited_by' => new UserResource($this->whenLoaded('editedBy')),
             'validated_by' => new UserResource($this->whenLoaded('validatedBy')),
