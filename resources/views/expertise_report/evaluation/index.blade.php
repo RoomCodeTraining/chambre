@@ -144,25 +144,7 @@
                         <div class="text-left d-flex flex-column bd-highlight" style="text-align:left;"> 
                             <div class="p-1 bd-highlight" style="background-color: rgb(223, 221, 218);"> N° <span class="text-danger">{{$assignment->reference}}</span></div>
                         </div>
-                        <div class="p-1 bd-highlight" style="text-align:left;">COMMETTANT : 
-                            <b> 
-                                <span class="text-danger">
-                                    @if($assignment?->additionalInsurer)
-                                        {{mb_strtoupper($assignment?->insurer?->name ?? '')}} ({{mb_strtoupper($assignment?->additionalInsurer?->name ?? '')}})
-                                    @else
-                                        @if($assignment?->broker)
-                                            {{mb_strtoupper($assignment?->broker?->name ?? '')}} 
-                                            @if($assignment?->insurer)
-                                                ({{mb_strtoupper($assignment?->insurer?->name ?? '')}})
-                                            @endif
-                                        @else
-                                            {{mb_strtoupper($assignment?->insurer?->name ?? '')}} 
-                                        @endif
-                                    @endif
-                                </span>
-                            </b>
-                        </div>
-                        <div class="p-1 bd-highlight" style="text-align:left;">ASSURE : <b> <span class="text-danger">{{mb_strtoupper($assignment?->client?->name ?? '')}}</span></b></div>
+                        <div class="p-1 bd-highlight" style="text-align:left;">MANDANT : <b> <span class="text-danger">{{mb_strtoupper($assignment?->client?->name ?? '')}}</span></b></div>
                         <div class="p-1 bd-highlight" style="text-align:left;">Lieu d'expertise : <b>{{$assignment?->expertise_place ?? ''}}</b></div>
                         <div class="p-1 bd-highlight" style="text-align:left;">Date d'expertise : 
                             <b>
