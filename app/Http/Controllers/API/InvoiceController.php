@@ -487,6 +487,12 @@ class InvoiceController extends Controller
             }
         }
 
+        if($request->type == 'credit_bill' && $request->invoice_reference){
+            Invoice::where('reference', $request->invoice_reference)->update([
+                'status_id' => Status::where('code', StatusEnum::CANCELLED)->first()->id,
+            ]);
+        }
+
         dispatch(new GenerateInvoicePdfJob($invoice));
 
         return $this->responseCreated('Invoice created successfully', new InvoiceResource($invoice));

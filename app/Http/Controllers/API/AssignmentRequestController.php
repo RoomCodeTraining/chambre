@@ -73,7 +73,7 @@ class AssignmentRequestController extends Controller
         $assignmentRequest = AssignmentRequest::create([
             'reference' => 'REQ'.$today,
             'expert_firm_id' => $expert_firm->id,
-            'client_id' => $request->client_id,
+            'client_id' => auth()->user()->client_id,
             'vehicle_id' => $request->vehicle_id,
             'insurer_id' => $insurer->id,
             'repairer_id' => $repairer->id,

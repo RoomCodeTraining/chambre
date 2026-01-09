@@ -80,11 +80,11 @@ class AssignmentBuilder extends Builder
         }
 
         if ($user->isRepairerAdmin()) {
-            return $this->where('repairer_id', $user->entity_id)->whereNotNull('realized_at');
+            return $this->where('repairer_id', $user->entity_id)->whereNotNull('work_sheet_established_at');
         }
 
         if ($user->isRepairerStandardUser()) {
-            return $this->where('repairer_id', $user->entity_id)->whereNotNull('realized_at');
+            return $this->where('repairer_id', $user->entity_id)->whereNotNull('work_sheet_established_at');
         }
 
         if ($user->isClient()) {

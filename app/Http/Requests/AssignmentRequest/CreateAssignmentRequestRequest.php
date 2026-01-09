@@ -20,7 +20,6 @@ class CreateAssignmentRequestRequest extends FormRequest
     public function prepareForValidation()
     {
         $this->merge([
-            'client_id' => $this->client_id ? Client::keyFromHashId($this->client_id) : null,
             'vehicle_id' => $this->vehicle_id ? Vehicle::keyFromHashId($this->vehicle_id) : null,
             'insurer_relationship_id' => $this->insurer_relationship_id ? InsurerRelationship::keyFromHashId($this->insurer_relationship_id) : null,
             'repairer_relationship_id' => $this->repairer_relationship_id ? RepairerRelationship::keyFromHashId($this->repairer_relationship_id) : null,
@@ -34,7 +33,6 @@ class CreateAssignmentRequestRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'client_id' => 'nullable|exists:clients,id',
             'vehicle_id' => 'nullable|exists:vehicles,id',
             'insurer_relationship_id' => 'nullable|exists:insurer_relationships,id',
             'repairer_relationship_id' => 'nullable|exists:repairer_relationships,id',
@@ -55,7 +53,6 @@ class CreateAssignmentRequestRequest extends FormRequest
             'assignment_type_id.exists' => 'Le type de mission est invalide.',
             'expertise_type_id.required' => 'Le type d\'expertise est requis.',
             'expertise_type_id.exists' => 'Le type d\'expertise est invalide.',
-            'client_id.exists' => 'Le client est invalide.',
             'vehicle_id.required' => 'Le véhicule est requis.',
             'vehicle_id.exists' => 'Le véhicule est invalide.',
             'insurer_relationship_id.required_if' => 'L\'assureur est requis pour une mission de type compagnie.',
