@@ -1496,7 +1496,7 @@ class AssignmentController extends Controller
             $less_value_work = $total_amount;
             $market_incidence = ceil($result->vehicle_new_value * $request->market_incidence_rate / 100);
 
-            if($kilometric_incidence > $theorical_vehicle_market_value){
+            if($kilometric_incidence > ($theorical_vehicle_market_value / 2)){
                 $kilometric_incidence = $theorical_vehicle_market_value / 2;
             }
             
@@ -2117,7 +2117,7 @@ class AssignmentController extends Controller
             $less_value_work = $total_amount;
             $market_incidence = ceil($result->vehicle_new_value * $request->market_incidence_rate / 100);
 
-            if($kilometric_incidence > $theorical_vehicle_market_value){
+            if($kilometric_incidence > ($theorical_vehicle_market_value / 2)){
                 $kilometric_incidence = $theorical_vehicle_market_value / 2;
             }
 
@@ -2812,7 +2812,7 @@ class AssignmentController extends Controller
                     $less_value_work = $assignment->total_amount;
                     $market_incidence = ceil($result->vehicle_new_value * $assignment_evaluations->market_incidence_rate / 100);
 
-                    if($kilometric_incidence > $theorical_vehicle_market_value){
+                    if($kilometric_incidence > ($theorical_vehicle_market_value / 2)){
                         $kilometric_incidence = $theorical_vehicle_market_value / 2;
                     }
 
@@ -3374,7 +3374,7 @@ class AssignmentController extends Controller
                 $less_value_work = $assignment->total_amount;
                 $market_incidence = ceil($result->vehicle_new_value * $assignment_evaluations->market_incidence_rate / 100);
 
-                if($kilometric_incidence > $theorical_vehicle_market_value){
+                if($kilometric_incidence > ($theorical_vehicle_market_value / 2)){
                     $kilometric_incidence = $theorical_vehicle_market_value / 2;
                 }
 

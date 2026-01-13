@@ -77,7 +77,7 @@ class DepreciationTableController extends Controller
 
         $market_incidence = ceil($result->vehicle_new_value * $market_incidence_rate / 100);
 
-        if($kilometric_incidence > $result->theorical_vehicle_market_value){
+        if($kilometric_incidence > ($result->theorical_vehicle_market_value / 2)){
             $kilometric_incidence = $result->theorical_vehicle_market_value / 2;
         }
         $vehicle_market_value = $is_up ? $result->theorical_vehicle_market_value + $market_incidence + $kilometric_incidence : $result->theorical_vehicle_market_value + $market_incidence - $kilometric_incidence;
