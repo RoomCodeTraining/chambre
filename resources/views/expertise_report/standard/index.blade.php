@@ -814,6 +814,22 @@
                 </tr>
                 <tr style="border: 1px solid; font-size: 12px; text-align: left;">
                     <th style="border: 1px solid; font-size: 12px;">
+                        AUTRES CHARGES
+                        @if($other_costs->count() > 0)
+                            (
+                            @foreach($other_costs as $index => $other_cost)
+                                {{ mb_strtoupper($other_cost?->otherCostType?->label ?? '') }}
+                                @if($index + 1 < $other_costs->count()), @endif
+                            @endforeach
+                            )
+                        @endif
+                    </th>
+                    <th style="border: 1px solid; font-size: 12px;">
+                        <span class="text-danger">{{number_format($assignment?->other_cost_amount ?? 0, 0, ',', ' ')}} FCFA</span>
+                    </th>
+                </tr>
+                <tr style="border: 1px solid; font-size: 12px; text-align: left;">
+                    <th style="border: 1px solid; font-size: 12px;">
                         PRÉJUDICE
                     </th>
                     <th style="border: 1px solid; font-size: 12px;">
