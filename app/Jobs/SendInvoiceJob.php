@@ -101,10 +101,15 @@ class SendInvoiceJob implements ShouldQueue
 
         if ($assignment->assignment_type_id == AssignmentType::where('code', AssignmentTypeEnum::INSURER)->first()->id) {
             $client = $assignment->insurer;
+            if($assignment?->additionalInsurer){
+                $name = $client->name . ' (' .$assignment?->additionalInsurer?->name. ") / " . $assignment?->client?->name;
+            } else {
+                $name = $client->name . " / " . $assignment?->client?->name;
+            }
             $formattedClient = [
                 'id' => $client->id,
                 'code' => $client->code ?? $client->name, // Use code if exists, otherwise use name
-                'name' => $client->name . " / " . $assignment?->client?->name,
+                'name' => $name,
                 'email' => $client->email ?? "N/A",
                 'telephone' => $client->telephone ?? "N/A",
                 'address' => $client->address ?? "N/A",
