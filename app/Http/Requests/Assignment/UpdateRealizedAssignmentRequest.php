@@ -24,6 +24,7 @@ class UpdateRealizedAssignmentRequest extends FormRequest
             'expertise_date' => 'nullable|date_format:Y-m-d',
             'expertise_place' => 'nullable|string',
             'point_noted' => 'nullable|string',
+            'required_for_repairer_quote_validation' => 'nullable|boolean',
         ];
     }
 
@@ -32,6 +33,7 @@ class UpdateRealizedAssignmentRequest extends FormRequest
         return [
             'expertise_date.date' => 'La date est invalide.',
             'expertise_date.date_format' => 'Le format de la date est invalide.',
+            'required_for_repairer_quote_validation.boolean' => 'Le champ required_for_repairer_quote_validation doit être un boolean.',
         ];
     }
 }

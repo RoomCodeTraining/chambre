@@ -2745,6 +2745,7 @@ class AssignmentController extends Controller
                 'point_noted' => $request->point_noted ?? $assignment->point_noted,
                 'repairer_id' => $repairer_relationship->repairer_id ?? $assignment->repairer_id,
                 'directed_by' => $request->directed_by ?? $assignment->directed_by,
+                'required_for_repairer_quote_validation' => $request->required_for_repairer_quote_validation ?? $assignment->required_for_repairer_quote_validation,
                 'updated_by' => auth()->user()->id,
             ]);
 
