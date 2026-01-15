@@ -78,6 +78,7 @@ use App\Http\Requests\Assignment\EvaluateAssignmentRequest;
 use App\Http\Requests\Assignment\CalculateAssignmentRequest;
 use App\Http\Requests\Assignment\UnvalidateAssignmentRequest;
 use App\Http\Requests\Assignment\UpdateEditAssignmentRequest;
+use App\Http\Requests\Assignment\MarkAsUnpaidAssignmentRequest;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use App\Http\Requests\Assignment\UpdateRealizedAssignmentRequest;
 use App\Http\Requests\Assignment\CreateAssignmentWorkSheetRequest;
@@ -3269,6 +3270,49 @@ class AssignmentController extends Controller
         } else {
             return $this->responseUnprocessable("Le dossier n'est pas encore validé par le repairer.", null);
         }
+    }
+
+    /**
+     * Marquer un dossier comme payé
+     *
+     * @authenticated
+     */
+    public function markAsPaid($id): JsonResponse
+    {
+        $assignment = Assignment::accessibleBy(auth()->user())->findOrFail(Assignment::keyFromHashId($id));
+
+        $assignment->update([
+            'paid_by' => auth()->user()->id,
+            'paid_at' => Carbon::now(),
+            'status_id' => Status::where('code', StatusEnum::PAID)->first()->id,
+            'updated_by' => auth()->user()->id,
+        ]);
+
+        dispatch(new GenerateExpertiseReportPdfJob($assignment));
+
+        return $this->responseSuccess('Dossier marqué comme payé avec succès', new AssignmentResource($assignment));
+    }
+
+    /**
+     * Marquer un dossier comme non payé
+     *
+     * @authenticated
+     */
+    public function markAsUnpaid(MarkAsUnpaidAssignmentRequest $request, $id): JsonResponse
+    {
+        $assignment = Assignment::accessibleBy(auth()->user())->findOrFail(Assignment::keyFromHashId($id));
+
+        $assignment->update([
+            'unpaid_by' => auth()->user()->id,
+            'unpaid_at' => Carbon::now(),
+            'unpaid_reason' => $request->unpaid_reason,
+            'status_id' => Status::where('code', StatusEnum::VALIDATED)->first()->id,
+            'updated_by' => auth()->user()->id,
+        ]);
+
+        dispatch(new GenerateExpertiseReportPdfJob($assignment));
+
+        return $this->responseSuccess('Dossier marqué comme impayé avec succès', new AssignmentResource($assignment));
     }
 
     /**

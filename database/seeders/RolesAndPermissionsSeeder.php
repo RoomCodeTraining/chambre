@@ -59,6 +59,8 @@ class RolesAndPermissionsSeeder extends Seeder
         $assignmentStatistics = Permission::create(['name' => \App\Enums\PermissionEnum::ASSIGNMENT_STATISTICS, 'guard_name' => 'sanctum']);
         $cancelQuoteAssignment = Permission::create(['name' => \App\Enums\PermissionEnum::CANCEL_QUOTE_ASSIGNMENT, 'guard_name' => 'sanctum']);
         $deleteAssignment = Permission::create(['name' => \App\Enums\PermissionEnum::DELETE_ASSIGNMENT, 'guard_name' => 'sanctum']);
+        $markAsPaidAssignment = Permission::create(['name' => \App\Enums\PermissionEnum::MARK_AS_PAID_ASSIGNMENT, 'guard_name' => 'sanctum']);
+        $markAsUnpaidAssignment = Permission::create(['name' => \App\Enums\PermissionEnum::MARK_AS_UNPAID_ASSIGNMENT, 'guard_name' => 'sanctum']);
 
         $createInvoice = Permission::create(['name' => \App\Enums\PermissionEnum::CREATE_INVOICE, 'guard_name' => 'sanctum']);
         $viewInvoice = Permission::create(['name' => \App\Enums\PermissionEnum::VIEW_INVOICE, 'guard_name' => 'sanctum']);
@@ -4523,6 +4525,8 @@ class RolesAndPermissionsSeeder extends Seeder
             $closeAssignment,
             $generateAssignment,
             $assignmentStatistics,
+            $markAsPaidAssignment,
+            $markAsUnpaidAssignment,
 
             $createInvoice,
             $viewInvoice,

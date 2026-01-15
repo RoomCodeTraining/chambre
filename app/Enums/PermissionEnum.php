@@ -45,6 +45,8 @@ enum PermissionEnum: string
     case UNVALIDATE_BY_REPAIRER_ASSIGNMENT = 'assignment.unvalidate_by_repairer';
     case VALIDATE_BY_EXPERT_ASSIGNMENT = 'assignment.validate_by_expert';
     case UNVALIDATE_BY_EXPERT_ASSIGNMENT = 'assignment.unvalidate_by_expert';
+    case MARK_AS_PAID_ASSIGNMENT = 'assignment.mark_as_paid';
+    case MARK_AS_UNPAID_ASSIGNMENT = 'assignment.mark_as_unpaid';
     case CLOSE_ASSIGNMENT = 'assignment.close';
     case CANCEL_ASSIGNMENT = 'assignment.cancel';
     case GENERATE_ASSIGNMENT = 'assignment.generate';

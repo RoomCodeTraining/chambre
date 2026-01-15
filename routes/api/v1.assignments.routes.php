@@ -89,6 +89,11 @@ Route::middleware('auth:sanctum')->name('assignments.')->group(function () {
     /** @uses AssignmentController::classifyWithoutFurtherAction */
     Route::put('/classify-without-further-action/{assignment}', [AssignmentController::class, 'classifyWithoutFurtherAction'])->name('classifyWithoutFurtherAction');
 
+    /** @uses AssignmentController::markAsPaid */
+    Route::put('/{assignment}/mark-as-paid', [AssignmentController::class, 'markAsPaid'])->name('markAsPaid');
+
+    /** @uses AssignmentController::markAsUnpaid */
+    Route::put('/{assignment}/mark-as-unpaid', [AssignmentController::class, 'markAsUnpaid'])->name('markAsUnpaid');
 
     /** @uses AssignmentController::cancel */
     Route::put('/{assignment}/cancel', [AssignmentController::class, 'cancel'])->name('cancel');
