@@ -2359,22 +2359,36 @@ class AssignmentController extends Controller
             }
         }
 
+        $status_id = Status::where('code', StatusEnum::IN_EDITING)->first()->id;
+        $required_for_repairer_quote_validation = 0;
+        if($assignment->assignment_type_id == AssignmentType::where('code', AssignmentTypeEnum::INSURER)->first()->id){
+            $status_id = Status::where('code', StatusEnum::PENDING_FOR_REPAIRER_QUOTE)->first()->id;
+            $required_for_repairer_quote_validation = 1;
+        }
+
         $assignment->update([
-            'repairer_id' => $repairer ? $repairer->id : $assignment->repairer_id,
-            'client_id' => $client ? $client->id : $assignment->client_id,
+            'repairer_id' => $request->repairer_id ?? $assignment->repairer_id,
+            'client_id' => $client?->id ?? $assignment->client_id,
+            'insurer_id' => $insurer?->id ?? $assignment->insurer_id,
             'vehicle_id' => $request->vehicle_id ?? $assignment->vehicle_id,
             'vehicle_mileage' => $request->vehicle_mileage ?? $assignment->vehicle_mileage,
             'policy_number' => $request->policy_number ?? $assignment->policy_number,
+
+            'directed_by' => auth()->user()->id,
+            'realized_by' => auth()->user()->id,
+            'realized_at' => Carbon::now(),
+
+            'required_for_repairer_quote_validation' => $required_for_repairer_quote_validation,
+            'status_id' => $status_id,
+            
             'work_sheet_remark_id' => $request->work_sheet_remark_id,
             'expert_work_sheet_remark' => $request->expert_work_sheet_remark,
             'claim_number' => $request->claim_number ?? $assignment->claim_number,
-            'claim_date' => $request->claim_date ?? $assignment->claim_date,
             'emails' => json_encode($request->emails),
             'repairer_signature' => $request->repairer_signature,
             'customer_signature' => $request->customer_signature,
             'work_sheet_established_by' => auth()->user()->id,
             'work_sheet_established_at' => Carbon::now(),
-            'status_id' => Status::where('code', StatusEnum::PENDING_FOR_REPAIRER_QUOTE)->first()->id,
             'updated_by' => auth()->user()->id,
         ]);
 

@@ -36,6 +36,11 @@ enum PermissionEnum: string
     case VALIDATE_QUOTE_ASSIGNMENT = 'assignment.validate_quote';
     case VALIDATE_QUOTE_WITH_CONDITION_ASSIGNMENT = 'assignment.validate_quote_with_condition';
     case UNVALIDATE_QUOTE_ASSIGNMENT = 'assignment.unvalidate_quote';
+    case VALIDATE_QUOTE_BY_REPAIRER_ASSIGNMENT = 'assignment.validate_quote_by_repairer';
+    case UNVALIDATE_QUOTE_BY_REPAIRER_ASSIGNMENT = 'assignment.unvalidate_quote_by_repairer';
+    case VALIDATE_QUOTE_BY_EXPERT_ASSIGNMENT = 'assignment.validate_quote_by_expert';
+    case VALIDATE_QUOTE_WITH_CONDITIONS_BY_EXPERT_ASSIGNMENT = 'assignment.validate_quote_with_conditions_by_expert';
+    case UNVALIDATE_QUOTE_BY_EXPERT_ASSIGNMENT = 'assignment.unvalidate_quote_by_expert';
     case CANCEL_QUOTE_ASSIGNMENT = 'assignment.cancel_quote';
     case EDIT_ASSIGNMENT = 'assignment.edit';
     case UPDATE_EDITED_ASSIGNMENT = 'assignment.update_edited';

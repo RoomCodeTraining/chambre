@@ -42,6 +42,11 @@ class RolesAndPermissionsSeeder extends Seeder
         $validateQuoteAssignment = Permission::create(['name' => \App\Enums\PermissionEnum::VALIDATE_QUOTE_ASSIGNMENT, 'guard_name' => 'sanctum']);
         $unvalidateQuoteAssignment = Permission::create(['name' => \App\Enums\PermissionEnum::UNVALIDATE_QUOTE_ASSIGNMENT, 'guard_name' => 'sanctum']);
         $validateQuoteWithConditionAssignment = Permission::create(['name' => \App\Enums\PermissionEnum::VALIDATE_QUOTE_WITH_CONDITION_ASSIGNMENT, 'guard_name' => 'sanctum']);
+        $validateQuoteByRepairerAssignment = Permission::create(['name' => \App\Enums\PermissionEnum::VALIDATE_QUOTE_BY_REPAIRER_ASSIGNMENT, 'guard_name' => 'sanctum']);
+        $unvalidateQuoteByRepairerAssignment = Permission::create(['name' => \App\Enums\PermissionEnum::UNVALIDATE_QUOTE_BY_REPAIRER_ASSIGNMENT, 'guard_name' => 'sanctum']);
+        $validateQuoteByExpertAssignment = Permission::create(['name' => \App\Enums\PermissionEnum::VALIDATE_QUOTE_BY_EXPERT_ASSIGNMENT, 'guard_name' => 'sanctum']);
+        $validateQuoteWithConditionsByExpertAssignment = Permission::create(['name' => \App\Enums\PermissionEnum::VALIDATE_QUOTE_WITH_CONDITIONS_BY_EXPERT_ASSIGNMENT, 'guard_name' => 'sanctum']);
+        $unvalidateQuoteByExpertAssignment = Permission::create(['name' => \App\Enums\PermissionEnum::UNVALIDATE_QUOTE_BY_EXPERT_ASSIGNMENT, 'guard_name' => 'sanctum']);
         $createWorksheetAssignment = Permission::create(['name' => \App\Enums\PermissionEnum::CREATE_WORKSHEET_ASSIGNMENT, 'guard_name' => 'sanctum']);
         $validateWorkSheetByExpertAssignment = Permission::create(['name' => \App\Enums\PermissionEnum::VALIDATE_WORK_SHEET_BY_EXPERT_ASSIGNMENT, 'guard_name' => 'sanctum']);
         $unvalidateWorkSheetByExpertAssignment = Permission::create(['name' => \App\Enums\PermissionEnum::UNVALIDATE_WORK_SHEET_BY_EXPERT_ASSIGNMENT, 'guard_name' => 'sanctum']);
