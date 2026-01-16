@@ -465,6 +465,13 @@ class WorkforceController extends Controller
             || $workforce->isDirty('with_tax') 
             || $workforce->isDirty('discount') 
             || $workforce->isDirty('all_paint') 
+            || $workforce->workforce_type_id != $request->workforce_type_id
+            || $workforce->hourly_rate_id != $request->hourly_rate_id
+            || $workforce->paint_type_id != $request->paint_type_id
+            || $workforce->with_tax != $request->with_tax
+            || $workforce->nb_hours != $request->nb_hours
+            || $workforce->discount != $request->discount
+            || $workforce->all_paint != $request->all_paint
             || $workforce->amount_excluding_tax != $amount_excluding_tax
             || $workforce->amount_tax != $amount_tax
             || $workforce->amount != $amount) { 

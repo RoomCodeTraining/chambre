@@ -59,7 +59,7 @@ class ShockWorkController extends Controller
     public function index(): AnonymousResourceCollection
     {
         $shockWorks = ShockWork::select('shock_works.*')
-                    ->with('supply', 'status')
+                    ->with('supply', 'status', 'oldSupply')
                     ->join('shocks', 'shock_works.shock_id', '=', 'shocks.id')
                     ->join('assignments', 'shocks.assignment_id', '=', 'assignments.id')
                     ->accessibleBy(auth()->user())
@@ -417,6 +417,7 @@ class ShockWorkController extends Controller
             || $shockWork->isDirty('amount') 
             || $shockWork->isDirty('obsolescence_rate') 
             || $shockWork->isDirty('discount') 
+            || $shockWork->supply_id != $request->supply_id
             || $shockWork->disassembly != $request->disassembly
             || $shockWork->replacement != $request->replacement
             || $shockWork->repair != $request->repair
