@@ -72,14 +72,17 @@ use App\Http\Requests\Assignment\EditAssignmentRequest;
 use App\Http\Requests\Assignment\CloseAssignmentRequest;
 use App\Http\Requests\Assignment\CancelAssignmentRequest;
 use App\Http\Requests\Assignment\CreateAssignmentRequest;
+use App\Http\Requests\Assignment\DeleteAssignmentRequest;
 use App\Http\Requests\Assignment\UpdateAssignmentRequest;
 use App\Http\Requests\Assignment\RealizeAssignmentRequest;
 use App\Http\Requests\Assignment\EvaluateAssignmentRequest;
 use App\Http\Requests\Assignment\CalculateAssignmentRequest;
+use App\Http\Requests\Assignment\AddCommentAssignmentRequest;
 use App\Http\Requests\Assignment\UnvalidateAssignmentRequest;
 use App\Http\Requests\Assignment\UpdateEditAssignmentRequest;
 use App\Http\Requests\Assignment\MarkAsUnpaidAssignmentRequest;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
+use App\Http\Requests\Assignment\RestoreDeletedAssignmentRequest;
 use App\Http\Requests\Assignment\UpdateRealizedAssignmentRequest;
 use App\Http\Requests\Assignment\CreateAssignmentWorkSheetRequest;
 use App\Http\Requests\Assignment\AddInformationToAssignmentRequest;
@@ -3547,5 +3550,64 @@ class AssignmentController extends Controller
         dispatch(new GenerateExpertiseReportPdfJob($assignment));
 
         return $this->responseSuccess('Opération effectuée avec succès', $assignment);
+    }
+
+    /**
+     * Ajouter un commentaire à un dossier
+     *
+     * @authenticated
+     */
+    public function addComment(AddCommentAssignmentRequest $request, $id): JsonResponse
+    {
+        $assignment = Assignment::accessibleBy(auth()->user())->findOrFail(Assignment::keyFromHashId($id));
+
+        $assignment->update([
+            'comment' => $request->comment,
+            'updated_by' => auth()->user()->id,
+        ]);
+
+        return $this->responseSuccess('Commentaire ajouté avec succès', new AssignmentResource($assignment));
+    }
+
+    /**
+     * Supprimer un dossier
+     *
+     * @authenticated
+     */
+    public function destroy(DeleteAssignmentRequest $request, $id): JsonResponse
+    {
+        $assignment = Assignment::accessibleBy(auth()->user())->findOrFail(Assignment::keyFromHashId($id));
+
+        $assignment->update([
+            'deleted_by' => auth()->user()->id,
+            'deleted_at' => Carbon::now(),
+            'deletion_reason' => $request->deletion_reason,
+            'status_id' => Status::where('code', StatusEnum::DELETED)->first()->id,
+            'updated_by' => auth()->user()->id,
+        ]);
+
+        $assignment->delete();
+
+        return $this->responseSuccess('Dossier supprimé avec succès', null);
+    }
+
+    /**
+     * Restaurer un dossier
+     *
+     * @authenticated
+     */
+    public function restore(RestoreDeletedAssignmentRequest $request): JsonResponse
+    {
+        $assignment = Assignment::withTrashed()
+                    ->accessibleBy(auth()->user())
+                    ->where('reference', $request->reference)
+                    ->first();
+
+        if($assignment){
+            $assignment->restore();
+            return $this->responseSuccess('Dossier restauré avec succès', null);
+        } else {
+            return $this->responseUnprocessable('Dossier non trouvé', null);
+        }
     }
 }

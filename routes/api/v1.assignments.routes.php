@@ -118,4 +118,10 @@ Route::middleware('auth:sanctum')->name('assignments.')->group(function () {
 
     /** @uses AssignmentController::statistics */
     Route::get('/get/statistics', [AssignmentController::class, 'statistics'])->name('statistics');
+
+    /** @uses AssignmentController::destroy */
+    Route::delete('/{assignment}', [AssignmentController::class, 'destroy'])->name('destroy');
+
+    /** @uses AssignmentController::restore */
+    Route::post('/restore', [AssignmentController::class, 'restore'])->name('restore');
 }); 

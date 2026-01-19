@@ -56,6 +56,8 @@ enum PermissionEnum: string
     case CANCEL_ASSIGNMENT = 'assignment.cancel';
     case GENERATE_ASSIGNMENT = 'assignment.generate';
     case DELETE_ASSIGNMENT = 'assignment.delete';
+    case RESTORE_DELETED_ASSIGNMENT = 'assignment.restore_deleted';
+    case COMMENT_ASSIGNMENT = 'assignment.comment';
     case ASSIGNMENT_STATISTICS = 'assignment.statistics';
 
     case VIEW_INVOICE = 'invoice.view';

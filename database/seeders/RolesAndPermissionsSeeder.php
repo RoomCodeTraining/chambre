@@ -66,6 +66,8 @@ class RolesAndPermissionsSeeder extends Seeder
         $deleteAssignment = Permission::create(['name' => \App\Enums\PermissionEnum::DELETE_ASSIGNMENT, 'guard_name' => 'sanctum']);
         $markAsPaidAssignment = Permission::create(['name' => \App\Enums\PermissionEnum::MARK_AS_PAID_ASSIGNMENT, 'guard_name' => 'sanctum']);
         $markAsUnpaidAssignment = Permission::create(['name' => \App\Enums\PermissionEnum::MARK_AS_UNPAID_ASSIGNMENT, 'guard_name' => 'sanctum']);
+        $restoreDeletedAssignment = Permission::create(['name' => \App\Enums\PermissionEnum::RESTORE_DELETED_ASSIGNMENT, 'guard_name' => 'sanctum']);
+        $commentAssignment = Permission::create(['name' => \App\Enums\PermissionEnum::COMMENT_ASSIGNMENT, 'guard_name' => 'sanctum']);
 
         $createInvoice = Permission::create(['name' => \App\Enums\PermissionEnum::CREATE_INVOICE, 'guard_name' => 'sanctum']);
         $viewInvoice = Permission::create(['name' => \App\Enums\PermissionEnum::VIEW_INVOICE, 'guard_name' => 'sanctum']);
@@ -476,6 +478,9 @@ class RolesAndPermissionsSeeder extends Seeder
             $assignmentStatistics,
 
             $viewAssignment,
+            $deleteAssignment,
+            $restoreDeletedAssignment,
+            $commentAssignment,
 
             $viewInvoice,
             $generateInvoice,
@@ -842,6 +847,9 @@ class RolesAndPermissionsSeeder extends Seeder
             $resetUser,
 
             $viewAssignmentRequest,
+            $deleteAssignment,
+            $restoreDeletedAssignment,
+            $commentAssignment,
 
             $viewAssignment,
             $generateAssignment,
@@ -1238,6 +1246,8 @@ class RolesAndPermissionsSeeder extends Seeder
             $cancelAssignment,
             $generateAssignment,
             $assignmentStatistics,
+            $deleteAssignment,
+            $commentAssignment,
 
             $viewShock,
             $createShock,

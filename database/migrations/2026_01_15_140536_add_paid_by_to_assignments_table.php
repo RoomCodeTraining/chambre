@@ -27,6 +27,12 @@ return new class extends Migration
             if (!Schema::hasColumn('assignments', 'unpaid_reason')) {
                 $table->string('unpaid_reason')->nullable();
             }
+            if (!Schema::hasColumn('assignments', 'deletion_reason')) {
+                $table->text('deletion_reason')->nullable();
+            }
+            if (!Schema::hasColumn('assignments', 'comment')) {
+                $table->text('comment')->nullable();
+            }
         });
 
         // Add foreign key constraints if they don't exist
@@ -99,6 +105,12 @@ return new class extends Migration
             }
             if (Schema::hasColumn('assignments', 'unpaid_reason')) {
                 $table->dropColumn('unpaid_reason');
+            }
+            if (Schema::hasColumn('assignments', 'deletion_reason')) {
+                $table->dropColumn('deletion_reason');
+            }
+            if (Schema::hasColumn('assignments', 'comment')) {
+                $table->dropColumn('comment');
             }
         });
     }
