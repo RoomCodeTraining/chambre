@@ -107,7 +107,7 @@
                                 @if($assignment?->additionalInsurer)
                                     <b> : 
                                         <span style="padding-left: 10px;">
-                                            {{ $assignment?->insurer?->name ?? '' }} / {{ $assignment?->client?->name ?? '' }}
+                                            {{ $assignment?->insurer?->name ?? '' }} ({{ $assignment?->additionalInsurer?->name ?? '' }}) / {{ $assignment?->client?->name ?? '' }}
                                         </span>
                                     </b><br>
                                     <b style="text-decoration: underline;">Adresse</b> <b> : <span style="padding-left: 10px;">{{ $assignment?->insurer?->address ?? '' }}</span></b><br>
