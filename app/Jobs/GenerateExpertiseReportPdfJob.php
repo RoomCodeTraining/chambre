@@ -194,10 +194,19 @@ class GenerateExpertiseReportPdfJob implements ShouldQueue
         $numberToWords = new NumberToWords();
         $numberTransformer = $numberToWords->getNumberTransformer('fr');
 
+        $is_validated = false;
+        if($assignment->assignmentType->code == AssignmentTypeEnum::INSURER->value && $assignment->status->code == StatusEnum::VALIDATED->value){
+            $is_validated = true;
+        }
+
+        if($assignment->assignmentType->code != AssignmentTypeEnum::INSURER->value && $assignment->status->code == StatusEnum::PAID->value){
+            $is_validated = true;
+        }
+
         if($assignment->expertise_type_id == ExpertiseType::where('code', ExpertiseTypeEnum::EVALUATION)->first()->id || $assignment->assignment_type_id == AssignmentType::where('code', AssignmentTypeEnum::EVALUATION)->first()->id){
-            $pdf = PDF::loadView('expertise_report/evaluation/index',compact('assignment','shocks','receipts','other_costs','logo','check_icon','qr_code','wbg','cover_photo','photos_before_works','photos_during_works','photos_after_works','numberTransformer','evaluations','ascertainments','total_payment','ceo'));
+            $pdf = PDF::loadView('expertise_report/evaluation/index',compact('assignment','shocks','receipts','other_costs','logo','check_icon','qr_code','wbg','cover_photo','photos_before_works','photos_during_works','photos_after_works','numberTransformer','evaluations','ascertainments','total_payment','ceo','is_validated'));
         } else {
-            $pdf = PDF::loadView('expertise_report/standard/index',compact('assignment','shocks','receipts','other_costs','logo','check_icon','wbg','qr_code','cover_photo','photos_before_works','photos_during_works','photos_after_works','numberTransformer','evaluations','ascertainments','total_payment','ceo'));
+            $pdf = PDF::loadView('expertise_report/standard/index',compact('assignment','shocks','receipts','other_costs','logo','check_icon','wbg','qr_code','cover_photo','photos_before_works','photos_during_works','photos_after_works','numberTransformer','evaluations','ascertainments','total_payment','ceo','is_validated'));
         }
         $pdf->set_option('isHtml5ParserEnabled', false);
         $pdf->set_option('isRemoteEnabled', true);

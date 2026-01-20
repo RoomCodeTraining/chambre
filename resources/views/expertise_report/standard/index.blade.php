@@ -468,16 +468,8 @@
             </tbody>
         </table>
         
-        @if($assignment?->status_id == 3 || $assignment?->status_id == 4 || $assignment?->status_id == 5 || $assignment?->status_id == 6 || $assignment?->status_id == 7 || $assignment?->status_id == 8)
+        @if($is_validated == false)
             <div class="watermark">Provisoire</div>
-        @endif
-
-        @if($assignment?->status_id == 11)
-            <div class="watermark">Annulé</div>
-        @endif
-
-        @if($assignment?->status_id == 13)
-            <div class="watermark">Supprimé</div>
         @endif
 
         <div style="page-break-after: always;"></div>

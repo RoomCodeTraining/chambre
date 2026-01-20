@@ -35,6 +35,7 @@ class RolesAndPermissionsSeeder extends Seeder
 
         $createAssignment = Permission::create(['name' => \App\Enums\PermissionEnum::CREATE_ASSIGNMENT, 'guard_name' => 'sanctum']);
         $viewAssignment = Permission::create(['name' => \App\Enums\PermissionEnum::VIEW_ASSIGNMENT, 'guard_name' => 'sanctum']);
+        $viewExpiredAssignment = Permission::create(['name' => \App\Enums\PermissionEnum::VIEW_EXPIRED_ASSIGNMENT, 'guard_name' => 'sanctum']);
         $updateAssignment = Permission::create(['name' => \App\Enums\PermissionEnum::UPDATE_ASSIGNMENT, 'guard_name' => 'sanctum']);
         $realizeAssignment = Permission::create(['name' => \App\Enums\PermissionEnum::REALIZE_ASSIGNMENT, 'guard_name' => 'sanctum']);
         $updateRealizedAssignment = Permission::create(['name' => \App\Enums\PermissionEnum::UPDATE_REALIZED_ASSIGNMENT, 'guard_name' => 'sanctum']);
@@ -478,6 +479,7 @@ class RolesAndPermissionsSeeder extends Seeder
             $assignmentStatistics,
 
             $viewAssignment,
+            $viewExpiredAssignment,
             $deleteAssignment,
             $restoreDeletedAssignment,
             $commentAssignment,
@@ -1225,6 +1227,7 @@ class RolesAndPermissionsSeeder extends Seeder
 
             $createAssignment,
             $viewAssignment,
+            $viewExpiredAssignment,
             $updateAssignment,
             $createQuoteAssignment,
             $validateQuoteAssignment,
@@ -1488,6 +1491,7 @@ class RolesAndPermissionsSeeder extends Seeder
 
             $createAssignment,
             $viewAssignment,
+            $viewExpiredAssignment,
             $updateAssignment,
             $createQuoteAssignment,
             $validateQuoteAssignment,
@@ -1743,6 +1747,7 @@ class RolesAndPermissionsSeeder extends Seeder
 
             $createAssignment,
             $viewAssignment,
+            $viewExpiredAssignment,
             $updateAssignment,
             $createQuoteAssignment,
             $validateQuoteAssignment,
@@ -1986,6 +1991,7 @@ class RolesAndPermissionsSeeder extends Seeder
 
             $createAssignment,
             $viewAssignment,
+            $viewExpiredAssignment,
             $updateAssignment,
             $createQuoteAssignment,
             $validateQuoteAssignment,
@@ -2381,6 +2387,7 @@ class RolesAndPermissionsSeeder extends Seeder
 
             $createAssignment,
             $viewAssignment,
+            $viewExpiredAssignment,
             $updateAssignment,
             $realizeAssignment,
             $updateRealizedAssignment,
