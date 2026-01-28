@@ -195,11 +195,11 @@ class GenerateExpertiseReportPdfJob implements ShouldQueue
         $numberTransformer = $numberToWords->getNumberTransformer('fr');
 
         $is_validated = false;
-        if($assignment->assignmentType->code == AssignmentTypeEnum::INSURER->value && $assignment->status->code == StatusEnum::VALIDATED->value){
+        if(($assignment->assignmentType->code == AssignmentTypeEnum::INSURER->value || $assignment->assignmentType->code == AssignmentTypeEnum::EVALUATION->value || $assignment->assignmentType->code == AssignmentTypeEnum::AGAINST_EXPERTISE->value) && $assignment->status->code == StatusEnum::VALIDATED->value){
             $is_validated = true;
         }
 
-        if($assignment->assignmentType->code != AssignmentTypeEnum::INSURER->value && $assignment->status->code == StatusEnum::PAID->value){
+        if(($assignment->assignmentType->code != AssignmentTypeEnum::INSURER->value && $assignment->assignmentType->code != AssignmentTypeEnum::EVALUATION->value && $assignment->assignmentType->code != AssignmentTypeEnum::AGAINST_EXPERTISE->value) && $assignment->status->code == StatusEnum::PAID->value){
             $is_validated = true;
         }
 

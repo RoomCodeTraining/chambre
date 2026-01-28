@@ -1530,7 +1530,8 @@ class AssignmentController extends Controller
                 'kilometric_incidence' => $kilometric_incidence,
                 'market_incidence' => $market_incidence,
                 'depreciation_rate' => $depreciation_rate,
-                'vehicle_market_value' =>  ceil($result->vehicle_new_value - ($result->vehicle_new_value * $depreciation_rate / 100))
+                'vehicle_market_value' =>  ceil($result->vehicle_new_value - ($result->vehicle_new_value * $depreciation_rate / 100)),
+                'vehicle_market_value_rounded' =>  ceil($result->vehicle_new_value - ($result->vehicle_new_value * $depreciation_rate / 100)),
             ];
 
         }
@@ -2148,6 +2149,7 @@ class AssignmentController extends Controller
                     'market_incidence' => $request->evaluations['market_incidence'],
                     'depreciation_rate' => $request->evaluations['depreciation_rate'],
                     'vehicle_market_value' => $request->evaluations['vehicle_market_value'],
+                    'vehicle_market_value_rounded' => $request->evaluations['vehicle_market_value_rounded'],
                 ];
             } else {
                 $evaluations = [
@@ -2163,6 +2165,7 @@ class AssignmentController extends Controller
                     'market_incidence' => $market_incidence,
                     'depreciation_rate' => $depreciation_rate,
                     'vehicle_market_value' =>  ceil($result->vehicle_new_value - ($result->vehicle_new_value * $depreciation_rate / 100)),
+                    'vehicle_market_value_rounded' =>  ceil($result->vehicle_new_value - ($result->vehicle_new_value * $depreciation_rate / 100)),
                 ];
             }
         }
@@ -2856,6 +2859,7 @@ class AssignmentController extends Controller
                         'market_incidence' => $market_incidence ?? 0,
                         'depreciation_rate' => $depreciation_rate ?? 0,
                         'vehicle_market_value' =>  ceil($result->vehicle_new_value - ($result->vehicle_new_value * $depreciation_rate / 100)) ?? 0,
+                        'vehicle_market_value_rounded' =>  ceil($result->vehicle_new_value - ($result->vehicle_new_value * $depreciation_rate / 100)),
                     ];
                 }
             }
@@ -2874,6 +2878,7 @@ class AssignmentController extends Controller
                     'market_incidence' => $request->evaluations['market_incidence'],
                     'depreciation_rate' => $request->evaluations['depreciation_rate'] ?? 0,
                     'vehicle_market_value' => $request->evaluations['vehicle_market_value'],
+                    'vehicle_market_value_rounded' => $request->evaluations['vehicle_market_value_rounded'],
                 ];
             }
             
@@ -3461,6 +3466,7 @@ class AssignmentController extends Controller
                     'market_incidence' => $market_incidence ?? 0,
                     'depreciation_rate' => $depreciation_rate ?? 0,
                     'vehicle_market_value' =>  ceil($result->vehicle_new_value - ($result->vehicle_new_value * $depreciation_rate / 100)),
+                    'vehicle_market_value_rounded' =>  ceil($result->vehicle_new_value - ($result->vehicle_new_value * $depreciation_rate / 100)),
                 ];
 
                 $assignment->update([
@@ -3496,6 +3502,93 @@ class AssignmentController extends Controller
         dispatch(new GenerateInformationReportPdfJob($assignment));
 
         return $this->responseSuccess('Rapport d\'expertise généré avec succès', new AssignmentResource($assignment));
+    }
+
+    /**
+     * Calculer le taux de dépréciation d'un dossier
+     *
+     * @authenticated
+     */
+    public function calculate_depreciation_rate($id): JsonResponse
+    {
+        $assignment = Assignment::findOrFail($id);
+
+        $vehicle = Vehicle::with('vehicleGenre', 'vehicleEnergy')->findOrFail($assignment->vehicle_id);
+
+        if($vehicle->vehicleGenre && $vehicle->vehicleEnergy && $vehicle->new_market_value > 0 && $vehicle->mileage > 0 && $vehicle->first_entry_into_circulation_date && $assignment->expertise_date){
+            $marketValueService = app(MarketValueService::class);
+            $result = json_decode(json_encode($marketValueService->calculateTheoreticalMarketValue($vehicle->vehicleGenre->id, $vehicle->vehicleEnergy->id, $vehicle->new_market_value, $vehicle->mileage, $vehicle->first_entry_into_circulation_date, $assignment->expertise_date)));
+            
+            $kilometric_incidence = 0;
+            $is_up = null;
+            if ($vehicle->vehicleEnergy->code == 'VE01') {
+                $max_mileage_essence_per_month = $vehicle->vehicleGenre->max_mileage_essence_per_year / 12;
+                $kilometric_incidence = (($max_mileage_essence_per_month * $result->month_diff) - $vehicle->mileage) * 25;
+            } else {
+                $max_mileage_diesel_per_month = $vehicle->vehicleGenre->max_mileage_diesel_per_year / 12;
+                $kilometric_incidence = (($max_mileage_diesel_per_month * $result->month_diff) -$vehicle->mileage) * 40;
+            }
+
+            if ($kilometric_incidence > 0) {
+                $is_up = true;
+            } else {
+                $is_up = false;
+                $kilometric_incidence = -1 * $kilometric_incidence;
+            }
+
+            $expertise_date = $result->expertise_date;
+            $first_entry_into_circulation_date = $result->first_entry_into_circulation_date;
+            $vehicle_age = $result->vehicle_age;
+            $theorical_depreciation_rate = $result->theorical_depreciation_rate;
+            $theorical_vehicle_market_value = $result->theorical_vehicle_market_value;
+
+
+            if($assignment->evaluations){
+                $assignment_evaluations = json_decode($assignment->evaluations);
+                $less_value_work = $assignment->total_amount;
+                $market_incidence = ceil($result->vehicle_new_value * $assignment_evaluations->market_incidence_rate / 100);
+
+                if($kilometric_incidence > ($theorical_vehicle_market_value / 2)){
+                    $kilometric_incidence = $theorical_vehicle_market_value / 2;
+                }
+
+                if($assignment->assignment_type_id == AssignmentType::where('code', AssignmentTypeEnum::EVALUATION)->first()->id){
+                    $vehicle_market_value = $is_up ? $theorical_vehicle_market_value + $market_incidence + $kilometric_incidence - $less_value_work : $theorical_vehicle_market_value + $market_incidence - $kilometric_incidence - $less_value_work;
+                } else {
+                    $vehicle_market_value = $is_up ? $theorical_vehicle_market_value + $market_incidence + $kilometric_incidence : $theorical_vehicle_market_value + $market_incidence - $kilometric_incidence;
+                }
+                $depreciation_rate = $result->vehicle_new_value > 0 ? number_format(100 - ($vehicle_market_value * 100 / $result->vehicle_new_value), 2, ',', '') : 0;
+                $depreciation_rate = floatval(str_replace(',', '.', $depreciation_rate));
+
+                $evaluations = [
+                    'vehicle_age' => $result->vehicle_age,
+                    'diff_year' => $result->year_diff,
+                    'diff_month' => $result->month_diff,
+                    'theorical_depreciation_rate' => $theorical_depreciation_rate,
+                    'theorical_vehicle_market_value' => $theorical_vehicle_market_value,
+                    'market_incidence_rate' => $assignment_evaluations->market_incidence_rate ?? 0,
+                    'less_value_work' => $less_value_work ?? 0,
+                    'is_up' => $is_up,
+                    'kilometric_incidence' => $kilometric_incidence,
+                    'market_incidence' => $market_incidence ?? 0,
+                    'depreciation_rate' => $depreciation_rate ?? 0,
+                    'vehicle_market_value' =>  ceil($result->vehicle_new_value - ($result->vehicle_new_value * $depreciation_rate / 100)),
+                    'vehicle_market_value_rounded' =>  ceil($result->vehicle_new_value - ($result->vehicle_new_value * $depreciation_rate / 100)),
+                ];
+
+                $assignment->update([
+                    'evaluations' => json_encode($evaluations),
+                ]);
+
+                dispatch(new GenerateExpertiseReportPdfJob($assignment));
+
+                return $this->responseSuccess('Taux de dépréciation calculé avec succès', null);
+
+            }
+        } else {
+            return $this->responseUnprocessable('Données invalides pour le calcul du taux de dépréciation. Assurez-vous que le véhicule a un genre, une énergie, une valeur neuve, une kilométrage et une date d\'expertise valides.', null);
+        }
+
     }
 
      /**

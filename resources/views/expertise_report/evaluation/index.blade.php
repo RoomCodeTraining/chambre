@@ -704,6 +704,16 @@
                         </span>
                     </th>
                 </tr>
+                <tr style="border: 1px solid; font-size: 12px; text-align: left;">
+                    <th style="border: 1px solid; font-size: 12px;">
+                        VALEUR VENALE ARRONDIE / VALEUR MARCHANDE
+                    </th>
+                    <th style="border: 1px solid; font-size: 12px;">
+                        <span class="text-danger">
+                            {{number_format($evaluations?->vehicle_market_value_rounded ?? 0, 0, ',', ' ')}} FCFA
+                        </span>
+                    </th>
+                </tr>
             </tbody>
         </table>
 

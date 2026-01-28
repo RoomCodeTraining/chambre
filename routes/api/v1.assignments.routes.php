@@ -124,4 +124,7 @@ Route::middleware('auth:sanctum')->name('assignments.')->group(function () {
 
     /** @uses AssignmentController::restore */
     Route::post('/restore', [AssignmentController::class, 'restore'])->name('restore');
+
+    /** @uses AssignmentController::calculate_depreciation_rate */
+    Route::get('/calculate-depreciation-rate/{assignment}', [AssignmentController::class, 'calculate_depreciation_rate'])->name('calculate-depreciation-rate');
 }); 
