@@ -26,6 +26,7 @@ class CreateEntityAction
                 'email' => $data['email'] ?? null,
                 'telephone' => $data['telephone'] ?? null,
                 'address' => $data['address'] ?? null,
+                'taxpayer_account_number' => $data['taxpayer_account_number'] ?? null,
                 'service_description' => $data['service_description'] ?? null,
                 'footer_description' => $data['footer_description'] ?? null,
                 'entity_type_id' => EntityType::firstWhere('code', $data['entity_type_code'])->id,

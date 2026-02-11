@@ -3675,7 +3675,8 @@ class AssignmentController extends Controller
             'deleted_by' => auth()->user()->id,
             'deleted_at' => Carbon::now(),
             'deletion_reason' => $request->deletion_reason,
-            'status_id' => Status::where('code', StatusEnum::DELETED)->first()->id,
+            'reference' => $assignment->reference.'-OLD',
+            // 'status_id' => Status::where('code', StatusEnum::DELETED)->first()->id,
             'updated_by' => auth()->user()->id,
         ]);
 

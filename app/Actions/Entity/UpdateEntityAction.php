@@ -14,6 +14,7 @@ class UpdateEntityAction
             'email' => $data['email'],
             'telephone' => $data['telephone'],
             'address' => $data['address'],
+            'taxpayer_account_number' => $data['taxpayer_account_number'],
             'service_description' => $data['service_description'],
             'footer_description' => $data['footer_description'],
         ]);

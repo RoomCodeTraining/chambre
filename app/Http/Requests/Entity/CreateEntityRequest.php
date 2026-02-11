@@ -23,6 +23,7 @@ class CreateEntityRequest extends FormRequest
             'email' => ['nullable', 'regex:' . self::emailRegex(), 'string', 'max:255', 'unique:entities,email'],
             'telephone' => ['nullable', 'string', 'max:255'],
             'entity_type_code' => ['required', 'exists:entity_types,code'],
+            'taxpayer_account_number' => ['nullable', 'string'],
             'service_description' => ['nullable', 'string'],
             'footer_description' => ['nullable', 'string'],
             'prefix' => ['nullable', 'required_if:entity_type_code,'.EntityType::where('code', EntityTypeEnum::INSURER)->first()->hashId, 'string', 'max:255'],
