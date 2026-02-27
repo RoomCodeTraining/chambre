@@ -5,7 +5,8 @@
         <meta name="robots" content="noindex, nofollow">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Rapport d'expertise {{$assignment?->reference ?? ''}} / {{$assignment?->expertFirm?->name ?? ''}}</title>
+        <!-- <title>Rapport d'expertise {{$assignment?->reference ?? ''}} / {{$assignment?->expertFirm?->name ?? ''}}</title> -->
+        <title>Rapport d'expertise</title>
 
         <!-- Fonts -->
         <link rel="stylesheet" href="{{ asset('assets/font-awesome/css/font-awesome.min.css') }}">
