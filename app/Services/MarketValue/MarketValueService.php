@@ -99,7 +99,7 @@ class MarketValueService
                 'vehicle_energy' => $vehicle_energy,
             ];
         } else {
-            $theorical_depreciation_rate = 85;
+            $theorical_depreciation_rate = 90;
             $theorical_vehicle_market_value = ceil($vehicle_new_value - ($vehicle_new_value * $theorical_depreciation_rate / 100));
             return [
                 'expertise_date' => $expertise_date,
