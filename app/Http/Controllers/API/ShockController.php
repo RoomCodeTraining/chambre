@@ -104,8 +104,8 @@ class ShockController extends Controller
                 $shock = Shock::create([
                     'assignment_id' => $assignment->id,
                     'shock_point_id' => $data['shock_point_id'],
-                    'paint_type_id' => $data['paint_type_id'] ?? null,
-                    'hourly_rate_id' => $data['hourly_rate_id'] ?? null,
+                    'paint_type_id' => $data['paint_type_id'] ?? PaintType::where('code', PaintTypeEnum::ORDINARY)->first()->id,
+                    'hourly_rate_id' => $data['hourly_rate_id'] ?? HourlyRate::where('value', HourlyRateEnum::ONE)->first()->id,
                     'with_tax' => ($data['with_tax'] ?? false),
                     'position' => $shock_position,
                     'is_before_quote' => $quote_validated ? 0 : 1,
