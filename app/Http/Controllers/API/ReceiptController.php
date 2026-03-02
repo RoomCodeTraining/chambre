@@ -75,6 +75,11 @@ class ReceiptController extends Controller
                         // $amount = $assignment->market_value - $assignment->salvage_value + $assignment->other_cost_amount;
                         $amount = $assignment->market_value;
                     }
+
+                    if (is_null($amount)) {
+                        return $this->responseUnprocessable("La valeur vénale n'est pas renseignée.");
+                    }
+
                     $workFee = WorkFee::where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->where('param_1', '<', $amount)->where('param_2', '>=', $amount)->first();
                     if(!$workFee){
                         $workFee = WorkFee::where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->orderBy('param_2', 'desc')->first();
@@ -179,6 +184,11 @@ class ReceiptController extends Controller
                         // $amount = $assignment->market_value - $assignment->salvage_value + $assignment->other_cost_amount;
                         $amount = $assignment->market_value;
                     }
+
+                    if (is_null($amount)) {
+                        return $this->responseUnprocessable("La valeur vénale n'est pas renseignée.");
+                    }
+
                     $workFee = WorkFee::where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->where('param_1', '<', $amount)->where('param_2', '>=', $amount)->first();
                     if(!$workFee){
                         $workFee = WorkFee::where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->orderBy('param_2', 'desc')->first();
@@ -263,6 +273,11 @@ class ReceiptController extends Controller
                     // $amount = $assignment->market_value - $assignment->salvage_value + $assignment->other_cost_amount;
                     $amount = $assignment->market_value;
                 }
+
+                if (is_null($amount)) {
+                    return $this->responseUnprocessable("La valeur vénale n'est pas renseignée.");
+                }
+                
                 $workFee = WorkFee::where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->where('param_1', '<', $amount)->where('param_2', '>=', $amount)->first();
                 if(!$workFee){
                     $workFee = WorkFee::where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->orderBy('param_2', 'desc')->first();
