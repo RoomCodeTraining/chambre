@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('offers', function (Blueprint $table) {
             $table->bigIncrements('id')->unsigned();
             $table->string('reference')->unique()->index();
+            $table->string('work_duration')->nullable();
             $table->decimal('shock_amount_excluding_tax', 18, 2)->nullable();
             $table->decimal('shock_amount_tax', 18, 2)->nullable();
             $table->decimal('shock_amount', 18, 2)->nullable();

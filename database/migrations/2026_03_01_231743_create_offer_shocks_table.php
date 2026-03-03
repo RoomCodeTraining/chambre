@@ -19,6 +19,9 @@ return new class extends Migration
             $table->boolean('is_before_quote')->default(false);
             $table->boolean('is_validated')->default(false);
 
+            $table->decimal('shock_work_in_order_amount_excluding_tax', 18, 2)->nullable();
+            $table->decimal('shock_work_in_order_amount_tax', 18, 2)->nullable();
+            $table->decimal('shock_work_in_order_amount', 18, 2)->nullable();
             $table->decimal('shock_work_obsolescence_amount_excluding_tax', 18, 2)->nullable();
             $table->decimal('shock_work_obsolescence_amount_tax', 18, 2)->nullable();
             $table->decimal('shock_work_obsolescence_amount', 18, 2)->nullable();

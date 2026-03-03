@@ -113,13 +113,13 @@ class ShockWorkController extends Controller
         $shockWorks = $request->get('shock_works');
 
         foreach ($shockWorks as $item) {
-            $discount = $shockWork['discount'];
-            $discount_amount_excluding_tax = ceil(($shockWork['discount'] * $shockWork['amount']) / 100);
+            $discount = $item['discount'];
+            $discount_amount_excluding_tax = ceil(($item['discount'] * $item['amount']) / 100);
             $discount_amount_tax = ceil((config('services.settings.tax_rate') * $discount_amount_excluding_tax) / 100);
             $discount_amount = ceil($discount_amount_excluding_tax + $discount_amount_tax);
 
-            $obsolescence_rate = $shockWork['obsolescence_rate'];
-            $obsolescence_amount_excluding_tax = ceil(($shockWork['obsolescence_rate'] * ($shockWork['amount'] - $discount_amount_excluding_tax)) / 100);
+            $obsolescence_rate = $item['obsolescence_rate'];
+            $obsolescence_amount_excluding_tax = ceil(($item['obsolescence_rate'] * ($item['amount'] - $discount_amount_excluding_tax)) / 100);
             $obsolescence_amount_tax = ceil((config('services.settings.tax_rate') * $obsolescence_amount_excluding_tax) / 100);
             $obsolescence_amount = ceil($obsolescence_amount_excluding_tax + $obsolescence_amount_tax);
 

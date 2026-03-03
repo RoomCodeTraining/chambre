@@ -272,6 +272,10 @@ class ShockController extends Controller
                         $workforce_position++;
                     }
                 }
+
+                $total_in_order_amount_excluding_tax = ShockWork::where('shock_id', $shock->id)->where('in_order', true)->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->sum('new_amount_excluding_tax');
+                $total_in_order_amount_tax = ShockWork::where('shock_id', $shock->id)->where('in_order', true)->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->sum('new_amount_tax');
+                $total_in_order_amount = ShockWork::where('shock_id', $shock->id)->where('in_order', true)->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->sum('new_amount');
     
                 $total_obsolescence_amount_excluding_tax = ShockWork::where('shock_id', $shock->id)->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->sum('obsolescence_amount_excluding_tax');
                 $total_obsolescence_amount_tax = ShockWork::where('shock_id', $shock->id)->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->sum('obsolescence_amount_tax');
