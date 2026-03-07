@@ -1,20 +1,20 @@
-name: 'Gestion des clients'
+name: "Gestion des demandes d'expertise"
 description: |-
 
-  APIs pour la gestion des clients
+  APIs pour la gestion des demandes d'expertise
 endpoints:
   -
     httpMethods:
       - GET
-    uri: api/v1/clients
+    uri: api/v1/assignment-requests
     metadata:
-      groupName: 'Gestion des clients'
+      groupName: "Gestion des demandes d'expertise"
       groupDescription: |-
 
-        APIs pour la gestion des clients
+        APIs pour la gestion des demandes d'expertise
       subgroup: ''
       subgroupDescription: ''
-      title: 'Lister tous les clients'
+      title: "Lister toutes les demandes d'expertise"
       description: ''
       authenticated: true
       deprecated: false
@@ -44,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 4khaegda8V5bZf6Dc13E6Pv'
+      - 'Bearer 4k5f8agV6eZ6bvdDcP3ha1E'
     controller: null
     method: null
     route: null
@@ -52,91 +52,123 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/v1/clients
+    uri: api/v1/assignment-requests
     metadata:
-      groupName: 'Gestion des clients'
+      groupName: "Gestion des demandes d'expertise"
       groupDescription: |-
 
-        APIs pour la gestion des clients
+        APIs pour la gestion des demandes d'expertise
       subgroup: ''
       subgroupDescription: ''
-      title: 'Ajouter un client'
+      title: "Créer une demande d'expertise"
       description: ''
       authenticated: true
       deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
+      Content-Type: multipart/form-data
       Accept: application/json
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      name:
-        name: name
-        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
-        required: true
-        example: rsrhwjcqltrg
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      email:
-        name: email
-        description: 'Must match the regex /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/.'
+      vehicle_id:
+        name: vehicle_id
+        description: 'The <code>id</code> of an existing record in the vehicles table.'
         required: false
-        example: 'b@4k.u{2,}'
+        example: null
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
-      phone_1:
-        name: phone_1
-        description: 'Le texte de value ne peut pas contenir plus de 20 caractères.'
+      insurer_relationship_id:
+        name: insurer_relationship_id
+        description: 'The <code>id</code> of an existing record in the insurer_relationships table.'
         required: false
-        example: w
+        example: null
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
-      phone_2:
-        name: phone_2
-        description: 'Le texte de value ne peut pas contenir plus de 20 caractères.'
+      repairer_relationship_id:
+        name: repairer_relationship_id
+        description: 'The <code>id</code> of an existing record in the repairer_relationships table.'
         required: false
-        example: xkrxejsuk
+        example: null
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
-      address:
-        name: address
-        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
+      policy_number:
+        name: policy_number
+        description: ''
         required: false
-        example: xiofvddresfuawxervdrtdxkh
+        example: beatae
         type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      claim_number:
+        name: claim_number
+        description: ''
+        required: false
+        example: ut
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      claim_date:
+        name: claim_date
+        description: 'Must be a valid date in the format <code>Y-m-d</code>.'
+        required: false
+        example: '2026-03-07'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      expertise_place:
+        name: expertise_place
+        description: ''
+        required: false
+        example: reiciendis
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      photos:
+        name: photos
+        description: 'Le champ value doit être une image.'
+        required: false
+        example:
+          - null
+        type: 'file[]'
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      name: rsrhwjcqltrg
-      email: 'b@4k.u{2,}'
-      phone_1: w
-      phone_2: xkrxejsuk
-      address: xiofvddresfuawxervdrtdxkh
-    fileParameters: []
+      policy_number: beatae
+      claim_number: ut
+      claim_date: '2026-03-07'
+      expertise_place: reiciendis
+    fileParameters:
+      photos:
+        - null
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 1466Z3VaghEa5bvd8fDcPek'
+      - 'Bearer Vvc46ek186ZPDE5bfga3dah'
     controller: null
     method: null
     route: null
@@ -144,15 +176,15 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: 'api/v1/clients/{id}'
+    uri: 'api/v1/assignment-requests/{assignment_request}'
     metadata:
-      groupName: 'Gestion des clients'
+      groupName: "Gestion des demandes d'expertise"
       groupDescription: |-
 
-        APIs pour la gestion des clients
+        APIs pour la gestion des demandes d'expertise
       subgroup: ''
       subgroupDescription: ''
-      title: 'Afficher un client'
+      title: "Afficher une demande d'expertise"
       description: ''
       authenticated: true
       deprecated: false
@@ -162,18 +194,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      id:
-        name: id
-        description: 'The ID of the client.'
+      assignment_request:
+        name: assignment_request
+        description: ''
         required: true
-        example: vel
+        example: quae
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: vel
+      assignment_request: quae
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -193,7 +225,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Z63fPVa5hbagD4d1ckv6Ee8'
+      - 'Bearer h346caekd58VafP6ZvED1bg'
     controller: null
     method: null
     route: null
@@ -201,15 +233,15 @@ endpoints:
   -
     httpMethods:
       - PUT
-    uri: 'api/v1/clients/{id}'
+    uri: 'api/v1/assignment-requests/{assignment_request}'
     metadata:
-      groupName: 'Gestion des clients'
+      groupName: "Gestion des demandes d'expertise"
       groupDescription: |-
 
-        APIs pour la gestion des clients
+        APIs pour la gestion des demandes d'expertise
       subgroup: ''
       subgroupDescription: ''
-      title: 'Mettre à jour un client'
+      title: "Mettre à jour une demande d'expertise"
       description: ''
       authenticated: true
       deprecated: false
@@ -219,121 +251,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      id:
-        name: id
-        description: 'The ID of the client.'
+      assignment_request:
+        name: assignment_request
+        description: ''
         required: true
-        example: dolorum
+        example: tempora
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: dolorum
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      name:
-        name: name
-        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
-        required: true
-        example: pdejwapzdsnn
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      email:
-        name: email
-        description: 'Must match the regex /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/. Le texte de value ne peut pas contenir plus de 255 caractères.'
-        required: false
-        example: cody.monahan@example.com
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: true
-        custom: []
-      phone_1:
-        name: phone_1
-        description: 'Le texte de value ne peut pas contenir plus de 20 caractères.'
-        required: false
-        example: ziecitoi
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: true
-        custom: []
-      phone_2:
-        name: phone_2
-        description: 'Le texte de value ne peut pas contenir plus de 20 caractères.'
-        required: false
-        example: lcxxigt
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: true
-        custom: []
-      address:
-        name: address
-        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
-        required: false
-        example: ueucexfbtwrxznuwym
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: true
-        custom: []
-    cleanBodyParameters:
-      name: pdejwapzdsnn
-      email: cody.monahan@example.com
-      phone_1: ziecitoi
-      phone_2: lcxxigt
-      address: ueucexfbtwrxznuwym
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer dbhD64EVkeag8c1v5af3ZP6'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - DELETE
-    uri: 'api/v1/clients/{id}'
-    metadata:
-      groupName: 'Gestion des clients'
-      groupDescription: |-
-
-        APIs pour la gestion des clients
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Supprimer un client'
-      description: ''
-      authenticated: true
-      deprecated: false
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      id:
-        name: id
-        description: 'The ID of the client.'
-        required: true
-        example: cupiditate
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-    cleanUrlParameters:
-      id: cupiditate
+      assignment_request: tempora
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -344,7 +273,232 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer P6bd1f46kaDh8Zv3VEecg5a'
+      - 'Bearer fv56VkaPb4ahZ3dg8ceE6D1'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/assignment-requests/{assignment_request}'
+    metadata:
+      groupName: "Gestion des demandes d'expertise"
+      groupDescription: |-
+
+        APIs pour la gestion des demandes d'expertise
+      subgroup: ''
+      subgroupDescription: ''
+      title: "Supprimer une demande d'expertise"
+      description: ''
+      authenticated: true
+      deprecated: false
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      assignment_request:
+        name: assignment_request
+        description: ''
+        required: true
+        example: sit
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      assignment_request: sit
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer acg6aDbh5dfe3vEkP14V68Z'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/assignment-requests/{assignment_request}/reject'
+    metadata:
+      groupName: "Gestion des demandes d'expertise"
+      groupDescription: |-
+
+        APIs pour la gestion des demandes d'expertise
+      subgroup: ''
+      subgroupDescription: ''
+      title: "Rejeter la demande d'expertise"
+      description: ''
+      authenticated: true
+      deprecated: false
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      assignment_request:
+        name: assignment_request
+        description: ''
+        required: true
+        example: sapiente
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      assignment_request: sapiente
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      rejection_reason:
+        name: rejection_reason
+        description: ''
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 5dfP4v6De3cgZb8aa61VEhk'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/assignment-requests/{assignment_request}/cancel'
+    metadata:
+      groupName: "Gestion des demandes d'expertise"
+      groupDescription: |-
+
+        APIs pour la gestion des demandes d'expertise
+      subgroup: ''
+      subgroupDescription: ''
+      title: "Annuler la demande d'expertise"
+      description: ''
+      authenticated: true
+      deprecated: false
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      assignment_request:
+        name: assignment_request
+        description: ''
+        required: true
+        example: molestias
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      assignment_request: molestias
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      cancellation_reason:
+        name: cancellation_reason
+        description: ''
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer be481ZaEck6h6dVDvPa3gf5'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/v1/assignment-requests/{assignment_request}/add-photos'
+    metadata:
+      groupName: "Gestion des demandes d'expertise"
+      groupDescription: |-
+
+        APIs pour la gestion des demandes d'expertise
+      subgroup: ''
+      subgroupDescription: ''
+      title: "Ajouter des photos à une demande d'expertise"
+      description: ''
+      authenticated: true
+      deprecated: false
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: multipart/form-data
+      Accept: application/json
+    urlParameters:
+      assignment_request:
+        name: assignment_request
+        description: ''
+        required: true
+        example: ea
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      assignment_request: ea
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      photos:
+        name: photos
+        description: 'Le champ value doit être une image.'
+        required: true
+        example:
+          - null
+        type: 'file[]'
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanBodyParameters: []
+    fileParameters:
+      photos:
+        - null
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer c6V3vkPEdfZeab658D4a1gh'
     controller: null
     method: null
     route: null

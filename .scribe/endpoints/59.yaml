@@ -1,16 +1,20 @@
-name: 'Statistiques du tableau de bord'
-description: ''
+name: 'Gestion des natures de sinistre'
+description: |-
+
+  APIs pour la gestion des natures de sinistre
 endpoints:
   -
     httpMethods:
       - GET
-    uri: api/v1/dashboard/users
+    uri: api/v1/claim-natures
     metadata:
-      groupName: 'Statistiques du tableau de bord'
-      groupDescription: ''
+      groupName: 'Gestion des natures de sinistre'
+      groupDescription: |-
+
+        APIs pour la gestion des natures de sinistre
       subgroup: ''
       subgroupDescription: ''
-      title: 'Afficher les statistiques des utilisateurs'
+      title: 'Lister toutes les natures de sinistre'
       description: ''
       authenticated: true
       deprecated: false
@@ -40,7 +44,77 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer cEgVeD438Pakdb6avf15Zh6'
+      - 'Bearer f183EeZ66bgaaDvhkd54cVP'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/claim-natures
+    metadata:
+      groupName: 'Gestion des natures de sinistre'
+      groupDescription: |-
+
+        APIs pour la gestion des natures de sinistre
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Créer une nature de sinistre'
+      description: ''
+      authenticated: true
+      deprecated: false
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      code:
+        name: code
+        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
+        required: true
+        example: acq
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      label:
+        name: label
+        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
+        required: true
+        example: uzspn
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      description:
+        name: description
+        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
+        required: false
+        example: 'Ea voluptas quod sequi eum.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+    cleanBodyParameters:
+      code: acq
+      label: uzspn
+      description: 'Ea voluptas quod sequi eum.'
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 8a3chkab6D1dgV5ev6P4fZE'
     controller: null
     method: null
     route: null
@@ -48,13 +122,15 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: api/v1/dashboard/assignments
+    uri: 'api/v1/claim-natures/{id}'
     metadata:
-      groupName: 'Statistiques du tableau de bord'
-      groupDescription: ''
+      groupName: 'Gestion des natures de sinistre'
+      groupDescription: |-
+
+        APIs pour la gestion des natures de sinistre
       subgroup: ''
       subgroupDescription: ''
-      title: 'Afficher les statistiques des dossiers'
+      title: 'Afficher une nature de sinistre'
       description: ''
       authenticated: true
       deprecated: false
@@ -63,8 +139,19 @@ endpoints:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the claim nature.'
+        required: true
+        example: distinctio
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      id: distinctio
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -84,21 +171,23 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer VkhaZ5vD1dagP468e3cEf6b'
+      - 'Bearer 3dgka5E4vDP6chefVab1Z68'
     controller: null
     method: null
     route: null
     custom: []
   -
     httpMethods:
-      - GET
-    uri: api/v1/dashboard/insurers
+      - PUT
+    uri: 'api/v1/claim-natures/{id}'
     metadata:
-      groupName: 'Statistiques du tableau de bord'
-      groupDescription: ''
+      groupName: 'Gestion des natures de sinistre'
+      groupDescription: |-
+
+        APIs pour la gestion des natures de sinistre
       subgroup: ''
       subgroupDescription: ''
-      title: "Afficher les statistiques des compagnies d'assurance"
+      title: 'Mettre à jour une nature de sinistre'
       description: ''
       authenticated: true
       deprecated: false
@@ -107,42 +196,68 @@ endpoints:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the claim nature.'
+        required: true
+        example: rerum
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      id: rerum
     queryParameters: []
     cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        status: 401
-        content: '{"message":"Unauthenticated."}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          access-control-allow-origin: '*'
-        description: null
+    bodyParameters:
+      label:
+        name: label
+        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
+        required: true
+        example: krpolgzlp
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
         custom: []
+      description:
+        name: description
+        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
+        required: false
+        example: 'Culpa nihil qui quia non voluptatem.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+    cleanBodyParameters:
+      label: krpolgzlp
+      description: 'Culpa nihil qui quia non voluptatem.'
+    fileParameters: []
+    responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 8e3EhgbDP41Zk56Vaaf6vdc'
+      - 'Bearer 5gPbcD3Zae6k46dh1Vfva8E'
     controller: null
     method: null
     route: null
     custom: []
   -
     httpMethods:
-      - GET
-    uri: api/v1/dashboard/repairers
+      - DELETE
+    uri: 'api/v1/claim-natures/{id}'
     metadata:
-      groupName: 'Statistiques du tableau de bord'
-      groupDescription: ''
+      groupName: 'Gestion des natures de sinistre'
+      groupDescription: |-
+
+        APIs pour la gestion des natures de sinistre
       subgroup: ''
       subgroupDescription: ''
-      title: 'Afficher les statistiques des réparateurs'
+      title: 'Supprimer une nature de sinistre'
       description: ''
       authenticated: true
       deprecated: false
@@ -151,72 +266,30 @@ endpoints:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the claim nature.'
+        required: true
+        example: saepe
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      id: saepe
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
-    responses:
-      -
-        status: 401
-        content: '{"message":"Unauthenticated."}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          access-control-allow-origin: '*'
-        description: null
-        custom: []
+    responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer E3VPdfg646h1e8kaca5ZvbD'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - GET
-    uri: api/v1/dashboard/vehicles
-    metadata:
-      groupName: 'Statistiques du tableau de bord'
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Afficher les statistiques des véhicules'
-      description: ''
-      authenticated: true
-      deprecated: false
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        status: 401
-        content: '{"message":"Unauthenticated."}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          access-control-allow-origin: '*'
-        description: null
-        custom: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer v1V6cZ5de4DfhEbP8k36gaa'
+      - 'Bearer 31cvE6bD8ek5adZahgf4P6V'
     controller: null
     method: null
     route: null

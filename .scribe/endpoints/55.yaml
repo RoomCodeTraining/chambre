@@ -1,20 +1,20 @@
-name: 'Gestion des natures de sinistre'
+name: 'Gestion des types de photos'
 description: |-
 
-  APIs pour la gestion des natures de sinistre
+  APIs pour la gestion des types de photos
 endpoints:
   -
     httpMethods:
       - GET
-    uri: api/v1/claim-natures
+    uri: api/v1/photo-types
     metadata:
-      groupName: 'Gestion des natures de sinistre'
+      groupName: 'Gestion des types de photos'
       groupDescription: |-
 
-        APIs pour la gestion des natures de sinistre
+        APIs pour la gestion des types de photos
       subgroup: ''
       subgroupDescription: ''
-      title: 'Lister toutes les natures de sinistre'
+      title: 'Lister tous les types de photos'
       description: ''
       authenticated: true
       deprecated: false
@@ -44,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Vfa8gD1dcEZ6abek4Pv36h5'
+      - 'Bearer k1E66bacdhaDf85ge3v4PVZ'
     controller: null
     method: null
     route: null
@@ -52,15 +52,15 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/v1/claim-natures
+    uri: api/v1/photo-types
     metadata:
-      groupName: 'Gestion des natures de sinistre'
+      groupName: 'Gestion des types de photos'
       groupDescription: |-
 
-        APIs pour la gestion des natures de sinistre
+        APIs pour la gestion des types de photos
       subgroup: ''
       subgroupDescription: ''
-      title: 'Créer une nature de sinistre'
+      title: 'Créer un type de photo'
       description: ''
       authenticated: true
       deprecated: false
@@ -74,21 +74,11 @@ endpoints:
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      code:
-        name: code
-        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
-        required: true
-        example: jjjjm
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
       label:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: zglatwuytgj
+        example: wzletamgqrcgcdqvxznk
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -98,23 +88,22 @@ endpoints:
         name: description
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: false
-        example: 'Aut sed magnam eaque iste.'
+        example: 'Dolor nesciunt odit quia fugiat ea ipsum quisquam.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      code: jjjjm
-      label: zglatwuytgj
-      description: 'Aut sed magnam eaque iste.'
+      label: wzletamgqrcgcdqvxznk
+      description: 'Dolor nesciunt odit quia fugiat ea ipsum quisquam.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 6b3f1dePvE6k8a45VcaZDgh'
+      - 'Bearer da8gf651vbZkcP6D4eEah3V'
     controller: null
     method: null
     route: null
@@ -122,15 +111,15 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: 'api/v1/claim-natures/{id}'
+    uri: 'api/v1/photo-types/{photoType}'
     metadata:
-      groupName: 'Gestion des natures de sinistre'
+      groupName: 'Gestion des types de photos'
       groupDescription: |-
 
-        APIs pour la gestion des natures de sinistre
+        APIs pour la gestion des types de photos
       subgroup: ''
       subgroupDescription: ''
-      title: 'Afficher une nature de sinistre'
+      title: 'Afficher un type de photo'
       description: ''
       authenticated: true
       deprecated: false
@@ -140,18 +129,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      id:
-        name: id
-        description: 'The ID of the claim nature.'
+      photoType:
+        name: photoType
+        description: ''
         required: true
-        example: eum
+        example: repudiandae
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: eum
+      photoType: repudiandae
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -171,7 +160,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer dfh3c615EkgPb4Zea68vDVa'
+      - 'Bearer eh3Db6g81v5fkcPE4aZVda6'
     controller: null
     method: null
     route: null
@@ -179,15 +168,15 @@ endpoints:
   -
     httpMethods:
       - PUT
-    uri: 'api/v1/claim-natures/{id}'
+    uri: 'api/v1/photo-types/{photoType}'
     metadata:
-      groupName: 'Gestion des natures de sinistre'
+      groupName: 'Gestion des types de photos'
       groupDescription: |-
 
-        APIs pour la gestion des natures de sinistre
+        APIs pour la gestion des types de photos
       subgroup: ''
       subgroupDescription: ''
-      title: 'Mettre à jour une nature de sinistre'
+      title: 'Mettre à jour un type de photo'
       description: ''
       authenticated: true
       deprecated: false
@@ -197,18 +186,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      id:
-        name: id
-        description: 'The ID of the claim nature.'
+      photoType:
+        name: photoType
+        description: ''
         required: true
-        example: amet
+        example: libero
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: amet
+      photoType: libero
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -216,7 +205,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: pzbkigpgritwtgauc
+        example: aw
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -226,22 +215,22 @@ endpoints:
         name: description
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: false
-        example: 'Dicta et accusantium debitis rem.'
+        example: 'Et id ducimus recusandae.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: pzbkigpgritwtgauc
-      description: 'Dicta et accusantium debitis rem.'
+      label: aw
+      description: 'Et id ducimus recusandae.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer DvaEPZf3V6184eackbh56gd'
+      - 'Bearer 41agbk36Zda8ev5hDcfVP6E'
     controller: null
     method: null
     route: null
@@ -249,15 +238,15 @@ endpoints:
   -
     httpMethods:
       - DELETE
-    uri: 'api/v1/claim-natures/{id}'
+    uri: 'api/v1/photo-types/{photoType}'
     metadata:
-      groupName: 'Gestion des natures de sinistre'
+      groupName: 'Gestion des types de photos'
       groupDescription: |-
 
-        APIs pour la gestion des natures de sinistre
+        APIs pour la gestion des types de photos
       subgroup: ''
       subgroupDescription: ''
-      title: 'Supprimer une nature de sinistre'
+      title: 'Supprimer un type de photo'
       description: ''
       authenticated: true
       deprecated: false
@@ -267,18 +256,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      id:
-        name: id
-        description: 'The ID of the claim nature.'
+      photoType:
+        name: photoType
+        description: ''
         required: true
-        example: ducimus
+        example: quo
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: ducimus
+      photoType: quo
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -289,7 +278,103 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer heZP846d13EakDc6gb5vaVf'
+      - 'Bearer aaeg66PZEcdV8fb3h4Dk51v'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/photo-types/{photoType}/enable'
+    metadata:
+      groupName: 'Gestion des types de photos'
+      groupDescription: |-
+
+        APIs pour la gestion des types de photos
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Activer un type de photo'
+      description: ''
+      authenticated: true
+      deprecated: false
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      photoType:
+        name: photoType
+        description: ''
+        required: true
+        example: velit
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      photoType: velit
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer eE4ad1P6gVbfZhk583acv6D'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/photo-types/{photoType}/disable'
+    metadata:
+      groupName: 'Gestion des types de photos'
+      groupDescription: |-
+
+        APIs pour la gestion des types de photos
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Désactiver un type de photo'
+      description: ''
+      authenticated: true
+      deprecated: false
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      photoType:
+        name: photoType
+        description: ''
+        required: true
+        example: placeat
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      photoType: placeat
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer VDc6b3618keEZ4Pdva5hgfa'
     controller: null
     method: null
     route: null

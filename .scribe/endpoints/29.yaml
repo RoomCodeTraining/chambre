@@ -1,20 +1,20 @@
-name: 'Gestion des types de dossiers'
+name: 'Gestion des clients'
 description: |-
 
-  APIs pour la gestion des types de dossiers
+  APIs pour la gestion des clients
 endpoints:
   -
     httpMethods:
       - GET
-    uri: api/v1/assignment-types
+    uri: api/v1/clients
     metadata:
-      groupName: 'Gestion des types de dossiers'
+      groupName: 'Gestion des clients'
       groupDescription: |-
 
-        APIs pour la gestion des types de dossiers
+        APIs pour la gestion des clients
       subgroup: ''
       subgroupDescription: ''
-      title: 'Lister tous les types de dossiers'
+      title: 'Lister tous les clients'
       description: ''
       authenticated: true
       deprecated: false
@@ -44,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 5P8bg61EacV6vfe43ZahkdD'
+      - 'Bearer 56e6VvckgDaPa81h43fZdbE'
     controller: null
     method: null
     route: null
@@ -52,15 +52,15 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/v1/assignment-types
+    uri: api/v1/clients
     metadata:
-      groupName: 'Gestion des types de dossiers'
+      groupName: 'Gestion des clients'
       groupDescription: |-
 
-        APIs pour la gestion des types de dossiers
+        APIs pour la gestion des clients
       subgroup: ''
       subgroupDescription: ''
-      title: 'Ajouter un type de dossier'
+      title: 'Ajouter un client'
       description: ''
       authenticated: true
       deprecated: false
@@ -74,36 +74,69 @@ endpoints:
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      label:
-        name: label
+      name:
+        name: name
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: kyehhfjkdxttanw
+        example: bytprzqekg
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
-      description:
-        name: description
-        description: ''
+      email:
+        name: email
+        description: 'Must match the regex /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/.'
         required: false
-        example: 'In sunt fuga debitis fugiat sed assumenda.'
+        example: 'chu@hpn.o{2,}'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      phone_1:
+        name: phone_1
+        description: 'Le texte de value ne peut pas contenir plus de 20 caractères.'
+        required: false
+        example: lamp
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      phone_2:
+        name: phone_2
+        description: 'Le texte de value ne peut pas contenir plus de 20 caractères.'
+        required: false
+        example: asrpwrca
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      address:
+        name: address
+        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
+        required: false
+        example: nlgnugslocjzoqz
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: kyehhfjkdxttanw
-      description: 'In sunt fuga debitis fugiat sed assumenda.'
+      name: bytprzqekg
+      email: 'chu@hpn.o{2,}'
+      phone_1: lamp
+      phone_2: asrpwrca
+      address: nlgnugslocjzoqz
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer Ekhd16fv6geDc54Va3Zb8Pa'
+      - 'Bearer 58vDP1fkcgV43Zade66Ebha'
     controller: null
     method: null
     route: null
@@ -111,15 +144,15 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: 'api/v1/assignment-types/{assignment_type}'
+    uri: 'api/v1/clients/{id}'
     metadata:
-      groupName: 'Gestion des types de dossiers'
+      groupName: 'Gestion des clients'
       groupDescription: |-
 
-        APIs pour la gestion des types de dossiers
+        APIs pour la gestion des clients
       subgroup: ''
       subgroupDescription: ''
-      title: 'Afficher un type de dossier'
+      title: 'Afficher un client'
       description: ''
       authenticated: true
       deprecated: false
@@ -129,18 +162,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      assignment_type:
-        name: assignment_type
-        description: ''
+      id:
+        name: id
+        description: 'The ID of the client.'
         required: true
-        example: 1
-        type: integer
+        example: dicta
+        type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      assignment_type: 1
+      id: dicta
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -160,7 +193,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer vg3Vcah6DE6ab1eZ85dk4fP'
+      - 'Bearer kha1a6PvVEgZd68Dcfe53b4'
     controller: null
     method: null
     route: null
@@ -168,15 +201,15 @@ endpoints:
   -
     httpMethods:
       - PUT
-    uri: 'api/v1/assignment-types/{assignment_type}'
+    uri: 'api/v1/clients/{id}'
     metadata:
-      groupName: 'Gestion des types de dossiers'
+      groupName: 'Gestion des clients'
       groupDescription: |-
 
-        APIs pour la gestion des types de dossiers
+        APIs pour la gestion des clients
       subgroup: ''
       subgroupDescription: ''
-      title: 'Mettre à jour un type de dossier'
+      title: 'Mettre à jour un client'
       description: ''
       authenticated: true
       deprecated: false
@@ -186,51 +219,84 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      assignment_type:
-        name: assignment_type
-        description: ''
+      id:
+        name: id
+        description: 'The ID of the client.'
         required: true
-        example: 1
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-    cleanUrlParameters:
-      assignment_type: 1
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      label:
-        name: label
-        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
-        required: true
-        example: dzgyftetfslcxwmdpk
+        example: sed
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
-      description:
-        name: description
-        description: ''
+    cleanUrlParameters:
+      id: sed
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
+        required: true
+        example: jzlivfbsfir
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      email:
+        name: email
+        description: 'Must match the regex /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/. Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: false
-        example: 'Maiores id qui consectetur deleniti ipsa.'
+        example: jaylen.lemke@example.com
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      phone_1:
+        name: phone_1
+        description: 'Le texte de value ne peut pas contenir plus de 20 caractères.'
+        required: false
+        example: vmymkgvw
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      phone_2:
+        name: phone_2
+        description: 'Le texte de value ne peut pas contenir plus de 20 caractères.'
+        required: false
+        example: izrgegrvypib
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      address:
+        name: address
+        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
+        required: false
+        example: nvntbijgidu
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: dzgyftetfslcxwmdpk
-      description: 'Maiores id qui consectetur deleniti ipsa.'
+      name: jzlivfbsfir
+      email: jaylen.lemke@example.com
+      phone_1: vmymkgvw
+      phone_2: izrgegrvypib
+      address: nvntbijgidu
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer DaEb5d3v1P8ZkVcafegh466'
+      - 'Bearer 6v5d3Vk16PaZhce8Db4aEfg'
     controller: null
     method: null
     route: null
@@ -238,15 +304,15 @@ endpoints:
   -
     httpMethods:
       - DELETE
-    uri: 'api/v1/assignment-types/{assignment_type}'
+    uri: 'api/v1/clients/{id}'
     metadata:
-      groupName: 'Gestion des types de dossiers'
+      groupName: 'Gestion des clients'
       groupDescription: |-
 
-        APIs pour la gestion des types de dossiers
+        APIs pour la gestion des clients
       subgroup: ''
       subgroupDescription: ''
-      title: 'Supprimer un type de dossier'
+      title: 'Supprimer un client'
       description: ''
       authenticated: true
       deprecated: false
@@ -256,18 +322,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      assignment_type:
-        name: assignment_type
-        description: ''
+      id:
+        name: id
+        description: 'The ID of the client.'
         required: true
-        example: 1
-        type: integer
+        example: ipsa
+        type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      assignment_type: 1
+      id: ipsa
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -278,103 +344,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 4had6f5PE3Zag6ceDV1vb8k'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - PUT
-    uri: 'api/v1/assignment-types/{assignment_type}/enable'
-    metadata:
-      groupName: 'Gestion des types de dossiers'
-      groupDescription: |-
-
-        APIs pour la gestion des types de dossiers
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Activer un type de dossier'
-      description: ''
-      authenticated: true
-      deprecated: false
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      assignment_type:
-        name: assignment_type
-        description: ''
-        required: true
-        example: 1
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-    cleanUrlParameters:
-      assignment_type: 1
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer ZVh46cdk516Dafe8vE3bagP'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - PUT
-    uri: 'api/v1/assignment-types/{assignment_type}/disable'
-    metadata:
-      groupName: 'Gestion des types de dossiers'
-      groupDescription: |-
-
-        APIs pour la gestion des types de dossiers
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Désactiver un type de dossier'
-      description: ''
-      authenticated: true
-      deprecated: false
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      assignment_type:
-        name: assignment_type
-        description: ''
-        required: true
-        example: 1
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-    cleanUrlParameters:
-      assignment_type: 1
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer ZDcdEegfa15a6Ph34b6kVv8'
+      - 'Bearer V3a65hckE68eZdfD1v4gbPa'
     controller: null
     method: null
     route: null

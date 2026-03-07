@@ -44,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6ehgZ5cafP13DkEV8v46abd'
+      - 'Bearer Zvf8c6Vaa5dbEh4D16kPe3g'
     controller: null
     method: null
     route: null
@@ -78,7 +78,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: hcqwhhfzzldpt
+        example: bmorgplshzbcbnqjtfkcsur
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -88,22 +88,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Aliquid et commodi quis.'
+        example: 'Enim et quibusdam et earum accusantium.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: hcqwhhfzzldpt
-      description: 'Aliquid et commodi quis.'
+      label: bmorgplshzbcbnqjtfkcsur
+      description: 'Enim et quibusdam et earum accusantium.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 5Pgka64DcZVvefhaEd1368b'
+      - 'Bearer aeEPvVbd3Z1h654a8g6kfcD'
     controller: null
     method: null
     route: null
@@ -133,14 +133,14 @@ endpoints:
         name: id
         description: 'The ID of the brand.'
         required: true
-        example: ut
+        example: voluptates
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: ut
+      id: voluptates
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -160,7 +160,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer a4DP8v3ZeVdf6Ebag1k56hc'
+      - 'Bearer Pvbak65gfaZ34V1ED6de8hc'
     controller: null
     method: null
     route: null
@@ -190,14 +190,14 @@ endpoints:
         name: id
         description: 'The ID of the brand.'
         required: true
-        example: cupiditate
+        example: ut
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: cupiditate
+      id: ut
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -205,7 +205,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: ie
+        example: rzpwqlslnehd
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -215,22 +215,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Eum praesentium nisi quod eaque et accusamus laudantium.'
+        example: 'Rem sapiente ut omnis nihil.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: ie
-      description: 'Eum praesentium nisi quod eaque et accusamus laudantium.'
+      label: rzpwqlslnehd
+      description: 'Rem sapiente ut omnis nihil.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer Dh6Zk3f4V5P168gdaEcaveb'
+      - 'Bearer a81fgeacE3hP65k6ZDbvd4V'
     controller: null
     method: null
     route: null
@@ -260,14 +260,14 @@ endpoints:
         name: id
         description: 'The ID of the brand.'
         required: true
-        example: laborum
+        example: labore
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: laborum
+      id: labore
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -278,7 +278,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 4561Zeg8D3cdEkahPavfVb6'
+      - 'Bearer ZPdv61bkhfD8546aVac3Ege'
     controller: null
     method: null
     route: null

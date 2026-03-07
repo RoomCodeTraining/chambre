@@ -1,20 +1,20 @@
-name: 'Gestion des constats'
+name: 'Gestion des banques'
 description: |-
 
-  APIs pour la gestion des constats
+  APIs pour la gestion des banques
 endpoints:
   -
     httpMethods:
       - GET
-    uri: api/v1/ascertainments
+    uri: api/v1/banks
     metadata:
-      groupName: 'Gestion des constats'
+      groupName: 'Gestion des banques'
       groupDescription: |-
 
-        APIs pour la gestion des constats
+        APIs pour la gestion des banques
       subgroup: ''
       subgroupDescription: ''
-      title: 'Lister les constats'
+      title: 'Lister tous les banques'
       description: ''
       authenticated: true
       deprecated: false
@@ -44,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer faV5vaDEdh1c3ge6ZP8kb46'
+      - 'Bearer 6PkV4836cbZDfadE1h5veag'
     controller: null
     method: null
     route: null
@@ -52,15 +52,15 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/v1/ascertainments
+    uri: api/v1/banks
     metadata:
-      groupName: 'Gestion des constats'
+      groupName: 'Gestion des banques'
       groupDescription: |-
 
-        APIs pour la gestion des constats
+        APIs pour la gestion des banques
       subgroup: ''
       subgroupDescription: ''
-      title: 'Créer un constat'
+      title: 'Créer une nouvelle banque'
       description: ''
       authenticated: true
       deprecated: false
@@ -74,126 +74,25 @@ endpoints:
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      assignment_id:
-        name: assignment_id
-        description: 'The <code>id</code> of an existing record in the assignments table.'
-        required: true
-        example: consequatur
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      ascertainments:
-        name: ascertainments
-        description: ''
-        required: true
-        example:
-          - []
-        type: 'object[]'
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      'ascertainments[].ascertainment_type_id':
-        name: 'ascertainments[].ascertainment_type_id'
-        description: 'The <code>id</code> of an existing record in the ascertainment_types table.'
-        required: true
-        example: sit
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      'ascertainments[].very_good':
-        name: 'ascertainments[].very_good'
-        description: ''
-        required: true
-        example: true
-        type: boolean
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      'ascertainments[].good':
-        name: 'ascertainments[].good'
-        description: ''
-        required: true
-        example: false
-        type: boolean
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      'ascertainments[].acceptable':
-        name: 'ascertainments[].acceptable'
-        description: ''
-        required: true
-        example: true
-        type: boolean
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      'ascertainments[].less_good':
-        name: 'ascertainments[].less_good'
-        description: ''
-        required: true
-        example: false
-        type: boolean
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      'ascertainments[].bad':
-        name: 'ascertainments[].bad'
-        description: ''
-        required: true
-        example: false
-        type: boolean
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      'ascertainments[].very_bad':
-        name: 'ascertainments[].very_bad'
-        description: ''
-        required: true
-        example: false
-        type: boolean
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      'ascertainments[].comment':
-        name: 'ascertainments[].comment'
+      name:
+        name: name
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: nwtkfphwzjiyam
+        example: mhuekizhekc
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      assignment_id: consequatur
-      ascertainments:
-        -
-          ascertainment_type_id: sit
-          very_good: true
-          good: false
-          acceptable: true
-          less_good: false
-          bad: false
-          very_bad: false
-          comment: nwtkfphwzjiyam
+      name: mhuekizhekc
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 61gv6PcV4haDdE5bek3fa8Z'
+      - 'Bearer k1Pbe6dv4cg3aZ8aEV5Dfh6'
     controller: null
     method: null
     route: null
@@ -201,15 +100,15 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: 'api/v1/ascertainments/{id}'
+    uri: 'api/v1/banks/{id}'
     metadata:
-      groupName: 'Gestion des constats'
+      groupName: 'Gestion des banques'
       groupDescription: |-
 
-        APIs pour la gestion des constats
+        APIs pour la gestion des banques
       subgroup: ''
       subgroupDescription: ''
-      title: 'Afficher un constat'
+      title: 'Afficher une banque'
       description: ''
       authenticated: true
       deprecated: false
@@ -221,16 +120,16 @@ endpoints:
     urlParameters:
       id:
         name: id
-        description: 'The ID of the ascertainment.'
+        description: 'The ID of the bank.'
         required: true
-        example: et
+        example: consequatur
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: et
+      id: consequatur
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -250,7 +149,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer ka4DPg15Z6VbafvEh63ec8d'
+      - 'Bearer 48gD6v1ZVc5Eeafkh3aP6bd'
     controller: null
     method: null
     route: null
@@ -258,15 +157,15 @@ endpoints:
   -
     httpMethods:
       - PUT
-    uri: 'api/v1/ascertainments/{id}'
+    uri: 'api/v1/banks/{id}'
     metadata:
-      groupName: 'Gestion des constats'
+      groupName: 'Gestion des banques'
       groupDescription: |-
 
-        APIs pour la gestion des constats
+        APIs pour la gestion des banques
       subgroup: ''
       subgroupDescription: ''
-      title: 'Mettre à jour un constat'
+      title: 'Mettre à jour une banque'
       description: ''
       authenticated: true
       deprecated: false
@@ -278,115 +177,38 @@ endpoints:
     urlParameters:
       id:
         name: id
-        description: 'The ID of the ascertainment.'
+        description: 'The ID of the bank.'
         required: true
-        example: quibusdam
+        example: culpa
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: quibusdam
+      id: culpa
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      ascertainment_type_id:
-        name: ascertainment_type_id
-        description: 'The <code>id</code> of an existing record in the ascertainment_types table.'
-        required: true
-        example: deleniti
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      very_good:
-        name: very_good
-        description: ''
-        required: true
-        example: true
-        type: boolean
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      good:
-        name: good
-        description: ''
-        required: true
-        example: false
-        type: boolean
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      acceptable:
-        name: acceptable
-        description: ''
-        required: true
-        example: false
-        type: boolean
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      less_good:
-        name: less_good
-        description: ''
-        required: true
-        example: true
-        type: boolean
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      bad:
-        name: bad
-        description: ''
-        required: true
-        example: true
-        type: boolean
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      very_bad:
-        name: very_bad
-        description: ''
-        required: true
-        example: true
-        type: boolean
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      comment:
-        name: comment
+      name:
+        name: name
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: 'n'
+        example: tj
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      ascertainment_type_id: deleniti
-      very_good: true
-      good: false
-      acceptable: false
-      less_good: true
-      bad: true
-      very_bad: true
-      comment: 'n'
+      name: tj
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer hf6Ec514D8eZbgakaP36vVd'
+      - 'Bearer PvZc3V68ahEe1dgkba6fD45'
     controller: null
     method: null
     route: null
@@ -394,15 +216,15 @@ endpoints:
   -
     httpMethods:
       - DELETE
-    uri: 'api/v1/ascertainments/{id}'
+    uri: 'api/v1/banks/{id}'
     metadata:
-      groupName: 'Gestion des constats'
+      groupName: 'Gestion des banques'
       groupDescription: |-
 
-        APIs pour la gestion des constats
+        APIs pour la gestion des banques
       subgroup: ''
       subgroupDescription: ''
-      title: 'Supprimer un constat'
+      title: 'Supprimer une banque'
       description: ''
       authenticated: true
       deprecated: false
@@ -414,16 +236,16 @@ endpoints:
     urlParameters:
       id:
         name: id
-        description: 'The ID of the ascertainment.'
+        description: 'The ID of the bank.'
         required: true
-        example: esse
-        type: string
+        example: 13
+        type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: esse
+      id: 13
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -434,7 +256,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer D664bVEa5h8d1ePa3gfZkcv'
+      - 'Bearer 3v6ecZb5gVadhD1af6k8P4E'
     controller: null
     method: null
     route: null

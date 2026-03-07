@@ -56,6 +56,11 @@ class RechargeController extends Controller
         return RechargeResource::collection($recharges);
     }
 
+    /**
+     * Créer un rechargement
+     *
+     * @authenticated
+     */
     public function store(CreateRechargeRequest $request): JsonResponse
     {
         $now = Carbon::now();
@@ -97,6 +102,11 @@ class RechargeController extends Controller
         return $this->responseCreated('Rechargement créé avec succès', new RechargeResource($recharge));
     }
 
+    /**
+     * Afficher un rechargement
+     *
+     * @authenticated
+     */
     public function show($id): JsonResponse
     {
         $recharge = Recharge::with('entity', 'paymentMethod', 'status', 'createdBy', 'updatedBy', 'deletedBy')
@@ -108,6 +118,11 @@ class RechargeController extends Controller
     }
 
 
+    /**
+     * Mettre à jour le statut des rechargements
+     *
+     * @authenticated
+     */
     public function changeStatus(): JsonResponse
     {
         $recharges = Recharge::accessibleBy(auth()->user())

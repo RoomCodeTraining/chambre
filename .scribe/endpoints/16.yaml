@@ -44,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 4g1vdkVfDeZ3aba68E5Pch6'
+      - 'Bearer gePv68fkac3bE5V6dZ4ahD1'
     controller: null
     method: null
     route: null
@@ -78,7 +78,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: xddqraqkwnhhafv
+        example: dduvkv
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -88,22 +88,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Praesentium animi dicta pariatur voluptas dolorem recusandae debitis.'
+        example: 'Et cupiditate occaecati deserunt.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: xddqraqkwnhhafv
-      description: 'Praesentium animi dicta pariatur voluptas dolorem recusandae debitis.'
+      label: dduvkv
+      description: 'Et cupiditate occaecati deserunt.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer ahD3Peg5Zf84166vEabcVdk'
+      - 'Bearer PdkD6cE5fagvZ34b6hae1V8'
     controller: null
     method: null
     route: null
@@ -133,14 +133,14 @@ endpoints:
         name: id
         description: 'The ID of the shock point.'
         required: true
-        example: sequi
+        example: molestias
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: sequi
+      id: molestias
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -160,7 +160,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 43k5hEbedD6v1a6fVca8gPZ'
+      - 'Bearer ahvE1fDV4Z56P8gc6d3keba'
     controller: null
     method: null
     route: null
@@ -190,14 +190,14 @@ endpoints:
         name: id
         description: 'The ID of the shock point.'
         required: true
-        example: hic
+        example: sit
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: hic
+      id: sit
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -205,7 +205,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: tjtzuxjgesjnickvmpik
+        example: uotonfcugrddbcgyrbjmubxep
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -215,22 +215,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Tempora dolor esse illo pariatur minus impedit quibusdam.'
+        example: 'Dolor eaque at ex maiores optio commodi eaque laudantium.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: tjtzuxjgesjnickvmpik
-      description: 'Tempora dolor esse illo pariatur minus impedit quibusdam.'
+      label: uotonfcugrddbcgyrbjmubxep
+      description: 'Dolor eaque at ex maiores optio commodi eaque laudantium.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer a3kceEvV5hbgdZD8a6f46P1'
+      - 'Bearer ahD4Z6d31eg6vbacE5fV8kP'
     controller: null
     method: null
     route: null
@@ -260,14 +260,14 @@ endpoints:
         name: id
         description: 'The ID of the shock point.'
         required: true
-        example: maxime
+        example: vero
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: maxime
+      id: vero
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -278,7 +278,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer dPcZgk583abVe61hE4va6fD'
+      - 'Bearer aV3hab1edvD6g46P5Zfkc8E'
     controller: null
     method: null
     route: null

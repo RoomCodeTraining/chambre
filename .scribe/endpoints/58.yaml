@@ -1,20 +1,20 @@
-name: 'Gestion des rattachements réparateurs'
+name: 'Gestion des constats'
 description: |-
 
-  APIs pour la gestion des rattachements réparateurs
+  APIs pour la gestion des constats
 endpoints:
   -
     httpMethods:
       - GET
-    uri: api/v1/repairer-relationships
+    uri: api/v1/ascertainments
     metadata:
-      groupName: 'Gestion des rattachements réparateurs'
+      groupName: 'Gestion des constats'
       groupDescription: |-
 
-        APIs pour la gestion des rattachements réparateurs
+        APIs pour la gestion des constats
       subgroup: ''
       subgroupDescription: ''
-      title: 'Lister tous les rattachements réparateurs'
+      title: 'Lister les constats'
       description: ''
       authenticated: true
       deprecated: false
@@ -44,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer akbPgEDh66fZcd4Vav835e1'
+      - 'Bearer ha6Ee1adPf5gD46cV3k8Zbv'
     controller: null
     method: null
     route: null
@@ -52,15 +52,15 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/v1/repairer-relationships
+    uri: api/v1/ascertainments
     metadata:
-      groupName: 'Gestion des rattachements réparateurs'
+      groupName: 'Gestion des constats'
       groupDescription: |-
 
-        APIs pour la gestion des rattachements réparateurs
+        APIs pour la gestion des constats
       subgroup: ''
       subgroupDescription: ''
-      title: 'Créer un rattachement réparateur'
+      title: 'Créer un constat'
       description: ''
       authenticated: true
       deprecated: false
@@ -74,25 +74,126 @@ endpoints:
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      repairer_id:
-        name: repairer_id
-        description: 'The <code>id</code> of an existing record in the entities table.'
+      assignment_id:
+        name: assignment_id
+        description: 'The <code>id</code> of an existing record in the assignments table.'
         required: true
-        example: nesciunt
+        example: et
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      ascertainments:
+        name: ascertainments
+        description: ''
+        required: true
+        example:
+          - []
+        type: 'object[]'
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'ascertainments[].ascertainment_type_id':
+        name: 'ascertainments[].ascertainment_type_id'
+        description: 'The <code>id</code> of an existing record in the ascertainment_types table.'
+        required: true
+        example: facere
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'ascertainments[].very_good':
+        name: 'ascertainments[].very_good'
+        description: ''
+        required: true
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'ascertainments[].good':
+        name: 'ascertainments[].good'
+        description: ''
+        required: true
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'ascertainments[].acceptable':
+        name: 'ascertainments[].acceptable'
+        description: ''
+        required: true
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'ascertainments[].less_good':
+        name: 'ascertainments[].less_good'
+        description: ''
+        required: true
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'ascertainments[].bad':
+        name: 'ascertainments[].bad'
+        description: ''
+        required: true
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'ascertainments[].very_bad':
+        name: 'ascertainments[].very_bad'
+        description: ''
+        required: true
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'ascertainments[].comment':
+        name: 'ascertainments[].comment'
+        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
+        required: true
+        example: yclehche
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      repairer_id: nesciunt
+      assignment_id: et
+      ascertainments:
+        -
+          ascertainment_type_id: facere
+          very_good: true
+          good: false
+          acceptable: true
+          less_good: false
+          bad: false
+          very_bad: false
+          comment: yclehche
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer c1va68E3kdDZVge6h5b4Pfa'
+      - 'Bearer g53fZade6bhDkVc6P1Eav48'
     controller: null
     method: null
     route: null
@@ -100,15 +201,15 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: 'api/v1/repairer-relationships/{repairerRelationship}'
+    uri: 'api/v1/ascertainments/{id}'
     metadata:
-      groupName: 'Gestion des rattachements réparateurs'
+      groupName: 'Gestion des constats'
       groupDescription: |-
 
-        APIs pour la gestion des rattachements réparateurs
+        APIs pour la gestion des constats
       subgroup: ''
       subgroupDescription: ''
-      title: 'Afficher un rattachement réparateur'
+      title: 'Afficher un constat'
       description: ''
       authenticated: true
       deprecated: false
@@ -118,18 +219,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      repairerRelationship:
-        name: repairerRelationship
-        description: ''
+      id:
+        name: id
+        description: 'The ID of the ascertainment.'
         required: true
-        example: aut
+        example: voluptas
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      repairerRelationship: aut
+      id: voluptas
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -149,7 +250,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer ZckafhvbE16ga4d8P3D6Ve5'
+      - 'Bearer E4bDeV5v61fh8acgdP6Za3k'
     controller: null
     method: null
     route: null
@@ -157,15 +258,15 @@ endpoints:
   -
     httpMethods:
       - PUT
-    uri: 'api/v1/repairer-relationships/{repairerRelationship}'
+    uri: 'api/v1/ascertainments/{id}'
     metadata:
-      groupName: 'Gestion des rattachements réparateurs'
+      groupName: 'Gestion des constats'
       groupDescription: |-
 
-        APIs pour la gestion des rattachements réparateurs
+        APIs pour la gestion des constats
       subgroup: ''
       subgroupDescription: ''
-      title: 'Mettre à jour un rattachement réparateur'
+      title: 'Mettre à jour un constat'
       description: ''
       authenticated: true
       deprecated: false
@@ -175,18 +276,154 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      repairerRelationship:
-        name: repairerRelationship
-        description: ''
+      id:
+        name: id
+        description: 'The ID of the ascertainment.'
         required: true
-        example: omnis
+        example: est
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      repairerRelationship: omnis
+      id: est
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      ascertainment_type_id:
+        name: ascertainment_type_id
+        description: 'The <code>id</code> of an existing record in the ascertainment_types table.'
+        required: true
+        example: dolore
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      very_good:
+        name: very_good
+        description: ''
+        required: true
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      good:
+        name: good
+        description: ''
+        required: true
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      acceptable:
+        name: acceptable
+        description: ''
+        required: true
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      less_good:
+        name: less_good
+        description: ''
+        required: true
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      bad:
+        name: bad
+        description: ''
+        required: true
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      very_bad:
+        name: very_bad
+        description: ''
+        required: true
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      comment:
+        name: comment
+        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
+        required: true
+        example: uameptfbzycuogsu
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      ascertainment_type_id: dolore
+      very_good: true
+      good: true
+      acceptable: true
+      less_good: false
+      bad: false
+      very_bad: true
+      comment: uameptfbzycuogsu
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer gf5EdVc1vkPhaD8bZ3a6e64'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/ascertainments/{id}'
+    metadata:
+      groupName: 'Gestion des constats'
+      groupDescription: |-
+
+        APIs pour la gestion des constats
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Supprimer un constat'
+      description: ''
+      authenticated: true
+      deprecated: false
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the ascertainment.'
+        required: true
+        example: ipsum
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      id: ipsum
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -197,103 +434,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 56ebgP8Vaf4dhEDZ1cav36k'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - PUT
-    uri: 'api/v1/repairer-relationships/{repairerRelationship}/enable'
-    metadata:
-      groupName: 'Gestion des rattachements réparateurs'
-      groupDescription: |-
-
-        APIs pour la gestion des rattachements réparateurs
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Activer un rattachement réparateur'
-      description: ''
-      authenticated: true
-      deprecated: false
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      repairerRelationship:
-        name: repairerRelationship
-        description: ''
-        required: true
-        example: dolor
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-    cleanUrlParameters:
-      repairerRelationship: dolor
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer 36Zk6fVaP5b1hc4DaEvdge8'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - PUT
-    uri: 'api/v1/repairer-relationships/{repairerRelationship}/disable'
-    metadata:
-      groupName: 'Gestion des rattachements réparateurs'
-      groupDescription: |-
-
-        APIs pour la gestion des rattachements réparateurs
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Désactiver un rattachement réparateur'
-      description: ''
-      authenticated: true
-      deprecated: false
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      repairerRelationship:
-        name: repairerRelationship
-        description: ''
-        required: true
-        example: recusandae
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-    cleanUrlParameters:
-      repairerRelationship: recusandae
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer 8d6hVDfa1eZbPgck6v5a43E'
+      - 'Bearer P3vfg5E6Ddae4hZbV6cak18'
     controller: null
     method: null
     route: null

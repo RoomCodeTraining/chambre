@@ -1,20 +1,20 @@
-name: 'Gestion des conclusions techniques'
+name: "Gestion des main-d'œuvre d'un choc d'offre"
 description: |-
 
-  APIs pour la gestion des conclusions techniques
+  APIs pour la gestion des main-d'œuvre d'un choc d'offre
 endpoints:
   -
     httpMethods:
       - GET
-    uri: api/v1/technical-conclusions
+    uri: api/v1/offer-workforces
     metadata:
-      groupName: 'Gestion des conclusions techniques'
+      groupName: "Gestion des main-d'œuvre d'un choc d'offre"
       groupDescription: |-
 
-        APIs pour la gestion des conclusions techniques
+        APIs pour la gestion des main-d'œuvre d'un choc d'offre
       subgroup: ''
       subgroupDescription: ''
-      title: 'Lister toutes les conclusions techniques'
+      title: "Lister toutes les main-d'œuvre de choc d'offre"
       description: ''
       authenticated: true
       deprecated: false
@@ -44,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer fDEPvg15Vd8caa3khe4b6Z6'
+      - 'Bearer DePvkV1356hZcE6a8g4dfab'
     controller: null
     method: null
     route: null
@@ -52,15 +52,15 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/v1/technical-conclusions
+    uri: api/v1/offer-workforces
     metadata:
-      groupName: 'Gestion des conclusions techniques'
+      groupName: "Gestion des main-d'œuvre d'un choc d'offre"
       groupDescription: |-
 
-        APIs pour la gestion des conclusions techniques
+        APIs pour la gestion des main-d'œuvre d'un choc d'offre
       subgroup: ''
       subgroupDescription: ''
-      title: 'Ajouter une conclusion technique'
+      title: "Créer une main-d'œuvre de choc d'offre"
       description: ''
       authenticated: true
       deprecated: false
@@ -74,36 +74,115 @@ endpoints:
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      label:
-        name: label
-        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
+      shock_id:
+        name: shock_id
+        description: 'The <code>id</code> of an existing record in the shocks table.'
         required: true
-        example: fpewnmpg
+        example: dolore
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
-      description:
-        name: description
+      hourly_rate_id:
+        name: hourly_rate_id
+        description: 'The <code>id</code> of an existing record in the hourly_rates table.'
+        required: true
+        example: quia
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      with_tax:
+        name: with_tax
+        description: ''
+        required: true
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      paint_type_id:
+        name: paint_type_id
+        description: 'The <code>id</code> of an existing record in the paint_types table.'
+        required: true
+        example: totam
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      workforces:
+        name: workforces
+        description: ''
+        required: true
+        example:
+          - []
+        type: 'object[]'
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'workforces[].workforce_type_id':
+        name: 'workforces[].workforce_type_id'
+        description: ''
+        required: true
+        example: ipsum
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'workforces[].nb_hours':
+        name: 'workforces[].nb_hours'
+        description: ''
+        required: true
+        example: 431182.20502844
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'workforces[].discount':
+        name: 'workforces[].discount'
+        description: 'La valeur de value doit être supérieure ou égale à 0. La valeur de value ne peut pas être supérieure à 100.'
+        required: true
+        example: 24
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'workforces[].all_paint':
+        name: 'workforces[].all_paint'
         description: ''
         required: false
-        example: 'Officia eum quia omnis ea.'
-        type: string
+        example: false
+        type: boolean
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: fpewnmpg
-      description: 'Officia eum quia omnis ea.'
+      shock_id: dolore
+      hourly_rate_id: quia
+      with_tax: false
+      paint_type_id: totam
+      workforces:
+        -
+          workforce_type_id: ipsum
+          nb_hours: 431182.20502844
+          discount: 24
+          all_paint: false
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer a85PefhDgE4da6v6ZbV3k1c'
+      - 'Bearer 8hgPb64EVDfvk3ca65Zdae1'
     controller: null
     method: null
     route: null
@@ -111,15 +190,15 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: 'api/v1/technical-conclusions/{technicalConclusion}'
+    uri: 'api/v1/offer-workforces/{offerWorkforce}'
     metadata:
-      groupName: 'Gestion des conclusions techniques'
+      groupName: "Gestion des main-d'œuvre d'un choc d'offre"
       groupDescription: |-
 
-        APIs pour la gestion des conclusions techniques
+        APIs pour la gestion des main-d'œuvre d'un choc d'offre
       subgroup: ''
       subgroupDescription: ''
-      title: 'Afficher une conclusion technique'
+      title: "Afficher une main-d'œuvre de choc d'offre"
       description: ''
       authenticated: true
       deprecated: false
@@ -129,18 +208,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      technicalConclusion:
-        name: technicalConclusion
+      offerWorkforce:
+        name: offerWorkforce
         description: ''
         required: true
-        example: sapiente
+        example: qui
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      technicalConclusion: sapiente
+      offerWorkforce: qui
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -160,7 +239,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer hb84eZEPa6V36f5aDvk1gdc'
+      - 'Bearer vf3a6Zeac4E8b5PVdDk6h1g'
     controller: null
     method: null
     route: null
@@ -168,15 +247,15 @@ endpoints:
   -
     httpMethods:
       - PUT
-    uri: 'api/v1/technical-conclusions/{technicalConclusion}'
+    uri: 'api/v1/offer-workforces/{offerWorkforce}'
     metadata:
-      groupName: 'Gestion des conclusions techniques'
+      groupName: "Gestion des main-d'œuvre d'un choc d'offre"
       groupDescription: |-
 
-        APIs pour la gestion des conclusions techniques
+        APIs pour la gestion des main-d'œuvre d'un choc d'offre
       subgroup: ''
       subgroupDescription: ''
-      title: 'Mettre à jour une conclusion technique'
+      title: "Mettre à jour une main-d'œuvre de choc d'offre"
       description: ''
       authenticated: true
       deprecated: false
@@ -186,51 +265,106 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      technicalConclusion:
-        name: technicalConclusion
+      offerWorkforce:
+        name: offerWorkforce
         description: ''
         required: true
-        example: aliquid
+        example: et
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      technicalConclusion: aliquid
+      offerWorkforce: et
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      label:
-        name: label
-        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
+      workforce_type_id:
+        name: workforce_type_id
+        description: 'The <code>id</code> of an existing record in the workforce_types table.'
         required: true
-        example: andtchrjrq
+        example: qui
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
-      description:
-        name: description
+      hourly_rate_id:
+        name: hourly_rate_id
+        description: 'The <code>id</code> of an existing record in the hourly_rates table.'
+        required: true
+        example: dolorem
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      paint_type_id:
+        name: paint_type_id
+        description: 'The <code>id</code> of an existing record in the paint_types table.'
+        required: true
+        example: dolores
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      with_tax:
+        name: with_tax
+        description: ''
+        required: true
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      nb_hours:
+        name: nb_hours
+        description: ''
+        required: true
+        example: 12.69
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      discount:
+        name: discount
+        description: 'La valeur de value doit être supérieure ou égale à 0. La valeur de value ne peut pas être supérieure à 100.'
+        required: true
+        example: 10
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      all_paint:
+        name: all_paint
         description: ''
         required: false
-        example: 'Aut placeat natus atque adipisci deleniti non tenetur.'
-        type: string
+        example: true
+        type: boolean
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: andtchrjrq
-      description: 'Aut placeat natus atque adipisci deleniti non tenetur.'
+      workforce_type_id: qui
+      hourly_rate_id: dolorem
+      paint_type_id: dolores
+      with_tax: false
+      nb_hours: 12.69
+      discount: 10
+      all_paint: true
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer hZP1da4bv5EDcf6a83e6gVk'
+      - 'Bearer 3VPabg8kchfZ6Eave14d65D'
     controller: null
     method: null
     route: null
@@ -238,15 +372,15 @@ endpoints:
   -
     httpMethods:
       - DELETE
-    uri: 'api/v1/technical-conclusions/{technicalConclusion}'
+    uri: 'api/v1/offer-workforces/{offerWorkforce}'
     metadata:
-      groupName: 'Gestion des conclusions techniques'
+      groupName: "Gestion des main-d'œuvre d'un choc d'offre"
       groupDescription: |-
 
-        APIs pour la gestion des conclusions techniques
+        APIs pour la gestion des main-d'œuvre d'un choc d'offre
       subgroup: ''
       subgroupDescription: ''
-      title: 'Supprimer une conclusion technique'
+      title: "Supprimer une main-d'œuvre de choc d'offre"
       description: ''
       authenticated: true
       deprecated: false
@@ -256,18 +390,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      technicalConclusion:
-        name: technicalConclusion
+      offerWorkforce:
+        name: offerWorkforce
         description: ''
         required: true
-        example: molestiae
+        example: labore
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      technicalConclusion: molestiae
+      offerWorkforce: labore
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -278,7 +412,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 4fEZg1e6V6v5adhcbP3Da8k'
+      - 'Bearer hDa1cka83Zv54bPVg66dfEe'
     controller: null
     method: null
     route: null

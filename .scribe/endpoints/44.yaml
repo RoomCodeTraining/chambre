@@ -1,20 +1,20 @@
-name: 'Gestion des factures'
+name: 'Gestion des tarifs des produits de peinture'
 description: |-
 
-  APIs pour la gestion des factures
+  APIs pour la gestion des tarifs des produits de peinture
 endpoints:
   -
     httpMethods:
       - GET
-    uri: api/v1/invoices
+    uri: api/v1/paint-product-prices
     metadata:
-      groupName: 'Gestion des factures'
+      groupName: 'Gestion des tarifs des produits de peinture'
       groupDescription: |-
 
-        APIs pour la gestion des factures
+        APIs pour la gestion des tarifs des produits de peinture
       subgroup: ''
       subgroupDescription: ''
-      title: 'Lister toutes les factures'
+      title: 'Lister tous les tarifs de produits de peinture'
       description: ''
       authenticated: true
       deprecated: false
@@ -44,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer g61EPfahkDe3caVd84v65Zb'
+      - 'Bearer 6ek6gZa5Vf1vabE3hDdPc48'
     controller: null
     method: null
     route: null
@@ -52,15 +52,15 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/v1/invoices
+    uri: api/v1/paint-product-prices
     metadata:
-      groupName: 'Gestion des factures'
+      groupName: 'Gestion des tarifs des produits de peinture'
       groupDescription: |-
 
-        APIs pour la gestion des factures
+        APIs pour la gestion des tarifs des produits de peinture
       subgroup: ''
       subgroupDescription: ''
-      title: 'Créer une facture'
+      title: 'Ajouter un tarif de produit de peinture'
       description: ''
       authenticated: true
       deprecated: false
@@ -74,183 +74,29 @@ endpoints:
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      assignment_id:
-        name: assignment_id
-        description: 'The <code>id</code> of an existing record in the assignments table.'
+      value:
+        name: value
+        description: 'La valeur de value doit être supérieure ou égale à 0.'
         required: true
-        example: dolor
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      date:
-        name: date
-        description: 'Must be a valid date in the format <code>Y-m-d</code>.'
-        required: true
-        example: '2025-12-04'
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      object:
-        name: object
-        description: ''
-        required: true
-        example: est
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      type:
-        name: type
-        description: ''
-        required: true
-        example: credit_bill
-        type: string
-        enumValues:
-          - sale
-          - credit_bill
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      payment_method:
-        name: payment_method
-        description: ''
-        required: true
-        example: bank_transfer
-        type: string
-        enumValues:
-          - cash
-          - bank_transfer
-          - check
-          - credit_card
-          - other
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      template:
-        name: template
-        description: ''
-        required: true
-        example: B2C
-        type: string
-        enumValues:
-          - B2C
-          - B2B
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      foreign_currency:
-        name: foreign_currency
-        description: ''
-        required: false
-        example: enim
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: true
-        custom: []
-      foreign_currency_rate:
-        name: foreign_currency_rate
-        description: 'La valeur de value doit être supérieure ou égale à 0. La valeur de value ne peut pas être supérieure à 100.'
-        required: false
-        example: 22
+        example: 49
         type: number
         enumValues: []
         exampleWasSpecified: false
-        nullable: true
+        nullable: false
         custom: []
-      discount:
-        name: discount
-        description: 'La valeur de value doit être supérieure ou égale à 0. La valeur de value ne peut pas être supérieure à 100.'
-        required: false
-        example: 3
-        type: number
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: true
-        custom: []
-      invoice_reference:
-        name: invoice_reference
-        description: 'This field is required when <code>type</code> is <code>credit_bill</code>. The <code>reference</code> of an existing record in the invoices table.'
-        required: false
-        example: molestiae
+      paint_type_id:
+        name: paint_type_id
+        description: 'The <code>id</code> of an existing record in the paint_types table.'
+        required: true
+        example: fuga
         type: string
         enumValues: []
         exampleWasSpecified: false
-        nullable: true
+        nullable: false
         custom: []
-      address:
-        name: address
-        description: ''
-        required: false
-        example: suscipit
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: true
-        custom: []
-      taxpayer_account_number:
-        name: taxpayer_account_number
-        description: 'This field is required when <code>template</code> is <code>B2B</code>.'
-        required: false
-        example: architecto
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: true
-        custom: []
-    cleanBodyParameters:
-      assignment_id: dolor
-      date: '2025-12-04'
-      object: est
-      type: credit_bill
-      payment_method: bank_transfer
-      template: B2C
-      foreign_currency: enim
-      foreign_currency_rate: 22
-      discount: 3
-      invoice_reference: molestiae
-      address: suscipit
-      taxpayer_account_number: architecto
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer 8ab3kvZ5eDd4Eh6V1cgP6af'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - GET
-    uri: 'api/v1/invoices/{id}'
-    metadata:
-      groupName: 'Gestion des factures'
-      groupDescription: |-
-
-        APIs pour la gestion des factures
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Afficher une facture'
-      description: ''
-      authenticated: true
-      deprecated: false
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      id:
-        name: id
-        description: 'The ID of the invoice.'
+      number_paint_element_id:
+        name: number_paint_element_id
+        description: 'The <code>id</code> of an existing record in the number_paint_elements table.'
         required: true
         example: et
         type: string
@@ -258,264 +104,17 @@ endpoints:
         exampleWasSpecified: false
         nullable: false
         custom: []
-    cleanUrlParameters:
-      id: et
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        status: 401
-        content: '{"message":"Unauthenticated."}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          access-control-allow-origin: '*'
-        description: null
-        custom: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer D5b1ZEae8fadhP3kV6vg46c'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - PUT
-    uri: 'api/v1/invoices/{id}'
-    metadata:
-      groupName: 'Gestion des factures'
-      groupDescription: |-
-
-        APIs pour la gestion des factures
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Mettre à jour une facture'
-      description: ''
-      authenticated: true
-      deprecated: false
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      id:
-        name: id
-        description: 'The ID of the invoice.'
-        required: true
-        example: sed
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-    cleanUrlParameters:
-      id: sed
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      date:
-        name: date
-        description: 'Must be a valid date in the format <code>Y-m-d</code>.'
-        required: true
-        example: '2025-12-04'
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      object:
-        name: object
-        description: ''
-        required: true
-        example: magnam
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      address:
-        name: address
-        description: ''
-        required: false
-        example: corrupti
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: true
-        custom: []
-      taxpayer_account_number:
-        name: taxpayer_account_number
-        description: ''
-        required: false
-        example: accusantium
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: true
-        custom: []
     cleanBodyParameters:
-      date: '2025-12-04'
-      object: magnam
-      address: corrupti
-      taxpayer_account_number: accusantium
+      value: 49
+      paint_type_id: fuga
+      number_paint_element_id: et
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer dfagcE45Z6vVab31k6ehPD8'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - DELETE
-    uri: 'api/v1/invoices/{id}'
-    metadata:
-      groupName: 'Gestion des factures'
-      groupDescription: |-
-
-        APIs pour la gestion des factures
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Supprimer une facture'
-      description: ''
-      authenticated: true
-      deprecated: false
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      id:
-        name: id
-        description: 'The ID of the invoice.'
-        required: true
-        example: expedita
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-    cleanUrlParameters:
-      id: expedita
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer c5EZg83ba4PveVda1fD66hk'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - PUT
-    uri: 'api/v1/invoices/{invoice}/cancel'
-    metadata:
-      groupName: 'Gestion des factures'
-      groupDescription: |-
-
-        APIs pour la gestion des factures
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Annuler une facture'
-      description: ''
-      authenticated: true
-      deprecated: false
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      invoice:
-        name: invoice
-        description: 'The invoice.'
-        required: true
-        example: ut
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-    cleanUrlParameters:
-      invoice: ut
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer Pe1kVD5Z3Ebvga84ch6fda6'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - PUT
-    uri: 'api/v1/invoices/{invoice}/generate'
-    metadata:
-      groupName: 'Gestion des factures'
-      groupDescription: |-
-
-        APIs pour la gestion des factures
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Générer une facture'
-      description: ''
-      authenticated: true
-      deprecated: false
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      invoice:
-        name: invoice
-        description: 'The invoice.'
-        required: true
-        example: sed
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-    cleanUrlParameters:
-      invoice: sed
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer E3854fbVDkg1ePdac6ahZ6v'
+      - 'Bearer Dgk45chvaeaPfE68V6db31Z'
     controller: null
     method: null
     route: null
@@ -523,15 +122,15 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: api/v1/invoices/get/statistics
+    uri: 'api/v1/paint-product-prices/{paintProductPrice}'
     metadata:
-      groupName: 'Gestion des factures'
+      groupName: 'Gestion des tarifs des produits de peinture'
       groupDescription: |-
 
-        APIs pour la gestion des factures
+        APIs pour la gestion des tarifs des produits de peinture
       subgroup: ''
       subgroupDescription: ''
-      title: 'Statistiques des factures'
+      title: 'Afficher un tarif de produit de peinture'
       description: ''
       authenticated: true
       deprecated: false
@@ -540,8 +139,19 @@ endpoints:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
+    urlParameters:
+      paintProductPrice:
+        name: paintProductPrice
+        description: ''
+        required: true
+        example: rerum
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      paintProductPrice: rerum
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -561,7 +171,136 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer e41ZvacE83dgP6fD5bhkV6a'
+      - 'Bearer gPv186hZEfck5DVa4a63deb'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/paint-product-prices/{paintProductPrice}'
+    metadata:
+      groupName: 'Gestion des tarifs des produits de peinture'
+      groupDescription: |-
+
+        APIs pour la gestion des tarifs des produits de peinture
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Mettre à jour un tarif de produit de peinture'
+      description: ''
+      authenticated: true
+      deprecated: false
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      paintProductPrice:
+        name: paintProductPrice
+        description: ''
+        required: true
+        example: qui
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      paintProductPrice: qui
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      value:
+        name: value
+        description: ''
+        required: true
+        example: 630717.4542586
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      paint_type_id:
+        name: paint_type_id
+        description: 'The <code>id</code> of an existing record in the paint_types table.'
+        required: true
+        example: distinctio
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      number_paint_element_id:
+        name: number_paint_element_id
+        description: 'The <code>id</code> of an existing record in the number_paint_elements table.'
+        required: true
+        example: natus
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      value: 630717.4542586
+      paint_type_id: distinctio
+      number_paint_element_id: natus
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer PeZac6ha8k3VDdvb4516Egf'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/paint-product-prices/{paintProductPrice}'
+    metadata:
+      groupName: 'Gestion des tarifs des produits de peinture'
+      groupDescription: |-
+
+        APIs pour la gestion des tarifs des produits de peinture
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Supprimer un tarif de produit de peinture'
+      description: ''
+      authenticated: true
+      deprecated: false
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      paintProductPrice:
+        name: paintProductPrice
+        description: ''
+        required: true
+        example: alias
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      paintProductPrice: alias
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer fdkcb6vgDZ4Vae1E56h83Pa'
     controller: null
     method: null
     route: null

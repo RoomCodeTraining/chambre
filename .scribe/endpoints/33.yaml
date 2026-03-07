@@ -1,20 +1,20 @@
-name: "Gestion des types d'autres charges"
+name: 'Gestion des types de dossiers'
 description: |-
 
-  APIs pour la gestion des types d'autres charges
+  APIs pour la gestion des types de dossiers
 endpoints:
   -
     httpMethods:
       - GET
-    uri: api/v1/other-cost-types
+    uri: api/v1/assignment-types
     metadata:
-      groupName: "Gestion des types d'autres charges"
+      groupName: 'Gestion des types de dossiers'
       groupDescription: |-
 
-        APIs pour la gestion des types d'autres charges
+        APIs pour la gestion des types de dossiers
       subgroup: ''
       subgroupDescription: ''
-      title: "Lister tous les types d'autres charges"
+      title: 'Lister tous les types de dossiers'
       description: ''
       authenticated: true
       deprecated: false
@@ -44,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6Zhbga5k346DV81eadfcPvE'
+      - 'Bearer kd6ga813EcvZhV4aPDfeb56'
     controller: null
     method: null
     route: null
@@ -52,15 +52,15 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/v1/other-cost-types
+    uri: api/v1/assignment-types
     metadata:
-      groupName: "Gestion des types d'autres charges"
+      groupName: 'Gestion des types de dossiers'
       groupDescription: |-
 
-        APIs pour la gestion des types d'autres charges
+        APIs pour la gestion des types de dossiers
       subgroup: ''
       subgroupDescription: ''
-      title: "Ajouter un type d'autre charge"
+      title: 'Ajouter un type de dossier'
       description: ''
       authenticated: true
       deprecated: false
@@ -78,7 +78,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: bpkaiwxedeimhxlga
+        example: fgl
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -88,22 +88,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Qui vitae consequatur iste.'
+        example: 'Numquam ut aut et.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: bpkaiwxedeimhxlga
-      description: 'Qui vitae consequatur iste.'
+      label: fgl
+      description: 'Numquam ut aut et.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer EZPed8a6vkDa316fV5bg4ch'
+      - 'Bearer 8k6agVcE6eDhd1baP5f3Zv4'
     controller: null
     method: null
     route: null
@@ -111,15 +111,15 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: 'api/v1/other-cost-types/{otherCostType}'
+    uri: 'api/v1/assignment-types/{assignment_type}'
     metadata:
-      groupName: "Gestion des types d'autres charges"
+      groupName: 'Gestion des types de dossiers'
       groupDescription: |-
 
-        APIs pour la gestion des types d'autres charges
+        APIs pour la gestion des types de dossiers
       subgroup: ''
       subgroupDescription: ''
-      title: "Afficher un type d'autre charge"
+      title: 'Afficher un type de dossier'
       description: ''
       authenticated: true
       deprecated: false
@@ -129,18 +129,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      otherCostType:
-        name: otherCostType
+      assignment_type:
+        name: assignment_type
         description: ''
         required: true
-        example: quo
-        type: string
+        example: 1
+        type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      otherCostType: quo
+      assignment_type: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -160,7 +160,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer vD1Pdaecb48V536g6ZhakEf'
+      - 'Bearer VecZv6Pd3a6hE48a51fkgbD'
     controller: null
     method: null
     route: null
@@ -168,15 +168,15 @@ endpoints:
   -
     httpMethods:
       - PUT
-    uri: 'api/v1/other-cost-types/{otherCostType}'
+    uri: 'api/v1/assignment-types/{assignment_type}'
     metadata:
-      groupName: "Gestion des types d'autres charges"
+      groupName: 'Gestion des types de dossiers'
       groupDescription: |-
 
-        APIs pour la gestion des types d'autres charges
+        APIs pour la gestion des types de dossiers
       subgroup: ''
       subgroupDescription: ''
-      title: "Mettre à jour un type d'autre charge"
+      title: 'Mettre à jour un type de dossier'
       description: ''
       authenticated: true
       deprecated: false
@@ -186,18 +186,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      otherCostType:
-        name: otherCostType
+      assignment_type:
+        name: assignment_type
         description: ''
         required: true
-        example: repellendus
-        type: string
+        example: 1
+        type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      otherCostType: repellendus
+      assignment_type: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -205,7 +205,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: hful
+        example: xaczgajmaejorzhxccepbgil
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -215,22 +215,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Iste doloribus et eaque deserunt quis eveniet.'
+        example: 'Amet tempora quis quod quo sed vel ipsam.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: hful
-      description: 'Iste doloribus et eaque deserunt quis eveniet.'
+      label: xaczgajmaejorzhxccepbgil
+      description: 'Amet tempora quis quod quo sed vel ipsam.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer gPD64daVbZcEhe3fk81a56v'
+      - 'Bearer 5Ek4e8h16fDgaVZ63cbPvda'
     controller: null
     method: null
     route: null
@@ -238,15 +238,15 @@ endpoints:
   -
     httpMethods:
       - DELETE
-    uri: 'api/v1/other-cost-types/{otherCostType}'
+    uri: 'api/v1/assignment-types/{assignment_type}'
     metadata:
-      groupName: "Gestion des types d'autres charges"
+      groupName: 'Gestion des types de dossiers'
       groupDescription: |-
 
-        APIs pour la gestion des types d'autres charges
+        APIs pour la gestion des types de dossiers
       subgroup: ''
       subgroupDescription: ''
-      title: "Supprimer un type d'autre charge"
+      title: 'Supprimer un type de dossier'
       description: ''
       authenticated: true
       deprecated: false
@@ -256,18 +256,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      otherCostType:
-        name: otherCostType
+      assignment_type:
+        name: assignment_type
         description: ''
         required: true
-        example: nisi
-        type: string
+        example: 1
+        type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      otherCostType: nisi
+      assignment_type: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -278,7 +278,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer cd3a8kZb5vEVe1Dfh6g64Pa'
+      - 'Bearer h1cf6vD3deEPaaZ54kg6b8V'
     controller: null
     method: null
     route: null
@@ -286,15 +286,15 @@ endpoints:
   -
     httpMethods:
       - PUT
-    uri: 'api/v1/other-cost-types/{otherCostType}/enable'
+    uri: 'api/v1/assignment-types/{assignment_type}/enable'
     metadata:
-      groupName: "Gestion des types d'autres charges"
+      groupName: 'Gestion des types de dossiers'
       groupDescription: |-
 
-        APIs pour la gestion des types d'autres charges
+        APIs pour la gestion des types de dossiers
       subgroup: ''
       subgroupDescription: ''
-      title: "Activer un type d'autre charge"
+      title: 'Activer un type de dossier'
       description: ''
       authenticated: true
       deprecated: false
@@ -304,18 +304,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      otherCostType:
-        name: otherCostType
+      assignment_type:
+        name: assignment_type
         description: ''
         required: true
-        example: sint
-        type: string
+        example: 1
+        type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      otherCostType: sint
+      assignment_type: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -326,7 +326,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Ek35VgfZa1vePdba6h4Dc68'
+      - 'Bearer Ve16aPdZ8gfb65ckv3hE4aD'
     controller: null
     method: null
     route: null
@@ -334,15 +334,15 @@ endpoints:
   -
     httpMethods:
       - PUT
-    uri: 'api/v1/other-cost-types/{otherCostType}/disable'
+    uri: 'api/v1/assignment-types/{assignment_type}/disable'
     metadata:
-      groupName: "Gestion des types d'autres charges"
+      groupName: 'Gestion des types de dossiers'
       groupDescription: |-
 
-        APIs pour la gestion des types d'autres charges
+        APIs pour la gestion des types de dossiers
       subgroup: ''
       subgroupDescription: ''
-      title: "Désactiver un type d'autre charge"
+      title: 'Désactiver un type de dossier'
       description: ''
       authenticated: true
       deprecated: false
@@ -352,18 +352,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      otherCostType:
-        name: otherCostType
+      assignment_type:
+        name: assignment_type
         description: ''
         required: true
-        example: corrupti
-        type: string
+        example: 1
+        type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      otherCostType: corrupti
+      assignment_type: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -374,7 +374,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer bdE8v5e4316hfVgc6kDaaZP'
+      - 'Bearer kv8gcdZ653a4hVPb61DafEe'
     controller: null
     method: null
     route: null

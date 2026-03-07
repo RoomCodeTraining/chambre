@@ -1,20 +1,20 @@
-name: 'Gestion des taux horaires'
+name: 'Gestion des types de peinture'
 description: |-
 
-  APIs pour la gestion des taux horaires
+  APIs pour la gestion des types de peinture
 endpoints:
   -
     httpMethods:
       - GET
-    uri: api/v1/hourly-rates
+    uri: api/v1/paint-types
     metadata:
-      groupName: 'Gestion des taux horaires'
+      groupName: 'Gestion des types de peinture'
       groupDescription: |-
 
-        APIs pour la gestion des taux horaires
+        APIs pour la gestion des types de peinture
       subgroup: ''
       subgroupDescription: ''
-      title: 'Lister tous les taux horaires'
+      title: 'Lister tous les types de peinture'
       description: ''
       authenticated: true
       deprecated: false
@@ -44,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer kb5EgDvPda4f3eV6Zc8ah16'
+      - 'Bearer fEbakev86ZdhcVP1645a3Dg'
     controller: null
     method: null
     route: null
@@ -52,15 +52,15 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/v1/hourly-rates
+    uri: api/v1/paint-types
     metadata:
-      groupName: 'Gestion des taux horaires'
+      groupName: 'Gestion des types de peinture'
       groupDescription: |-
 
-        APIs pour la gestion des taux horaires
+        APIs pour la gestion des types de peinture
       subgroup: ''
       subgroupDescription: ''
-      title: 'Ajouter un taux horaire'
+      title: 'Ajouter un type de peinture'
       description: ''
       authenticated: true
       deprecated: false
@@ -78,7 +78,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: dokr
+        example: eflxocougrmgqbadmdjq
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -88,33 +88,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Nesciunt velit praesentium laboriosam dolorem qui.'
+        example: 'Ut dolorem ut est quisquam.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
-      value:
-        name: value
-        description: 'La valeur de value doit être supérieure ou égale à 0.'
-        required: true
-        example: 89
-        type: number
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
     cleanBodyParameters:
-      label: dokr
-      description: 'Nesciunt velit praesentium laboriosam dolorem qui.'
-      value: 89
+      label: eflxocougrmgqbadmdjq
+      description: 'Ut dolorem ut est quisquam.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer hk6g5fvabZ8ED34dac6V1eP'
+      - 'Bearer DkPa34Eaf6ZV6eg1v5c8hdb'
     controller: null
     method: null
     route: null
@@ -122,15 +111,15 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: 'api/v1/hourly-rates/{hourlyRate}'
+    uri: 'api/v1/paint-types/{paintType}'
     metadata:
-      groupName: 'Gestion des taux horaires'
+      groupName: 'Gestion des types de peinture'
       groupDescription: |-
 
-        APIs pour la gestion des taux horaires
+        APIs pour la gestion des types de peinture
       subgroup: ''
       subgroupDescription: ''
-      title: 'Afficher un taux horaire'
+      title: 'Afficher un type de peinture'
       description: ''
       authenticated: true
       deprecated: false
@@ -140,18 +129,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      hourlyRate:
-        name: hourlyRate
+      paintType:
+        name: paintType
         description: ''
         required: true
-        example: eaque
+        example: et
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      hourlyRate: eaque
+      paintType: et
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -171,7 +160,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer v8Dec14bPh65ag6dfZ3kVaE'
+      - 'Bearer hDavZ45bfEP3kd8aVg1ce66'
     controller: null
     method: null
     route: null
@@ -179,15 +168,15 @@ endpoints:
   -
     httpMethods:
       - PUT
-    uri: 'api/v1/hourly-rates/{hourlyRate}'
+    uri: 'api/v1/paint-types/{paintType}'
     metadata:
-      groupName: 'Gestion des taux horaires'
+      groupName: 'Gestion des types de peinture'
       groupDescription: |-
 
-        APIs pour la gestion des taux horaires
+        APIs pour la gestion des types de peinture
       subgroup: ''
       subgroupDescription: ''
-      title: 'Mettre à jour un taux horaire'
+      title: 'Mettre à jour un type de peinture'
       description: ''
       authenticated: true
       deprecated: false
@@ -197,18 +186,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      hourlyRate:
-        name: hourlyRate
+      paintType:
+        name: paintType
         description: ''
         required: true
-        example: quidem
+        example: totam
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      hourlyRate: quidem
+      paintType: totam
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -216,7 +205,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: yjrffmow
+        example: nefbtcblkzfesbyeg
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -226,33 +215,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Excepturi enim rerum laboriosam officiis ut.'
+        example: 'Voluptatum officiis aliquid provident saepe quos repellat.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
-      value:
-        name: value
-        description: ''
-        required: true
-        example: 285252.5683
-        type: number
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
     cleanBodyParameters:
-      label: yjrffmow
-      description: 'Excepturi enim rerum laboriosam officiis ut.'
-      value: 285252.5683
+      label: nefbtcblkzfesbyeg
+      description: 'Voluptatum officiis aliquid provident saepe quos repellat.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer abh46cve6VEa8Zdk1g5fP3D'
+      - 'Bearer c3V6D6aZfg41vPbk8deahE5'
     controller: null
     method: null
     route: null
@@ -260,15 +238,15 @@ endpoints:
   -
     httpMethods:
       - DELETE
-    uri: 'api/v1/hourly-rates/{hourlyRate}'
+    uri: 'api/v1/paint-types/{paintType}'
     metadata:
-      groupName: 'Gestion des taux horaires'
+      groupName: 'Gestion des types de peinture'
       groupDescription: |-
 
-        APIs pour la gestion des taux horaires
+        APIs pour la gestion des types de peinture
       subgroup: ''
       subgroupDescription: ''
-      title: 'Supprimer un taux horaire'
+      title: 'Supprimer un type de peinture'
       description: ''
       authenticated: true
       deprecated: false
@@ -278,18 +256,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      hourlyRate:
-        name: hourlyRate
+      paintType:
+        name: paintType
         description: ''
         required: true
-        example: illum
+        example: ut
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      hourlyRate: illum
+      paintType: ut
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -300,7 +278,103 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer ha6Zv8ag3Vd156PkD4Efceb'
+      - 'Bearer 6a5ZDg4Vc83Pvkh1badfeE6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/paint-types/{paintType}/enable'
+    metadata:
+      groupName: 'Gestion des types de peinture'
+      groupDescription: |-
+
+        APIs pour la gestion des types de peinture
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Activer un type de peinture'
+      description: ''
+      authenticated: true
+      deprecated: false
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      paintType:
+        name: paintType
+        description: ''
+        required: true
+        example: nulla
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      paintType: nulla
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer Z8aVa51dE3vDef4hc66bkPg'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/paint-types/{paintType}/disable'
+    metadata:
+      groupName: 'Gestion des types de peinture'
+      groupDescription: |-
+
+        APIs pour la gestion des types de peinture
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Désactiver un type de peinture'
+      description: ''
+      authenticated: true
+      deprecated: false
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      paintType:
+        name: paintType
+        description: ''
+        required: true
+        example: nemo
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      paintType: nemo
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer Zv4D6dE1e8cbVfhg3Pka6a5'
     controller: null
     method: null
     route: null

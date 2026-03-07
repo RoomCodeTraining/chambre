@@ -1,20 +1,20 @@
-name: 'Gestion des délais de statuts généraux'
+name: 'Gestion des rattachements réparateurs'
 description: |-
 
-  APIs pour la gestion des délais de statuts généraux
+  APIs pour la gestion des rattachements réparateurs
 endpoints:
   -
     httpMethods:
       - GET
-    uri: api/v1/general-status-deadlines
+    uri: api/v1/repairer-relationships
     metadata:
-      groupName: 'Gestion des délais de statuts généraux'
+      groupName: 'Gestion des rattachements réparateurs'
       groupDescription: |-
 
-        APIs pour la gestion des délais de statuts généraux
+        APIs pour la gestion des rattachements réparateurs
       subgroup: ''
       subgroupDescription: ''
-      title: 'Lister tous les délais de statuts généraux'
+      title: 'Lister tous les rattachements réparateurs'
       description: ''
       authenticated: true
       deprecated: false
@@ -44,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer dcaVg34vPb6a8khZDEf6e51'
+      - 'Bearer 68e5Ea4DbhZVgdcvk36aPf1'
     controller: null
     method: null
     route: null
@@ -52,15 +52,15 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/v1/general-status-deadlines
+    uri: api/v1/repairer-relationships
     metadata:
-      groupName: 'Gestion des délais de statuts généraux'
+      groupName: 'Gestion des rattachements réparateurs'
       groupDescription: |-
 
-        APIs pour la gestion des délais de statuts généraux
+        APIs pour la gestion des rattachements réparateurs
       subgroup: ''
       subgroupDescription: ''
-      title: 'Créer un délai de statut général'
+      title: 'Créer un rattachement réparateur'
       description: ''
       authenticated: true
       deprecated: false
@@ -74,58 +74,25 @@ endpoints:
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      label:
-        name: label
-        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
+      repairer_id:
+        name: repairer_id
+        description: 'The <code>id</code> of an existing record in the entities table.'
         required: true
-        example: dnynafsenpsweeaselnjnub
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      description:
-        name: description
-        description: ''
-        required: false
-        example: 'Voluptas aliquam cum non et quis.'
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: true
-        custom: []
-      time_limit:
-        name: time_limit
-        description: 'La valeur de value doit être supérieure ou égale à 0.'
-        required: true
-        example: 44
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      target_status_id:
-        name: target_status_id
-        description: 'The <code>id</code> of an existing record in the statuses table.'
-        required: true
-        example: velit
+        example: rerum
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      label: dnynafsenpsweeaselnjnub
-      description: 'Voluptas aliquam cum non et quis.'
-      time_limit: 44
-      target_status_id: velit
+      repairer_id: rerum
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer h865Pf4ZE1vaVegbDdc3ak6'
+      - 'Bearer Eaa8b3dV1g4c5e6DZfvhP6k'
     controller: null
     method: null
     route: null
@@ -133,15 +100,15 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: 'api/v1/general-status-deadlines/{id}'
+    uri: 'api/v1/repairer-relationships/{repairerRelationship}'
     metadata:
-      groupName: 'Gestion des délais de statuts généraux'
+      groupName: 'Gestion des rattachements réparateurs'
       groupDescription: |-
 
-        APIs pour la gestion des délais de statuts généraux
+        APIs pour la gestion des rattachements réparateurs
       subgroup: ''
       subgroupDescription: ''
-      title: 'Afficher un délai de statut général'
+      title: 'Afficher un rattachement réparateur'
       description: ''
       authenticated: true
       deprecated: false
@@ -151,18 +118,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      id:
-        name: id
-        description: 'The ID of the general status deadline.'
+      repairerRelationship:
+        name: repairerRelationship
+        description: ''
         required: true
-        example: unde
+        example: quas
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: unde
+      repairerRelationship: quas
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -182,7 +149,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer eVZhP6akfv5b6cga14dE3D8'
+      - 'Bearer 3dfhZPcEav1g6eD58abkV46'
     controller: null
     method: null
     route: null
@@ -190,15 +157,15 @@ endpoints:
   -
     httpMethods:
       - PUT
-    uri: 'api/v1/general-status-deadlines/{id}'
+    uri: 'api/v1/repairer-relationships/{repairerRelationship}'
     metadata:
-      groupName: 'Gestion des délais de statuts généraux'
+      groupName: 'Gestion des rattachements réparateurs'
       groupDescription: |-
 
-        APIs pour la gestion des délais de statuts généraux
+        APIs pour la gestion des rattachements réparateurs
       subgroup: ''
       subgroupDescription: ''
-      title: 'Mettre à jour un délai de statut général'
+      title: 'Mettre à jour un rattachement réparateur'
       description: ''
       authenticated: true
       deprecated: false
@@ -208,114 +175,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      id:
-        name: id
-        description: 'The ID of the general status deadline.'
-        required: true
-        example: beatae
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-    cleanUrlParameters:
-      id: beatae
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer bgevf3E4P8D5Zck6hVa1a6d'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - DELETE
-    uri: 'api/v1/general-status-deadlines/{id}'
-    metadata:
-      groupName: 'Gestion des délais de statuts généraux'
-      groupDescription: |-
-
-        APIs pour la gestion des délais de statuts généraux
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Supprimer un délai de statut général'
-      description: ''
-      authenticated: true
-      deprecated: false
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      id:
-        name: id
-        description: 'The ID of the general status deadline.'
-        required: true
-        example: inventore
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-    cleanUrlParameters:
-      id: inventore
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer 5168VaD3kghdvaPcZ46bEfe'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: 'api/v1/general-status-deadlines/{general_status_deadline}/enable'
-    metadata:
-      groupName: 'Gestion des délais de statuts généraux'
-      groupDescription: |-
-
-        APIs pour la gestion des délais de statuts généraux
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Activer un délai de statut général'
-      description: ''
-      authenticated: true
-      deprecated: false
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      general_status_deadline:
-        name: general_status_deadline
+      repairerRelationship:
+        name: repairerRelationship
         description: ''
         required: true
-        example: numquam
+        example: quisquam
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      general_status_deadline: numquam
+      repairerRelationship: quisquam
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -326,674 +197,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer hvD48166kfZb3VagedE5aPc'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: 'api/v1/general-status-deadlines/{general_status_deadline}/disable'
-    metadata:
-      groupName: 'Gestion des délais de statuts généraux'
-      groupDescription: |-
-
-        APIs pour la gestion des délais de statuts généraux
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Désactiver un délai de statut général'
-      description: ''
-      authenticated: true
-      deprecated: false
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      general_status_deadline:
-        name: general_status_deadline
-        description: ''
-        required: true
-        example: recusandae
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-    cleanUrlParameters:
-      general_status_deadline: recusandae
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer ePEa36Zhb45g8dcV1kv6fDa'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - GET
-    uri: api/generalStatusDeadlines
-    metadata:
-      groupName: 'Gestion des délais de statuts généraux'
-      groupDescription: |-
-
-        APIs pour la gestion des délais de statuts généraux
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Lister tous les délais de statuts généraux'
-      description: ''
-      authenticated: true
-      deprecated: false
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        status: 200
-        content: '{"data":[],"links":{"first":"https:\/\/cea-back.ddev.site\/api\/generalStatusDeadlines?page=1","last":"https:\/\/cea-back.ddev.site\/api\/generalStatusDeadlines?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":null,"last_page":1,"links":[{"url":null,"label":"&laquo; Pr\u00e9c\u00e9dent","page":null,"active":false},{"url":"https:\/\/cea-back.ddev.site\/api\/generalStatusDeadlines?page=1","label":"1","page":1,"active":true},{"url":null,"label":"Suivant &raquo;","page":null,"active":false}],"path":"https:\/\/cea-back.ddev.site\/api\/generalStatusDeadlines","per_page":20,"to":null,"total":0}}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          access-control-allow-origin: '*'
-        description: null
-        custom: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer Z6aeda4EDhVc5v38b16fkgP'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: api/generalStatusDeadlines
-    metadata:
-      groupName: 'Gestion des délais de statuts généraux'
-      groupDescription: |-
-
-        APIs pour la gestion des délais de statuts généraux
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Créer un délai de statut général'
-      description: ''
-      authenticated: true
-      deprecated: false
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      label:
-        name: label
-        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
-        required: true
-        example: pomxybgmzoncsiawfvl
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      description:
-        name: description
-        description: ''
-        required: false
-        example: 'Tenetur vel aut iure quisquam.'
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: true
-        custom: []
-      time_limit:
-        name: time_limit
-        description: 'La valeur de value doit être supérieure ou égale à 0.'
-        required: true
-        example: 57
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      target_status_id:
-        name: target_status_id
-        description: 'The <code>id</code> of an existing record in the statuses table.'
-        required: true
-        example: aut
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-    cleanBodyParameters:
-      label: pomxybgmzoncsiawfvl
-      description: 'Tenetur vel aut iure quisquam.'
-      time_limit: 57
-      target_status_id: aut
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer 1g6vZbch5e6D3aafkVE8P4d'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - GET
-    uri: 'api/generalStatusDeadlines/{id}'
-    metadata:
-      groupName: 'Gestion des délais de statuts généraux'
-      groupDescription: |-
-
-        APIs pour la gestion des délais de statuts généraux
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Afficher un délai de statut général'
-      description: ''
-      authenticated: true
-      deprecated: false
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      id:
-        name: id
-        description: 'The ID of the generalStatusDeadline.'
-        required: true
-        example: 13
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-    cleanUrlParameters:
-      id: 13
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        status: 404
-        content: |-
-          {
-              "message": "No query results for model [App\\Models\\GeneralStatusDeadline].",
-              "exception": "Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException",
-              "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php",
-              "line": 669,
-              "trace": [
-                  {
-                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php",
-                      "line": 617,
-                      "function": "prepareException",
-                      "class": "Illuminate\\Foundation\\Exceptions\\Handler",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/var/www/html/vendor/nunomaduro/collision/src/Adapters/Laravel/ExceptionHandler.php",
-                      "line": 54,
-                      "function": "render",
-                      "class": "Illuminate\\Foundation\\Exceptions\\Handler",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php",
-                      "line": 51,
-                      "function": "render",
-                      "class": "NunoMaduro\\Collision\\Adapters\\Laravel\\ExceptionHandler",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 182,
-                      "function": "handleException",
-                      "class": "Illuminate\\Routing\\Pipeline",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php",
-                      "line": 50,
-                      "function": "Illuminate\\Pipeline\\{closure}",
-                      "class": "Illuminate\\Pipeline\\Pipeline",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 219,
-                      "function": "handle",
-                      "class": "Illuminate\\Routing\\Middleware\\SubstituteBindings",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 137,
-                      "function": "Illuminate\\Pipeline\\{closure}",
-                      "class": "Illuminate\\Pipeline\\Pipeline",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
-                      "line": 821,
-                      "function": "then",
-                      "class": "Illuminate\\Pipeline\\Pipeline",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
-                      "line": 800,
-                      "function": "runRouteWithinStack",
-                      "class": "Illuminate\\Routing\\Router",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
-                      "line": 764,
-                      "function": "runRoute",
-                      "class": "Illuminate\\Routing\\Router",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
-                      "line": 753,
-                      "function": "dispatchToRoute",
-                      "class": "Illuminate\\Routing\\Router",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
-                      "line": 200,
-                      "function": "dispatch",
-                      "class": "Illuminate\\Routing\\Router",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 180,
-                      "function": "Illuminate\\Foundation\\Http\\{closure}",
-                      "class": "Illuminate\\Foundation\\Http\\Kernel",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/var/www/html/vendor/livewire/livewire/src/Features/SupportDisablingBackButtonCache/DisableBackButtonCacheMiddleware.php",
-                      "line": 19,
-                      "function": "Illuminate\\Pipeline\\{closure}",
-                      "class": "Illuminate\\Pipeline\\Pipeline",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 219,
-                      "function": "handle",
-                      "class": "Livewire\\Features\\SupportDisablingBackButtonCache\\DisableBackButtonCacheMiddleware",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php",
-                      "line": 21,
-                      "function": "Illuminate\\Pipeline\\{closure}",
-                      "class": "Illuminate\\Pipeline\\Pipeline",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php",
-                      "line": 31,
-                      "function": "handle",
-                      "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 219,
-                      "function": "handle",
-                      "class": "Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php",
-                      "line": 21,
-                      "function": "Illuminate\\Pipeline\\{closure}",
-                      "class": "Illuminate\\Pipeline\\Pipeline",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php",
-                      "line": 51,
-                      "function": "handle",
-                      "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 219,
-                      "function": "handle",
-                      "class": "Illuminate\\Foundation\\Http\\Middleware\\TrimStrings",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePostSize.php",
-                      "line": 27,
-                      "function": "Illuminate\\Pipeline\\{closure}",
-                      "class": "Illuminate\\Pipeline\\Pipeline",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 219,
-                      "function": "handle",
-                      "class": "Illuminate\\Http\\Middleware\\ValidatePostSize",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php",
-                      "line": 109,
-                      "function": "Illuminate\\Pipeline\\{closure}",
-                      "class": "Illuminate\\Pipeline\\Pipeline",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 219,
-                      "function": "handle",
-                      "class": "Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php",
-                      "line": 61,
-                      "function": "Illuminate\\Pipeline\\{closure}",
-                      "class": "Illuminate\\Pipeline\\Pipeline",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 219,
-                      "function": "handle",
-                      "class": "Illuminate\\Http\\Middleware\\HandleCors",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php",
-                      "line": 58,
-                      "function": "Illuminate\\Pipeline\\{closure}",
-                      "class": "Illuminate\\Pipeline\\Pipeline",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 219,
-                      "function": "handle",
-                      "class": "Illuminate\\Http\\Middleware\\TrustProxies",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/InvokeDeferredCallbacks.php",
-                      "line": 22,
-                      "function": "Illuminate\\Pipeline\\{closure}",
-                      "class": "Illuminate\\Pipeline\\Pipeline",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 219,
-                      "function": "handle",
-                      "class": "Illuminate\\Foundation\\Http\\Middleware\\InvokeDeferredCallbacks",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePathEncoding.php",
-                      "line": 26,
-                      "function": "Illuminate\\Pipeline\\{closure}",
-                      "class": "Illuminate\\Pipeline\\Pipeline",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 219,
-                      "function": "handle",
-                      "class": "Illuminate\\Http\\Middleware\\ValidatePathEncoding",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 137,
-                      "function": "Illuminate\\Pipeline\\{closure}",
-                      "class": "Illuminate\\Pipeline\\Pipeline",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
-                      "line": 175,
-                      "function": "then",
-                      "class": "Illuminate\\Pipeline\\Pipeline",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
-                      "line": 144,
-                      "function": "sendRequestThroughRouter",
-                      "class": "Illuminate\\Foundation\\Http\\Kernel",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/var/www/html/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php",
-                      "line": 256,
-                      "function": "handle",
-                      "class": "Illuminate\\Foundation\\Http\\Kernel",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/var/www/html/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php",
-                      "line": 249,
-                      "function": "callLaravelRoute",
-                      "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/var/www/html/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php",
-                      "line": 86,
-                      "function": "makeApiCall",
-                      "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/var/www/html/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php",
-                      "line": 39,
-                      "function": "makeResponseCall",
-                      "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/var/www/html/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php",
-                      "line": 240,
-                      "function": "__invoke",
-                      "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/var/www/html/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php",
-                      "line": 165,
-                      "function": "iterateThroughStrategies",
-                      "class": "Knuckles\\Scribe\\Extracting\\Extractor",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/var/www/html/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php",
-                      "line": 97,
-                      "function": "fetchResponses",
-                      "class": "Knuckles\\Scribe\\Extracting\\Extractor",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/var/www/html/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php",
-                      "line": 125,
-                      "function": "processRoute",
-                      "class": "Knuckles\\Scribe\\Extracting\\Extractor",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/var/www/html/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php",
-                      "line": 72,
-                      "function": "extractEndpointsInfoFromLaravelApp",
-                      "class": "Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/var/www/html/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php",
-                      "line": 50,
-                      "function": "extractEndpointsInfoAndWriteToDisk",
-                      "class": "Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/var/www/html/vendor/knuckleswtf/scribe/src/Commands/GenerateDocumentation.php",
-                      "line": 55,
-                      "function": "get",
-                      "class": "Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php",
-                      "line": 36,
-                      "function": "handle",
-                      "class": "Knuckles\\Scribe\\Commands\\GenerateDocumentation",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Container/Util.php",
-                      "line": 43,
-                      "function": "Illuminate\\Container\\{closure}",
-                      "class": "Illuminate\\Container\\BoundMethod",
-                      "type": "::"
-                  },
-                  {
-                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php",
-                      "line": 96,
-                      "function": "unwrapIfClosure",
-                      "class": "Illuminate\\Container\\Util",
-                      "type": "::"
-                  },
-                  {
-                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php",
-                      "line": 35,
-                      "function": "callBoundMethod",
-                      "class": "Illuminate\\Container\\BoundMethod",
-                      "type": "::"
-                  },
-                  {
-                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php",
-                      "line": 836,
-                      "function": "call",
-                      "class": "Illuminate\\Container\\BoundMethod",
-                      "type": "::"
-                  },
-                  {
-                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Console/Command.php",
-                      "line": 211,
-                      "function": "call",
-                      "class": "Illuminate\\Container\\Container",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/var/www/html/vendor/symfony/console/Command/Command.php",
-                      "line": 318,
-                      "function": "execute",
-                      "class": "Illuminate\\Console\\Command",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Console/Command.php",
-                      "line": 180,
-                      "function": "run",
-                      "class": "Symfony\\Component\\Console\\Command\\Command",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/var/www/html/vendor/symfony/console/Application.php",
-                      "line": 1110,
-                      "function": "run",
-                      "class": "Illuminate\\Console\\Command",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/var/www/html/vendor/symfony/console/Application.php",
-                      "line": 359,
-                      "function": "doRunCommand",
-                      "class": "Symfony\\Component\\Console\\Application",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/var/www/html/vendor/symfony/console/Application.php",
-                      "line": 194,
-                      "function": "doRun",
-                      "class": "Symfony\\Component\\Console\\Application",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php",
-                      "line": 197,
-                      "function": "run",
-                      "class": "Symfony\\Component\\Console\\Application",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php",
-                      "line": 1235,
-                      "function": "handle",
-                      "class": "Illuminate\\Foundation\\Console\\Kernel",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/var/www/html/artisan",
-                      "line": 16,
-                      "function": "handleCommand",
-                      "class": "Illuminate\\Foundation\\Application",
-                      "type": "->"
-                  }
-              ]
-          }
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          access-control-allow-origin: '*'
-        description: null
-        custom: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer gda46h3vPaek15Eb6DfcZV8'
+      - 'Bearer fP856Vega6DEh31advZ4ckb'
     controller: null
     method: null
     route: null
@@ -1001,16 +205,15 @@ endpoints:
   -
     httpMethods:
       - PUT
-      - PATCH
-    uri: 'api/generalStatusDeadlines/{id}'
+    uri: 'api/v1/repairer-relationships/{repairerRelationship}/enable'
     metadata:
-      groupName: 'Gestion des délais de statuts généraux'
+      groupName: 'Gestion des rattachements réparateurs'
       groupDescription: |-
 
-        APIs pour la gestion des délais de statuts généraux
+        APIs pour la gestion des rattachements réparateurs
       subgroup: ''
       subgroupDescription: ''
-      title: 'Mettre à jour un délai de statut général'
+      title: 'Activer un rattachement réparateur'
       description: ''
       authenticated: true
       deprecated: false
@@ -1020,18 +223,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      id:
-        name: id
-        description: 'The ID of the generalStatusDeadline.'
+      repairerRelationship:
+        name: repairerRelationship
+        description: ''
         required: true
-        example: 5
-        type: integer
+        example: nam
+        type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 5
+      repairerRelationship: nam
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -1042,23 +245,23 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Pd8ac4f6Z5baVgED1kve3h6'
+      - 'Bearer fg6kh4E8c3Zabv1P6a5edDV'
     controller: null
     method: null
     route: null
     custom: []
   -
     httpMethods:
-      - DELETE
-    uri: 'api/generalStatusDeadlines/{id}'
+      - PUT
+    uri: 'api/v1/repairer-relationships/{repairerRelationship}/disable'
     metadata:
-      groupName: 'Gestion des délais de statuts généraux'
+      groupName: 'Gestion des rattachements réparateurs'
       groupDescription: |-
 
-        APIs pour la gestion des délais de statuts généraux
+        APIs pour la gestion des rattachements réparateurs
       subgroup: ''
       subgroupDescription: ''
-      title: 'Supprimer un délai de statut général'
+      title: 'Désactiver un rattachement réparateur'
       description: ''
       authenticated: true
       deprecated: false
@@ -1068,18 +271,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      id:
-        name: id
-        description: 'The ID of the generalStatusDeadline.'
+      repairerRelationship:
+        name: repairerRelationship
+        description: ''
         required: true
-        example: 8
-        type: integer
+        example: perferendis
+        type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 8
+      repairerRelationship: perferendis
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -1090,7 +293,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 1Va5DvZ3aeEgf6P8dbh6ck4'
+      - 'Bearer 6gvaVhcZ8653d4EPeaDkf1b'
     controller: null
     method: null
     route: null

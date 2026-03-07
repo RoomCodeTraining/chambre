@@ -1,20 +1,20 @@
-name: 'Gestion des chèques'
+name: 'Gestion des factures'
 description: |-
 
-  APIs pour la gestion des chèques
+  APIs pour la gestion des factures
 endpoints:
   -
     httpMethods:
       - GET
-    uri: api/v1/checks
+    uri: api/v1/invoices
     metadata:
-      groupName: 'Gestion des chèques'
+      groupName: 'Gestion des factures'
       groupDescription: |-
 
-        APIs pour la gestion des chèques
+        APIs pour la gestion des factures
       subgroup: ''
       subgroupDescription: ''
-      title: 'Lister tous les chèques'
+      title: 'Lister toutes les factures'
       description: ''
       authenticated: true
       deprecated: false
@@ -44,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 4ve6EDbk1ZPh8agfdcV65a3'
+      - 'Bearer Z3eDvbEVgf6a4k65a81cPdh'
     controller: null
     method: null
     route: null
@@ -52,43 +52,33 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/v1/checks
+    uri: api/v1/invoices
     metadata:
-      groupName: 'Gestion des chèques'
+      groupName: 'Gestion des factures'
       groupDescription: |-
 
-        APIs pour la gestion des chèques
+        APIs pour la gestion des factures
       subgroup: ''
       subgroupDescription: ''
-      title: 'Créer un chèque'
+      title: 'Créer une facture'
       description: ''
       authenticated: true
       deprecated: false
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: multipart/form-data
+      Content-Type: application/json
       Accept: application/json
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      payment_id:
-        name: payment_id
-        description: 'The <code>id</code> of an existing record in the payments table.'
+      assignment_id:
+        name: assignment_id
+        description: 'The <code>id</code> of an existing record in the assignments table.'
         required: true
-        example: nisi
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      bank_id:
-        name: bank_id
-        description: 'The <code>id</code> of an existing record in the banks table.'
-        required: true
-        example: optio
+        example: molestias
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -98,45 +88,155 @@ endpoints:
         name: date
         description: 'Must be a valid date in the format <code>Y-m-d</code>.'
         required: true
-        example: '2025-12-04'
+        example: '2026-03-07'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
-      amount:
-        name: amount
+      object:
+        name: object
         description: ''
         required: true
-        example: 325036.84283
+        example: perferendis
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      type:
+        name: type
+        description: ''
+        required: true
+        example: sale
+        type: string
+        enumValues:
+          - sale
+          - credit_bill
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      payment_method:
+        name: payment_method
+        description: ''
+        required: true
+        example: transfer
+        type: string
+        enumValues:
+          - cash
+          - card
+          - check
+          - mobile-money
+          - transfer
+          - deferred
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      template:
+        name: template
+        description: ''
+        required: true
+        example: B2C
+        type: string
+        enumValues:
+          - B2C
+          - B2B
+          - B2F
+          - B2G
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      is_fne:
+        name: is_fne
+        description: ''
+        required: false
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      foreign_currency:
+        name: foreign_currency
+        description: ''
+        required: false
+        example: quia
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      foreign_currency_rate:
+        name: foreign_currency_rate
+        description: 'La valeur de value doit être supérieure ou égale à 0. La valeur de value ne peut pas être supérieure à 100.'
+        required: false
+        example: 4
         type: number
         enumValues: []
         exampleWasSpecified: false
-        nullable: false
+        nullable: true
         custom: []
-      photo:
-        name: photo
-        description: 'Must be a file. La taille du fichier de value ne peut pas dépasser 2048 kilo-octets.'
-        required: true
-        example: null
-        type: file
+      discount:
+        name: discount
+        description: 'La valeur de value doit être supérieure ou égale à 0. La valeur de value ne peut pas être supérieure à 100.'
+        required: false
+        example: 23
+        type: number
         enumValues: []
         exampleWasSpecified: false
-        nullable: false
+        nullable: true
+        custom: []
+      invoice_reference:
+        name: invoice_reference
+        description: 'This field is required when <code>type</code> is <code>credit_bill</code>. The <code>reference</code> of an existing record in the invoices table.'
+        required: false
+        example: et
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      address:
+        name: address
+        description: ''
+        required: false
+        example: quidem
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      taxpayer_account_number:
+        name: taxpayer_account_number
+        description: 'This field is required when <code>template</code> is <code>B2B</code>.'
+        required: false
+        example: placeat
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
         custom: []
     cleanBodyParameters:
-      payment_id: nisi
-      bank_id: optio
-      date: '2025-12-04'
-      amount: 325036.84283
-    fileParameters:
-      photo: null
+      assignment_id: molestias
+      date: '2026-03-07'
+      object: perferendis
+      type: sale
+      payment_method: transfer
+      template: B2C
+      is_fne: true
+      foreign_currency: quia
+      foreign_currency_rate: 4
+      discount: 23
+      invoice_reference: et
+      address: quidem
+      taxpayer_account_number: placeat
+    fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer Zd5ha3k6bgvcD6feEP184aV'
+      - 'Bearer dhgbDck1V84e6v5fa6ZaP3E'
     controller: null
     method: null
     route: null
@@ -144,15 +244,15 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: 'api/v1/checks/{id}'
+    uri: 'api/v1/invoices/{id}'
     metadata:
-      groupName: 'Gestion des chèques'
+      groupName: 'Gestion des factures'
       groupDescription: |-
 
-        APIs pour la gestion des chèques
+        APIs pour la gestion des factures
       subgroup: ''
       subgroupDescription: ''
-      title: 'Afficher un chèque'
+      title: 'Afficher une facture'
       description: ''
       authenticated: true
       deprecated: false
@@ -164,16 +264,16 @@ endpoints:
     urlParameters:
       id:
         name: id
-        description: 'The ID of the check.'
+        description: 'The ID of the invoice.'
         required: true
-        example: enim
+        example: soluta
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: enim
+      id: soluta
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -193,7 +293,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer dPa4bV5fgZhE63vca1Dk8e6'
+      - 'Bearer 36584EvgZDfP6kVedhc1baa'
     controller: null
     method: null
     route: null
@@ -201,118 +301,15 @@ endpoints:
   -
     httpMethods:
       - PUT
-    uri: 'api/v1/checks/{id}'
+    uri: 'api/v1/invoices/{id}'
     metadata:
-      groupName: 'Gestion des chèques'
+      groupName: 'Gestion des factures'
       groupDescription: |-
 
-        APIs pour la gestion des chèques
+        APIs pour la gestion des factures
       subgroup: ''
       subgroupDescription: ''
-      title: 'Mettre à jour un chèque'
-      description: ''
-      authenticated: true
-      deprecated: false
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: multipart/form-data
-      Accept: application/json
-    urlParameters:
-      id:
-        name: id
-        description: 'The ID of the check.'
-        required: true
-        example: maxime
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-    cleanUrlParameters:
-      id: maxime
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      payment_id:
-        name: payment_id
-        description: 'The <code>id</code> of an existing record in the payments table.'
-        required: true
-        example: sit
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      bank_id:
-        name: bank_id
-        description: 'The <code>id</code> of an existing record in the banks table.'
-        required: true
-        example: ipsam
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      date:
-        name: date
-        description: 'Must be a valid date in the format <code>Y-m-d</code>.'
-        required: true
-        example: '2025-12-04'
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      amount:
-        name: amount
-        description: ''
-        required: true
-        example: 271895426.05
-        type: number
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      photo:
-        name: photo
-        description: 'Must be a file. La taille du fichier de value ne peut pas dépasser 2048 kilo-octets.'
-        required: true
-        example: null
-        type: file
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-    cleanBodyParameters:
-      payment_id: sit
-      bank_id: ipsam
-      date: '2025-12-04'
-      amount: 271895426.05
-    fileParameters:
-      photo: null
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer Ekg6aPafdVcv3bDZ48h61e5'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - DELETE
-    uri: 'api/v1/checks/{id}'
-    metadata:
-      groupName: 'Gestion des chèques'
-      groupDescription: |-
-
-        APIs pour la gestion des chèques
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Supprimer un chèque'
+      title: 'Mettre à jour une facture'
       description: ''
       authenticated: true
       deprecated: false
@@ -324,16 +321,108 @@ endpoints:
     urlParameters:
       id:
         name: id
-        description: 'The ID of the check.'
+        description: 'The ID of the invoice.'
         required: true
-        example: repellat
+        example: perferendis
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: repellat
+      id: perferendis
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      date:
+        name: date
+        description: 'Must be a valid date in the format <code>Y-m-d</code>.'
+        required: true
+        example: '2026-03-07'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      object:
+        name: object
+        description: ''
+        required: true
+        example: et
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      address:
+        name: address
+        description: ''
+        required: false
+        example: error
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      taxpayer_account_number:
+        name: taxpayer_account_number
+        description: ''
+        required: false
+        example: natus
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+    cleanBodyParameters:
+      date: '2026-03-07'
+      object: et
+      address: error
+      taxpayer_account_number: natus
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer Zv5hVEPef6a634akd1Dc8bg'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/invoices/{id}'
+    metadata:
+      groupName: 'Gestion des factures'
+      groupDescription: |-
+
+        APIs pour la gestion des factures
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Supprimer une facture'
+      description: ''
+      authenticated: true
+      deprecated: false
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the invoice.'
+        required: true
+        example: voluptatem
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      id: voluptatem
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -344,7 +433,149 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 1cD3Pvdefh4686kEbZgV5aa'
+      - 'Bearer 3Ef5k6De8g1v6PaZb4dachV'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/invoices/{invoice}/cancel'
+    metadata:
+      groupName: 'Gestion des factures'
+      groupDescription: |-
+
+        APIs pour la gestion des factures
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Annuler une facture'
+      description: ''
+      authenticated: true
+      deprecated: false
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      invoice:
+        name: invoice
+        description: 'The invoice.'
+        required: true
+        example: assumenda
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      invoice: assumenda
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 3bad51EaZc6gePVh4f8D6vk'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/invoices/{invoice}/generate'
+    metadata:
+      groupName: 'Gestion des factures'
+      groupDescription: |-
+
+        APIs pour la gestion des factures
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Générer une facture'
+      description: ''
+      authenticated: true
+      deprecated: false
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      invoice:
+        name: invoice
+        description: 'The invoice.'
+        required: true
+        example: repellendus
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      invoice: repellendus
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer kZ6d8v1egbh65faDaV34PcE'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/invoices/get/statistics
+    metadata:
+      groupName: 'Gestion des factures'
+      groupDescription: |-
+
+        APIs pour la gestion des factures
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Statistiques des factures'
+      description: ''
+      authenticated: true
+      deprecated: false
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer dgPb546eDvh6aVa318EcZfk'
     controller: null
     method: null
     route: null

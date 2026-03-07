@@ -1,20 +1,20 @@
-name: 'Gestion des autres charges'
+name: 'Gestion des carrosseries'
 description: |-
 
-  APIs pour la gestion des autres charges
+  APIs pour la gestion des carrosseries
 endpoints:
   -
     httpMethods:
       - GET
-    uri: api/v1/other-costs
+    uri: api/v1/bodyworks
     metadata:
-      groupName: 'Gestion des autres charges'
+      groupName: 'Gestion des carrosseries'
       groupDescription: |-
 
-        APIs pour la gestion des autres charges
+        APIs pour la gestion des carrosseries
       subgroup: ''
       subgroupDescription: ''
-      title: 'Lister toutes les autres charges'
+      title: 'Lister toutes les carrosseries'
       description: ''
       authenticated: true
       deprecated: false
@@ -44,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 5Vhg1cZevd3Df48P6bka6aE'
+      - 'Bearer f3kPvDZg156cbedEV4a8h6a'
     controller: null
     method: null
     route: null
@@ -52,15 +52,15 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/v1/other-costs
+    uri: api/v1/bodyworks
     metadata:
-      groupName: 'Gestion des autres charges'
+      groupName: 'Gestion des carrosseries'
       groupDescription: |-
 
-        APIs pour la gestion des autres charges
+        APIs pour la gestion des carrosseries
       subgroup: ''
       subgroupDescription: ''
-      title: 'Ajouter une autre charge'
+      title: 'Ajouter une carrosserie'
       description: ''
       authenticated: true
       deprecated: false
@@ -74,268 +74,36 @@ endpoints:
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      assignment_id:
-        name: assignment_id
-        description: 'The <code>id</code> of an existing record in the assignments table.'
+      label:
+        name: label
+        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: qui
+        example: fpwdsfttixe
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
-      other_costs:
-        name: other_costs
+      description:
+        name: description
         description: ''
-        required: true
-        example:
-          - []
-        type: 'object[]'
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      'other_costs[].other_cost_type_id':
-        name: 'other_costs[].other_cost_type_id'
-        description: ''
-        required: true
-        example: impedit
+        required: false
+        example: 'Rerum ea et rerum corporis reprehenderit labore.'
         type: string
         enumValues: []
         exampleWasSpecified: false
-        nullable: false
-        custom: []
-      'other_costs[].amount':
-        name: 'other_costs[].amount'
-        description: ''
-        required: true
-        example: 42653.99444
-        type: number
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
+        nullable: true
         custom: []
     cleanBodyParameters:
-      assignment_id: qui
-      other_costs:
-        -
-          other_cost_type_id: impedit
-          amount: 42653.99444
+      label: fpwdsfttixe
+      description: 'Rerum ea et rerum corporis reprehenderit labore.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 6843bkV6a5Z1vEafPedchgD'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: api/v1/other-costs/calculate
-    metadata:
-      groupName: 'Gestion des autres charges'
-      groupDescription: |-
-
-        APIs pour la gestion des autres charges
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Calculer les autres charges'
-      description: ''
-      authenticated: true
-      deprecated: false
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      assignment_id:
-        name: assignment_id
-        description: 'The <code>id</code> of an existing record in the assignments table.'
-        required: true
-        example: enim
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      hourly_rate_id:
-        name: hourly_rate_id
-        description: 'The <code>id</code> of an existing record in the hourly_rates table.'
-        required: true
-        example: est
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      paint_type_id:
-        name: paint_type_id
-        description: 'The <code>id</code> of an existing record in the paint_types table.'
-        required: true
-        example: ut
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      shock_works:
-        name: shock_works
-        description: ''
-        required: true
-        example:
-          - []
-        type: 'object[]'
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      workforces:
-        name: workforces
-        description: ''
-        required: true
-        example:
-          - []
-        type: 'object[]'
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      other_costs:
-        name: other_costs
-        description: ''
-        required: true
-        example:
-          - []
-        type: 'object[]'
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      'shock_works[].obsolescence_rate':
-        name: 'shock_works[].obsolescence_rate'
-        description: ''
-        required: true
-        example: 3346.412
-        type: number
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      'shock_works[].recovery_amount':
-        name: 'shock_works[].recovery_amount'
-        description: ''
-        required: true
-        example: 1531.711
-        type: number
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      'shock_works[].amount':
-        name: 'shock_works[].amount'
-        description: ''
-        required: true
-        example: 4873491.2443
-        type: number
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      'shock_works[].discount':
-        name: 'shock_works[].discount'
-        description: ''
-        required: true
-        example: 5264.874825
-        type: number
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      'workforces[].workforce_type_id':
-        name: 'workforces[].workforce_type_id'
-        description: 'The <code>id</code> of an existing record in the workforce_types table.'
-        required: true
-        example: doloribus
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      'workforces[].nb_hours':
-        name: 'workforces[].nb_hours'
-        description: ''
-        required: true
-        example: 387.1403544
-        type: number
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      'workforces[].discount':
-        name: 'workforces[].discount'
-        description: ''
-        required: true
-        example: 7238952.0244497
-        type: number
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      'other_costs[].other_cost_type_id':
-        name: 'other_costs[].other_cost_type_id'
-        description: 'The <code>id</code> of an existing record in the other_cost_types table.'
-        required: true
-        example: qui
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      'other_costs[].amount':
-        name: 'other_costs[].amount'
-        description: 'La valeur de value doit être supérieure ou égale à 0.'
-        required: true
-        example: 73
-        type: number
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-    cleanBodyParameters:
-      assignment_id: enim
-      hourly_rate_id: est
-      paint_type_id: ut
-      shock_works:
-        -
-          obsolescence_rate: 3346.412
-          recovery_amount: 1531.711
-          amount: 4873491.2443
-          discount: 5264.874825
-      workforces:
-        -
-          workforce_type_id: doloribus
-          nb_hours: 387.1403544
-          discount: 7238952.0244497
-      other_costs:
-        -
-          other_cost_type_id: qui
-          amount: 73
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer 8be6aka65ZEhvdVPf13Dc4g'
+      - 'Bearer 56k43aeD1ghbaZEP86vdVfc'
     controller: null
     method: null
     route: null
@@ -343,15 +111,15 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: 'api/v1/other-costs/{otherCost}'
+    uri: 'api/v1/bodyworks/{id}'
     metadata:
-      groupName: 'Gestion des autres charges'
+      groupName: 'Gestion des carrosseries'
       groupDescription: |-
 
-        APIs pour la gestion des autres charges
+        APIs pour la gestion des carrosseries
       subgroup: ''
       subgroupDescription: ''
-      title: 'Afficher une autre charge'
+      title: 'Afficher une carrosserie'
       description: ''
       authenticated: true
       deprecated: false
@@ -361,18 +129,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      otherCost:
-        name: otherCost
-        description: ''
+      id:
+        name: id
+        description: 'The ID of the bodywork.'
         required: true
-        example: eaque
+        example: ad
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      otherCost: eaque
+      id: ad
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -392,7 +160,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer VkD5aegb64c1PZv8d63Ehfa'
+      - 'Bearer h513k6aa8gDVvZf4Pbedc6E'
     controller: null
     method: null
     route: null
@@ -400,15 +168,15 @@ endpoints:
   -
     httpMethods:
       - PUT
-    uri: 'api/v1/other-costs/{otherCost}'
+    uri: 'api/v1/bodyworks/{id}'
     metadata:
-      groupName: 'Gestion des autres charges'
+      groupName: 'Gestion des carrosseries'
       groupDescription: |-
 
-        APIs pour la gestion des autres charges
+        APIs pour la gestion des carrosseries
       subgroup: ''
       subgroupDescription: ''
-      title: 'Mettre à jour une autre charge'
+      title: 'Mettre à jour une carrosserie'
       description: ''
       authenticated: true
       deprecated: false
@@ -418,51 +186,51 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      otherCost:
-        name: otherCost
-        description: ''
+      id:
+        name: id
+        description: 'The ID of the bodywork.'
         required: true
-        example: sapiente
+        example: dolorem
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      otherCost: sapiente
+      id: dolorem
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      other_cost_type_id:
-        name: other_cost_type_id
-        description: 'The <code>id</code> of an existing record in the other_cost_types table.'
+      label:
+        name: label
+        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: id
+        example: fxgfnvewlowzhdlo
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
-      amount:
-        name: amount
+      description:
+        name: description
         description: ''
-        required: true
-        example: 3.597
-        type: number
+        required: false
+        example: 'Tenetur atque labore laborum quam odio iste dolor sed.'
+        type: string
         enumValues: []
         exampleWasSpecified: false
-        nullable: false
+        nullable: true
         custom: []
     cleanBodyParameters:
-      other_cost_type_id: id
-      amount: 3.597
+      label: fxgfnvewlowzhdlo
+      description: 'Tenetur atque labore laborum quam odio iste dolor sed.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 81gkhev4EdcZPfD665V3aba'
+      - 'Bearer g6PDE18fV5bdvekhaZ4a36c'
     controller: null
     method: null
     route: null
@@ -470,15 +238,15 @@ endpoints:
   -
     httpMethods:
       - DELETE
-    uri: 'api/v1/other-costs/{otherCost}'
+    uri: 'api/v1/bodyworks/{id}'
     metadata:
-      groupName: 'Gestion des autres charges'
+      groupName: 'Gestion des carrosseries'
       groupDescription: |-
 
-        APIs pour la gestion des autres charges
+        APIs pour la gestion des carrosseries
       subgroup: ''
       subgroupDescription: ''
-      title: 'Supprimer une autre charge'
+      title: 'Supprimer une carrosserie'
       description: ''
       authenticated: true
       deprecated: false
@@ -488,18 +256,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      otherCost:
-        name: otherCost
-        description: ''
+      id:
+        name: id
+        description: 'The ID of the bodywork.'
         required: true
-        example: et
+        example: expedita
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      otherCost: et
+      id: expedita
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -510,7 +278,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer b63ZaDPkhcgv4dVE86fe5a1'
+      - 'Bearer dZ68316hV5kaebEf4aPgcvD'
     controller: null
     method: null
     route: null
