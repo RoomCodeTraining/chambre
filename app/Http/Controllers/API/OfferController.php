@@ -34,7 +34,7 @@ class OfferController extends Controller
      */
     public function index(): AnonymousResourceCollection
     {
-        $offers = Offer::with(['comparison', 'repairer', 'status'])
+        $offers = Offer::with(['comparison', 'comparison.assignment', 'comparison.assignment.expertFirm', 'comparison.assignment.insurer', 'repairer', 'status'])
             ->accessibleBy(auth()->user())
             ->latest('created_at')
             ->useFilters()
@@ -50,6 +50,10 @@ class OfferController extends Controller
      */
     public function store(CreateOfferRequest $request): JsonResponse
     {
+        if (Offer::accessibleBy(auth()->user())->where('comparison_id', $request->comparison_id)->exists()) {
+            return $this->responseUnprocessable('Une offre existe déjà pour cette comparaison.');
+        }
+
         $now = Carbon::now();
         $annee = date("Y");
         $mois_jour_heure = date("mdH");
@@ -76,9 +80,9 @@ class OfferController extends Controller
      */
     public function show($id): JsonResponse
     {
-        $offer = Offer::accessibleBy(auth()->user())->findOrFail(Offer::keyFromHashId($id));
+        $offer = Offer::accessibleBy(auth()->user())->with(['comparison', 'comparison.assignment', 'comparison.assignment.expertFirm', 'comparison.assignment.insurer', 'repairer', 'status', 'offerShocks'])->findOrFail(Offer::keyFromHashId($id));
 
-        return $this->responseSuccess(null, new OfferResource($offer->load(['comparison', 'repairer', 'status', 'offerShocks'])));
+        return $this->responseSuccess(null, new OfferResource($offer));
     }
 
     /**
@@ -88,9 +92,9 @@ class OfferController extends Controller
      */
     public function update(UpdateOfferRequest $request, $id): JsonResponse
     {
-        $offer = Offer::accessibleBy(auth()->user())->findOrFail(Offer::keyFromHashId($id));
+        $offer = Offer::accessibleBy(auth()->user())->with(['comparison', 'comparison.assignment', 'comparison.assignment.expertFirm', 'comparison.assignment.insurer', 'repairer', 'status', 'offerShocks'])->findOrFail(Offer::keyFromHashId($id));
 
-        return $this->responseSuccess('Offer updated successfully', new OfferResource($offer->load(['comparison', 'repairer', 'status'])));
+        return $this->responseSuccess('Offer updated successfully', new OfferResource($offer));
     }
 
     /**
@@ -100,7 +104,7 @@ class OfferController extends Controller
      */
     public function destroy($id): JsonResponse
     {
-        $offer = Offer::accessibleBy(auth()->user())->findOrFail(Offer::keyFromHashId($id));
+        $offer = Offer::accessibleBy(auth()->user())->with(['comparison', 'comparison.assignment', 'comparison.assignment.expertFirm', 'comparison.assignment.insurer', 'repairer', 'status', 'offerShocks'])->findOrFail(Offer::keyFromHashId($id));
         $offer->update([
             'deleted_by' => auth()->user()->id,
             'deleted_at' => Carbon::now(),

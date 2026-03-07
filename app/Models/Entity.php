@@ -3,19 +3,20 @@
 namespace App\Models;
 
 use App\Builders\Entity\EntityBuilder;
-use App\Models\Status;
+use App\Enums\StatusEnum;
 use App\Filters\EntityFilters;
+use App\Models\Status;
+use Deligoez\LaravelModelHashId\Traits\HasHashId;
+use Deligoez\LaravelModelHashId\Traits\HasHashIdRouting;
 use Essa\APIToolKit\Filters\Filterable;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Rennokki\QueryCache\Traits\QueryCacheable;
-use Deligoez\LaravelModelHashId\Traits\HasHashId;
-use Illuminate\Database\Eloquent\Relations\HasOne;
-use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Deligoez\LaravelModelHashId\Traits\HasHashIdRouting;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Entity extends Model
 {
@@ -35,6 +36,11 @@ class Entity extends Model
      */
     
      protected $guarded = [];
+
+     public function sold(): int
+    {
+        return Recharge::where('entity_id', $this->id)->where('status_id', Status::where('code', StatusEnum::SUCCESS)->first()->id)->sum('amount') - (Offer::where('entity_id', $this->id)->count() * config('services.recharge.cost'));
+    }
 
     /**
      * Get the entity type this entity belongs to

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Builders\Comparison\ComparisonBuilder;
 use App\Filters\ComparisonFilters;
 use Essa\APIToolKit\Filters\Filterable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -46,5 +47,10 @@ class Comparison extends Model
     public function offers(): HasMany
     {
         return $this->hasMany(Offer::class);
+    }
+
+    public function newEloquentBuilder($query): ComparisonBuilder
+    {
+        return new ComparisonBuilder($query);
     }
 }

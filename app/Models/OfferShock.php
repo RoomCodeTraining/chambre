@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Filters\OfferShockFilters;
+use App\Builders\OfferShock\OfferShockBuilder;
 use Essa\APIToolKit\Filters\Filterable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -66,5 +67,10 @@ class OfferShock extends Model
     public function offerWorkforces(): HasMany
     {
         return $this->hasMany(OfferWorkforce::class);
+    }
+
+    public function newEloquentBuilder($query): OfferShockBuilder
+    {
+        return new OfferShockBuilder($query);
     }
 }

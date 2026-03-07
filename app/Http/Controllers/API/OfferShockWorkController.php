@@ -14,7 +14,6 @@ use App\Http\Requests\ShockWork\CreateShockWorkRequest;
 use App\Http\Requests\ShockWork\GetSupplyPriceRequest;
 use App\Http\Requests\ShockWork\UpdateShockWorkRequest;
 use App\Http\Resources\Assignment\AssignmentResource;
-use App\Http\Resources\OfferShockWork\OfferShockWorkResource;
 use App\Http\Resources\Shock\ShockResource;
 use App\Http\Resources\ShockWork\ShockWorkResource;
 use App\Jobs\GenerateExpertiseReportPdfJob;
@@ -26,6 +25,7 @@ use App\Models\NumberPaintElement;
 use App\Models\Offer;
 use App\Models\OfferShock;
 use App\Models\OfferShockWork;
+use App\Models\OfferWorkforce;
 use App\Models\OtherCost;
 use App\Models\PaintProductPrice;
 use App\Models\Shock;
@@ -42,9 +42,9 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
 /**
- * @group Gestion des travaux de choc d'offre
+ * @group Gestion des travaux de choc
  *
- * APIs pour la gestion des travaux de choc d'offre
+ * APIs pour la gestion des travaux de choc
  */
 class OfferShockWorkController extends Controller
 {
@@ -56,14 +56,14 @@ class OfferShockWorkController extends Controller
     }
 
     /**
-     * Lister tous les travaux de choc d'offre
+     * Lister tous les travaux de choc
      *
      * @authenticated
      */
     public function index(): AnonymousResourceCollection
     {
-        $offerShockWorks = OfferShockWork::select('offer_shock_works.*')
-                    ->with('supply', 'status', 'oldSupply')
+        $shockWorks = OfferShockWork::select('offer_shock_works.*')
+                    ->with('offerShock', 'supply', 'status', 'oldSupply')
                     ->join('offer_shocks', 'offer_shock_works.offer_shock_id', '=', 'offer_shocks.id')
                     ->join('offers', 'offer_shocks.offer_id', '=', 'offers.id')
                     ->accessibleBy(auth()->user())
@@ -71,26 +71,30 @@ class OfferShockWorkController extends Controller
                     ->orderBy('position', 'asc')
                     ->dynamicPaginate();
 
-        return OfferShockWorkResource::collection($offerShockWorks);
+        return ShockWorkResource::collection($shockWorks);
     }
 
     /**
-     * Calculer les points de shocs d'offre
+     * Calculer les points de shocs
      *
      * @authenticated
      */
     public function calculate(CalculateShockWorkRequest $request): JsonResponse
     {
-        $offerShock = OfferShock::select('offer_shocks.*')
+        $shock = OfferShock::select('offer_shocks.*')
             ->join('offers', 'offer_shocks.offer_id', '=', 'offers.id')
             ->accessibleBy(auth()->user())
             ->where('offer_shocks.id', $request->offer_shock_id)
             ->firstOrFail();
-        $offer = Offer::accessibleBy(auth()->user())
-            ->where('offers.id', $offerShock->offer_id)
+        $offer = Offer::with('comparison:id,assignment_id')->accessibleBy(auth()->user())
+            ->where('offers.id', $shock->offer_id)
             ->firstOrFail();
 
-        $offerShockWorks = [];
+        $assignment = Assignment::accessibleBy(auth()->user())
+            ->where('assignments.id', $offer->comparison->assignment_id)
+            ->firstOrFail();
+
+        $shock_works = [];
         $obsolescence_amount_excluding_tax = 0;
         $obsolescence_amount_tax = 0;
         $obsolescence_amount = 0;
@@ -116,9 +120,9 @@ class OfferShockWorkController extends Controller
         $total_in_order_amount_tax = 0;
         $total_in_order_amount = 0;
 
-        $offerShockWorks = $request->get('offer_shock_works');
+        $shockWorks = $request->get('shock_works');
 
-        foreach ($offerShockWorks as $item) {
+        foreach ($shockWorks as $item) {
             $discount = $item['discount'];
             $discount_amount_excluding_tax = ceil(($item['discount'] * $item['amount']) / 100);
             $discount_amount_tax = ceil((config('services.settings.tax_rate') * $discount_amount_excluding_tax) / 100);
@@ -142,7 +146,7 @@ class OfferShockWorkController extends Controller
             }
             $new_amount = ceil($new_amount_excluding_tax + $new_amount_tax);
 
-            $offerShockWorks[] = [
+            $shock_works[] = [
                 'obsolescence_rate' => $obsolescence_rate,
                 'obsolescence_amount_excluding_tax' => $obsolescence_amount_excluding_tax,
                 'obsolescence_amount_tax' => $obsolescence_amount_tax,
@@ -177,7 +181,7 @@ class OfferShockWorkController extends Controller
             }
         }
 
-        return $this->responseSuccess('OfferShockWork calculated successfully', [
+        return $this->responseSuccess('ShockWork calculated successfully', [
             'total_obsolescence_amount_excluding_tax' => $total_obsolescence_amount_excluding_tax,
             'total_obsolescence_amount_tax' => $total_obsolescence_amount_tax,
             'total_obsolescence_amount' => $total_obsolescence_amount,
@@ -193,34 +197,42 @@ class OfferShockWorkController extends Controller
             'total_in_order_amount_excluding_tax' => $total_in_order_amount_excluding_tax,
             'total_in_order_amount_tax' => $total_in_order_amount_tax,
             'total_in_order_amount' => $total_in_order_amount,
-            'offer_shock_works' => $offerShockWorks,
+            'shock_works' => $shock_works,
         ]);
     }
 
     /**
-     * Ajouter un travail de choc d'offre
+     * Ajouter un travail de choc
      *
      * @authenticated
      */
     public function store(CreateShockWorkRequest $request): JsonResponse
     {
-        $offerShock = OfferShock::select('offer_shocks.*')
-            ->where('offer_shocks.id', $request->offer_shock_id)
+        $shock = OfferShock::select('offer_shocks.*')
+            ->where('offer_shocks.id', $request->shock_id)
             ->firstOrFail();
 
-        $offer = Offer::accessibleBy(auth()->user())
-            ->where('offers.id', $offerShock->offer_id)
+        $offer = Offer::with('comparison:id,assignment_id')->accessibleBy(auth()->user())
+            ->where('offers.id', $shock->offer_id)
             ->firstOrFail();
+
+        $assignment = Assignment::where('id',$offer->comparison->assignment_id)->accessibleBy(auth()->user())->firstOrFail();
+
 
         if($offer->status_id == Status::where('code', StatusEnum::VALIDATED)->first()->id || $offer->status_id == Status::where('code', StatusEnum::PAID)->first()->id){
-            return $this->responseUnprocessable("Impossible d'ajouter un travail de choc d'offre", null);
+            return $this->responseUnprocessable("Impossible d'ajouter un travail de choc", null);
         }
 
-        $offerShockWorks = $request->get('offer_shock_works');
+        $shockWorks = $request->get('shock_works');
 
-        if(count($offerShockWorks) > 0){
-            $offer_shock_work_position = OfferShockWork::where('offer_shock_id', $offerShock->id)->count() + 1;
-            foreach ($offerShockWorks as $item) {
+        $quote_validated = false;
+        if($assignment->quote_validated_by_expert == 1 && $assignment->quote_validated_by_repairer == 1){
+            $quote_validated = true;
+        }
+
+        if(count($shockWorks) > 0){
+            $shock_work_position = OfferShockWork::where('offer_shock_id', $shock->id)->count() + 1;
+            foreach ($shockWorks as $item) {
                 $discount = $item['discount'];
                 $discount_amount_excluding_tax = ceil(($item['discount'] * $item['amount']) / 100);
                 $discount_amount_tax = ceil((config('services.settings.tax_rate') * $discount_amount_excluding_tax) / 100);
@@ -244,8 +256,8 @@ class OfferShockWorkController extends Controller
                 }
                 $new_amount = ceil($new_amount_excluding_tax + $new_amount_tax);
                 
-                $offerShockWork = OfferShockWork::create([
-                    'offer_shock_id' => $offerShock->id,
+                $shockWork = OfferShockWork::create([
+                    'offer_shock_id' => $request->shock_id,
                     'supply_id' => Supply::keyFromHashId($item['supply_id']),
                     'old_supply_id' => null,
                     'disassembly' => $item['disassembly'],
@@ -262,7 +274,7 @@ class OfferShockWorkController extends Controller
                     'old_in_order' => $item['in_order'],
                     'comment' => $item['comment'],
                     'old_comment' => $item['comment'],
-                    'position' => $offer_shock_work_position,
+                    'position' => $shock_work_position,
                     'obsolescence' => $item['obsolescence'],
                     'old_obsolescence' => $item['obsolescence'],
                     'amount' => $item['amount'],
@@ -301,23 +313,23 @@ class OfferShockWorkController extends Controller
                     'created_by' => auth()->user()->id,
                     'updated_by' => auth()->user()->id,
                 ]);
-                $offer_shock_work_position++;
+                $shock_work_position++;
             }
 
-            $this->recalculate($offerShockWork->id);
+            $this->recalculate($shock->id);
         }
         
-        return $this->responseCreated('OfferShockWork created successfully', null);
+        return $this->responseCreated('ShockWork created successfully', ['shock_work' => new ShockWorkResource($shockWork->load('supply', 'status'))]);
     }
 
     /**
-     * Afficher un travail de choc d'offre
+     * Afficher un travail de choc
      *
      * @authenticated
      */
     public function show($id): JsonResponse
     {
-        $offerShockWork = OfferShockWork::select('offer_shock_works.*')
+        $shockWork = OfferShockWork::select('offer_shock_works.*')
             ->join('offer_shocks', 'offer_shock_works.offer_shock_id', '=', 'offer_shocks.id')
             ->join('offers', 'offer_shocks.offer_id', '=', 'offers.id')
             ->accessibleBy(auth()->user())
@@ -328,23 +340,25 @@ class OfferShockWorkController extends Controller
     }
 
     /**
-     * Mettre à jour un travail de choc d'offre
+     * Mettre à jour un travail de choc
      *
      * @authenticated
      */
     public function update(UpdateShockWorkRequest $request, $id): JsonResponse
     {
-        $offerShockWork = OfferShockWork::select('offer_shock_works.*')
+        $shockWork = OfferShockWork::select('offer_shock_works.*')
             ->with('offerShock:id,offer_id')
             ->where('offer_shock_works.id', OfferShockWork::keyFromHashId($id))
             ->firstOrFail();
 
-        $offer = Offer::accessibleBy(auth()->user())
-            ->where('offers.id', $offerShockWork->offer_shock->offer_id)
+        $offer = Offer::with('comparison:id,assignment_id')->accessibleBy(auth()->user())
+            ->where('offers.id', $shockWork->offerShock->offer_id)
             ->firstOrFail();
 
+        $assignment = Assignment::where('id',$offer->comparison->assignment_id)->accessibleBy(auth()->user())->firstOrFail();
+
         if($offer->status_id == Status::where('code', StatusEnum::VALIDATED)->first()->id || $offer->status_id == Status::where('code', StatusEnum::PAID)->first()->id){
-            return $this->responseUnprocessable("Impossible de mettre à jour un travail de choc d'offre", null);
+            return $this->responseUnprocessable("Impossible de mettre à jour un travail de choc", null);
         }
 
         $discount = $request->discount;
@@ -371,89 +385,87 @@ class OfferShockWorkController extends Controller
         $new_amount = ceil($new_amount_excluding_tax + $new_amount_tax);
 
         if (
-            $offerShockWork->isDirty('supply_id') 
-            || $offerShockWork->isDirty('disassembly') 
-            || $offerShockWork->isDirty('replacement') 
-            || $offerShockWork->isDirty('repair') 
-            || $offerShockWork->isDirty('paint') 
-            || $offerShockWork->isDirty('obsolescence') 
-            || $offerShockWork->isDirty('control') 
-            || $offerShockWork->isDirty('in_order')
-            || $offerShockWork->isDirty('comment') 
-            || $offerShockWork->isDirty('amount') 
-            || $offerShockWork->isDirty('obsolescence_rate') 
-            || $offerShockWork->isDirty('discount') 
-            || $offerShockWork->supply_id != $request->supply_id
-            || $offerShockWork->disassembly != $request->disassembly
-            || $offerShockWork->replacement != $request->replacement
-            || $offerShockWork->repair != $request->repair
-            || $offerShockWork->paint != $request->paint
-            || $offerShockWork->obsolescence != $request->obsolescence
-            || $offerShockWork->control != $request->control
-            || $offerShockWork->in_order != $request->in_order
-            || $offerShockWork->comment != $request->comment
-            || $offerShockWork->amount != $request->amount
-            || $offerShockWork->obsolescence_rate != $obsolescence_rate
-            || $offerShockWork->discount != $discount
-            || $offerShockWork->obsolescence_amount != $obsolescence_amount
-            || $offerShockWork->discount_amount != $discount_amount
-            || $offerShockWork->recovery_amount != $recovery_amount
-            || $offerShockWork->new_amount != $new_amount) {
-            $offerShockWork->update([
+            $shockWork->isDirty('supply_id') 
+            || $shockWork->isDirty('disassembly') 
+            || $shockWork->isDirty('replacement') 
+            || $shockWork->isDirty('repair') 
+            || $shockWork->isDirty('paint') 
+            || $shockWork->isDirty('obsolescence') 
+            || $shockWork->isDirty('control') 
+            || $shockWork->isDirty('in_order')
+            || $shockWork->isDirty('comment') 
+            || $shockWork->isDirty('amount') 
+            || $shockWork->isDirty('obsolescence_rate') 
+            || $shockWork->isDirty('discount') 
+            || $shockWork->supply_id != $request->supply_id
+            || $shockWork->disassembly != $request->disassembly
+            || $shockWork->replacement != $request->replacement
+            || $shockWork->repair != $request->repair
+            || $shockWork->paint != $request->paint
+            || $shockWork->obsolescence != $request->obsolescence
+            || $shockWork->control != $request->control
+            || $shockWork->in_order != $request->in_order
+            || $shockWork->comment != $request->comment
+            || $shockWork->amount != $request->amount
+            || $shockWork->obsolescence_rate != $obsolescence_rate
+            || $shockWork->discount != $discount
+            || $shockWork->obsolescence_amount != $obsolescence_amount
+            || $shockWork->discount_amount != $discount_amount
+            || $shockWork->recovery_amount != $recovery_amount
+            || $shockWork->new_amount != $new_amount) {
+            $shockWork->update([
                 'supply_id' => $request->supply_id,
-                'old_supply_id' => $offerShockWork->getOriginal('supply_id'),
+                'old_supply_id' => $shockWork->getOriginal('supply_id'),
                 'disassembly' => $request->disassembly,
-                'old_disassembly' => $offerShockWork->getOriginal('disassembly'),
+                'old_disassembly' => $shockWork->getOriginal('disassembly'),
                 'replacement' => $request->replacement,
-                'old_replacement' => $offerShockWork->getOriginal('replacement'),
+                'old_replacement' => $shockWork->getOriginal('replacement'),
                 'repair' => $request->repair,
-                'old_repair' => $offerShockWork->getOriginal('repair'),
+                'old_repair' => $shockWork->getOriginal('repair'),
                 'paint' => $request->paint,
-                'old_paint' => $offerShockWork->getOriginal('paint'),
+                'old_paint' => $shockWork->getOriginal('paint'),
                 'control' => $request->control,
-                'old_control' => $offerShockWork->getOriginal('control'),
+                'old_control' => $shockWork->getOriginal('control'),
                 'in_order' => $request->in_order,
-                'old_in_order' => $offerShockWork->getOriginal('in_order'),
+                'old_in_order' => $shockWork->getOriginal('in_order'),
                 'comment' => $request->comment,
-                'old_comment' => $offerShockWork->getOriginal('comment'),
+                'old_comment' => $shockWork->getOriginal('comment'),
                 'obsolescence' => $request->obsolescence,
-                'old_obsolescence' => $offerShockWork->getOriginal('obsolescence'),
+                'old_obsolescence' => $shockWork->getOriginal('obsolescence'),
                 'amount' => $request->amount,
-                'old_amount' => $offerShockWork->getOriginal('amount'),
+                'old_amount' => $shockWork->getOriginal('amount'),
                 'obsolescence_rate' => $obsolescence_rate,
-                'old_obsolescence_rate' => $offerShockWork->getOriginal('obsolescence_rate'),
+                'old_obsolescence_rate' => $shockWork->getOriginal('obsolescence_rate'),
                 'obsolescence_amount_excluding_tax' => $obsolescence_amount_excluding_tax,
-                'old_obsolescence_amount_excluding_tax' => $offerShockWork->getOriginal('obsolescence_amount_excluding_tax'),
+                'old_obsolescence_amount_excluding_tax' => $shockWork->getOriginal('obsolescence_amount_excluding_tax'),
                 'obsolescence_amount_tax' => $obsolescence_amount_tax,
-                'old_obsolescence_amount_tax' => $offerShockWork->getOriginal('obsolescence_amount_tax'),
+                'old_obsolescence_amount_tax' => $shockWork->getOriginal('obsolescence_amount_tax'),
                 'obsolescence_amount' => $obsolescence_amount,
-                'old_obsolescence_amount' => $offerShockWork->getOriginal('obsolescence_amount'),
+                'old_obsolescence_amount' => $shockWork->getOriginal('obsolescence_amount'),
                 'recovery_amount_excluding_tax' => $recovery_amount_excluding_tax,
-                'old_recovery_amount_excluding_tax' => $offerShockWork->getOriginal('recovery_amount_excluding_tax'),
+                'old_recovery_amount_excluding_tax' => $shockWork->getOriginal('recovery_amount_excluding_tax'),
                 'recovery_amount_tax' => $recovery_amount_tax,
-                'old_recovery_amount_tax' => $offerShockWork->getOriginal('recovery_amount_tax'),
+                'old_recovery_amount_tax' => $shockWork->getOriginal('recovery_amount_tax'),
                 'recovery_amount' => $recovery_amount,
-                'old_recovery_amount' => $offerShockWork->getOriginal('recovery_amount'),
+                'old_recovery_amount' => $shockWork->getOriginal('recovery_amount'),
                 'discount' => $discount,
-                'old_discount' => $offerShockWork->getOriginal('discount'),
+                'old_discount' => $shockWork->getOriginal('discount'),
                 'discount_amount_excluding_tax' => $discount_amount_excluding_tax,
-                'old_discount_amount_excluding_tax' => $offerShockWork->getOriginal('discount_amount_excluding_tax'),
+                'old_discount_amount_excluding_tax' => $shockWork->getOriginal('discount_amount_excluding_tax'),
                 'discount_amount_tax' => $discount_amount_tax,
-                'old_discount_amount_tax' => $offerShockWork->getOriginal('discount_amount_tax'),
+                'old_discount_amount_tax' => $shockWork->getOriginal('discount_amount_tax'),
                 'discount_amount' => $discount_amount,
-                'old_discount_amount' => $offerShockWork->getOriginal('discount_amount'),
+                'old_discount_amount' => $shockWork->getOriginal('discount_amount'),
                 'new_amount_excluding_tax' => $new_amount_excluding_tax,
-                'old_new_amount_excluding_tax' => $offerShockWork->getOriginal('new_amount_excluding_tax'),
+                'old_new_amount_excluding_tax' => $shockWork->getOriginal('new_amount_excluding_tax'),
                 'new_amount_tax' => $new_amount_tax,
-                'old_new_amount_tax' => $offerShockWork->getOriginal('new_amount_tax'),
+                'old_new_amount_tax' => $shockWork->getOriginal('new_amount_tax'),
                 'new_amount' => $new_amount,
-                'old_new_amount' => $offerShockWork->getOriginal('new_amount'),
-                'is_before_quote' => $quote_validated ? 0 : 1,
-                'quote_validated' => $quote_validated,
+                'old_new_amount' => $shockWork->getOriginal('new_amount'),
                 'updated_by' => auth()->user()->id,
             ]);
-
-            $this->recalculate($offerShockWork->offer_shock_id);
+    
+            $this->recalculate($shock->id);
         }
 
         return $this->responseSuccess('ShockWork updated Successfully', new ShockWorkResource($shockWork->load('supply', 'status')));
@@ -461,51 +473,51 @@ class OfferShockWorkController extends Controller
 
     public function recalculate($id)
     {
-        $offerShock = OfferShock::findOrFail($id);
+        $shock = OfferShock::findOrFail($id);
 
-        $total_in_order_amount_excluding_tax = OfferShockWork::where('offer_shock_id', $offerShock->id)->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->where('in_order', true)->sum('new_amount_excluding_tax');
-        $total_in_order_amount_tax = OfferShockWork::where('offer_shock_id', $offerShock->id)->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->where('in_order', true)->sum('new_amount_tax');
-        $total_in_order_amount = OfferShockWork::where('offer_shock_id', $offerShock->id)->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->where('in_order', true)->sum('new_amount');
+        $total_in_order_amount_excluding_tax = OfferShockWork::where('offer_shock_id', $shock->id)->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->where('in_order', true)->sum('new_amount_excluding_tax');
+        $total_in_order_amount_tax = OfferShockWork::where('offer_shock_id', $shock->id)->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->where('in_order', true)->sum('new_amount_tax');
+        $total_in_order_amount = OfferShockWork::where('offer_shock_id', $shock->id)->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->where('in_order', true)->sum('new_amount');
 
-        $total_obsolescence_amount_excluding_tax = OfferShockWork::where('offer_shock_id', $offerShock->id)->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->sum('obsolescence_amount_excluding_tax');
-        $total_obsolescence_amount_tax = OfferShockWork::where('offer_shock_id', $offerShock->id)->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->sum('obsolescence_amount_tax');
-        $total_obsolescence_amount = OfferShockWork::where('offer_shock_id', $offerShock->id)->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->sum('obsolescence_amount');
+        $total_obsolescence_amount_excluding_tax = OfferShockWork::where('offer_shock_id', $shock->id)->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->sum('obsolescence_amount_excluding_tax');
+        $total_obsolescence_amount_tax = OfferShockWork::where('offer_shock_id', $shock->id)->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->sum('obsolescence_amount_tax');
+        $total_obsolescence_amount = OfferShockWork::where('offer_shock_id', $shock->id)->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->sum('obsolescence_amount');
 
-        $total_recovery_amount_excluding_tax = OfferShockWork::where('offer_shock_id', $offerShock->id)->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->sum('recovery_amount_excluding_tax');
-        $total_recovery_amount_tax = OfferShockWork::where('offer_shock_id', $offerShock->id)->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->sum('recovery_amount_tax');
-        $total_recovery_amount = OfferShockWork::where('offer_shock_id', $offerShock->id)->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->sum('recovery_amount');
+        $total_recovery_amount_excluding_tax = OfferShockWork::where('offer_shock_id', $shock->id)->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->sum('recovery_amount_excluding_tax');
+        $total_recovery_amount_tax = OfferShockWork::where('offer_shock_id', $shock->id)->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->sum('recovery_amount_tax');
+        $total_recovery_amount = OfferShockWork::where('offer_shock_id', $shock->id)->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->sum('recovery_amount');
 
-        $total_discount_amount_excluding_tax = OfferShockWork::where('offer_shock_id', $offerShock->id)->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->sum('discount_amount_excluding_tax');
-        $total_discount_amount_tax = OfferShockWork::where('offer_shock_id', $offerShock->id)->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->sum('discount_amount_tax');
-        $total_discount_amount = OfferShockWork::where('offer_shock_id', $offerShock->id)->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->sum('discount_amount');
+        $total_discount_amount_excluding_tax = OfferShockWork::where('offer_shock_id', $shock->id)->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->sum('discount_amount_excluding_tax');
+        $total_discount_amount_tax = OfferShockWork::where('offer_shock_id', $shock->id)->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->sum('discount_amount_tax');
+        $total_discount_amount = OfferShockWork::where('offer_shock_id', $shock->id)->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->sum('discount_amount');
 
-        $total_new_amount_excluding_tax = OfferShockWork::where('offer_shock_id', $offerShock->id)->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->sum('new_amount_excluding_tax');
-        $total_new_amount_tax = OfferShockWork::where('offer_shock_id', $offerShock->id)->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->sum('new_amount_tax');
-        $total_new_amount = OfferShockWork::where('offer_shock_id', $offerShock->id)->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->sum('new_amount');
+        $total_new_amount_excluding_tax = OfferShockWork::where('offer_shock_id', $shock->id)->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->sum('new_amount_excluding_tax');
+        $total_new_amount_tax = OfferShockWork::where('offer_shock_id', $shock->id)->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->sum('new_amount_tax');
+        $total_new_amount = OfferShockWork::where('offer_shock_id', $shock->id)->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->sum('new_amount');
 
-        $total_workforce_amount_excluding_tax = OfferWorkforce::where('offer_shock_id', $offerShock->id)->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->sum('amount_excluding_tax');
-        $total_workforce_amount_tax = OfferWorkforce::where('offer_shock_id', $offerShock->id)->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->sum('amount_tax');
-        $total_workforce_amount = OfferWorkforce::where('offer_shock_id', $offerShock->id)->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->sum('amount');
+        $total_workforce_amount_excluding_tax = OfferWorkforce::where('offer_shock_id', $shock->id)->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->sum('amount_excluding_tax');
+        $total_workforce_amount_tax = OfferWorkforce::where('offer_shock_id', $shock->id)->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->sum('amount_tax');
+        $total_workforce_amount = OfferWorkforce::where('offer_shock_id', $shock->id)->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->sum('amount');
 
-        $nb_paint = OfferShockWork::where(['offer_shock_id' => $offerShock->id, 'paint' => 1])->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->sum('paint');
+        $nb_paint = OfferShockWork::where(['offer_shock_id' => $shock->id, 'paint' => 1])->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->sum('paint');
 
         if($nb_paint == 0){
             $paint_product_price = null;
         } elseif($nb_paint == 1){
-            $paint_product_price = PaintProductPrice::where(['paint_type_id' => $offerShock->paint_type_id, 'number_paint_element_id' => NumberPaintElement::where('value', NumberPaintElementEnum::ONE)->first()->id, 'status_id' => Status::where('code', StatusEnum::ACTIVE)->first()->id])->first()->value ?? 0;
+            $paint_product_price = PaintProductPrice::where(['paint_type_id' => $shock->paint_type_id, 'number_paint_element_id' => NumberPaintElement::where('value', NumberPaintElementEnum::ONE)->first()->id, 'status_id' => Status::where('code', StatusEnum::ACTIVE)->first()->id])->first()->value ?? 0;
         } elseif($nb_paint == 2){
-            $paint_product_price = PaintProductPrice::where(['paint_type_id' => $offerShock->paint_type_id, 'number_paint_element_id' => NumberPaintElement::where('value', NumberPaintElementEnum::TWO)->first()->id, 'status_id' => Status::where('code', StatusEnum::ACTIVE)->first()->id])->first()->value ?? 0;
+            $paint_product_price = PaintProductPrice::where(['paint_type_id' => $shock->paint_type_id, 'number_paint_element_id' => NumberPaintElement::where('value', NumberPaintElementEnum::TWO)->first()->id, 'status_id' => Status::where('code', StatusEnum::ACTIVE)->first()->id])->first()->value ?? 0;
         } else {
-            $paint_product_price = PaintProductPrice::where(['paint_type_id' => $offerShock->paint_type_id, 'number_paint_element_id' => NumberPaintElement::where('value', NumberPaintElementEnum::THREE)->first()->id, 'status_id' => Status::where('code', StatusEnum::ACTIVE)->first()->id])->first()->value ?? 0;
+            $paint_product_price = PaintProductPrice::where(['paint_type_id' => $shock->paint_type_id, 'number_paint_element_id' => NumberPaintElement::where('value', NumberPaintElementEnum::THREE)->first()->id, 'status_id' => Status::where('code', StatusEnum::ACTIVE)->first()->id])->first()->value ?? 0;
         } 
         
-        $all_paint_workforce = OfferWorkforce::where(['offer_shock_id' => $offerShock->id, 'workforce_type_id' => WorkforceType::where('code', WorkforceTypeEnum::PAINT)->first()->id, 'status_id' => Status::where('code', StatusEnum::ACTIVE)->first()->id])->first();
+        $all_paint_workforce = OfferWorkforce::where(['offer_shock_id' => $shock->id, 'workforce_type_id' => WorkforceType::where('code', WorkforceTypeEnum::PAINT)->first()->id, 'status_id' => Status::where('code', StatusEnum::ACTIVE)->first()->id])->first();
         
         if ($all_paint_workforce && $all_paint_workforce->all_paint == true) {
-            $paint_product_price = PaintProductPrice::where(['paint_type_id' => $offerShock->paint_type_id, 'number_paint_element_id' => NumberPaintElement::where('value', NumberPaintElementEnum::ALL)->first()->id, 'status_id' => Status::where('code', StatusEnum::ACTIVE)->first()->id])->first()->value ?? 0;
+            $paint_product_price = PaintProductPrice::where(['paint_type_id' => $shock->paint_type_id, 'number_paint_element_id' => NumberPaintElement::where('value', NumberPaintElementEnum::ALL)->first()->id, 'status_id' => Status::where('code', StatusEnum::ACTIVE)->first()->id])->first()->value ?? 0;
         }
 
-        $total_paint_product_amount_excluding_tax = $paint_product_price ? ceil($paint_product_price * OfferWorkforce::where(['offer_shock_id' => $offerShock->id, 'workforce_type_id' => WorkforceType::where('code', WorkforceTypeEnum::PAINT)->first()->id, 'status_id' => Status::where('code', StatusEnum::ACTIVE)->first()->id])->sum('nb_hours')) : 0;
+        $total_paint_product_amount_excluding_tax = $paint_product_price ? ceil($paint_product_price * Workforce::where(['shock_id' => $shock->id, 'workforce_type_id' => WorkforceType::where('code', WorkforceTypeEnum::PAINT)->first()->id, 'status_id' => Status::where('code', StatusEnum::ACTIVE)->first()->id])->sum('nb_hours')) : 0;
         $total_paint_product_amount_tax = ceil((config('services.settings.tax_rate') * $total_paint_product_amount_excluding_tax) / 100);
         $total_paint_product_amount = ceil($total_paint_product_amount_excluding_tax + $total_paint_product_amount_tax);
 
@@ -513,7 +525,7 @@ class OfferShockWorkController extends Controller
         $total_small_supply_amount_tax = ceil((config('services.settings.tax_rate') * $total_small_supply_amount_excluding_tax) / 100);
         $total_small_supply_amount = ceil($total_small_supply_amount_excluding_tax + $total_small_supply_amount_tax);
 
-        $offerShock->update([
+        $shock->update([
             'shock_work_in_order_amount_excluding_tax' => ceil($total_in_order_amount_excluding_tax),
             'shock_work_in_order_amount_tax' => ceil($total_in_order_amount_tax),
             'shock_work_in_order_amount' => ceil($total_in_order_amount),
@@ -543,51 +555,50 @@ class OfferShockWorkController extends Controller
             'amount' => ceil($total_new_amount + $total_workforce_amount + $total_paint_product_amount + $total_small_supply_amount + $total_recovery_amount),
         ]);
 
-        $total_shock_amount_excluding_tax = ceil(OfferShock::where('offer_id', $offerShock->offer_id)->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->sum('amount_excluding_tax'));
-        $total_shock_amount_tax = ceil(OfferShock::where('offer_id', $offerShock->offer_id)->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->sum('amount_tax'));
-        $total_shock_amount = ceil(OfferShock::where('offer_id', $offerShock->offer_id)->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->sum('amount'));
+        $total_shock_amount_excluding_tax = ceil(Shock::where('assignment_id', $shock->assignment_id)->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->sum('amount_excluding_tax'));
+        $total_shock_amount_tax = ceil(Shock::where('assignment_id', $shock->assignment_id)->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->sum('amount_tax'));
+        $total_shock_amount = ceil(Shock::where('assignment_id', $shock->assignment_id)->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->sum('amount'));
 
-        $offer = Offer::findOrFail($offerShock->offer_id);
+        $offer = Offer::findOrFail($shock->offer_id);
 
         $offer->update([
             'shock_amount_excluding_tax' => $total_shock_amount_excluding_tax,
             'shock_amount_tax' => $total_shock_amount_tax,
             'shock_amount' => $total_shock_amount,
         ]);
-
-        $updateReceiptService = app(UpdateReceiptService::class);
-        $updateReceiptService->updateReceipt($offer->id);
-
-        // dispatch(new GenerateExpertiseReportPdfJob($assignment));
     }
 
     /**
-     * Supprimer un travail de choc d'offre
+     * Supprimer un travail de choc
      *
      * @authenticated
      */
     public function destroy($id): JsonResponse
     {
-        $offerShockWork = OfferShockWork::select('offer_shock_works.*')
+        $shockWork = OfferShockWork::select('offer_shock_works.*')
             ->with('offerShock:id,offer_id')
             ->where('offer_shock_works.id', OfferShockWork::keyFromHashId($id))
             ->firstOrFail();
 
-        $offer = Offer::where('id',$offerShockWork->offer_shock->offer_id)->accessibleBy(auth()->user())->firstOrFail();
+        $offer = Offer::with('comparison:id,assignment_id')->accessibleBy(auth()->user())
+            ->where('offers.id', $shockWork->offerShock->offer_id)
+            ->firstOrFail();
+
+        $assignment = Assignment::where('id',$offer->comparison->assignment_id)->accessibleBy(auth()->user())->firstOrFail();
 
         if($offer->status_id == Status::where('code', StatusEnum::VALIDATED)->first()->id || $offer->status_id == Status::where('code', StatusEnum::PAID)->first()->id){
             return $this->responseUnprocessable("Impossible de supprimer un travail de choc", null);
         }
 
-        $offerShockWork->update([
+        $shockWork->update([
             'status_id' => Status::where('code', StatusEnum::DELETED)->first()->id,
             'deleted_at' => now(),
             'deleted_by' => auth()->user()->id,
         ]);
 
-        $offerShockWork->delete();
+        $shockWork->delete();
 
-        $this->recalculate($offerShockWork->offer_shock_id);
+        $this->recalculate($shockWork->offerShock->id);
 
         return $this->responseDeleted();
     }

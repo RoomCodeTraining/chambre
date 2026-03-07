@@ -36,6 +36,11 @@ Route::prefix('v1')->middleware(LogsOutDisabledUser::class)->group(function () {
     Route::prefix('shock-points')->group(base_path('routes/api/v1.shock.points.routes.php'));
     Route::prefix('shocks')->group(base_path('routes/api/v1.shocks.routes.php'));
     Route::prefix('shock-works')->group(base_path('routes/api/v1.shock.works.routes.php'));
+    Route::prefix('comparisons')->group(base_path('routes/api/v1.comparisons.routes.php'));
+    Route::prefix('offers')->group(base_path('routes/api/v1.offers.routes.php'));
+    Route::prefix('offer-shocks')->group(base_path('routes/api/v1.offer.shocks.routes.php'));
+    Route::prefix('offer-shock-works')->group(base_path('routes/api/v1.offer.shock.works.routes.php'));
+    Route::prefix('offer-workforces')->group(base_path('routes/api/v1.offer.workforces.routes.php'));
     Route::prefix('supplies')->group(base_path('routes/api/v1.supplies.routes.php'));
     Route::prefix('assignments')->group(base_path('routes/api/v1.assignments.routes.php'));
     Route::prefix('assignment-requests')->group(base_path('routes/api/v1.assignment.requests.routes.php'));
@@ -86,5 +91,11 @@ Route::prefix('v1')->middleware(LogsOutDisabledUser::class)->group(function () {
     Route::prefix('general-status-deadlines')->group(base_path('routes/api/v1.general.status.deadlines.routes.php'));
     Route::prefix('status-deadlines')->group(base_path('routes/api/v1.status.deadlines.routes.php'));
     Route::prefix('fne-settings')->group(base_path('routes/api/v1.fne.settings.routes.php'));
+    Route::prefix('comparisons')->group(base_path('routes/api/v1.comparisons.routes.php'));
+    Route::prefix('offers')->group(base_path('routes/api/v1.offers.routes.php'));
+    Route::prefix('offer-shocks')->group(base_path('routes/api/v1.offer.shocks.routes.php'));
+    Route::prefix('offer-shock-works')->group(base_path('routes/api/v1.offer.shock.works.routes.php'));
+    Route::prefix('offer-workforces')->group(base_path('routes/api/v1.offer.workforces.routes.php'));
+    Route::prefix('recharges')->group(base_path('routes/api/v1.recharges.routes.php'));
     Route::group([], base_path('routes/api/v1.common.routes.php'));
 });

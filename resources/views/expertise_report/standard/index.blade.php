@@ -115,7 +115,7 @@
             <b>{{$assignment?->expertFirm?->footer_description ?? ''}}</b><br>
 
             <div style="text-align: right;">
-                Page <span class="pagenum"></span>
+                {{$assignment?->reference ?? ''}} | Page <span class="pagenum"></span>
             </div>
         </footer>
 

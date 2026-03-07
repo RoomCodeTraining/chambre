@@ -44,4 +44,17 @@ return [
         'url' => env('FNE_URL'),
     ],
 
+    'recharge' => [
+        'cost' => env('RECHARGE_COST'),
+    ],
+
+    'wave' => [
+        'api_key' => env('WAVE_API_KEY'),
+        'signing_secret' => env('WAVE_SIGNING_SECRET'),
+        'base_url' => env('WAVE_BASE_URL', 'https://api.wave.com/v1'),
+        'success_url' => env('WAVE_SUCCESS_URL', 'https://example.com/success'),
+        'error_url' => env('WAVE_ERROR_URL', 'https://example.com/error'),
+        'currency' => env('WAVE_CURRENCY', 'XOF'),
+    ],
+
 ];

@@ -50,6 +50,10 @@ class ComparisonController extends Controller
      */
     public function store(CreateComparisonRequest $request): JsonResponse
     {
+        if (Comparison::accessibleBy(auth()->user())->where('assignment_id', $request->assignment_id)->exists()) {
+            return $this->responseUnprocessable('Une comparaison existe déjà pour ce dossier.');
+        }
+
         $now = Carbon::now();
         $annee = date("Y");
         $mois_jour_heure = date("mdH");

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Builders\OfferShockWork\OfferShockWorkBuilder;
 use App\Filters\OfferShockWorkFilters;
 use Essa\APIToolKit\Filters\Filterable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -50,5 +51,10 @@ class OfferShockWork extends Model
     public function deletedBy(): BelongsTo
     {
         return $this->belongsTo(User::class, 'deleted_by');
+    }
+
+    public function newEloquentBuilder($query): OfferShockWorkBuilder
+    {
+        return new OfferShockWorkBuilder($query);
     }
 }
