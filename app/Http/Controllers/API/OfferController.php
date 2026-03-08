@@ -7,6 +7,8 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Offer\CreateOfferRequest;
 use App\Http\Requests\Offer\UpdateOfferRequest;
 use App\Http\Resources\Offer\OfferResource;
+use App\Models\Comparison;
+use App\Models\Entity;
 use App\Models\Offer;
 use App\Models\Status;
 use Carbon\Carbon;
@@ -36,6 +38,15 @@ class OfferController extends Controller
     {
         $offers = Offer::with(['comparison', 'comparison.assignment', 'comparison.assignment.expertFirm', 'comparison.assignment.insurer', 'repairer', 'status'])
             ->accessibleBy(auth()->user())
+            ->when(request()->filled('comparison_id'), function ($query) {
+                $query->where('comparison_id', Comparison::keyFromHashId(request()->comparison_id));
+            })
+            ->when(request()->filled('repairer_id'), function ($query) {
+                $query->where('repairer_id', Entity::keyFromHashId(request()->repairer_id));
+            })
+            ->when(request()->filled('status_id'), function ($query) {
+                $query->where('status_id', Status::where('code', request()->status_id)->first()->id);
+            })
             ->latest('created_at')
             ->useFilters()
             ->dynamicPaginate();
