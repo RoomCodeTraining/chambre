@@ -39,7 +39,7 @@ class Entity extends Model
 
      public function sold(): int
     {
-        return Recharge::where('entity_id', $this->id)->where('status_id', Status::where('code', StatusEnum::SUCCESS)->first()->id)->sum('amount') - (Offer::where('entity_id', $this->id)->count() * config('services.recharge.cost'));
+        return Recharge::where('entity_id', $this->id)->where('status_id', Status::where('code', StatusEnum::SUCCESS)->first()->id)->sum('amount') - (Offer::where('repairer_id', $this->id)->count() * config('services.recharge.cost'));
     }
 
     /**
