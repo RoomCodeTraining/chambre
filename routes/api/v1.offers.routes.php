@@ -10,6 +10,6 @@ Route::middleware('auth:sanctum')->name('offers.')->group(function () {
     Route::put('/{offer}', [OfferController::class, 'update'])->name('offers.update');
     Route::put('/{offer}/send', [OfferController::class, 'send'])->name('offers.send');
     Route::put('/{offer}/accept', [OfferController::class, 'accept'])->name('offers.accept');
-    Route::delete('/{offer}', [OfferController::class, 'destroy'])->name('offers.destroy'); 
+    Route::delete('/{offer}', [OfferController::class, 'destroy'])->name('offers.destroy');
 });
 

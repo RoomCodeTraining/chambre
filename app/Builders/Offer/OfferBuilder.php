@@ -65,17 +65,17 @@ class OfferBuilder extends Builder
 
         if ($user->isAdminExpert()) {
             $assignmentIds = Assignment::where('expert_firm_id', $user->entity_id)->pluck('id');
-            return $this->whereIn('offers.comparison.assignment_id', $assignmentIds);
+            return $this->whereIn('offers.comparison.assignment_id', $assignmentIds)->where('offers.status_id', Status::where('code','!=', StatusEnum::DRAFT)->first()->id);
         }
 
         if ($user->isInsurerAdmin()) {
             $assignmentIds = Assignment::where('insurer_id', $user->entity_id)->pluck('id');
-            return $this->whereIn('offers.comparison.assignment_id', $assignmentIds);
+            return $this->whereIn('offers.comparison.assignment_id', $assignmentIds)->where('offers.status_id', Status::where('code','!=', StatusEnum::DRAFT)->first()->id);
         }
 
         if ($user->isInsurerStandardUser()) {
             $assignmentIds = Assignment::where('insurer_id', $user->entity_id)->pluck('id');
-            return $this->whereIn('offers.comparison.assignment_id', $assignmentIds);
+            return $this->whereIn('offers.comparison.assignment_id', $assignmentIds)->where('offers.status_id', Status::where('code','!=', StatusEnum::DRAFT)->first()->id);
         }
 
         if ($user->isRepairerAdmin()) {
@@ -87,9 +87,9 @@ class OfferBuilder extends Builder
         }
 
         if ($user->isClient()) {
-            return $this->where('offers.comparison.assignment.client_id', $user->entity_id);
+            return $this->where('offers.comparison.assignment.client_id', $user->entity_id)->where('offers.status_id', Status::where('code','!=', StatusEnum::DRAFT)->first()->id);
         }
 
-        return $this->where('offers.comparison.assignment.expert_firm_id', $user->entity_id);
+        return $this->where('offers.comparison.assignment.expert_firm_id', $user->entity_id)->where('offers.status_id', Status::where('code','!=', StatusEnum::DRAFT)->first()->id);
     }
 }
