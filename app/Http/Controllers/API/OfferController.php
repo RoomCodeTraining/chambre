@@ -64,7 +64,7 @@ class OfferController extends Controller
         $offer = Offer::create([
             'reference' => $reference,
             'comparison_id' => $request->comparison_id,
-            'repairer_id' => $request->repairer_id,
+            'repairer_id' => auth()->user()->entity_id,
             'status_id' => Status::where('code', StatusEnum::ACTIVE)->first()->id,
             'created_by' => auth()->user()->id,
             'updated_by' => auth()->user()->id,

@@ -20,7 +20,6 @@ class CreateOfferRequest extends FormRequest
     {
         return [
             'comparison_id' => ['required', 'exists:comparisons,id'],
-            'repairer_id' => ['required', 'exists:entities,id'],
         ];
     }
 
@@ -29,8 +28,6 @@ class CreateOfferRequest extends FormRequest
         return [
             'comparison_id.required' => 'La comparaison est requise.',
             'comparison_id.exists' => 'La comparaison n\'existe pas.',
-            'repairer_id.required' => 'Le réparateur est requise.',
-            'repairer_id.exists' => 'Le réparateur n\'existe pas.',
         ];
     }
 }
