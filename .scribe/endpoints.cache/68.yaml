@@ -46,7 +46,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer haEbDk6g6431cvfPdeV5Za8'
+      - 'Bearer DZva8156f4Pg6kE3cadehbV'
     controller: null
     method: null
     route: null
@@ -80,7 +80,7 @@ endpoints:
         name: point_sale
         description: ''
         required: true
-        example: voluptatem
+        example: sed
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -90,7 +90,7 @@ endpoints:
         name: establishment
         description: ''
         required: true
-        example: et
+        example: libero
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -120,7 +120,7 @@ endpoints:
         name: token
         description: ''
         required: true
-        example: provident
+        example: totam
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -130,24 +130,24 @@ endpoints:
         name: entity_id
         description: 'The <code>id</code> of an existing record in the entities table.'
         required: true
-        example: beatae
+        example: error
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      point_sale: voluptatem
-      establishment: et
-      token: provident
-      entity_id: beatae
+      point_sale: sed
+      establishment: libero
+      token: totam
+      entity_id: error
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer cZ3Pa84f6DgvE1Vakb56hed'
+      - 'Bearer 81eEaa6hcV5gbfvk463dDZP'
     controller: null
     method: null
     route: null
@@ -177,14 +177,14 @@ endpoints:
         name: id
         description: 'The ID of the fne setting.'
         required: true
-        example: vitae
+        example: repellendus
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: vitae
+      id: repellendus
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -204,7 +204,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer EV48feh6bdvD3akZa1cP5g6'
+      - 'Bearer 1b4eVfa6kvPc8Ehg5Dad36Z'
     controller: null
     method: null
     route: null
@@ -234,14 +234,14 @@ endpoints:
         name: id
         description: 'The ID of the fne setting.'
         required: true
-        example: 19
+        example: 8
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 19
+      id: 8
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -249,7 +249,7 @@ endpoints:
         name: point_sale
         description: ''
         required: true
-        example: perspiciatis
+        example: ipsa
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -259,7 +259,7 @@ endpoints:
         name: establishment
         description: ''
         required: true
-        example: occaecati
+        example: commodi
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -289,7 +289,7 @@ endpoints:
         name: token
         description: ''
         required: true
-        example: nihil
+        example: autem
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -299,24 +299,24 @@ endpoints:
         name: entity_id
         description: 'The <code>id</code> of an existing record in the entities table.'
         required: true
-        example: quo
+        example: iste
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      point_sale: perspiciatis
-      establishment: occaecati
-      token: nihil
-      entity_id: quo
+      point_sale: ipsa
+      establishment: commodi
+      token: autem
+      entity_id: iste
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer Ee4bh6Va5gvkd3DacP1fZ86'
+      - 'Bearer d1fZ5Va684kcE6gvhDae3Pb'
     controller: null
     method: null
     route: null
@@ -346,14 +346,14 @@ endpoints:
         name: id
         description: 'The ID of the fne setting.'
         required: true
-        example: 14
+        example: 9
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 14
+      id: 9
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -364,7 +364,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer efEvP4Vagd5683Z6ahbcDk1'
+      - 'Bearer afbgceZEda5VD6hvP4k8163'
     controller: null
     method: null
     route: null
@@ -394,14 +394,14 @@ endpoints:
         name: id
         description: 'The ID of the fne setting.'
         required: true
-        example: 18
+        example: 2
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 18
+      id: 2
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -412,7 +412,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer hD36db8aa14fcvZ6EgVkPe5'
+      - 'Bearer 1VfZgedDc5kb3h6a6E4Pav8'
     controller: null
     method: null
     route: null
@@ -442,14 +442,14 @@ endpoints:
         name: id
         description: 'The ID of the fne setting.'
         required: true
-        example: 13
+        example: 4
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 13
+      id: 4
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -460,7 +460,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer dDcgf163Vvk6Ebaa4ePhZ58'
+      - 'Bearer 4bPgahD866kf51EdeV3Zacv'
     controller: null
     method: null
     route: null

@@ -44,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer gb3kaEc5D1hVf86ZvdP6e4a'
+      - 'Bearer c5a43kZbaev6dD68gEfVPh1'
     controller: null
     method: null
     route: null
@@ -78,7 +78,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: bqadxeyorx
+        example: som
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -88,22 +88,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Enim ut commodi repellendus rerum ut molestiae.'
+        example: 'Qui sed eum est eum ut.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: bqadxeyorx
-      description: 'Enim ut commodi repellendus rerum ut molestiae.'
+      label: som
+      description: 'Qui sed eum est eum ut.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer abg836VEeD6f1Pcv4ah5Zdk'
+      - 'Bearer c8E6fagVDb5e31Phk46advZ'
     controller: null
     method: null
     route: null
@@ -133,14 +133,14 @@ endpoints:
         name: id
         description: 'The ID of the vehicle state.'
         required: true
-        example: totam
+        example: ea
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: totam
+      id: ea
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -160,7 +160,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 168EPVD63k5gafhdaveZcb4'
+      - 'Bearer V6fdhav1k46DPcgZ5b3Eae8'
     controller: null
     method: null
     route: null
@@ -190,14 +190,14 @@ endpoints:
         name: id
         description: 'The ID of the vehicle state.'
         required: true
-        example: officia
+        example: unde
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: officia
+      id: unde
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -205,7 +205,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: adgtcmmgcieqtcy
+        example: hdosxfkvtxradles
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -215,22 +215,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Aut sit omnis perferendis incidunt vitae in.'
+        example: 'Voluptas molestiae nihil enim voluptatem animi est.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: adgtcmmgcieqtcy
-      description: 'Aut sit omnis perferendis incidunt vitae in.'
+      label: hdosxfkvtxradles
+      description: 'Voluptas molestiae nihil enim voluptatem animi est.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer k3vVbZ5g146eDh8aEdfPa6c'
+      - 'Bearer cfa6e34Vgh8DdZbk6E5av1P'
     controller: null
     method: null
     route: null
@@ -260,14 +260,14 @@ endpoints:
         name: id
         description: 'The ID of the vehicle state.'
         required: true
-        example: eum
+        example: aliquid
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: eum
+      id: aliquid
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -278,7 +278,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer aDVf3P586b4chZdEgkave61'
+      - 'Bearer k6Zaavcf1D6gP8hE53bV4ed'
     controller: null
     method: null
     route: null

@@ -46,7 +46,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer g5vh6E6dfPk4c83aeaZVbD1'
+      - 'Bearer 4Dkevf6ch1Vb38P5dgaZEa6'
     controller: null
     method: null
     route: null
@@ -80,7 +80,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: hqjbwpjpy
+        example: ucynvvotsovtazbicz
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -90,7 +90,7 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Molestias illo sint ex est commodi.'
+        example: 'Nihil quia repellendus quibusdam nisi omnis.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -100,7 +100,7 @@ endpoints:
         name: time_limit
         description: 'La valeur de value doit être supérieure ou égale à 0.'
         required: true
-        example: 60
+        example: 61
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -110,24 +110,24 @@ endpoints:
         name: target_status_id
         description: 'The <code>id</code> of an existing record in the statuses table.'
         required: true
-        example: sit
+        example: illo
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      label: hqjbwpjpy
-      description: 'Molestias illo sint ex est commodi.'
-      time_limit: 60
-      target_status_id: sit
+      label: ucynvvotsovtazbicz
+      description: 'Nihil quia repellendus quibusdam nisi omnis.'
+      time_limit: 61
+      target_status_id: illo
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer D8d5c1kaZaeE43bg6h6vPfV'
+      - 'Bearer acEe4b66Vd5Dkaf3vZgPh81'
     controller: null
     method: null
     route: null
@@ -157,14 +157,14 @@ endpoints:
         name: id
         description: 'The ID of the general status deadline.'
         required: true
-        example: cumque
+        example: velit
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: cumque
+      id: velit
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -184,7 +184,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer kEVebZPc654vDa1hg638dfa'
+      - 'Bearer 6b8vkE5h34a6cPDdeaf1ZgV'
     controller: null
     method: null
     route: null
@@ -214,14 +214,14 @@ endpoints:
         name: id
         description: 'The ID of the general status deadline.'
         required: true
-        example: debitis
+        example: et
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: debitis
+      id: et
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -232,7 +232,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Z16a86eVh3Efv5bgDd4Pkca'
+      - 'Bearer EP1k66ba8h3cvDaf4eVZg5d'
     controller: null
     method: null
     route: null
@@ -262,14 +262,14 @@ endpoints:
         name: id
         description: 'The ID of the general status deadline.'
         required: true
-        example: sunt
+        example: eum
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: sunt
+      id: eum
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -280,7 +280,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6aPvb3EdVZ85aD6hk4gec1f'
+      - 'Bearer fE1583Vb6vPD6Zeaadgkc4h'
     controller: null
     method: null
     route: null
@@ -310,14 +310,14 @@ endpoints:
         name: general_status_deadline
         description: ''
         required: true
-        example: et
+        example: accusantium
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      general_status_deadline: et
+      general_status_deadline: accusantium
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -328,7 +328,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer h6vZaP1cgba54fekd6VE38D'
+      - 'Bearer 43b66eV8faacd1gkDZvP5Eh'
     controller: null
     method: null
     route: null
@@ -358,14 +358,14 @@ endpoints:
         name: general_status_deadline
         description: ''
         required: true
-        example: aut
+        example: suscipit
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      general_status_deadline: aut
+      general_status_deadline: suscipit
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -376,7 +376,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 5ek6cg3h86VDEPb4favda1Z'
+      - 'Bearer kgf3e5VE1c6PbhaDv68Z4da'
     controller: null
     method: null
     route: null

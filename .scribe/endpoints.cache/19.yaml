@@ -46,7 +46,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 5aE8h631fvV4beZDdkaP6cg'
+      - 'Bearer Z6EgVbh3P8adf5D16evk4ca'
     controller: null
     method: null
     route: null
@@ -80,21 +80,21 @@ endpoints:
         name: assignment_id
         description: 'The <code>id</code> of an existing record in the assignments table.'
         required: true
-        example: amet
+        example: voluptates
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      assignment_id: amet
+      assignment_id: voluptates
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer ec4ZEhf6kvagd381VD6bP5a'
+      - 'Bearer 1a8Peh4vf5DV3Z6dk6Ebgca'
     controller: null
     method: null
     route: null
@@ -124,14 +124,14 @@ endpoints:
         name: id
         description: 'The ID of the comparison.'
         required: true
-        example: error
+        example: ea
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: error
+      id: ea
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -151,7 +151,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer dPv13V8f5eaaDEk6h4gbcZ6'
+      - 'Bearer aDeE4kvh65gZda1cb63fPV8'
     controller: null
     method: null
     route: null
@@ -181,14 +181,14 @@ endpoints:
         name: id
         description: 'The ID of the comparison.'
         required: true
-        example: qui
+        example: minus
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: qui
+      id: minus
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -199,7 +199,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer D8kbhZV66af3g1ceEv54aPd'
+      - 'Bearer Dh5eaP8a1EZ6d3fck6bg4vV'
     controller: null
     method: null
     route: null
@@ -229,14 +229,14 @@ endpoints:
         name: id
         description: 'The ID of the comparison.'
         required: true
-        example: nostrum
+        example: nulla
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: nostrum
+      id: nulla
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -247,7 +247,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 16ZEDP5dafahg64bV3cekv8'
+      - 'Bearer e1d5Dcb4a86ghf3Pa6ZEkvV'
     controller: null
     method: null
     route: null

@@ -44,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 83ak5ehbfg61PdVav6Ec4DZ'
+      - 'Bearer d8EPkv1b4cf6geZDaa35h6V'
     controller: null
     method: null
     route: null
@@ -78,7 +78,7 @@ endpoints:
         name: payment_id
         description: 'The <code>id</code> of an existing record in the payments table.'
         required: true
-        example: rerum
+        example: et
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -88,7 +88,7 @@ endpoints:
         name: bank_id
         description: 'The <code>id</code> of an existing record in the banks table.'
         required: true
-        example: molestias
+        example: molestiae
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -108,7 +108,7 @@ endpoints:
         name: amount
         description: ''
         required: true
-        example: 801.0
+        example: 3.2
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -125,10 +125,10 @@ endpoints:
         nullable: false
         custom: []
     cleanBodyParameters:
-      payment_id: rerum
-      bank_id: molestias
+      payment_id: et
+      bank_id: molestiae
       date: '2026-03-07'
-      amount: 801.0
+      amount: 3.2
     fileParameters:
       photo: null
     responses: []
@@ -136,7 +136,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer DcvkbZ685fahd16PVEa4g3e'
+      - 'Bearer ahk358e4gcDdEbVv66ZfPa1'
     controller: null
     method: null
     route: null
@@ -166,14 +166,14 @@ endpoints:
         name: id
         description: 'The ID of the check.'
         required: true
-        example: totam
+        example: sit
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: totam
+      id: sit
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -193,7 +193,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer ha8kP6V6ZDE1vabe5gf4c3d'
+      - 'Bearer hbDva6Z6Vcgd4EPfe85k31a'
     controller: null
     method: null
     route: null
@@ -223,14 +223,14 @@ endpoints:
         name: id
         description: 'The ID of the check.'
         required: true
-        example: culpa
+        example: laboriosam
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: culpa
+      id: laboriosam
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -238,7 +238,7 @@ endpoints:
         name: payment_id
         description: 'The <code>id</code> of an existing record in the payments table.'
         required: true
-        example: sed
+        example: quas
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -248,7 +248,7 @@ endpoints:
         name: bank_id
         description: 'The <code>id</code> of an existing record in the banks table.'
         required: true
-        example: odit
+        example: porro
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -268,7 +268,7 @@ endpoints:
         name: amount
         description: ''
         required: true
-        example: 1030489.4136548
+        example: 5279.0
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -285,10 +285,10 @@ endpoints:
         nullable: false
         custom: []
     cleanBodyParameters:
-      payment_id: sed
-      bank_id: odit
+      payment_id: quas
+      bank_id: porro
       date: '2026-03-07'
-      amount: 1030489.4136548
+      amount: 5279.0
     fileParameters:
       photo: null
     responses: []
@@ -296,7 +296,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer ZvV6d64Egca1be8PhaD3k5f'
+      - 'Bearer 4eafc38aPE6ghvDZd1b6Vk5'
     controller: null
     method: null
     route: null
@@ -326,14 +326,14 @@ endpoints:
         name: id
         description: 'The ID of the check.'
         required: true
-        example: et
+        example: sequi
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: et
+      id: sequi
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -344,7 +344,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer g61vkD4hVd3PZ8eaEf56bca'
+      - 'Bearer agP63hZ8VDk6ab5edvfE14c'
     controller: null
     method: null
     route: null

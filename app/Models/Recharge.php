@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Builders\Recharge\RechargeBuilder;
 use App\Filters\RechargeFilters;
 use Essa\APIToolKit\Filters\Filterable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;

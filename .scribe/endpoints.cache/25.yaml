@@ -46,7 +46,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 4k5f8agV6eZ6bvdDcP3ha1E'
+      - 'Bearer dve863Z64DfVgaEah5kc1bP'
     controller: null
     method: null
     route: null
@@ -110,7 +110,7 @@ endpoints:
         name: policy_number
         description: ''
         required: false
-        example: beatae
+        example: aut
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -120,7 +120,7 @@ endpoints:
         name: claim_number
         description: ''
         required: false
-        example: ut
+        example: a
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -140,7 +140,7 @@ endpoints:
         name: expertise_place
         description: ''
         required: false
-        example: reiciendis
+        example: odio
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -158,10 +158,10 @@ endpoints:
         nullable: true
         custom: []
     cleanBodyParameters:
-      policy_number: beatae
-      claim_number: ut
+      policy_number: aut
+      claim_number: a
       claim_date: '2026-03-07'
-      expertise_place: reiciendis
+      expertise_place: odio
     fileParameters:
       photos:
         - null
@@ -170,7 +170,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Vvc46ek186ZPDE5bfga3dah'
+      - 'Bearer fd5Zv1c8EDh36gebka4Pa6V'
     controller: null
     method: null
     route: null
@@ -200,14 +200,14 @@ endpoints:
         name: assignment_request
         description: ''
         required: true
-        example: quae
+        example: et
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      assignment_request: quae
+      assignment_request: et
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -227,7 +227,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer h346caekd58VafP6ZvED1bg'
+      - 'Bearer 54ba1EVhgefDk8aP6dv3c6Z'
     controller: null
     method: null
     route: null
@@ -257,14 +257,14 @@ endpoints:
         name: assignment_request
         description: ''
         required: true
-        example: tempora
+        example: cumque
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      assignment_request: tempora
+      assignment_request: cumque
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -275,7 +275,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer fv56VkaPb4ahZ3dg8ceE6D1'
+      - 'Bearer b1E4aed3vDgfkV5hcZP6a68'
     controller: null
     method: null
     route: null
@@ -305,14 +305,14 @@ endpoints:
         name: assignment_request
         description: ''
         required: true
-        example: sit
+        example: aliquam
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      assignment_request: sit
+      assignment_request: aliquam
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -323,7 +323,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer acg6aDbh5dfe3vEkP14V68Z'
+      - 'Bearer Devdg1hafa34P56ZcV68Ebk'
     controller: null
     method: null
     route: null
@@ -353,14 +353,14 @@ endpoints:
         name: assignment_request
         description: ''
         required: true
-        example: sapiente
+        example: minus
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      assignment_request: sapiente
+      assignment_request: minus
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -381,7 +381,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 5dfP4v6De3cgZb8aa61VEhk'
+      - 'Bearer 61a48k6ZgPhdfvbae5DEV3c'
     controller: null
     method: null
     route: null
@@ -411,14 +411,14 @@ endpoints:
         name: assignment_request
         description: ''
         required: true
-        example: molestias
+        example: saepe
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      assignment_request: molestias
+      assignment_request: saepe
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -439,7 +439,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer be481ZaEck6h6dVDvPa3gf5'
+      - 'Bearer a36PdeDf6kZ5V8Ea4cbhg1v'
     controller: null
     method: null
     route: null
@@ -469,14 +469,14 @@ endpoints:
         name: assignment_request
         description: ''
         required: true
-        example: ea
+        example: et
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      assignment_request: ea
+      assignment_request: et
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -500,7 +500,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer c6V3vkPEdfZeab658D4a1gh'
+      - 'Bearer 4ZeDv3g8EfdV6b1k6achPa5'
     controller: null
     method: null
     route: null

@@ -44,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 1k654EdevDh3VbZ68afPacg'
+      - 'Bearer fPgbE3v548ke1Zcha66dDVa'
     controller: null
     method: null
     route: null
@@ -78,7 +78,7 @@ endpoints:
         name: time_limit
         description: 'La valeur de value doit être supérieure ou égale à 0.'
         required: true
-        example: 84
+        example: 2
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -88,22 +88,22 @@ endpoints:
         name: general_status_deadline_id
         description: 'The <code>id</code> of an existing record in the general_status_deadlines table.'
         required: true
-        example: hic
+        example: earum
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      time_limit: 84
-      general_status_deadline_id: hic
+      time_limit: 2
+      general_status_deadline_id: earum
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer V86aZ156da4veg3fEbPkDch'
+      - 'Bearer VPZ43gka86dh5b61EecDafv'
     controller: null
     method: null
     route: null
@@ -133,14 +133,14 @@ endpoints:
         name: id
         description: 'The ID of the status deadline.'
         required: true
-        example: tempore
+        example: vero
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: tempore
+      id: vero
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -160,7 +160,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer h866ca3fZbgvE5kd1aD4VeP'
+      - 'Bearer h861e65PbacZaEfVk3v4dDg'
     controller: null
     method: null
     route: null
@@ -190,14 +190,14 @@ endpoints:
         name: id
         description: 'The ID of the status deadline.'
         required: true
-        example: molestias
+        example: aut
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: molestias
+      id: aut
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -205,7 +205,7 @@ endpoints:
         name: time_limit
         description: 'La valeur de value doit être supérieure ou égale à 0.'
         required: true
-        example: 12
+        example: 17
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -215,22 +215,22 @@ endpoints:
         name: general_status_deadline_id
         description: 'The <code>id</code> of an existing record in the general_status_deadlines table.'
         required: true
-        example: accusamus
+        example: molestias
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      time_limit: 12
-      general_status_deadline_id: accusamus
+      time_limit: 17
+      general_status_deadline_id: molestias
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer bVgD65d81eZcaPfv34ak6hE'
+      - 'Bearer fk8Z4eD6adbPE6gaV13ch5v'
     controller: null
     method: null
     route: null
@@ -260,14 +260,14 @@ endpoints:
         name: id
         description: 'The ID of the status deadline.'
         required: true
-        example: modi
+        example: enim
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: modi
+      id: enim
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -278,7 +278,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 45dechP6Daafg6v8kZE31bV'
+      - 'Bearer fEv63P1edV6gba4cZD8kha5'
     controller: null
     method: null
     route: null
@@ -308,14 +308,14 @@ endpoints:
         name: status_deadline
         description: ''
         required: true
-        example: voluptatum
+        example: ea
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      status_deadline: voluptatum
+      status_deadline: ea
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -326,7 +326,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6PcgEv1da5Db3haZef468kV'
+      - 'Bearer 4baePdD31V65gfvahcEZ68k'
     controller: null
     method: null
     route: null
@@ -356,14 +356,14 @@ endpoints:
         name: status_deadline
         description: ''
         required: true
-        example: soluta
+        example: consequuntur
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      status_deadline: soluta
+      status_deadline: consequuntur
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -374,7 +374,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 8efcavhdD6gPaZ4k51VE6b3'
+      - 'Bearer e6av51Pkab8DEZ634gVdchf'
     controller: null
     method: null
     route: null

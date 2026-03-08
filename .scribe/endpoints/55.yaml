@@ -44,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer k1E66bacdhaDf85ge3v4PVZ'
+      - 'Bearer kve6Pf31gcDZ48Eab5hV6ad'
     controller: null
     method: null
     route: null
@@ -78,7 +78,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: wzletamgqrcgcdqvxznk
+        example: qhdclrtfwtcsypbpj
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -88,22 +88,22 @@ endpoints:
         name: description
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: false
-        example: 'Dolor nesciunt odit quia fugiat ea ipsum quisquam.'
+        example: 'Doloremque itaque repellat quo qui quibusdam eaque laudantium temporibus.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: wzletamgqrcgcdqvxznk
-      description: 'Dolor nesciunt odit quia fugiat ea ipsum quisquam.'
+      label: qhdclrtfwtcsypbpj
+      description: 'Doloremque itaque repellat quo qui quibusdam eaque laudantium temporibus.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer da8gf651vbZkcP6D4eEah3V'
+      - 'Bearer bDVZPa4153fhdv8E6eac6kg'
     controller: null
     method: null
     route: null
@@ -133,14 +133,14 @@ endpoints:
         name: photoType
         description: ''
         required: true
-        example: repudiandae
+        example: doloremque
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      photoType: repudiandae
+      photoType: doloremque
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -160,7 +160,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer eh3Db6g81v5fkcPE4aZVda6'
+      - 'Bearer c53g1E84kfdZb6veahaPV6D'
     controller: null
     method: null
     route: null
@@ -190,14 +190,14 @@ endpoints:
         name: photoType
         description: ''
         required: true
-        example: libero
+        example: quis
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      photoType: libero
+      photoType: quis
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -205,7 +205,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: aw
+        example: haoiqeknko
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -215,22 +215,22 @@ endpoints:
         name: description
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: false
-        example: 'Et id ducimus recusandae.'
+        example: 'Placeat possimus et debitis quia.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: aw
-      description: 'Et id ducimus recusandae.'
+      label: haoiqeknko
+      description: 'Placeat possimus et debitis quia.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 41agbk36Zda8ev5hDcfVP6E'
+      - 'Bearer 4kgD13ahfZPevdbc668aEV5'
     controller: null
     method: null
     route: null
@@ -260,14 +260,14 @@ endpoints:
         name: photoType
         description: ''
         required: true
-        example: quo
+        example: dignissimos
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      photoType: quo
+      photoType: dignissimos
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -278,7 +278,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer aaeg66PZEcdV8fb3h4Dk51v'
+      - 'Bearer 6h8DbV64Zeg1Ekv5f3aadcP'
     controller: null
     method: null
     route: null
@@ -308,14 +308,14 @@ endpoints:
         name: photoType
         description: ''
         required: true
-        example: velit
+        example: enim
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      photoType: velit
+      photoType: enim
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -326,7 +326,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer eE4ad1P6gVbfZhk583acv6D'
+      - 'Bearer 1kEah4fbV6vZ6gD85c3edPa'
     controller: null
     method: null
     route: null
@@ -356,14 +356,14 @@ endpoints:
         name: photoType
         description: ''
         required: true
-        example: placeat
+        example: quia
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      photoType: placeat
+      photoType: quia
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -374,7 +374,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer VDc6b3618keEZ4Pdva5hgfa'
+      - 'Bearer vZEk3Df5chV6b4P8a1ad6eg'
     controller: null
     method: null
     route: null

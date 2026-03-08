@@ -44,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer a5Va6D4E63hZPb1efg8dkcv'
+      - 'Bearer d63hv8b6DeE41V5gkPacfZa'
     controller: null
     method: null
     route: null
@@ -78,7 +78,7 @@ endpoints:
         name: param_1
         description: ''
         required: true
-        example: 210352912.651
+        example: 11.3
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -88,7 +88,7 @@ endpoints:
         name: param_2
         description: ''
         required: true
-        example: 49.80337
+        example: 298.4250413
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -98,7 +98,7 @@ endpoints:
         name: hourly_rate_id
         description: 'The <code>id</code> of an existing record in the hourly_rates table.'
         required: true
-        example: iure
+        example: aut
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -108,7 +108,7 @@ endpoints:
         name: paint_type_id
         description: 'The <code>id</code> of an existing record in the paint_types table.'
         required: true
-        example: in
+        example: provident
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -118,25 +118,25 @@ endpoints:
         name: number_paint_element_id
         description: 'The <code>id</code> of an existing record in the number_paint_elements table.'
         required: true
-        example: nesciunt
+        example: reprehenderit
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      param_1: 210352912.651
-      param_2: 49.80337
-      hourly_rate_id: iure
-      paint_type_id: in
-      number_paint_element_id: nesciunt
+      param_1: 11.3
+      param_2: 298.4250413
+      hourly_rate_id: aut
+      paint_type_id: provident
+      number_paint_element_id: reprehenderit
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer g6aZPD48hk1ed6v3fa5VEbc'
+      - 'Bearer aVkcE8dZbP35a1D4ge6vh6f'
     controller: null
     method: null
     route: null
@@ -166,14 +166,14 @@ endpoints:
         name: paintingPrice
         description: ''
         required: true
-        example: voluptatum
+        example: non
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      paintingPrice: voluptatum
+      paintingPrice: non
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -193,7 +193,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer baZe63dkgV5fcP46hv1aE8D'
+      - 'Bearer cfb8aVh1k5e6ZP6ag3DEvd4'
     controller: null
     method: null
     route: null
@@ -223,14 +223,14 @@ endpoints:
         name: paintingPrice
         description: ''
         required: true
-        example: aliquid
+        example: qui
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      paintingPrice: aliquid
+      paintingPrice: qui
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -238,7 +238,7 @@ endpoints:
         name: param_1
         description: ''
         required: true
-        example: 402863.74999
+        example: 25368.670183
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -248,7 +248,7 @@ endpoints:
         name: param_2
         description: ''
         required: true
-        example: 47.0
+        example: 1427034.350166
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -258,7 +258,7 @@ endpoints:
         name: hourly_rate_id
         description: 'The <code>id</code> of an existing record in the hourly_rates table.'
         required: true
-        example: qui
+        example: tempore
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -268,7 +268,7 @@ endpoints:
         name: paint_type_id
         description: 'The <code>id</code> of an existing record in the paint_types table.'
         required: true
-        example: necessitatibus
+        example: praesentium
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -278,25 +278,25 @@ endpoints:
         name: number_paint_element_id
         description: 'The <code>id</code> of an existing record in the number_paint_elements table.'
         required: true
-        example: officia
+        example: neque
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      param_1: 402863.74999
-      param_2: 47.0
-      hourly_rate_id: qui
-      paint_type_id: necessitatibus
-      number_paint_element_id: officia
+      param_1: 25368.670183
+      param_2: 1427034.350166
+      hourly_rate_id: tempore
+      paint_type_id: praesentium
+      number_paint_element_id: neque
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 6hbc6a8Eeaf1gZd3kD45PvV'
+      - 'Bearer bEhvackZPf81d3aD665Ve4g'
     controller: null
     method: null
     route: null
@@ -326,14 +326,14 @@ endpoints:
         name: paintingPrice
         description: ''
         required: true
-        example: consequatur
+        example: velit
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      paintingPrice: consequatur
+      paintingPrice: velit
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -344,7 +344,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer v65Z3EgdbVkP64acfhD1ea8'
+      - 'Bearer fcD5e6aVdhEPga14v3bZk68'
     controller: null
     method: null
     route: null

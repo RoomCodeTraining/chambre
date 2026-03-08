@@ -44,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer ZaVk6aDgPv536efd1Eb4ch8'
+      - 'Bearer kvPDfg8Vc5ae4aEb316hZd6'
     controller: null
     method: null
     route: null
@@ -60,7 +60,7 @@ endpoints:
         APIs pour la gestion des chargements
       subgroup: ''
       subgroupDescription: ''
-      title: ''
+      title: 'Créer un rechargement'
       description: ''
       authenticated: true
       deprecated: false
@@ -78,7 +78,7 @@ endpoints:
         name: amount
         description: 'La valeur de value doit être supérieure ou égale à 5000.'
         required: true
-        example: 1861
+        example: 3943
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -88,7 +88,7 @@ endpoints:
         name: user_first_name
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: roteeiwufljwocvmnggy
+        example: cyvvnxrefblbpnrgdumcgnyvn
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -98,7 +98,7 @@ endpoints:
         name: user_last_name
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: ts
+        example: njfwlux
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -108,7 +108,7 @@ endpoints:
         name: user_phone_number
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: szujrutelbrgyerzvzrbxpg
+        example: iphvcwpondmd
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -118,25 +118,25 @@ endpoints:
         name: payment_method_id
         description: 'The <code>id</code> of an existing record in the payment_methods table.'
         required: true
-        example: non
+        example: eveniet
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      amount: 1861
-      user_first_name: roteeiwufljwocvmnggy
-      user_last_name: ts
-      user_phone_number: szujrutelbrgyerzvzrbxpg
-      payment_method_id: non
+      amount: 3943
+      user_first_name: cyvvnxrefblbpnrgdumcgnyvn
+      user_last_name: njfwlux
+      user_phone_number: iphvcwpondmd
+      payment_method_id: eveniet
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer db5P3aE1VvkfcZ648hD6ega'
+      - 'Bearer hbf6dvg4eZPEac561Vk8D3a'
     controller: null
     method: null
     route: null
@@ -152,7 +152,7 @@ endpoints:
         APIs pour la gestion des chargements
       subgroup: ''
       subgroupDescription: ''
-      title: ''
+      title: 'Afficher un rechargement'
       description: ''
       authenticated: true
       deprecated: false
@@ -166,14 +166,14 @@ endpoints:
         name: id
         description: 'The ID of the recharge.'
         required: true
-        example: quod
+        example: et
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: quod
+      id: et
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -193,7 +193,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer eZ4adPVEv8D3ak15fcgb66h'
+      - 'Bearer 38cb5dDZ6a6akEv4ehVgP1f'
     controller: null
     method: null
     route: null
@@ -209,7 +209,7 @@ endpoints:
         APIs pour la gestion des chargements
       subgroup: ''
       subgroupDescription: ''
-      title: ''
+      title: 'Mettre à jour le statut des rechargements'
       description: ''
       authenticated: true
       deprecated: false
@@ -230,7 +230,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer vakEefcba68D3P6hd1V5Z4g'
+      - 'Bearer 5VDaaeEdgk6Pcf3v14Z86bh'
     controller: null
     method: null
     route: null

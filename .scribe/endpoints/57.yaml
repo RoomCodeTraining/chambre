@@ -44,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer b6adfeVEZg5a4vc86hD3kP1'
+      - 'Bearer 8Zkcg3vfEa6h5ebVDa41P6d'
     controller: null
     method: null
     route: null
@@ -78,7 +78,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: vycgnivf
+        example: vthk
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -88,22 +88,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Autem possimus voluptatem incidunt consequatur provident qui.'
+        example: 'At in voluptatem et quo quibusdam ut.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: vycgnivf
-      description: 'Autem possimus voluptatem incidunt consequatur provident qui.'
+      label: vthk
+      description: 'At in voluptatem et quo quibusdam ut.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 6gEcDaZhaf41bP6Vkv835ed'
+      - 'Bearer 3ah1fcdEe6vaDgZkPb486V5'
     controller: null
     method: null
     route: null
@@ -133,14 +133,14 @@ endpoints:
         name: id
         description: 'The ID of the ascertainment type.'
         required: true
-        example: reiciendis
+        example: iusto
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: reiciendis
+      id: iusto
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -160,7 +160,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer h1gef6advV4DZ5b8Eka6Pc3'
+      - 'Bearer 5Dgc6fv4ha6ZabkP3V8E1ed'
     controller: null
     method: null
     route: null
@@ -190,14 +190,14 @@ endpoints:
         name: id
         description: 'The ID of the ascertainment type.'
         required: true
-        example: et
+        example: voluptas
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: et
+      id: voluptas
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -205,7 +205,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: udwjkyxqzu
+        example: palxsjuosceakiocjdrmu
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -215,22 +215,22 @@ endpoints:
         name: description
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: false
-        example: 'Non voluptas et ab at a voluptas sed.'
+        example: 'Mollitia non doloremque magni alias veritatis.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: udwjkyxqzu
-      description: 'Non voluptas et ab at a voluptas sed.'
+      label: palxsjuosceakiocjdrmu
+      description: 'Mollitia non doloremque magni alias veritatis.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 1cPDhaa3e6vgbZ685kE4Vdf'
+      - 'Bearer fabaVk6hDg4vZ1PEd5863ce'
     controller: null
     method: null
     route: null
@@ -260,14 +260,14 @@ endpoints:
         name: id
         description: 'The ID of the ascertainment type.'
         required: true
-        example: iusto
+        example: placeat
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: iusto
+      id: placeat
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -278,7 +278,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer V41eD6a68v3hE5fkacZdPgb'
+      - 'Bearer gkaeP68h13cD65vVfbaE4Zd'
     controller: null
     method: null
     route: null
@@ -308,14 +308,14 @@ endpoints:
         name: ascertainment_type
         description: ''
         required: true
-        example: sequi
+        example: commodi
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      ascertainment_type: sequi
+      ascertainment_type: commodi
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -326,7 +326,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer EvcgPf38ka645aDVd6Z1heb'
+      - 'Bearer a8Z1d64PhVcfE5aD3egkv6b'
     controller: null
     method: null
     route: null
@@ -356,14 +356,14 @@ endpoints:
         name: ascertainment_type
         description: ''
         required: true
-        example: minima
+        example: debitis
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      ascertainment_type: minima
+      ascertainment_type: debitis
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -374,7 +374,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer h8vk6eaa1VD4cPbZ635gEdf'
+      - 'Bearer V4fab68D1k65vEPcaeZ3gdh'
     controller: null
     method: null
     route: null

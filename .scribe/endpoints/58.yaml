@@ -44,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer ha6Ee1adPf5gD46cV3k8Zbv'
+      - 'Bearer 5VP6684bh3avekDadgEZc1f'
     controller: null
     method: null
     route: null
@@ -78,7 +78,7 @@ endpoints:
         name: assignment_id
         description: 'The <code>id</code> of an existing record in the assignments table.'
         required: true
-        example: et
+        example: nulla
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -99,7 +99,7 @@ endpoints:
         name: 'ascertainments[].ascertainment_type_id'
         description: 'The <code>id</code> of an existing record in the ascertainment_types table.'
         required: true
-        example: facere
+        example: officia
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -129,7 +129,7 @@ endpoints:
         name: 'ascertainments[].acceptable'
         description: ''
         required: true
-        example: true
+        example: false
         type: boolean
         enumValues: []
         exampleWasSpecified: false
@@ -169,31 +169,31 @@ endpoints:
         name: 'ascertainments[].comment'
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: yclehche
+        example: elgh
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      assignment_id: et
+      assignment_id: nulla
       ascertainments:
         -
-          ascertainment_type_id: facere
+          ascertainment_type_id: officia
           very_good: true
           good: false
-          acceptable: true
+          acceptable: false
           less_good: false
           bad: false
           very_bad: false
-          comment: yclehche
+          comment: elgh
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer g53fZade6bhDkVc6P1Eav48'
+      - 'Bearer hkg8VEZ66ed4PfDaa35bv1c'
     controller: null
     method: null
     route: null
@@ -223,14 +223,14 @@ endpoints:
         name: id
         description: 'The ID of the ascertainment.'
         required: true
-        example: voluptas
+        example: deserunt
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: voluptas
+      id: deserunt
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -250,7 +250,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer E4bDeV5v61fh8acgdP6Za3k'
+      - 'Bearer a3akdcg8Zfh1b46VDe6Ev5P'
     controller: null
     method: null
     route: null
@@ -280,14 +280,14 @@ endpoints:
         name: id
         description: 'The ID of the ascertainment.'
         required: true
-        example: est
+        example: velit
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: est
+      id: velit
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -295,7 +295,7 @@ endpoints:
         name: ascertainment_type_id
         description: 'The <code>id</code> of an existing record in the ascertainment_types table.'
         required: true
-        example: dolore
+        example: distinctio
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -315,7 +315,7 @@ endpoints:
         name: good
         description: ''
         required: true
-        example: true
+        example: false
         type: boolean
         enumValues: []
         exampleWasSpecified: false
@@ -365,28 +365,28 @@ endpoints:
         name: comment
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: uameptfbzycuogsu
+        example: hfhfsmjtphhhrnewuuyuj
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      ascertainment_type_id: dolore
+      ascertainment_type_id: distinctio
       very_good: true
-      good: true
+      good: false
       acceptable: true
       less_good: false
       bad: false
       very_bad: true
-      comment: uameptfbzycuogsu
+      comment: hfhfsmjtphhhrnewuuyuj
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer gf5EdVc1vkPhaD8bZ3a6e64'
+      - 'Bearer 6dcf6ahEDekZag5vb31V8P4'
     controller: null
     method: null
     route: null
@@ -416,14 +416,14 @@ endpoints:
         name: id
         description: 'The ID of the ascertainment.'
         required: true
-        example: ipsum
+        example: commodi
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: ipsum
+      id: commodi
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -434,7 +434,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer P3vfg5E6Ddae4hZbV6cak18'
+      - 'Bearer 6vbD483PcV16afaegh5kZdE'
     controller: null
     method: null
     route: null

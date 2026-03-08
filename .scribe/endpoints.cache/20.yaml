@@ -46,7 +46,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer a5vkV6h8eZfPa3c4Edb61Dg'
+      - 'Bearer 38h6D4fdvcaeEPgkaZ5Vb61'
     controller: null
     method: null
     route: null
@@ -80,7 +80,7 @@ endpoints:
         name: comparison_id
         description: 'The <code>id</code> of an existing record in the comparisons table.'
         required: true
-        example: corporis
+        example: et
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -90,22 +90,22 @@ endpoints:
         name: repairer_id
         description: 'The <code>id</code> of an existing record in the entities table.'
         required: true
-        example: numquam
+        example: eius
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      comparison_id: corporis
-      repairer_id: numquam
+      comparison_id: et
+      repairer_id: eius
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer hV6v5cE8364Pabefg1ZaDkd'
+      - 'Bearer 6Z8dE3cfD1eaav6gVbP4h5k'
     controller: null
     method: null
     route: null
@@ -135,14 +135,14 @@ endpoints:
         name: id
         description: 'The ID of the offer.'
         required: true
-        example: quae
+        example: debitis
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: quae
+      id: debitis
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -162,7 +162,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer ag1de4ZVkbhE683cPaf65Dv'
+      - 'Bearer hZcfgb4aDaEVP66e538dvk1'
     controller: null
     method: null
     route: null
@@ -192,14 +192,14 @@ endpoints:
         name: id
         description: 'The ID of the offer.'
         required: true
-        example: vero
+        example: consectetur
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: vero
+      id: consectetur
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -210,7 +210,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 8cPf5Zv4b1VDeEa36ahkg6d'
+      - 'Bearer DEaVaf5bghdc3k846Pe1v6Z'
     controller: null
     method: null
     route: null
@@ -240,14 +240,14 @@ endpoints:
         name: id
         description: 'The ID of the offer.'
         required: true
-        example: non
+        example: sed
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: non
+      id: sed
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -258,7 +258,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 1ka48v5gfDVaZdeP66Ehbc3'
+      - 'Bearer bk1daE6hVva46cZPg5fe8D3'
     controller: null
     method: null
     route: null

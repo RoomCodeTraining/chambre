@@ -44,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 3Vg8vafe65P1hk6EabZ4dDc'
+      - 'Bearer v5kba3DghZe64aVf6c1Ed8P'
     controller: null
     method: null
     route: null
@@ -78,7 +78,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: sjnhuzyigzx
+        example: ynqpcqasllzwou
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -88,22 +88,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Facilis placeat et itaque sit est.'
+        example: 'Non autem quaerat non nam magnam iure sint.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: sjnhuzyigzx
-      description: 'Facilis placeat et itaque sit est.'
+      label: ynqpcqasllzwou
+      description: 'Non autem quaerat non nam magnam iure sint.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 46bPVE3f8ag6eh5Zc1kdDav'
+      - 'Bearer hdZeaVvc6E84g1P3k5fDa6b'
     controller: null
     method: null
     route: null
@@ -133,14 +133,14 @@ endpoints:
         name: document_transmitted
         description: ''
         required: true
-        example: quia
+        example: ratione
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      document_transmitted: quia
+      document_transmitted: ratione
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -160,7 +160,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer avaebE5c6dDg3kV8Z41h6Pf'
+      - 'Bearer 6a6v8a4bEdegkfZVhD1c5P3'
     controller: null
     method: null
     route: null
@@ -190,14 +190,14 @@ endpoints:
         name: document_transmitted
         description: ''
         required: true
-        example: qui
+        example: illum
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      document_transmitted: qui
+      document_transmitted: illum
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -205,7 +205,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: fhyajqahjlhdg
+        example: iaxyzlmzvuzcmcchwjqtmva
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -215,22 +215,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Soluta molestiae nostrum accusamus et deleniti.'
+        example: 'Sapiente dignissimos ut possimus qui.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: fhyajqahjlhdg
-      description: 'Soluta molestiae nostrum accusamus et deleniti.'
+      label: iaxyzlmzvuzcmcchwjqtmva
+      description: 'Sapiente dignissimos ut possimus qui.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer V34g5hE661faZbv8DckdPea'
+      - 'Bearer V5ag61Zh3fD4PedvbackE86'
     controller: null
     method: null
     route: null
@@ -260,14 +260,14 @@ endpoints:
         name: document_transmitted
         description: ''
         required: true
-        example: quibusdam
+        example: enim
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      document_transmitted: quibusdam
+      document_transmitted: enim
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -278,7 +278,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 8g34ZhVdf6PEv6D1back5ea'
+      - 'Bearer kdv3Eef8aPDgca1hbV45Z66'
     controller: null
     method: null
     route: null

@@ -44,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer edvDVh6Paba41E36kfc8gZ5'
+      - 'Bearer ZVbh816vagEak4eD3dc6f5P'
     controller: null
     method: null
     route: null
@@ -78,7 +78,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: unbazcszlnyzqwhsfvgm
+        example: cosrbboxiqwvztisz
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -88,22 +88,22 @@ endpoints:
         name: description
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: false
-        example: 'Quis ipsa reiciendis eligendi id.'
+        example: 'Incidunt sed eos est omnis molestiae ut est est.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: unbazcszlnyzqwhsfvgm
-      description: 'Quis ipsa reiciendis eligendi id.'
+      label: cosrbboxiqwvztisz
+      description: 'Incidunt sed eos est omnis molestiae ut est est.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer d61ED45PkZbaefah3cv68Vg'
+      - 'Bearer a5eZk8dhDfEb34ca6v6P1gV'
     controller: null
     method: null
     route: null
@@ -133,14 +133,14 @@ endpoints:
         name: paymentMethod
         description: ''
         required: true
-        example: repudiandae
+        example: aut
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      paymentMethod: repudiandae
+      paymentMethod: aut
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -160,7 +160,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 166aea5h8DPbdcg34VZEkvf'
+      - 'Bearer acd53eh86EvDkgPZb1a4fV6'
     controller: null
     method: null
     route: null
@@ -190,14 +190,14 @@ endpoints:
         name: paymentMethod
         description: ''
         required: true
-        example: temporibus
+        example: quidem
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      paymentMethod: temporibus
+      paymentMethod: quidem
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -205,7 +205,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: sgcozcnmso
+        example: gzqtapcutjefvjtzazkudhif
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -215,22 +215,22 @@ endpoints:
         name: description
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: false
-        example: 'Qui dolor velit labore modi.'
+        example: 'Qui quos quas consectetur voluptates recusandae atque ab qui.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: sgcozcnmso
-      description: 'Qui dolor velit labore modi.'
+      label: gzqtapcutjefvjtzazkudhif
+      description: 'Qui quos quas consectetur voluptates recusandae atque ab qui.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer kZavgb6Vd5146P3cEe8faDh'
+      - 'Bearer VE6v6Pkeac1D34dfh5bZ8ag'
     controller: null
     method: null
     route: null
@@ -260,14 +260,14 @@ endpoints:
         name: paymentMethod
         description: ''
         required: true
-        example: sit
+        example: tempore
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      paymentMethod: sit
+      paymentMethod: tempore
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -278,7 +278,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer fbPV6aZE34c61hD85keagvd'
+      - 'Bearer EgPk3edV85bZcfa6vha1D46'
     controller: null
     method: null
     route: null

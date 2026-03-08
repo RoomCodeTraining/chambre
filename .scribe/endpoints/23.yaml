@@ -44,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer h31eb8adVgkaE64c5fv6ZPD'
+      - 'Bearer P3e86Dcg6Edaf4hvkVZba15'
     controller: null
     method: null
     route: null
@@ -78,7 +78,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: uhcvv
+        example: uyxmtflqgtvl
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -88,22 +88,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Distinctio provident odio eos.'
+        example: 'Rerum quis consequatur nulla veniam autem harum molestiae provident.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: uhcvv
-      description: 'Distinctio provident odio eos.'
+      label: uyxmtflqgtvl
+      description: 'Rerum quis consequatur nulla veniam autem harum molestiae provident.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 6hE1ZkfVcD3dPb58a4veag6'
+      - 'Bearer cveP5Dbada3hk4f816Z6VEg'
     controller: null
     method: null
     route: null
@@ -133,14 +133,14 @@ endpoints:
         name: id
         description: 'The ID of the supply.'
         required: true
-        example: facere
+        example: consequatur
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: facere
+      id: consequatur
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -160,7 +160,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer VacPZDad1f3k6g5v84beEh6'
+      - 'Bearer fDah4bVdaeg5Z8P13E66kcv'
     controller: null
     method: null
     route: null
@@ -190,14 +190,14 @@ endpoints:
         name: id
         description: 'The ID of the supply.'
         required: true
-        example: natus
+        example: eum
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: natus
+      id: eum
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -205,7 +205,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: fxknoteejobzgelykdp
+        example: gtwknnjsbdnusj
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -215,22 +215,22 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Ut dicta quia et explicabo sit.'
+        example: 'Veniam suscipit ut ipsam ullam.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      label: fxknoteejobzgelykdp
-      description: 'Ut dicta quia et explicabo sit.'
+      label: gtwknnjsbdnusj
+      description: 'Veniam suscipit ut ipsam ullam.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer ka13a6DZvP5bg4hEdf8V6ce'
+      - 'Bearer k415a6E6aZvcgdV8Dh3Pbef'
     controller: null
     method: null
     route: null
@@ -260,14 +260,14 @@ endpoints:
         name: id
         description: 'The ID of the supply.'
         required: true
-        example: omnis
+        example: dignissimos
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: omnis
+      id: dignissimos
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -278,7 +278,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer gd6baeP6h3DZE45a18fVvkc'
+      - 'Bearer Dcd1e6aE6Zvb4kg5f83ahPV'
     controller: null
     method: null
     route: null

@@ -46,7 +46,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer gdva3DEV6fk1e84hZca65bP'
+      - 'Bearer 6Dd16ch8aVvaPe4EbgkZ3f5'
     controller: null
     method: null
     route: null
@@ -80,7 +80,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: npqolxpgjyfmqdqhohhux
+        example: ojhcs
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -90,7 +90,7 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Et vel sint pariatur voluptas.'
+        example: 'Ipsam sed esse voluptatem sunt.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -100,23 +100,23 @@ endpoints:
         name: value
         description: 'La valeur de value doit être supérieure ou égale à 0.'
         required: true
-        example: 26
+        example: 15
         type: number
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      label: npqolxpgjyfmqdqhohhux
-      description: 'Et vel sint pariatur voluptas.'
-      value: 26
+      label: ojhcs
+      description: 'Ipsam sed esse voluptatem sunt.'
+      value: 15
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 6Zgc6beh3a1Pd5Dak4EVv8f'
+      - 'Bearer Z14vb8fe6EdD56PV3ahgkca'
     controller: null
     method: null
     route: null
@@ -146,14 +146,14 @@ endpoints:
         name: numberPaintElement
         description: ''
         required: true
-        example: illum
+        example: magni
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      numberPaintElement: illum
+      numberPaintElement: magni
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -173,7 +173,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer bEh6dkV63c1aaeZf4vDPg85'
+      - 'Bearer 63kv1VcfZaegbE45hP86Dad'
     controller: null
     method: null
     route: null
@@ -203,14 +203,14 @@ endpoints:
         name: numberPaintElement
         description: ''
         required: true
-        example: rem
+        example: et
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      numberPaintElement: rem
+      numberPaintElement: et
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -218,7 +218,7 @@ endpoints:
         name: label
         description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
         required: true
-        example: yjqliawdxycohpzgb
+        example: fesunubjwirrkhgkzgjy
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -228,7 +228,7 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Eum quaerat rem totam aliquam laboriosam.'
+        example: 'Autem modi aut voluptatem.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -238,23 +238,23 @@ endpoints:
         name: value
         description: ''
         required: true
-        example: 1.0
+        example: 4843.2
         type: number
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      label: yjqliawdxycohpzgb
-      description: 'Eum quaerat rem totam aliquam laboriosam.'
-      value: 1.0
+      label: fesunubjwirrkhgkzgjy
+      description: 'Autem modi aut voluptatem.'
+      value: 4843.2
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer gbZka65E4vc8a1dP3fehVD6'
+      - 'Bearer 4cvkab5EP68gea3fDZV61dh'
     controller: null
     method: null
     route: null
@@ -284,14 +284,14 @@ endpoints:
         name: numberPaintElement
         description: ''
         required: true
-        example: sed
+        example: quas
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      numberPaintElement: sed
+      numberPaintElement: quas
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -302,7 +302,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 5hea3kDc4fbgEa6V61dPZ8v'
+      - 'Bearer 53kdZfhbcPV8evEa46Dga61'
     controller: null
     method: null
     route: null

@@ -46,7 +46,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 5aEV3bvhkdD8ecfZ661aPg4'
+      - 'Bearer c5Eg6b83hd4eVk61vfPaDaZ'
     controller: null
     method: null
     route: null
@@ -92,7 +92,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer gDa8h46cev6kbdPV1EZ3fa5'
+      - 'Bearer bf1adhZ65a6kV8gv4ecP3DE'
     controller: null
     method: null
     route: null
@@ -129,7 +129,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6af3ge4hbEk16Z8VDP5acvd'
+      - 'Bearer 3ha5kEgb6av46dVfP1ZDec8'
     controller: null
     method: null
     route: null
@@ -177,7 +177,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer gZ6bVca3dkED5ehPf41v6a8'
+      - 'Bearer a6PEba6Z5d3Dvc8hfgk14Ve'
     controller: null
     method: null
     route: null
@@ -225,7 +225,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer ZvahdP8kVE364gabe6Dfc15'
+      - 'Bearer ad54g6DEeZfh8P1vVabkc63'
     controller: null
     method: null
     route: null
@@ -255,14 +255,14 @@ endpoints:
         name: role
         description: 'The role.'
         required: true
-        example: consequuntur
+        example: voluptates
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      role: consequuntur
+      role: voluptates
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -273,7 +273,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Da3E4vZkecd6P58ghVa1fb6'
+      - 'Bearer Za1EevVg5c3hak6fD8Pd46b'
     controller: null
     method: null
     route: null

@@ -46,7 +46,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 68e5Ea4DbhZVgdcvk36aPf1'
+      - 'Bearer gPeba58hk1ZDa6dVEv6c34f'
     controller: null
     method: null
     route: null
@@ -80,21 +80,21 @@ endpoints:
         name: repairer_id
         description: 'The <code>id</code> of an existing record in the entities table.'
         required: true
-        example: rerum
+        example: repellat
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      repairer_id: rerum
+      repairer_id: repellat
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer Eaa8b3dV1g4c5e6DZfvhP6k'
+      - 'Bearer 8P6VbgEda1c3Z5De4akfv6h'
     controller: null
     method: null
     route: null
@@ -124,14 +124,14 @@ endpoints:
         name: repairerRelationship
         description: ''
         required: true
-        example: quas
+        example: veniam
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      repairerRelationship: quas
+      repairerRelationship: veniam
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -151,7 +151,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 3dfhZPcEav1g6eD58abkV46'
+      - 'Bearer vaDkV3ebP1ch66aEg8fd5Z4'
     controller: null
     method: null
     route: null
@@ -181,14 +181,14 @@ endpoints:
         name: repairerRelationship
         description: ''
         required: true
-        example: quisquam
+        example: minima
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      repairerRelationship: quisquam
+      repairerRelationship: minima
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -199,7 +199,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer fP856Vega6DEh31advZ4ckb'
+      - 'Bearer e65Phd8Vv3kEa4cD6Zbfag1'
     controller: null
     method: null
     route: null
@@ -229,14 +229,14 @@ endpoints:
         name: repairerRelationship
         description: ''
         required: true
-        example: nam
+        example: enim
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      repairerRelationship: nam
+      repairerRelationship: enim
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -247,7 +247,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer fg6kh4E8c3Zabv1P6a5edDV'
+      - 'Bearer 4vca6Vb13aehZ5gfdPE6kD8'
     controller: null
     method: null
     route: null
@@ -277,14 +277,14 @@ endpoints:
         name: repairerRelationship
         description: ''
         required: true
-        example: perferendis
+        example: autem
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      repairerRelationship: perferendis
+      repairerRelationship: autem
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -295,7 +295,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6gvaVhcZ8653d4EPeaDkf1b'
+      - 'Bearer d3haZvDEaVbcP84g5fke616'
     controller: null
     method: null
     route: null
