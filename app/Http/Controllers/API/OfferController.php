@@ -65,12 +65,12 @@ class OfferController extends Controller
             'reference' => $reference,
             'comparison_id' => $request->comparison_id,
             'repairer_id' => auth()->user()->entity_id,
-            'status_id' => Status::where('code', StatusEnum::ACTIVE)->first()->id,
+            'status_id' => Status::where('code', StatusEnum::DRAFT)->first()->id,
             'created_by' => auth()->user()->id,
             'updated_by' => auth()->user()->id,
         ]);
 
-        return $this->responseCreated('Offer created successfully', new OfferResource($offer->load(['comparison', 'repairer', 'status'])));
+        return $this->responseCreated('Offre créée avec succès', new OfferResource($offer->load(['comparison', 'repairer', 'status'])));
     }
 
     /**
@@ -94,7 +94,48 @@ class OfferController extends Controller
     {
         $offer = Offer::accessibleBy(auth()->user())->with(['comparison', 'comparison.assignment', 'comparison.assignment.expertFirm', 'comparison.assignment.insurer', 'repairer', 'status', 'offerShocks'])->findOrFail(Offer::keyFromHashId($id));
 
-        return $this->responseSuccess('Offer updated successfully', new OfferResource($offer));
+        return $this->responseSuccess('Offre mise à jour avec succès', new OfferResource($offer));
+    }
+
+    /**
+     * Envoyer une offre
+     *
+     * @authenticated
+     */
+    public function send($id): JsonResponse
+    {
+        $offer = Offer::accessibleBy(auth()->user())->with(['comparison', 'comparison.assignment', 'comparison.assignment.expertFirm', 'comparison.assignment.insurer', 'repairer', 'status', 'offerShocks'])->findOrFail(Offer::keyFromHashId($id));
+
+        $offer->update([
+            'status_id' => Status::where('code', StatusEnum::PENDING)->first()->id,
+            'updated_by' => auth()->user()->id,
+        ]);
+
+        return $this->responseSuccess('Offre envoyée avec succès', new OfferResource($offer));
+    }
+
+    /**
+     * Accepter une offre
+     *
+     * @authenticated
+     */
+    public function accept($id): JsonResponse
+    {
+        $offer = Offer::accessibleBy(auth()->user())->with(['comparison', 'comparison.assignment', 'comparison.assignment.expertFirm', 'comparison.assignment.insurer', 'repairer', 'status', 'offerShocks'])->findOrFail(Offer::keyFromHashId($id));
+
+        Offer::accessibleBy(auth()->user())->with(['comparison', 'comparison.assignment', 'comparison.assignment.expertFirm', 'comparison.assignment.insurer', 'repairer', 'status', 'offerShocks'])
+                ->where('comparison_id',$offer->comparison_id)
+                ->where('id','!=',$offer->id)
+                ->update([
+                    'status_id' => Status::where('code', StatusEnum::REJECTED)->first()->id,
+                ]);
+
+        $offer->update([
+            'status_id' => Status::where('code', StatusEnum::ACCEPTED)->first()->id,
+            'updated_by' => auth()->user()->id,
+        ]);
+
+        return $this->responseSuccess('Offre acceptée avec succès', new OfferResource($offer));
     }
 
     /**
