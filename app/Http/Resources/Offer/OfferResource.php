@@ -8,6 +8,7 @@ use App\Http\Resources\Comparison\ComparisonResource;
 use App\Http\Resources\Entity\EntityResource;
 use App\Http\Resources\Status\StatusResource;
 use App\Http\Resources\User\UserResource;
+use App\Http\Resources\OfferShock\OfferShockResource;
 
 class OfferResource extends JsonResource
 {
@@ -19,6 +20,7 @@ class OfferResource extends JsonResource
             'shock_amount_tax' => $this->shock_amount_tax,
             'shock_amount' => $this->shock_amount,
             'comparison' => new ComparisonResource($this->whenLoaded('comparison')),
+            'offer_shocks' => OfferShockResource::collection($this->whenLoaded('offerShocks')),
             'repairer' => new EntityResource($this->whenLoaded('repairer')),
             'status' => new StatusResource($this->whenLoaded('status')),
             'created_by' => new UserResource($this->whenLoaded('createdBy')),
