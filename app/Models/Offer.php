@@ -26,7 +26,7 @@ class Offer extends Model
 
     public function repairer(): BelongsTo
     {
-        return $this->belongsTo(Repairer::class);
+        return $this->belongsTo(Entity::class);
     }
 
     public function status(): BelongsTo

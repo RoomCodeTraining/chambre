@@ -154,5 +154,11 @@ class StatusSeeder extends Seeder
             'description' => "En cours",
         ]);
 
+        Status::create([
+            'code' => StatusEnum::DRAFT,
+            'label' => "Brouillon",
+            'description' => "Brouillon",
+        ]);
+
     }
 }
