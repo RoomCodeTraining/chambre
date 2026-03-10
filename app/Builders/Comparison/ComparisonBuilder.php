@@ -2,8 +2,10 @@
 
 namespace App\Builders\Comparison;
 
-use App\Models\User;
 use App\Enums\RoleEnum;
+use App\Enums\StatusEnum;
+use App\Models\Status;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Builder;
 
 class ComparisonBuilder extends Builder
