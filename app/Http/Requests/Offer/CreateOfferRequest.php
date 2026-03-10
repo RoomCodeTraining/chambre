@@ -12,7 +12,6 @@ class CreateOfferRequest extends FormRequest
     {
         $this->merge([
             'comparison_id' => $this->comparison_id ? Comparison::keyFromHashId($this->comparison_id) : null,
-            'repairer_id' => $this->repairer_id ? Entity::keyFromHashId($this->repairer_id) : null,
         ]);
     }
 
