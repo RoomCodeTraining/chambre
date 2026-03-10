@@ -63,29 +63,43 @@ class ComparisonBuilder extends Builder
         }
 
         if ($user->isAdminExpert()) {
-            return $this->where('comparisons.assignment.expert_firm_id', $user->entity_id);
+            return $this->whereHas('assignment', function (Builder $query) use ($user) {
+                $query->where('expert_firm_id', $user->entity_id);
+            });
         }
 
         if ($user->isInsurerAdmin()) {
-            return $this->where('comparisons.assignment.insurer_id', $user->entity_id);
+            return $this->whereHas('assignment', function (Builder $query) use ($user) {
+                $query->where('insurer_id', $user->entity_id);
+            });
         }
 
         if ($user->isInsurerStandardUser()) {
-            return $this->where('comparisons.assignment.insurer_id', $user->entity_id);
+            return $this->whereHas('assignment', function (Builder $query) use ($user) {
+                $query->where('insurer_id', $user->entity_id);
+            });
         }
 
         if ($user->isRepairerAdmin()) {
-            return $this->where('comparisons.assignment.repairer_id', $user->entity_id);
+            return $this->whereHas('assignment', function (Builder $query) use ($user) {
+                $query->where('repairer_id', $user->entity_id);
+            })->where('status_id', Status::where('code', StatusEnum::ACCEPTED)->first()->id);
         }
 
         if ($user->isRepairerStandardUser()) {
-            return $this->where('comparisons.assignment.repairer_id', $user->entity_id);
+            return $this->whereHas('assignment', function (Builder $query) use ($user) {
+                $query->where('repairer_id', $user->entity_id);
+            })->where('status_id', Status::where('code', StatusEnum::ACCEPTED)->first()->id);
         }
 
         if ($user->isClient()) {
-            return $this->where('comparisons.assignment.client_id', $user->entity_id);
+            return $this->whereHas('assignment', function (Builder $query) use ($user) {
+                $query->where('client_id', $user->entity_id);
+            });
         }
 
-        return $this->where('comparisons.assignment.expert_firm_id', $user->entity_id);
+        return $this->whereHas('assignment', function (Builder $query) use ($user) {
+            $query->where('expert_firm_id', $user->entity_id);
+        });
     }
 }

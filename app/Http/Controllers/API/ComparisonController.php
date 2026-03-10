@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Comparison\CreateComparisonRequest;
 use App\Http\Requests\Comparison\UpdateComparisonRequest;
 use App\Http\Resources\Comparison\ComparisonResource;
+use App\Models\Assignment;
 use App\Models\Comparison;
 use App\Models\Status;
 use Carbon\Carbon;
@@ -36,6 +37,12 @@ class ComparisonController extends Controller
     {
         $comparisons = Comparison::with(['assignment', 'status'])
             ->accessibleBy(auth()->user())
+            ->when(request()->filled('assignment_id'), function ($query) {
+                $query->where('assignment_id', Assignment::keyFromHashId(request()->assignment_id));
+            })
+            ->when(request()->filled('status_id'), function ($query) {
+                $query->where('status_id', Status::where('code', request()->status_id)->first()->id);
+            })
             ->latest('created_at')
             ->useFilters()
             ->dynamicPaginate();
@@ -64,7 +71,7 @@ class ComparisonController extends Controller
         $comparison = Comparison::create([
             'reference' => $reference,
             'assignment_id' => $request->assignment_id,
-            'status_id' => Status::where('code', StatusEnum::ACTIVE)->first()->id,
+            'status_id' => Status::where('code', StatusEnum::IN_PROGRESS)->first()->id,
             'created_by' => auth()->user()->id,
             'updated_by' => auth()->user()->id,
         ]);

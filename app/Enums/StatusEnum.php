@@ -30,6 +30,7 @@ enum StatusEnum: string
     case SUCCESS = 'success';
     case FAILED = 'failed';
 
+    case IN_PROGRESS = 'in_progress';
     case PENDING = 'pending';
     case ACCEPTED = 'accepted';
     case REJECTED = 'rejected';

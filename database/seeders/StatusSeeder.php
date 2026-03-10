@@ -148,5 +148,11 @@ class StatusSeeder extends Seeder
             'description' => "Échec",
         ]);
 
+        Status::create([
+            'code' => StatusEnum::IN_PROGRESS,
+            'label' => "En cours",
+            'description' => "En cours",
+        ]);
+
     }
 }

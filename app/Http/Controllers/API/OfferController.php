@@ -146,6 +146,11 @@ class OfferController extends Controller
             'updated_by' => auth()->user()->id,
         ]);
 
+        $offer->comparison->update([
+            'status_id' => Status::where('code', StatusEnum::IN_PROGRESS)->first()->id,
+            'updated_by' => auth()->user()->id,
+        ]);
+
         return $this->responseSuccess('Offre acceptée avec succès', new OfferResource($offer));
     }
 
