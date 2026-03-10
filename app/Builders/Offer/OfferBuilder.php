@@ -3,7 +3,9 @@
 namespace App\Builders\Offer;
 
 use App\Enums\RoleEnum;
+use App\Enums\StatusEnum;
 use App\Models\Assignment;
+use App\Models\Status;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Builder;
 
