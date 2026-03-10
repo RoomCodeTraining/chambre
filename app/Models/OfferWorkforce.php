@@ -9,10 +9,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Deligoez\LaravelModelHashId\Traits\HasHashId;
+use Deligoez\LaravelModelHashId\Traits\HasHashIdRouting;
 
 class OfferWorkforce extends Model
 {
-    use HasFactory, Filterable, SoftDeletes;
+    use HasFactory, Filterable, SoftDeletes, HasHashId, HasHashIdRouting;
 
     protected string $default_filters = OfferWorkforceFilters::class;
 
