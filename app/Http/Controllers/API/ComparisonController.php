@@ -35,7 +35,7 @@ class ComparisonController extends Controller
      */
     public function index(): AnonymousResourceCollection
     {
-        $comparisons = Comparison::with(['assignment', 'status'])
+        $comparisons = Comparison::with(['assignment', 'assignment.expertFirm', 'assignment.insurer', 'assignment.repairer', 'status'])
             ->accessibleBy(auth()->user())
             ->when(request()->filled('assignment_id'), function ($query) {
                 $query->where('assignment_id', Assignment::keyFromHashId(request()->assignment_id));
