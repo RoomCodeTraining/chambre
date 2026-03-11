@@ -111,7 +111,7 @@
             <hr style="border: 1px solid black;">
             <b>{{$assignment?->expertFirm?->footer_description ?? ''}}</b><br>
 
-            <div style="text-align: right;">
+            <div style="text-align: right; font-size: 10px;">
                 {{$assignment?->reference ?? ''}} | Page <span class="pagenum"></span>
             </div>
         </footer>
