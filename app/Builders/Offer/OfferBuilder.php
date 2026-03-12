@@ -53,33 +53,33 @@ class OfferBuilder extends Builder
     public function accessibleBy(?User $user)
     {
         if (empty($user)) {
-            return $this;
+            return $this->where('offers.status_id', Status::where('code', '!=', StatusEnum::DRAFT)->first()->id);
         }
 
         if ($user->isSuperAdmin()) {
-            return $this;
+            return $this->where('offers.status_id', Status::where('code', '!=', StatusEnum::DRAFT)->first()->id);
         }
 
         if ($user->isAdmin()) {
-            return $this;
+            return $this->where('offers.status_id', Status::where('code', '!=', StatusEnum::DRAFT)->first()->id);
         }
 
         if ($user->isAdminExpert()) {
             return $this->whereHas('comparison.assignment', function (Builder $query) use ($user) {
                 $query->where('expert_firm_id', $user->entity_id);
-            });
+            })->where('offers.status_id', Status::where('code', '!=', StatusEnum::DRAFT)->first()->id);
         }
 
         if ($user->isInsurerAdmin()) {
             return $this->whereHas('comparison.assignment', function (Builder $query) use ($user) {
                 $query->where('insurer_id', $user->entity_id);
-            });
+            })->where('offers.status_id', Status::where('code', '!=', StatusEnum::DRAFT)->first()->id);
         }
 
         if ($user->isInsurerStandardUser()) {
             return $this->whereHas('comparison.assignment', function (Builder $query) use ($user) {
                 $query->where('insurer_id', $user->entity_id);
-            });
+            })->where('offers.status_id', Status::where('code', '!=', StatusEnum::DRAFT)->first()->id);
         }
 
         if ($user->isRepairerAdmin()) {
