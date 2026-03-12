@@ -151,6 +151,10 @@ class OfferController extends Controller
             'updated_by' => auth()->user()->id,
         ]);
 
+        $offer->comparison->assignment->update([
+            'is_in_comparison' => false,
+        ]);
+
         return $this->responseSuccess('Offre acceptée avec succès', new OfferResource($offer));
     }
 

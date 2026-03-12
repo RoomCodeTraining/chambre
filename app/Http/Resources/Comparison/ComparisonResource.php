@@ -15,6 +15,8 @@ class ComparisonResource extends JsonResource
         return [
             'id' => $this->hashId,
             'reference' => $this->reference,
+            'starts_at' => $this->starts_at,
+            'ends_at' => $this->ends_at,
             'assignment' => new AssignmentResource($this->whenLoaded('assignment')),
             'status' => new StatusResource($this->whenLoaded('status')),
             'created_by' => new UserResource($this->whenLoaded('createdBy')),

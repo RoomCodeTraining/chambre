@@ -71,12 +71,19 @@ class ComparisonController extends Controller
         $comparison = Comparison::create([
             'reference' => $reference,
             'assignment_id' => $request->assignment_id,
+            'starts_at' => $request->starts_at,
+            'ends_at' => $request->ends_at,
             'status_id' => Status::where('code', StatusEnum::IN_PROGRESS)->first()->id,
             'created_by' => auth()->user()->id,
             'updated_by' => auth()->user()->id,
         ]);
 
-        return $this->responseCreated('Comparison created successfully', new ComparisonResource($comparison->load(['assignment', 'status'])));
+        $assignment = Assignment::findOrFail($comparison->assignment_id);
+            $assignment->update([
+            'is_in_comparison' => true,
+        ]);
+
+        return $this->responseCreated('Comparaison créée avec succès', new ComparisonResource($comparison->load(['assignment', 'status'])));
     }
 
     /**

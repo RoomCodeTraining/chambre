@@ -105,6 +105,7 @@ class AssignmentResource extends JsonResource
             'emails' => json_decode($this->emails),
             'conditions' => $this->conditions,
             'comment' => $this->comment,
+            'is_in_comparison' => $this->is_in_comparison,
             'qr_codes' => QrCode::where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->first()->qr_code ?? null,
             'expert_firm' => new EntityResource($this->whenLoaded('expertFirm')),
             'insurer' => new EntityResource($this->whenLoaded('insurer')),
