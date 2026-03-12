@@ -2,18 +2,20 @@
 
 namespace App\Http\Controllers\API;
 
-use Carbon\Carbon;
-use App\Models\User;
-use App\Models\Entity;
-use App\Models\Status;
-use App\Models\Vehicle;
-use App\Enums\StatusEnum;
-use App\Models\Assignment;
-use App\Models\EntityType;
 use App\Enums\EntityTypeEnum;
-use Illuminate\Http\JsonResponse;
+use App\Enums\StatusEnum;
 use App\Http\Controllers\Controller;
+use App\Models\Assignment;
+use App\Models\Comparison;
+use App\Models\Entity;
+use App\Models\EntityType;
+use App\Models\Offer;
+use App\Models\Status;
+use App\Models\User;
+use App\Models\Vehicle;
+use Carbon\Carbon;
 use Essa\APIToolKit\Api\ApiResponse;
+use Illuminate\Http\JsonResponse;
 
 /**
  * @group Statistiques du tableau de bord
@@ -125,6 +127,36 @@ class DashboardController extends Controller
             'total_vehicles' => ['value' => Vehicle::count()],
             'active_vehicles' => ['value' => Vehicle::where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->count()],
             'inactive_vehicles' => ['value' => Vehicle::where('status_id', Status::where('code', StatusEnum::INACTIVE)->first()->id)->count()],
+        ]);
+    }
+
+    /**
+     * Afficher les statistiques des comparaisons
+     */
+    public function comparisons() : JsonResponse
+    {
+        // $this->authorize('viewAny', Comparison::class);
+
+        return $this->responseSuccess(null, [
+            'total_comparisons' => ['value' => Comparison::accessibleBy(auth()->user())->count()],
+            'total_comparisons_in_progress' => ['value' => Comparison::accessibleBy(auth()->user())->where('status_id', Status::where('code', StatusEnum::IN_PROGRESS)->first()->id)->count()],
+            'total_comparisons_closed' => ['value' => Comparison::accessibleBy(auth()->user())->where('status_id', Status::where('code', StatusEnum::CLOSED)->first()->id)->count()],
+        ]);
+    }
+
+    /**
+     * Afficher les statistiques des offres
+     */
+    public function offers() : JsonResponse
+    {
+        // $this->authorize('viewAny', Offer::class);
+
+        return $this->responseSuccess(null, [
+            'total_offers' => ['value' => Offer::accessibleBy(auth()->user())->count()],
+            'total_offers_draft' => ['value' => Offer::accessibleBy(auth()->user())->where('status_id', Status::where('code', StatusEnum::DRAFT)->first()->id)->count()],
+            'total_offers_pending' => ['value' => Offer::accessibleBy(auth()->user())->where('status_id', Status::where('code', StatusEnum::PENDING)->first()->id)->count()],
+            'total_offers_accepted' => ['value' => Offer::accessibleBy(auth()->user())->where('status_id', Status::where('code', StatusEnum::ACCEPTED)->first()->id)->count()],
+            'total_offers_rejected' => ['value' => Offer::accessibleBy(auth()->user())->where('status_id', Status::where('code', StatusEnum::REJECTED)->first()->id)->count()],
         ]);
     }
 }

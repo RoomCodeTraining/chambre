@@ -147,7 +147,7 @@ class OfferController extends Controller
         ]);
 
         $offer->comparison->update([
-            'status_id' => Status::where('code', StatusEnum::IN_PROGRESS)->first()->id,
+            'status_id' => Status::where('code', StatusEnum::CLOSED)->first()->id,
             'updated_by' => auth()->user()->id,
         ]);
 

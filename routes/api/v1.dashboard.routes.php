@@ -10,4 +10,6 @@ Route::middleware(['auth:sanctum'])->name('dashboard.')->group(function () {
     // Route::get('/brokers', [DashboardController::class, 'brokers'])->name('brokers');
     Route::get('/repairers', [DashboardController::class, 'repairers'])->name('repairers');
     Route::get('/vehicles', [DashboardController::class, 'vehicles'])->name('vehicles');
+    Route::get('/comparisons', [DashboardController::class, 'comparisons'])->name('comparisons');
+    Route::get('/offers', [DashboardController::class, 'offers'])->name('offers');
 });
