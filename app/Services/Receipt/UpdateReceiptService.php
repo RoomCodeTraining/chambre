@@ -42,8 +42,14 @@ class UpdateReceiptService
                 $amount = $assignment->total_amount;
                 if($amount){
                     if($assignment->technicalConclusion && $assignment->technicalConclusion->code != 'TC001'){
-                        $amount = $assignment->market_value - $assignment->salvage_value;
+                        // $amount = $assignment->market_value - $assignment->salvage_value + $assignment->other_cost_amount;
+                        $amount = $assignment->market_value;
                     }
+
+                    if (!$assignment->technicalConclusion || !$amount) {
+                        return $this->responseUnprocessable("La valeur vénale et la conclusion technique sont requises.");
+                    }
+                    
                     $workFee = WorkFee::where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->where('param_1', '<', $amount)->where('param_2', '>=', $amount)->first();
                     if(!$workFee){
                         $workFee = WorkFee::where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->orderBy('param_2', 'desc')->first();
