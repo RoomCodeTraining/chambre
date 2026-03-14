@@ -39,6 +39,7 @@ use App\Http\Requests\Assignment\UpdateAssignmentRequest;
 use App\Http\Requests\Assignment\UpdateEditAssignmentRequest;
 use App\Http\Requests\Assignment\UpdateRealizedAssignmentRequest;
 use App\Http\Requests\Assignment\ValidateAssignmentQuoteWithConditionsRequest;
+use App\Http\Requests\Assignment\ValidateWorkSheetByExpertAssignmentRequest;
 use App\Http\Resources\Assignment\AssignmentResource;
 use App\Jobs\GenerateExpertiseReportPdfJob;
 use App\Jobs\GenerateExpertiseSheetPdfJob;
