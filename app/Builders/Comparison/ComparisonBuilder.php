@@ -83,15 +83,16 @@ class ComparisonBuilder extends Builder
         }
 
         if ($user->isRepairerAdmin()) {
+            return $this;
             return $this->whereHas('assignment', function (Builder $query) use ($user) {
                 $query->where('repairer_id', $user->entity_id);
-            })->where('status_id', Status::where('code', StatusEnum::ACCEPTED)->first()->id);
+            });
         }
 
         if ($user->isRepairerStandardUser()) {
             return $this->whereHas('assignment', function (Builder $query) use ($user) {
                 $query->where('repairer_id', $user->entity_id);
-            })->where('status_id', Status::where('code', StatusEnum::ACCEPTED)->first()->id);
+            });
         }
 
         if ($user->isClient()) {
