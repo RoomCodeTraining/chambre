@@ -2540,6 +2540,32 @@ class AssignmentController extends Controller
     }
 
     /**
+     * Afficher un dossier pour la comparaison
+     *
+     * @authenticated
+     */
+    public function showForComparison($id): JsonResponse
+    {
+        $assignment = Assignment::with('expertFirm')->select('assignments.*')->with([
+            'shocks' => function($query) {
+                $query->orderBy('position', 'asc');
+            },
+            'shocks.shockPoint', 'shocks.shockWorks', 'shocks.shockWorks.supply', 'shocks.workforces', 'shocks.workforces.workforceType', 'shocks.paintType', 'shocks.hourlyRate', 'shocks.status',
+            'shocks.shockWorks' => function($query) {
+                $query->orderBy('position', 'asc');
+            },
+            'shocks.workforces' => function($query) {
+                $query->orderBy('position', 'asc');
+            },
+            'shocks.workforces' => function($query) {
+                $query->orderBy('position', 'asc');
+            },
+        ])->where('assignments.id', Assignment::keyFromHashId($id))
+        ->first();
+        return $this->responseSuccess(null, new AssignmentResource($assignment));
+    }
+
+    /**
      * Mettre à jour un dossier ouvert
      *
      * @authenticated

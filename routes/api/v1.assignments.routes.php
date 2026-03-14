@@ -83,6 +83,9 @@ Route::middleware('auth:sanctum')->name('assignments.')->group(function () {
     /** @uses AssignmentController::show */
     Route::get('/{assignment}', [AssignmentController::class, 'show'])->name('show');
 
+    /** @uses AssignmentController::showForComparison */
+    Route::get('/{assignment}/for-comparison', [AssignmentController::class, 'showForComparison'])->name('showForComparison');
+
     /** @uses AssignmentController::close */
     Route::put('/{assignment}/close', [AssignmentController::class, 'close'])->name('close');
 
