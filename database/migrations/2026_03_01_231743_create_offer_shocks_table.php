@@ -18,7 +18,6 @@ return new class extends Migration
             $table->boolean('with_tax')->default(false);
             $table->boolean('is_before_quote')->default(false);
             $table->boolean('is_validated')->default(false);
-            $table->integer('position')->nullable();
 
             $table->decimal('shock_work_in_order_amount_excluding_tax', 18, 2)->nullable();
             $table->decimal('shock_work_in_order_amount_tax', 18, 2)->nullable();

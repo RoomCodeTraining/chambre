@@ -16,7 +16,6 @@ return new class extends Migration
         Schema::create('offer_workforces', function (Blueprint $table) {
             $table->bigIncrements('id')->unsigned();
             $table->decimal('nb_hours', 18, 2)->nullable();
-            $table->integer('position')->nullable();
             $table->decimal('old_nb_hours', 18, 2)->nullable();
             $table->decimal('work_fee', 18, 2)->nullable();
             $table->decimal('old_work_fee', 18, 2)->nullable();
