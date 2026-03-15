@@ -80,9 +80,9 @@ class OfferController extends Controller
      */
     public function store(CreateOfferRequest $request): JsonResponse
     {
-        if (Offer::accessibleBy(auth()->user())->where('comparison_id', $request->comparison_id)->exists()) {
-            return $this->responseUnprocessable('Une offre existe déjà pour cette comparaison.');
-        }
+        // if (Offer::accessibleBy(auth()->user())->where('comparison_id', $request->comparison_id)->exists()) {
+        //     return $this->responseUnprocessable('Une offre existe déjà pour cette comparaison.');
+        // }
 
         $now = Carbon::now();
         $annee = date("Y");
