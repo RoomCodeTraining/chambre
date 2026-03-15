@@ -219,76 +219,76 @@ class OfferController extends Controller
         
                 }
 
-                // $nb_paint = OfferShockWork::where(['offer_shock_id' => $shock->id, 'paint' => 1])->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->sum('paint');
-                // $all_paint = false;
+                $nb_paint = OfferShockWork::where(['offer_shock_id' => $shock->id, 'paint' => 1])->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->sum('paint');
+                $all_paint = false;
     
-                // $workforces = Workforce::where('shock_id', $data->id)->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->get();
-                // if($workforces && count($workforces) > 0){
-                //     $workforce_position = 1;
-                //     foreach ($data->workforces as $item) {
-                //         if($item->workforce_type_id == WorkforceType::where('code', WorkforceTypeEnum::PAINT)->first()->id){
-                //             $hourlyRateId = $data->hourly_rate_id ?? null;
-                //             $paintTypeId = $data->paint_type_id ?? null;
+                $workforces = Workforce::where('shock_id', $data->id)->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->get();
+                if($workforces && count($workforces) > 0){
+                    $workforce_position = 1;
+                    foreach ($data->workforces as $item) {
+                        if($item->workforce_type_id == WorkforceType::where('code', WorkforceTypeEnum::PAINT)->first()->id){
+                            $hourlyRateId = $data->hourly_rate_id ?? null;
+                            $paintTypeId = $data->paint_type_id ?? null;
                             
-                //             if($hourlyRateId && $paintTypeId){
-                //                 if($nb_paint == 1){
-                //                     $painting_price = PaintingPrice::where(['hourly_rate_id' => $hourlyRateId, 'paint_type_id' => $paintTypeId, 'number_paint_element_id' => NumberPaintElement::where('value', NumberPaintElementEnum::ONE)->first()->id, 'status_id' => Status::where('code', StatusEnum::ACTIVE)->first()->id])->first();
-                //                 } elseif($nb_paint == 2){
-                //                     $painting_price = PaintingPrice::where(['hourly_rate_id' => $hourlyRateId, 'paint_type_id' => $paintTypeId, 'number_paint_element_id' => NumberPaintElement::where('value', NumberPaintElementEnum::TWO)->first()->id, 'status_id' => Status::where('code', StatusEnum::ACTIVE)->first()->id])->first();
-                //                 } else {
-                //                     $painting_price = PaintingPrice::where(['hourly_rate_id' => $hourlyRateId, 'paint_type_id' => $paintTypeId, 'number_paint_element_id' => NumberPaintElement::where('value', NumberPaintElementEnum::THREE)->first()->id, 'status_id' => Status::where('code', StatusEnum::ACTIVE)->first()->id])->first();
-                //                 } 
+                            if($hourlyRateId && $paintTypeId){
+                                if($nb_paint == 1){
+                                    $painting_price = PaintingPrice::where(['hourly_rate_id' => $hourlyRateId, 'paint_type_id' => $paintTypeId, 'number_paint_element_id' => NumberPaintElement::where('value', NumberPaintElementEnum::ONE)->first()->id, 'status_id' => Status::where('code', StatusEnum::ACTIVE)->first()->id])->first();
+                                } elseif($nb_paint == 2){
+                                    $painting_price = PaintingPrice::where(['hourly_rate_id' => $hourlyRateId, 'paint_type_id' => $paintTypeId, 'number_paint_element_id' => NumberPaintElement::where('value', NumberPaintElementEnum::TWO)->first()->id, 'status_id' => Status::where('code', StatusEnum::ACTIVE)->first()->id])->first();
+                                } else {
+                                    $painting_price = PaintingPrice::where(['hourly_rate_id' => $hourlyRateId, 'paint_type_id' => $paintTypeId, 'number_paint_element_id' => NumberPaintElement::where('value', NumberPaintElementEnum::THREE)->first()->id, 'status_id' => Status::where('code', StatusEnum::ACTIVE)->first()->id])->first();
+                                } 
                                 
-                //                 if (($item->all_paint ?? false) == true) {
-                //                     $all_paint = true;
-                //                     $painting_price = PaintingPrice::where(['hourly_rate_id' => $hourlyRateId, 'paint_type_id' => $paintTypeId, 'number_paint_element_id' => NumberPaintElement::where('value', NumberPaintElementEnum::ALL)->first()->id, 'status_id' => Status::where('code', StatusEnum::ACTIVE)->first()->id])->first();
-                //                 }
-                //             } else {
-                //                 $painting_price = null;
-                //             }
+                                if (($item->all_paint ?? false) == true) {
+                                    $all_paint = true;
+                                    $painting_price = PaintingPrice::where(['hourly_rate_id' => $hourlyRateId, 'paint_type_id' => $paintTypeId, 'number_paint_element_id' => NumberPaintElement::where('value', NumberPaintElementEnum::ALL)->first()->id, 'status_id' => Status::where('code', StatusEnum::ACTIVE)->first()->id])->first();
+                                }
+                            } else {
+                                $painting_price = null;
+                            }
         
-                //             $total = $painting_price ? $item->nb_hours * $painting_price->param_1 + $painting_price->param_2 : 0;
+                            $total = $painting_price ? $item->nb_hours * $painting_price->param_1 + $painting_price->param_2 : 0;
                             
-                //         } else {
-                //             $hourlyRateValue = $hourlyRateId ? HourlyRate::where(['id' => $hourlyRateId, 'status_id' => Status::where('code', StatusEnum::ACTIVE)->first()->id])->first()?->value : 0;
-                //             $total = $item->nb_hours * ($hourlyRateValue ?? 0);
-                //         }
+                        } else {
+                            $hourlyRateValue = $hourlyRateId ? HourlyRate::where(['id' => $hourlyRateId, 'status_id' => Status::where('code', StatusEnum::ACTIVE)->first()->id])->first()?->value : 0;
+                            $total = $item->nb_hours * ($hourlyRateValue ?? 0);
+                        }
 
-                //         $amount_excluding_tax = ceil($total - ($total * $item->discount / 100));
-                //         if(!($data->with_tax ?? false)){
-                //             $amount_tax = 0;
-                //         } else {
-                //             $amount_tax = ceil((config('services.settings.tax_rate') * $amount_excluding_tax) / 100);
-                //         }
-                //         $amount = ceil($amount_excluding_tax + $amount_tax);
+                        $amount_excluding_tax = ceil($total - ($total * $item->discount / 100));
+                        if(!($data->with_tax ?? false)){
+                            $amount_tax = 0;
+                        } else {
+                            $amount_tax = ceil((config('services.settings.tax_rate') * $amount_excluding_tax) / 100);
+                        }
+                        $amount = ceil($amount_excluding_tax + $amount_tax);
             
-                //         $workFeeValue = $hourlyRateId ? HourlyRate::where(['id' => $hourlyRateId, 'status_id' => Status::where('code', StatusEnum::ACTIVE)->first()->id])->first()?->value : 0;
-                //         $workforce = OfferWorkforce::create([
-                //             'shock_id' => $shock->id,
-                //             'workforce_type_id' => $item->workforce_type_id,
-                //             'old_workforce_type_id' => $item['workforce_type_id'],
-                //             'nb_hours' => $item->nb_hours,
-                //             'old_nb_hours' => $item->nb_hours,
-                //             'work_fee' => ceil($workFeeValue ?? 0),
-                //             'old_work_fee' => ceil($workFeeValue ?? 0),
-                //             'discount' => $item->discount,
-                //             'old_discount' => $item->discount,
-                //             'amount_excluding_tax' => $amount_excluding_tax,
-                //             'old_amount_excluding_tax' => $amount_excluding_tax,
-                //             'amount_tax' => $amount_tax,
-                //             'old_amount_tax' => $amount_tax,
-                //             'amount' => $amount,
-                //             'old_amount' => $amount,
-                //             // 'position' => $workforce_position,
-                //             'is_before_quote' => $item->is_before_quote,
-                //             'quote_validated' => $item->quote_validated,
-                //             'status_id' => Status::where('code', StatusEnum::ACTIVE)->first()->id,
-                //             'created_by' => auth()->user()->id,
-                //             'updated_by' => auth()->user()->id,
-                //         ]);
-                //         $workforce_position++;
-                //     }
-                // }
+                        $workFeeValue = $hourlyRateId ? HourlyRate::where(['id' => $hourlyRateId, 'status_id' => Status::where('code', StatusEnum::ACTIVE)->first()->id])->first()?->value : 0;
+                        $workforce = OfferWorkforce::create([
+                            'shock_id' => $shock->id,
+                            'workforce_type_id' => $item->workforce_type_id,
+                            'old_workforce_type_id' => $item['workforce_type_id'],
+                            'nb_hours' => $item->nb_hours,
+                            'old_nb_hours' => $item->nb_hours,
+                            'work_fee' => ceil($workFeeValue ?? 0),
+                            'old_work_fee' => ceil($workFeeValue ?? 0),
+                            'discount' => $item->discount,
+                            'old_discount' => $item->discount,
+                            'amount_excluding_tax' => $amount_excluding_tax,
+                            'old_amount_excluding_tax' => $amount_excluding_tax,
+                            'amount_tax' => $amount_tax,
+                            'old_amount_tax' => $amount_tax,
+                            'amount' => $amount,
+                            'old_amount' => $amount,
+                            // 'position' => $workforce_position,
+                            'is_before_quote' => $item->is_before_quote,
+                            'quote_validated' => $item->quote_validated,
+                            'status_id' => Status::where('code', StatusEnum::ACTIVE)->first()->id,
+                            'created_by' => auth()->user()->id,
+                            'updated_by' => auth()->user()->id,
+                        ]);
+                        $workforce_position++;
+                    }
+                }
 
                 $total_in_order_amount_excluding_tax = OfferShockWork::where('offer_shock_id', $shock->id)->where('in_order', true)->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->sum('new_amount_excluding_tax');
                 $total_in_order_amount_tax = OfferShockWork::where('offer_shock_id', $shock->id)->where('in_order', true)->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->sum('new_amount_tax');
