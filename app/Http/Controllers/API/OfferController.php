@@ -115,7 +115,7 @@ class OfferController extends Controller
 
         $shocks = Shock::where('assignment_id', $assignment->id)->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->get();
 
-        if(count($shocks) > 0){
+        if($shocks && count($shocks) > 0){
             $shock_position = 1;
             foreach ($shocks as $data) {
                 $shock = OfferShock::create([
@@ -131,7 +131,7 @@ class OfferController extends Controller
                 ]);
 
                 $shock_works = ShockWork::where('shock_id', $data->id)->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->get();
-                if(count($shock_works) > 0){
+                if($shock_works && count($shock_works) > 0){
                     $shock_work_position = 1;
                     
                     foreach ($data->shock_works as $item) {
@@ -223,7 +223,7 @@ class OfferController extends Controller
                 // $all_paint = false;
     
                 // $workforces = Workforce::where('shock_id', $data->id)->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->get();
-                // if(count($workforces) > 0){
+                // if($workforces && count($workforces) > 0){
                 //     $workforce_position = 1;
                 //     foreach ($data->workforces as $item) {
                 //         if($item->workforce_type_id == WorkforceType::where('code', WorkforceTypeEnum::PAINT)->first()->id){
