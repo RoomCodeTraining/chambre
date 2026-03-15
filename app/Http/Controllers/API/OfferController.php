@@ -134,7 +134,7 @@ class OfferController extends Controller
                 if($shock_works && count($shock_works) > 0){
                     $shock_work_position = 1;
                     
-                    foreach ($data->shock_works as $item) {
+                    foreach ($shock_works as $item) {
                         $discount = $item->discount;
                         $discount_amount_excluding_tax = ceil(($item->discount * $item->amount) / 100);
                         $discount_amount_tax = ceil((config('services.settings.tax_rate') * $discount_amount_excluding_tax) / 100);
@@ -225,7 +225,7 @@ class OfferController extends Controller
                 $workforces = Workforce::where('shock_id', $data->id)->where('status_id', Status::where('code', StatusEnum::ACTIVE)->first()->id)->get();
                 if($workforces && count($workforces) > 0){
                     $workforce_position = 1;
-                    foreach ($data->workforces as $item) {
+                    foreach ($workforces as $item) {
                         if($item->workforce_type_id == WorkforceType::where('code', WorkforceTypeEnum::PAINT)->first()->id){
                             $hourlyRateId = $data->hourly_rate_id ?? null;
                             $paintTypeId = $data->paint_type_id ?? null;
