@@ -159,7 +159,7 @@ class OfferController extends Controller
                         $new_amount = ceil($new_amount_excluding_tax + $new_amount_tax);
                         
                         $shockWork = OfferShockWork::create([
-                            'shock_id' => $shock->id,
+                            'offer_shock_id' => $shock->id,
                             'supply_id' => $item->supply_id,
                             'old_supply_id' => null,
                             'disassembly' => $item->disassembly,
@@ -264,7 +264,7 @@ class OfferController extends Controller
             
                         $workFeeValue = $hourlyRateId ? HourlyRate::where(['id' => $hourlyRateId, 'status_id' => Status::where('code', StatusEnum::ACTIVE)->first()->id])->first()?->value : 0;
                         $workforce = OfferWorkforce::create([
-                            'shock_id' => $shock->id,
+                            'offer_shock_id' => $shock->id,
                             'workforce_type_id' => $item->workforce_type_id,
                             'old_workforce_type_id' => $item['workforce_type_id'],
                             'nb_hours' => $item->nb_hours,
