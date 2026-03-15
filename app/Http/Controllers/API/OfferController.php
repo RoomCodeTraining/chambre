@@ -105,7 +105,7 @@ class OfferController extends Controller
         return $this->responseCreated('Offre créée avec succès', new OfferResource($offer->load(['comparison', 'repairer', 'status'])));
     }
 
-    public function migrateShocks($id): JsonResponse
+    public function migrateShocks($id)
     {
         $offer = Offer::with(['comparison', 'comparison.assignment'])->accessibleBy(auth()->user())
             ->where('offers.id', $id)
