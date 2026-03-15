@@ -15,7 +15,7 @@ use App\Http\Requests\ShockWork\GetSupplyPriceRequest;
 use App\Http\Requests\ShockWork\UpdateShockWorkRequest;
 use App\Http\Resources\Assignment\AssignmentResource;
 use App\Http\Resources\Shock\ShockResource;
-use App\Http\Resources\ShockWork\ShockWorkResource;
+use App\Http\Resources\ShockWork\OfferShockWorkResource;
 use App\Jobs\GenerateExpertiseReportPdfJob;
 use App\Models\Assignment;
 use App\Models\AssignmentType;
@@ -71,7 +71,7 @@ class OfferShockWorkController extends Controller
                     ->orderBy('position', 'asc')
                     ->dynamicPaginate();
 
-        return ShockWorkResource::collection($shockWorks);
+        return OfferShockWorkResource::collection($shockWorks);
     }
 
     /**
@@ -319,7 +319,7 @@ class OfferShockWorkController extends Controller
             $this->recalculate($shock->id);
         }
         
-        return $this->responseCreated('ShockWork created successfully', ['shock_work' => new ShockWorkResource($shockWork->load('supply', 'status'))]);
+        return $this->responseCreated('ShockWork created successfully', ['shock_work' => new OfferShockWorkResource($shockWork->load('supply', 'status'))]);
     }
 
     /**
@@ -336,7 +336,7 @@ class OfferShockWorkController extends Controller
             ->where('offer_shock_works.id', OfferShockWork::keyFromHashId($id))
             ->firstOrFail();
 
-        return $this->responseSuccess(null, new ShockWorkResource($shockWork->load('supply', 'oldSupply', 'status')));
+        return $this->responseSuccess(null, new OfferShockWorkResource($shockWork->load('supply', 'oldSupply', 'status')));
     }
 
     /**
@@ -468,7 +468,7 @@ class OfferShockWorkController extends Controller
             $this->recalculate($shock->id);
         }
 
-        return $this->responseSuccess('ShockWork updated Successfully', new ShockWorkResource($shockWork->load('supply', 'status')));
+        return $this->responseSuccess('ShockWork updated Successfully', new OfferShockWorkResource($shockWork->load('supply', 'status')));
     }
 
     public function recalculate($id)

@@ -17,6 +17,7 @@ class OfferShockResource extends JsonResource
     {
         return [
             'id' => $this->hashId,
+            'position' => $this->position,
             'with_tax' => $this->with_tax,
             'is_before_quote' => $this->is_before_quote,
             'is_validated' => $this->is_validated,

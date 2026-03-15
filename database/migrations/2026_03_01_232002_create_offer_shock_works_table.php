@@ -17,6 +17,7 @@ return new class extends Migration
             $table->bigIncrements('id')->unsigned();
             $table->unsignedBigInteger('offer_shock_id')->index()->nullable();
             $table->unsignedBigInteger('supply_id')->index()->nullable();
+            $table->integer('position')->nullable();
             $table->unsignedBigInteger('old_supply_id')->index()->nullable();
             $table->boolean('disassembly')->default(false);
             $table->boolean('old_disassembly')->default(false);

@@ -12,7 +12,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Workforce\CalculateWorkforceRequest;
 use App\Http\Requests\Workforce\CreateWorkforceRequest;
 use App\Http\Requests\Workforce\UpdateWorkforceRequest;
-use App\Http\Resources\Workforce\WorkforceResource;
+use App\Http\Resources\Workforce\OfferWorkforceResource;
 use App\Jobs\GenerateExpertiseReportPdfJob;
 use App\Models\Assignment;
 use App\Models\AssignmentType;
@@ -67,7 +67,7 @@ class OfferWorkforceController extends Controller
                     ->orderBy('position', 'asc')
                     ->dynamicPaginate();
 
-        return WorkforceResource::collection($offerWorkforces);
+        return OfferWorkforceResource::collection($offerWorkforces);
     }
 
     /**
@@ -380,7 +380,7 @@ class OfferWorkforceController extends Controller
             ->where('offer_workforces.id', OfferWorkforce::keyFromHashId($id))
             ->firstOrFail();
 
-        return $this->responseSuccess(null, new WorkforceResource($workforce->load('workforceType', 'oldWorkforceType', 'status')));
+        return $this->responseSuccess(null, new OfferWorkforceResource($workforce->load('workforceType', 'oldWorkforceType', 'status')));
     }
 
     /**
@@ -483,7 +483,7 @@ class OfferWorkforceController extends Controller
             $this->updateWorkforces($workforce->offerShock->id, $request->paint_type_id, $request->hourly_rate_id, $request->with_tax);
          }
 
-        return $this->responseSuccess('Workforce updated Successfully', new WorkforceResource($workforce));
+        return $this->responseSuccess('Workforce updated Successfully', new OfferWorkforceResource($workforce));
     }
 
     public function updateWorkforces($shock_id, $paint_type_id, $hourly_rate_id, $with_tax): JsonResponse

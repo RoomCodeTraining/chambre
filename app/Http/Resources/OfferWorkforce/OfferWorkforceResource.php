@@ -15,6 +15,7 @@ class OfferWorkforceResource extends JsonResource
     {
         return [
             'id' => $this->hashId,
+            'position' => $this->position,
             'nb_hours' => $this->nb_hours,
             'old_nb_hours' => $this->old_nb_hours,
             'work_fee' => $this->work_fee,

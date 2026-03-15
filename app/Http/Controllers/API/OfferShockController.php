@@ -12,7 +12,7 @@ use App\Enums\WorkforceTypeEnum;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Shock\CreateShockRequest;
 use App\Http\Requests\Shock\UpdateShockRequest;
-use App\Http\Resources\Shock\ShockResource;
+use App\Http\Resources\Shock\OfferShockResource;
 use App\Jobs\GenerateExpertiseReportPdfJob;
 use App\Models\Assignment;
 use App\Models\AssignmentType;
@@ -77,7 +77,7 @@ class OfferShockController extends Controller
         ->orderBy('offer_shocks.id', 'asc')
         ->dynamicPaginate();
 
-        return ShockResource::collection($shocks);
+        return OfferShockResource::collection($shocks);
     }
 
     /**
@@ -357,7 +357,7 @@ class OfferShockController extends Controller
 
         $this->recalculate($offer->id);
         
-        return $this->responseCreated('Shock created successfully', new ShockResource($shock));
+        return $this->responseCreated('Shock created successfully', new OfferShockResource($shock));
     }
 
     public function recalculate($id)
@@ -414,7 +414,7 @@ class OfferShockController extends Controller
 
         $this->recalculate($offer->id);
         
-        return $this->responseCreated('Shock created successfully', new ShockResource($shock));
+        return $this->responseCreated('Shock created successfully', new OfferShockResource($shock));
     }
 
     /**
@@ -430,7 +430,7 @@ class OfferShockController extends Controller
             ->where('offer_shocks.id', OfferShock::keyFromHashId($id))
             ->firstOrFail();
 
-        return $this->responseSuccess(null, new ShockResource($shock->load('shockPoint', 'shockWorks', 'workforces')));
+        return $this->responseSuccess(null, new OfferShockResource($shock->load('shockPoint', 'shockWorks', 'workforces')));
     }
 
     /**
@@ -459,7 +459,7 @@ class OfferShockController extends Controller
 
         $this->recalculate($shock->offer_id);
 
-        return $this->responseSuccess('Shock updated Successfully', new ShockResource($shock));
+        return $this->responseSuccess('Shock updated Successfully', new OfferShockResource($shock));
     }
 
     /**

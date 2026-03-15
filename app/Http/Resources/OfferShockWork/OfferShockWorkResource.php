@@ -15,6 +15,7 @@ class OfferShockWorkResource extends JsonResource
     {
         return [
             'id' => $this->hashId,
+            'position' => $this->position,
             'offer_shock' => new OfferShockResource($this->whenLoaded('offerShock')),
             'supply' => new SupplyResource($this->whenLoaded('supply')),
             'old_supply' => new SupplyResource($this->whenLoaded('oldSupply')),
