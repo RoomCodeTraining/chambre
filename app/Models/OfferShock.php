@@ -31,6 +31,22 @@ class OfferShock extends Model
         return $this->belongsTo(ShockPoint::class);
     }
 
+    /**
+     * Get all offerWorkforces for this shock
+     */
+    public function offerWorkforces(): HasMany
+    {
+        return $this->hasMany(OfferWorkforce::class);
+    }
+
+    /**
+     * Get all offerShockWorks for this shock
+     */
+    public function offerShockWorks(): HasMany
+    {
+        return $this->hasMany(OfferShockWork::class);
+    }
+
     public function paintType(): BelongsTo
     {
         return $this->belongsTo(PaintType::class);

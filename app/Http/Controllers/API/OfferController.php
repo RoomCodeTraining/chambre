@@ -394,7 +394,7 @@ class OfferController extends Controller
      */
     public function show($id): JsonResponse
     {
-        $offer = Offer::accessibleBy(auth()->user())->with(['comparison', 'comparison.assignment', 'comparison.assignment.expertFirm', 'comparison.assignment.insurer', 'repairer', 'status', 'offerShocks', 'offerShocks.shockPoint', 'offerShocks.paintType', 'offerShocks.hourlyRate', 'offerShocks.status', 'offerShocks.offerShockWorks', 'offerShocks.offerShockWorks.supply', 'offerWorkforces', 'offerShocks.offerWorkforces.workforceType'])->findOrFail(Offer::keyFromHashId($id));
+        $offer = Offer::accessibleBy(auth()->user())->with(['comparison', 'comparison.assignment', 'comparison.assignment.expertFirm', 'comparison.assignment.insurer', 'repairer', 'status', 'offerShocks', 'offerShocks.shockPoint', 'offerShocks.paintType', 'offerShocks.hourlyRate', 'offerShocks.status', 'offerShocks.offerShockWorks', 'offerShocks.offerShockWorks.supply', 'offerShocks.offerWorkforces', 'offerShocks.offerWorkforces.workforceType'])->findOrFail(Offer::keyFromHashId($id));
 
         return $this->responseSuccess(null, new OfferResource($offer));
     }
