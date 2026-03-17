@@ -5,6 +5,8 @@ namespace App\Http\Resources\OfferShock;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 use App\Http\Resources\Offer\OfferResource;
+use App\Http\Resources\OfferShockWork\OfferShockWorkResource;
+use App\Http\Resources\OfferWorkforce\OfferWorkforceResource;
 use App\Http\Resources\ShockPoint\ShockPointResource;
 use App\Http\Resources\PaintType\PaintTypeResource;
 use App\Http\Resources\HourlyRate\HourlyRateResource;
