@@ -21,7 +21,6 @@ class OfferResource extends JsonResource
             'shock_amount' => $this->shock_amount,
             'comparison' => new ComparisonResource($this->whenLoaded('comparison')),
             'offer_shocks' => OfferShockResource::collection($this->whenLoaded('offerShocks')),
-            'offer_shocks' => OfferShockResource::collection($this->whenLoaded('offerShocks')),
             'repairer' => new EntityResource($this->whenLoaded('repairer')),
             'status' => new StatusResource($this->whenLoaded('status')),
             'created_by' => new UserResource($this->whenLoaded('createdBy')),

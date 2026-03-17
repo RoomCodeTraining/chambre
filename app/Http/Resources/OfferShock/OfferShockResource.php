@@ -49,6 +49,8 @@ class OfferShockResource extends JsonResource
             'shock_point' => new ShockPointResource($this->whenLoaded('shockPoint')),
             'paint_type' => new PaintTypeResource($this->whenLoaded('paintType')),
             'hourly_rate' => new HourlyRateResource($this->whenLoaded('hourlyRate')),
+            'shock_works' => OfferShockWorkResource::collection($this->whenLoaded('offerShockWorks')),
+            'workforces' => OfferWorkforceResource::collection($this->whenLoaded('offerWorkforces')),
             'status' => new StatusResource($this->whenLoaded('status')),
             'created_by' => new UserResource($this->whenLoaded('createdBy')),
             'created_at' => dateTimeFormat($this->created_at),
