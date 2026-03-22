@@ -6,7 +6,7 @@ use Illuminate\Foundation\Http\FormRequest;
 use App\Models\WorkforceType;
 use App\Models\HourlyRate;
 use App\Models\PaintType;
-use App\Models\Shock;
+use App\Models\OfferShock;
 
 class CreateWorkforceRequest extends FormRequest
 {
@@ -23,14 +23,14 @@ class CreateWorkforceRequest extends FormRequest
             'workforces' => $workforces ?? null,
             'hourly_rate_id' => $this->hourly_rate_id ? HourlyRate::keyFromHashId($this->hourly_rate_id) : null,
             'paint_type_id' => $this->paint_type_id ? PaintType::keyFromHashId($this->paint_type_id) : null,
-            'shock_id' => $this->shock_id ? Shock::keyFromHashId($this->shock_id) : null,
+            'shock_id' => $this->shock_id ? OfferShock::keyFromHashId($this->shock_id) : null,
         ]);
     }
 
     public function rules(): array
     {
         return [
-            'shock_id' => 'required|exists:shocks,id',
+            'shock_id' => 'required|exists:offer_shocks,id',
             'hourly_rate_id' => 'required|exists:hourly_rates,id',
             'with_tax' => 'required|boolean',
             'paint_type_id' => 'required|exists:paint_types,id',

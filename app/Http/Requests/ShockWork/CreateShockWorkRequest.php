@@ -2,7 +2,7 @@
 
 namespace App\Http\Requests\ShockWork;
 
-use App\Models\Shock;
+use App\Models\OfferShock;
 use App\Models\Supply;
 use App\Models\PaintType;
 use Illuminate\Foundation\Http\FormRequest;
@@ -19,7 +19,7 @@ class CreateShockWorkRequest extends FormRequest
             }
         }
         $this->merge([
-            'shock_id' => $this->shock_id ? Shock::keyFromHashId($this->shock_id) : null,
+            'shock_id' => $this->shock_id ? OfferShock::keyFromHashId($this->shock_id) : null,
             'shock_works' => $shock_works ?? null,
         ]);
     }
@@ -28,7 +28,7 @@ class CreateShockWorkRequest extends FormRequest
     {
         return [
             // 'paint_type_id' => 'required|exists:paint_types,id',
-            'shock_id' => 'required|exists:shocks,id',
+            'shock_id' => 'required|exists:offer_shocks,id',
             'shock_works' => 'required|array',
             // 'shock_works.*.supply_id' => 'required|exists:supplies,id|unique:shock_works,supply_id,NULL,id,shock_id,' . $this->route('shock'),
             'shock_works.*.supply_id' => 'required',
@@ -63,7 +63,7 @@ class CreateShockWorkRequest extends FormRequest
             }
 
             // Check for existing shock_works in DB for this shock
-            $existingSupplyIds = \App\Models\ShockWork::where('shock_id', $shockId)
+            $existingSupplyIds = \App\Models\OfferShockWork::where('offer_shock_id', $shockId)
                 ->whereIn('supply_id', $supplyIds)
                 ->pluck('supply_id')
                 ->toArray();
