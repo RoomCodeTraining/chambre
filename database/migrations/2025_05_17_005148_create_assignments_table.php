@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('assignments', function (Blueprint $table) {
             $table->bigIncrements('id')->unsigned();
-            $table->string('reference')->unique();
+            $table->string('reference')->unique()->index();
             $table->string('policy_number')->nullable();
             $table->string('claim_number')->nullable();
             $table->date('claim_date')->nullable();
