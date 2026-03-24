@@ -603,9 +603,6 @@ class OfferWorkforceController extends Controller
         $total_small_supply_amount = ceil($total_small_supply_amount_excluding_tax + $total_small_supply_amount_tax);
 
         $shock->update([
-            'with_tax' => $with_tax,
-            'hourly_rate_id' => $hourly_rate_id,
-            'paint_type_id' => $paint_type_id,
             'shock_work_obsolescence_amount_excluding_tax' => ceil($total_obsolescence_amount_excluding_tax),
             'shock_work_obsolescence_amount_tax' => ceil($total_obsolescence_amount_tax),
             'shock_work_obsolescence_amount' => ceil($total_obsolescence_amount),
