@@ -8,6 +8,8 @@ use App\Models\Receipt;
 use App\Models\WorkFee;
 use App\Enums\StatusEnum;
 use App\Models\Assignment;
+use App\Models\AssignmentType;
+use App\Enums\AssignmentTypeEnum;
 use App\Models\VehicleAge;
 use App\Models\ReceiptType;
 use App\Models\VehicleGenre;
@@ -38,7 +40,7 @@ class UpdateReceiptService
         }
         
         foreach($receipts as $receipt){
-            if($receipt['receipt_type_id'] == ReceiptType::where('code', ReceiptTypeEnum::WORK_FEE)->first()->id){
+            if($receipt['receipt_type_id'] == ReceiptType::where('code', ReceiptTypeEnum::WORK_FEE)->first()->id && $assignment->assignment_type_id != AssignmentType::where('code', AssignmentTypeEnum::EVALUATION)->first()->id && $assignment->assignment_type_id != AssignmentType::where('code', AssignmentTypeEnum::AGAINST_EXPERTISE)->first()->id){
                 $amount = $assignment->total_amount;
                 if($amount){
                     if($assignment->technicalConclusion && $assignment->technicalConclusion->code != 'TC001'){
