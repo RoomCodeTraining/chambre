@@ -2697,7 +2697,7 @@ class AssignmentController extends Controller
             }
         }
         
-        if($assignment->status_id != Status::where('code', StatusEnum::VALIDATED)->first()?->id && $assignment->status_id != Status::where('code', StatusEnum::PAID)->first()?->id){
+        if($assignment->status_id != Status::where('code', StatusEnum::VALIDATED)->first()->id && $assignment->status_id != Status::where('code', StatusEnum::PAID)->first()->id && $assignment->status_id != Status::where('code', StatusEnum::PENDING_FOR_OPENING)->first()->id){
             $oldReference = $assignment->reference;
             $assignment->update([
                 'reference' => $assignment->status_id != Status::where('code', StatusEnum::PENDING_FOR_OPENING)->first()->id && $reference ? $reference : $assignment->reference,
