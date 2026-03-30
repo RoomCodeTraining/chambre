@@ -2597,7 +2597,7 @@ class AssignmentController extends Controller
         $assignment_type_id = $request->assignment_type_id;
         $expertise_type_id = $request->expertise_type_id;
         
-        if($auth_user->currentRole->name == RoleEnum::SYSTEM_ADMIN->value || $auth_user->currentRole->name == RoleEnum::ADMIN->value || $auth_user->currentRole->name == RoleEnum::EXPERT_MANAGER->value || $auth_user->currentRole->name == RoleEnum::VALIDATOR->value || $auth_user->currentRole->name == RoleEnum::CEO->value){
+        if($auth_user->currentRole->name == RoleEnum::SYSTEM_ADMIN->value || $auth_user->currentRole->name == RoleEnum::ADMIN->value || $auth_user->currentRole->name == RoleEnum::EXPERT_MANAGER->value || $auth_user->currentRole->name == RoleEnum::VALIDATOR->value || $auth_user->currentRole->name == RoleEnum::CEO->value && $assignment->status_id != Status::where('code', StatusEnum::PENDING_FOR_OPENING)->first()->id){
 
             if($request->assignment_type_id != $assignment->assignment_type_id || $insurer->id != $assignment->insurer_id){
 
@@ -2697,7 +2697,7 @@ class AssignmentController extends Controller
             }
         }
         
-        if($assignment->status_id != Status::where('code', StatusEnum::VALIDATED)->first()->id && $assignment->status_id != Status::where('code', StatusEnum::PAID)->first()->id && $assignment->status_id != Status::where('code', StatusEnum::PENDING_FOR_OPENING)->first()->id){
+        if($assignment->status_id != Status::where('code', StatusEnum::VALIDATED)->first()->id && $assignment->status_id != Status::where('code', StatusEnum::PAID)->first()->id){
             $oldReference = $assignment->reference;
             $assignment->update([
                 'reference' => $assignment->status_id != Status::where('code', StatusEnum::PENDING_FOR_OPENING)->first()->id && $reference ? $reference : $assignment->reference,
