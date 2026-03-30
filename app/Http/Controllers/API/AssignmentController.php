@@ -2700,7 +2700,7 @@ class AssignmentController extends Controller
         if($assignment->status_id != Status::where('code', StatusEnum::VALIDATED)->first()?->id && $assignment->status_id != Status::where('code', StatusEnum::PAID)->first()?->id){
             $oldReference = $assignment->reference;
             $assignment->update([
-                'reference' => $reference ?? $assignment->reference,
+                'reference' => $assignment->status_id != Status::where('code', StatusEnum::PENDING_FOR_OPENING)->first()->id ? $reference : $assignment->reference,
                 'expert_firm_id' => $expert_firm->id ? $expert_firm->id : null,
                 'insurer_id' => $insurer ? $insurer->id : null,
                 'additional_insurer_id' => $additional_insurer ? $additional_insurer->id : null,
@@ -2729,7 +2729,7 @@ class AssignmentController extends Controller
                 $vehicle->save();
             }
 
-            if($oldReference != $assignment->reference){
+            if($assignment->status_id != Status::where('code', StatusEnum::PENDING_FOR_OPENING)->first()->id && $oldReference != $assignment->reference){
                 $reference = $assignment->reference;
                 $assignment->update([
                     'reference_updated_by' => auth()->user()->id,
