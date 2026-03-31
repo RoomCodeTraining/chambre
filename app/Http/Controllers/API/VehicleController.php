@@ -134,7 +134,7 @@ class VehicleController extends Controller
         $vehicle = Vehicle::accessibleBy(auth()->user())->findOrFail(Vehicle::keyFromHashId($id));
         $vehicleModel = VehicleModel::where('id', $request->vehicle_model_id)->first();
         $vehicle->update([
-            'brand_id' => $vehicleModel->brand_id,
+            'brand_id' => $vehicleModel?->brand_id,
             'vehicle_model_id' => $request->vehicle_model_id,
             'color_id' => $request->color_id,
             'license_plate' => strtoupper($request->license_plate),
