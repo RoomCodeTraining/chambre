@@ -694,6 +694,28 @@
                         {{number_format($evaluations?->market_incidence ?? 0, 0, ',', ' ')}} FCFA
                     </td>
                 </tr>
+                @if($assignment?->technicalConclusion && $assignment?->technicalConclusion?->code != 'TC001')
+                <tr style="border: 1px solid; font-size: 12px; text-align: left;">
+                    <th style="border: 1px solid; font-size: 12px;">
+                        CONCLUSION TECHNIQUE
+                    </th>
+                    <th style="border: 1px solid; font-size: 12px;">
+                        <span class="text-danger">
+                            {{mb_strtoupper($assignment?->technicalConclusion?->label ?? '')}}
+                        </span>
+                    </th>
+                </tr>
+                <tr style="border: 1px solid; font-size: 12px; text-align: left;">
+                    <th style="border: 1px solid; font-size: 12px;">
+                        VALEUR DE SAUVETAGE
+                    </th>
+                    <th style="border: 1px solid; font-size: 12px;">
+                        <span class="text-danger">
+                            {{number_format($assignment?->salvage_value ?? 0, 0, ',', ' ')}} FCFA
+                        </span>
+                    </th>
+                </tr>
+                @else
                 <tr style="border: 1px solid; font-size: 12px; text-align: left;">
                     <th style="border: 1px solid; font-size: 12px;">
                         VALEUR VENALE
@@ -714,13 +736,34 @@
                         </span>
                     </th>
                 </tr>
+                @endif
             </tbody>
         </table>
 
+        @if($assignment?->technicalConclusion && $assignment?->technicalConclusion?->code != 'TC001')
         <div class="text-center" style="padding-top: 15px;">
-            <h4 style="text-transform: uppercase;">{{$numberTransformer->toWords($evaluations?->vehicle_market_value ?? 0)}} FRANCS CFA</h4>
+            <h4 style="text-transform: uppercase;">{{$numberTransformer->toWords($assignment?->salvage_value ?? 0)}} FRANCS CFA</h4>
             <p>En foi de, nous delivrons le présent rapport d'expertise pour servir et valoir ce que de droit.</p>
         </div>
+        @else
+        <div class="text-center" style="padding-top: 15px;">
+            <h4 style="text-transform: uppercase;">{{$numberTransformer->toWords($evaluations?->vehicle_market_value_rounded ?? 0)}} FRANCS CFA</h4>
+            <p>En foi de, nous delivrons le présent rapport d'expertise pour servir et valoir ce que de droit.</p>
+        </div>
+        @endif
+        
+        @if($assignment?->technicalConclusion && $assignment?->technicalConclusion?->code != 'TC001' && $assignment?->expert_report_remark)
+        <table id="note-expert" class="table table-borderless text-center" style="margin: 0; padding: 0; border-collapse: collapse; width: 100%; padding-top: 10px;">
+            <thead style="border: 1px solid; font-size: 12px;">
+                <tr style="border: 1px solid; font-size: 12px; background-color: rgb(223, 221, 218);">
+                    <th colspan="2" style="border: 1px solid; font-size: 12px;">NOTE D'EXPERT</th>
+                </tr>
+            </thead>
+        </table>
+        <div class="text-left" style="padding-top: 5px;">
+            {!!$assignment?->expert_report_remark ?? ''!!}
+        </div>
+        @endif
 
         <div class="text-right" style="padding-left: 500px; padding-top: 30px;">
             <div style="font-size: 14px; text-align: center; vertical-align: middle;">
