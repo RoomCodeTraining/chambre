@@ -46,8 +46,8 @@ class ExpertiseTypeSeeder extends Seeder
 
         ExpertiseType::create([
             'code' => ExpertiseTypeEnum::VEHICLE_VOL_NOT_FOUND->value,
-            'label' => "Véhicule vole non trouvé",
-            'description' => "Véhicule vole non trouvé",
+            'label' => "Véhicule volé non trouvé",
+            'description' => "Véhicule volé non trouvé",
             'status_id' => Status::firstWhere('code', StatusEnum::ACTIVE)->id,
             'created_by' => 1,
             'updated_by' => 1,
@@ -55,8 +55,8 @@ class ExpertiseTypeSeeder extends Seeder
 
         ExpertiseType::create([
             'code' => ExpertiseTypeEnum::VEHICLE_VOL_FOUND->value,
-            'label' => "Véhicule vole trouvé",
-            'description' => "Véhicule vole trouvé",
+            'label' => "Véhicule volé trouvé",
+            'description' => "Véhicule volé trouvé",
             'status_id' => Status::firstWhere('code', StatusEnum::ACTIVE)->id,
             'created_by' => 1,
             'updated_by' => 1,
