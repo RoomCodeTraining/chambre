@@ -441,6 +441,10 @@ class InvoiceController extends Controller
             return $this->responseUnprocessable("La facture est déjà générée pour ce dossier.");
         }
 
+        if($request->type == 'credit_bill' && Invoice::where(['reference' => $request->invoice_reference, 'status_id' => Status::where('code', StatusEnum::ACTIVE)->first()->id])->exists()){
+            return $this->responseUnprocessable("Impossible d’émettre l’avoir : la facture d’origine est inexistante.");
+        }
+
         $receipt_amount = Receipt::where('assignment_id', $assignment->id)->sum('amount');
         if(!$receipt_amount || $receipt_amount == 0){
             return $this->responseUnprocessable("Ce dossier n'a aucune quittance.");
