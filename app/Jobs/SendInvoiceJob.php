@@ -102,7 +102,8 @@ class SendInvoiceJob implements ShouldQueue
         if ($assignment->assignment_type_id == AssignmentType::where('code', AssignmentTypeEnum::INSURER)->first()->id) {
             $client = $assignment->insurer;
             if($assignment?->additionalInsurer){
-                $name = $client->name . ' (' .$assignment?->additionalInsurer?->name. ") / " . $assignment?->client?->name;
+                $client = $assignment?->additionalInsurer;
+                $name = $assignment?->additionalInsurer?->name. " / " . $assignment?->client?->name;
             } else {
                 $name = $client->name . " / " . $assignment?->client?->name;
             }
@@ -141,7 +142,7 @@ class SendInvoiceJob implements ShouldQueue
                 'taxpayer_account_number' => $assignment?->expertFirm?->taxpayer_account_number,
                 'point_sale' => $fneSetting?->point_sale,
                 'establishment' => $fneSetting?->establishment,
-                'commercial_message' => "N° de facture : ".$invoice->reference." - N° du rapport : ".$assignment->reference. " - N° de sinistre : ".$assignment->claim_number,
+                'commercial_message' => $assignment?->additionalInsurer ? "N° de facture : ".$invoice->reference." - N° du rapport de ".$assignment?->insurer?->name." pour le compte de ".$assignment?->additionalInsurer?->name." : ".$assignment->reference. " - N° de sinistre : ".$assignment->claim_number : "N° de facture : ".$invoice->reference." - N° du rapport : ".$assignment->reference. " - N° de sinistre : ".$assignment->claim_number,
                 'footer' => $fneSetting?->footer,
                 'fne_token' => $fneSetting?->token,
             ],
