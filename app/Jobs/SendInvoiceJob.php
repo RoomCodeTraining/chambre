@@ -142,7 +142,7 @@ class SendInvoiceJob implements ShouldQueue
                 'taxpayer_account_number' => $assignment?->expertFirm?->taxpayer_account_number,
                 'point_sale' => $fneSetting?->point_sale,
                 'establishment' => $fneSetting?->establishment,
-                'commercial_message' => $assignment?->additionalInsurer ? "N° de facture : ".$invoice->reference." - N° du rapport de ".$assignment?->insurer?->name." pour le compte de ".$assignment?->additionalInsurer?->name." : ".$assignment->reference. " - N° de sinistre : ".$assignment->claim_number : "N° de facture : ".$invoice->reference." - N° du rapport : ".$assignment->reference. " - N° de sinistre : ".$assignment->claim_number,
+                'commercial_message' => $assignment?->additionalInsurer ? "N° de facture : ".$invoice->reference." - N° du rapport de ".$assignment?->insurer?->name." pour le compte de ".$assignment?->additionalInsurer?->name." : ".$assignment->reference." - N° d'immatriculation : ".$assignment->claim_number." - N° de sinistre : ".$assignment->claim_number : "N° de facture : ".$invoice->reference." - N° du rapport : ".$assignment->reference." - N° d'immatriculation : ".$assignment->claim_number." - N° de sinistre : ".$assignment->claim_number,
                 'footer' => $fneSetting?->footer,
                 'fne_token' => $fneSetting?->token,
             ],
