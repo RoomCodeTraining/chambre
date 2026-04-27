@@ -110,8 +110,8 @@
                                             {{ $assignment?->insurer?->name ?? '' }} ({{ $assignment?->additionalInsurer?->name ?? '' }}) / {{ $assignment?->client?->name ?? '' }}
                                         </span>
                                     </b><br>
-                                    <b style="text-decoration: underline;">Adresse</b> <b> : <span style="padding-left: 10px;">{{ $assignment?->insurer?->address ?? '' }}</span></b><br>
-                                    <b style="text-decoration: underline;">Numéro de compte contribuable</b> <b> : <span style="padding-left: 10px;">{{ $assignment?->insurer?->taxpayer_account_number ?? '' }}</span></b><br>
+                                    <b style="text-decoration: underline;">Adresse</b> <b> : <span style="padding-left: 10px;">{{ $assignment?->additionalInsurer?->address ?? '' }}</span></b><br>
+                                    <b style="text-decoration: underline;">Numéro de compte contribuable</b> <b> : <span style="padding-left: 10px;">{{ $assignment?->additionalInsurer?->taxpayer_account_number ?? '' }}</span></b><br>
                                 @else
                                     @if($assignment?->broker)
                                     <b> : 
