@@ -437,18 +437,18 @@ class InvoiceController extends Controller
     {
         $assignment = Assignment::accessibleBy(auth()->user())->findOrFail($request->assignment_id);
 
-        // if(Invoice::where(['assignment_id' => $assignment->id, 'type' => $request->type, 'status_id' => Status::where('code', StatusEnum::ACTIVE)->first()->id])->exists()){
-        //     return $this->responseUnprocessable("La facture est déjà générée pour ce dossier.");
-        // }
+        if(Invoice::where(['assignment_id' => $assignment->id, 'type' => $request->type, 'status_id' => Status::where('code', StatusEnum::ACTIVE)->first()->id])->exists()){
+            return $this->responseUnprocessable("La facture est déjà générée pour ce dossier.");
+        }
 
-        // if($request->type == 'credit_bill' && Invoice::where(['reference' => $request->invoice_reference, 'status_id' => Status::where('code', StatusEnum::ACTIVE)->first()->id])->exists()){
-        //     return $this->responseUnprocessable("Impossible d’émettre l’avoir : la facture d’origine est inexistante.");
-        // }
+        if($request->type == 'credit_bill' && Invoice::where(['reference' => $request->invoice_reference, 'status_id' => Status::where('code', StatusEnum::ACTIVE)->first()->id])->exists()){
+            return $this->responseUnprocessable("Impossible d’émettre l’avoir : la facture d’origine est inexistante.");
+        }
 
-        // $receipt_amount = Receipt::where('assignment_id', $assignment->id)->sum('amount');
-        // if(!$receipt_amount || $receipt_amount == 0){
-        //     return $this->responseUnprocessable("Ce dossier n'a aucune quittance.");
-        // }
+        $receipt_amount = Receipt::where('assignment_id', $assignment->id)->sum('amount');
+        if(!$receipt_amount || $receipt_amount == 0){
+            return $this->responseUnprocessable("Ce dossier n'a aucune quittance.");
+        }
 
         $now = Carbon::now();
         $annee = date("Y");
