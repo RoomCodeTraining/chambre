@@ -477,11 +477,19 @@ class InvoiceController extends Controller
 
         if($request->address || $request->taxpayer_account_number){
             if($assignment->assignment_type_id == AssignmentType::where('code', AssignmentTypeEnum::INSURER)->first()->id){ // Si le client existe
-                $entity = Entity::findOrFail($assignment->insurer_id);
-                $entity->update([
-                    'address' => $request->address,
-                    'taxpayer_account_number' => $request->taxpayer_account_number,
-                ]);
+                if($assignment?->additional_insurer_id){
+                    $entity = Entity::findOrFail($assignment?->additional_insurer_id);
+                    $entity->update([
+                        'address' => $request->address,
+                        'taxpayer_account_number' => $request->taxpayer_account_number,
+                    ]);
+                } else {
+                    $entity = Entity::findOrFail($assignment->insurer_id);
+                    $entity->update([
+                        'address' => $request->address,
+                        'taxpayer_account_number' => $request->taxpayer_account_number,
+                    ]);
+                }
             }  else {
                 $client = Client::findOrFail($assignment->client_id);
                 $client->update([
