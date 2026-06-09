@@ -705,10 +705,11 @@ class ShockWorkController extends Controller
      */
     public function get_supply_price_by_vehicle_brand_and_vehicle_model(GetSupplyPriceRequest $request): JsonResponse
     {
+        $statusIds = Status::whereIn('code', [StatusEnum::VALIDATED, StatusEnum::PAID])->pluck('id');
         $vehicles = Vehicle::where('vehicle_model_id', $request->vehicle_model_id)->get();
-        $assignments = Assignment::whereIn('vehicle_id', $vehicles->pluck('id'))->get();
+        $assignments = Assignment::whereIn('vehicle_id', $vehicles->pluck('id'))->whereIn('status_id', $statusIds)->get();
         $shock = Shock::with('assignment:id,reference')->whereIn('assignment_id', $assignments->pluck('id'))->get();
-        $shockWorks = ShockWork::with('supply:id,code,label', 'shock.assignment.repairer:id,code,name')->whereIn('shock_id', $shock->pluck('id'))->where('replacement', true);
+        $shockWorks = ShockWork::with('supply:id,code,label', 'shock.assignment.repairer:id,code,name')->whereIn('shock_id', $shock->pluck('id'))->where('replacement', true)->where('amount', '>', 0);
 
         if($request->supply_id && $request->date){
             $shockWorks = $shockWorks->where('supply_id', $request->supply_id)->where('created_at', '>=', $request->date);
